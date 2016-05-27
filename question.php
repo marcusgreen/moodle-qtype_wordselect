@@ -34,6 +34,14 @@ require_once('Kint/Kint.class.php');
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class qtype_wordselect_question extends question_graded_automatically_with_countback {
+    
+    
+    public function start_attempt(question_attempt_step $step, $variant) {
+        Kint::dump($step);
+        exit();
+        $this->order = array_keys($this->answers);
+        $step->set_qt_var('_order', implode(',', $this->order));
+    }
 
     public function get_expected_data() {
         // TODO.
@@ -76,9 +84,9 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 
     public function grade_response(array $response) {
-        // TODO.
         Kint::dump($response);
         exit();
+         // TODO.
         $fraction = 0;
         return array($fraction, question_state::graded_state_for_fraction($fraction));
     }

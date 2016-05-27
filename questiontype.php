@@ -1,4 +1,5 @@
 <?php
+
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -23,14 +24,11 @@
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
-
 defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->libdir . '/questionlib.php');
 require_once($CFG->dirroot . '/question/engine/lib.php');
 require_once($CFG->dirroot . '/question/type/wordselect/question.php');
-
 
 /**
  * The wordselect question type.
@@ -40,12 +38,13 @@ require_once($CFG->dirroot . '/question/type/wordselect/question.php');
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class qtype_wordselect extends question_type {
-    
-      /* data used by export_to_xml (among other things possibly */
+    /* data used by export_to_xml (among other things possibly */
+
     public function extra_question_fields() {
-      return array('question_wordselect', 'introduction','delimitchars');
+        return array('question_wordselect', 'introduction', 'delimitchars');
     }
-        /**
+
+    /**
      * Utility method used by {@link qtype_renderer::head_code()}
      * It looks for any of the files script.js or script.php that
      * exist in the plugin folder and ensures they get included.
@@ -70,16 +69,131 @@ class qtype_wordselect extends question_type {
     }
 
     public function save_question_options($question) {
+        /* Save the extra data to your database tables from the
+          $question object, which has all the post data from editquestion.html
+          although it is called question it seems to actually be the form
+         * */
+
+        $gaps = $this->get_gaps($question->delimitchars, $question->questiontext);
+        
+         /* answerwords are words that need to be selected to get a mark */
+        $answerwords = $this->get_answer_fields($gaps, $question);    
+       
         global $DB;
+
         $context = $question->context;
+        // Fetch old answer ids so that we can reuse them.
+        $this->update_question_answers($question, $answerwords);
+
         $options = $DB->get_record('question_wordselect', array('questionid' => $question->id));
         $this->update_question_wordselect($question, $options, $context);
-        $this->save_hints($question);
+        $this->save_hints($question, true);
+        return true;
+    }
+
+    /* it really does need to be static */
+
+    public static function get_gaps($delimitchars, $questiontext) {
+        /* l for left delimiter r for right delimiter
+         * defaults to []
+         * e.g. l=[ and r=] where question is
+         * The [cat] sat on the [mat]
+         */
+        $delim = self::get_delimit_array($delimitchars);
+        $fieldregex = '/.*?\\' . $delim["l"] . '(.*?)\\' . $delim["r"] . '/';
+        $matches = array();
+        preg_match_all($fieldregex, $questiontext, $matches);
+        return $matches[1];
+    }
+
+    /* chop the delimit string into a two element array
+     * this might be better done on initialisation
+     */
+
+    public static function get_delimit_array($delimitchars) {
+        $delimitarray = array();
+        $delimitarray["l"] = substr($delimitchars, 0, 1);
+        $delimitarray["r"] = substr($delimitchars, 1, 1);
+        return $delimitarray;
+    }
+
+    
+    /**
+     * Set up all the answer fields with respective fraction (mark values)
+     * This is used to update the question_answers table. Answerwords has
+     * been pulled from within the delimitchars e.g. the cat within [cat]
+     * Wronganswers (distractors) has been pulled from a comma delimited edit
+     * form field
+     * wro
+     * @param array $answerwords
+     * @param type $question
+     * @return type array
+     */
+    public function get_answer_fields(array $answerwords, $question) {
+        /* this code runs both on saving from a form and from importing and needs
+         * improving as it mixes pulling information from the question object which
+         * comes from the import and from $question->wronganswers field which
+         * comes from the question_editing form.
+         */
+        $answerfields = array();
+        /* this next block runs when importing from xml */
+        if (property_exists($question, 'answer')) {
+            foreach ($question->answer as $key => $value) {
+                if ($question->fraction[$key] == 0) {
+                    $answerfields[$key]['value'] = $question->answer[$key];
+                    $answerfields[$key]['fraction'] = 0;
+                } else {
+                    $answerfields[$key]['value'] = $question->answer[$key];
+                    $answerfields[$key]['fraction'] = 1;
+                }
+            }
+        }
+         /* the rest of this function runs when saving from edit form */
+        if (!property_exists($question, 'answer')) {
+            foreach ($answerwords as $key => $value) {
+                $answerfields[$key]['value'] = $value;
+                $answerfields[$key]['fraction'] = 1;
+            }
+        }
+        return $answerfields;
     }
     
-     /* runs from question editing form */
+  
 
-    public function update_question_wordselect($question,$options,$context) {
+    public function update_question_answers($question, array $answerfields) {
+        global $DB;
+        $oldanswers = $DB->get_records('question_answers', array('question' => $question->id), 'id ASC');
+        // Insert all the new answers.
+        foreach ($answerfields as $field) {
+            // Save the true answer - update an existing answer if possible.
+            if ($answer = array_shift($oldanswers)) {
+                $answer->question = $question->id;
+                $answer->answer = $field['value'];
+                $answer->feedback = '';
+                $answer->fraction = 1;
+                $DB->update_record('question_answers', $answer);
+            } else {
+                // Insert a blank record.
+                $answer = new stdClass();
+                $answer->question = $question->id;
+                $answer->answer = $field['value'];
+                $answer->feedback = '';
+                $answer->correctfeedback = '';
+                $answer->partiallycorrectfeedback = '';
+                $answer->incorrectfeedback = '';
+                $answer->fraction = 1;
+                $answer->id = $DB->insert_record('question_answers', $answer);
+            }
+        }
+        // Delete old answer records.
+        foreach ($oldanswers as $oa) {
+            $DB->delete_records('question_answers', array('id' => $oa->id));
+        }
+    }
+
+    /* runs from question editing form */
+
+    public function update_question_wordselect($question, $options, $context) {
         global $DB;
         $options = $DB->get_record('question_wordselect', array('questionid' => $question->id));
         if (!$options) {
@@ -92,16 +206,17 @@ class qtype_wordselect extends question_type {
             $options->incorrectfeedback = '';
             $options->id = $DB->insert_record('question_wordselect', $options);
         }
-        $options->introduction =$question->introduction['text'];
+        $options->introduction = $question->introduction['text'];
         $options->delimitchars = $question->delimitchars;
         $options = $this->save_combined_feedback_helper($options, $question, $context, true);
         $DB->update_record('question_wordselect', $options);
     }
 
-
     protected function initialise_question_instance(question_definition $question, $questiondata) {
         // TODO.
         parent::initialise_question_instance($question, $questiondata);
+        /* not in template */
+        $this->initialise_question_answers($question, $questiondata);
     }
 
     public function get_random_guess_score($questiondata) {
@@ -113,4 +228,5 @@ class qtype_wordselect extends question_type {
         // TODO.
         return array();
     }
+
 }

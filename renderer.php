@@ -1,4 +1,5 @@
 <?php
+
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -23,11 +24,8 @@
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
-
 defined('MOODLE_INTERNAL') || die();
 require_once('Kint/Kint.class.php');
-
 
 /**
  * Generates the output for wordselect questions.
@@ -36,23 +34,24 @@ require_once('Kint/Kint.class.php');
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+require_once('Kint/Kint.class.php');
+
 class qtype_wordselect_renderer extends qtype_renderer {
-    
-        public function formulation_and_controls(question_attempt $qa, question_display_options $options) {
+
+    public function formulation_and_controls(question_attempt $qa, question_display_options $options) {
         global $PAGE;
         $question = $qa->get_question();
         $PAGE->requires->js('/question/type/textselect/selection.js');
         $output = $question->introduction;
         $words = $question->get_text_chunks($qa);
-        $counter=0;
+        $counter = 0;
         foreach ($words as $word) {
-            $counter++;  
-            $output.='<input name="fname" type=checkbox id='.$counter.'><span class="selectable">' . $word . '</span>&nbsp;</input>';
+            $counter++;
+            $output.='<input checked name="q108:1_answer" type=checkbox id=q102:1_p' . $counter . ' value=true ><span class="selectable">' . $word . '</span>&nbsp;</input>';
         }
         $output.="<br/>";
         return $output;
     }
-  
 
     public function specific_feedback(question_attempt $qa) {
         // TODO.
@@ -63,4 +62,5 @@ class qtype_wordselect_renderer extends qtype_renderer {
         // TODO.
         return '';
     }
+
 }
