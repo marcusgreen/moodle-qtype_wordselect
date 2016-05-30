@@ -29,6 +29,7 @@ defined('MOODLE_INTERNAL') || die();
 require_once($CFG->libdir . '/questionlib.php');
 require_once($CFG->dirroot . '/question/engine/lib.php');
 require_once($CFG->dirroot . '/question/type/wordselect/question.php');
+require_once('Kint/Kint.class.php');
 
 /**
  * The wordselect question type.
@@ -217,6 +218,34 @@ class qtype_wordselect extends question_type {
         parent::initialise_question_instance($question, $questiondata);
         /* not in template */
         $this->initialise_question_answers($question, $questiondata);
+        
+    }
+    protected function initialise_question_answers(question_definition $question, $questiondata, $forceplaintextanswers = true) {
+       
+    //    $question->allwords = array();
+        if (empty($questiondata->options->answers)) {
+            return;
+        }
+        foreach ($questiondata->options->answers as $a) {
+            if (strstr($a->fraction, '1') == false) {
+                /* if this is a wronganswer/distractor strip any
+                 * backslahses, this allows escaped backslashes to
+                 * be used i.e. \, and not displayed in the draggable
+                 * area
+                 */
+                $a->answer = stripslashes($a->answer);
+            }
+           // array_push($question->allwords, $a->answer);
+         
+            /* answer in this context means correct answers, i.e. where
+             * fraction contains a 1 */
+            if (strpos($a->fraction, '1') !== false) {
+                $question->answers[$a->id] = new question_answer($a->id, $a->answer, $a->fraction, $a->feedback, $a->feedbackformat);
+                if (!$forceplaintextanswers) {
+                    $question->answers[$a->id]->answerformat = $a->answerformat;
+                }
+            }
+        }
     }
 
     public function get_random_guess_score($questiondata) {
