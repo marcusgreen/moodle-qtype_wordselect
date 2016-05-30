@@ -36,31 +36,21 @@ require_once('Kint/Kint.class.php');
  */
 require_once('Kint/Kint.class.php');
 
-class qtype_wordselect_renderer extends qtype_renderer {
+class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
 
     public function formulation_and_controls(question_attempt $qa, question_display_options $options) {
         global $PAGE;
         $question = $qa->get_question();
-        $PAGE->requires->js('/question/type/textselect/selection.js');
-        $output = $question->introduction;
-        $words = $question->get_text_chunks($qa);
-        $counter = 0;
-        foreach ($words as $word) {
-            $counter++;
-            $output.='<input checked name="q108:1_answer" type=checkbox id=q102:1_p' . $counter . ' value=true ><span class="selectable">' . $word . '</span>&nbsp;</input>';
+
+        $output = '<div class="selectable">';
+        foreach ($question->get_all_words() as $place => $value) {
+            $qprefix = $qa->get_qt_field_name('');
+            $inputname = $qprefix . 'p' . ($place);
+            $output.="<input hidden=true type='checkbox' name=" . $inputname . " id=" . $inputname . "></input>";
+            $output.="<label for=" . $inputname . ">" . $value . "</label>";
         }
-        $output.="<br/>";
+        $output.="</div>";
         return $output;
-    }
-
-    public function specific_feedback(question_attempt $qa) {
-        // TODO.
-        return '';
-    }
-
-    public function correct_response(question_attempt $qa) {
-        // TODO.
-        return '';
     }
 
 }
