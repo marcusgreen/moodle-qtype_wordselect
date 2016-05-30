@@ -1,0 +1,16 @@
+.selectable  input[type="checkbox"]:checked+label{
+    background: #cee0f4;
+    border-radius:0.25em;
+    padding:0.15em;
+    white-space:nowrap;
+    /*background-color: rgb(206, 224, 244);*/
+    background-color:#CBCFD4;
+    background-image: none;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+    display:inline;
+}
