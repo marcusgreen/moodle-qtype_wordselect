@@ -20,7 +20,7 @@
  *
  * @package    qtype
  * @subpackage wordselect
- * @copyright  THEYEAR YOURNAME (YOURCONTACTINFO)
+ * @copyright  2017 Marcus Green
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -34,7 +34,7 @@ require_once('Kint/Kint.class.php');
 /**
  * The wordselect question type.
  *
- * @copyright  THEYEAR YOURNAME (YOURCONTACTINFO)
+ * @copyright  2016 Marcus Green
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
