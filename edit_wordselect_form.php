@@ -20,7 +20,7 @@
  *
  * @package    qtype
  * @subpackage wordselect
- * @copyright  THEYEAR YOURNAME (YOURCONTACTINFO)
+ * @copyright  2016 Marcus Green
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -29,7 +29,7 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * wordselect question editing form definition.
  *
- * @copyright  THEYEAR YOURNAME (YOURCONTACTINFO)
+ * @copyright  2016 Marcus Green
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
