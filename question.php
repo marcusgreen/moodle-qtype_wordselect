@@ -25,25 +25,23 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die();
-/* require_once($CFG->dirroot . '/question/type/questionbase.php'); */
 
 require_once('Kint/Kint.class.php');
 
 /**
  * Represents a wordselect question.
  *
- * @copyright  THEYEAR YOURNAME (YOURCONTACTINFO)
+ * @copyright  2017 Marcus Green 
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class qtype_wordselect_question extends question_graded_automatically_with_countback {
 
-
     public function compare_response_with_answer(array $response, question_answer $answer) {
         
     }
 
-     /**
+    /**
      * @param int $key stem number
      * @return string the question-type variable name.
      */
@@ -54,7 +52,11 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     public function is_gradable_response(array $response) {
         return true;
     }
-
+    /**
+     * The text with delimiters removed so the user cannot see
+     * which words are the ones that should be selected. So The cow [jumped]
+     * becomes The cow jumped
+     */
     public function get_all_words() {
         $questiontextnodelim = $this->questiontext;
         $questiontextnodelim = preg_replace('/\[/', '', $questiontextnodelim);
@@ -82,7 +84,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 
     public function is_complete_response(array $response) {
-
         // TODO.
         return true;
     }
@@ -112,9 +113,9 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return array();
     }
 
-    public function check_file_access($qa, $options, $component, $filearea, $args, $forcedownload) {
-        
-    }
+    public function check_file_access($qa, $options, $component, $filearea, $args, $forcedownload) {        
+            // TODO
+        }
 
     /**
      * @param array $response responses, as returned by
@@ -127,21 +128,28 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $allwords = $this->get_all_words();
 
         foreach ($response as $index => $value) {
-            $responsewords[] = $allwords[substr($index, 1, 99)];
+            //TODO change 99 to length of string
+            $responsewords[substr($index, 1, 99)] = $allwords[substr($index, 1, 99)];
+        }
+        $right = 0;
+        $found = false;
+        foreach ($responsewords as $key => $response) {
+            foreach ($this->answers as $answer) {
+                if ($answer->answer === $response) {
+                    $found = true;
+                }
+            }
+            if ($found == true) {
+                $right++;
+            } else {
+                $right--;
+            }
+            $found = false;
         }
 
-        foreach ($responsewords as $response) {
-            foreach ($this->answers as $answer) {
-                if($answer->answer===$response){
-                    $right++;
-                    break;
-                }else{
-                    $right--;
-                    break;
-                }                
-            }
+        if ($right < 0) {
+            $right = 0;
         }
-  
         $fraction = $right / sizeof($this->answers);
         $grade = array($fraction, question_state::graded_state_for_fraction($fraction));
         return $grade;
