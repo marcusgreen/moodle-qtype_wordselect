@@ -41,12 +41,18 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
     public function formulation_and_controls(question_attempt $qa, question_display_options $options) {
         global $PAGE;
         $question = $qa->get_question();
+        $response = $qa->get_last_qt_data();
 
-        $output = '<div class="selectable">';
+       $output=$question->introduction;
+       $output .= '<div class="selectable">';
         foreach ($question->get_all_words() as $place => $value) {
             $qprefix = $qa->get_qt_field_name('');
             $inputname = $qprefix . 'p' . ($place);
-            $output.="<input hidden=true type='checkbox' name=" . $inputname . " id=" . $inputname . "></input>";
+            $checked=null;
+            if(array_key_exists('p'.($place),$response)){
+               $checked='checked=true';
+            }            
+            $output.="<input hidden=true ".$checked ." type='checkbox' name=" . $inputname . " id=" . $inputname . "></input>";
             $output.="<label for=" . $inputname . ">" . $value . "</label>";
         }
         $output.="</div>";
