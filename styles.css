@@ -1,4 +1,6 @@
 .selectable  input[type="checkbox"]:checked+label{
+   padding-left:0.1em;
+    padding-right:0.1em;
     background: #cee0f4;
     border-radius:0.25em;
     /*padding:0.15em;*/
