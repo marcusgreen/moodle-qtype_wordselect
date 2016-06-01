@@ -75,11 +75,8 @@ class qtype_wordselect extends question_type {
           although it is called question it seems to actually be the form
          * */
 
-        $gaps = $this->get_gaps($question->delimitchars, $question->questiontext);
-        
-         /* answerwords are words that need to be selected to get a mark */
-        $answerwords = $this->get_answer_fields($gaps, $question);    
-       
+        $answerwords = $this->get_answerwords($question->delimitchars, $question->questiontext);
+      
         global $DB;
 
         $context = $question->context;
@@ -93,8 +90,7 @@ class qtype_wordselect extends question_type {
     }
 
     /* it really does need to be static */
-
-    public static function get_gaps($delimitchars, $questiontext) {
+    public static function get_answerwords($delimitchars, $questiontext) {
         /* l for left delimiter r for right delimiter
          * defaults to []
          * e.g. l=[ and r=] where question is
@@ -161,15 +157,15 @@ class qtype_wordselect extends question_type {
     
   
 
-    public function update_question_answers($question, array $answerfields) {
+    public function update_question_answers($question, array $answerwords) {
         global $DB;
         $oldanswers = $DB->get_records('question_answers', array('question' => $question->id), 'id ASC');
         // Insert all the new answers.
-        foreach ($answerfields as $field) {
+        foreach ($answerwords as $word) {
             // Save the true answer - update an existing answer if possible.
             if ($answer = array_shift($oldanswers)) {
                 $answer->question = $question->id;
-                $answer->answer = $field['value'];
+                $answer->answer = $word;
                 $answer->feedback = '';
                 $answer->fraction = 1;
                 $DB->update_record('question_answers', $answer);
@@ -177,11 +173,8 @@ class qtype_wordselect extends question_type {
                 // Insert a blank record.
                 $answer = new stdClass();
                 $answer->question = $question->id;
-                $answer->answer = $field['value'];
+                $answer->answer = $word;
                 $answer->feedback = '';
-                $answer->correctfeedback = '';
-                $answer->partiallycorrectfeedback = '';
-                $answer->incorrectfeedback = '';
                 $answer->fraction = 1;
                 $answer->id = $DB->insert_record('question_answers', $answer);
             }
