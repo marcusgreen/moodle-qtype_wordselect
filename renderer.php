@@ -42,6 +42,8 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         global $PAGE;
         $question = $qa->get_question();
         $response = $qa->get_last_qt_data();
+        $question->get_correct_places();
+
 
         $output = $question->introduction;
         $output .= '<div class="selectable">';
@@ -49,16 +51,33 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             $qprefix = $qa->get_qt_field_name('');
             $inputname = $qprefix . 'p' . ($place);
             $checked = null;
+            $icon = "";
             if (array_key_exists('p' . ($place), $response)) {
                 $checked = 'checked=true';
+                foreach ($question->correctplaces as $key => $correctplace) {
+                    if ($place == $correctplace) {
+                        $icon = $this->feedback_image(1);
+                    }
+                }
+                if ($icon == "") {
+                    $icon = $this->feedback_image(0);
+                }
             }
             /* put any paragraph tags outside the label */
             if (strncmp('<p>', $value, 3) === 0) {
                 $value = substr($value, 3);
                 $output.='<p>';
             }
-            $output.="<input hidden=true " . $checked . " type='checkbox' name=" . $inputname . " id=" . $inputname . "></input>";
-            $output.="<label for=" . $inputname . ">" . $value . "</label>";
+
+            $readonly="";
+             /* When previewing after a quiz is complete */
+        if ($options->readonly) {
+            $readonly = array('disabled' => 'true');
+            //$inputattributes = array_merge($inputattributes, $readonly);
+            $readonly=" disabled='true' ";
+        }
+            $output.="<input hidden=true " . $checked . " type='checkbox' name=" . $inputname .$readonly. " id=" . $inputname . "></input>";
+            $output.="<label for=" . $inputname . ">" . $value . $icon . "</label>";
         }
         $output.="</div>";
         return $output;
