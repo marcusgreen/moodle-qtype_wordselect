@@ -37,6 +37,9 @@ require_once('Kint/Kint.class.php');
  */
 class qtype_wordselect_question extends question_graded_automatically_with_countback {
 
+    public $markedselections = array();
+    public $correctplaces=array();
+
     public function compare_response_with_answer(array $response, question_answer $answer) {
         
     }
@@ -52,7 +55,8 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     public function is_gradable_response(array $response) {
         return true;
     }
-    /**
+
+     /**
      * The text with delimiters removed so the user cannot see
      * which words are the ones that should be selected. So The cow [jumped]
      * becomes The cow jumped
@@ -64,6 +68,21 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $allwords = preg_split('/[\s\n]/', $questiontextnodelim);
         return $allwords;
     }
+
+    public function get_correct_places() {
+        $allwords = preg_split('/[\s\n]/', $this->questiontext);
+        //$l = substr($question->delimitchars, 0, 1);
+        // $r = substr($question->delimitchars, 1, 1);
+        $l = '[';
+        $r = ']';
+        foreach ($allwords as $key => $word) {
+            $regex = '/\\' . $l . '.*\\' . $r . '/';
+            if (preg_match($regex, $word)) {
+                $this->correctplaces[] = $key;
+            }
+        }
+    }
+
 
     /**
      * Return an array of the question type variables that could be submitted
@@ -113,9 +132,9 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return array();
     }
 
-    public function check_file_access($qa, $options, $component, $filearea, $args, $forcedownload) {        
-            // TODO
-        }
+    public function check_file_access($qa, $options, $component, $filearea, $args, $forcedownload) {
+        // TODO
+    }
 
     /**
      * @param array $response responses, as returned by
@@ -124,9 +143,9 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      */
     public function grade_response(array $response) {
         $right = 0;
-        print "grade response";
         $allwords = $this->get_all_words();
-
+        
+        $responsewords=array();
         foreach ($response as $index => $value) {
             //TODO change 99 to length of string
             $responsewords[substr($index, 1, 99)] = $allwords[substr($index, 1, 99)];
@@ -139,14 +158,18 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
                     $found = true;
                 }
             }
+
             if ($found == true) {
                 $right++;
+                $this->markedselections[$key]['word'] = $responsewords[$key];
+                $markedselections[$key]['fraction'] = 1;
             } else {
                 $right--;
+                $this->markedselections[$key]['word'] = $responsewords[$key];
+                $this->markedselections[$key]['fraction'] = 0;
             }
             $found = false;
         }
-
         if ($right < 0) {
             $right = 0;
         }
