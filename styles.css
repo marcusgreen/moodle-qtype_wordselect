@@ -1,6 +1,4 @@
 .que.wordselect .selectable  input[type="checkbox"]:checked+label{
-   padding-left:0.1em;
-    padding-right:0.1em;
     background: #cee0f4;
     border-radius:0.25em;
     background-color:#CBCFD4;
@@ -14,7 +12,13 @@
     display:inline;
 }
 
+.que.wordselect checkbox{
+    float:right;
+}
 .que.wordselect label{
     float:left;
+    padding-right:2px;
+    padding-left:2px;
+
 }
 
