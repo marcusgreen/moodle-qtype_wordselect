@@ -24,13 +24,9 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 $string['pluginname'] = 'wordselect';
-$string['pluginname_help'] = 'Create a cloze question type with embedded response fields in the question text to enter a numeric
-or text value or select a value from a number of options.';
+$string['pluginname_help'] = 'Select words from text.';
 $string['pluginname_link'] = 'question/type/wordselect';
 $string['pluginnameadding'] = 'Adding a wordselect question';
 $string['pluginnameediting'] = 'Editing a wordselect question';
-$string['pluginnamesummary'] = 'A wordselect question type which allows the embedding of the response fields for various available
-sub questions in the question text.
-
-So the student can enter a numeric or short text answer or choose an answer or answer(s) from
- using a select box, check boxes or radio boxes.';
+$string['pluginnamesummary'] = 'All words can be selected by clicking on them. Correct words are defined by surrounding '
+        . 'with dlimiters e.g. The cat [sat] on the mat';
