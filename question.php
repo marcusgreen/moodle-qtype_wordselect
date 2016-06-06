@@ -26,7 +26,7 @@
  */
 defined('MOODLE_INTERNAL') || die();
 
-require_once('Kint/Kint.class.php');
+//require_once('Kint/Kint.class.php');
 
 /**
  * Represents a wordselect question.
