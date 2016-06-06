@@ -25,16 +25,15 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die();
-require_once('Kint/Kint.class.php');
+//require_once('Kint/Kint.class.php');
 
 /**
  * Generates the output for wordselect questions.
  *
- * @copyright  THEYEAR YOURNAME (YOURCONTACTINFO)
+ * @copyright  2016 Marcus Green
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-require_once('Kint/Kint.class.php');
 
 class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
 
@@ -43,7 +42,6 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         $question = $qa->get_question();
         $response = $qa->get_last_qt_data();
         $question->get_correct_places();
-
 
         $output = $question->introduction;
         $output .= '<div class="selectable">';
