@@ -54,8 +54,8 @@ class qtype_wordselect_edit_form extends question_edit_form {
 
         // The delimiting characters around fields.
         $delimitchars = array("[]" => "[ ]", "{}" => "{ }", "##" => "##", "@@" => "@ @");
-        $mform->addElement('select', 'delimitchars', get_string('delimitchars', 'qtype_textselect'), $delimitchars);
-        $mform->addHelpButton('delimitchars', 'delimitchars', 'qtype_textselect');
+        $mform->addElement('select', 'delimitchars', get_string('delimitchars', 'qtype_wordselect'), $delimitchars);
+        $mform->addHelpButton('delimitchars', 'delimitchars', 'qtype_wordselect');
        
         // To add combined feedback (correct, partial and incorrect).
         $this->add_combined_feedback_fields(true);
