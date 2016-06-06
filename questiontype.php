@@ -209,7 +209,6 @@ class qtype_wordselect extends question_type {
     protected function initialise_question_instance(question_definition $question, $questiondata) {
         // TODO.
         parent::initialise_question_instance($question, $questiondata);
-        /* not in template */
         $this->initialise_question_answers($question, $questiondata);
         
     }
@@ -241,6 +240,31 @@ class qtype_wordselect extends question_type {
         }
     }
 
+    public function import_from_xml($data, $question, qformat_xml $format, $extra = null) {
+        if (!isset($data['@']['type']) || $data['@']['type'] != 'wordselect') {
+            return false;
+        }
+        $question = parent::import_from_xml($data, $question, $format, null);
+        $format->import_combined_feedback($question, $data, true);
+        $format->import_hints($question, $data, true, false, $format->get_format($question->questiontextformat));
+        return $question;
+    }
+    public function export_to_xml($question, qformat_xml $format, $extra = null) {
+        global $CFG;
+        $pluginmanager = core_plugin_manager::instance();
+        $wordselectinfo = $pluginmanager->get_plugin_info('qtype_wordselect');
+        $output = parent::export_to_xml($question, $format);
+        $output .= '    <delimitchars>' . $question->options->delimitchars .
+                "</delimitchars>\n";
+        $output .= '    <!-- Wordselect release:'
+                .$wordselectinfo->release .' version:'.$wordselectinfo->versiondisk .' Moodle version:'
+                .$CFG->version .' release:'.$CFG->release
+                ." -->\n";
+        $output .= $format->write_combined_feedback($question->options, $question->id, $question->contextid);
+        return $output;
+    }
+
+    
     public function get_random_guess_score($questiondata) {
         // TODO.
         return 0;
