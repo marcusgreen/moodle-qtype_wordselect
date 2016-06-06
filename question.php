@@ -31,7 +31,7 @@ require_once('Kint/Kint.class.php');
 /**
  * Represents a wordselect question.
  *
- * @copyright  2017 Marcus Green 
+ * @copyright  2016 Marcus Green 
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -39,6 +39,11 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
 
     public $markedselections = array();
     public $correctplaces=array();
+    
+    /* the characters indicating a field to fill i.e. [cat] creates
+     * a field where the correct answer is cat
+     */
+    public $delimitchars = "[]";
 
     public function compare_response_with_answer(array $response, question_answer $answer) {
         
@@ -71,10 +76,8 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
 
     public function get_correct_places() {
         $allwords = preg_split('/[\s\n]/', $this->questiontext);
-        //$l = substr($question->delimitchars, 0, 1);
-        // $r = substr($question->delimitchars, 1, 1);
-        $l = '[';
-        $r = ']';
+        $l = substr($this->delimitchars, 0, 1);
+        $r = substr($this->delimitchars, 1, 1);
         foreach ($allwords as $key => $word) {
             $regex = '/\\' . $l . '.*\\' . $r . '/';
             if (preg_match($regex, $word)) {
