@@ -20,7 +20,7 @@
  *
  * @package    qtype
  * @subpackage wordselect
- * @copyright  THEYEAR YOURNAME (YOURCONTACTINFO)
+ * @copyright  Marcus Green 2016
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -34,7 +34,6 @@ defined('MOODLE_INTERNAL') || die();
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
 
     public function formulation_and_controls(question_attempt $qa, question_display_options $options) {
@@ -45,7 +44,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
 
         $output = $question->introduction;
         $output .= '<div class="selectable">';
-        foreach ($question->get_all_words() as $place => $value) {
+        foreach ($question->get_words() as $place => $value) {
             $qprefix = $qa->get_qt_field_name('');
             $inputname = $qprefix . 'p' . ($place);
             $checked = null;
@@ -61,21 +60,21 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                     $icon = $this->feedback_image(0);
                 }
             }
-            /* put any paragraph tags outside the label */
-            if (strncmp('<p>', $value, 3) === 0) {
-                $value = substr($value, 3);
-                $output.='<p>';
-            }
 
-            $readonly="";
-             /* When previewing after a quiz is complete */
-        if ($options->readonly) {
-            $readonly = array('disabled' => 'true');
-            //$inputattributes = array_merge($inputattributes, $readonly);
-            $readonly=" disabled='true' ";
-        }
-            $output.="<input hidden=true " . $checked . " type='checkbox' name=" . $inputname .$readonly. " id=" . $inputname . "></input>";
-            $output.="<label for=" . $inputname . ">" . $value . $icon . "</label>";
+            $readonly = "";
+            /* When previewing after a quiz is complete */
+            if ($options->readonly) {
+                $readonly = array('disabled' => 'true');
+                $readonly = " disabled='true' ";
+            }
+           
+            $regex= '/'.$value.'/';
+            if (@preg_match($regex,$question->selectable)){
+                $output.="<input hidden=true " . $checked . " type='checkbox' name=" . $inputname . $readonly . " id=" . $inputname . "></input>";
+                $output.="<label for=" . $inputname . ">" . $value . $icon . "</label>";
+            } else {
+                $output.=' '.$value;
+            }
         }
         $output.="</div>";
         return $output;
