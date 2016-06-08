@@ -20,7 +20,7 @@
  *
  * @package    qtype
  * @subpackage wordselect
- * @copyright  THEYEAR YOURNAME (YOURCONTACTINFO)
+ * @copyright  Marcus Green 2016)
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -38,8 +38,8 @@ defined('MOODLE_INTERNAL') || die();
 class qtype_wordselect_question extends question_graded_automatically_with_countback {
 
     public $markedselections = array();
-    public $correctplaces=array();
-    
+    public $correctplaces = array();
+    public $selectable = array();
     /* the characters indicating a field to fill i.e. [cat] creates
      * a field where the correct answer is cat
      */
@@ -61,21 +61,35 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return true;
     }
 
-     /**
+    /**
      * The text with delimiters removed so the user cannot see
      * which words are the ones that should be selected. So The cow [jumped]
      * becomes The cow jumped
      */
-    public function get_all_words() {
+    public function get_words() {
         $questiontextnodelim = $this->questiontext;
-        $questiontextnodelim = preg_replace('/\[/', '', $questiontextnodelim);
-        $questiontextnodelim = preg_replace('/\]/', '', $questiontextnodelim);
+        $l = substr($this->delimitchars, 0, 1);
+        $r = substr($this->delimitchars, 1, 1);
+        $text=$this->get_questiontext_exploded();
+        $questiontextnodelim = preg_replace('/\\' . $l . '/', '', $text);
+        $questiontextnodelim = preg_replace('/\\' . $r . '/', '', $questiontextnodelim);
+        $this->selectable = strip_tags($questiontextnodelim);
         $allwords = preg_split('/[\s\n]/', $questiontextnodelim);
         return $allwords;
     }
+    
+   public function get_questiontext_exploded(){
+        //put a space before and after tags so they get split as words
+      //  $text = str_replace('<p>', ' <p> ', $this->questiontext);
+        $text = str_replace('>', '> ', $this->questiontext);
+        $text = str_replace('<', ' <', $text);
+        return $text;
+    }
 
     public function get_correct_places() {
-        $allwords = preg_split('/[\s\n]/', $this->questiontext);
+        $text=$this->get_questiontext_exploded();
+        $allwords = preg_split('/[\s\n]/', $text);
+        //$allwords = $this->get_all_words();
         $l = substr($this->delimitchars, 0, 1);
         $r = substr($this->delimitchars, 1, 1);
         foreach ($allwords as $key => $word) {
@@ -86,7 +100,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         }
     }
 
-
     /**
      * Return an array of the question type variables that could be submitted
      * as part of a question of this type, with their types, so they can be
@@ -94,7 +107,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * @return array variable name => PARAM_... constant.
      */
     public function get_expected_data() {
-        $wordcount = sizeof($this->get_all_words());
+        $wordcount = sizeof($this->get_words());
         for ($key = 0; $key < $wordcount; $key++) {
             $data['p' . $key] = PARAM_RAW_TRIMMED;
         }
@@ -146,17 +159,23 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      */
     public function grade_response(array $response) {
         $right = 0;
-        $allwords = $this->get_all_words();
+        $allwords = $this->get_words();
         
-        $responsewords=array();
+       
+
+        $responsewords = array();
         foreach ($response as $index => $value) {
             //TODO change 99 to length of string
             $responsewords[substr($index, 1, 99)] = $allwords[substr($index, 1, 99)];
         }
+
+ 
+
         $right = 0;
         $found = false;
         foreach ($responsewords as $key => $response) {
             foreach ($this->answers as $answer) {
+            
                 if ($answer->answer === $response) {
                     $found = true;
                 }
