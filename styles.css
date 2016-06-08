@@ -12,10 +12,10 @@
     display:inline;
 }
 
-.que.wordselect checkbox{
-    float:right;
+.que.wordselect{
 }
-.que.wordselect label{
+
+.que.wordselect p label{
     float:left;
     padding-right:2px;
     padding-left:2px;
