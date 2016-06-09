@@ -10,9 +10,23 @@
     background-origin: padding-box;
     background-size: auto auto;
     display:inline;
+    cursor: pointer;
 }
-
-.que.wordselect{
+.que.wordselect .selectable{
+    cursor:pointer;
+}
+.que.wordselect .selected{
+        background: #cee0f4;
+    border-radius:0.25em;
+    background-color:#CBCFD4;
+    background-image: none;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+    display:inline;
 }
 
 .que.wordselect p label{

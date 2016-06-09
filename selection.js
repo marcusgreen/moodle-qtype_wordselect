@@ -27,10 +27,15 @@ $(function () {                       //run when the DOM is ready
 
     $(".selectable").on("click", function () {
         iselected = $(this).hasClass("selected");
+        wordname = $(this).attr('name');
+        mycheckbox= document.getElementById(wordname);
         if (iselected==true){
             $(this).removeClass("selected");
-        } else {
+            $(mycheckbox).removeAttr('checked');
+
+        } else {        
             $(this).addClass("selected");
+            $(mycheckbox).prop("checked",'true');
         }
     });
 });

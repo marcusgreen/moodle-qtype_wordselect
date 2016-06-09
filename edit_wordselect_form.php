@@ -57,11 +57,12 @@ class qtype_wordselect_edit_form extends question_edit_form {
         $mform->addElement('select', 'delimitchars', get_string('delimitchars', 'qtype_wordselect'), $delimitchars);
         $mform->addHelpButton('delimitchars', 'delimitchars', 'qtype_wordselect');
        
+        
         // To add combined feedback (correct, partial and incorrect).
-        $this->add_combined_feedback_fields(true);
+       // $this->add_combined_feedback_fields(true);
 
         // Adds hinting features.
-        $this->add_interactive_settings(true, true);
+      //  $this->add_interactive_settings(true, true);
     }
 
     public function set_data($question) {

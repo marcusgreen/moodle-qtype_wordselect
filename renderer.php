@@ -39,11 +39,14 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
     public function formulation_and_controls(question_attempt $qa, question_display_options $options) {
         global $PAGE;
         $question = $qa->get_question();
+        $PAGE->requires->js('/question/type/wordselect/selection.js');
+
         $response = $qa->get_last_qt_data();
         $question->get_correct_places();
 
         $output = $question->introduction;
-        $output .= '<div class="selectable">';
+        $output .= '<div class="selectable" >';
+        
         foreach ($question->get_words() as $place => $value) {
             $qprefix = $qa->get_qt_field_name('');
             $inputname = $qprefix . 'p' . ($place);
@@ -67,17 +70,29 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 $readonly = array('disabled' => 'true');
                 $readonly = " disabled='true' ";
             }
-           
+             //$output.='<input name="fname" type=checkbox id='.$counter.'><span class="selectable">' . $word . '</span>&nbsp;</input>';
+
+            $regex= '/'.$value.'/';
+            if (@preg_match($regex,$question->selectable)){
+        $output.='<input hidden=true ' . $checked . ' type="checkbox" name=' . $inputname . $readonly . ' id='.$inputname.'><span name='.$inputname.' class=selectable> '.$value.$icon.'</span></input>';
+               // $output.="<label for=" . $inputname . ">" . $value . $icon . "</label>";
+            } else {
+                $output.=' '.$value;
+            }
+            /*
             $regex= '/'.$value.'/';
             if (@preg_match($regex,$question->selectable)){
                 $output.="<input hidden=true " . $checked . " type='checkbox' name=" . $inputname . $readonly . " id=" . $inputname . "></input>";
                 $output.="<label for=" . $inputname . ">" . $value . $icon . "</label>";
             } else {
                 $output.=' '.$value;
-            }
+            }*/
         }
         $output.="</div>";
         return $output;
     }
+    protected function specific_feedback(question_attempt $qa) {
+              return $this->combined_feedback($qa);
+        }
 
 }

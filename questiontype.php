@@ -39,8 +39,9 @@ require_once($CFG->dirroot . '/question/type/wordselect/question.php');
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class qtype_wordselect extends question_type {
+    
+    
     /* data used by export_to_xml (among other things possibly */
-
     public function extra_question_fields() {
         return array('question_wordselect', 'introduction', 'delimitchars');
     }
@@ -76,7 +77,7 @@ class qtype_wordselect extends question_type {
          * */
 
         $answerwords = $this->get_answerwords($question->delimitchars, $question->questiontext);
-      
+
         global $DB;
 
         $context = $question->context;
@@ -114,7 +115,6 @@ class qtype_wordselect extends question_type {
         return $delimitarray;
     }
 
-    
     /**
      * Set up all the answer fields with respective fraction (mark values)
      * This is used to update the question_answers table. Answerwords has
@@ -145,7 +145,7 @@ class qtype_wordselect extends question_type {
                 }
             }
         }
-         /* the rest of this function runs when saving from edit form */
+        /* the rest of this function runs when saving from edit form */
         if (!property_exists($question, 'answer')) {
             foreach ($answerwords as $key => $value) {
                 $answerfields[$key]['value'] = $value;
@@ -154,8 +154,6 @@ class qtype_wordselect extends question_type {
         }
         return $answerfields;
     }
-    
-  
 
     public function update_question_answers($question, array $answerwords) {
         global $DB;
@@ -186,7 +184,6 @@ class qtype_wordselect extends question_type {
     }
 
     /* runs from question editing form */
-
     public function update_question_wordselect($question, $options, $context) {
         global $DB;
         $options = $DB->get_record('question_wordselect', array('questionid' => $question->id));
@@ -206,18 +203,27 @@ class qtype_wordselect extends question_type {
         $DB->update_record('question_wordselect', $options);
     }
 
-    protected function initialise_question_instance(question_definition $question, $questiondata) {
-        // TODO.
-        parent::initialise_question_instance($question, $questiondata);
-        $this->initialise_question_answers($question, $questiondata);
-        
+   /* populates fields such as combined feedback */
+   public function get_question_options($question) {
+       global $DB;
+       $question->options = $DB->get_record('question_wordselect',
+               array('questionid' => $question->id), '*', MUST_EXIST);
+       parent::get_question_options($question);
     }
+
+    
+    protected function initialise_question_instance(question_definition $question, $questiondata) {
+        parent::initialise_question_instance($question, $questiondata);        
+        $this->initialise_question_answers($question, $questiondata);
+        parent::initialise_combined_feedback($question, $questiondata);
+    }
+
     protected function initialise_question_answers(question_definition $question, $questiondata, $forceplaintextanswers = true) {
-       
-    //    $question->allwords = array();
+        
         if (empty($questiondata->options->answers)) {
             return;
         }
+
         foreach ($questiondata->options->answers as $a) {
             if (strstr($a->fraction, '1') == false) {
                 /* if this is a wronganswer/distractor strip any
@@ -227,8 +233,8 @@ class qtype_wordselect extends question_type {
                  */
                 $a->answer = stripslashes($a->answer);
             }
-           // array_push($question->allwords, $a->answer);
-         
+            // array_push($question->allwords, $a->answer);
+
             /* answer in this context means correct answers, i.e. where
              * fraction contains a 1 */
             if (strpos($a->fraction, '1') !== false) {
@@ -249,6 +255,7 @@ class qtype_wordselect extends question_type {
         $format->import_hints($question, $data, true, false, $format->get_format($question->questiontextformat));
         return $question;
     }
+
     public function export_to_xml($question, qformat_xml $format, $extra = null) {
         global $CFG;
         $pluginmanager = core_plugin_manager::instance();
@@ -257,14 +264,13 @@ class qtype_wordselect extends question_type {
         $output .= '    <delimitchars>' . $question->options->delimitchars .
                 "</delimitchars>\n";
         $output .= '    <!-- Wordselect release:'
-                .$wordselectinfo->release .' version:'.$wordselectinfo->versiondisk .' Moodle version:'
-                .$CFG->version .' release:'.$CFG->release
-                ." -->\n";
+                . $wordselectinfo->release . ' version:' . $wordselectinfo->versiondisk . ' Moodle version:'
+                . $CFG->version . ' release:' . $CFG->release
+                . " -->\n";
         $output .= $format->write_combined_feedback($question->options, $question->id, $question->contextid);
         return $output;
     }
 
-    
     public function get_random_guess_score($questiondata) {
         // TODO.
         return 0;
