@@ -45,15 +45,15 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         $question->get_correct_places();
 
         $output = $question->introduction;
-        $output .= '<div class="selectable" >';
-        
         foreach ($question->get_words() as $place => $value) {
             $qprefix = $qa->get_qt_field_name('');
             $inputname = $qprefix . 'p' . ($place);
             $checked = null;
             $icon = "";
+            $class=' class=selectable ';
             if (array_key_exists('p' . ($place), $response)) {
                 $checked = 'checked=true';
+                $class=' class=selected';
                 foreach ($question->correctplaces as $key => $correctplace) {
                     if ($place == $correctplace) {
                         $icon = $this->feedback_image(1);
@@ -67,28 +67,19 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             $readonly = "";
             /* When previewing after a quiz is complete */
             if ($options->readonly) {
-                $readonly = array('disabled' => 'true');
+               // $readonly = array('disabled' => 'true');
                 $readonly = " disabled='true' ";
             }
-             //$output.='<input name="fname" type=checkbox id='.$counter.'><span class="selectable">' . $word . '</span>&nbsp;</input>';
 
             $regex= '/'.$value.'/';
             if (@preg_match($regex,$question->selectable)){
-        $output.='<input hidden=true ' . $checked . ' type="checkbox" name=' . $inputname . $readonly . ' id='.$inputname.'><span name='.$inputname.' class=selectable> '.$value.$icon.'</span></input>';
-               // $output.="<label for=" . $inputname . ">" . $value . $icon . "</label>";
+        $output.='<input hidden=true ' . $checked . ' type="checkbox" name=' . $inputname . $readonly . ' id='.$inputname.'>';
+        $output .='<span name='.$inputname.$class.'> '.$value.$icon.'</span></input>';
             } else {
                 $output.=' '.$value;
             }
-            /*
-            $regex= '/'.$value.'/';
-            if (@preg_match($regex,$question->selectable)){
-                $output.="<input hidden=true " . $checked . " type='checkbox' name=" . $inputname . $readonly . " id=" . $inputname . "></input>";
-                $output.="<label for=" . $inputname . ">" . $value . $icon . "</label>";
-            } else {
-                $output.=' '.$value;
-            }*/
+
         }
-        $output.="</div>";
         return $output;
     }
     protected function specific_feedback(question_attempt $qa) {

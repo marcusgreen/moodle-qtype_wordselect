@@ -21,21 +21,21 @@
  * @copyright  2012 Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-/* This should be called script.js and go through the Moodle minify process but that seems to break it */
 
-$(function () {                       //run when the DOM is ready
-
+$(function () {       
     $(".selectable").on("click", function () {
         iselected = $(this).hasClass("selected");
         wordname = $(this).attr('name');
-        mycheckbox= document.getElementById(wordname);
-        if (iselected==true){
+        checkbox = document.getElementById(wordname);
+        if (checkbox==null || checkbox.disabled == true) {
+            return;
+        }
+        if (iselected == true) {
             $(this).removeClass("selected");
-            $(mycheckbox).removeAttr('checked');
-
-        } else {        
+            $(checkbox).removeAttr('checked');
+        } else {
             $(this).addClass("selected");
-            $(mycheckbox).prop("checked",'true');
+            $(checkbox).prop("checked", 'true');
         }
     });
 });
