@@ -42,8 +42,8 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         $PAGE->requires->js('/question/type/wordselect/selection.js');
 
         $response = $qa->get_last_qt_data();
-        $question->get_correct_places();
-
+        $question->get_correct_places($question->questiontext,$question->delimitchars);
+        $correctplaces= qtype_wordselect_question::get_correct_places($question->questiontext, $question->delimitchars);
         $output = $question->introduction;
         foreach ($question->get_words() as $place => $value) {
             $qprefix = $qa->get_qt_field_name('');
@@ -54,7 +54,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             if (array_key_exists('p' . ($place), $response)) {
                 $checked = 'checked=true';
                 $class=' class=selected';
-                foreach ($question->correctplaces as $key => $correctplace) {
+                foreach ($correctplaces as $key => $correctplace) {
                     if ($place == $correctplace) {
                         $icon = $this->feedback_image(1);
                     }

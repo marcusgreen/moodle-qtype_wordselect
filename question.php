@@ -38,7 +38,6 @@ defined('MOODLE_INTERNAL') || die();
 class qtype_wordselect_question extends question_graded_automatically_with_countback {
 
     public $markedselections = array();
-    public $correctplaces = array();
     public $selectable = array();
     
      
@@ -72,7 +71,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $questiontextnodelim = $this->questiontext;
         $l = substr($this->delimitchars, 0, 1);
         $r = substr($this->delimitchars, 1, 1);
-        $text = $this->get_questiontext_exploded();
+        $text = $this->get_questiontext_exploded($this->questiontext);
         $questiontextnodelim = preg_replace('/\\' . $l . '/', '', $text);
         $questiontextnodelim = preg_replace('/\\' . $r . '/', '', $questiontextnodelim);
         $this->selectable = strip_tags($questiontextnodelim);
@@ -80,26 +79,27 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return $allwords;
     }
 
-    public function get_questiontext_exploded() {
+    public static function get_questiontext_exploded($questiontext) {
         //put a space before and after tags so they get split as words
         //  $text = str_replace('<p>', ' <p> ', $this->questiontext);
-        $text = str_replace('>', '> ', $this->questiontext);
+        $text = str_replace('>', '> ', $questiontext);
         $text = str_replace('<', ' <', $text);
         return $text;
     }
 
-    public function get_correct_places() {
-        $text = $this->get_questiontext_exploded();
+    public static function get_correct_places($questiontext,$delimitchars) {
+        $correctplaces=array();
+        $text =qtype_wordselect_question::get_questiontext_exploded($questiontext);
         $allwords = preg_split('/[\s\n]/', $text);
-        $l = substr($this->delimitchars, 0, 1);
-        $r = substr($this->delimitchars, 1, 1);
+        $l = substr($delimitchars, 0, 1);
+        $r = substr($delimitchars, 1, 1);
         foreach ($allwords as $key => $word) {
             $regex = '/\\' . $l . '.*\\' . $r . '/';
             if (preg_match($regex, $word)) {
-                $this->correctplaces[] = $key;
+                $correctplacess[] = $key;
             }
         }
-        return $this->correctplaces;
+        return $correctplaces;
     }
 
     /**
@@ -147,7 +147,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
 
     public function get_correct_response() {
         $response = array();
-        foreach ($this->get_correct_places() as $t) {
+        foreach ($this->get_correct_places($this->questiontext,$this->delimitchars) as $t) {
             $response['p' . $t] = 'on';
         }
         return $response;

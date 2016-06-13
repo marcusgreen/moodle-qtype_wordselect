@@ -32,5 +32,5 @@ $string['pluginnamesummary'] = 'All words can be selected by clicking on them. C
         . 'with dlimiters e.g. The cat [sat] on the mat';#
 $string['delimitchars'] = 'Delimit characters';
 $string['delimitchars_help'] = 'Change the characters that delimit a field from the default [ ], useful for programming language questions';
-
+$string['nowordsdefined']='No words to select have been defined ';
 

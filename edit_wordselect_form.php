@@ -81,6 +81,20 @@ class qtype_wordselect_edit_form extends question_edit_form {
             return "";
         }
     }
+     public function validation($fromform, $data) {
+        $errors = array();
+        /* don't save the form if there are no fields defined */
+        $correctplaces = qtype_wordselect_question::get_correct_places($fromform['questiontext']['text'],$fromform['delimitchars']);
+        if (count($correctplaces) == 0) {
+            $errors['questiontext'] = get_string('nowordsdefined','qtype_wordselect');
+        }
+        if ($errors) {
+            return $errors;
+        } else {
+            return true;
+        }
+        return $errors;
+    }
 
     protected function data_preprocessing($question) {
         $question = parent::data_preprocessing($question);
