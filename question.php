@@ -41,12 +41,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     public $correctplaces = array();
     public $selectable = array();
     
-     /**
-     *
-     * @var string
-     */
-   
-    
+     
     /* the characters indicating a field to fill i.e. [cat] creates
      * a field where the correct answer is cat
      */
@@ -96,7 +91,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     public function get_correct_places() {
         $text = $this->get_questiontext_exploded();
         $allwords = preg_split('/[\s\n]/', $text);
-        //$allwords = $this->get_all_words();
         $l = substr($this->delimitchars, 0, 1);
         $r = substr($this->delimitchars, 1, 1);
         foreach ($allwords as $key => $word) {

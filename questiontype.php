@@ -70,23 +70,22 @@ class qtype_wordselect extends question_type {
         $this->delete_files_in_hints($questionid, $contextid);
     }
 
-    public function save_question_options($question) {
+    public function save_question_options($formdata) {
         /* Save the extra data to your database tables from the
-          $question object, which has all the post data from editquestion.html
-          although it is called question it seems to actually be the form
+          $formdata object, which has all the post data from editformdata.html
          * */
 
-        $answerwords = $this->get_answerwords($question->delimitchars, $question->questiontext);
+        $answerwords = $this->get_answerwords($formdata->delimitchars, $formdata->questiontext);
 
         global $DB;
 
-        $context = $question->context;
+        $context = $formdata->context;
         // Fetch old answer ids so that we can reuse them.
-        $this->update_question_answers($question, $answerwords);
+        $this->update_question_answers($formdata, $answerwords);
 
-        $options = $DB->get_record('question_wordselect', array('questionid' => $question->id));
-        $this->update_question_wordselect($question, $options, $context);
-        $this->save_hints($question, true);
+        $options = $DB->get_record('question_wordselect', array('questionid' => $formdata->id));
+        $this->update_question_wordselect($formdata, $options, $context);
+        $this->save_hints($formdata, true);
         return true;
     }
 
@@ -184,22 +183,25 @@ class qtype_wordselect extends question_type {
     }
 
     /* runs from question editing form */
-    public function update_question_wordselect($question, $options, $context) {
+    public function update_question_wordselect($formdata, $options, $context) {
+        /* question is actually formdata */
         global $DB;
-        $options = $DB->get_record('question_wordselect', array('questionid' => $question->id));
+        $options = $DB->get_record('question_wordselect', array('questionid' => $formdata->id));
         if (!$options) {
             $options = new stdClass();
-            $options->questionid = $question->id;
+            $options->questionid = $formdata->id;
             $options->introduction = '';
             $options->delimitchars = '';
             $options->correctfeedback = '';
             $options->partiallycorrectfeedback = '';
             $options->incorrectfeedback = '';
+            $options->incorrectfeedback = '';
             $options->id = $DB->insert_record('question_wordselect', $options);
         }
-        $options->introduction = $question->introduction['text'];
-        $options->delimitchars = $question->delimitchars;
-        $options = $this->save_combined_feedback_helper($options, $question, $context, true);
+        $options->introduction = $formdata->introduction['text'];
+        $options->delimitchars = $formdata->delimitchars;
+        $options->correctfeedback="elephant";
+        $options = $this->save_combined_feedback_helper($options, $formdata, $context, true);
         $DB->update_record('question_wordselect', $options);
     }
 

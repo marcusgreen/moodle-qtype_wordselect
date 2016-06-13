@@ -74,7 +74,8 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             $regex= '/'.$value.'/';
             if (@preg_match($regex,$question->selectable)){
         $output.='<input hidden=true ' . $checked . ' type="checkbox" name=' . $inputname . $readonly . ' id='.$inputname.'>';
-        $output .='<span name='.$inputname.$class.'> '.$value.$icon.'</span></input>';
+        $output .='<span name='.$inputname.$class.'>'.$value.$icon.'</span></input>';
+        $output.=' ';
             } else {
                 $output.=' '.$value;
             }
