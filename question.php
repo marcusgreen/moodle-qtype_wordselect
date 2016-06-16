@@ -96,7 +96,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         foreach ($allwords as $key => $word) {
             $regex = '/\\' . $l . '.*\\' . $r . '/';
             if (preg_match($regex, $word)) {
-                $correctplacess[] = $key;
+                $correctplaces[] = $key;
             }
         }
         return $correctplaces;
