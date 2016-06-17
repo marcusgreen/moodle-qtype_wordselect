@@ -26,8 +26,6 @@
  */
 defined('MOODLE_INTERNAL') || die();
 
-//require_once('Kint/Kint.class.php');
-
 /**
  * Represents a wordselect question.
  *
@@ -116,8 +114,18 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return $data;
     }
 
+   /**
+    * @param array $response
+    * @return string
+    * summary of response shown in the responses report
+    */
     public function summarise_response(array $response) {
-        
+        $summary = '';
+        $allwords=$this->get_words();
+        foreach ($response as $index => $value){         
+              $summary .= " ".$allwords[substr($index, 1)]." ";
+        }
+        return $summary;
     }
 
     public function is_complete_response(array $response) {
@@ -153,9 +161,23 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return $response;
     }
 
-    public function check_file_access($qa, $options, $component, $filearea, $args, $forcedownload) {
-        // TODO
+          public function check_file_access($qa, $options, $component, $filearea,
+            $args, $forcedownload) {
+        if ($component == 'question' && $filearea == 'answerfeedback') {
+            $currentanswer = $qa->get_last_qt_var('answer');
+            $answer = $this->get_matching_answer(array('answer' => $currentanswer));
+            $answerid = reset($args); // Itemid is answer id.
+            return $options->feedback && $answer && $answerid == $answer->id;
+
+        } else if ($component == 'question' && $filearea == 'hint') {
+            return $this->check_hint_file_access($qa, $options, $args);
+
+        } else {
+            return parent::check_file_access($qa, $options, $component, $filearea,
+                    $args, $forcedownload);
+        }
     }
+    
 
     /**
      * @param array $response responses, as returned by
@@ -166,16 +188,11 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
 
         $right = 0;
         $allwords = $this->get_words();
-
-
-
         $responsewords = array();
         foreach ($response as $index => $value) {
             //TODO change 99 to length of string
             $responsewords[substr($index, 1, 99)] = $allwords[substr($index, 1, 99)];
         }
-
-
 
         $right = 0;
         $found = false;
@@ -210,5 +227,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         // TODO.
         return 0;
     }
+        
 
 }
