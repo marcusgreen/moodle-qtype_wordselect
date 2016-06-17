@@ -1,8 +1,11 @@
+.que.wordselect .wordselect{    
+}
 .que.wordselect .selectable{
     cursor:pointer;
     padding-left:1px;
     padding-right:1px;
 }
+
 .que.wordselect .selected{
     background: #cee0f4;
     border-radius:0.25em;
