@@ -71,14 +71,13 @@ class qtype_wordselect extends question_type {
     }
 
     public function save_question_options($formdata) {
+        global $DB;
+
         /* Save the extra data to your database tables from the
           $formdata object, which has all the post data from editformdata.html
          * */
 
         $answerwords = $this->get_answerwords($formdata->delimitchars, $formdata->questiontext);
-
-        global $DB;
-
         $context = $formdata->context;
         // Fetch old answer ids so that we can reuse them.
         $this->update_question_answers($formdata, $answerwords);
@@ -198,9 +197,15 @@ class qtype_wordselect extends question_type {
             $options->incorrectfeedback = '';
             $options->id = $DB->insert_record('question_wordselect', $options);
         }
-        $options->introduction = $formdata->introduction['text'];
+        /* when coming in from form */
+        if(is_array($formdata->introduction)){
+            $options->introduction=$formdata->introduction['text'];
+        }else{
+            /* when being imported e.g. from an xml import */
+            $options->introduction=$formdata->introduction;
+        }
         $options->delimitchars = $formdata->delimitchars;
-        $options->correctfeedback="elephant";
+        $options->correctfeedback="";
         $options = $this->save_combined_feedback_helper($options, $formdata, $context, true);
         $DB->update_record('question_wordselect', $options);
     }
