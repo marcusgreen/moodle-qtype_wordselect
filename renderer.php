@@ -40,51 +40,63 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         global $PAGE;
         $question = $qa->get_question();
         $PAGE->requires->js('/question/type/wordselect/selection.js');
-
         $response = $qa->get_last_qt_data();
-        $question->get_correct_places($question->questiontext,$question->delimitchars);
-        $correctplaces= qtype_wordselect_question::get_correct_places($question->questiontext, $question->delimitchars);
+        $correctplaces = $question->get_correct_places($question->questiontext, $question->delimitchars);
         $output = $question->introduction;
+
         foreach ($question->get_words() as $place => $value) {
             $qprefix = $qa->get_qt_field_name('');
             $inputname = $qprefix . 'p' . ($place);
             $checked = null;
             $icon = "";
-            $class=' class=selectable ';
+            $class = ' class=selectable ';
+            /* if the current word/place exists in the response */
             if (array_key_exists('p' . ($place), $response)) {
                 $checked = 'checked=true';
-                $class=' class=selected';
-                foreach ($correctplaces as $key => $correctplace) {
-                    if ($place == $correctplace) {
-                        $icon = $this->feedback_image(1);
-                    }
+                $class = ' class=selected';
+                if ($this->is_correct_place($correctplaces, $place)) {
+                    $icon = $this->feedback_image(1);
                 }
                 if ($icon == "") {
                     $icon = $this->feedback_image(0);
                 }
+            }elseif($this->is_correct_place($correctplaces,$place)){
+             if($options->correctness==1){
+                $value='['.$value.']';    
+             }
             }
+
 
             $readonly = "";
             /* When previewing after a quiz is complete */
             if ($options->readonly) {
-               // $readonly = array('disabled' => 'true');
+                // $readonly = array('disabled' => 'true');
                 $readonly = " disabled='true' ";
             }
 
-            $regex= '/'.$value.'/';
-            if (@preg_match($regex,$question->selectable)){
-        $output.='<input hidden=true ' . $checked . ' type="checkbox" name=' . $inputname . $readonly . ' id='.$inputname.'>';
-        $output .='<span name='.$inputname.$class.'>'.$value.$icon.'</span></input>';
-        $output.=' ';
+            $regex = '/' . $value . '/';
+            if (@preg_match($regex, $question->selectable)) {
+                $output.='<input hidden=true ' . $checked . ' type="checkbox" name=' . $inputname . $readonly . ' id=' . $inputname . '>';
+                $output .='<span name=' . $inputname . $class . '>' . $value . $icon . '</span></input>';
+                $output.=' ';
             } else {
-                $output.=' '.$value;
+                $output.=' ' . $value;
             }
-
         }
         return $output;
     }
-    protected function specific_feedback(question_attempt $qa) {
-              return $this->combined_feedback($qa);
+
+    protected function is_correct_place($correctplaces, $place) {
+        foreach ($correctplaces as $key => $correctplace) {
+            if ($place == $correctplace) {
+                return true;
+            }
         }
+        return false;
+    }
+
+    protected function specific_feedback(question_attempt $qa) {
+        return $this->combined_feedback($qa);
+    }
 
 }
