@@ -44,10 +44,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      */
     public $delimitchars = "[]";
 
-    public function compare_response_with_answer(array $response, question_answer $answer) {
-        
-    }
-
     /**
      * @param int $key stem number
      * @return string the question-type variable name.
@@ -56,9 +52,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return 'p' . $place;
     }
 
-    public function is_gradable_response(array $response) {
-        return true;
-    }
+  
 
     /**
      * The text with delimiters removed so the user cannot see
@@ -84,7 +78,17 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $text = str_replace('<', ' <', $text);
         return $text;
     }
-
+    
+    /**
+     * @param string $questiontext
+     * @param string $delimitchars
+     * @return array index places in array of correct words
+     * Split the question text into words delimited by spaces
+     * then return an array of all the words that are correct
+     * i.e. surrounded by the delimit chars. Note that 
+     * word in this context means any string that can be separated
+     * by a space marker so that will include html etc
+     */
     public static function get_correct_places($questiontext,$delimitchars) {
         $correctplaces=array();
         $text =qtype_wordselect_question::get_questiontext_exploded($questiontext);
