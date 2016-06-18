@@ -25,7 +25,6 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die();
-//require_once('Kint/Kint.class.php');
 
 /**
  * Generates the output for wordselect questions.
@@ -62,6 +61,9 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 }
             }elseif($this->is_correct_place($correctplaces,$place)){
              if($options->correctness==1){
+                 /* if the word is a correct answer but not selected
+                  * and the marking is complete (correctness==1)
+                  */
                 $value='['.$value.']';    
              }
             }
@@ -85,7 +87,14 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         }
         return $output;
     }
-
+    /**
+     * 
+     * @param array $correctplaces
+     * @param int $place 
+     * @return boolean
+     * Check if the number represented by place occurs in the 
+     * array of correct places
+     */
     protected function is_correct_place($correctplaces, $place) {
         foreach ($correctplaces as $key => $correctplace) {
             if ($place == $correctplace) {
@@ -94,7 +103,10 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         }
         return false;
     }
-
+    /**
+     * @param question_attempt $qa
+     * @return string feedback for correct/partially correct/incorrect feedback 
+     */
     protected function specific_feedback(question_attempt $qa) {
         return $this->combined_feedback($qa);
     }
