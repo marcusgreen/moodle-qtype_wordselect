@@ -33,12 +33,14 @@ defined('MOODLE_INTERNAL') || die();
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+require_once('Kint/Kint.class.php');
+
 class qtype_wordselect_question extends question_graded_automatically_with_countback {
 
     public $markedselections = array();
     public $selectable = array();
-    
-     
+
+
     /* the characters indicating a field to fill i.e. [cat] creates
      * a field where the correct answer is cat
      */
@@ -51,8 +53,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     public function field($place) {
         return 'p' . $place;
     }
-
-  
 
     /**
      * The text with delimiters removed so the user cannot see
@@ -78,7 +78,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $text = str_replace('<', ' <', $text);
         return $text;
     }
-    
+
     /**
      * @param string $questiontext
      * @param string $delimitchars
@@ -89,9 +89,9 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * word in this context means any string that can be separated
      * by a space marker so that will include html etc
      */
-    public static function get_correct_places($questiontext,$delimitchars) {
-        $correctplaces=array();
-        $text =qtype_wordselect_question::get_questiontext_exploded($questiontext);
+    public static function get_correct_places($questiontext, $delimitchars) {
+        $correctplaces = array();
+        $text = qtype_wordselect_question::get_questiontext_exploded($questiontext);
         $allwords = preg_split('/[\s\n]/', $text);
         $l = substr($delimitchars, 0, 1);
         $r = substr($delimitchars, 1, 1);
@@ -118,16 +118,16 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return $data;
     }
 
-   /**
-    * @param array $response
-    * @return string
-    * summary of response shown in the responses report
-    */
+    /**
+     * @param array $response
+     * @return string
+     * summary of response shown in the responses report
+     */
     public function summarise_response(array $response) {
         $summary = '';
-        $allwords=$this->get_words();
-        foreach ($response as $index => $value){         
-              $summary .= " ".$allwords[substr($index, 1)]." ";
+        $allwords = $this->get_words();
+        foreach ($response as $index => $value) {
+            $summary .= " " . $allwords[substr($index, 1)] . " ";
         }
         return $summary;
     }
@@ -159,29 +159,24 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
 
     public function get_correct_response() {
         $response = array();
-        foreach ($this->get_correct_places($this->questiontext,$this->delimitchars) as $t) {
+        foreach ($this->get_correct_places($this->questiontext, $this->delimitchars) as $t) {
             $response['p' . $t] = 'on';
         }
         return $response;
     }
 
-          public function check_file_access($qa, $options, $component, $filearea,
-            $args, $forcedownload) {
+    public function check_file_access($qa, $options, $component, $filearea, $args, $forcedownload) {
         if ($component == 'question' && $filearea == 'answerfeedback') {
             $currentanswer = $qa->get_last_qt_var('answer');
             $answer = $this->get_matching_answer(array('answer' => $currentanswer));
             $answerid = reset($args); // Itemid is answer id.
             return $options->feedback && $answer && $answerid == $answer->id;
-
         } else if ($component == 'question' && $filearea == 'hint') {
             return $this->check_hint_file_access($qa, $options, $args);
-
         } else {
-            return parent::check_file_access($qa, $options, $component, $filearea,
-                    $args, $forcedownload);
+            return parent::check_file_access($qa, $options, $component, $filearea, $args, $forcedownload);
         }
     }
-    
 
     /**
      * @param array $response responses, as returned by
@@ -194,15 +189,13 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $allwords = $this->get_words();
         $responsewords = array();
         foreach ($response as $index => $value) {
-            //TODO change 99 to length of string
-            $responsewords[substr($index, 1, 99)] = $allwords[substr($index, 1, 99)];
+            $responsewords[substr($index, 1)] = $allwords[substr($index, 1)];
         }
 
         $right = 0;
         $found = false;
         foreach ($responsewords as $key => $response) {
             foreach ($this->answers as $answer) {
-
                 if ($answer->answer === $response) {
                     $found = true;
                 }
@@ -227,10 +220,53 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return $grade;
     }
 
+    /**
+     * @param type $responses
+     * @param type $totaltries
+     * @return int
+     * Used by behaviour interactive with multiple tries
+     */
     public function compute_final_grade($responses, $totaltries) {
-        // TODO.
-        return 0;
+        $marks = 0;
+        $correct_places = $this->get_correct_places($this->questiontext, $this->delimitchars);
+        $finallyright = $this->contains_correct_response($responses);
+        $responsekeys = array_keys($responses[0]);
+        $found = false;
+        foreach ($responsekeys as $response) {
+            foreach ($correct_places as $place) {
+                /* strip off the leading p i.e. p4 becomes 4 */
+                $responseval = substr($response, 1);
+                if ($responseval == $place) {
+                    $marks++;
+                    $found = true;
+                }
+            }
+            if ($found == false) {
+                $marks--;
+            }
+            $found = false;
+        }
+        return max(0,$marks / $totaltries);
     }
-        
+
+    public function contains_correct_response($responses) {
+        $correct_places = $this->get_correct_places($this->questiontext, $this->delimitchars);
+        $responses = $responses[0];
+        $responses = array_keys($responses);
+        foreach ($responses as $response) {
+            $found = false;
+            foreach ($correct_places as $place) {
+                $responseval = substr($response, 1);
+                if ($responseval == $place) {
+                    $found = true;
+                }
+            }
+            if ($found == false) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 
 }
