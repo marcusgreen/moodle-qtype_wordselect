@@ -25,7 +25,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die();
-require_once('Kint/Kint.class.php');
+//require_once('Kint/Kint.class.php');
 /**
  * Represents a wordselect question.
  *
@@ -33,7 +33,7 @@ require_once('Kint/Kint.class.php');
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-require_once('Kint/Kint.class.php');
+//require_once('Kint/Kint.class.php');
 
 class qtype_wordselect_question extends question_graded_automatically_with_countback {
 

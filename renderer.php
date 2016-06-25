@@ -25,7 +25,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die();
-require_once('Kint/Kint.class.php');
+//require_once('Kint/Kint.class.php');
 
 /**
  * Generates the output for wordselect questions.
