@@ -25,6 +25,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die();
+require_once('Kint/Kint.class.php');
 
 /**
  * Generates the output for wordselect questions.
@@ -50,7 +51,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             $icon = "";
             $class = ' class=selectable ';
             /* if the current word/place exists in the response */
-            if (array_key_exists('p' . ($place), $response)) {
+            if (array_key_exists('p' . ($place), $response) && $options->correctness == 1) {
                 $checked = 'checked=true';
                 $class = ' class=selected';
                 if ($this->is_correct_place($correctplaces, $place)) {
@@ -59,13 +60,18 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 if ($icon == "") {
                     $icon = $this->feedback_image(0);
                 }
-            }elseif($this->is_correct_place($correctplaces,$place)){
-             if($options->correctness==1){
-                 /* if the word is a correct answer but not selected
-                  * and the marking is complete (correctness==1)
-                  */
-                $value='['.$value.']';    
-             }
+            } elseif ($this->is_correct_place($correctplaces, $place)) {
+                if ($options->correctness == 1) {
+                    if ($options->rightanswer == 1) {
+                        /* $options->rightanswer is the setting for the quiz
+                         * to show the non selected corrected correct answers
+                         * once the attempt is complete.
+                         * if the word is a correct answer but not selected
+                         * and the marking is complete (correctness==1)
+                         */
+                        $value = '[' . $value . ']';
+                    }
+                }
             }
 
 
@@ -87,6 +93,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         }
         return $output;
     }
+
     /**
      * 
      * @param array $correctplaces
@@ -103,12 +110,40 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         }
         return false;
     }
+
     /**
      * @param question_attempt $qa
      * @return string feedback for correct/partially correct/incorrect feedback 
      */
     protected function specific_feedback(question_attempt $qa) {
+
         return $this->combined_feedback($qa);
+    }
+
+    protected function combined_feedback(question_attempt $qa) {
+        $question = $qa->get_question();
+
+        $state = $qa->get_state();
+
+        if (!$state->is_finished()) {
+            $response = $qa->get_last_qt_data();
+            if (!$qa->get_question()->is_gradable_response($response)) {
+                return '';
+            }
+            list($notused, $state) = $qa->get_question()->grade_response($response);
+            // if($question->get_correctcount($response)> 0){
+            //     $state=  question_state::$gradedpartial;
+            // }
+        }
+
+        $feedback = '';
+        $field = $state->get_feedback_class() . 'feedback';
+        $format = $state->get_feedback_class() . 'feedbackformat';
+        if ($question->$field) {
+            $feedback .= $question->format_text($question->$field, $question->$format, $qa, 'question', $field, $question->id);
+        }
+
+        return $feedback;
     }
 
 }

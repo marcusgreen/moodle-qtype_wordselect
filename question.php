@@ -25,7 +25,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die();
-
+require_once('Kint/Kint.class.php');
 /**
  * Represents a wordselect question.
  *
@@ -39,6 +39,10 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
 
     public $markedselections = array();
     public $selectable = array();
+    public $allcorrectresponse = true;
+    public $wrongresponsecount;
+    public $rightresponsecount;
+
 
 
     /* the characters indicating a field to fill i.e. [cat] creates
@@ -132,9 +136,18 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return $summary;
     }
 
+    /**
+     * 
+     * @param array $response
+     * @return boolean
+     * If any words have been selected
+     */
     public function is_complete_response(array $response) {
-        // TODO.
-        return true;
+        if (sizeof($response) > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function get_validation_error(array $response) {
@@ -184,7 +197,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * @return array (number, integer) the fraction, and the state.
      */
     public function grade_response(array $response) {
-
+        $this->allcorrectresponse = true;
         $right = 0;
         $allwords = $this->get_words();
         $responsewords = array();
@@ -192,7 +205,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             $responsewords[substr($index, 1)] = $allwords[substr($index, 1)];
         }
 
-        $right = 0;
+        $rightresponsecount = 0;
         $found = false;
         foreach ($responsewords as $key => $response) {
             foreach ($this->answers as $answer) {
@@ -202,22 +215,37 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             }
 
             if ($found == true) {
-                $right++;
+                $this->rightresponsecount++;
                 $this->markedselections[$key]['word'] = $responsewords[$key];
-                $markedselections[$key]['fraction'] = 1;
+                $this->markedselections[$key]['fraction'] = 1;
             } else {
-                $right--;
+                $this->wrongresponsecount++;
+                $this->allcorrectresponse = false;
                 $this->markedselections[$key]['word'] = $responsewords[$key];
                 $this->markedselections[$key]['fraction'] = 0;
             }
             $found = false;
         }
-        if ($right < 0) {
-            $right = 0;
-        }
-        $fraction = $right / sizeof($this->answers);
+
+        $this->rightresponsecount = max(0, ($this->rightresponsecount - $this->wrongresponsecount));
+
+        $fraction = $this->rightresponsecount / sizeof($this->answers);
         $grade = array($fraction, question_state::graded_state_for_fraction($fraction));
         return $grade;
+    }
+
+    public function get_correctcount(array $response) {
+        $rightselectioncount = 0;
+        $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
+        foreach ($correctplaces as $place) {
+            $finallyright = false;
+            foreach ($response as $key => $notused) {
+                if (('p' . $place) == $key) {
+                    $rightselectioncount++;
+                }
+            }
+        }
+        return $rightselectioncount;
     }
 
     /**
@@ -226,32 +254,65 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * @return int
      * Used by behaviour interactive with multiple tries
      */
-    public function compute_final_grade($responses, $totaltries) {
-        $marks = 0;
-        $correct_places = $this->get_correct_places($this->questiontext, $this->delimitchars);
-        $finallyright = $this->contains_correct_response($responses);
-        $responsekeys = array_keys($responses[0]);
-        $found = false;
-        foreach ($responsekeys as $response) {
-            foreach ($correct_places as $place) {
-                /* strip off the leading p i.e. p4 becomes 4 */
-                $responseval = substr($response, 1);
-                if ($responseval == $place) {
-                    $marks++;
-                    $found = true;
+    public function _compute_final_grade($responses, $totaltries) {
+        $totalscore = 0;
+        $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
+        $words = $this->get_words();
+        $responses = $responses[0];
+        $places = array_keys($words);
+        foreach ($places as $place => $notused) {
+            foreach ($responses as $i => $notused) {
+                if (('p' . $place) == $i) {
+                    $totalscore++;
                 }
             }
-            if ($found == false) {
-                $marks--;
-            }
-            $found = false;
         }
-        return max(0,$marks / $totaltries);
+
+        return $totalscore;
     }
 
-    public function contains_correct_response($responses) {
+    /* not called in interactive mode */
+
+    public function compute_final_grade($responses, $totaltries) {
+        $totalscore = 0;
+        $wrongresponsecount = 0;
+        $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
+        foreach ($correctplaces as $place) {
+            $lastwrongindex = -1;
+            $finallyright = false;
+            foreach ($responses as $i => $response) {
+                $wrongresponsecount += $this->get_wrong_responsecount($correctplaces, $response);
+                if (!array_key_exists(('p' . $place), $response)) {
+                    $lastwrongindex = $i;
+                    $finallyright = false;
+                    continue;
+                } else {
+                    $finallyright = true;
+                }
+            }
+            if ($finallyright) {
+                $totalscore += max(0, 1 - ($lastwrongindex + 1) * $this->penalty);
+            }
+        }
+        $totalscore = $totalscore / count($correctplaces);
+        $totalscore = max(0, $totalscore - $wrongresponsecount);
+        return $totalscore;
+    }
+
+    public function get_wrong_responsecount($correctplaces, $response) {
+        $wrongresponsecount=0;
+        foreach ($response as $selection=>$notused) {   
+           $place=substr($selection,1); 
+           if(!(in_array($place,$correctplaces))){              
+                    $wrongresponsecount++;
+             
+            }
+        }
+        return $wrongresponsecount;
+    }
+
+    function contains_correct_response($response) {
         $correct_places = $this->get_correct_places($this->questiontext, $this->delimitchars);
-        $responses = $responses[0];
         $responses = array_keys($responses);
         foreach ($responses as $response) {
             $found = false;
