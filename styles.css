@@ -1,9 +1,10 @@
-.que.wordselect .wordselect{    
+.que.wordselect input[type=checkbox]{
+    display:none;
 }
 .que.wordselect .selectable{
     cursor:pointer;
-    padding-left:1px;
-    padding-right:1px;
+    border:solid thin transparent;
+
 }
 
 .que.wordselect .selected{
@@ -17,7 +18,18 @@
     background-clip: border-box;
     background-origin: padding-box;
     background-size: auto auto;
-    padding-left:1px;
-    padding-right:1px;
     display:inline;
+    border:solid thin black;
+
+}
+
+.que.wordselect .correct{
+    background-color: #EEEE22;
+    border-radius:0.25em;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+    border:solid thin;
+    border-top:0px;
+    border-bottom:0px;
 }
