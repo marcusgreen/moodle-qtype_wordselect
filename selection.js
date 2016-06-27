@@ -32,9 +32,11 @@ $(function () {
         }
         if (iselected == true) {
             $(this).removeClass("selected");
+            $(this).removeAttr("title");
             $(checkbox).removeAttr('checked');
         } else {
             $(this).addClass("selected");
+            $(this).prop('title','selected');
             $(checkbox).prop("checked", 'true');
         }
     });
