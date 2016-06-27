@@ -23,7 +23,7 @@
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-$string['pluginname'] = 'wordselect';
+$string['pluginname'] = 'Word Select';
 $string['pluginname_help'] = 'Select words from text.';
 $string['pluginname_link'] = 'question/type/wordselect';
 $string['pluginnameadding'] = 'Adding a wordselect question';
