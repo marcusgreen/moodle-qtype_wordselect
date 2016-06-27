@@ -1,4 +1,4 @@
-@qtype @qtype_wordselect @_switch_window
+@core @qtype @qtype_wordselect @_switch_window
 Feature: Test all the basic functionality of this question type
   In order to evaluate students responses, As a teacher I need to
   create and preview wordselect (Select correct words) questions.
@@ -24,8 +24,8 @@ Feature: Test all the basic functionality of this question type
     And I add a "Word Select" question filling the form with:
       | Question name             | Word-Select-001                   |
       | Introduction              | Select the verb in the following text  |
-      | Question text             | The cat [sat] on the mat.     |
-      | General feedback          | The cat sat on the mat.       |
+      | Question text             | Word1 [select1] word2  [select2]  word2     |
+      | General feedback          | This is general feedback       |
       | Hint 1                    | First hint                    |
       | Hint 2                    | Second hint                   |
     Then I should see "Word-Select-001"
@@ -35,15 +35,66 @@ Feature: Test all the basic functionality of this question type
     And I switch to "questionpreview" window
 
    
-    # Set display and behaviour options
+    #################################################
+    #Interactive with multiple tries
+    #################################################
     And I set the following fields to these values:
       | How questions behave | Interactive with multiple tries |
-      | Marked out of        | 1                               |
+      | Marked out of        | 2                               |
       | Marks                | Show mark and max               |
       | Specific feedback    | Shown |
       | Right answer         | Shown |
     And I press "Start again with these options"
-    And I click on "sat" "text" 
+
+    #Select all (both) correct options
+    And I click on "select1" "text" 
+    And I click on "select2" "text"
     And I press "Check"      
     And I should see "Your answer is correct."
-    And I should see "Mark 1.00 out of 1.00"
+    And I should see "Mark 2.00 out of 2.00"
+    
+    #Select one incorrect option on the first attempt
+    #and all/both correct options on the second attempt
+    ################################################
+    #first attempt
+    And I press "Start again with these options"
+    And I click on "select1" "text" 
+    And I press "Check"      
+    And I should see "Your answer is partially correct."
+
+    ################################################
+    #second attempt
+    And I press "Try again"
+    And I click on "select1" "text" 
+    And I click on "select2" "text"
+    And I press "Check"      
+    And I should see "Your answer is correct."
+    And I should see "Mark 1.67 out of 2.00"
+    And I wait "10" seconds
+    
+
+    ##################################################
+    # Immediate Feedback behaviour
+     And I set the following fields to these values:
+      | How questions behave | Immediate feedback |
+      | Marked out of        | 2                               |
+      | Marks                | Show mark and max               |
+      | Specific feedback    | Shown |
+      | Right answer         | Shown |
+    
+    And I press "Start again with these options" 
+    And I click on "select1" "text" 
+    And I click on "select2" "text"
+    And I press "Check"      
+    And I should see "Your answer is correct."
+    And I should see "Mark 2.00 out of 2.00"
+    And I wait "20" seconds
+    
+    And I press "Start again with these options" 
+    And I click on "select1" "text" 
+    And I press "Check"      
+    And I should see "Your answer is partially correct."
+    And I should see "Mark 1.00 out of 2.00"
+    And I wait "20" seconds
+    
+    
