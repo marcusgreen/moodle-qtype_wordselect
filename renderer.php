@@ -69,7 +69,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                          * if the word is a correct answer but not selected
                          * and the marking is complete (correctness==1)
                          */
-                        $value = '[' . $value . ']';
+                        $value = '<span class="correct">[' . $value . ']</span>';
                     }
                 }
             }
