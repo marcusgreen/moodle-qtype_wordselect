@@ -24,7 +24,7 @@ Feature: Test all the basic functionality of this question type
     And I add a "Word Select" question filling the form with:
       | Question name             | Word-Select-001                   |
       | Introduction              | Select the verb in the following text  |
-      | Question text             | Word1 [select1] word2  [select2]  word2     |
+      | Question text             | Word1 [select1] word2  [select2]  word3     |
       | General feedback          | This is general feedback       |
       | Hint 1                    | First hint                    |
       | Hint 2                    | Second hint                   |
@@ -34,7 +34,6 @@ Feature: Test all the basic functionality of this question type
     When I click on "Preview" "link" in the "Word-Select-001" "table_row"
     And I switch to "questionpreview" window
 
-   
     #################################################
     #Interactive with multiple tries
     #################################################
@@ -88,13 +87,56 @@ Feature: Test all the basic functionality of this question type
     And I press "Check"      
     And I should see "Your answer is correct."
     And I should see "Mark 2.00 out of 2.00"
-    And I wait "20" seconds
+    And I wait "2" seconds
     
     And I press "Start again with these options" 
     And I click on "select1" "text" 
     And I press "Check"      
     And I should see "Your answer is partially correct."
     And I should see "Mark 1.00 out of 2.00"
-    And I wait "20" seconds
+    And I wait "2" seconds
     
+
+    ##################################################
+    # Deferred Feedback behaviour
+     And I set the following fields to these values:
+      | How questions behave | Deferred feedback |
+      | Marked out of        | 2                               |
+      | Marks                | Show mark and max               |
+      | Specific feedback    | Shown |
+      | Right answer         | Shown |
     
+    And I press "Start again with these options" 
+    And I click on "select1" "text" 
+    And I click on "select2" "text"
+    And I press "Submit and finish"      
+    And I should see "Your answer is correct."
+    And I should see "Mark 2.00 out of 2.00"
+    And I wait "5" seconds
+
+    And I press "Start again with these options" 
+    And I click on "select1" "text" 
+    And I press "Submit and finish"      
+    And I should see "Your answer is partially correct."
+    And I should see "Mark 1.00 out of 2.00"
+    And I wait "5" seconds
+
+    And I press "Start again with these options" 
+    And I click on "select1" "text" 
+    And I click on "select2" "text"
+    And I click on "word2" "text"
+
+    And I press "Submit"      
+    And I should see "Your answer is partially correct."
+    And I should see "Mark 1.00 out of 2.00"
+    And I wait "5" seconds
+
+    And I press "Start again with these options" 
+    And I click on "word2" "text" 
+    And I click on "word3" "text"
+    And I click on "word2" "text"
+  
+    And I press "Submit and finish"      
+    And I should see "Your answer is incorrect."
+    And I should see "Mark 0.00 out of 2.00"
+    And I wait "5" seconds
