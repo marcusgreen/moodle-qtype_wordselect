@@ -43,13 +43,17 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         $response = $qa->get_last_qt_data();
         $correctplaces = $question->get_correct_places($question->questiontext, $question->delimitchars);
         $output = $question->introduction;
-
+        $unselectable=$question->get_unselectable_words($question->questiontext);
         foreach ($question->get_words() as $place => $value) {
             $qprefix = $qa->get_qt_field_name('');
             $inputname = $qprefix . 'p' . ($place);
             $checked = null;
             $icon = "";
-            $class = ' class=selectable ';
+            if(!array_key_exists($place,$unselectable)){
+             $class = ' class=selectable ';
+            }else{
+             $class='';   
+            }
             /* if the current word/place exists in the response */
             if (array_key_exists('p' . ($place), $response) && $options->correctness == 1) {
                 $checked = 'checked=true';
@@ -131,9 +135,6 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 return '';
             }
             list($notused, $state) = $qa->get_question()->grade_response($response);
-            // if($question->get_correctcount($response)> 0){
-            //     $state=  question_state::$gradedpartial;
-            // }
         }
 
         $feedback = '';

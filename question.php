@@ -25,7 +25,8 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die();
-//require_once('Kint/Kint.class.php');
+//require_once('kint/Kint.class.php');
+
 /**
  * Represents a wordselect question.
  *
@@ -70,14 +71,39 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $text = $this->get_questiontext_exploded($this->questiontext);
         $questiontextnodelim = preg_replace('/\\' . $l . '/', '', $text);
         $questiontextnodelim = preg_replace('/\\' . $r . '/', '', $questiontextnodelim);
+        /* string html tags (is this necessary?) */
         $this->selectable = strip_tags($questiontextnodelim);
+
         $allwords = preg_split('/[\s\n]/', $questiontextnodelim);
         return $allwords;
     }
 
+    public function get_unselectable_words($questiontext) {
+        $questiontext = $this->get_questiontext_exploded($questiontext);
+        $allwords = preg_split('/[\s\n]/', $questiontext);
+        $unselectable = array();
+        $started = false;
+        foreach ($allwords as $key => $word) {
+            $start = substr($word, 0, 1);
+            $len = strlen($word);
+            $end = substr($word, $len - 1, $len);
+            if ($start == "*") {
+                print $start;
+                $started = true;
+            }
+            if ($end == "*") {
+                $started = false;
+                $unselectable[$key] = $word;
+            }
+            if ($started == true) {
+                $unselectable[$key] = $word;
+            }
+        }
+        return $unselectable;
+    }
+
     public static function get_questiontext_exploded($questiontext) {
         //put a space before and after tags so they get split as words
-        //  $text = str_replace('<p>', ' <p> ', $this->questiontext);
         $text = str_replace('>', '> ', $questiontext);
         $text = str_replace('<', ' <', $text);
         return $text;
@@ -234,43 +260,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return $grade;
     }
 
-    public function get_correctcount(array $response) {
-        $rightselectioncount = 0;
-        $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
-        foreach ($correctplaces as $place) {
-            $finallyright = false;
-            foreach ($response as $key => $notused) {
-                if (('p' . $place) == $key) {
-                    $rightselectioncount++;
-                }
-            }
-        }
-        return $rightselectioncount;
-    }
-
-    /**
-     * @param type $responses
-     * @param type $totaltries
-     * @return int
-     * Used by behaviour interactive with multiple tries
-     */
-    public function _compute_final_grade($responses, $totaltries) {
-        $totalscore = 0;
-        $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
-        $words = $this->get_words();
-        $responses = $responses[0];
-        $places = array_keys($words);
-        foreach ($places as $place => $notused) {
-            foreach ($responses as $i => $notused) {
-                if (('p' . $place) == $i) {
-                    $totalscore++;
-                }
-            }
-        }
-
-        return $totalscore;
-    }
-
     /* not called in interactive mode */
 
     public function compute_final_grade($responses, $totaltries) {
@@ -299,13 +288,18 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return $totalscore;
     }
 
+    /**
+     * Used when calculating the final grade
+     * @param type $correctplaces
+     * @param type $response
+     * @return int
+     */
     public function get_wrong_responsecount($correctplaces, $response) {
-        $wrongresponsecount=0;
-        foreach ($response as $selection=>$notused) {   
-           $place=substr($selection,1); 
-           if(!(in_array($place,$correctplaces))){              
-                    $wrongresponsecount++;
-             
+        $wrongresponsecount = 0;
+        foreach ($response as $selection => $notused) {
+            $place = substr($selection, 1);
+            if (!(in_array($place, $correctplaces))) {
+                $wrongresponsecount++;
             }
         }
         return $wrongresponsecount;
