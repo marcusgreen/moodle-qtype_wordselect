@@ -45,10 +45,13 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         $output = $question->introduction;
         $unselectable=$question->get_unselectable_words($question->questiontext);
         foreach ($question->get_words() as $place => $value) {
+            $correctresponse=true;
             $qprefix = $qa->get_qt_field_name('');
             $inputname = $qprefix . 'p' . ($place);
             $checked = null;
             $icon = "";
+            $class='';
+            $title='';
             if(!array_key_exists($place,$unselectable)){
              $class = ' class=selectable ';
             }else{
@@ -60,9 +63,12 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 $class = ' class=selected';
                 if ($this->is_correct_place($correctplaces, $place)) {
                     $icon = $this->feedback_image(1);
+                    $title=' title="corect response"';
                 }
                 if ($icon == "") {
                     $icon = $this->feedback_image(0);
+                    $correctresponse=false;
+                    $title=' title="incorrect response"';
                 }
             } elseif ($this->is_correct_place($correctplaces, $place)) {
                 if ($options->correctness == 1) {
@@ -73,7 +79,8 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                          * if the word is a correct answer but not selected
                          * and the marking is complete (correctness==1)
                          */
-                        $value = '<span class="correct">[' . $value . ']</span>';
+                        $title= ' title="correct answer" ';
+                        $value = '<span '.$title .' class="correct">[' . $value . ']</span>';
                     }
                 }
             }
@@ -82,15 +89,16 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             $readonly = "";
             /* When previewing after a quiz is complete */
             if ($options->readonly) {
-                // $readonly = array('disabled' => 'true');
                 $readonly = " disabled='true' ";
-                $class .= " readonly";
+                if($correctresponse==false){
+                    $class=' class = incorrect ';
+                }
             }
 
             $regex = '/' . $value . '/';
             if (@preg_match($regex, $question->selectable)) {
                 $output.='<input hidden=true ' . $checked . ' type="checkbox" name=' . $inputname . $readonly . ' id=' . $inputname . '>';
-                $output .='<span name=' . $inputname . $class . '>' . $value . $icon . '</span></input>';
+                $output .='<span name=' . $inputname . $class . $title.'>' . $value .'</span></input>'.$icon;
                 $output.=' ';
             } else {
                 $output.=' ' . $value;
