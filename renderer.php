@@ -99,9 +99,11 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             }
             $regex = '/' . $value . '/';
             if (@preg_match($regex, $question->selectable)) {
-                $output .= '<input class = "checkboxes" hidden = true ' . $checked . ' type = "checkbox" name = '
-                        . $inputname . $readonly . ' id=' . $inputname . '></input>';
-                $output .= '<span '.$tabindex.' name =' . $inputname . $class . $title . '>' . $value . '</span>' . $icon;
+                if ($value > "") {
+                    $output .= '<input class = "checkboxes" hidden = true ' . $checked . ' type = "checkbox" name = '
+                            . $inputname . $readonly . ' id=' . $inputname . '></input>';
+                }
+                $output .= '<span ' . $tabindex . ' name =' . $inputname . $class . $title . '>' . $value . '</span>' . $icon;
                 $output .= ' ';
             } else {
                 $output .= ' ' . $value;
