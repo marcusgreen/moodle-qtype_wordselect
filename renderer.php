@@ -84,6 +84,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             if ($options->readonly) {
                 // $readonly = array('disabled' => 'true');
                 $readonly = " disabled='true' ";
+                $class .= " readonly";
             }
 
             $regex = '/' . $value . '/';
