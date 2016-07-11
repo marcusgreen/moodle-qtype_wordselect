@@ -20,7 +20,7 @@
     background-size: auto auto;
     display:inline;
     border:solid thin black;
-
+    float:left;
 }
 
 .que.wordselect .correct{
