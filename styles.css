@@ -20,6 +20,9 @@
     background-size: auto auto;
     display:inline;
     border:solid thin black;
+}
+
+.que .wordselect .readonly{
     float:left;
 }
 
