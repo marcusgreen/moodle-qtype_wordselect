@@ -4,8 +4,8 @@
 .que.wordselect .selectable{
     cursor:pointer;
     border:solid thin transparent;
-
 }
+
 
 .que.wordselect .selected{
     background: #cee0f4;
@@ -18,12 +18,27 @@
     background-clip: border-box;
     background-origin: padding-box;
     background-size: auto auto;
-    display:inline;
     border:solid thin black;
+    display:inline;
+    white-space:nowrap;
 }
 
-.que .wordselect .readonly{
-    float:left;
+.que.wordselect .incorrect{
+    background: #cee0f4;
+    border-radius:0.25em;
+    background-color:#CBCFD4;
+    background-image: none;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+    border:solid thin black;
+    display:inline;
+    white-space:nowrap;
+    text-decoration:line-through;
+    -moz-text-decoration-style:wavy;
 }
 
 .que.wordselect .correct{
@@ -33,6 +48,4 @@
     background-origin: padding-box;
     background-size: auto auto;
     border:solid thin;
-    border-top:0px;
-    border-bottom:0px;
 }
