@@ -39,6 +39,10 @@
     white-space:nowrap;
     text-decoration:line-through;
     -moz-text-decoration-style:wavy;
+    /*    background-color: #f7d0d0;
+    color: #b71c1c;
+    text-decoration: line-through;
+    */
 }
 
 .que.wordselect .correct{
@@ -48,4 +52,8 @@
     background-origin: padding-box;
     background-size: auto auto;
     border:solid thin;
+    /*
+    background: #9dd8bb;
+    color: #255c41;
+    */
 }
