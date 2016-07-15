@@ -4,8 +4,17 @@
 .que.wordselect .selectable{
     cursor:pointer;
     border:solid thin transparent;
+    border-radius:0.25em;
+    background-image: none;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+    display:inline;
+    white-space:nowrap;
 }
-
 
 .que.wordselect .selected{
     background: #cee0f4;
@@ -24,9 +33,10 @@
 }
 
 .que.wordselect .incorrect{
-    background: #cee0f4;
+    background-color: #f7d0d0;
+    color: #b71c1c;
+    text-decoration: line-through;
     border-radius:0.25em;
-    background-color:#CBCFD4;
     background-image: none;
     background-repeat: repeat;
     background-attachment: scroll;
@@ -37,12 +47,6 @@
     border:solid thin black;
     display:inline;
     white-space:nowrap;
-    text-decoration:line-through;
-    -moz-text-decoration-style:wavy;
-    /*    background-color: #f7d0d0;
-    color: #b71c1c;
-    text-decoration: line-through;
-    */
 }
 
 .que.wordselect .correct{
@@ -52,8 +56,21 @@
     background-origin: padding-box;
     background-size: auto auto;
     border:solid thin;
-    /*
+    white-space:nowrap;
+}
+
+.que.wordselect .correctresponse{
     background: #9dd8bb;
     color: #255c41;
-    */
+    border-radius:0.25em;
+    background-image: none;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+    border:solid thin black;
+    display:inline;
+    white-space:nowrap;
 }

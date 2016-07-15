@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -29,7 +28,6 @@ defined('MOODLE_INTERNAL') || die();
 require_once($CFG->libdir . '/questionlib.php');
 require_once($CFG->dirroot . '/question/engine/lib.php');
 require_once($CFG->dirroot . '/question/type/wordselect/question.php');
-//require_once('Kint/Kint.class.php');
 
 /**
  * The wordselect question type.
@@ -39,8 +37,6 @@ require_once($CFG->dirroot . '/question/type/wordselect/question.php');
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class qtype_wordselect extends question_type {
-    
-    
     /* data used by export_to_xml (among other things possibly */
     public function extra_question_fields() {
         return array('question_wordselect', 'introduction', 'delimitchars');
@@ -57,7 +53,6 @@ class qtype_wordselect extends question_type {
         parent::find_standard_scripts();
         $PAGE->requires->jquery();
         $PAGE->requires->jquery_plugin('ui');
-        // Include "script.js" and/or "script.php" in the normal way.
     }
 
     public function move_files($questionid, $oldcontextid, $newcontextid) {
@@ -182,6 +177,7 @@ class qtype_wordselect extends question_type {
     }
 
     /* runs from question editing form */
+
     public function update_question_wordselect($formdata, $options, $context) {
         /* question is actually formdata */
         global $DB;
@@ -198,35 +194,33 @@ class qtype_wordselect extends question_type {
             $options->id = $DB->insert_record('question_wordselect', $options);
         }
         /* when coming in from form */
-        if(is_array($formdata->introduction)){
-            $options->introduction=$formdata->introduction['text'];
-        }else{
+        if (is_array($formdata->introduction)) {
+            $options->introduction = $formdata->introduction['text'];
+        } else {
             /* when being imported e.g. from an xml import */
-            $options->introduction=$formdata->introduction;
+            $options->introduction = $formdata->introduction;
         }
         $options->delimitchars = $formdata->delimitchars;
-        $options->correctfeedback="";
+        $options->correctfeedback = "";
         $options = $this->save_combined_feedback_helper($options, $formdata, $context, true);
         $DB->update_record('question_wordselect', $options);
     }
 
-   /* populates fields such as combined feedback */
-   public function get_question_options($question) {
-       global $DB;
-       $question->options = $DB->get_record('question_wordselect',
+    /* populates fields such as combined feedback */
+    public function get_question_options($question) {
+        global $DB;
+        $question->options = $DB->get_record('question_wordselect',
                array('questionid' => $question->id), '*', MUST_EXIST);
-       parent::get_question_options($question);
+        parent::get_question_options($question);
     }
 
-    
     protected function initialise_question_instance(question_definition $question, $questiondata) {
-        parent::initialise_question_instance($question, $questiondata);        
+        parent::initialise_question_instance($question, $questiondata);
         $this->initialise_question_answers($question, $questiondata);
         parent::initialise_combined_feedback($question, $questiondata);
     }
 
     protected function initialise_question_answers(question_definition $question, $questiondata, $forceplaintextanswers = true) {
-        
         if (empty($questiondata->options->answers)) {
             return;
         }
@@ -240,12 +234,11 @@ class qtype_wordselect extends question_type {
                  */
                 $a->answer = stripslashes($a->answer);
             }
-            // array_push($question->allwords, $a->answer);
-
             /* answer in this context means correct answers, i.e. where
              * fraction contains a 1 */
             if (strpos($a->fraction, '1') !== false) {
-                $question->answers[$a->id] = new question_answer($a->id, $a->answer, $a->fraction, $a->feedback, $a->feedbackformat);
+                $question->answers[$a->id] = new question_answer($a->id, $a->answer, $a->fraction,
+                        $a->feedback, $a->feedbackformat);
                 if (!$forceplaintextanswers) {
                     $question->answers[$a->id]->answerformat = $a->answerformat;
                 }
@@ -287,7 +280,8 @@ class qtype_wordselect extends question_type {
         // TODO.
         return array();
     }
-     /**
+
+    /**
      * @param type $question The current question
      * @param type $form The question editing form data
      * @return type object
@@ -295,10 +289,9 @@ class qtype_wordselect extends question_type {
      * Does not allow setting any other value per word at the moment
      */
     public function save_question($question, $form) {
-       $correctplaces = qtype_wordselect_question::get_correct_places($form->questiontext['text'],$form->delimitchars);
-       $form->defaultmark = count($correctplaces);
-       return parent::save_question($question, $form);
+        $correctplaces = qtype_wordselect_question::get_correct_places($form->questiontext['text'], $form->delimitchars);
+        $form->defaultmark = count($correctplaces);
+        return parent::save_question($question, $form);
     }
-
 
 }

@@ -93,7 +93,7 @@ class qtype_wordselect_test extends UnitTestCase {
     }
 
     public function test_extra_question_fields() {
-          $extraquestionfields = array('question_wordselect', 'introduction','delimitchars');
+          $extraquestionfields = array('question_wordselect', 'introduction', 'delimitchars');
           $this->assertEquals($this->qtype->extra_question_fields(), $extraquestionfields);
     }
 }

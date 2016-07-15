@@ -20,7 +20,6 @@
  * @package    qtype
  * @subpackage wordselect
  * @copyright  Marcus Green 2016
-
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -28,7 +27,5 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'qtype_wordselect';
 $plugin->version   = 2016062500;
-
 $plugin->requires  = 2012062504;
-
 $plugin->maturity  = MATURITY_ALPHA;

@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -43,8 +42,10 @@ class qtype_wordselect_edit_form extends question_edit_form {
         // Default mark will be set to 1 * number of fields.
         $mform->removeelement('defaultmark');
 
-        $mform->addElement('editor', 'introduction', 'Introduction', array('size' => 70, 'rows' => 2), $this->editoroptions);
-        $mform->addElement('editor', 'questiontext', get_string('questiontext', 'question'), array('rows' => 15), $this->editoroptions);
+        $mform->addElement('editor', 'introduction', 'Introduction', array('size' => 70, 'rows' => 2),
+                $this->editoroptions);
+        $mform->addElement('editor', 'questiontext', get_string('questiontext', 'question'),
+                array('rows' => 15), $this->editoroptions);
 
         $mform->addElement('editor', 'generalfeedback', get_string('generalfeedback', 'question')
                 , array('rows' => 10), $this->editoroptions);
@@ -56,13 +57,12 @@ class qtype_wordselect_edit_form extends question_edit_form {
         $delimitchars = array("[]" => "[ ]", "{}" => "{ }", "##" => "##", "@@" => "@ @");
         $mform->addElement('select', 'delimitchars', get_string('delimitchars', 'qtype_wordselect'), $delimitchars);
         $mform->addHelpButton('delimitchars', 'delimitchars', 'qtype_wordselect');
-       
-        
+
         // To add combined feedback (correct, partial and incorrect).
-       $this->add_combined_feedback_fields(true);
+         $this->add_combined_feedback_fields(true);
 
         // Adds hinting features.
-       $this->add_interactive_settings(true, true);
+        $this->add_interactive_settings(true, true);
     }
 
     public function set_data($question) {
@@ -81,12 +81,13 @@ class qtype_wordselect_edit_form extends question_edit_form {
             return "";
         }
     }
-     public function validation($fromform, $data) {
+    public function validation($fromform, $data) {
         $errors = array();
         /* don't save the form if there are no fields defined */
-        $correctplaces = qtype_wordselect_question::get_correct_places($fromform['questiontext']['text'],$fromform['delimitchars']);
+        $correctplaces = qtype_wordselect_question::get_correct_places($fromform['questiontext']['text'],
+                $fromform['delimitchars']);
         if (count($correctplaces) == 0) {
-            $errors['questiontext'] = get_string('nowordsdefined','qtype_wordselect');
+            $errors['questiontext'] = get_string('nowordsdefined', 'qtype_wordselect');
         }
         if ($errors) {
             return $errors;
