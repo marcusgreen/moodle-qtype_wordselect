@@ -20,7 +20,7 @@
  *
  * @package    qtype
  * @subpackage wordselect
- * @copyright  Marcus Green 2016)
+ * @copyright  Marcus Green 2016
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
