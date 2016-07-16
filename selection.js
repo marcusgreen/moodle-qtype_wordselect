@@ -14,11 +14,11 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * JavaScript code for the gapfill question type.
+ * JavaScript code for the wordselect question type.
  *
  * @package    qtype
- * @subpackage gapfill
- * @copyright  2012 Marcus Green
+ * @subpackage wordselect
+ * @copyright  2016 Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
