@@ -22,22 +22,32 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$(function () {       
-    $(".selectable").on("click", function () {
-        iselected = $(this).hasClass("selected");
-        wordname = $(this).attr('name');
-        checkbox = document.getElementById(wordname);
-        if (checkbox==null || checkbox.disabled == true) {
-            return;
-        }
-        if (iselected == true) {
-            $(this).removeClass("selected");
-            $(this).removeAttr("title");
-            $(checkbox).removeAttr('checked');
-        } else {
-            $(this).addClass("selected");
-            $(this).prop('title','selected');
-            $(checkbox).prop("checked", 'true');
+$(function () {
+    $(".selectable").on('keydown', function (e) {
+        /* right arrow key */
+        if (e.keyCode == 39) {
+            toggleselected($(this));
         }
     });
+    $(".selectable").on('click', function (e) {
+        toggleselected($(this));
+    });
 });
+
+var toggleselected = function (component) {
+    iselected = component.hasClass("selected");
+    wordname = component.attr('name');
+    checkbox = document.getElementById(wordname);
+    if (checkbox == null || checkbox.disabled == true) {
+        return;
+    }
+    if (iselected == true) {
+        component.removeClass("selected");
+        component.removeAttr("title");
+        component.removeAttr('checked');
+    } else {
+        component.addClass("selected");
+        component.prop('title', 'selected');
+        $(checkbox).prop("checked", 'true');
+    }
+}

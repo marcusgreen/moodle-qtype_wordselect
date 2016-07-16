@@ -33,4 +33,8 @@ $string['pluginnamesummary'] = 'All words can be selected by clicking on them. C
 $string['delimitchars'] = 'Delimit characters';
 $string['delimitchars_help'] = 'Change the characters that delimit a field from the default [ ], useful for programming language questions';
 $string['nowordsdefined'] = 'No words to select have been defined ';
+$string['correctresponse'] = 'correct response ';
+$string['incorrectresponse'] = 'incorrect response ';
+$string['correctanswer'] = 'correct answer';
+
 

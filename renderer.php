@@ -61,13 +61,13 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 $class = ' class=selected';
                 if ($this->is_correct_place($correctplaces, $place)) {
                     $icon = $this->feedback_image(1);
-                    $title = ' title="corect response"';
+                    $title = ' title= "'.get_string('correctresponse', 'qtype_wordselect').'"';
                     $class = ' class = correctresponse ';
                 }
                 if ($icon == "") {
                     $icon = $this->feedback_image(0);
                     $correctresponse = false;
-                    $title = ' title="incorrect response"';
+                    $title = ' title="' .get_string('incorrectresponse', 'qtype_wordselect').'"';
                 }
             } else if ($this->is_correct_place($correctplaces, $place)) {
                 if ($options->correctness == 1) {
@@ -78,7 +78,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                          * if the word is a correct answer but not selected
                          * and the marking is complete (correctness==1)
                          */
-                        $title = ' title="correct answer" ';
+                        $title = ' title="'.get_string('correctanswer', 'qtype_wordselect').'"';
                         $value = '<span ' . $title . ' class="correct">[' . $value . ']</span>';
                     }
                 }
@@ -92,12 +92,16 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                     $class = ' class = incorrect ';
                 }
             }
-
+            /* Allows tabbing from word to word */
+            $tabindex = "";
+            if ($value > "") {
+                $tabindex = ' tabindex=99 ';
+            }
             $regex = '/' . $value . '/';
             if (@preg_match($regex, $question->selectable)) {
                 $output .= '<input class = "checkboxes" hidden = true ' . $checked . ' type = "checkbox" name = '
                         . $inputname . $readonly . ' id=' . $inputname . '></input>';
-                $output .= '<span name =' . $inputname . $class . $title . '>' . $value . '</span>' . $icon;
+                $output .= '<span '.$tabindex.' name =' . $inputname . $class . $title . '>' . $value . '</span>' . $icon;
                 $output .= ' ';
             } else {
                 $output .= ' ' . $value;
