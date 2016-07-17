@@ -34,20 +34,20 @@ $(function () {
     });
 });
 
-var toggleselected = function (component) {
-    iselected = component.hasClass("selected");
-    wordname = component.attr('name');
+var toggleselected = function (selection) {
+    iselected = selection.hasClass("selected");
+    wordname = selection.attr('name');
     checkbox = document.getElementById(wordname);
     if (checkbox == null || checkbox.disabled == true) {
         return;
     }
     if (iselected == true) {
-        component.removeClass("selected");
-        component.removeAttr("title");
+        selection.removeClass("selected");
+        selection.removeAttr("title");
         $(checkbox).removeAttr('checked');
     } else {
-        component.addClass("selected");
-        component.prop('title', 'selected');
+        selection.addClass("selected");
+        selection.prop('title', 'selected');
         $(checkbox).prop("checked", 'true');
     }
 }
