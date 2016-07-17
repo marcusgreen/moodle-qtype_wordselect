@@ -44,7 +44,7 @@ var toggleselected = function (component) {
     if (iselected == true) {
         component.removeClass("selected");
         component.removeAttr("title");
-        component.removeAttr('checked');
+        $(checkbox).removeAttr('checked');
     } else {
         component.addClass("selected");
         component.prop('title', 'selected');
