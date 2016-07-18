@@ -30,9 +30,16 @@
     border:solid thin black;
     display:inline;
     white-space:nowrap;
-    -moz-box-shadow: 1px 1px 2px #000;
-    -webkit-box-shadow: 1px 1px 2px #000;
-    box-shadow: 1px 1px 2px #000;
+   -moz-box-shadow: 1px 1px 2px rgba(0,0,0,0.9);
+    -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.9);
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.9);
+outline:none;
+<!--[if IE]>
+       background:transparent;
+       filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#50990000,endColorstr=#50990000); 
+       zoom: 1.009;
+ <![endif]-->
+
 }
 
 .que.wordselect .incorrect{
@@ -50,9 +57,9 @@
     border:solid thin black;
     display:inline;
     white-space:nowrap;
-    -moz-box-shadow: 1px 1px 2px #000;
-    -webkit-box-shadow: 1px 1px 2px #000;
-    box-shadow: 1px 1px 2px #000;
+    -moz-box-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 
 .que.wordselect .correct{
@@ -79,7 +86,7 @@
     border:solid thin black;
     display:inline;
     white-space:nowrap;
-    -moz-box-shadow: 1px 1px 2px #000;
-    -webkit-box-shadow: 1px 1px 2px #000;
-    box-shadow: 1px 1px 2px #000;
+    -moz-box-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
