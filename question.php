@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -25,16 +24,14 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die();
-//require_once('kint/Kint.class.php');
 
 /**
  * Represents a wordselect question.
  *
- * @copyright  2016 Marcus Green 
+ * @copyright  2016 Marcus Green
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-//require_once('Kint/Kint.class.php');
 
 class qtype_wordselect_question extends question_graded_automatically_with_countback {
 
@@ -103,7 +100,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 
     public static function get_questiontext_exploded($questiontext) {
-        //put a space before and after tags so they get split as words
+        // Put a space before and after tags so they get split as words.
         $text = str_replace('>', '> ', $questiontext);
         $text = str_replace('<', ' <', $text);
         return $text;
@@ -115,13 +112,13 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * @return array index places in array of correct words
      * Split the question text into words delimited by spaces
      * then return an array of all the words that are correct
-     * i.e. surrounded by the delimit chars. Note that 
+     * i.e. surrounded by the delimit chars. Note that
      * word in this context means any string that can be separated
      * by a space marker so that will include html etc
      */
     public static function get_correct_places($questiontext, $delimitchars) {
         $correctplaces = array();
-        $text = qtype_wordselect_question::get_questiontext_exploded($questiontext);
+        $text = self::get_questiontext_exploded($questiontext);
         $allwords = preg_split('/[\s\n]/', $text);
         $l = substr($delimitchars, 0, 1);
         $r = substr($delimitchars, 1, 1);
@@ -141,7 +138,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * @return array variable name => PARAM_... constant.
      */
     public function get_expected_data() {
-        $wordcount = sizeof($this->get_words());
+        $wordcount = count($this->get_words());
         for ($key = 0; $key < $wordcount; $key++) {
             $data['p' . $key] = PARAM_RAW_TRIMMED;
         }
@@ -163,13 +160,13 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 
     /**
-     * 
+     *
      * @param array $response
      * @return boolean
      * If any words have been selected
      */
     public function is_complete_response(array $response) {
-        if (sizeof($response) > 0) {
+        if (count($response) > 0) {
             return true;
         } else {
             return false;
@@ -227,15 +224,15 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
         $this->wrongresponsecount = $this->get_wrong_responsecount($correctplaces, $response);
         foreach ($correctplaces as $place) {
-                if (array_key_exists(('p' . $place), $response)) {
-                    $this->rightresponsecount++;
-                }
+            if (array_key_exists(('p' . $place), $response)) {
+                $this->rightresponsecount++;
+            }
         }
-       $wrongfraction = @($this->wrongresponsecount/count($correctplaces));
-       $fraction = @($this->rightresponsecount /count($correctplaces));
-       $fraction = max(0,$fraction -$wrongfraction);
-       $grade = array($fraction, question_state::graded_state_for_fraction($fraction));
-       return $grade;
+        $wrongfraction = @($this->wrongresponsecount / count($correctplaces));
+        $fraction = @($this->rightresponsecount / count($correctplaces));
+        $fraction = max(0, $fraction - $wrongfraction);
+        $grade = array($fraction, question_state::graded_state_for_fraction($fraction));
+        return $grade;
     }
 
     /* not called in interactive mode */
@@ -283,12 +280,12 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return $wrongresponsecount;
     }
 
-    function contains_correct_response($response) {
-        $correct_places = $this->get_correct_places($this->questiontext, $this->delimitchars);
+    public function contains_correct_response($response) {
+        $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
         $responses = array_keys($responses);
         foreach ($responses as $response) {
             $found = false;
-            foreach ($correct_places as $place) {
+            foreach ($correctplaces as $place) {
                 $responseval = substr($response, 1);
                 if ($responseval == $place) {
                     $found = true;
