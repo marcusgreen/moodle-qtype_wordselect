@@ -36,7 +36,12 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
 
     public function formulation_and_controls(question_attempt $qa, question_display_options $options) {
         global $PAGE;
+      
         $question = $qa->get_question();
+       //$value = $qa->get_last_qt_var($question->field($place));
+
+        //  var_dump($question);
+       //exit();
         $PAGE->requires->js('/question/type/wordselect/selection.js');
         $response = $qa->get_last_qt_data();
         $correctplaces = $question->get_correct_places($question->questiontext, $question->delimitchars);
@@ -45,9 +50,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             $correctresponse = true;
             $qprefix = $qa->get_qt_field_name('');
             $inputname = $qprefix . 'p' . ($place);
-            $checked = null;
             $icon = "";
-            $class = ' class=selectable ';
             $title = '';
             /* if the current word/place exists in the response */
             if (array_key_exists('p' . ($place), $response) && $options->correctness == 1) {
@@ -77,7 +80,16 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                     }
                 }
             }
-
+            /* when scrolling back and forth between questions
+             * previously selected value into each place
+             */
+            if( $qa->get_last_qt_var($question->field($place))=="on"){
+                $class = " class = ' selected selectable'";
+                $checked = ' checked=true ';
+            } else{
+                $class = ' class=selectable ';
+                $checked = null;
+            }
             $readonly = "";
             /* When previewing after a quiz is complete */
             if ($options->readonly) {
