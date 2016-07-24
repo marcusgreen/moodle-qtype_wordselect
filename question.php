@@ -32,6 +32,7 @@ defined('MOODLE_INTERNAL') || die();
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+require_once('Kint/Kint.class.php');
 
 class qtype_wordselect_question extends question_graded_automatically_with_countback {
 
@@ -40,7 +41,16 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     public $allcorrectresponse = true;
     public $wrongresponsecount;
     public $rightresponsecount;
+    public $selections =array();
+    public $places=array();
 
+   public function start_attempt(question_attempt_step $step, $variant) {
+             // $step->set_qt_var('_selections', implode(',', $this->selections));
+    }
+    public function apply_attempt_state(question_attempt_step $step) {
+       
+       // $this->selections = explode(',', $step->get_qt_var('_selections'));
+      }
 
 
     /* the characters indicating a field to fill i.e. [cat] creates
@@ -158,6 +168,14 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         }
         return $summary;
     }
+    
+    public function is_word_selected($place,$response) {
+        if (isset($response['p'.$place]) && ($response['p'.$place]==1)){
+              return true;
+        }else{
+            return false;
+        }
+    }
 
     /**
      *
@@ -166,6 +184,8 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * If any words have been selected
      */
     public function is_complete_response(array $response) {
+       
+        return true;
         if (count($response) > 0) {
             return true;
         } else {
@@ -186,7 +206,19 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
          * the equality of two arrays. Without this deferred feedback behaviour probably
          * wont work.
          */
-        if ($prevresponse == $newresponse) {
+       // var_dump($prevresponse);
+        //var_dump($newresponse);
+          //  foreach ($this->places as $place => $notused) {
+           // $fieldname = $this->field($place);
+           // if (!question_utils::arrays_same_at_key_integer(
+            //        $prevresponse, $newresponse, $fieldname)) {
+             //   return false;
+           // }
+        //}
+        //exit();
+        return false;
+
+        if ($prevresponse === $newresponse) {
             return true;
         } else {
             return false;
