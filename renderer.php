@@ -1,4 +1,5 @@
 <?php
+
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -32,88 +33,120 @@ defined('MOODLE_INTERNAL') || die();
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+require_once('Kint/Kint.class.php');
+
 class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
 
     public function formulation_and_controls(question_attempt $qa, question_display_options $options) {
         global $PAGE;
-      
-        $question = $qa->get_question();
-       //$value = $qa->get_last_qt_var($question->field($place));
 
-        //  var_dump($question);
-       //exit();
+        $question = $qa->get_question();
         $PAGE->requires->js('/question/type/wordselect/selection.js');
         $response = $qa->get_last_qt_data();
         $correctplaces = $question->get_correct_places($question->questiontext, $question->delimitchars);
         $output = $question->introduction;
+        $inputattributes = array();
         foreach ($question->get_words() as $place => $value) {
+            if (!array_key_exists('p' . $place, $response)) {
+                $response['p' . $place] = '0';
+            }
+            $inputattributes=array('icon'=>'','title'=>'','tabindex'=>'');
+            $inputattributes['name'] = $this->get_input_name($qa, $value, $place);
+            $inputattributes['id'] = $this->get_input_id($qa, $value, $place);     
+            $inputattributes['value'] = $value;
             $correctresponse = true;
-            $qprefix = $qa->get_qt_field_name('');
-            $inputname = $qprefix . 'p' . ($place);
-            $icon = "";
-            $title = '';
+
+            $hidden = "";
             /* if the current word/place exists in the response */
-            if (array_key_exists('p' . ($place), $response) && $options->correctness == 1) {
-                $checked = 'checked=true';
-                $class = ' class=selected';
+            $isselected = $question->is_word_selected($place, $response);
+            if ($isselected) {
+                $inputattributes['class'] = ' class=selected';
+            } 
+            if (!$options->readonly) {
+                $hidden = html_writer::empty_tag('input', array(
+                            'type' => 'hidden',
+                            'name' => $inputattributes['name'],
+                            'id' => $inputattributes['name'],
+                            'value' => $response['p' . $place],
+                ));
+            }
+
+            if ($isselected && $options->correctness == 1) {
                 if ($this->is_correct_place($correctplaces, $place)) {
-                    $icon = $this->feedback_image(1);
-                    $title = ' title= "'.get_string('correctresponse', 'qtype_wordselect').'"';
-                    $class = ' class = correctresponse ';
+                    $inputattributes['icon'] = $this->feedback_image(1);
+                    $inputattributes['title'] = ' title= "' . get_string('correctresponse', 'qtype_wordselect') . '"';
+                    $inputattributes['class'] = ' class = correctresponse ';
                 }
-                if ($icon == "") {
-                    $icon = $this->feedback_image(0);
+                if ($inputattributes['icon'] == "") {
+                    $inputattributes['icon'] = $this->feedback_image(0);
                     $correctresponse = false;
-                    $title = ' title="' .get_string('incorrectresponse', 'qtype_wordselect').'"';
+                    $inputattributes['title'] = ' title="' . get_string('incorrectresponse', 'qtype_wordselect') . '"';
                 }
             } else if ($this->is_correct_place($correctplaces, $place)) {
                 if ($options->correctness == 1) {
                     if ($options->rightanswer == 1) {
                         /* $options->rightanswer is the setting for the quiz
-                         * to show the non selected corrected correct answers
+                         * to show the non selected correct answers
                          * once the attempt is complete.
                          * if the word is a correct answer but not selected
                          * and the marking is complete (correctness==1)
                          */
-                        $title = ' title="'.get_string('correctanswer', 'qtype_wordselect').'"';
-                        $value = '<span ' . $title . ' class="correct">[' . $value . ']</span>';
+                        $inputattributes['title'] = ' title="' . get_string('correctanswer', 'qtype_wordselect') . '"';
+                        $inputattributes['value'] = '<span ' . $inputattributes['title'] . ' class="correct">[' . $inputattributes['value'] . ']</span>';
                     }
                 }
             }
             /* when scrolling back and forth between questions
              * previously selected value into each place
              */
-            if( $qa->get_last_qt_var($question->field($place))=="on"){
-                $class = " class = ' selected selectable'";
-                $checked = ' checked=true ';
-            } else{
-                $class = ' class=selectable ';
-                $checked = null;
+            if ($qa->get_last_qt_var($question->field($place)) == "1") {
+                $inputattributes['class'] = " class = ' selected selectable'";
+            } else {
+                $inputattributes['class'] = ' class=selectable ';
             }
-            $readonly = "";
             /* When previewing after a quiz is complete */
+            $inputattributes['readonly'] = '';
             if ($options->readonly) {
-                $readonly = " disabled='true' ";
+                $inputattributes['disabled'] = 'disabled';
+                $inputattributes['readonly'] = " disabled='true' ";
                 if ($correctresponse == false) {
-                    $class = ' class = incorrect ';
+                    $inputattributes['class'] = ' class = incorrect ';
+                }
+                if ($this->is_correct_place($correctplaces, $place)) {
+                    $inputattributes['class'] = ' class = correctresponse ';
                 }
             }
-            /* Allows tabbing from word to word */
-            $tabindex = "";
-            if ($value > "") {
-                $tabindex = ' tabindex=99 ';
+            /* skip empty places when tabbing */
+            if ($inputattributes['value'] > "") {
+                $inputattributes['tabindex'] = ' tabindex=99 ';
             }
-            $regex = '/' . $value . '/';
+            $regex = '/' . $inputattributes['value'] . '/';
             if (@preg_match($regex, $question->selectable)) {
-                $output .= '<input class = "checkboxes" hidden = true ' . $checked . ' type = "checkbox" name = '
-                        . $inputname . $readonly . ' id=' . $inputname . '></input>';
-                $output .= '<span '.$tabindex.' name =' . $inputname . $class . $title . '>' . $value . '</span>' . $icon;
+                $output.=$hidden;
+                $output .= '<span ' . $inputattributes['tabindex'] . ' name =' . $inputattributes['name'] . $inputattributes['class'] . $inputattributes['title'] . '>' . $inputattributes['value'] . '</span>' . $inputattributes['icon'];
                 $output .= ' ';
             } else {
-                $output .= ' ' . $value;
+                /* for non selectable items such as the tags for tables etc */
+                $output .= ' ' . $inputattributes['value'];
             }
         }
+
         return $output;
+    }
+
+    protected function get_input_name(question_attempt $qa, $value, $place) {
+        /* prefix is the number of this question attempt */
+        $qprefix = $qa->get_qt_field_name('');
+        $inputname = $qprefix . 'p' . ($place);
+        return $inputname;
+    }
+
+    protected function get_input_id(question_attempt $qa, $value, $place) {
+        return $this->get_input_name($qa, $value, $place);
+    }
+
+    protected function get_input_value($value) {
+        return 1;
     }
 
     /**
@@ -124,12 +157,11 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
      * array of correct places
      */
     protected function is_correct_place($correctplaces, $place) {
-        foreach ($correctplaces as $key => $correctplace) {
-            if ($place == $correctplace) {
-                return true;
-            }
+        if (in_array($place, $correctplaces)) {
+            return true;
+        } else {
+            return false;
         }
-        return false;
     }
 
     /**
