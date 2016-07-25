@@ -260,7 +260,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     public function compute_final_grade($responses, $totaltries) {
         $totalscore = 0;
         $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
-        $wrongresponsecount = $this->get_wrong_responsecount($correctplaces, $responses[0]);
+        $wrongresponsecount = $this->get_wrong_responsecount($correctplaces, $responses);
         foreach ($correctplaces as $place) {
             $lastwrongindex = -1;
             $finallyright = false;
