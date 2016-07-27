@@ -67,16 +67,13 @@ class qtype_wordselect extends question_type {
 
     public function save_question_options($formdata) {
         global $DB;
-
         /* Save the extra data to your database tables from the
           $formdata object, which has all the post data from editformdata.html
          * */
-
         $answerwords = $this->get_answerwords($formdata->delimitchars, $formdata->questiontext);
         $context = $formdata->context;
         // Fetch old answer ids so that we can reuse them.
         $this->update_question_answers($formdata, $answerwords);
-
         $options = $DB->get_record('question_wordselect', array('questionid' => $formdata->id));
         $this->update_question_wordselect($formdata, $options, $context);
         $this->save_hints($formdata, true);
@@ -177,7 +174,6 @@ class qtype_wordselect extends question_type {
     }
 
     /* runs from question editing form */
-
     public function update_question_wordselect($formdata, $options, $context) {
         /* question is actually formdata */
         global $DB;
@@ -224,8 +220,9 @@ class qtype_wordselect extends question_type {
         if (empty($questiondata->options->answers)) {
             return;
         }
-
+        $placecounter=0;
         foreach ($questiondata->options->answers as $a) {
+            $question->places[$placecounter++]="";            
             if (strstr($a->fraction, '1') == false) {
                 /* if this is a wronganswer/distractor strip any
                  * backslahses, this allows escaped backslashes to
@@ -285,7 +282,7 @@ class qtype_wordselect extends question_type {
      * @param type $question The current question
      * @param type $form The question editing form data
      * @return type object
-     * Sets the default mark as 1* the number of gaps
+     * Sets the default mark as 1* the number of words
      * Does not allow setting any other value per word at the moment
      */
     public function save_question($question, $form) {

@@ -81,36 +81,20 @@ Feature: Test all the basic functionality of this question type
       | Specific feedback    | Shown |
       | Right answer         | Shown |
     
-    #Selection of two (all) correct options
     And I press "Start again with these options" 
     And I click on "select1" "text" 
     And I click on "select2" "text"
     And I press "Check"      
     And I should see "Your answer is correct."
     And I should see "Mark 2.00 out of 2.00"
-    And I wait "1" seconds
+    And I wait "2" seconds
     
-    #Select an incorrect option, then deselect it
-    #then select both correct options. This is to 
-    #check that deselecting options works
-    And I press "Start again with these options" 
-    
-    And I click on "Word1" "text"
-    And I click on "Word1" "text"
-    And I click on "select1" "text" 
-    And I click on "select2" "text"
-    And I press "Check"      
-    And I should see "Your answer is correct."
-    And I should see "Mark 2.00 out of 2.00"
-    And I wait "1" seconds
-    
-    #Selection of one of two correct options
     And I press "Start again with these options" 
     And I click on "select1" "text" 
     And I press "Check"      
     And I should see "Your answer is partially correct."
     And I should see "Mark 1.00 out of 2.00"
-    And I wait "1" seconds
+    And I wait "2" seconds
     
 
     ##################################################
@@ -128,14 +112,14 @@ Feature: Test all the basic functionality of this question type
     And I press "Submit and finish"      
     And I should see "Your answer is correct."
     And I should see "Mark 2.00 out of 2.00"
-    And I wait "1" seconds
+    And I wait "5" seconds
 
     And I press "Start again with these options" 
     And I click on "select1" "text" 
     And I press "Submit and finish"      
     And I should see "Your answer is partially correct."
     And I should see "Mark 1.00 out of 2.00"
-    And I wait "1" seconds
+    And I wait "5" seconds
 
     And I press "Start again with these options" 
     And I click on "select1" "text" 
@@ -145,7 +129,7 @@ Feature: Test all the basic functionality of this question type
     And I press "Submit"      
     And I should see "Your answer is partially correct."
     And I should see "Mark 1.00 out of 2.00"
-    And I wait "1" seconds
+    And I wait "5" seconds
 
     And I press "Start again with these options" 
     And I click on "word2" "text" 
@@ -155,4 +139,4 @@ Feature: Test all the basic functionality of this question type
     And I press "Submit and finish"      
     And I should see "Your answer is incorrect."
     And I should see "Mark 0.00 out of 2.00"
-    And I wait "1" seconds
+    And I wait "5" seconds

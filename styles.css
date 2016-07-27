@@ -1,5 +1,5 @@
 .que.wordselect input[type=checkbox]{
-    display:none;
+    /*display:none;*/
 }
 .que.wordselect .selectable{
     cursor:pointer;

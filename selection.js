@@ -37,17 +37,24 @@ $(function () {
 var toggleselected = function (selection) {
     iselected = selection.hasClass("selected");
     wordname = selection.attr('name');
-    checkbox = document.getElementById(wordname);
-    if (checkbox == null || checkbox.disabled == true) {
+    hidden = document.getElementById(wordname);
+    if (hidden == null || hidden.disabled == true) {
         return;
     }
     if (iselected == true) {
         selection.removeClass("selected");
         selection.removeAttr("title");
-        $(checkbox).removeAttr('checked');
+        hidden.type="text";
+        hidden.style.visibility="hidden";
+        hidden.style.display="none";
+        hidden.value='';
     } else {
         selection.addClass("selected");
         selection.prop('title', 'selected');
-        $(checkbox).prop("checked", 'true');
+        hidden.type="checkbox";
+        hidden.value="on";
+        hidden.checked="true";
+      /*  $(hidden).prop("checked", 'true');
+        $(hidden).attr("checked", 'true');*/
     }
 }
