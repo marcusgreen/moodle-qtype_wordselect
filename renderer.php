@@ -36,8 +36,6 @@ defined('MOODLE_INTERNAL') || die();
 class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
 
     public function formulation_and_controls(question_attempt $qa, question_display_options $options) {
-        var_dump($options);
-      //  exit();
         global $PAGE;
         $question = $qa->get_question();
         $PAGE->requires->js('/question/type/wordselect/selection.js');
