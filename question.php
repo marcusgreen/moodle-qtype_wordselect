@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -37,13 +36,8 @@ defined('MOODLE_INTERNAL') || die();
 
 class qtype_wordselect_question extends question_graded_automatically_with_countback {
 
-    public $markedselections = array();
-    public $selectable = array();
-    public $allcorrectresponse = true;
     public $wrongresponsecount;
     public $rightresponsecount;
-    public $selections = array();
-    public $places = array();
 
     /* the characters indicating a field to fill i.e. [cat] creates
      * a field where the correct answer is cat
@@ -176,7 +170,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * If any words have been selected
      */
     public function is_complete_response(array $response) {
-        return true;
         if (count($response) > 0) {
             return true;
         } else {
@@ -204,14 +197,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         }
     }
 
-    public function get_correct_response() {
-        return;
-        $response = array();
-        foreach ($this->get_correct_places($this->questiontext, $this->delimitchars) as $t) {
-            $response['p' . $t] = 'on';
-        }
-        return $response;
-    }
+    public function get_correct_response() {}
 
     public function check_file_access($qa, $options, $component, $filearea, $args, $forcedownload) {
         if ($component == 'question' && $filearea == 'answerfeedback') {
@@ -256,11 +242,10 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 
     /* not called in interactive mode */
-
     public function compute_final_grade($responses, $totaltries) {
         $totalscore = 0;
         $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
-        $wrongresponsecount = $this->get_wrong_responsecount($correctplaces, $responses);
+        $wrongresponsecount = $this->get_wrong_responsecount($correctplaces, $responses[0]);
         foreach ($correctplaces as $place) {
             $lastwrongindex = -1;
             $finallyright = false;
@@ -289,9 +274,9 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * @param type $response
      * @return int
      */
-    public function get_wrong_responsecount($correctplaces, $response) {
+    public function get_wrong_responsecount($correctplaces, $responses) {
         $wrongresponsecount = 0;
-        foreach ($response as $key => $value) {
+        foreach ($responses as $key => $value) {
             /* chop off the leading p */
             $place = substr($key, 1);
             /* if its not in the correct places and it is turned on */
