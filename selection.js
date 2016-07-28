@@ -25,7 +25,7 @@
 $(function () {
     $(".selectable").on('keydown', function (e) {
         /* right arrow key */
-        if (e.keyCode == 39) {
+        if (e.keyCode == 39) {         
             toggleselected($(this));
         }
     });
@@ -54,7 +54,5 @@ var toggleselected = function (selection) {
         hidden.type="checkbox";
         hidden.value="on";
         hidden.checked="true";
-      /*  $(hidden).prop("checked", 'true');
-        $(hidden).attr("checked", 'true');*/
     }
 }

@@ -42,24 +42,22 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         $response = $qa->get_last_qt_data();
         $correctplaces = $question->get_correct_places($question->questiontext, $question->delimitchars);
         $output = $question->introduction;
-        $wordattributes = array();
         foreach ($question->get_words() as $place => $word) {
             if (!array_key_exists('p' . $place, $response)) {
                 $response['p' . $place] = '0';
             }
-            $wordattributes = array('title' => '', 'tabindex' => '', 'readonly' => 'true');
+            $wordattributes = array();
             $afterwordfeedback = '';
             $wordattributes['name'] = $this->get_input_name($qa, $word, $place);
             $wordattributes['id'] = $this->get_input_id($qa, $word, $place);
             $correctresponse = true;
             $iscorrectplace = $question->is_correct_place($correctplaces, $place);
-            $hidden = "";
+            $checkbox = "";
             /* if the current word/place exists in the response */
             $isselected = $question->is_word_selected($place, $response);
             if ($isselected) {
                 $wordattributes['class'] = ' class=selected';
             }
-  
             if ($isselected && $options->correctness == 1) {
                 if ($iscorrectplace) {
                     $afterwordfeedback = $this->feedback_image(1);
@@ -84,10 +82,12 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                     }
                 }
             }
-
+           /* skip empty places when tabbing */
+            if ($word > "") {
+                $wordattributes['tabindex'] = '1';
+            }
             if ($options->readonly) {
-                $wordattributes['disabled'] = 'true';
-                $wordattributes['readonly'] = 'true';
+                $wordattributes['tabindex'] = '';
                 if ($iscorrectplace && ($isselected == true)) {
                     $wordattributes['class'] = 'correctresponse';
                 }
@@ -115,16 +115,11 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 if ($isselected == true) {
                     $properties['checked'] = "true";
                 }
-                $hidden = html_writer::empty_tag('input', $properties);
+                $checkbox = html_writer::empty_tag('input', $properties);
             }
-            
-            /* skip empty places when tabbing */
-            if ($word > "") {
-                $wordattributes['tabindex'] = '99';
-            }
-            $regex = '/' . $word . '/';
-            if (@preg_match($regex, $question->selectable)) {
-                $output.=$hidden;
+            /* the @ supresses error messages if selectable is empty */
+            if (@strpos($question->selectable,$word)!==false) {
+                $output.=$checkbox;
                 $output .=html_writer::tag('span', $word, $wordattributes);
                 $output .=$afterwordfeedback;
                 $output .= ' ';
@@ -166,7 +161,6 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             }
             list($notused, $state) = $qa->get_question()->grade_response($response);
         }
-
         $feedback = '';
         $field = $state->get_feedback_class() . 'feedback';
         $format = $state->get_feedback_class() . 'feedbackformat';
