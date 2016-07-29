@@ -32,7 +32,6 @@ defined('MOODLE_INTERNAL') || die();
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-//require_once('Kint/Kint.class.php');
 
 class qtype_wordselect_question extends question_graded_automatically_with_countback {
 
@@ -66,7 +65,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $questiontextnodelim = preg_replace('/\\' . $r . '/', '', $questiontextnodelim);
         /* string html tags (is this necessary?) */
         $this->selectable = strip_tags($questiontextnodelim);
-
         $allwords = preg_split('/[\s\n]/', $questiontextnodelim);
         return $allwords;
     }
@@ -156,7 +154,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 
     public function is_word_selected($place, $response) {
-        if (isset($response['p' . $place]) && ($response['p' . $place] =="on")) {
+        if (isset($response['p' . $place]) && ($response['p' . $place] == "on")) {
             return true;
         } else {
             return false;
@@ -197,7 +195,8 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         }
     }
 
-    public function get_correct_response() {}
+    public function get_correct_response() {
+    }
 
     public function check_file_access($qa, $options, $component, $filearea, $args, $forcedownload) {
         if ($component == 'question' && $filearea == 'answerfeedback') {
@@ -218,7 +217,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         } else {
             return false;
         }
-      }
+    }
 
     /**
      * @param array $response responses, as returned by

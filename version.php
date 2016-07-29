@@ -27,4 +27,4 @@ defined('MOODLE_INTERNAL') || die();
 $plugin->component = 'qtype_wordselect';
 $plugin->version   = 2016062500;
 $plugin->requires  = 2012062504;
-$plugin->maturity  = MATURITY_ALPHA;
+$plugin->maturity  = BETA;

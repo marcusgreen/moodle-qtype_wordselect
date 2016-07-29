@@ -37,9 +37,9 @@ $string['correctresponse'] = 'correct response ';
 $string['incorrectresponse'] = 'incorrect response ';
 $string['correctanswer'] = 'correct answer';
 $string['questiontext'] = 'question text';
-$string['questiontext_help']='Put square braces around the correct words ';
+$string['questiontext_help'] = 'Put square braces around the correct words ';
 $string['introduction'] = 'introduction';
-$string['introduction_help']='Introduction to the question';
+$string['introduction_help'] = 'Introduction to the question';
 
 
 

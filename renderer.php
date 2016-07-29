@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -43,9 +42,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         $correctplaces = $question->get_correct_places($question->questiontext, $question->delimitchars);
         $output = $question->introduction;
         foreach ($question->get_words() as $place => $word) {
-            if (!array_key_exists('p' . $place, $response)) {
-                $response['p' . $place] = '0';
-            }
+            $correctnoselect = false;
             $wordattributes = array();
             $afterwordfeedback = '';
             $wordattributes['name'] = $this->get_input_name($qa, $word, $place);
@@ -78,11 +75,11 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                          */
                         $wordattributes['title'] = get_string('correctanswer', 'qtype_wordselect');
                         $wordattributes['class'] = 'correct';
-                        $word = "[" . $word . "]";
+                        $correctnoselect = true;
                     }
                 }
             }
-           /* skip empty places when tabbing */
+            /* skip empty places when tabbing */
             if ($word > "") {
                 $wordattributes['tabindex'] = '1';
             }
@@ -106,22 +103,24 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 } else {
                     $wordattributes['class'] = 'selectable';
                 }
-                  $properties = array(
+                $properties = array(
                     'type' => 'checkbox',
                     'name' => $wordattributes['name'],
                     'id' => $wordattributes['name'],
-                    'hidden' => 'true',
-                    'value' => $response['p' . $place]);
+                    'hidden' => 'true');
                 if ($isselected == true) {
                     $properties['checked'] = "true";
                 }
                 $checkbox = html_writer::empty_tag('input', $properties);
             }
             /* the @ supresses error messages if selectable is empty */
-            if (@strpos($question->selectable,$word)!==false) {
-                $output.=$checkbox;
-                $output .=html_writer::tag('span', $word, $wordattributes);
-                $output .=$afterwordfeedback;
+            if (@strpos($question->selectable, $word) !== false) {
+                if ($correctnoselect == true) {
+                    $word = "[" . $word . "]";
+                }
+                $output .= $checkbox;
+                $output .= html_writer::tag('span', $word, $wordattributes);
+                $output .= $afterwordfeedback;
                 $output .= ' ';
             } else {
                 /* for non selectable items such as the tags for tables etc */
@@ -151,6 +150,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
     }
 
     /* correct,partially correct and incorrect */
+
     protected function combined_feedback(question_attempt $qa) {
         $question = $qa->get_question();
         $state = $qa->get_state();
