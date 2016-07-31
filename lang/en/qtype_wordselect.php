@@ -29,7 +29,7 @@ $string['pluginname_link'] = 'question/type/wordselect';
 $string['pluginnameadding'] = 'Adding a wordselect question';
 $string['pluginnameediting'] = 'Editing a wordselect question';
 $string['pluginnamesummary'] = 'All words can be selected by clicking on them. Correct words are defined by surrounding '
-        . 'with dlimiters e.g. The cat [sat] on the mat';
+        . 'with delimiters e.g. The cat [sat] on the mat';
 $string['delimitchars'] = 'Delimit characters';
 $string['delimitchars_help'] = 'Change the characters that delimit a field from the default [ ], useful for programming language questions';
 $string['nowordsdefined'] = 'No words to select have been defined ';
