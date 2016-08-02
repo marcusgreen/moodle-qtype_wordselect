@@ -43,7 +43,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         $output = $question->introduction;
         foreach ($question->get_words() as $place => $word) {
             $correctnoselect = false;
-            $wordattributes = array();
+            $wordattributes = array("role"=>"checkbox");
             $afterwordfeedback = '';
             $wordattributes['name'] = $this->get_input_name($qa, $word, $place);
             $wordattributes['id'] = $this->get_input_id($qa, $word, $place);
