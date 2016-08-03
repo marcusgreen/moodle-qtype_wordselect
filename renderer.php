@@ -53,7 +53,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             /* if the current word/place exists in the response */
             $isselected = $question->is_word_selected($place, $response);
             if ($isselected) {
-                $wordattributes['class'] = ' class=selected';
+                $wordattributes['class'] = 'selected';
             }
             if ($isselected && $options->correctness == 1) {
                 if ($iscorrectplace) {
@@ -100,8 +100,10 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                  */
                 if ($qasdata == "on") {
                     $wordattributes['class'] = 'selected selectable';
+                    $wordattributes['aria-checked']='true';
                 } else {
                     $wordattributes['class'] = 'selectable';
+                    $wordattributes['aria-checked']='false';
                 }
                 $properties = array(
                     'type' => 'checkbox',
@@ -110,7 +112,8 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                     'hidden' => 'true');
                 if ($isselected == true) {
                     $properties['checked'] = "true";
-                }
+                    $wordattributes['aria-checked']='true';
+               }
                 $checkbox = html_writer::empty_tag('input', $properties);
             }
             /* the @ supresses error messages if selectable is empty */
