@@ -28,7 +28,7 @@ $(function () {
         if (e.keyCode === 32) {         
             toggleselected($(this));
         }
-       /*Eat the keycode so it doesn't scroll the screen down */
+       /*Eat the keycode so it doesnt scroll the screen down */
        return !(e.keyCode === 32);
 
     });
@@ -47,7 +47,7 @@ var toggleselected = function (selection) {
     if (iselected == true) {
         selection.removeClass("selected");
         selection.removeAttr("title");
-        hidden.setAttribute('aria-checked','false');
+        selection.attr('aria-checked','false');
         hidden.type="text";
         hidden.style.visibility="hidden";
         hidden.style.display="none";
@@ -56,7 +56,7 @@ var toggleselected = function (selection) {
     } else {
         selection.addClass("selected");
         selection.prop('title', 'selected');
-        hidden.setAttribute('aria-checked','true');
+        selection.attr('aria-checked','true');
         hidden.type="checkbox";
         hidden.value="on";
         hidden.checked="true";
