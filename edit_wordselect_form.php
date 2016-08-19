@@ -42,7 +42,7 @@ class qtype_wordselect_edit_form extends question_edit_form {
         // Default mark will be set to 1 * number of fields.
         $mform->removeelement('defaultmark');
 
-        $mform->addElement('editor', 'introduction', 'Introduction', array('size' => 70, 'rows' => 2),
+        $mform->addElement('editor', 'introduction', get_string('introduction','qtype_wordselect'), array('size' => 70, 'rows' => 2),
                 $this->editoroptions);
 
         $mform->addHelpButton('introduction', 'introduction', 'qtype_wordselect');
