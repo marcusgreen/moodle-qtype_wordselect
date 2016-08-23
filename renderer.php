@@ -40,7 +40,9 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         $PAGE->requires->js('/question/type/wordselect/selection.js');
         $response = $qa->get_last_qt_data();
         $correctplaces = $question->get_correct_places($question->questiontext, $question->delimitchars);
-        $output = $question->introduction;
+        /* this will ensure filters are applied to the introduction, done particularly for the multilang filter */
+        $output=$question->format_text($question->introduction, $question->questiontextformat,
+                $qa, 'question', 'introduction', $question->id);
         foreach ($question->get_words() as $place => $word) {
             $correctnoselect = false;
             $wordattributes = array("role"=>"checkbox");
