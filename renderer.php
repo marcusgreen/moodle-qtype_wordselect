@@ -41,11 +41,11 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         $response = $qa->get_last_qt_data();
         $correctplaces = $question->get_correct_places($question->questiontext, $question->delimitchars);
         /* this will ensure filters are applied to the introduction, done particularly for the multilang filter */
-        $output=$question->format_text($question->introduction, $question->questiontextformat,
+        $output = $question->format_text($question->introduction, $question->questiontextformat,
                 $qa, 'question', 'introduction', $question->id);
         foreach ($question->get_words() as $place => $word) {
             $correctnoselect = false;
-            $wordattributes = array("role"=>"checkbox");
+            $wordattributes = array("role" => "checkbox");
             $afterwordfeedback = '';
             $wordattributes['name'] = $this->get_input_name($qa, $word, $place);
             $wordattributes['id'] = $this->get_input_id($qa, $word, $place);
@@ -102,10 +102,10 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                  */
                 if ($qasdata == "on") {
                     $wordattributes['class'] = 'selected selectable';
-                    $wordattributes['aria-checked']='true';
+                    $wordattributes['aria-checked'] = 'true';
                 } else {
                     $wordattributes['class'] = 'selectable';
-                    $wordattributes['aria-checked']='false';
+                    $wordattributes['aria-checked'] = 'false';
                 }
                 $properties = array(
                     'type' => 'checkbox',
@@ -114,8 +114,8 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                     'hidden' => 'true');
                 if ($isselected == true) {
                     $properties['checked'] = "true";
-                    $wordattributes['aria-checked']='true';
-               }
+                    $wordattributes['aria-checked'] = 'true';
+                }
                 $checkbox = html_writer::empty_tag('input', $properties);
             }
             /* the @ supresses error messages if selectable is empty */
