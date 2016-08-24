@@ -35,13 +35,15 @@ defined('MOODLE_INTERNAL') || die();
 class qtype_wordselect_edit_form extends question_edit_form {
 
     protected function definition_inner($mform) {
+        
+        /* this is to change the order, they get added back later on */
         $mform->removeelement('questiontext');
-
         $mform->removeelement('generalfeedback');
 
         // Default mark will be set to 1 * number of fields.
         $mform->removeelement('defaultmark');
-
+        
+        /* question introduction where words are not selectable */
         $mform->addElement('editor', 'introduction', get_string('introduction','qtype_wordselect'), array('size' => 70, 'rows' => 2),
                 $this->editoroptions);
 
@@ -104,7 +106,6 @@ class qtype_wordselect_edit_form extends question_edit_form {
     protected function data_preprocessing($question) {
         $question = parent::data_preprocessing($question);
         $question = $this->data_preprocessing_hints($question);
-
         return $question;
     }
 
