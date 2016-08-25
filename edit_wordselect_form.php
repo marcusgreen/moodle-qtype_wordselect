@@ -45,11 +45,14 @@ class qtype_wordselect_edit_form extends question_edit_form {
         $mform->addElement('editor', 'introduction',
                 get_string('introduction', 'qtype_wordselect'), array('size' => 70, 'rows' => 2),
                 $this->editoroptions);
+        $mform->setType('introduction', PARAM_RAW);
 
         $mform->addHelpButton('introduction', 'introduction', 'qtype_wordselect');
 
         $mform->addElement('editor', 'questiontext', get_string('questiontext', 'question'),
                 array('rows' => 15), $this->editoroptions);
+        $mform->setType('questiontext', PARAM_RAW);
+
         $mform->addHelpButton('questiontext', 'questiontext', 'qtype_wordselect');
 
         $mform->addElement('editor', 'generalfeedback', get_string('generalfeedback', 'question')
@@ -105,7 +108,27 @@ class qtype_wordselect_edit_form extends question_edit_form {
     protected function data_preprocessing($question) {
         $question = parent::data_preprocessing($question);
         $question = $this->data_preprocessing_hints($question);
-
+        $draftid = file_get_submitted_draft_itemid('introduction');
+        $question->introduction = array();
+        var_dump($question->options);
+        exit();
+        print $draftid;
+        print $this->context->id;
+        print $question->id;
+        var_dump($this->fileoptions);
+        var_dump($question->options->introduction);
+        
+        exit();
+        $question->introduction['text'] = file_prepare_draft_area(
+            $draftid,           // Draftid
+            $this->context->id, // context
+            'question',      // component
+            'introduction',       // filarea
+            !empty($question->id) ? (int) $question->id : null, // itemid
+            $this->fileoptions, // options
+            $question->options->introduction // text.
+        );
+    
         return $question;
     }
 

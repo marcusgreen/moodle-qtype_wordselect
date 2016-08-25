@@ -132,6 +132,9 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 $output .= ' ' . $word;
             }
         }
+        /* this ensures that any files inserted through the editor menu will display */
+        $output = $question->format_text($output, $question->questiontextformat, $qa, 'question',
+                    'questiontext', $question->id);
         return $output;
     }
 
