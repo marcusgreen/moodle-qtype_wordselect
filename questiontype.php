@@ -191,7 +191,8 @@ class qtype_wordselect extends question_type {
         }
         /* when coming in from form */
         if (is_array($formdata->introduction)) {
-            $options->introduction = $formdata->introduction['text'];
+              $options->introduction = $this->import_or_save_files($formdata->introduction,
+                $context, 'qtype_wordselect', 'introduction', $formdata->id);
         } else {
             /* when being imported e.g. from an xml import */
             $options->introduction = $formdata->introduction;
