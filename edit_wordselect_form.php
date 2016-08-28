@@ -24,7 +24,6 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die();
-//include_once("Kint/Kint.class.php");
 /**
  * wordselect question editing form definition.
  *
@@ -75,9 +74,9 @@ class qtype_wordselect_edit_form extends question_edit_form {
 
     public function set_data($question) {
         /* accessing the form in this way is probably not correct style */
-        $introduction = $this->get_introduction($question);        
-        /* this ensures introduction is available for image file processing */
-        $question->options->introduction=$introduction;
+        $introduction = $this->get_introduction($question);
+
+        /* ...this ensures introduction is available for image file processing */
         $this->_form->getElement('introduction')->setValue(array('text' => $introduction));
         question_edit_form::set_data($question);
     }
@@ -106,13 +105,28 @@ class qtype_wordselect_edit_form extends question_edit_form {
         return $errors;
     }
 
-    protected function data_preprocessing($question) {     
+    protected function data_preprocessing($question) {
         $question = parent::data_preprocessing($question);
         $question = $this->data_preprocessing_hints($question);
-        /* TODO code to ensure files in introduction are saved and displayed 
-         * see data_processing of graderinfo field in essay type question
-         * for how this may be done
-         */
+        if (empty($question->options)) {
+            return $question;
+        }
+        $draftid = file_get_submitted_draft_itemid('introduction');
+        $question->introduction = array();
+        $question->introduction['text'] = file_prepare_draft_area(
+            $draftid,           // Draftid
+            $this->context->id, // context
+            'qtype_wordselect',         // component
+            'introduction',     // filarea
+            !empty($question->id) ? (int) $question->id : null, // itemid
+            $this->fileoptions, // options
+            $question->options->introduction // text.
+        );
+
+        /* format of introduction will always be the same as questiontext */
+        $question->introduction['format'] = $question->questiontextformat;
+        $question->introduction['itemid'] = $draftid;
+
         return $question;
     }
 

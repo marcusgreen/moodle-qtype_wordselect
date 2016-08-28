@@ -64,11 +64,10 @@ class restore_qtype_wordselect_plugin extends restore_qtype_plugin {
         $oldquestionid = $this->get_old_parentid('question');
         $newquestionid = $this->get_new_parentid('question');
         $questioncreated = $this->get_mappingid('question_created', $oldquestionid) ? true : false;
-
         // If the question has been created by restore, we need to create its question_wordselect too.
         if ($questioncreated) {
             // Adjust value to link back to the questions table.
-            $data->question = $newquestionid;
+            $data->questionid = $newquestionid;
             // Insert record.
             $newitemid = $DB->insert_record('question_wordselect', $data);
             // Create mapping (needed for decoding links).
@@ -159,8 +158,8 @@ class restore_qtype_wordselect_plugin extends restore_qtype_plugin {
                 }
             }
 
-            /*If we haven't found the newitemid, something has gone really wrong, question in DB
-             is missing answers, exception*/
+            /* If we haven't found the newitemid, something has gone really wrong, question in DB
+              is missing answers, exception */
             if (!$newitemid) {
                 $info = new stdClass();
                 $info->filequestionid = $oldquestionid;
@@ -172,4 +171,5 @@ class restore_qtype_wordselect_plugin extends restore_qtype_plugin {
         /* Create mapping (we'll use this intensively when restoring question_states. And also answerfeedback files) */
         $this->set_mapping('question_answer', $oldid, $newitemid);
     }
+
 }

@@ -36,6 +36,7 @@ require_once($CFG->dirroot . '/question/type/wordselect/question.php');
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 class qtype_wordselect extends question_type {
     /* data used by export_to_xml (among other things possibly */
     public function extra_question_fields() {
@@ -57,6 +58,9 @@ class qtype_wordselect extends question_type {
 
     public function move_files($questionid, $oldcontextid, $newcontextid) {
         parent::move_files($questionid, $oldcontextid, $newcontextid);
+        $fs = get_file_storage();
+        $fs->move_area_files_to_new_context($oldcontextid,
+                $newcontextid, 'qtype_wordselect', 'introduction', $questionid);
         $this->move_files_in_hints($questionid, $oldcontextid, $newcontextid);
     }
 
@@ -189,7 +193,7 @@ class qtype_wordselect extends question_type {
             $options->incorrectfeedback = '';
             $options->id = $DB->insert_record('question_wordselect', $options);
         }
-        /* when coming in from form */
+         /* when coming in from form */
         if (is_array($formdata->introduction)) {
               $options->introduction = $this->import_or_save_files($formdata->introduction,
                 $context, 'qtype_wordselect', 'introduction', $formdata->id);
