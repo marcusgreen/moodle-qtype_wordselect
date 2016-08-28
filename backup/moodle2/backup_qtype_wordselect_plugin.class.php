@@ -24,7 +24,6 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-
 /**
  * Provides the information to backup wordselect questions
  *
@@ -55,21 +54,19 @@ class backup_qtype_wordselect_plugin extends backup_qtype_plugin {
 
         // Now create the qtype own structures.
         $wordselect = new backup_nested_element('wordselect', array('id'), array(
+            'introduction',
             'delimitchars',
             'correctfedback', 'correctfeddbackformat',
             'partiallycorrectfeedback',
             'partiallycorrectfeedbackformat',
             'incorrectfeedback', 'incorrectfeedbackformat'));
-
         // Now the own qtype tree.
         $pluginwrapper->add_child($wordselect);
 
         // Set source to populate the data.
         $wordselect->set_source_table('question_wordselect',
-                array('question' => backup::VAR_PARENTID));
-
+                array('questionid' => backup::VAR_PARENTID));
         // Don't need to annotate ids nor files.
-
         return $plugin;
     }
 
@@ -81,6 +78,7 @@ class backup_qtype_wordselect_plugin extends backup_qtype_plugin {
      */
     public static function get_qtype_fileareas() {
         return array(
+            'introduction' => 'question_created',
             'correctfeedback' => 'question_created',
             'partiallycorrectfeedback' => 'question_created',
             'incorrectfeedback' => 'question_created');
