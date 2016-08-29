@@ -8,7 +8,7 @@
     </category>
   </question>
 
-<!-- question: 2  -->
+<!-- question: 880  -->
   <question type="wordselect">
     <name>
       <text>AlternativeDelimiters</text>
@@ -32,7 +32,7 @@
       </feedback>
     </answer>
     <delimitchars>{}</delimitchars>
-    <!-- Wordselect release: version:2016062500 Moodle version:2016052300 release:3.1 (Build: 20160523) -->
+    <!-- Wordselect release: version:2016062500 Moodle version:2016070700 release:3.2dev (Build: 20160707) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -44,7 +44,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 5  -->
+<!-- question: 881  -->
   <question type="wordselect">
     <name>
       <text>CatMat</text>
@@ -69,7 +69,7 @@
       </feedback>
     </answer>
     <delimitchars>[]</delimitchars>
-    <!-- Wordselect release: version:2016062500 Moodle version:2016052300 release:3.1 (Build: 20160523) -->
+    <!-- Wordselect release: version:2016062500 Moodle version:2016070700 release:3.2dev (Build: 20160707) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -81,7 +81,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 8  -->
+<!-- question: 882  -->
   <question type="wordselect">
     <name>
       <text>FindTheAnimals</text>
@@ -301,7 +301,7 @@
       </feedback>
     </answer>
     <delimitchars>[]</delimitchars>
-    <!-- Wordselect release: version:2016062500 Moodle version:2016052300 release:3.1 (Build: 20160523) -->
+    <!-- Wordselect release: version:2016062500 Moodle version:2016070700 release:3.2dev (Build: 20160707) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -313,7 +313,75 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 16  -->
+<!-- question: 884  -->
+  <question type="wordselect">
+    <name>
+      <text>Reading Comprehension</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>William Shakespeare was an [English] poet, playwright, and actor, widely regarded as the greatest writer in the English language and the world's pre-eminent dramatist. He is often called England's national poet, and the "Bard of Avon".His extant works, including collaborations, consist of approximately 38 plays,154 sonnets, two long narrative poems, and a few other verses, some of uncertain authorship. His plays have been translated into every major living language and are performed more often than those of any other playwright.</p>
+<p>Shakespeare was born in [1564] and brought up in [Stratford-upon-Avon]. At the age of 18, he married [Anne] Hathaway, with whom he had three children: Susanna, and twins Hamnet and Judith. Sometime between 1585 and 1592, he began a successful career in London as an actor, writer, and part-owner of a playing company called the Lord Chamberlain's Men, later known as the King's Men. He appears to have retired to Stratford around 1613, at age 49, where he died three years later. One of his most well known works is [Hamlet].</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>5.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <introduction><![CDATA[<p>Select the words that answer the following questions.</p>
+<ul>
+<li>What was the year of Shakespears birth?</li>
+<li>What town did he live in when growing up?</li>
+<li>What was his wifes first name?</li>
+<li>What was his nationality?</li>
+<li>What is his most famous play?</li>
+</ul>
+<hr style="border: thin solid black;" />]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>English</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>1564</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>Stratford-upon-Avon</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>Anne</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>Hamlet</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <!-- Wordselect release: version:2016062500 Moodle version:2016070700 release:3.2dev (Build: 20160707) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+  </question>
+
+<!-- question: 883  -->
   <question type="wordselect">
     <name>
       <text>WordsInTables</text>
@@ -361,7 +429,7 @@
       </feedback>
     </answer>
     <delimitchars>[]</delimitchars>
-    <!-- Wordselect release: version:2016062500 Moodle version:2016052300 release:3.1 (Build: 20160523) -->
+    <!-- Wordselect release: version:2016062500 Moodle version:2016070700 release:3.2dev (Build: 20160707) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
