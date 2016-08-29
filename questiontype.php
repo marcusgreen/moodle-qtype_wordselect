@@ -53,7 +53,6 @@ class qtype_wordselect extends question_type {
         global $CFG, $PAGE;
         parent::find_standard_scripts();
         $PAGE->requires->jquery();
-        $PAGE->requires->jquery_plugin('ui');
     }
 
     public function move_files($questionid, $oldcontextid, $newcontextid) {
@@ -101,7 +100,6 @@ class qtype_wordselect extends question_type {
     /* chop the delimit string into a two element array
      * this might be better done on initialisation
      */
-
     public static function get_delimit_array($delimitchars) {
         $delimitarray = array();
         $delimitarray["l"] = substr($delimitchars, 0, 1);
