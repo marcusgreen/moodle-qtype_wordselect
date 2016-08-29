@@ -285,25 +285,4 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         }
         return $wrongresponsecount;
     }
-
-    public function contains_correct_response($response) {
-        return;
-        $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
-        $responses = array_keys($responses);
-        foreach ($responses as $response) {
-            $found = false;
-            foreach ($correctplaces as $place) {
-                $responseval = substr($response, 1);
-                if ($responseval == $place) {
-                    $found = true;
-                }
-            }
-            if ($found == false) {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
 }
