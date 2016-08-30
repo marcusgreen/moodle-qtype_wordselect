@@ -3,12 +3,12 @@
 <!-- question: 0  -->
   <question type="category">
     <category>
-        <text>$course$/Default for WSD01</text>
+        <text>$course$/Wordselect Sample Questions</text>
 
     </category>
   </question>
 
-<!-- question: 880  -->
+<!-- question: 21  -->
   <question type="wordselect">
     <name>
       <text>AlternativeDelimiters</text>
@@ -32,7 +32,7 @@
       </feedback>
     </answer>
     <delimitchars>{}</delimitchars>
-    <!-- Wordselect release: version:2016062500 Moodle version:2016070700 release:3.2dev (Build: 20160707) -->
+    <!-- Wordselect release:1.0 version:2016062500 Moodle version:2015111605.08 release:3.0.5+ (Build: 20160825) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -44,7 +44,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 881  -->
+<!-- question: 22  -->
   <question type="wordselect">
     <name>
       <text>CatMat</text>
@@ -69,7 +69,7 @@
       </feedback>
     </answer>
     <delimitchars>[]</delimitchars>
-    <!-- Wordselect release: version:2016062500 Moodle version:2016070700 release:3.2dev (Build: 20160707) -->
+    <!-- Wordselect release:1.0 version:2016062500 Moodle version:2015111605.08 release:3.0.5+ (Build: 20160825) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -81,7 +81,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 882  -->
+<!-- question: 23  -->
   <question type="wordselect">
     <name>
       <text>FindTheAnimals</text>
@@ -301,7 +301,7 @@
       </feedback>
     </answer>
     <delimitchars>[]</delimitchars>
-    <!-- Wordselect release: version:2016062500 Moodle version:2016070700 release:3.2dev (Build: 20160707) -->
+    <!-- Wordselect release:1.0 version:2016062500 Moodle version:2015111605.08 release:3.0.5+ (Build: 20160825) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -313,7 +313,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 884  -->
+<!-- question: 24  -->
   <question type="wordselect">
     <name>
       <text>Reading Comprehension</text>
@@ -369,7 +369,7 @@
       </feedback>
     </answer>
     <delimitchars>[]</delimitchars>
-    <!-- Wordselect release: version:2016062500 Moodle version:2016070700 release:3.2dev (Build: 20160707) -->
+    <!-- Wordselect release:1.0 version:2016062500 Moodle version:2015111605.08 release:3.0.5+ (Build: 20160825) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -381,7 +381,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 883  -->
+<!-- question: 25  -->
   <question type="wordselect">
     <name>
       <text>WordsInTables</text>
@@ -429,7 +429,7 @@
       </feedback>
     </answer>
     <delimitchars>[]</delimitchars>
-    <!-- Wordselect release: version:2016062500 Moodle version:2016070700 release:3.2dev (Build: 20160707) -->
+    <!-- Wordselect release:1.0 version:2016062500 Moodle version:2015111605.08 release:3.0.5+ (Build: 20160825) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
