@@ -16,8 +16,7 @@
 /**
  * JavaScript code for the wordselect question type.
  *
- * @package    qtype
- * @subpackage wordselect
+ * @package    qtype_wordselect
  * @copyright  2016 Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -29,7 +28,7 @@ $(function () {
             toggleselected($(this));
         }
        /*Eat the keycode so it doesnt scroll the screen down */
-       return !(e.keyCode === 32);
+       if(e.keyCode === 32) return false;
 
     });
     $(".selectable").on('click', function (e) {
@@ -38,13 +37,13 @@ $(function () {
 });
 
 var toggleselected = function (selection) {
-    iselected = selection.hasClass("selected");
-    wordname = selection.attr('name');
-    hidden = document.getElementById(wordname);
-    if (hidden == null || hidden.disabled == true) {
+    var iselected = selection.hasClass("selected");
+    var wordname = selection.attr('name');
+    var hidden = document.getElementById(wordname);
+    if (hidden === null || hidden.disabled === true) {
         return;
     }
-    if (iselected == true) {
+    if (iselected === true) {
         selection.removeClass("selected");
         selection.removeAttr("title");
         selection.attr('aria-checked','false');
@@ -61,4 +60,4 @@ var toggleselected = function (selection) {
         hidden.value="on";
         hidden.checked="true";
     }
-}
+};
