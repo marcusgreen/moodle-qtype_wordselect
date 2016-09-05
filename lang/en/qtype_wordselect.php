@@ -24,13 +24,11 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 $string['pluginname'] = 'Word Select';
-$string['pluginname_help'] = 'Put delimiters around words considered correct, e.g. The cat [sat] on the mat. At runtime the user can '
-        . 'select any of the words apart from the introduction text.';
+$string['pluginname_help'] = 'Put delimiters around words considered correct, e.g. The cat [sat] on the mat. At runtime the user can select any of the words apart from the introduction text.';
 $string['pluginname_link'] = 'Wordselect_question_type';
 $string['pluginnameadding'] = 'Adding a wordselect question';
 $string['pluginnameediting'] = 'Editing a wordselect question';
-$string['pluginnamesummary'] = 'All words can be selected by clicking on them. Correct words are defined by surrounding '
-        . 'with delimiters e.g. The cat [sat] on the mat';
+$string['pluginnamesummary'] = 'All words can be selected by clicking on them. Correct words are defined by surrounding with delimiters e.g. The cat [sat] on the mat';
 $string['delimitchars'] = 'Delimit characters';
 $string['delimitchars_help'] = 'Change the characters that delimit a field from the default [ ], useful for programming language questions';
 $string['nowordsdefined'] = 'No words to select have been defined ';
