@@ -28,4 +28,4 @@ $plugin->component = 'qtype_wordselect';
 $plugin->version   = 2016062501;
 $plugin->requires  = 2012062504;
 $plugin->maturity  = MATURITY_STABLE;
-$plugin->release  = '1.01';
+$plugin->release  = '1.03';
