@@ -65,7 +65,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $questiontextnodelim = preg_replace('/\\' . $r . '/', '', $questiontextnodelim);
         /* string html tags (is this necessary?) */
         $this->selectable = strip_tags($questiontextnodelim);
-        $allwords = preg_split('/[\s\n]/', $questiontextnodelim);
+        $allwords = preg_split('@[\s+]@u', $questiontextnodelim);
         return $allwords;
     }
 
