@@ -28,10 +28,10 @@ var feedbackdata = ($("[name='wordfeedbackdata']").val());
 var $feedback=JSON.parse(feedbackdata);
 
 function get_feedback($word, offset) {
-    retval = null;
+    wordfeedback = null;
     for (var fb in $feedback) {
         if ($feedback[fb].word === $word) {
-            if ($feedback[fb].offset === offset) {
+            if ($feedback[fb].offset == offset) {
                 wordfeedback = $feedback[fb];
             }
         }
@@ -87,7 +87,9 @@ $("#fitem_id_questiontext").on("click", function () {
         var $sel = rangy.getSelection();
         var word = get_selected_word($sel);
         if (word != null) {
-            fb=get_feedback($word,0);
+            wordfeedback=get_feedback(word,0);
+            $("#id_selectededitable").html(wordfeedback['selected']);
+            $("#id_notselectededitable").html(wordfeedback['notselected']);               
             $("label[for*='id_selected']").text("When " + word + " is selected");
             $("label[for*='id_notselected']").text("When " + word + " is not selected");
             $("#id_feedback_popup").dialog({
