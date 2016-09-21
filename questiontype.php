@@ -19,7 +19,7 @@
  *
  * @package    qtype
  * @subpackage wordselect
- * @copyright  2016 Marcus Green
+ * @copyright  2017 Marcus Green
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -175,6 +175,25 @@ class qtype_wordselect extends question_type {
         }
     }
 
+    public function update_word_feedback($question, $form) {
+        global $DB;
+        $oldfeedback = $DB->get_records('question_wordselect_feedback', array('question' => $question->id));
+        $newfeedback = json_decode($form->wordfeedbackdata, true);
+        if ($newfeedback != null) {
+             foreach ($newfeedback as $fb) {
+                $feedback = new stdClass();
+                $feedback->question = $question->id;
+                $feedback->offset = $fb['offset'];
+                $feedback->word = $fb['word'];
+                $feedback->selected = $fb['selected'];
+                $feedback->notselected = $fb['notselected'];
+                $DB->insert_record('question_wordselect_feedback', $feedback);            }
+        }
+        foreach ($oldfeedback as $of) {
+            $DB->delete_records('question_wordselect_feedback', array('id' => $of->id));
+        }
+    }
+    
     /* runs from question editing form */
     public function update_question_wordselect($formdata, $options, $context) {
         /* question is actually formdata */
@@ -211,8 +230,14 @@ class qtype_wordselect extends question_type {
         $question->options = $DB->get_record('question_wordselect',
                array('questionid' => $question->id), '*', MUST_EXIST);
         parent::get_question_options($question);
+        $this->get_word_feedback($question);
+
     }
 
+    public function get_word_feedback($question) {
+        global $DB;
+        $question->wordfeedbackdata = json_encode($DB->get_records('question_wordselect_feedback', array('question' => $question->id)));
+    }
     protected function initialise_question_instance(question_definition $question, $questiondata) {
         parent::initialise_question_instance($question, $questiondata);
         $this->initialise_question_answers($question, $questiondata);
@@ -291,6 +316,8 @@ class qtype_wordselect extends question_type {
     public function save_question($question, $form) {
         $correctplaces = qtype_wordselect_question::get_correct_places($form->questiontext['text'], $form->delimitchars);
         $form->defaultmark = count($correctplaces);
+        $this->update_word_feedback($question, $form);
+
         return parent::save_question($question, $form);
     }
 

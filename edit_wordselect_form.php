@@ -1,4 +1,5 @@
 <?php
+
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -17,13 +18,13 @@
 /**
  * Defines the editing form for the wordselect question type.
  *
- * @package    qtype
- * @subpackage wordselect
+ * @package    qtype_wordselect
  * @copyright  2016 Marcus Green
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die();
+
 /**
  * wordselect question editing form definition.
  *
@@ -31,9 +32,23 @@ defined('MOODLE_INTERNAL') || die();
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+//require_once($CFG->dirroot . '/question/type/wordselect/feedback_popup.php');
+
 class qtype_wordselect_edit_form extends question_edit_form {
 
     protected function definition_inner($mform) {
+        global $PAGE;
+        $PAGE->requires->jquery();
+        $PAGE->requires->jquery_plugin('ui');
+        $PAGE->requires->jquery_plugin('ui-css');
+        $PAGE->requires->jquery_plugin('rangy-core', 'qtype_wordselect');
+        $PAGE->requires->js('/question/type/wordselect/questionedit.js');
+
+        $mform->addElement('hidden', 'reload', 1);
+        $mform->setType('reload', PARAM_RAW);
+        $mform->addElement('hidden', 'wordfeedbackdata');
+        $mform->setType('wordfeedbackdata', PARAM_RAW);
+
         $mform->removeelement('questiontext');
 
         $mform->removeelement('generalfeedback');
@@ -41,18 +56,22 @@ class qtype_wordselect_edit_form extends question_edit_form {
         // Default mark will be set to 1 * number of fields.
         $mform->removeelement('defaultmark');
 
-        $mform->addElement('editor', 'introduction',
-                get_string('introduction', 'qtype_wordselect'), array('size' => 70, 'rows' => 2),
-                $this->editoroptions);
+
+        $mform->addElement('html', '<div id="id_feedback_popup" title="Item Feedback" style="display:none;background-color:lightgrey" >');
+        $mform->addElement('editor', 'selected', 'Feedback for X when selected', array('size' => 70, 'rows' => 3), $this->editoroptions);
+        $mform->addElement('editor', 'notselected', 'Feedback for X when not selected', array('size' => 70, 'rows' => 3), $this->editoroptions);
+        $mform->addElement('html', '</div>');
+
+        $mform->addElement('editor', 'introduction', get_string('introduction', 'qtype_wordselect'), array('size' => 70, 'rows' => 2), $this->editoroptions);
         $mform->setType('introduction', PARAM_RAW);
 
         $mform->addHelpButton('introduction', 'introduction', 'qtype_wordselect');
 
-        $mform->addElement('editor', 'questiontext', get_string('questiontext', 'question'),
-                array('rows' => 15), $this->editoroptions);
+        $mform->addElement('editor', 'questiontext', get_string('questiontext', 'question'), array('rows' => 15), $this->editoroptions);
         $mform->setType('questiontext', PARAM_RAW);
 
         $mform->addHelpButton('questiontext', 'questiontext', 'qtype_wordselect');
+        $mform->addElement('button', 'gapfeedback', 'Add Word Feedback');
 
         $mform->addElement('editor', 'generalfeedback', get_string('generalfeedback', 'question')
                 , array('rows' => 10), $this->editoroptions);
@@ -66,7 +85,7 @@ class qtype_wordselect_edit_form extends question_edit_form {
         $mform->addHelpButton('delimitchars', 'delimitchars', 'qtype_wordselect');
 
         // To add combined feedback (correct, partial and incorrect).
-         $this->add_combined_feedback_fields(true);
+        $this->add_combined_feedback_fields(true);
 
         // Adds hinting features.
         $this->add_interactive_settings(true, true);
@@ -78,6 +97,10 @@ class qtype_wordselect_edit_form extends question_edit_form {
 
         /* ...this ensures introduction is available for image file processing */
         $this->_form->getElement('introduction')->setValue(array('text' => $introduction));
+
+        /* this gets manipulated by javascript */
+        $this->_form->getElement('wordfeedbackdata')->setValue(($question->wordfeedbackdata));
+
         question_edit_form::set_data($question);
     }
 
@@ -89,11 +112,11 @@ class qtype_wordselect_edit_form extends question_edit_form {
             return "";
         }
     }
+
     public function validation($fromform, $data) {
         $errors = array();
         /* don't save the form if there are no fields defined */
-        $correctplaces = qtype_wordselect_question::get_correct_places($fromform['questiontext']['text'],
-                $fromform['delimitchars']);
+        $correctplaces = qtype_wordselect_question::get_correct_places($fromform['questiontext']['text'], $fromform['delimitchars']);
         if (count($correctplaces) == 0) {
             $errors['questiontext'] = get_string('nowordsdefined', 'qtype_wordselect');
         }
@@ -114,13 +137,13 @@ class qtype_wordselect_edit_form extends question_edit_form {
         $draftid = file_get_submitted_draft_itemid('introduction');
         $question->introduction = array();
         $question->introduction['text'] = file_prepare_draft_area(
-            $draftid,           // Draftid
-            $this->context->id, // context
-            'qtype_wordselect',         // component
-            'introduction',     // filarea
-            !empty($question->id) ? (int) $question->id : null, // itemid
-            $this->fileoptions, // options
-            $question->options->introduction // text.
+                $draftid, // Draftid
+                $this->context->id, // context
+                'qtype_wordselect', // component
+                'introduction', // filarea
+                !empty($question->id) ? (int) $question->id : null, // itemid
+                $this->fileoptions, // options
+                $question->options->introduction // text.
         );
 
         /* format of introduction will always be the same as questiontext */

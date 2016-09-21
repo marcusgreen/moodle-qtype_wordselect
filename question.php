@@ -17,8 +17,7 @@
 /**
  * wordselect question definition class.
  *
- * @package    qtype
- * @subpackage wordselect
+ * @package    qtype_wordselect
  * @copyright  Marcus Green 2016)
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -65,7 +64,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $questiontextnodelim = preg_replace('/\\' . $r . '/', '', $questiontextnodelim);
         /* string html tags (is this necessary?) */
         $this->selectable = strip_tags($questiontextnodelim);
-        $allwords = preg_split('@[\s+]@u', $questiontextnodelim);
+        $allwords = preg_split('/[\s\n]/', $questiontextnodelim);
         return $allwords;
     }
 
