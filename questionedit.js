@@ -25,14 +25,15 @@
 
 /* the data is stored in a hidden field */
 var feedbackdata = ($("[name='wordfeedbackdata']").val());
-var $feedback=JSON.parse(feedbackdata);
+var feedback = JSON.parse(feedbackdata);
+var propno = 0;
 
 function get_feedback($word, offset) {
-    wordfeedback = null;
-    for (var fb in $feedback) {
-        if ($feedback[fb].word === $word) {
-            if ($feedback[fb].offset == offset) {
-                wordfeedback = $feedback[fb];
+    wordfeedback = new Array();
+    for (var fb in feedback) {
+        if (feedback[fb].word === $word) {
+            if (feedback[fb].offset == offset) {
+                wordfeedback = feedback[fb];
             }
         }
     }
@@ -41,26 +42,29 @@ function get_feedback($word, offset) {
 
 function add_or_update(word, offset) {
     found = null;
-    for (var fb in $feedback) {
-        if ($feedback[fb].word === word && $feedback[fb].offset === offset) {
-            $feedback[fb].selected = $("#id_selectededitable").html(),
-                    $feedback[fb].notselected = $("#id_notselectededitable").html()
-                    found = $feedback[fb];
+    for (var fb in feedback) {
+        if (feedback[fb].word === word && feedback[fb].offset === offset) {
+            feedback[fb].selected = $("#id_selectededitable").html(),
+                    feedback[fb].notselected = $("#id_notselectededitable").html()
+            found = feedback[fb];
         }
     }
     if (found === null) {
         /* if there is no record for this word add one 
          * a combination of wordtext and offset will be unique*/
-        $wordfeedback = {
+        var prop = 'prop' + propno;
+        propno++;
+        var wordfeedback = {
+            id: prop,
             question: $("input[name=id]").val(),
             selected: $("#id_selectededitable").html(),
             notselected: $("#id_notselectededitable").html(),
             word: word,
             offset: offset
         };
-        $feedback[word+offset]=$wordfeedback;
+        feedback[prop] = wordfeedback;
     }
-    return $feedback;
+    return feedback;
 }
 
 $("#id_gapfeedback").on("click", function () {
@@ -87,9 +91,14 @@ $("#fitem_id_questiontext").on("click", function () {
         var $sel = rangy.getSelection();
         var word = get_selected_word($sel);
         if (word != null) {
-            wordfeedback=get_feedback(word,0);
-            $("#id_selectededitable").html(wordfeedback['selected']);
-            $("#id_notselectededitable").html(wordfeedback['notselected']);               
+            wordfeedback = get_feedback(word, 0);
+            if (wordfeedback.length == 0) {
+                $("#id_selectededitable").html('');
+                $("#id_notselectededitable").html('');
+            } else {
+                $("#id_selectededitable").html(wordfeedback['selected']);
+                $("#id_notselectededitable").html(wordfeedback['notselected']);
+            }
             $("label[for*='id_selected']").text("When " + word + " is selected");
             $("label[for*='id_notselected']").text("When " + word + " is not selected");
             $("#id_feedback_popup").dialog({
@@ -100,7 +109,7 @@ $("#fitem_id_questiontext").on("click", function () {
                     {
                         text: "OK",
                         click: function () {
-                            $feedback=add_or_update(word, 0);
+                            $feedback = add_or_update(word, 0);
                             var JSONstr = JSON.stringify($feedback);
                             $("[name='wordfeedbackdata']").val(JSONstr);
                             $(this).dialog("close");
