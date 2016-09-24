@@ -179,6 +179,8 @@ class qtype_wordselect extends question_type {
         global $DB;
         $oldfeedback = $DB->get_records('question_wordselect_feedback', array('question' => $question->id));
         $newfeedback = json_decode($form->wordfeedbackdata, true);
+    //    var_dump($newfeedback);
+      //  exit();
         if ($newfeedback != null) {
              foreach ($newfeedback as $fb) {
                 $feedback = new stdClass();
