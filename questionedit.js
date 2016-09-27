@@ -25,7 +25,10 @@
 
 /* the data is stored in a hidden field */
 var feedbackdata = ($("[name='wordfeedbackdata']").val());
-var feedback = JSON.parse(feedbackdata);
+var feedback = {};
+if(feedbackdata > ""){
+    var feedback = JSON.parse(feedbackdata);
+}
 var propno = 0;
 
 function get_feedback($word, offset) {
@@ -33,7 +36,7 @@ function get_feedback($word, offset) {
     for (var fb in feedback) {
         if (feedback[fb].word === $word) {
             if (feedback[fb].offset == offset) {
-                wordfeedback = feedback[fb];
+                wordfeedback[0] = feedback[fb];
             }
         }
     }
@@ -88,16 +91,16 @@ $("#fitem_id_questiontext").on("click", function () {
         l = delimitchars.substr(0, 1);
         r = delimitchars.substr(1, 1);
         rangy.init();
-        var $sel = rangy.getSelection();
-        var word = get_selected_word($sel);
+        var sel = rangy.getSelection();
+        var word = get_selected_word(sel);
         if (word != null) {
             wordfeedback = get_feedback(word, 0);
-            if (wordfeedback.length == 0) {
+            if (wordfeedback == null || wordfeedback.length == 0) {
                 $("#id_selectededitable").html('');
                 $("#id_notselectededitable").html('');
             } else {
-                $("#id_selectededitable").html(wordfeedback['selected']);
-                $("#id_notselectededitable").html(wordfeedback['notselected']);
+                $("#id_selectededitable").html(wordfeedback[0].selected);
+                $("#id_notselectededitable").html(wordfeedback[0].notselected);
             }
             $("label[for*='id_selected']").text("When " + word + " is selected");
             $("label[for*='id_notselected']").text("When " + word + " is not selected");
@@ -123,9 +126,10 @@ $("#fitem_id_questiontext").on("click", function () {
 
 });
 
-function get_selected_word($sel) {
-    $qtext = $sel.anchorNode.nodeValue;
-    $clickpoint = $sel.focusOffset;
+function get_selected_word( sel) {
+    $qtext = sel.anchorNode.nodeValue;
+    $clickpoint = sel.focusOffset;
+    var node=sel.focusNode; 
     /* find the character num of the left delimiter*/
     $leftdelim = null;
     for (var x = $clickpoint; x > 0; x--)
@@ -153,8 +157,8 @@ function get_selected_word($sel) {
     $word = null;
     if ($leftdelim !== null) {
         if ($rightdelim !== null) {
-            $the_text = $("#id_questiontexteditable").text();
-            $word = $the_text.substring($leftdelim, $rightdelim);
+            /* $the_text = $("#id_questiontexteditable").text();*/
+            $word = $qtext.substring($leftdelim, $rightdelim);
             /* Stores where it is in the string, e.g. if it is the only one it will be 0, if there are two it 
              * will be 1 etc etc
              */

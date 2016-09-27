@@ -36,7 +36,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
 
     public $wrongresponsecount;
     public $rightresponsecount;
-
     /* the characters indicating a field to fill i.e. [cat] creates
      * a field where the correct answer is cat
      */

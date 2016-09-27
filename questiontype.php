@@ -77,8 +77,11 @@ class qtype_wordselect extends question_type {
         $context = $formdata->context;
         // Fetch old answer ids so that we can reuse them.
         $this->update_question_answers($formdata, $answerwords);
+
         $options = $DB->get_record('question_wordselect', array('questionid' => $formdata->id));
         $this->update_question_wordselect($formdata, $options, $context);
+        $this->update_word_feedback($formdata);
+
         $this->save_hints($formdata, true);
         return true;
     }
@@ -175,16 +178,16 @@ class qtype_wordselect extends question_type {
         }
     }
 
-    public function update_word_feedback($question, $form) {
+    public function update_word_feedback($formdata) {
         global $DB;
-        $oldfeedback = $DB->get_records('question_wordselect_feedback', array('question' => $question->id));
-        $newfeedback = json_decode($form->wordfeedbackdata, true);
-    //    var_dump($newfeedback);
-      //  exit();
-        if ($newfeedback != null) {
-             foreach ($newfeedback as $fb) {
-                $feedback = new stdClass();
-                $feedback->question = $question->id;
+
+        
+        $oldfeedback = $DB->get_records('question_wordselect_feedback', array('question' => $formdata->id));
+        $newfeedback = json_decode($formdata->wordfeedbackdata, true);
+          if ($newfeedback != null) {
+             foreach ($newfeedback as $fb) { 
+                 $feedback = new stdClass();
+                $feedback->question = $formdata->id;
                 $feedback->offset = $fb['offset'];
                 $feedback->word = $fb['word'];
                 $feedback->selected = $fb['selected'];
@@ -318,8 +321,6 @@ class qtype_wordselect extends question_type {
     public function save_question($question, $form) {
         $correctplaces = qtype_wordselect_question::get_correct_places($form->questiontext['text'], $form->delimitchars);
         $form->defaultmark = count($correctplaces);
-        $this->update_word_feedback($question, $form);
-
         return parent::save_question($question, $form);
     }
 

@@ -42,8 +42,9 @@ class qtype_wordselect_edit_form extends question_edit_form {
         $PAGE->requires->jquery_plugin('ui');
         $PAGE->requires->jquery_plugin('ui-css');
         $PAGE->requires->jquery_plugin('rangy-core', 'qtype_wordselect');
+        $PAGE->requires->jquery_plugin('serialize-object', 'qtype_wordselect');
         $PAGE->requires->js('/question/type/wordselect/questionedit.js');
-
+    
         $mform->addElement('hidden', 'reload', 1);
         $mform->setType('reload', PARAM_RAW);
         $mform->addElement('hidden', 'wordfeedbackdata');
@@ -99,11 +100,20 @@ class qtype_wordselect_edit_form extends question_edit_form {
         $this->_form->getElement('introduction')->setValue(array('text' => $introduction));
 
         /* this gets manipulated by javascript */
-        $this->_form->getElement('wordfeedbackdata')->setValue(($question->wordfeedbackdata));
+        $wordfeedbackdata = $this->get_wordfeedbackdata($question);
+        $this->_form->getElement('wordfeedbackdata')->setValue(($wordfeedbackdata));
 
         question_edit_form::set_data($question);
     }
 
+    public function get_wordfeedbackdata($question){
+        $wordfeedbackdata = "";
+        if (property_exists($question, 'wordfeedbackdata')) {
+            return $question->wordfeedbackdata;
+        } else {
+            return "";
+        }
+    }
     public function get_introduction($question) {
         $introduction = "";
         if (property_exists($question, 'options')) {
