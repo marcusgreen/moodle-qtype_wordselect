@@ -132,7 +132,7 @@ function get_selected_word( sel) {
     var node=sel.focusNode; 
     /* find the character num of the left delimiter*/
     $leftdelim = null;
-    for (var x = $clickpoint; x > 0; x--)
+    for (var x = $clickpoint; x >= 0; x--)
     {
         if ($qtext.charAt(x) === l) {
             $leftdelim = x + 1;
