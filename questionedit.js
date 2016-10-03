@@ -25,47 +25,58 @@
 
 /* the data is stored in a hidden field */
 var feedbackdata = ($("[name='wordfeedbackdata']").val());
-var feedback = {};
-if(feedbackdata > ""){
-    var feedback = JSON.parse(feedbackdata);
+var feedback = new Array();
+if (feedbackdata > "") {
+    var obj = JSON.parse(feedbackdata);
+    for (var o in obj) {
+        feedback.push(obj[o]);
+    }
 }
-var propno = 0;
+var itemkey = 0;
 
-function get_feedback($word, offset) {
-    wordfeedback = new Array();
+/**
+ * @param {object} item
+ * @returns {Array|itemfeedback}
+ */
+function get_feedback(item) {
+    itemfeedback = new Array();
     for (var fb in feedback) {
-        if (feedback[fb].word === $word) {
-            if (feedback[fb].offset == offset) {
-                wordfeedback[0] = feedback[fb];
+        if (feedback[fb].word == item.text) {
+            if (feedback[fb].offset == item.offset) {
+                itemfeedback[0] = feedback[fb];
             }
         }
     }
-    return wordfeedback;
+    return itemfeedback;
 }
-
-function add_or_update(word, offset) {
-    found = null;
+/**
+ * @param {object} item
+ * @returns {Array|feedback}
+ */
+function add_or_update(item) {
+    found = false;
     for (var fb in feedback) {
-        if (feedback[fb].word === word && feedback[fb].offset === offset) {
-            feedback[fb].selected = $("#id_selectededitable").html(),
-                    feedback[fb].notselected = $("#id_notselectededitable").html()
-            found = feedback[fb];
+        if (feedback[fb].word == item.text) {
+            if (feedback[fb].offset == item.offset) {
+                feedback[fb].selected = $("#id_selectededitable").html();
+                feedback[fb].notselected = $("#id_notselectededitable").html();
+                found = true;
+            }
         }
     }
-    if (found === null) {
+    if (found == false) {
         /* if there is no record for this word add one 
          * a combination of wordtext and offset will be unique*/
-        var prop = 'prop' + propno;
-        propno++;
-        var wordfeedback = {
-            id: prop,
+        itemkey++;
+        var itemfeedback = {
+            id: 'id' + itemkey,
             question: $("input[name=id]").val(),
             selected: $("#id_selectededitable").html(),
             notselected: $("#id_notselectededitable").html(),
-            word: word,
-            offset: offset
+            word: item.text,
+            offset: item.offset
         };
-        feedback[prop] = wordfeedback;
+        feedback.push(itemfeedback);
     }
     return feedback;
 }
@@ -85,25 +96,24 @@ $("#id_gapfeedback").on("click", function () {
 
 $("#fitem_id_questiontext").on("click", function () {
     if ($('#id_questiontexteditable').get(0).isContentEditable) {
-        $the_text = $("#id_questiontexteditable").text();
         delimitchars = $("#id_delimitchars").val();
         /*l and r for left and right */
         l = delimitchars.substr(0, 1);
         r = delimitchars.substr(1, 1);
         rangy.init();
         var sel = rangy.getSelection();
-        var word = get_selected_word(sel);
-        if (word != null) {
-            wordfeedback = get_feedback(word, 0);
-            if (wordfeedback == null || wordfeedback.length == 0) {
+        var item = get_selected_item(sel);
+        if (item.text != null) {
+            itemfeedback = get_feedback(item);
+            if (itemfeedback == null || itemfeedback.length == 0) {
                 $("#id_selectededitable").html('');
                 $("#id_notselectededitable").html('');
             } else {
-                $("#id_selectededitable").html(wordfeedback[0].selected);
-                $("#id_notselectededitable").html(wordfeedback[0].notselected);
+                $("#id_selectededitable").html(itemfeedback[0].selected);
+                $("#id_notselectededitable").html(itemfeedback[0].notselected);
             }
-            $("label[for*='id_selected']").text("When " + word + " is selected");
-            $("label[for*='id_notselected']").text("When " + word + " is not selected");
+            $("label[for*='id_selected']").text("When " + item.text + " is selected");
+            $("label[for*='id_notselected']").text("When " + item.text + " is not selected");
             $("#id_feedback_popup").dialog({
                 height: 500,
                 width: 600,
@@ -112,8 +122,8 @@ $("#fitem_id_questiontext").on("click", function () {
                     {
                         text: "OK",
                         click: function () {
-                            $feedback = add_or_update(word, 0);
-                            var JSONstr = JSON.stringify($feedback);
+                            feedback = add_or_update(item);
+                            var JSONstr = JSON.stringify(feedback);
                             $("[name='wordfeedbackdata']").val(JSONstr);
                             $(this).dialog("close");
                         }
@@ -125,47 +135,69 @@ $("#fitem_id_questiontext").on("click", function () {
     }
 
 });
-
-function get_selected_word( sel) {
-    $qtext = sel.anchorNode.nodeValue;
-    $clickpoint = sel.focusOffset;
-    var node=sel.focusNode; 
+/**
+ * 
+ * @param {string} sel
+ * @returns {item}
+ */
+function get_selected_item(sel) {
+    var questiontext = sel.anchorNode.nodeValue;
+    var clickpoint = sel.focusOffset;
+    var node = sel.focusNode;
     /* find the character num of the left delimiter*/
-    $leftdelim = null;
-    for (var x = $clickpoint; x >= 0; x--)
+    leftdelim = 0;
+    for (var x = clickpoint; x >= 0; x--)
     {
-        if ($qtext.charAt(x) === l) {
-            $leftdelim = x + 1;
+        if (questiontext.charAt(x) === l) {
+            leftdelim = x + 1;
             break;
         }
-        if ($qtext.charAt(x) === r) {
+        if (questiontext.charAt(x) === r) {
             break;
         }
     }
     /* find the character num of the right delimiter*/
-    $rightdelim = null;
-    for (var x = $clickpoint; x < $qtext.length; x++)
+    rightdelim = 0;
+    for (var x = clickpoint; x < questiontext.length; x++)
     {
-        if ($qtext.charAt(x) === l) {
+        if (questiontext.charAt(x) === l) {
             break;
         }
-        if ($qtext.charAt(x) === r) {
-            $rightdelim = x;
+        if (questiontext.charAt(x) === r) {
+            rightdelim = x;
             break;
         }
     }
-    $word = null;
-    if ($leftdelim !== null) {
-        if ($rightdelim !== null) {
-            /* $the_text = $("#id_questiontexteditable").text();*/
-            $word = $qtext.substring($leftdelim, $rightdelim);
-            /* Stores where it is in the string, e.g. if it is the only one it will be 0, if there are two it 
-             * will be 1 etc etc
-             */
+    item = {};
+    if (leftdelim !== null) {
+        if (rightdelim !== null) {
+            item.text = questiontext.substring(leftdelim, rightdelim);
         }
-
     }
-    return $word;
+    var itemwithdelim = l + item.text + r;
+    var uptothisitem = questiontext.substring(0, leftdelim);
+    item.offset = itemoffset(uptothisitem, itemwithdelim);
+    return item;
+}
+/**
+ * 
+ * @param {string} uptothisitem - the questiontext behind this item 
+ * @param {string} itemwithdelim 
+ * @returns {Number} offset 
+ */
+function itemoffset(uptothisitem, itemwithdelim) {
+    var offset = 0;
+    var pos = 0;
+    var step = itemwithdelim.length;
+    while (true) {
+        pos = uptothisitem.indexOf(itemwithdelim, pos);
+        if (pos >= 0) {
+            ++offset;
+            pos += step;
+        } else
+            break;
+    }
+    return offset;
 }
 
 

@@ -47,7 +47,7 @@ class qtype_wordselect_edit_form extends question_edit_form {
     
         $mform->addElement('hidden', 'reload', 1);
         $mform->setType('reload', PARAM_RAW);
-        $mform->addElement('hidden', 'wordfeedbackdata');
+        $mform->addElement('text', 'wordfeedbackdata','',array('size'=>'80'));
         $mform->setType('wordfeedbackdata', PARAM_RAW);
 
         $mform->removeelement('questiontext');
