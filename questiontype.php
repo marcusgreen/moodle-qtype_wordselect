@@ -240,13 +240,17 @@ class qtype_wordselect extends question_type {
     public function get_word_feedback($question) {
         global $DB;
         $question->wordfeedbackdata = json_encode($DB->get_records('question_wordselect_feedback', array('question' => $question->id)));
+        return $question;
     }
+    
     protected function initialise_question_instance(question_definition $question, $questiondata) {
         parent::initialise_question_instance($question, $questiondata);
         $this->initialise_question_answers($question, $questiondata);
         parent::initialise_combined_feedback($question, $questiondata);
+        $question=$this->get_word_feedback($question);
     }
 
+   
     protected function initialise_question_answers(question_definition $question, $questiondata, $forceplaintextanswers = true) {
         if (empty($questiondata->options->answers)) {
             return;

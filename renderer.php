@@ -1,4 +1,5 @@
 <?php
+
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -39,11 +40,12 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         $question = $qa->get_question();
         $PAGE->requires->js('/question/type/wordselect/selection.js');
         $response = $qa->get_last_qt_data();
+        $wordfeedback = json_decode($question->wordfeedbackdata);
         $correctplaces = $question->get_correct_places($question->questiontext, $question->delimitchars);
         /* this will ensure filters are applied to the introduction, done particularly for the multilang filter */
-        $output = $question->format_text($question->introduction, $question->questiontextformat,
-            $qa, 'qtype_wordselect', 'introduction', $question->id);
+        $output = $question->format_text($question->introduction, $question->questiontextformat, $qa, 'qtype_wordselect', 'introduction', $question->id);
         foreach ($question->get_words() as $place => $word) {
+            $feedback = $this->get_feedback($word, $wordfeedback);
             $correctnoselect = false;
             $wordattributes = array("role" => "checkbox");
             $afterwordfeedback = '';
@@ -54,12 +56,16 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             $checkbox = "";
             /* if the current word/place exists in the response */
             $isselected = $question->is_word_selected($place, $response);
+            $perwordfeedback = "";
             if ($isselected) {
                 $wordattributes['class'] = 'selected';
+            } else {
+                
             }
             if ($isselected && $options->correctness == 1) {
                 if ($iscorrectplace) {
                     $afterwordfeedback = $this->feedback_image(1);
+                    $afterwordfeedback.= $feedback->selected;
                     $wordattributes['title'] = get_string('correctresponse', 'qtype_wordselect');
                     $wordattributes['class'] = 'correctresponse';
                 } else {
@@ -122,6 +128,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             if (@strpos($question->selectable, $word) !== false) {
                 if ($correctnoselect == true) {
                     $word = "[" . $word . "]";
+                    $afterwordfeedback .= $feedback->notselected;
                 }
                 $output .= $checkbox;
                 $output .= html_writer::tag('span', $word, $wordattributes);
@@ -133,9 +140,17 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             }
         }
         /* this ensures that any files inserted through the editor menu will display */
-        $output = $question->format_text($output, $question->questiontextformat, $qa, 'question',
-                    'questiontext', $question->id);
+        $output = $question->format_text($output, $question->questiontextformat, $qa, 'question', 'questiontext', $question->id);
         return $output;
+    }
+
+    protected function get_feedback($word, $wordfeedback) {
+        foreach ($wordfeedback as $fb) {
+            if($fb->word==$word){
+                return $fb;
+            }
+     
+        }
     }
 
     protected function get_input_name(question_attempt $qa, $word, $place) {
