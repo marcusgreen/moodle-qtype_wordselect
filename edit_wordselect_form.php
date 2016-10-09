@@ -62,6 +62,8 @@ class qtype_wordselect_edit_form extends question_edit_form {
         $mform->addElement('editor', 'selected', 'Feedback for X when selected', array('size' => 70, 'rows' => 3), $this->editoroptions);
         $mform->addElement('editor', 'notselected', 'Feedback for X when not selected', array('size' => 70, 'rows' => 3), $this->editoroptions);
         $mform->addElement('html', '</div>');
+        $mform->addElement('html', '<div id="id_questiontextfeedback" style="display:none;background-color:lightgrey" ></div>');
+
 
         $mform->addElement('editor', 'introduction', get_string('introduction', 'qtype_wordselect'), array('size' => 70, 'rows' => 2), $this->editoroptions);
         $mform->setType('introduction', PARAM_RAW);
