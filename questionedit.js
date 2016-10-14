@@ -84,11 +84,10 @@ $("#id_gapfeedback").on("click", function () {
     if ($('#id_questiontexteditable').get(0).isContentEditable) {
         $("#id_questiontexteditable").attr('contenteditable', 'false');
         $("#fitem_id_questiontext").find('button').attr("disabled", 'true');
-        /*$("#id_questiontexteditable").css("backgroundColor", 'lightgrey');*/
-        var fbheight=$("#id_questiontexteditable").css("height");
-        var fbwidth=$("#id_questiontexteditable").css("width");
-        $("#id_questiontexteditable").css("display", 'none');        
-        var ed=$("#id_questiontexteditable").closest(".editor_atto_content_wrap");
+        var fbheight = $("#id_questiontexteditable").css("height");
+        var fbwidth = $("#id_questiontexteditable").css("width");
+        $("#id_questiontexteditable").css("display", 'none');
+        var ed = $("#id_questiontexteditable").closest(".editor_atto_content_wrap");
         $("#id_questiontextfeedback").css({
             position: "absolute",
             width: "100%",
@@ -99,34 +98,26 @@ $("#id_gapfeedback").on("click", function () {
             color: "black",
             display: "block"
         }).appendTo(ed).css("position", "relative");
-        var text =$("#id_questiontexteditable").prop("innerHTML");
-        $("#id_questiontextfeedback").html(text); 
-        var el = document.getElementById("id_questiontextfeedback");
-        wrapContent(el);
-        $("#id_questiontextfeedback").css('height',fbheight);
-        $("#id_questiontextfeedback").css('width',fbwidth);
+        /* Copy the real html to the feedback editing html */
+        $("#id_questiontextfeedback").html($("#id_questiontexteditable").prop("innerHTML"));
+        wrapContent($("#id_questiontextfeedback")[0]);
+        $("#id_questiontextfeedback").css({height: fbheight, width: fbwidth});
         $("#id_questiontextfeedback").addClass("editor_atto_content");
-        $("#id_gapfeedback").attr('value','Edit Question Text');
+        $("#id_gapfeedback").attr('value', 'Edit Question Text');
     } else {
-        $("#id_questiontexteditable").css("display", 'block');      
-        $("#id_questiontextfeedback").css("display", "none");
+        $("#id_questiontexteditable").css({display: "block", backgroundColor: "white"});
         $("#id_questiontexteditable").attr('contenteditable', 'true');
+        $("#id_questiontextfeedback").css("display", "none");
         $("#fitem_id_questiontext").find('button').removeAttr("disabled");
-        $("#id_questiontexteditable").css("backgroundColor", 'white');
         $("#id_feedback_popup").css("display", "none");
-        $("#id_gapfeedback").attr('value','Add Word Feedback');
+        $("#id_gapfeedback").attr('value', 'Add Word Feedback');
     }
 });
 
-$("#fitem_id_questiontext").on("click", function () {
+$("#fitem_id_questiontext").on("click", function (e) {
     if (!$('#id_questiontexteditable').get(0).isContentEditable) {
         delimitchars = $("#id_delimitchars").val();
-        /*l and r for left and right */
-        l = delimitchars.substr(0, 1);
-        r = delimitchars.substr(1, 1);
-        rangy.init();
-        var sel = rangy.getSelection();
-        var item = get_selected_item(sel);
+        var item = get_selected_item(e, delimitchars);
         if (item.text != '') {
             itemfeedback = get_feedback(item);
             if (itemfeedback == null || itemfeedback.length == 0) {
@@ -161,152 +152,100 @@ $("#fitem_id_questiontext").on("click", function () {
 });
 /**
  * 
- * @param {string} sel
- * @returns {item}
+ * @param {string} event
+ * @returns {string} delmitchars
  */
-function get_selected_item(sel) {
-    var questiontext = sel.anchorNode.nodeValue;
-    var clickpoint = sel.focusOffset;
-    var node = sel.focusNode;
-    /* find the character num of the left delimiter*/
-    leftdelim = 0;
-    var space = /\s/g;
+function get_selected_item(e, delimitchars) {
+    /*l and r for left and right */
+    var l = delimitchars.substr(0, 1);
+    var r = delimitchars.substr(1, 1);
+    item = {text:e.target.innerText};
     
-    for (var x = clickpoint; x >= 0; x--)
-    {
-        var char = questiontext.charAt(x);
-        if (char === l || char.match(space)) {
-            leftdelim = x + 1;
-            break;
-        }
-        if (char === r || char.match(space)) {
-            break;
-        }
+    var startchar = item.text.substring(0, 1);
+    var len = item.text.length;
+    var endchar = (item.text.substring(len-1, len))
+    if (startchar == l) {
+        item.text = item.text.substring(1, len);
     }
-    /* find the character num of the right delimiter*/
-    rightdelim = 0;
-    for (var x = clickpoint; x < questiontext.length; x++)
-    {
-        var char = questiontext.charAt(x);
-        if (char === l || char.match(space)) {
-            rightdelim = x;
-            break;
-        }
-        if (char === r || char.match(space)) {
-            rightdelim = x;
-            break;
-        }
+    var len = item.text.length;
+    if (endchar == r) {
+        item.text = item.text.substring(0, len - 1)
     }
-    item = {};
-    if (leftdelim !== null) {
-        if (rightdelim !== null) {
-            item.text = questiontext.substring(leftdelim, rightdelim);
-        }
-    }
-    var itemwithdelim = l + item.text + r;
-    var uptothisitem = questiontext.substring(0, leftdelim);
-    item.offset = itemoffset(uptothisitem);
+    item.offset = e.target.id;
     return item;
 }
-/**
- * 
- * @param {string} uptothisitem - the questiontext behind this item 
- * @param {string} itemwithdelim 
- * @returns {Number} offset 
- */
-function Xitemoffset(uptothisitem, itemwithdelim) {
-    var offset = 0;
-    var pos = 0;
-    var step = itemwithdelim.length;
-    while (true) {
-        pos = uptothisitem.indexOf(itemwithdelim, pos);
-        if (pos >= 0) {
-            ++offset;
-            pos += step;
-        } else
-            break;
-    }
-    return offset;
-}
-/**
- * 
- * @param {string} uptothisitem - the questiontext behind this item 
- * @returns {Number} offset 
- */
-function itemoffset(uptothisitem) {
-    var itemstothis=uptothisitem.split(/\s/);
-    return itemstothis.length;
-}
+
+
 function toArray(obj) {
-  var arr = [];
-  for (var i=0, iLen=obj.length; i<iLen; i++) {
-    arr.push(obj[i]);
-  }
-  return arr;
+    var arr = [];
+    for (var i = 0, iLen = obj.length; i < iLen; i++) {
+        arr.push(obj[i]);
+    }
+    return arr;
 }
 
 
 // Wrap the words of an element and child elements in a span
 // Recurs over child elements, add an ID and class to the wrapping span
 // Does not affect elements with no content, or those to be excluded
-var wrapContent = (function() {
-    var count=0;
-    return function(el) {
-    
-    // If element provided, start there, otherwise use the body
-    el = el && el.parentNode? el : document.body;
+var wrapContent = (function () {
+    var count = 0;
+    return function (el) {
 
-    // Get all child nodes as a static array
-    var node, nodes = toArray(el.childNodes);
-    if(el.id=="id_questiontextfeedback" && (count >0)){
-             count=0;
-    }
-    var frag, parent, text;
-    var re = /\S+/;
-    var sp, span = document.createElement('span');
+        // If element provided, start there, otherwise use the body
+        el = el && el.parentNode ? el : document.body;
 
-    // Tag names of elements to skip, there are more to add
-    var skip = {'script':'', 'button':'', 'input':'', 'select':'',
-                'textarea':'', 'option':''};
-
-    // For each child node...
-    for (var i=0, iLen=nodes.length; i<iLen; i++) {
-      node = nodes[i];
-        // If it's an element, call wrapContent
-      if (node.nodeType == 1 && !(node.tagName.toLowerCase() in skip)) {
-        wrapContent(node);
-
-      // If it's a text node, wrap words
-      } else if (node.nodeType == 3) {
-
-        // Match sequences of whitespace and non-whitespace
-        text = node.data.match(/\s+|\S+/g);
-
-        if (text) {
-
-          // Create a fragment, handy suckers these
-          frag = document.createDocumentFragment();
-          for (var j=0, jLen=text.length; j<jLen; j++) {
-            // If not whitespace, wrap it and append to the fragment
-            if (re.test(text[j])) {
-              sp = span.cloneNode(false);
-              sp.id = count++;
-              sp.className = 'foo';
-              sp.appendChild(document.createTextNode(text[j]));
-              frag.appendChild(sp);
-
-            // Otherwise, just append it to the fragment
-            } else {
-              frag.appendChild(document.createTextNode(text[j]));
-            }
-          }
+        // Get all child nodes as a static array
+        var node, nodes = toArray(el.childNodes);
+        if (el.id == "id_questiontextfeedback" && (count > 0)) {
+            count = 0;
         }
+        var frag, parent, text;
+        var re = /\S+/;
+        var sp, span = document.createElement('span');
 
-        // Replace the original node with the fragment
-        node.parentNode.replaceChild(frag, node);
-      }
-    
+        // Tag names of elements to skip, there are more to add
+        var skip = {'script': '', 'button': '', 'input': '', 'select': '',
+            'textarea': '', 'option': ''};
+
+        // For each child node...
+        for (var i = 0, iLen = nodes.length; i < iLen; i++) {
+            node = nodes[i];
+            // If it's an element, call wrapContent
+            if (node.nodeType == 1 && !(node.tagName.toLowerCase() in skip)) {
+                wrapContent(node);
+
+                // If it's a text node, wrap words
+            } else if (node.nodeType == 3) {
+
+                // Match sequences of whitespace and non-whitespace
+                text = node.data.match(/\s+|\S+/g);
+
+                if (text) {
+
+                    // Create a fragment, handy suckers these
+                    frag = document.createDocumentFragment();
+                    for (var j = 0, jLen = text.length; j < jLen; j++) {
+                        // If not whitespace, wrap it and append to the fragment
+                        if (re.test(text[j])) {
+                            sp = span.cloneNode(false);
+                            sp.id = count++;
+                            sp.className = 'foo';
+                            sp.appendChild(document.createTextNode(text[j]));
+                            frag.appendChild(sp);
+
+                            // Otherwise, just append it to the fragment
+                        } else {
+                            frag.appendChild(document.createTextNode(text[j]));
+                        }
+                    }
+                }
+
+                // Replace the original node with the fragment
+                node.parentNode.replaceChild(frag, node);
+            }
+
+        }
     }
-  }
- }());
+}());
 

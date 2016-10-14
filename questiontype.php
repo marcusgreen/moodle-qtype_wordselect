@@ -55,7 +55,7 @@ class qtype_wordselect extends question_type {
         $PAGE->requires->jquery();
     }
 
-    public function move_files($questionid, $oldcontextid, $newcontextid) {
+   public function move_files($questionid, $oldcontextid, $newcontextid) {
         parent::move_files($questionid, $oldcontextid, $newcontextid);
         $fs = get_file_storage();
         $fs->move_area_files_to_new_context($oldcontextid,
