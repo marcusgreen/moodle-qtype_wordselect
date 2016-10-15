@@ -39,12 +39,12 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         $PAGE->requires->js('/question/type/wordselect/selection.js');
         $response = $qa->get_last_qt_data();
         $wordfeedback = json_decode($question->wordfeedbackdata);
-        $correctplaces = $question->get_correct_places($question->questiontext, $question->delimitchars);
+         $correctplaces = $question->get_correct_places($question->questiontext, $question->delimitchars);
         /* this will ensure filters are applied to the introduction, done particularly for the multilang filter */
         $output = $question->format_text($question->introduction, $question->questiontextformat, $qa, 'qtype_wordselect', 'introduction', $question->id);
         $wordoffset = 0;
-        foreach ($question->get_words() as $place => $word) {     
-            $feedback="";
+        foreach ($question->get_words() as $place => $word) {   
+            $feedback= new Feedback();
             if(((strip_tags($word)) >'')&&($word !=='&nbsp;')){
                 $feedback = $this->get_feedback($wordfeedback, $word, $wordoffset);
                 $wordoffset++;
@@ -149,21 +149,19 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
     }
 
     protected function get_feedback($wordfeedback, $word, $wordoffset) {
-        foreach ($wordfeedback as $fb) {
-            print $fb->word;
-            print "</br>";
-            print $wordoffset;
-            print "<br/>";
-            print $word;
-            print "<br/>";
-            
-            if (($fb->word == $word) && ($fb->offset==$wordoffset) ){            
+
+        foreach ($wordfeedback as $fb) {    
+            if (($fb->word == $word) && ($fb->offset==$wordoffset) ){   
+                if(!isset($fb->selected)){
+                    $fb->selected='';
+                }
+                if(!isset($fb->notselected)){
+                    $fb->notselected='';
+                }
                 return $fb;
             }
         }
-        $fb = new stdClass();
-        $fb->selected='';
-        $fb->notselected='';
+        $fb = new Feedback();
         return $fb;    
     }
 
@@ -208,3 +206,10 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
     }
 
 }
+class Feedback{
+    public $word="";
+    public $offset=0;
+    public $selected="";
+    public $notselected="";
+}
+
