@@ -31,6 +31,7 @@ defined('MOODLE_INTERNAL') || die();
  * @copyright  2016 Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+include("kint/Kint.class.php");
 class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
 
     public function formulation_and_controls(question_attempt $qa, question_display_options $options) {
@@ -47,9 +48,9 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             $feedback= new Feedback();
             if(((strip_tags($word)) >'')&&($word !=='&nbsp;')){
                 $feedback = $this->get_feedback($wordfeedback, $word, $wordoffset);
-                $wordoffset++;
                 print $wordoffset;
                 print $word;
+                $wordoffset++;
             }
             $correctnoselect = false;
             $wordattributes = array("role" => "checkbox");

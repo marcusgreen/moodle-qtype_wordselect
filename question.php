@@ -63,8 +63,9 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $questiontextnodelim = preg_replace('/\\' . $r . '/', '', $questiontextnodelim);
         /* string html tags (is this necessary?) */
         $this->selectable = strip_tags($questiontextnodelim);
-        $allwords = preg_split('/[\s\n]/', $questiontextnodelim);
-        return $allwords;
+        //$allwords = preg_split('/[\s\n]/', $questiontextnodelim);
+        preg_match_all('/<[^>]++>|[^<>\s]++/', trim($questiontextnodelim), $allwords);
+        return $allwords[0];
     }
 
     public function get_unselectable_words($questiontext) {
@@ -111,10 +112,11 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     public static function get_correct_places($questiontext, $delimitchars) {
         $correctplaces = array();
         $text = self::get_questiontext_exploded($questiontext);
-        $allwords = preg_split('/[\s\n]/', $text);
+        preg_match_all('/<[^>]++>|[^<>\s]++/', trim($text), $allwords);
+        //$allwords = preg_split('/[\s\n]/', $text);
         $l = substr($delimitchars, 0, 1);
         $r = substr($delimitchars, 1, 1);
-        foreach ($allwords as $key => $word) {
+        foreach ($allwords[0] as $key => $word) {
             $regex = '/\\' . $l . '.*\\' . $r . '/';
             if (preg_match($regex, $word)) {
                 $correctplaces[] = $key;
