@@ -48,6 +48,8 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             if(((strip_tags($word)) >'')&&($word !=='&nbsp;')){
                 $feedback = $this->get_feedback($wordfeedback, $word, $wordoffset);
                 $wordoffset++;
+                print $wordoffset;
+                print $word;
             }
             $correctnoselect = false;
             $wordattributes = array("role" => "checkbox");

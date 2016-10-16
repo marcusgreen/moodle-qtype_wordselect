@@ -118,7 +118,7 @@ $("#fitem_id_questiontext").on("click", function (e) {
     if (!$('#id_questiontexteditable').get(0).isContentEditable) {
         delimitchars = $("#id_delimitchars").val();
         var item = get_selected_item(e, delimitchars);
-        if (item.text != '') {
+        if (!(isNaN(e.target.id))) {
             itemfeedback = get_feedback(item);
             if (itemfeedback == null || itemfeedback.length == 0) {
                 $("#id_selectededitable").html('');
