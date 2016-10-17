@@ -26,7 +26,7 @@
       <FIELDS>
         <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
         <FIELD NAME="question" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false"/>
-        <FIELD NAME="offset" TYPE="int" NOTNULL="false" SEQUENCE="false" COMMENT="The text between the delimiters" />
+        <FIELD NAME="offset" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false" COMMENT="The text between the delimiters" />
         <FIELD NAME="word" TYPE="text" LENGTH="10" NOTNULL="false" SEQUENCE="false" COMMENT="normally 0 but incremented whith duplicate gaps" />
         <FIELD NAME="selected" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Feedback displayed for selected word" />
         <FIELD NAME="notselected" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Feedback displayed for unselected" />
