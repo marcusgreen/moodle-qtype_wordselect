@@ -32,6 +32,7 @@ defined('MOODLE_INTERNAL') || die();
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 include("kint/Kint.class.php");
+
 class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
 
     public function formulation_and_controls(question_attempt $qa, question_display_options $options) {
@@ -40,43 +41,31 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         $PAGE->requires->js('/question/type/wordselect/selection.js');
         $response = $qa->get_last_qt_data();
         $wordfeedback = json_decode($question->wordfeedbackdata);
-         $correctplaces = $question->get_correct_places($question->questiontext, $question->delimitchars);
+        $correctplaces = $question->get_correct_places($question->questiontext, $question->delimitchars);
         /* this will ensure filters are applied to the introduction, done particularly for the multilang filter */
         $output = $question->format_text($question->introduction, $question->questiontextformat, $qa, 'qtype_wordselect', 'introduction', $question->id);
         $wordoffset = 0;
-        foreach ($question->get_words() as $place => $word) {   
-            $feedback= new Feedback();
-            if(((strip_tags($word)) >'')&&($word !=='&nbsp;')){
-                $feedback = $this->get_feedback($wordfeedback, $word, $wordoffset);
-                print $wordoffset;
-                print $word;
-                $wordoffset++;
-            }
-            $correctnoselect = false;
-            $wordattributes = array("role" => "checkbox");
-            $afterwordfeedback = '';
-            $wordattributes['name'] = $this->get_input_name($qa, $word, $place);
-            $wordattributes['id'] = $this->get_input_id($qa, $word, $place);
-            $correctresponse = true;
-            $iscorrectplace = $question->is_correct_place($correctplaces, $place);
-            $checkbox = "";
+        foreach ($question->get_words() as $place => $word) {
             /* if the current word/place exists in the response */
             $isselected = $question->is_word_selected($place, $response);
-            $perwordfeedback = "";
+            $feedback = "";
+            $correctnoselect = false;
+            $wordattributes = array("role" => "checkbox");
+            $wordattributes['name'] = $this->get_input_name($qa, $word, $place);
+            $wordattributes['id'] = $this->get_input_id($qa, $word, $place);
+            $iscorrectplace = $question->is_correct_place($correctplaces, $place);
+            $checkbox = "";
+            $tickorcross = "";
             if ($isselected) {
-                $feedbacktext=strip_tags($feedback->selected);
                 $wordattributes['class'] = 'selected';
-            } else {
-                $feedbacktext=$feedback->notselected;
             }
             if ($isselected && $options->correctness == 1) {
                 if ($iscorrectplace) {
-                    $afterwordfeedback = $this->feedback_image(1);
-                    $afterwordfeedback.= $feedbacktext;
+                    $tickorcross = $this->feedback_image(1);
                     $wordattributes['title'] = get_string('correctresponse', 'qtype_wordselect');
                     $wordattributes['class'] = 'correctresponse';
                 } else {
-                    $afterwordfeedback = $this->feedback_image(0);
+                    $tickorcross = $this->feedback_image(0);
                     $wordattributes['title'] = ' ' . get_string('incorrectresponse', 'qtype_wordselect');
                 }
             } else if ($iscorrectplace) {
@@ -94,11 +83,18 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                     }
                 }
             }
+
             /* skip empty places when tabbing */
             if ($word > "") {
                 $wordattributes['tabindex'] = '1';
             }
+            $afterwordfeedback = "";
             if ($options->readonly) {
+                if (((strip_tags($word)) > '') && ($word !== '&nbsp;')) {
+                    $afterwordfeedback = $this->get_feedback($word, $wordfeedback, $isselected, $wordoffset);
+                    $afterwordfeedback= strip_tags($afterwordfeedback);
+                    $wordoffset++;
+                }
                 $wordattributes['tabindex'] = '';
                 if ($iscorrectplace && ($isselected == true)) {
                     $wordattributes['class'] = 'correctresponse';
@@ -135,11 +131,10 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             if (@strpos($question->selectable, $word) !== false) {
                 if ($correctnoselect == true) {
                     $word = "[" . $word . "]";
-                    $afterwordfeedback .= $feedback->notselected;
                 }
                 $output .= $checkbox;
                 $output .= html_writer::tag('span', $word, $wordattributes);
-                $output .= $afterwordfeedback;
+                $output .= $tickorcross . $afterwordfeedback;
                 $output .= ' ';
             } else {
                 /* for non selectable items such as the tags for tables etc */
@@ -151,21 +146,21 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         return $output;
     }
 
-    protected function get_feedback($wordfeedback, $word, $wordoffset) {
-
-        foreach ($wordfeedback as $fb) {    
-            if (($fb->word == $word) && ($fb->offset==$wordoffset) ){   
-                if(!isset($fb->selected)){
-                    $fb->selected='';
+    protected function get_feedback($word, $wordfeedback, $isselected, $wordoffset) {
+        $feedback = "";
+        foreach ($wordfeedback as $fb) {
+            if (($fb->word == $word) && ($fb->offset == $wordoffset)) {
+                if (($isselected == true)&& (isset($fb->selected))) {
+                        $feedback = $fb->selected;
+                    
+                } else {
+                    if (isset($fb->notselected)) {
+                        $feedback = $fb->notselected;
+                    }
                 }
-                if(!isset($fb->notselected)){
-                    $fb->notselected='';
-                }
-                return $fb;
             }
         }
-        $fb = new Feedback();
-        return $fb;    
+        return $feedback;
     }
 
     protected function get_input_name(question_attempt $qa, $word, $place) {
@@ -209,10 +204,12 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
     }
 
 }
-class Feedback{
-    public $word="";
-    public $offset=0;
-    public $selected="";
-    public $notselected="";
-}
 
+class Feedback {
+
+    public $word = "";
+    public $offset = 0;
+    public $selected = "";
+    public $notselected = "";
+
+}
