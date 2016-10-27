@@ -194,8 +194,20 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             return false;
         }
     }
-
-    public function get_correct_response() {
+      /**
+     * @return question_answer an answer that
+     * contains the a response that would get full marks.
+     * used in preview mode. If this doesn't return a 
+     * correct value the button labeled "Fill in correct response"
+     * in the preview form will not work.
+     */
+      public function get_correct_response() {
+               $correctplaces= $this->get_correct_places($this->questiontext, $this->delimitchars);
+               $response=array();
+               foreach($correctplaces as $place){
+                   $response['p'.$place]='on';
+               }
+               return $response;
     }
 
     public function check_file_access($qa, $options, $component, $filearea, $args, $forcedownload) {
