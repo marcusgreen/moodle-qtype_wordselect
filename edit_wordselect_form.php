@@ -36,6 +36,7 @@ require_once('question_edit_navigation_form.php');
 class qtype_wordselect_edit_form extends question_edit_navigation_form {
 
     protected function definition_inner($mform) {
+        $simplenav=false;
         global $PAGE;
         $PAGE->requires->jquery();
 
@@ -48,11 +49,13 @@ class qtype_wordselect_edit_form extends question_edit_navigation_form {
         $mform->removeelement('defaultmark');
         $mform->removeelement('questiontext');
 
-       $mform->addElement('editor', 'introduction', get_string('introduction', 'qtype_wordselect'), array('size' => 70, 'rows' => 2), $this->editoroptions);
+        $mform->addElement('editor', 'introduction', get_string('introduction', 'qtype_wordselect'), array('size' => 70, 'rows' => 2), $this->editoroptions);
         $mform->setType('introduction', PARAM_RAW);
         $mform->addHelpButton('introduction', 'introduction', 'qtype_wordselect');
 
+        if($simplenav==true){
         $mform->addElement('html', '<span class="displayoff" style="display:none">');
+        }
 
         $mform->addElement('editor', 'questiontext', get_string('questiontext', 'question'),
                 array('rows' => 15), $this->editoroptions);
@@ -61,7 +64,6 @@ class qtype_wordselect_edit_form extends question_edit_navigation_form {
         $mform->addRule('questiontext', null, 'required', null, 'client');         
         $mform->addElement('button', 'tablewrap', 'Table Wrap');
          
-        $mform->addElement('html','<span id="displayoff" style="display:inline">');
         $mform->addElement('editor', 'generalfeedback', get_string('generalfeedback', 'question')
                 , array('rows' => 10), $this->editoroptions);
        
@@ -75,6 +77,13 @@ class qtype_wordselect_edit_form extends question_edit_navigation_form {
         $mform->addHelpButton('delimitchars', 'delimitchars', 'qtype_wordselect');
 
         // To add combined feedback (correct, partial and incorrect).
+        // And hinting features
+        if($simplenav==true){
+        parent::add_hidden_fields();
+        }
+        
+           
+        // 
         // $this->add_combined_feedback_fields(true);
          
         // Adds hinting features.
