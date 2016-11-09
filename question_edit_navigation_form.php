@@ -42,12 +42,18 @@ class question_edit_navigation_form extends question_edit_form {
      * override this method and remove the ones you don't want with $mform->removeElement().
      */
     protected function definition() {
+        
+       // parent::definition();
+       // return;
+
         global $COURSE, $CFG, $DB, $PAGE;
 
         $qtype = $this->qtype();
         $langfile = "qtype_{$qtype}";
 
         $mform = $this->_form;
+        $mform->addElement('html','</span>');
+
 
         // Standard fields at the start of the form.
         // $mform->addElement('header', 'generalheader', get_string("general", 'form'));
@@ -114,7 +120,6 @@ class question_edit_navigation_form extends question_edit_form {
         $mform->addElement('text', 'name', get_string('questionname', 'question'), array('size' => 50, 'maxlength' => 255));
         $mform->setType('name', PARAM_TEXT);
         $mform->addRule('name', null, 'required', null, 'client');
-
 
         $mform->addElement('editor', 'questiontext', get_string('questiontext', 'question'), array('rows' => 15), $this->editoroptions);
         $mform->setType('questiontext', PARAM_RAW);
