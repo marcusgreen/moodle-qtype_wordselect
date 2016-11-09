@@ -1,3 +1,6 @@
+.que.wordselect .displayoff{
+    dispplay:none;
+}
 .que.wordselect input[type=checkbox]{
     display:none;
 }

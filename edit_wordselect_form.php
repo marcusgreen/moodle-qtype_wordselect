@@ -31,31 +31,40 @@ defined('MOODLE_INTERNAL') || die();
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class qtype_wordselect_edit_form extends question_edit_form {
+require_once('question_edit_navigation_form.php');
+
+class qtype_wordselect_edit_form extends question_edit_navigation_form {
 
     protected function definition_inner($mform) {
-        $mform->removeelement('questiontext');
+        global $PAGE;
+        $PAGE->requires->jquery();
+
+        $PAGE->requires->js('/question/type/wordselect/navigation.js');
+        $PAGE->requires->js('/question/type/wordselect/questionedit.js');
 
         $mform->removeelement('generalfeedback');
 
         // Default mark will be set to 1 * number of fields.
         $mform->removeelement('defaultmark');
+        $mform->removeelement('questiontext');
 
-        $mform->addElement('editor', 'introduction',
-                get_string('introduction', 'qtype_wordselect'), array('size' => 70, 'rows' => 2),
-                $this->editoroptions);
+       $mform->addElement('editor', 'introduction', get_string('introduction', 'qtype_wordselect'), array('size' => 70, 'rows' => 2), $this->editoroptions);
         $mform->setType('introduction', PARAM_RAW);
-
         $mform->addHelpButton('introduction', 'introduction', 'qtype_wordselect');
+
+        $mform->addElement('html', '<span class="displayoff" style="display:none">');
 
         $mform->addElement('editor', 'questiontext', get_string('questiontext', 'question'),
                 array('rows' => 15), $this->editoroptions);
         $mform->setType('questiontext', PARAM_RAW);
-
-        $mform->addHelpButton('questiontext', 'questiontext', 'qtype_wordselect');
-
+        
+        $mform->addRule('questiontext', null, 'required', null, 'client');         
+        $mform->addElement('button', 'tablewrap', 'Table Wrap');
+         
+        $mform->addElement('html','<span id="displayoff" style="display:inline">');
         $mform->addElement('editor', 'generalfeedback', get_string('generalfeedback', 'question')
                 , array('rows' => 10), $this->editoroptions);
+       
 
         $mform->setType('generalfeedback', PARAM_RAW);
         $mform->addHelpButton('generalfeedback', 'generalfeedback', 'question');
@@ -66,10 +75,12 @@ class qtype_wordselect_edit_form extends question_edit_form {
         $mform->addHelpButton('delimitchars', 'delimitchars', 'qtype_wordselect');
 
         // To add combined feedback (correct, partial and incorrect).
-         $this->add_combined_feedback_fields(true);
-
+        // $this->add_combined_feedback_fields(true);
+         
         // Adds hinting features.
-        $this->add_interactive_settings(true, true);
+        // $this->add_interactive_settings(true, true);
+        // $mform->addElement('html','</span>');
+
     }
 
     public function set_data($question) {
