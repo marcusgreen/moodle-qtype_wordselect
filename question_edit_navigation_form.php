@@ -41,10 +41,15 @@ class question_edit_navigation_form extends question_edit_form {
      * If your question type does not support all these fields, then you can
      * override this method and remove the ones you don't want with $mform->removeElement().
      */
+    public $simplenav=true;
     protected function definition() {
         
-       // parent::definition();
-       // return;
+        $this->simplenav=true;
+
+        if($this->simplenav==false){
+            parent::definition();
+            return;
+        }
 
         global $COURSE, $CFG, $DB, $PAGE;
 
@@ -167,7 +172,8 @@ class question_edit_navigation_form extends question_edit_form {
             }
         }
 
-        $this->add_hidden_fields();
+        parent::add_hidden_fields();
+        $mform->removeElement('combinedfeedbackhdr');
 
         $mform->addElement('hidden', 'qtype');
         $mform->setType('qtype', PARAM_ALPHA);
@@ -201,9 +207,8 @@ class question_edit_navigation_form extends question_edit_form {
         $mform->addElement('html', '</span>');
     }
 
-    protected function add_combined_feedback_fields($withshownumpartscorrect = false) {
+    protected function add_combined_feedback_fields_simplenav($withshownumpartscorrect = false) {
         $mform = $this->_form;
-
         $fields = array('correctfeedback', 'partiallycorrectfeedback', 'incorrectfeedback');
         foreach ($fields as $feedbackname) {
             $element = $mform->addElement('editor', $feedbackname, get_string($feedbackname, 'question'), array('rows' => 5), $this->editoroptions);
@@ -305,6 +310,9 @@ class question_edit_navigation_form extends question_edit_form {
             $mform->closeHeaderBefore('submitbutton');
            
         }
+    }
+    public function add_hidden_fields(){
+        return;
     }
 
 }

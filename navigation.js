@@ -6,7 +6,7 @@ $(function () {
         $("#question_nav").children().css('color', '#0070a8');
 
 
-        $(".displayoff").css("display", "inline");
+        $(".displayoff").css("display", "block");
         $("[id^='fitem']").css("display", "none");
 
         // $("#fitem_id_" + e.target.id).css("display", "inline");
