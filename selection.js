@@ -24,11 +24,13 @@
 $(function () {
     $(".selectable").on('keydown', function (e) {
         /* space bar */
-        if (e.keyCode === 32) {         
+        if (e.keyCode === 32) {
             toggleselected($(this));
         }
-       /*Eat the keycode so it doesnt scroll the screen down */
-       if(e.keyCode === 32) return false;
+        /*Eat the keycode so it doesnt scroll the screen down */
+        if (e.keyCode === 32){
+            return false;
+        }
 
     });
     $(".selectable").on('click', function (e) {
@@ -46,18 +48,22 @@ var toggleselected = function (selection) {
     if (iselected === true) {
         selection.removeClass("selected");
         selection.removeAttr("title");
-        selection.attr('aria-checked','false');
-        hidden.type="text";
-        hidden.style.visibility="hidden";
-        hidden.style.display="none";
-        hidden.value='';
-        
+        selection.attr('aria-checked', 'false');
+        /* convert type to text, because
+         * unchecked textboxes would not
+         * be included in the response
+         */
+        hidden.type = "text";
+        hidden.style.visibility = "hidden";
+        hidden.style.display = "none";
+        hidden.value = '';
+
     } else {
         selection.addClass("selected");
         selection.prop('title', 'selected');
-        selection.attr('aria-checked','true');
-        hidden.type="checkbox";
-        hidden.value="on";
-        hidden.checked="true";
+        selection.attr('aria-checked', 'true');
+        hidden.type = "checkbox";
+        hidden.value = "on";
+        hidden.checked = "true";
     }
 };
