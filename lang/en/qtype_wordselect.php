@@ -40,6 +40,8 @@ $string['questiontext'] = 'question text';
 $string['questiontext_help'] = 'Put square braces around the correct words ';
 $string['introduction'] = 'Introduction';
 $string['introduction_help'] = 'Introduction to the question, this text will not be selectable';
+$string['addwordfeedback'] = 'Add word feedback';
+$string['itemfeedbackerror']= 'Word feedback only works with Atto editor, this does not appear to be configured';
 
 
 
