@@ -32,17 +32,22 @@ defined('MOODLE_INTERNAL') || die();
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-//require_once($CFG->dirroot . '/question/type/wordselect/feedback_popup.php');
 
 class qtype_wordselect_edit_form extends question_edit_form {
 
+    /**
+     * 
+     * @global type $PAGE
+     * @global type $CFG
+     * @param question_wizard_form $mform
+     */
     protected function definition_inner($mform) {
         global $PAGE;
         $PAGE->requires->jquery();
         $PAGE->requires->jquery_plugin('ui');
         $PAGE->requires->jquery_plugin('ui-css');
-        $PAGE->requires->jquery_plugin('rangy-core', 'qtype_wordselect');
         $PAGE->requires->jquery_plugin('serialize-object', 'qtype_wordselect');
+        $PAGE->requires->strings_for_js(array('itemfeedbackerror'), 'qtype_wordselect');
         $PAGE->requires->js('/question/type/wordselect/questionedit.js');
     
         $mform->addElement('hidden', 'reload', 1);
@@ -58,10 +63,12 @@ class qtype_wordselect_edit_form extends question_edit_form {
         $mform->removeelement('defaultmark');
 
 
-        $mform->addElement('html', '<div id="id_feedback_popup" title="Item Feedback" style="display:none;background-color:lightgrey" >');
-        $mform->addElement('editor', 'selected', 'Feedback for X when selected', array('size' => 70, 'rows' => 3), $this->editoroptions);
-        $mform->addElement('editor', 'notselected', 'Feedback for X when not selected', array('size' => 70, 'rows' => 3), $this->editoroptions);
+        /* popup for entering feedback for individual words */
+        $mform->addElement('html', '<div id="id_feedback_popup" title="'.get_string('addwordfeedback','qtype_wordselect').'" style="display:none;background-color:lightgrey" >');
+        $mform->addElement('editor', 'selected', '', array('size' => 70, 'rows' => 3), $this->editoroptions);
+        $mform->addElement('editor', 'notselected', '', array('size' => 70, 'rows' => 3), $this->editoroptions);
         $mform->addElement('html', '</div>');
+        /* presented for clicking on the words once they have been given numberical ids */
         $mform->addElement('html', '<div id="id_questiontextfeedback" style="display:none;background-color:lightgrey" ></div>');
 
 
@@ -72,10 +79,11 @@ class qtype_wordselect_edit_form extends question_edit_form {
 
         $mform->addElement('editor', 'questiontext', get_string('questiontext', 'question'), array('rows' => 15), $this->editoroptions);
         $mform->setType('questiontext', PARAM_RAW);
-
         $mform->addHelpButton('questiontext', 'questiontext', 'qtype_wordselect');
-        $mform->addElement('button', 'gapfeedback', 'Add Word Feedback');
-
+      
+        $mform->addElement('button', 'wordfeedback', get_string('addwordfeedback','qtype_wordselect'));
+      
+        
         $mform->addElement('editor', 'generalfeedback', get_string('generalfeedback', 'question')
                 , array('rows' => 10), $this->editoroptions);
 
