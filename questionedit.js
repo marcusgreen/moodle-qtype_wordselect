@@ -80,7 +80,16 @@ function add_or_update(item) {
     }
     return feedback;
 }
-$("#id_gapfeedback").on("click", function () {
+/* a click on the button */
+$("#id_wordfeedback").on("click", function () {
+    var atto_islive=($(".editor_atto")).length;
+    if(atto_islive <1){
+        $("#id_error_wordfeedback").css({'display':'inline','color':'red'});
+        $("#id_error_wordfeedback")[0].innerHTML=M.util.get_string("itemfeedbackerror", "qtype_wordselect"); 
+        
+        
+        return;
+    }
     if ($('#id_questiontexteditable').get(0).isContentEditable) {
         $("#id_questiontexteditable").attr('contenteditable', 'false');
         $("#fitem_id_questiontext").find('button').attr("disabled", 'true');
@@ -114,7 +123,8 @@ $("#id_gapfeedback").on("click", function () {
     }
 });
 
-$("#fitem_id_questiontext").on("click", function (e) {
+/*A click on the text */
+$("#id_questiontextfeedback").on("click", function (e) {
     if (!$('#id_questiontexteditable').get(0).isContentEditable) {
         delimitchars = $("#id_delimitchars").val();
         var item = get_selected_item(e, delimitchars);
