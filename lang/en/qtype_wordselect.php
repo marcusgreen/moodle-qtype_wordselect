@@ -45,6 +45,10 @@ $string['itemfeedbackbutton']='Word Feedback';
 $string['itemfeedbackerror']= 'The Atto editor is not configured or the page is not fully loaded';
 $string['selected']= 'Selected';
 $string['notselected']= 'Not Selected';
+$string['feedback_button']= 'Selected';
+$string['feedback_button_help']= 'Add feedback for each word, text. Once toggled click on any item. A dialog will show for etering text for when an item is selected and when it is not selected';
+
+
 
 
 

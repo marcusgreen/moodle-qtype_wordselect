@@ -65,10 +65,10 @@ class qtype_wordselect_edit_form extends question_edit_form {
 
         /* popup for entering feedback for individual words */
         $mform->addElement('html', '<div id="id_feedback_popup" title="'.get_string('additemfeedback','qtype_wordselect').'" style="display:none;background-color:lightgrey" >');
-              
+             
         $mform->addElement('editor', 'selected', '', array('size' => 70, 'rows' => 4), $this->editoroptions);
-     
         $mform->addElement('editor', 'notselected', '', array('size' => 70, 'rows' => 4), $this->editoroptions);
+                
         $mform->addElement('html', '</div>');
 
          /* presented for clicking on the words once they have been given numberical ids */
@@ -85,6 +85,8 @@ class qtype_wordselect_edit_form extends question_edit_form {
         $mform->addHelpButton('questiontext', 'questiontext', 'qtype_wordselect');
       
         $mform->addElement('button', 'wordfeedback', get_string('itemfeedbackbutton','qtype_wordselect'));
+        $mform->addHelpButton('wordfeedback', 'feedback_button', 'qtype_wordselect');
+
       
         
         $mform->addElement('editor', 'generalfeedback', get_string('generalfeedback', 'question')
