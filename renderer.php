@@ -134,7 +134,12 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 }
                 $output .= $checkbox;
                 $output .= html_writer::tag('span', $word, $wordattributes);
-                $output .= $tickorcross . $afterwordfeedback;
+                if($afterwordfeedback >""){
+                    $output .= $tickorcross . '<span title="Feedback" class=left-arrow>'.$afterwordfeedback.'</span>';
+                }else{
+                    $output .= $tickorcross;    
+                }
+                    
                 $output .= ' ';
             } else {
                 /* for non selectable items such as the tags for tables etc */

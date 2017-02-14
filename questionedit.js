@@ -14,11 +14,11 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /** 
- * JavaScript code for the gapfill question type.
+ * JavaScript code for the wordselect question type.
  *
  * @package    qtype
- * @subpackage gapfill
- * @copyright  2016 Marcus Green
+ * @subpackage wordselect
+ * @copyright  2017 Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -80,14 +80,19 @@ function add_or_update(item) {
     }
     return feedback;
 }
+
+
 /* a click on the button */
 $("#id_wordfeedback").on("click", function () {
     var atto_islive=($(".editor_atto")).length;
+    /* show error if Atto is not loaded. It might be because the page has not finished loading
+     * or because plain text elements are being used or (perhaps less likely as time goes on)
+     * the HTMLarea editor is being used. It might be possible to work with those other editors
+     * but limiting to Atto keeps things straightforward and maintainable.
+     */
     if(atto_islive <1){
         $("#id_error_wordfeedback").css({'display':'inline','color':'red'});
         $("#id_error_wordfeedback")[0].innerHTML=M.util.get_string("itemfeedbackerror", "qtype_wordselect"); 
-        
-        
         return;
     }
     if ($('#id_questiontexteditable').get(0).isContentEditable) {
@@ -107,6 +112,9 @@ $("#id_wordfeedback").on("click", function () {
             color: "black",
             display: "block"
         }).appendTo(ed).css("position", "relative");
+       /* $("id_questiontextfeedback").addClass($(ed).attr('class'));
+        $("id_questiontextfeedback").css('line-height','17.5pt');*/
+
         /* Copy the real html to the feedback editing html */
         $("#id_questiontextfeedback").html($("#id_questiontexteditable").prop("innerHTML"));
         wrapContent($("#id_questiontextfeedback")[0]);
@@ -121,7 +129,7 @@ $("#id_wordfeedback").on("click", function () {
         $("#id_feedback_popup").css("display", "none");
         $("#id_gapfeedback").attr('value', 'Add Word Feedback');
     }
-});
+}); 
 
 /*A click on the text */
 $("#id_questiontextfeedback").on("click", function (e) {
@@ -137,12 +145,22 @@ $("#id_questiontextfeedback").on("click", function (e) {
                 $("#id_selectededitable").html(itemfeedback[0].selected);
                 $("#id_notselectededitable").html(itemfeedback[0].notselected);
             }
-            $("label[for*='id_selected']").text("When " + item.text + " is selected");
-            $("label[for*='id_notselected']").text("When " + item.text + " is not selected");
-            $("#id_feedback_popup").dialog({
+           
+           $("label[for*='id_selected']").text(M.util.get_string("selected", "qtype_wordselect"));           
+           $("label[for*='id_notselected']").text(M.util.get_string("notselected", "qtype_wordselect"));
+            var title=M.util.get_string("additemfeedback", "qtype_wordselect");
+            title +=': '+item.text;
+            var $popup = $("#id_feedback_popup");
+            $popup.dialog({
+                position: { 
+                    my: 'right',
+                    at: 'right',                    
+                    of: "#id_questiontextfeedback"     
+                },                
                 height: 500,
-                width: 600,
+                width: "70%",
                 modal: true,
+                title: title,
                 buttons: [
                     {
                         text: "OK",
@@ -155,7 +173,7 @@ $("#id_questiontextfeedback").on("click", function (e) {
 
                     }
                 ]
-            });
+            });  
         }
     }
 
@@ -169,8 +187,12 @@ function get_selected_item(e, delimitchars) {
     /*l and r for left and right */
     var l = delimitchars.substr(0, 1);
     var r = delimitchars.substr(1, 1);
-    item = {text:e.target.innerText};
+    var item ={
+        text:'',
+        offset:null
+    };
     
+    item.text = e.target.innerText;
     var startchar = item.text.substring(0, 1);
     var len = item.text.length;
     var endchar = (item.text.substring(len-1, len))
@@ -240,7 +262,8 @@ var wrapContent = (function () {
                         if (re.test(text[j])) {
                             sp = span.cloneNode(false);
                             sp.id = count++;
-                            sp.className = 'foo';
+                            /*what does this class do? */
+                            sp.className = 'item';
                             sp.appendChild(document.createTextNode(text[j]));
                             frag.appendChild(sp);
 

@@ -1,3 +1,40 @@
+.left-arrow {
+	display: inline-block;
+	position: relative;
+	background: lightblue;
+	margin-left:10px;
+	padding-right:3px;
+        border-right:thin solid black;
+        border-top:thin solid black;
+        border-bottom:thin solid black;
+}
+.left-arrow:after {
+	content: '';
+	display: block;  
+	position: absolute;
+	right: 100%;
+	top: 50%;
+	margin-top: -10px;
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-right: 10px solid lightblue;
+	border-bottom: 10px solid transparent;
+	border-left: 10px solid transparent;
+}
+
+
+#id_feedback_popup  .col-md-3{
+    width:15%;
+}
+#id_feedback_popup  .col-md-9{
+    width:85%;
+}
+
+#id_questiontextfeedback{
+    border-radius:.25rem;
+}
+
 .que.wordselect input[type=checkbox]{
     display:none;
 }
