@@ -34,6 +34,10 @@
 #id_questiontextfeedback{
     border-radius:.25rem;
 }
+.hasfeedback{
+    border:solid thin black;
+    background: lightblue;    
+}
 
 .que.wordselect input[type=checkbox]{
     display:none;

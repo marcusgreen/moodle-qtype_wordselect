@@ -84,15 +84,15 @@ function add_or_update(item) {
 
 /* a click on the button */
 $("#id_wordfeedback").on("click", function () {
-    var atto_islive=($(".editor_atto")).length;
+    var atto_islive = ($(".editor_atto")).length;
     /* show error if Atto is not loaded. It might be because the page has not finished loading
      * or because plain text elements are being used or (perhaps less likely as time goes on)
      * the HTMLarea editor is being used. It might be possible to work with those other editors
      * but limiting to Atto keeps things straightforward and maintainable.
      */
-    if(atto_islive <1){
-        $("#id_error_wordfeedback").css({'display':'inline','color':'red'});
-        $("#id_error_wordfeedback")[0].innerHTML=M.util.get_string("itemfeedbackerror", "qtype_wordselect"); 
+    if (atto_islive < 1) {
+        $("#id_error_wordfeedback").css({'display': 'inline', 'color': 'red'});
+        $("#id_error_wordfeedback")[0].innerHTML = M.util.get_string("itemfeedbackerror", "qtype_wordselect");
         return;
     }
     if ($('#id_questiontexteditable').get(0).isContentEditable) {
@@ -112,8 +112,8 @@ $("#id_wordfeedback").on("click", function () {
             color: "black",
             display: "block"
         }).appendTo(ed).css("position", "relative");
-       /* $("id_questiontextfeedback").addClass($(ed).attr('class'));
-        $("id_questiontextfeedback").css('line-height','17.5pt');*/
+        /* $("id_questiontextfeedback").addClass($(ed).attr('class'));
+         $("id_questiontextfeedback").css('line-height','17.5pt');*/
 
         /* Copy the real html to the feedback editing html */
         $("#id_questiontextfeedback").html($("#id_questiontexteditable").prop("innerHTML"));
@@ -129,7 +129,7 @@ $("#id_wordfeedback").on("click", function () {
         $("#id_feedback_popup").css("display", "none");
         $("#id_gapfeedback").attr('value', 'Add Word Feedback');
     }
-}); 
+});
 
 /*A click on the text */
 $("#id_questiontextfeedback").on("click", function (e) {
@@ -145,18 +145,17 @@ $("#id_questiontextfeedback").on("click", function (e) {
                 $("#id_selectededitable").html(itemfeedback[0].selected);
                 $("#id_notselectededitable").html(itemfeedback[0].notselected);
             }
-           
-           $("label[for*='id_selected']").text(M.util.get_string("selected", "qtype_wordselect"));           
-           $("label[for*='id_notselected']").text(M.util.get_string("notselected", "qtype_wordselect"));
-            var title=M.util.get_string("additemfeedback", "qtype_wordselect");
-            title +=': '+item.text;
+            $("label[for*='id_selected']").text(M.util.get_string("selected", "qtype_wordselect"));
+            $("label[for*='id_notselected']").text(M.util.get_string("notselected", "qtype_wordselect"));
+            var title = M.util.get_string("additemfeedback", "qtype_wordselect");
+            title += ': ' + item.text;
             var $popup = $("#id_feedback_popup");
             $popup.dialog({
-                position: { 
+                position: {
                     my: 'right',
-                    at: 'right',                    
-                    of: "#id_questiontextfeedback"     
-                },                
+                    at: 'right',
+                    of: "#id_questiontextfeedback"
+                },
                 height: 500,
                 width: "70%",
                 modal: true,
@@ -169,41 +168,71 @@ $("#id_questiontextfeedback").on("click", function (e) {
                             var JSONstr = JSON.stringify(feedback);
                             $("[name='wordfeedbackdata']").val(JSONstr);
                             $(this).dialog("close");
+                            /*set editable to true as it is checked at the start of click */
+                            $("#id_questiontexteditable").attr('contenteditable', 'true');
+                            $("#id_wordfeedback").click();
                         }
-
                     }
                 ]
-            });  
+            });
         }
     }
-
 });
-/**
- * 
- * @param {string} event
- * @returns {string} delmitchars
- */
-function get_selected_item(e, delimitchars) {
+
+function get_new_item() {
+    delimitchars = $("#id_delimitchars").val();
     /*l and r for left and right */
     var l = delimitchars.substr(0, 1);
     var r = delimitchars.substr(1, 1);
-    var item ={
-        text:'',
-        offset:null
+    var item = {
+        text: '',
+        offset: null,
+        l: l,
+        r: r,
+        stripdelim: function() {  
+           var len = this.text.length;
+           var startchar=this.text.indexOf(item.l);
+           if(startchar > -1){
+               this.text=this.text.substring(startchar+1,len); 
+           }
+           var endchar =this.text.indexOf(item.r);
+           if(endchar > -1){
+               this.text=this.text.substring(0,endchar);
+           }
+           return this.text;
+        }
     };
-    
-    item.text = e.target.innerText;
+    return item;
+}
+
+/**
+ * 
+ * @param {string} event
+ * @param {string} delimitchars
+ */
+function get_selected_item(event, delimitchars) {
+
+    item=get_new_item();
+    /* First get the selected string ignoring
+     * if there are delimiters embedded, e.g. if
+     * it ends with ]. (the end of a sentence)
+     */
+    item.text = event.target.innerText;
+
     var startchar = item.text.substring(0, 1);
     var len = item.text.length;
-    var endchar = (item.text.substring(len-1, len))
-    if (startchar == l) {
+    var endchar = (item.text.substring(len - 1, len));
+    if (startchar === item.l) {
         item.text = item.text.substring(1, len);
     }
-    var len = item.text.length;
-    if (endchar == r) {
-        item.text = item.text.substring(0, len - 1)
+    /*if the end of the string has an embedded delimiter,
+     * throw away the delimiter and all the string after it
+     */
+    var end_delim = item.text.indexOf(item.r);
+    if (end_delim > 0) {
+        item.text = item.text.substring(0, end_delim);
     }
-    item.offset = e.target.id;
+    item.offset = event.target.id;
     return item;
 }
 
@@ -249,12 +278,9 @@ var wrapContent = (function () {
 
                 // If it's a text node, wrap words
             } else if (node.nodeType == 3) {
-
                 // Match sequences of whitespace and non-whitespace
                 text = node.data.match(/\s+|\S+/g);
-
                 if (text) {
-
                     // Create a fragment, handy suckers these
                     frag = document.createDocumentFragment();
                     for (var j = 0, jLen = text.length; j < jLen; j++) {
@@ -264,6 +290,15 @@ var wrapContent = (function () {
                             sp.id = count++;
                             /*what does this class do? */
                             sp.className = 'item';
+                            
+                            item=get_new_item();
+                            item.text=text[j];
+                            item.offset=sp.id;
+                            item.stripdelim();
+                            
+                            if (get_feedback(item) > '') {
+                                sp.className = 'item hasfeedback'
+                            }
                             sp.appendChild(document.createTextNode(text[j]));
                             frag.appendChild(sp);
 
@@ -273,12 +308,10 @@ var wrapContent = (function () {
                         }
                     }
                 }
-
                 // Replace the original node with the fragment
                 node.parentNode.replaceChild(frag, node);
             }
-
         }
-    }
+    };
 }());
 

@@ -154,7 +154,8 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
     protected function get_feedback($word, $wordfeedback, $isselected, $wordoffset) {
         $feedback = "";
         foreach ($wordfeedback as $fb) {
-            if (($fb->word == $word) && ($fb->offset == $wordoffset)) {
+            /* trim off any trailing full stop */
+            if (($fb->word == rtrim($word, '.')) && ($fb->offset == $wordoffset)) {
                 if (($isselected == true)&& (isset($fb->selected))) {
                         $feedback = $fb->selected;
                     
