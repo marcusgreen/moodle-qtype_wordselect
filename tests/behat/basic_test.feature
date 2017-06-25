@@ -23,8 +23,8 @@ Feature: Test all the basic functionality of this question type
     # Create a new question.
     And I add a "Word Select" question filling the form with:
       | Question name             | Word-Select-001                   |
-      | Introduction              | Select the verb in the following text  |
-      | Question text             | Word1 [select1] word2  [select2]  word3     |
+      | Introduction              | Select the verbs in the following text  |
+      | Question text             | The cat [sat] and the cow [jumped]  |
       | General feedback          | This is general feedback       |
       | Hint 1                    | First hint                    |
       | Hint 2                    | Second hint                   |
@@ -46,8 +46,8 @@ Feature: Test all the basic functionality of this question type
     And I press "Start again with these options"
 
     #Select all (both) correct options
-    And I click on "select1" "text" 
-    And I click on "select2" "text"
+    And I click on "sat" "text" 
+    And I click on "jumped" "text"
     And I press "Check"      
     And I should see "Your answer is correct."
     And I should see "Mark 2.00 out of 2.00"
@@ -57,15 +57,15 @@ Feature: Test all the basic functionality of this question type
     ################################################
     #first attempt
     And I press "Start again with these options"
-    And I click on "select1" "text" 
+    And I click on "sat" "text" 
     And I press "Check"      
     And I should see "Your answer is partially correct."
 
     ################################################
     #second attempt
     And I press "Try again"
-    And I click on "select1" "text" 
-    And I click on "select2" "text"
+    And I click on "sat" "text" 
+    And I click on "jumped" "text"
     And I press "Check"      
     And I should see "Your answer is correct."
     And I should see "Mark 1.67 out of 2.00"
@@ -82,15 +82,15 @@ Feature: Test all the basic functionality of this question type
       | Right answer         | Shown |
     
     And I press "Start again with these options" 
-    And I click on "select1" "text" 
-    And I click on "select2" "text"
+    And I click on "sat" "text" 
+    And I click on "jumped" "text"
     And I press "Check"      
     And I should see "Your answer is correct."
     And I should see "Mark 2.00 out of 2.00"
     And I wait "2" seconds
     
     And I press "Start again with these options" 
-    And I click on "select1" "text" 
+    And I click on "sat" "text" 
     And I press "Check"      
     And I should see "Your answer is partially correct."
     And I should see "Mark 1.00 out of 2.00"
@@ -107,24 +107,24 @@ Feature: Test all the basic functionality of this question type
       | Right answer         | Shown |
     
     And I press "Start again with these options" 
-    And I click on "select1" "text" 
-    And I click on "select2" "text"
+    And I click on "sat" "text" 
+    And I click on "jumped" "text"
     And I press "Submit and finish"      
     And I should see "Your answer is correct."
     And I should see "Mark 2.00 out of 2.00"
     And I wait "5" seconds
 
     And I press "Start again with these options" 
-    And I click on "select1" "text" 
+    And I click on "sat" "text" 
     And I press "Submit and finish"      
     And I should see "Your answer is partially correct."
     And I should see "Mark 1.00 out of 2.00"
     And I wait "5" seconds
 
     And I press "Start again with these options" 
-    And I click on "select1" "text" 
-    And I click on "select2" "text"
-    And I click on "word2" "text"
+    And I click on "sat" "text" 
+    And I click on "cow" "text"
+    And I click on "jumped" "text"
 
     And I press "Submit"      
     And I should see "Your answer is partially correct."
@@ -132,9 +132,9 @@ Feature: Test all the basic functionality of this question type
     And I wait "5" seconds
 
     And I press "Start again with these options" 
-    And I click on "word2" "text" 
-    And I click on "word3" "text"
-    And I click on "word2" "text"
+    And I click on "the" "text" 
+    And I click on "cat" "text"
+    And I click on "cow" "text"
   
     And I press "Submit and finish"      
     And I should see "Your answer is incorrect."
