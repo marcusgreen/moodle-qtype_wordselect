@@ -2,11 +2,11 @@
     display:none;
 }
 .que.wordselect .selectable{
+    background-attachment: scroll;
+    background-clip: border-box;
     background-image: none;
     background-repeat: repeat;
-    background-attachment: scroll;
     background-position: 0 0;
-    background-clip: border-box;
     background-origin: padding-box;
     background-size: auto auto;
     border:solid thin transparent;
