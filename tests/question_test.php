@@ -85,14 +85,14 @@ class qtype_wordselect_question_test extends advanced_testcase {
 
     public function test_is_correct_place() {
         $questiontext = 'The cat [sat] and the cow [jumped]';
-        $question = qtype_wordselect_test_helper::make_question('wordselect',$questiontext);
+        $question = qtype_wordselect_test_helper::make_question('wordselect', $questiontext);
         $correctplaces = $question->get_correct_places($question->questiontext, "[]");
         $this->assertTrue($question->is_correct_place($correctplaces, 2));
     }
 
     public function test_is_word_selected() {
         $questiontext = 'The cat [sat] and the cow [jumped]';
-        $question = qtype_wordselect_test_helper::make_question('wordselect',$questiontext);
+        $question = qtype_wordselect_test_helper::make_question('wordselect', $questiontext);
         $response = array('p1' => 'on');
         $this->assertTrue($question->is_word_selected(1, $response));
         $response = array('1' => 'on');

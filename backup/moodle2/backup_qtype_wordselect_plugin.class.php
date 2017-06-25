@@ -31,7 +31,7 @@ defined('MOODLE_INTERNAL') || die();
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class backup_qtype_wordselect_plugin extends backup_qtype_plugin {
-    
+
     /**
      *
      * @return string the name of the plugin/question type
