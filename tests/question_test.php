@@ -39,25 +39,22 @@ require_once($CFG->dirroot . '/question/type/wordselect/question.php');
  * @copyright  2016 Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class qtype_wordselect_question_test extends UnitTestCase {
+class qtype_wordselect_question_test extends advanced_testcase {
 
     public function test_get_expected_data() {
-        $questiontext = 'The cat [sat]';
-        $question = qtype_wordselect_test_helper::make_question('wordselect', $questiontext);
+        $question = qtype_wordselect_test_helper::make_question('wordselect');
         $expecteddata = ['p0' => 'raw_trimmed', 'p1' => 'raw_trimmed', 'p2' => 'raw_trimmed'];
         $this->assertEquals($question->get_expected_data(), $expecteddata);
     }
 
     public function test_summarise_response() {
-        $questiontext = 'The cat [sat] on the mat';
-        $question = qtype_wordselect_test_helper::make_question('wordselect', $questiontext);
+        $question = qtype_wordselect_test_helper::make_question('wordselect');
         $response = array('p2' => 'on');
         $this->assertEquals(($question->summarise_response($response)), ' sat ');
     }
 
     public function test_grade_response() {
-        $questiontext = 'The cat [sat]';
-        $question = qtype_wordselect_test_helper::make_question('wordselect', $questiontext);
+        $question = qtype_wordselect_test_helper::make_question('wordselect');
         $response = array('p2' => 'on');
         list($fraction, $state) = $question->grade_response($response);
         $this->assertEquals($fraction, 1);
@@ -87,13 +84,15 @@ class qtype_wordselect_question_test extends UnitTestCase {
     }
 
     public function test_is_correct_place() {
-        $question = qtype_wordselect_test_helper::make_question('wordselect');
+        $questiontext = 'The cat [sat] and the cow [jumped]';
+        $question = qtype_wordselect_test_helper::make_question('wordselect',$questiontext);
         $correctplaces = $question->get_correct_places($question->questiontext, "[]");
         $this->assertTrue($question->is_correct_place($correctplaces, 2));
     }
 
     public function test_is_word_selected() {
-        $question = qtype_wordselect_test_helper::make_question('wordselect');
+        $questiontext = 'The cat [sat] and the cow [jumped]';
+        $question = qtype_wordselect_test_helper::make_question('wordselect',$questiontext);
         $response = array('p1' => 'on');
         $this->assertTrue($question->is_word_selected(1, $response));
         $response = array('1' => 'on');
