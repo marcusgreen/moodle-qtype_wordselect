@@ -20,7 +20,8 @@
  * @copyright  2016 Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
+/*global $ */
+/*jshint unused:false*/
 $(function () {
     $(".selectable").on('keydown', function (e) {
         /* space bar */
