@@ -32,7 +32,6 @@ defined('MOODLE_INTERNAL') || die();
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 class qtype_wordselect_question extends question_graded_automatically_with_countback {
 
     public $wrongresponsecount;
@@ -154,7 +153,8 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 
     public function is_word_selected($place, $response) {
-        if (isset($response['p' . $place]) && ($response['p' . $place] == "on")) {
+        $responseplace = 'p' . $place;
+        if (isset($response[$responseplace]) && (($response[$responseplace] == "on" ) || ($response[$responseplace] == "true" ) )) {
             return true;
         } else {
             return false;
@@ -194,20 +194,23 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             return false;
         }
     }
-      /**
+
+    /**
      * @return question_answer an answer that
      * contains the a response that would get full marks.
-     * used in preview mode. If this doesn't return a 
+     * used in preview mode. If this doesn't return a
      * correct value the button labeled "Fill in correct response"
-     * in the preview form will not work.
+     * in the preview form will not work. This value gets written
+     * into the rightanswer field of the question_attempts table
+     * when a quiz containing this question starts.
      */
-      public function get_correct_response() {
-               $correctplaces= $this->get_correct_places($this->questiontext, $this->delimitchars);
-               $response=array();
-               foreach($correctplaces as $place){
-                   $response['p'.$place]='on';
-               }
-               return $response;
+    public function get_correct_response() {
+        $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
+        $correctresponse = array();
+        foreach ($correctplaces as $place) {
+            $correctresponse['p' . $place] = 'on';
+        }
+        return $correctresponse;
     }
 
     public function check_file_access($qa, $options, $component, $filearea, $args, $forcedownload) {
@@ -241,7 +244,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
         $this->wrongresponsecount = $this->get_wrong_responsecount($correctplaces, $response);
         foreach ($correctplaces as $place) {
-            if (isset($response['p' . $place]) && $response['p'.$place] === 'on') {
+            if (isset($response['p' . $place]) && ( $response['p' . $place] === 'on') || ( $response['p' . $place] === 'true')) {
                 $this->rightresponsecount++;
             }
         }
@@ -253,6 +256,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 
     /* not called in interactive mode */
+
     public function compute_final_grade($responses, $totaltries) {
         $totalscore = 0;
         $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
@@ -297,4 +301,5 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         }
         return $wrongresponsecount;
     }
+
 }
