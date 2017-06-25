@@ -22,23 +22,6 @@
  */
 /*global $ */
 /*jshint unused:false*/
-$(function () {
-    $(".selectable").on('keydown', function (e) {
-        /* space bar */
-        if (e.keyCode === 32) {
-            toggleselected($(this));
-        }
-        /*Eat the keycode so it doesnt scroll the screen down */
-        if (e.keyCode === 32){
-            return false;
-        }
-
-    });
-    $(".selectable").on('click', function (e) {
-        toggleselected($(this));
-    });
-});
-
 var toggleselected = function (selection) {
     var iselected = selection.hasClass("selected");
     var wordname = selection.attr('name');
@@ -68,3 +51,19 @@ var toggleselected = function (selection) {
         hidden.checked = "true";
     }
 };
+$(function () {
+    $(".selectable").on('keydown', function (e) {
+        /* space bar */
+        if (e.keyCode === 32) {
+            toggleselected($(this));
+        }
+        /*Eat the keycode so it doesnt scroll the screen down */
+        if (e.keyCode === 32){
+            return false;
+        }
+
+    });
+    $(".selectable").on('click', function (e) {
+        toggleselected($(this));
+    });
+});
