@@ -15,12 +15,12 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * @package    moodlecore
+ *
+ * @package    qtype_wordselect
  * @subpackage backup-moodle2
- * @copyright  2011 The Open University
+ * @copyright  2017 Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 
 defined('MOODLE_INTERNAL') || die();
 
@@ -31,7 +31,11 @@ defined('MOODLE_INTERNAL') || die();
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class backup_qtype_wordselect_plugin extends backup_qtype_plugin {
-
+    
+    /**
+     *
+     * @return string the name of the plugin/question type
+     */
     protected static function qtype_name() {
         return 'wordselect';
     }
