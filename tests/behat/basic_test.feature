@@ -35,7 +35,7 @@ Feature: Test all the basic functionality of this question type
     And I switch to "questionpreview" window
 
     #################################################
-    #Interactive with multiple tries
+    #Interactive with multiple triddes
     #################################################
     And I set the following fields to these values:
       | How questions behave | Interactive with multiple tries |
@@ -64,12 +64,11 @@ Feature: Test all the basic functionality of this question type
     ################################################
     #second attempt
     And I press "Try again"
-    And I click on "sat" "text" 
+    #sat should remain selected so no need to select again
     And I click on "jumped" "text"
     And I press "Check"      
     And I should see "Your answer is correct."
     And I should see "Mark 1.67 out of 2.00"
-    And I wait "10" seconds
     
 
     ##################################################
