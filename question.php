@@ -244,8 +244,10 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
         $this->wrongresponsecount = $this->get_wrong_responsecount($correctplaces, $response);
         foreach ($correctplaces as $place) {
-            if (isset($response['p' . $place]) && ( $response['p' . $place] === 'on') || ( $response['p' . $place] === 'true')) {
+            if(isset($response['p'.$place])){
+            if (( $response['p' . $place] === 'on') || ( $response['p' . $place] === 'true')) {
                 $this->rightresponsecount++;
+            }
             }
         }
         $wrongfraction = @($this->wrongresponsecount / count($correctplaces));
