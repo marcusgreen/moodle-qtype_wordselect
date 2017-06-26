@@ -131,9 +131,9 @@ Feature: Test all the basic functionality of this question type
     And I wait "5" seconds
 
     And I press "Start again with these options" 
-    And I click on "the" "text" 
-    And I click on "cat" "text"
+    And I click on "cat" "text" 
     And I click on "cow" "text"
+    And I click on "mat" "text"
   
     And I press "Submit and finish"      
     And I should see "Your answer is incorrect."
