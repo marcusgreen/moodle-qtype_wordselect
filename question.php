@@ -36,7 +36,10 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
 
     public $wrongresponsecount;
     public $rightresponsecount;
+    public $markedselectables=false;
+    public $questiontextsplit;
 
+    
     /* the characters indicating a field to fill i.e. [cat] creates
      * a field where the correct answer is cat
      */
@@ -59,14 +62,52 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $questiontextnodelim = $this->questiontext;
         $l = substr($this->delimitchars, 0, 1);
         $r = substr($this->delimitchars, 1, 1);
-        $text = $this->get_questiontext_exploded($this->questiontext);
-        $questiontextnodelim = preg_replace('/\\' . $l . '/', '', $text);
-        $questiontextnodelim = preg_replace('/\\' . $r . '/', '', $questiontextnodelim);
-        /* string html tags (is this necessary?) */
-        $this->selectable = strip_tags($questiontextnodelim);
-        $allwords = preg_split('@[\s+]@u', $questiontextnodelim);
+        $doubledelimstart = $l . $l;
+        $doubledelimend = $r . $r;
+        $allwords=array();
+        
+        /* strinp html tags otherwise there is all manner of clickable debris*/
+        $this->selectable = explode(' ',strip_tags($questiontextnodelim));
+        
+        if (strpos($questiontextnodelim, $doubledelimstart) !== false) {
+            $this->markedselectables=true;
+            $fieldregex = '#\\' . $l . '+.*?\\' . $r . '+|[^ ]+#';
+            //$questiontextnodelim = strip_tags($questiontextnodelim);
+            $questiontextnodelim = $this->get_questiontext_exploded($questiontextnodelim);
+            $questiontextnodelim=strip_tags($questiontextnodelim);
+            preg_match_all($fieldregex, trim($questiontextnodelim), $matches);
+            $this->questiontextsplit=$matches[0];
+            
+            $matches= preg_replace('/\\' . $l . '/', '', $matches[0]);
+            $matches= preg_replace('/\\' . $r . '/', '', $matches);
+             
+            $allwords=$matches;
+        } else {
+            $text = $this->get_questiontext_exploded($this->questiontext);
+            $questiontextnodelim = preg_replace('/\\' . $l . '/', '', $text);
+            $questiontextnodelim = preg_replace('/\\' . $r . '/', '', $questiontextnodelim);
+            $allwords = preg_split('@[\s+]@u', $questiontextnodelim);
+        }
         return $allwords;
     }
+    
+    public function is_selectable($key,$value){
+        if($this->markedselectables==false){
+            $value=strip_tags($value);
+            if($value >""){
+            return true;
+            }else{
+                return false;
+            }
+        }
+        $fragment = $this->questiontextsplit[$key];
+        $l = substr($this->delimitchars, 0, 1);
+        return $this->startsWith($l,$fragment);
+    }
+    
+  function startsWith($needle, $haystack) {
+     return preg_match('/^' . preg_quote($needle, '/') . '/', $haystack);
+ }
 
     public function get_unselectable_words($questiontext) {
         $questiontext = $this->get_questiontext_exploded($questiontext);
@@ -144,6 +185,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * summary of response shown in the responses report
      */
     public function summarise_response(array $response) {
+        return "";//mavg
         $summary = '';
         $allwords = $this->get_words();
         foreach ($response as $index => $value) {

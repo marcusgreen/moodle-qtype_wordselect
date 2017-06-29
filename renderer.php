@@ -48,6 +48,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         $output .= html_writer::empty_tag('/div');
 
         $output .= html_writer::empty_tag('div', array('class' => 'qtext'));
+        
         foreach ($question->get_words() as $place => $word) {
             $correctnoselect = false;
             $wordattributes = array("role" => "checkbox");
@@ -123,8 +124,10 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 }
                 $checkbox = html_writer::empty_tag('input', $properties);
             }
+      
             /* the @ supresses error messages if selectable is empty */
-            if (@strpos($question->selectable, $word) !== false) {
+           // if (@strpos($question->selectable, $word) !== false) {
+            if($question->is_selectable($place,$word)){
                 if ($correctnoselect == true) {
                     $word = "[" . $word . "]";
                 }
@@ -134,9 +137,10 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 $output .= ' ';
             } else {
                 /* for non selectable items such as the tags for tables etc */
-                $output .= ' ' . $word;
+               $output .= ' ' . $word. ' ';
             }
         }
+        
         /* this ensures that any files inserted through the editor menu will display */
         $output = $question->format_text($output, $question->questiontextformat, $qa, 'question', 'questiontext', $question->id);
         $output .= html_writer::empty_tag('/div');
