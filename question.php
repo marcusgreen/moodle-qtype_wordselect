@@ -73,7 +73,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             $this->markedselectables=true;
             $fieldregex = '#\\' . $l . '+.*?\\' . $r . '+|[^ ]+#';
             //$questiontextnodelim = strip_tags($questiontextnodelim);
-            $questiontextnodelim = $this->get_questiontext_exploded($questiontextnodelim);
+            $questiontextnodelim = $this->pad_angle_brackets($questiontextnodelim);
             $questiontextnodelim=strip_tags($questiontextnodelim);
             preg_match_all($fieldregex, trim($questiontextnodelim), $matches);
             $this->questiontextsplit=$matches[0];
@@ -83,7 +83,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
              
             $allwords=$matches;
         } else {
-            $text = $this->get_questiontext_exploded($this->questiontext);
+            $text = $this->pad_angle_brackets($this->questiontext);
             $questiontextnodelim = preg_replace('/\\' . $l . '/', '', $text);
             $questiontextnodelim = preg_replace('/\\' . $r . '/', '', $questiontextnodelim);
             $allwords = preg_split('@[\s+]@u', $questiontextnodelim);
@@ -110,7 +110,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
  }
 
     public function get_unselectable_words($questiontext) {
-        $questiontext = $this->get_questiontext_exploded($questiontext);
+        $questiontext = $this->pad_angle_brackets($questiontext);
         $allwords = preg_split('/[\s\n]/', $questiontext);
         $unselectable = array();
         $started = false;
@@ -133,7 +133,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return $unselectable;
     }
 
-    public static function get_questiontext_exploded($questiontext) {
+    public static function pad_angle_brackets($questiontext) {
         // Put a space before and after tags so they get split as words.
         $text = str_replace('>', '> ', $questiontext);
         $text = str_replace('<', ' <', $text);
@@ -152,7 +152,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      */
     public static function get_correct_places($questiontext, $delimitchars) {
         $correctplaces = array();
-        $text = self::get_questiontext_exploded($questiontext);
+        $text = self::pad_angle_brackets($questiontext);
         $allwords = preg_split('/[\s\n]/', $text);
         $l = substr($delimitchars, 0, 1);
         $r = substr($delimitchars, 1, 1);
