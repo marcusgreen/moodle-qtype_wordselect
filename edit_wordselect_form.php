@@ -92,7 +92,9 @@ class qtype_wordselect_edit_form extends question_edit_form {
     public function validation($fromform, $data) {
         $errors = array();
         /* don't save the form if there are no fields defined */
-        $correctplaces = qtype_wordselect_question::get_correct_places($fromform['questiontext']['text'],
+        $ws=new qtype_wordselect_question();
+        $ws->init($fromform['questiontext']['text'],$fromform['delimitchars']);
+        $correctplaces = $ws->get_correct_places($fromform['questiontext']['text'],
                 $fromform['delimitchars']);
         if (count($correctplaces) == 0) {
             $errors['questiontext'] = get_string('nowordsdefined', 'qtype_wordselect');

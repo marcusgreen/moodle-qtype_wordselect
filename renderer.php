@@ -49,7 +49,12 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
 
         $output .= html_writer::empty_tag('div', array('class' => 'qtext'));
         
-        foreach ($question->get_words() as $place => $word) {
+        /*initialised */
+        $question->init($question->questiontext,$question->delimitchars);
+        $question->get_words();
+  
+        foreach ($question->items as $place => $item) {
+            $word=$item->get_without_delim();
             $correctnoselect = false;
             $wordattributes = array("role" => "checkbox");
             $afterwordfeedback = '';
@@ -126,15 +131,15 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             }
       
             /* the @ supresses error messages if selectable is empty */
-           // if (@strpos($question->selectable, $word) !== false) {
-            if($question->is_selectable($place,$word)){
+            if (@strpos($question->selectables, $word) !== false) {
+           // if($question->is_selectable($place,$word)){
                 if ($correctnoselect == true) {
                     $word = "[" . $word . "]";
                 }
                 $output .= $checkbox;
                 $output .= html_writer::tag('span', $word, $wordattributes);
                 $output .= $afterwordfeedback;
-                $output .= ' ';
+                $output .= $question->items[$place]->get_space_after();
             } else {
                 /* for non selectable items such as the tags for tables etc */
                $output .= ' ' . $word. ' ';

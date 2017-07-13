@@ -23,6 +23,9 @@
  */
 defined('MOODLE_INTERNAL') || die();
 
+
+require_once($CFG->dirroot . '/question/type/wordselect/question.php');
+
 class qtype_wordselect_test_helper extends question_test_helper {
 
     public function get_test_questions() {
@@ -30,12 +33,12 @@ class qtype_wordselect_test_helper extends question_test_helper {
         return array('catmat');
     }
 
-    public static function make_question($type, $questiontext='The cat [sat]', $options = array('delimitchars' => '[])')) {
+    public static function make_question($type='wordselect', $questiontext='The cat [sat]', $options = array('delimitchars' => '[])')) {
         question_bank::load_question_definition_classes($type);
         $question = new qtype_wordselect_question();
         $question->questiontext = $questiontext;
         test_question_maker::initialise_a_question($question);
-        $correctplaces = qtype_wordselect_question::get_correct_places($questiontext, $options['delimitchars']);
+        $correctplaces = $question->get_correct_places($questiontext, $options['delimitchars']);
         return $question;
     }
 

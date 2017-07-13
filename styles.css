@@ -5,6 +5,7 @@
 }
 .que.wordselect .selectable{
     background-attachment: scroll;
+    background-color: #dcdcdc;
     background-clip: border-box;
     background-image: none;
     background-repeat: repeat;
@@ -12,7 +13,6 @@
     background-origin: padding-box;
     background-size: auto auto;
     border:solid thin transparent;
-    border-radius:0.25em;
     cursor:pointer;
     display:inline;
     white-space:nowrap;

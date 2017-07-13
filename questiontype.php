@@ -289,7 +289,10 @@ class qtype_wordselect extends question_type {
      * Does not allow setting any other value per word at the moment
      */
     public function save_question($question, $form) {
-        $correctplaces = qtype_wordselect_question::get_correct_places($form->questiontext['text'], $form->delimitchars);
+        $ws=new qtype_wordselect_question();
+        $ws->init($form->questiontext['text'], $form->delimitchars);
+        $correctplaces = $ws->get_correct_places($form->questiontext['text'], $form->delimitchars);
+
         $form->defaultmark = count($correctplaces);
         return parent::save_question($question, $form);
     }

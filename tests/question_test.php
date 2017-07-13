@@ -46,6 +46,13 @@ class qtype_wordselect_question_test extends advanced_testcase {
         $expecteddata = ['p0' => 'raw_trimmed', 'p1' => 'raw_trimmed', 'p2' => 'raw_trimmed'];
         $this->assertEquals($question->get_expected_data(), $expecteddata);
     }
+    public function test_multiword_delim(){
+        $questiontext = 'The [[cat sat]] and the cow [jumped]';
+        $question = qtype_wordselect_test_helper::make_question('wordselect',$questiontext);
+        $correctplaces = $question->get_correct_places($question->questiontext, "[]");
+        $this->assertTrue($question->is_correct_place($correctplaces, 1));   
+        $this->assertFalse($question->is_correct_place($correctplaces, 5));          
+    }
 
     public function test_summarise_response() {
         $question = qtype_wordselect_test_helper::make_question('wordselect');
@@ -54,7 +61,7 @@ class qtype_wordselect_question_test extends advanced_testcase {
     }
 
     public function test_grade_response() {
-        $question = qtype_wordselect_test_helper::make_question('wordselect');
+        $question  =  qtype_wordselect_test_helper::make_question('wordselect');  
         $response = array('p2' => 'on');
         list($fraction, $state) = $question->grade_response($response);
         $this->assertEquals($fraction, 1);
@@ -104,6 +111,9 @@ class qtype_wordselect_question_test extends advanced_testcase {
         /* counting from 0 the correct place is 2 (i.e. the word sat) */
         $correctplaces = ['0' => 2];
         $this->assertEquals($question->get_correct_places($question->questiontext, '[]'), $correctplaces);
+        $question = qtype_wordselect_test_helper::make_question('wordselect','[the] [cat] [[sat]]');
+        /* counting from 0 the correct place is 2 (i.e. the word sat) */
+        $correctplaces = ['0' => 2];
+        $this->assertEquals($question->get_correct_places($question->questiontext, '[]'), $correctplaces);
     }
-
 }
