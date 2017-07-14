@@ -131,8 +131,9 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             }
       
             /* the @ supresses error messages if selectable is empty */
-            if (@strpos($question->selectables, $word) !== false) {
+           // if (@strpos($question->selectables, $word) !== false) {
            // if($question->is_selectable($place,$word)){
+            if($item->is_selectable==true){
                 if ($correctnoselect == true) {
                     $word = "[" . $word . "]";
                 }
