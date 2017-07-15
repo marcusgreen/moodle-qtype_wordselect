@@ -140,10 +140,12 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 $output .= $checkbox;
                 $output .= html_writer::tag('span', $word, $wordattributes);
                 $output .= $afterwordfeedback;
-                $output .= $question->items[$place]->get_space_after();
+                $output .= $question->items[$place]->get_space_after($question->eligables);
             } else {
                 /* for non selectable items such as the tags for tables etc */
-               $output .= ' ' . $word. ' ';
+               $output .= $word;
+               $output .= $question->items[$place]->get_space_after($question->eligables);
+
             }
         }
         

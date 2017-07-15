@@ -39,6 +39,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     public $markedselectables = false;
     public $questiontextsplit;
     public $items;
+    public $eligables;
 
     /* the characters indicating a field to fill i.e. [cat] creates
      * a field where the correct answer is cat
@@ -53,16 +54,15 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return 'p' . $place;
     }
 
-  
     public function init($questiontext, $delimitchars) {
         $this->questiontext = $questiontext;
-        $this->delmitchars = $delimitchars;   
+        $this->delmitchars = $delimitchars;
         $l = substr($this->delimitchars, 0, 1);
         $r = substr($this->delimitchars, 1, 1);
         if (strpos($questiontext, $l . $l) !== false) {
             $this->markedselectables = true;
         }
-       
+        $this->eligables = strip_tags($this->questiontext);
     }
 
     /**
@@ -75,7 +75,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $l = substr($this->delimitchars, 0, 1);
         $r = substr($this->delimitchars, 1, 1);
         $allwords = array();
-  
+
 
         /* strinp html tags otherwise there is all manner of clickable debris */
         $this->selectable = explode(' ', strip_tags($questiontextnodelim));
@@ -84,59 +84,61 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             //$fieldregex = '#\\' . $l . '+.*?\\' . $r . '+|[^ ]+#';
             $fieldregex = ' #\[+.*?\]+\s*|[^ ]+\s*#';
             $questiontextnodelim = $this->pad_angle_brackets($questiontextnodelim);
-            $matches=preg_replace( "#&nbsp;#", " ", $questiontextnodelim );
-            preg_match_all($fieldregex, trim($matches), $matches);
-            $this->questiontextsplit = $matches[0];
-            $this->items=array();
-            foreach($matches[0] as $key=>$match){
-                $this->items[]=new wordselect_item($key,$match,$this->delimitchars);
+            $matches = preg_replace("#&nbsp;#", " ", $questiontextnodelim);
+            preg_match_all($fieldregex, $matches, $matches);
+           // $this->questiontextsplit = $matches[0];
+            //var_dump($matches[0]);
+            //exit();
+            $this->items = array();
+            foreach ($matches[0] as $key => $match) {
+                $item = new wordselect_item($key, $match, $this->delimitchars, true);
+                $item->set_is_selectable();
+                $this->items[] = $item;
             }
-            
-           if ($stripdelim == true) {
-                $allwords= $this->stripdelim($matches[0]);
-             } else {
+
+            if ($stripdelim == true) {
+                $allwords = $this->stripdelim($matches[0]);
+            } else {
                 $allwords = $matches[0];
             }
         } else {
             $text = $this->pad_angle_brackets($this->questiontext);
-           // if ($stripdelim == true) {
+            // if ($stripdelim == true) {
             //    $text= $this->stripdelim($text);
             //}
-           // $fieldregex=' #\[+.*?\]+\s*|[^ ]+\s*#';
+            // $fieldregex=' #\[+.*?\]+\s*|[^ ]+\s*#';
+            //$text= str_replace('&nbsp;',' ',$text); 
+            // $text=$this->stripdelim($text); 
+            $this->eligables = strip_tags($text);
 
-           //$text= str_replace('&nbsp;',' ',$text); 
-          // $text=$this->stripdelim($text); 
-           $this->eligables=strip_tags($text);
-   
-           $matches = preg_split('@[\s+]@u', $text);
-  
-           // preg_match_all($fieldregex, $text,$matches);
+            $matches = preg_split('@[\s+]@u', $text);
 
-            $this->items=array(); 
-            foreach($matches as $key=>$text){
-                $item=new wordselect_item($key,$text,$this->delimitchars,$this->markedselectables);
+            // preg_match_all($fieldregex, $text,$matches);
+
+            $this->items = array();
+            foreach ($matches as $key => $text) {
+                $item = new wordselect_item($key, $text, $this->delimitchars, $this->markedselectables);
                 $item->set_is_selectable($this->eligables);
-                $this->items[]=$item;
+                $this->items[] = $item;
             }
-   
-            $allwords=$matches[0];
-         }
+
+            $allwords = $matches[0];
+        }
         return $this->items;
     }
 
-    public function stripdelim($text){
-           $l = substr($this->delimitchars, 0, 1);
-           $r = substr($this->delimitchars, 1, 1);
-           $matches = preg_replace('/\\' . $l . '/', '', $text);
-           $matches = preg_replace('/\\' . $r . '/', '', $matches);           
-           return $matches;
-        
+    public function stripdelim($text) {
+        $l = substr($this->delimitchars, 0, 1);
+        $r = substr($this->delimitchars, 1, 1);
+        $matches = preg_replace('/\\' . $l . '/', '', $text);
+        $matches = preg_replace('/\\' . $r . '/', '', $matches);
+        return $matches;
     }
-    
-    public function is_selectable($key, $value) {        
+
+    public function is_selectable($key, $value) {
         if ($this->markedselectables == false) {
-            /*remove any html tags as that stuff is never selectable */
-            $value = strip_tags($this->items[$key]->get_text());       
+            /* remove any html tags as that stuff is never selectable */
+            $value = strip_tags($this->items[$key]->get_text());
             if ($value > "") {
                 return true;
             } else {
@@ -144,10 +146,10 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             }
         } else {
             $l = substr($this->delimitchars, 0, 1);
-             return $this->startsWith($l, $this->items[$key]->get_text());
+            return $this->startsWith($l, $this->items[$key]->get_text());
         }
 
-        
+
         // $fragment = $this->questiontextsplit[$key];
         // $l = substr($this->delimitchars, 0, 1);
         //return $this->startsWith($l, $fragment);
@@ -188,7 +190,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return $text;
     }
 
-
     /**
      * 
      * @param type $questiontext raw text of question with delim
@@ -204,7 +205,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     public function get_correct_places($questiontext, $delimitchars) {
         $correctplaces = array();
         $items = $this->get_words(false);
- 
+
         $l = substr($delimitchars, 0, 1);
         $r = substr($delimitchars, 1, 1);
 
@@ -214,14 +215,13 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             $regex = '/\\' . $l . '.*\\' . $r . '/';
         }
         foreach ($items as $key => $item) {
-            $word=$item->get_text();
-            if (preg_match($regex, $word)) {        
-                 $correctplaces[] = $key;
+            $word = $item->get_text();
+            if (preg_match($regex, $word)) {
+                $correctplaces[] = $key;
             }
         }
         return $correctplaces;
     }
- 
 
     /**
      * Return an array of the question type variables that could be submitted
@@ -237,7 +237,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return $data;
     }
 
-     /**
+    /**
      * 
      * summary of response shown in the responses report
      * 
@@ -248,7 +248,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $summary = '';
         $allwords = $this->get_words();
         foreach ($response as $index => $value) {
-             $summary .= " ".$allwords[substr($index,1)]->get_without_delim(). " ";
+            $summary .= " " . $allwords[substr($index, 1)]->get_without_delim() . " ";
         }
         return $summary;
     }
@@ -405,54 +405,55 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return $wrongresponsecount;
     }
 
-    public function get_space_after($word, $place) {
+    public function get_space_after($word, $place,$eligables="") {
         $allwords = $this->get_words(true);
-  
-       //$qtnodelim=$this->stripdelim($this->questiontext);
+
+        //$qtnodelim=$this->stripdelim($this->questiontext);
 
         $pos_all = $this->strpos_all($this->questiontext, $word);
-   
+
         /* array of this word indexed by position in whole of question text 
          * so for "dog one two three dog" it would be 0=>dog,4=>dog
          * */
         $occurances = array_intersect($allwords, array($word));
-    
+
         /* the values as keys, i.e. 0=>,1=>4 */
         $keys = array_keys($occurances);
-        
-     
-     
+
+
+
         /* stops array_combine throwing an error */
-       // if (sizeof($keys) !== sizeof($pos_all)) {
-       //     return "";
-       // }
+        // if (sizeof($keys) !== sizeof($pos_all)) {
+        //     return "";
+        // }
 
         /* key as index within all words and value as character offset of word */
-    
+
         $wordoffsets = array_combine($keys, $pos_all);
 
         $offset = $wordoffsets[$place];
-   
+
         $endofstring = $offset + strlen($word);
-                
+
         $stringafter = substr(($this->questiontext), $endofstring);
 
         preg_match('/\S/', $this->stripdelim($stringafter), $matches, PREG_OFFSET_CAPTURE);
-     
+
         if (isset($matches[0][1])) {
             return str_repeat(" ", $matches[0][1]);
         } else {
             return "";
         }
     }
-/**
- * Get the string offset of each occurance, so for
- * Up down Up would return 0=>0,1=>8
- * 
- * @param type $haystack
- * @param type $needle
- * @return array showing the string offset of each occurance
- */
+
+    /**
+     * Get the string offset of each occurance, so for
+     * Up down Up would return 0=>0,1=>8
+     * 
+     * @param type $haystack
+     * @param type $needle
+     * @return array showing the string offset of each occurance
+     */
     function strpos_all($haystack, $needle) {
         $offset = 0;
         $allpos = array();
@@ -462,8 +463,11 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         }
         return $allpos;
     }
+
 }
+
 class wordselect_item {
+
     private $delimitchars;
     private $l;
     private $r;
@@ -471,17 +475,25 @@ class wordselect_item {
     private $text;
     private $markedselectables;
     public $is_selectable;
-   
-    public function __construct($id, $text, $delimitchars,$markedselectables=false) {   
-        $this->l=substr($delimitchars, 0, 1);
+
+    public function __construct($id, $text, $delimitchars, $markedselectables = false) {
+        $this->l = substr($delimitchars, 0, 1);
         $this->r = substr($delimitchars, 1, 1);
         $this->id = $id;
         $this->text = $text;
-        $this->delimitchasr=$delimitchars;
-        $this->markedselectables=$markedselectables;
-        
+        $this->delimitchars = $delimitchars;
+        $this->markedselectables = $markedselectables;
     }
-    public function get_space_after() {
+
+    public function get_space_after($eligables) {
+         if (strpos($eligables,$this->text)== false){
+             /* if this is nevery eligable for selection (typically 
+              * a piece of html, then tag the original space back on to
+              * the end of it
+              */
+                preg_match('/\s+/', $this->text, $matches);
+                return $matches[0];
+          }
         preg_match('/\s+/', $this->text, $matches);
         if (isset($matches[0])) {
             $len = strlen($matches[0]);
@@ -490,30 +502,39 @@ class wordselect_item {
             return "";
         }
     }
-    public function set_is_selectable($eligables) {
-        if (($eligables > "") && ($this->get_without_delim() > "")) {
-            if (strpos($eligables, $this->get_without_delim()) !== false) {
-                if ($this->markedselectables == false) {
-                    $this->is_selectable = true;
-                } else {
-                    $regex = '/\\' . $this->l . '([^\\' . $this->l . '\\' . $this->r . ']*)\\' . $this->r . '/';
-                    if (preg_match($regex, $this->text) > 0) {
 
+    public function set_is_selectable($eligables = "") {
+        if ($this->markedselectables == true) {
+            $regex = '/\\' . $this->l . '([^\\' . $this->l . '\\' . $this->r . ']*)\\' . $this->r . '/';
+            if (preg_match($regex, $this->text) > 0) {
+                $this->is_selectable = true;
+            }
+        } else {
+            if (($eligables > "") && ($this->get_without_delim() > "")) {
+                if (strpos($eligables, $this->get_without_delim()) !== false) {
+                    if ($this->markedselectables == false) {
                         $this->is_selectable = true;
+                    } else {
+                        $regex = '/\\' . $this->l . '([^\\' . $this->l . '\\' . $this->r . ']*)\\' . $this->r . '/';
+                        if (preg_match($regex, $this->text) > 0) {
+                            $this->is_selectable = true;
+                        }
                     }
                 }
             }
         }
     }
 
-    public function get_text(){
+    public function get_text() {
         return $this->text;
     }
-    public function get_without_delim(){
-           $matches = preg_replace('/\\' . $this->l . '/', '', $this->text);
-           $matches = preg_replace('/\\' . $this->r . '/', '', $matches); 
-           /*trim trailing html space characters */
-           $matches=preg_replace( "#(^(&nbsp;|\s)+|(&nbsp;|\s)+$)#", "", $matches );
-           return trim($matches);
+
+    public function get_without_delim() {
+        $matches = preg_replace('/\\' . $this->l . '/', '', $this->text);
+        $matches = preg_replace('/\\' . $this->r . '/', '', $matches);
+        /* trim trailing html space characters */
+        $matches = preg_replace("#(^(&nbsp;|\s)+|(&nbsp;|\s)+$)#", "", $matches);
+        return $matches;
     }
+
 }
