@@ -111,7 +111,11 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             // $text=$this->stripdelim($text); 
             $this->eligables = strip_tags($text);
 
-            $matches = preg_split('@[\s+]@u', $text);
+           // $matches = preg_split('@[\s+]@u', $text);
+            $regex="/(\S+\s+)/";
+            $matches= preg_split($regex,$text,-1,PREG_SPLIT_DELIM_CAPTURE);
+          //  var_dump($matches[0]);
+           // exit();
 
             // preg_match_all($fieldregex, $text,$matches);
 
@@ -486,20 +490,28 @@ class wordselect_item {
     }
 
     public function get_space_after($eligables) {
-         if (strpos($eligables,$this->text)== false){
-             /* if this is nevery eligable for selection (typically 
-              * a piece of html, then tag the original space back on to
-              * the end of it
-              */
-                preg_match('/\s+/', $this->text, $matches);
-                return $matches[0];
-          }
-        preg_match('/\s+/', $this->text, $matches);
-        if (isset($matches[0])) {
-            $len = strlen($matches[0]);
-            return str_repeat('&nbsp;', $len);
-        } else {
+        if($this->text==""){
             return "";
+        }
+        if (strpos($eligables, $this->text) == false) {
+            /* if this is nevery eligable for selection (typically 
+             * a piece of html e.g. <p>, then tag the original space back on to
+             * the end of it
+             */
+            preg_match('/\s+/', $this->text, $matches);
+            if (isset($matches[0])) {
+                return $matches[0];
+            } else {
+                return "";
+            }
+        } else {
+            preg_match('/\s+/', $this->text, $matches);
+            if (isset($matches[0])) {
+                $len = strlen($matches[0]);
+                return str_repeat('&nbsp;', $len);
+            } else {
+                return "";
+            }
         }
     }
 

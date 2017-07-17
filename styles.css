@@ -1,8 +1,10 @@
 .qtext{
+    width:90%;
 }
 .que.wordselect input[type=checkbox]{
     display:none;
 }
+/*
 .que.wordselect .selectable{
     background-attachment: scroll;
     background-color: #dcdcdc;
@@ -12,12 +14,11 @@
     background-position: 0 0;
     background-origin: padding-box;
     background-size: auto auto;
-    /* border:solid thin transparent;*/
     cursor:pointer;
     display:inline;
     white-space:nowrap;
 }
-
+*/
 .que.wordselect .selected{
     background: #cee0f4;
     border-radius:0.25em;
