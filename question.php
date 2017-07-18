@@ -112,12 +112,9 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             $this->eligables = strip_tags($text);
 
            // $matches = preg_split('@[\s+]@u', $text);
+            /* split into strings and include any trailing white space */
             $regex="/(\S+\s+)/";
-            $matches= preg_split($regex,$text,-1,PREG_SPLIT_DELIM_CAPTURE);
-          //  var_dump($matches[0]);
-           // exit();
-
-            // preg_match_all($fieldregex, $text,$matches);
+            $matches= preg_split($regex,$text,null,PREG_SPLIT_DELIM_CAPTURE|PREG_SPLIT_NO_EMPTY);
 
             $this->items = array();
             foreach ($matches as $key => $text) {
@@ -139,27 +136,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return $matches;
     }
 
-    public function is_selectable($key, $value) {
-        if ($this->markedselectables == false) {
-            /* remove any html tags as that stuff is never selectable */
-            $value = strip_tags($this->items[$key]->get_text());
-            if ($value > "") {
-                return true;
-            } else {
-                return false;
-            }
-        } else {
-            $l = substr($this->delimitchars, 0, 1);
-            return $this->startsWith($l, $this->items[$key]->get_text());
-        }
-
-
-        // $fragment = $this->questiontextsplit[$key];
-        // $l = substr($this->delimitchars, 0, 1);
-        //return $this->startsWith($l, $fragment);
-    }
-
-    function startsWith($needle, $haystack) {
+   function startsWith($needle, $haystack) {
         return preg_match('/^' . preg_quote($needle, '/') . '/', $haystack);
     }
 
@@ -363,7 +340,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 
     /* not called in interactive mode */
-
     public function compute_final_grade($responses, $totaltries) {
         $totalscore = 0;
         $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
@@ -408,66 +384,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         }
         return $wrongresponsecount;
     }
-
-    public function get_space_after($word, $place,$eligables="") {
-        $allwords = $this->get_words(true);
-
-        //$qtnodelim=$this->stripdelim($this->questiontext);
-
-        $pos_all = $this->strpos_all($this->questiontext, $word);
-
-        /* array of this word indexed by position in whole of question text 
-         * so for "dog one two three dog" it would be 0=>dog,4=>dog
-         * */
-        $occurances = array_intersect($allwords, array($word));
-
-        /* the values as keys, i.e. 0=>,1=>4 */
-        $keys = array_keys($occurances);
-
-
-
-        /* stops array_combine throwing an error */
-        // if (sizeof($keys) !== sizeof($pos_all)) {
-        //     return "";
-        // }
-
-        /* key as index within all words and value as character offset of word */
-
-        $wordoffsets = array_combine($keys, $pos_all);
-
-        $offset = $wordoffsets[$place];
-
-        $endofstring = $offset + strlen($word);
-
-        $stringafter = substr(($this->questiontext), $endofstring);
-
-        preg_match('/\S/', $this->stripdelim($stringafter), $matches, PREG_OFFSET_CAPTURE);
-
-        if (isset($matches[0][1])) {
-            return str_repeat(" ", $matches[0][1]);
-        } else {
-            return "";
-        }
-    }
-
-    /**
-     * Get the string offset of each occurance, so for
-     * Up down Up would return 0=>0,1=>8
-     * 
-     * @param type $haystack
-     * @param type $needle
-     * @return array showing the string offset of each occurance
-     */
-    function strpos_all($haystack, $needle) {
-        $offset = 0;
-        $allpos = array();
-        while (($pos = mb_strpos($haystack, $needle, $offset)) !== FALSE) {
-            $offset = $pos + 1;
-            $allpos[] = $pos;
-        }
-        return $allpos;
-    }
-
 }
 
 class wordselect_item {
@@ -508,7 +424,12 @@ class wordselect_item {
             preg_match('/\s+/', $this->text, $matches);
             if (isset($matches[0])) {
                 $len = strlen($matches[0]);
-                return str_repeat('&nbsp;', $len);
+                if ($len > 1){
+                print "returning  ".$len." spaces";
+                return " ".str_repeat('&nbsp;', $len);
+                }else{
+                    return " ";
+                }
             } else {
                 return "";
             }

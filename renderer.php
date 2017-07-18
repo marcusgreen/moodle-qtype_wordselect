@@ -115,7 +115,11 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                     $wordattributes['class'] = 'selected selectable';
                     $wordattributes['aria-checked'] = 'true';
                 } else {
-                    $wordattributes['class'] = 'selectable';
+                    $class='selectable';
+                    if($question->markedselectables==true){
+                        $class .= ' highlight';
+                    }
+                    $wordattributes['class'] = $class;
                     $wordattributes['aria-checked'] = 'false';
                 }
                 $properties = array(

@@ -4,10 +4,9 @@
 .que.wordselect input[type=checkbox]{
     display:none;
 }
-/*
+
 .que.wordselect .selectable{
     background-attachment: scroll;
-    background-color: #dcdcdc;
     background-clip: border-box;
     background-image: none;
     background-repeat: repeat;
@@ -18,12 +17,16 @@
     display:inline;
     white-space:nowrap;
 }
-*/
+
+.que.wordselect .highlight{
+    background-color: #dcdcdc;
+}
+
 .que.wordselect .selected{
     background: #cee0f4;
     border-radius:0.25em;
     background-color:#CBCFD4;
-    background-image: none;
+    /*background-image: none;
     background-repeat: repeat;
     background-attachment: scroll;
     background-position: 0 0;
@@ -36,7 +39,7 @@
    -moz-box-shadow: 1px 1px 2px rgba(0,0,0,0.9);
     -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.9);
     box-shadow: 1px 1px 2px rgba(0,0,0,0.9);
-    outline:none;
+    outline:none;*/
 }
 .que.wordselect .incorrect{
     background-attachment: scroll;

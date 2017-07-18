@@ -28,9 +28,7 @@ global $CFG;
 
 require_once($CFG->dirroot . '/question/type/questionbase.php');
 require_once($CFG->dirroot . '/question/engine/tests/helpers.php');
-
 require_once($CFG->dirroot . '/question/type/wordselect/tests/helpers.php');
-
 require_once($CFG->dirroot . '/question/type/wordselect/question.php');
 
 /**
@@ -43,15 +41,18 @@ class qtype_wordselect_question_test extends advanced_testcase {
 
     public function test_get_expected_data() {
         $question = qtype_wordselect_test_helper::make_question('wordselect');
-        $expecteddata = ['p0' => 'raw_trimmed', 'p1' => 'raw_trimmed', 'p2' => 'raw_trimmed'];
+        $expecteddata = ['p0' => 'raw_trimmed', 'p1' => 'raw_trimmed',
+                    'p2' => 'raw_trimmed'];
+
         $this->assertEquals($question->get_expected_data(), $expecteddata);
     }
-    public function test_multiword_delim(){
+
+    public function test_multiword_delim() {
         $questiontext = 'The [[cat sat]] and the cow [jumped]';
-        $question = qtype_wordselect_test_helper::make_question('wordselect',$questiontext);
+        $question = qtype_wordselect_test_helper::make_question('wordselect', $questiontext);
         $correctplaces = $question->get_correct_places($question->questiontext, "[]");
-        $this->assertTrue($question->is_correct_place($correctplaces, 1));   
-        $this->assertFalse($question->is_correct_place($correctplaces, 5));          
+        $this->assertTrue($question->is_correct_place($correctplaces, 1));
+        $this->assertFalse($question->is_correct_place($correctplaces, 5));
     }
 
     public function test_summarise_response() {
@@ -61,7 +62,7 @@ class qtype_wordselect_question_test extends advanced_testcase {
     }
 
     public function test_grade_response() {
-        $question  =  qtype_wordselect_test_helper::make_question('wordselect');  
+        $question = qtype_wordselect_test_helper::make_question('wordselect');
         $response = array('p2' => 'on');
         list($fraction, $state) = $question->grade_response($response);
         $this->assertEquals($fraction, 1);
@@ -111,9 +112,41 @@ class qtype_wordselect_question_test extends advanced_testcase {
         /* counting from 0 the correct place is 2 (i.e. the word sat) */
         $correctplaces = ['0' => 2];
         $this->assertEquals($question->get_correct_places($question->questiontext, '[]'), $correctplaces);
-        $question = qtype_wordselect_test_helper::make_question('wordselect','[the] [cat] [[sat]]');
+        $question = qtype_wordselect_test_helper::make_question('wordselect', '[the] [cat] [[sat]]');
         /* counting from 0 the correct place is 2 (i.e. the word sat) */
         $correctplaces = ['0' => 2];
         $this->assertEquals($question->get_correct_places($question->questiontext, '[]'), $correctplaces);
     }
+
+    public function test_get_correct_response() {
+        $question = qtype_wordselect_test_helper::make_question('wordselect');
+        /* The third word is the correct response */
+        $correctresponse = array('p2' => 'on');
+        $this->assertEquals($question->get_correct_response(), $correctresponse);
+    }
+
+    public function test_get_correct_response_multi() {
+        $questiontext = 'The [[cat sat]]';
+        $question = qtype_wordselect_test_helper::make_question('wordselect', $questiontext);
+        /* The second word is the correct response */
+        $correctresponse = array('p1' => 'on');
+        $this->assertEquals($question->get_correct_response(), $correctresponse);
+    }
+
+    public function test_get_words() {
+        $question = qtype_wordselect_test_helper::make_question('wordselect');
+        /* The cat [sat] splits into three "words" */
+        $this->assertEquals(count($question->get_words()), 3);
+        /* This will break into two "words" */
+        $questiontext = 'The [[cat sat]]';
+        $question = qtype_wordselect_test_helper::make_question('wordselect', $questiontext);
+        $this->assertEquals(count($question->get_words()), 2);
+    }
+       public function test_get_wrong_responsecount() {
+        $question = qtype_wordselect_test_helper::make_question('wordselect');
+        $correctplaces=array(1);
+        $response = array('p0' => 'on');        
+        $this->assertEquals($question->get_wrong_responsecount($correctplaces,$response),1);       
+    }
+
 }
