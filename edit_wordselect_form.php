@@ -17,9 +17,8 @@
 /**
  * Defines the editing form for the wordselect question type.
  *
- * @package    qtype
- * @subpackage wordselect
- * @copyright  2016 Marcus Green
+ * @package    qtype_wordselect
+ * @copyright  2017 Marcus Green
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -76,10 +75,9 @@ class qtype_wordselect_edit_form extends question_edit_form {
         $this->add_interactive_settings(true, true);
     }
 
-     /**
+    /**
      * Add in data from custom fields
-     *
-     * @param stdClass|array $default_values object or array of default values
+     * @param array $question
      */
     public function set_data($question) {
         /* accessing the form in this way is probably not correct style */
@@ -104,6 +102,14 @@ class qtype_wordselect_edit_form extends question_edit_form {
             return "";
         }
     }
+ /**
+  * Check the question text is valid, specifically that
+  * it contains at lease one selectable item.
+  * 
+  * @param array $fromform
+  * @param array $data
+  * @return boolean
+  */
     public function validation($fromform, $data) {
         $errors = array();
         /* don't save the form if there are no fields defined */
@@ -122,6 +128,12 @@ class qtype_wordselect_edit_form extends question_edit_form {
         return $errors;
     }
 
+      /**
+     * Perform an preprocessing needed on the data passed to {@link set_data()}
+     * before it is used to initialise the form.
+     * @param object $question the data being passed to the form.
+     * @return object $question the modified data.
+     */
     protected function data_preprocessing($question) {
         $question = parent::data_preprocessing($question);
         $question = $this->data_preprocessing_hints($question);
@@ -147,6 +159,10 @@ class qtype_wordselect_edit_form extends question_edit_form {
         return $question;
     }
 
+    /**
+     * Name of this question type
+     * @return string
+     */
     public function qtype() {
         return 'wordselect';
     }

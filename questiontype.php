@@ -17,9 +17,8 @@
 /**
  * Question type class for the wordselect question type.
  *
- * @package    qtype
- * @subpackage wordselect
- * @copyright  2016 Marcus Green
+ * @package    qtype_wordselect
+ * @copyright  2017 Marcus Green
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -38,7 +37,11 @@ require_once($CFG->dirroot . '/question/type/wordselect/question.php');
  */
 
 class qtype_wordselect extends question_type {
-    /* data used by export_to_xml (among other things possibly */
+    
+    /**
+     * data used by export_to_xml (among other things possibly
+     * @return array
+     */
     public function extra_question_fields() {
         return array('question_wordselect', 'introduction', 'delimitchars');
     }
@@ -54,7 +57,14 @@ class qtype_wordselect extends question_type {
         parent::find_standard_scripts();
         $PAGE->requires->jquery();
     }
-
+    
+    /**
+     * Move files
+     * 
+     * @param int $questionid
+     * @param int $oldcontextid
+     * @param int $newcontextid
+     */
     public function move_files($questionid, $oldcontextid, $newcontextid) {
         parent::move_files($questionid, $oldcontextid, $newcontextid);
         $fs = get_file_storage();
@@ -63,11 +73,24 @@ class qtype_wordselect extends question_type {
         $this->move_files_in_hints($questionid, $oldcontextid, $newcontextid);
     }
 
+    /**
+     * Delete files
+     * 
+     * @param int $questionid
+     * @param int $contextid
+     */
     protected function delete_files($questionid, $contextid) {
         parent::delete_files($questionid, $contextid);
         $this->delete_files_in_hints($questionid, $contextid);
     }
 
+    /**
+     * Save question options
+     * 
+     * @global moodle_database $DB
+     * @param array $formdata
+     * @return boolean
+     */
     public function save_question_options($formdata) {
         global $DB;
         /* Save the extra data to your database tables from the
@@ -83,7 +106,13 @@ class qtype_wordselect extends question_type {
         return true;
     }
 
-    /* it really does need to be static */
+    
+    /**
+     * it really does need to be static 
+     * @param string $delimitchars
+     * @param string $questiontext
+     * @return array
+     */
     public static function get_answerwords($delimitchars, $questiontext) {
         /* l for left delimiter r for right delimiter
          * defaults to []
@@ -97,8 +126,13 @@ class qtype_wordselect extends question_type {
         return $matches[1];
     }
 
-    /* chop the delimit string into a two element array
+    /**
+     * 
+     * chop the delimit string into a two element array
      * this might be better done on initialisation
+     *
+     * @param string $delimitchars
+     * @return array
      */
     public static function get_delimit_array($delimitchars) {
         $delimitarray = array();
@@ -147,6 +181,13 @@ class qtype_wordselect extends question_type {
         return $answerfields;
     }
 
+    /**
+     * This update works by inserting a new record and deleting the old
+     * 
+     * @global moodle_database $DB
+     * @param type $question
+     * @param array $answerwords
+     */
     public function update_question_answers($question, array $answerwords) {
         global $DB;
         $oldanswers = $DB->get_records('question_answers', array('question' => $question->id), 'id ASC');
@@ -175,7 +216,13 @@ class qtype_wordselect extends question_type {
         }
     }
 
-    /* runs from question editing form */
+     /**
+     * runs from question editing form
+     * @global moodle_database $DB
+     * @param array $formdata
+     * @param array $options
+     * @param int $context
+     */
     public function update_question_wordselect($formdata, $options, $context) {
         /* question is actually formdata */
         global $DB;

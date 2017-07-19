@@ -17,9 +17,8 @@
 /**
  * wordselect question definition class.
  *
- * @package    qtype
- * @subpackage wordselect
- * @copyright  Marcus Green 2016)
+ * @package    qtype_wordselect
+ * @copyright  Marcus Green 2017
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -33,22 +32,54 @@ defined('MOODLE_INTERNAL') || die();
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class qtype_wordselect_question extends question_graded_automatically_with_countback {
-
+    
+    /**
+     * @var string How many of the selections are of incorrect items
+     */
     public $wrongresponsecount;
+    /**
+     * How many responses were correct
+     * @var string
+     */
     public $rightresponsecount;
+    
+    /**
+     * Do all selectable items need to be marked with delimiters 
+     * @var boolean
+     */
     public $markedselectables = false;
+    
+    /** 
+     * TODO
+     * I am not sure this is necessary
+     * @var string 
+     */
     public $questiontextsplit;
+
+    /**
+     * array of "word" items
+     * @var array
+     */
     public $items;
+    
+    /**
+     * Words that could be selectable (i.e. not html tags)
+     * @var string 
+     */
     public $eligables;
 
-    /* the characters indicating a field to fill i.e. [cat] creates
+    /**
+     * the characters indicating a field to fill i.e. [cat] creates
      * a field where the correct answer is cat
+     * @var string 
      */
     public $delimitchars = "[]";
 
-    /**
-     * @param int $key stem number
-     * @return string the question-type variable name.
+     /**
+     * Convert index into how a paramter would be returned
+     *
+     * @param int $place
+     * @return string
      */
     public function field($place) {
         return 'p' . $place;
@@ -99,6 +130,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
                 $item->set_is_selectable();
                 $this->items[] = $item;
             }
+     
 
             if ($stripdelim == true) {
                 $allwords = $this->stripdelim($matches[0]);
@@ -128,7 +160,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * which words are the ones that should be selected. So The cow [jumped]
      * becomes The cow jumped
      * 
-     * @param boolean $stripdelim
+     * @param string $text
      * @return string
      */
     public function stripdelim($text) {
@@ -169,16 +201,15 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 
     /**
-     *
-     * @param type $questiontext raw text of question with delim
-     * @param type $delimitchars delimiting characters e.g. [ and ]
-     * @return array index places in array of correct words
-     *
+     * 
      * Split the question text into words delimited by spaces
      * then return an array of all the words that are correct
      * i.e. surrounded by the delimit chars. Note that
      * word in this context means any string that can be separated
      * by a space marker so that will include html etc
+     * @param string $questiontext raw text of question with delim
+     * @param string $delimitchars delimiting characters e.g. [ and ]
+     * @return array index places in array of correct words
      */
     public function get_correct_places($questiontext, $delimitchars) {
         $correctplaces = array();
@@ -232,7 +263,8 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 
     /**
-     * 
+     * Was the word/s selected when the question was attempted
+     *  
      * @param int $place
      * @param array $response e.g. p0=>'on, p1=>'on'
      * These match the positions of the words that were selected
@@ -248,10 +280,9 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 
     /**
-     *
+     * Have words have been selected
      * @param array $response
      * @return boolean
-     * If any words have been selected
      */
     public function is_complete_response(array $response) {
         if (count($response) > 0) {
@@ -294,13 +325,13 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 
     /**
-     * @return question_answer an answer that
      * contains the a response that would get full marks.
      * used in preview mode. If this doesn't return a
      * correct value the button labeled "Fill in correct response"
      * in the preview form will not work. This value gets written
      * into the rightanswer field of the question_attempts table
      * when a quiz containing this question starts.
+     * @return question_answer an answer that
      */
     public function get_correct_response() {
         $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
@@ -353,6 +384,8 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 
     /**
+     * Complete grade for this attempt at the question
+     * 
      * @param array $response responses, as returned by
      * {@link question_attempt_step::get_qt_data()}.
      * @return array (number, integer) the fraction, and the state.
@@ -384,15 +417,15 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * TODO find out if it really is an int that is returned or if it can
      * be fractional.
      */
-    public function compute_final_grade(array $response, $totaltries) {
+    public function compute_final_grade($response, $totaltries) {
         $totalscore = 0;
         $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
-        $wrongresponsecount = $this->get_wrong_responsecount($correctplaces, $responses[0]);
+        $wrongresponsecount = $this->get_wrong_responsecount($correctplaces, $response[0]);
         foreach ($correctplaces as $place) {
             $lastwrongindex = -1;
             $finallyright = false;
-            foreach ($responses as $i => $response) {
-                if (!array_key_exists(('p' . $place), $response)) {
+            foreach ($response as $i => $r) {
+                if (!array_key_exists(('p' . $place), $r)) {
                     $lastwrongindex = $i;
                     $finallyright = false;
                     continue;
@@ -412,13 +445,13 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
 
     /**
      * Used when calculating the final grade
-     * @param type $correctplaces
-     * @param type $response
+     * @param array $correctplaces
+     * @param array $response
      * @return int
      */
-    public function get_wrong_responsecount($correctplaces, $responses) {
+       public function get_wrong_responsecount($correctplaces, $response) {
         $wrongresponsecount = 0;
-        foreach ($responses as $key => $value) {
+        foreach ($response as $key => $value) {
             /* chop off the leading p */
             $place = substr($key, 1);
             /* if its not in the correct places and it is turned on */
@@ -430,16 +463,62 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 }
 
+/**
+ * items that will be processed by the question type. Typically this is a word
+ * or a group of words
+ */
 class wordselect_item {
-
+    
+    /**
+     * characters that delimit a word or chunk of words
+     * @var string
+     */
     private $delimitchars;
+    /** 
+     * left delimiter
+     * @var string
+     */
     private $l;
+    
+    /**
+     * right delimiter
+     * @var string
+     */
     private $r;
+    
+    /**
+     * question instance id
+     * @var int
+     */
     private $id;
+    
+    /**
+     * item text including any delimiter
+     * @var string
+     */
     private $text;
+    
+    /**
+     * do selectables have to be marked
+     * @var boolean
+     */
     private $markedselectables;
+    
+    /** 
+     * is this item selectable. Only makes
+     * sense if markedselectables is true
+     * @var boolean
+     */
     public $is_selectable;
 
+    
+    /**
+     * Initialise this instance of question chunk
+     * @param int $id
+     * @param string $text
+     * @param string $delimitchars
+     * @param boolean $markedselectables
+     */
     public function __construct($id, $text, $delimitchars, $markedselectables = false) {
         $this->l = substr($delimitchars, 0, 1);
         $this->r = substr($delimitchars, 1, 1);
@@ -449,6 +528,13 @@ class wordselect_item {
         $this->markedselectables = $markedselectables;
     }
 
+    /**
+     * Get white space after the "word" or group of words delimited
+     * by double delimiting characters
+     * 
+     * @param string $eligables
+     * @return string
+     */
     public function get_space_after($eligables) {
         if ($this->text == "") {
             return "";
@@ -479,7 +565,15 @@ class wordselect_item {
             }
         }
     }
-
+   
+    /**
+     * Work out which strings could be selectable typically anything that
+     * is not an HTML tag. $eligables seems to be an awkward name, it could 
+     * have been called something like non-html but that is also awkward 
+     * and might be a limitation in the future if some other reason for text 
+     * being non eligable turns up.
+     * @param string $eligables
+     */
     public function set_is_selectable($eligables = "") {
         if ($this->markedselectables == true) {
             $regex = '/\\' . $this->l . '([^\\' . $this->l . '\\' . $this->r . ']*)\\' . $this->r . '/';
@@ -502,10 +596,21 @@ class wordselect_item {
         }
     }
 
+   /**
+    * Get chunk of questiontext for this item that will include
+    * any delimiter. 
+    * 
+    * @return string
+    */
     public function get_text() {
         return $this->text;
     }
 
+    /**
+     * Get the word (or set of words) without the delimiters
+     * So [cat] will be returned as cat
+     * @return string
+     */
     public function get_without_delim() {
         $matches = preg_replace('/\\' . $this->l . '/', '', $this->text);
         $matches = preg_replace('/\\' . $this->r . '/', '', $matches);
