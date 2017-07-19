@@ -32,7 +32,11 @@ defined('MOODLE_INTERNAL') || die();
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class qtype_wordselect_edit_form extends question_edit_form {
-
+    /**
+     * Add question-type specific form fields.
+     *
+     * @param MoodleQuickForm $mform the form being built.
+     */
     protected function definition_inner($mform) {
         $mform->removeelement('questiontext');
 
@@ -72,6 +76,11 @@ class qtype_wordselect_edit_form extends question_edit_form {
         $this->add_interactive_settings(true, true);
     }
 
+     /**
+     * Add in data from custom fields
+     *
+     * @param stdClass|array $default_values object or array of default values
+     */
     public function set_data($question) {
         /* accessing the form in this way is probably not correct style */
         $introduction = $this->get_introduction($question);
@@ -80,7 +89,13 @@ class qtype_wordselect_edit_form extends question_edit_form {
         $this->_form->getElement('introduction')->setValue(array('text' => $introduction));
         question_edit_form::set_data($question);
     }
-
+     
+    /**
+     * Get the introducory text (where words are never selectable)
+     * 
+     * @param stdClass|array $question
+     * @return strings
+     */
     public function get_introduction($question) {
         $introduction = "";
         if (property_exists($question, 'options')) {
@@ -92,8 +107,8 @@ class qtype_wordselect_edit_form extends question_edit_form {
     public function validation($fromform, $data) {
         $errors = array();
         /* don't save the form if there are no fields defined */
-        $ws=new qtype_wordselect_question();
-        $ws->init($fromform['questiontext']['text'],$fromform['delimitchars']);
+        $ws = new qtype_wordselect_question();
+        $ws->init($fromform['questiontext']['text'], $fromform['delimitchars']);
         $correctplaces = $ws->get_correct_places($fromform['questiontext']['text'],
                 $fromform['delimitchars']);
         if (count($correctplaces) == 0) {

@@ -1,6 +1,6 @@
 <?php
 // This file is part of Moodle - http://moodle.org/
-//17/07/2017
+
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
@@ -53,7 +53,12 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     public function field($place) {
         return 'p' . $place;
     }
-
+    /**
+     * Initialise the question. This ought really to be done via the constructor
+     * 
+     * @param string $questiontext
+     * @param string $delimitchars short array that gest split in to the 2 dlimiters
+     */
     public function init($questiontext, $delimitchars) {
         $this->questiontext = $questiontext;
         $this->delmitchars = $delimitchars;
@@ -66,9 +71,13 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 
     /**
+     * TODO fix this comment as the purpose/return values have probably changed.
      * The text with delimiters removed so the user cannot see
      * which words are the ones that should be selected. So The cow [jumped]
      * becomes The cow jumped
+     * 
+     * @param boolean  $stripdelim (possibly redundant)
+     * @return array
      */
     public function get_words($stripdelim = true) {
         $questiontextnodelim = $this->questiontext;
@@ -76,19 +85,14 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $r = substr($this->delimitchars, 1, 1);
         $allwords = array();
 
-
         /* strinp html tags otherwise there is all manner of clickable debris */
         $this->selectable = explode(' ', strip_tags($questiontextnodelim));
         if (strpos($questiontextnodelim, $l . $l) !== false) {
             $this->markedselectables = true;
-            //$fieldregex = '#\\' . $l . '+.*?\\' . $r . '+|[^ ]+#';
             $fieldregex = ' #\[+.*?\]+\s*|[^ ]+\s*#';
             $questiontextnodelim = $this->pad_angle_brackets($questiontextnodelim);
             $matches = preg_replace("#&nbsp;#", " ", $questiontextnodelim);
             preg_match_all($fieldregex, $matches, $matches);
-           // $this->questiontextsplit = $matches[0];
-            //var_dump($matches[0]);
-            //exit();
             $this->items = array();
             foreach ($matches[0] as $key => $match) {
                 $item = new wordselect_item($key, $match, $this->delimitchars, true);
@@ -103,18 +107,9 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             }
         } else {
             $text = $this->pad_angle_brackets($this->questiontext);
-            // if ($stripdelim == true) {
-            //    $text= $this->stripdelim($text);
-            //}
-            // $fieldregex=' #\[+.*?\]+\s*|[^ ]+\s*#';
-            //$text= str_replace('&nbsp;',' ',$text); 
-            // $text=$this->stripdelim($text); 
             $this->eligables = strip_tags($text);
-
-           // $matches = preg_split('@[\s+]@u', $text);
-            /* split into strings and include any trailing white space */
-            $regex="/(\S+\s+)/";
-            $matches= preg_split($regex,$text,null,PREG_SPLIT_DELIM_CAPTURE|PREG_SPLIT_NO_EMPTY);
+            $regex = "/(\S+\s+)/";
+            $matches= preg_split($regex, $text, null, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
 
             $this->items = array();
             foreach ($matches as $key => $text) {
@@ -127,7 +122,15 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         }
         return $this->items;
     }
-
+    
+     /**
+     * The text with delimiters removed so the user cannot see
+     * which words are the ones that should be selected. So The cow [jumped]
+     * becomes The cow jumped
+     * 
+     * @param boolean $stripdelim
+     * @return string
+     */
     public function stripdelim($text) {
         $l = substr($this->delimitchars, 0, 1);
         $r = substr($this->delimitchars, 1, 1);
@@ -135,35 +138,29 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $matches = preg_replace('/\\' . $r . '/', '', $matches);
         return $matches;
     }
-
+    /**
+     * Confirm if the the provided haystack has a first character
+     * matching the given needle. Handy for checking if the first
+     * character is a delimiter.
+     * 
+     * @param string $needle
+     * @param string $haystack
+     * @return string
+     */
    function startsWith($needle, $haystack) {
         return preg_match('/^' . preg_quote($needle, '/') . '/', $haystack);
     }
 
-    public function get_unselectable_words($questiontext) {
-        $questiontext = $this->pad_angle_brackets($questiontext);
-        $allwords = preg_split('/[\s\n]/', $questiontext);
-        $unselectable = array();
-        $started = false;
-        foreach ($allwords as $key => $word) {
-            $start = substr($word, 0, 1);
-            $len = strlen($word);
-            $end = substr($word, $len - 1, $len);
-            if ($start == "*") {
-                print $start;
-                $started = true;
-            }
-            if ($end == "*") {
-                $started = false;
-                $unselectable[$key] = $word;
-            }
-            if ($started == true) {
-                $unselectable[$key] = $word;
-            }
-        }
-        return $unselectable;
-    }
-
+    /**
+     * Add one space to the pointy end of angle brackets.
+     * This means that text within table fields can be set
+     * as selectable. This ensures the td contents is split
+     * from the td. Only makes sense in multi mode (selectables
+     * must be marked.
+     * 
+     * @param string $questiontext
+     * @return string
+     */
     public static function pad_angle_brackets($questiontext) {
         // Put a space before and after tags so they get split as words.
         $text = str_replace('>', '> ', $questiontext);
@@ -172,11 +169,11 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 
     /**
-     * 
+     *
      * @param type $questiontext raw text of question with delim
      * @param type $delimitchars delimiting characters e.g. [ and ]
      * @return array index places in array of correct words
-     * 
+     *
      * Split the question text into words delimited by spaces
      * then return an array of all the words that are correct
      * i.e. surrounded by the delimit chars. Note that
@@ -219,9 +216,9 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 
     /**
-     * 
+     *
      * summary of response shown in the responses report
-     * 
+     *
      * @param array $response
      * @return string allwords
      */
@@ -234,7 +231,14 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return $summary;
     }
 
-    public function is_word_selected($place, $response) {
+    /**
+     * 
+     * @param int $place
+     * @param array $response e.g. p0=>'on, p1=>'on'
+     * These match the positions of the words that were selected
+     * @return boolean
+     */
+    public function is_word_selected($place, array $response) {
         $responseplace = 'p' . $place;
         if (isset($response[$responseplace]) && (($response[$responseplace] == "on" ) || ($response[$responseplace] == "true" ) )) {
             return true;
@@ -257,19 +261,31 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         }
     }
 
-    public function get_validation_error(array $response) {
+    /**
+     * Required because this class extends question_automatically_gradable
+     * 
+     * @param array $response
+     * @return stringr
+     */
+    public  function get_validation_error(array $response) {
         // TODO.
         return '';
-    }
+   }
 
-    public function is_same_response(array $prevresponse, array $newresponse) {
-        /* if you are moving from viewing one question to another this will
-         * discard the processing if the answer has not changed. If you don't
-         * use this method it will constantantly generate new question steps and
-         * the question will be repeatedly set to incomplete. This is a comparison of
-         * the equality of two arrays. Without this deferred feedback behaviour probably
-         * wont work.
-         */
+    /**
+     * 
+     * If you are moving from viewing one question to another this will
+     * discard the processing if the answer has not changed. If you don't
+     * use this method it will constantantly generate new question steps and
+     * the question will be repeatedly set to incomplete. This is a comparison of
+     * the equality of two arrays. Without this deferred feedback behaviour probably
+     * wont work.
+     * 
+     * @param array $prevresponse
+     * @param array $newresponse
+     * @return boolean
+     */
+     public function is_same_response(array $prevresponse, array $newresponse) {
         if ($prevresponse === $newresponse) {
             return true;
         } else {
@@ -294,7 +310,20 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         }
         return $correctresponse;
     }
-
+     
+    /**
+     * Checks whether the users is allow to be served a particular file. 
+     * TODO Work out why this is this necessary in the sense of what does it 
+     * do that the parent version does not do 
+     * 
+     * @param question_attempt $qa the question attempt being displayed.
+     * @param question_display_options $options the options that control display of the question.
+     * @param string $component the name of the component we are serving files for.
+     * @param string $filearea the name of the file area.
+     * @param array $args the remaining bits of the file path.
+     * @param bool $forcedownload whether the user must be forced to download the file.
+     * @return bool true if the user can access this file.
+     */
     public function check_file_access($qa, $options, $component, $filearea, $args, $forcedownload) {
         if ($component == 'question' && $filearea == 'answerfeedback') {
             $currentanswer = $qa->get_last_qt_var('answer');
@@ -308,7 +337,14 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         }
     }
 
-    public function is_correct_place($correctplaces, $place) {
+   /**
+    * Is this place a correct place?
+    * 
+    * @param array $correctplaces
+    * @param int $place
+    * @return boolean
+    */
+    public function is_correct_place(array $correctplaces, $place) {
         if (in_array($place, $correctplaces)) {
             return true;
         } else {
@@ -339,8 +375,16 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return $grade;
     }
 
-    /* not called in interactive mode */
-    public function compute_final_grade($responses, $totaltries) {
+    /**
+     * Work out the final grade, not called in interactive mode
+     * TODO explain that further
+     * @param array $response
+     * @param int  $totaltries
+     * @return int 
+     * TODO find out if it really is an int that is returned or if it can
+     * be fractional.
+     */
+    public function compute_final_grade(array $response, $totaltries) {
         $totalscore = 0;
         $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
         $wrongresponsecount = $this->get_wrong_responsecount($correctplaces, $responses[0]);
@@ -406,7 +450,7 @@ class wordselect_item {
     }
 
     public function get_space_after($eligables) {
-        if($this->text==""){
+        if ($this->text == "") {
             return "";
         }
         if (strpos($eligables, $this->text) == false) {
@@ -424,10 +468,10 @@ class wordselect_item {
             preg_match('/\s+/', $this->text, $matches);
             if (isset($matches[0])) {
                 $len = strlen($matches[0]);
-                if ($len > 1){
-                print "returning  ".$len." spaces";
-                return " ".str_repeat('&nbsp;', $len);
-                }else{
+                if ($len > 1) {
+                    print "returning  " . $len . " spaces";
+                    return " " . str_repeat('&nbsp;', $len);
+                } else {
                     return " ";
                 }
             } else {

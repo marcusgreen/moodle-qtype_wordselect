@@ -145,8 +145,12 @@ class qtype_wordselect_question_test extends advanced_testcase {
        public function test_get_wrong_responsecount() {
         $question = qtype_wordselect_test_helper::make_question('wordselect');
         $correctplaces=array(1);
+        /* click word 0 "The" which is an incorrect response so the wrong response count is 1 */
         $response = array('p0' => 'on');        
-        $this->assertEquals($question->get_wrong_responsecount($correctplaces,$response),1);       
+        $this->assertEquals($question->get_wrong_responsecount($correctplaces,$response),1);      
+         /* click words 0 and 1 "The" and "cat" which is one correct and one incorrect word so the count is still 1*/
+        $response = array('p0' => 'on','p1'=>'on');        
+        $this->assertEquals($question->get_wrong_responsecount($correctplaces,$response),1);      
     }
 
 }
