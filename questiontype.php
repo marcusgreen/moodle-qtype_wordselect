@@ -142,22 +142,17 @@ class qtype_wordselect extends question_type {
     }
 
     /**
+     * TODO check this as it seems rather cut and paste from gapfill
      * Set up all the answer fields with respective fraction (mark values)
      * This is used to update the question_answers table. Answerwords has
      * been pulled from within the delimitchars e.g. the cat within [cat]
-     * Wronganswers (distractors) has been pulled from a comma delimited edit
-     * form field
-     * wro
+     * 
      * @param array $answerwords
-     * @param type $question
-     * @return type array
+     * @param object $question
+     * @return array 
      */
     public function get_answer_fields(array $answerwords, $question) {
-        /* this code runs both on saving from a form and from importing and needs
-         * improving as it mixes pulling information from the question object which
-         * comes from the import and from $question->wronganswers field which
-         * comes from the question_editing form.
-         */
+        /* this code runs both on saving from a form and from importing */
         $answerfields = array();
         /* this next block runs when importing from xml */
         if (property_exists($question, 'answer')) {
@@ -185,7 +180,7 @@ class qtype_wordselect extends question_type {
      * This update works by inserting a new record and deleting the old
      * 
      * @global moodle_database $DB
-     * @param type $question
+     * @param object $question
      * @param array $answerwords
      */
     public function update_question_answers($question, array $answerwords) {
@@ -252,7 +247,12 @@ class qtype_wordselect extends question_type {
         $DB->update_record('question_wordselect', $options);
     }
 
-    /* populates fields such as combined feedback */
+    /**
+     * populates fields such as combined feedback
+     * 
+     * @global moodle_database $DB
+     * @param object $question
+     */
     public function get_question_options($question) {
         global $DB;
         $question->options = $DB->get_record('question_wordselect',
@@ -260,12 +260,25 @@ class qtype_wordselect extends question_type {
         parent::get_question_options($question);
     }
 
+    /**
+     * Initialise this instance (wouldn't it be nicer in a constructor?)
+     * @param question_definition $question
+     * @param array $questiondata
+     */
     protected function initialise_question_instance(question_definition $question, $questiondata) {
         parent::initialise_question_instance($question, $questiondata);
         $this->initialise_question_answers($question, $questiondata);
         parent::initialise_combined_feedback($question, $questiondata);
     }
 
+    /**
+     * Initialise the answers
+     * 
+     * @param question_definition $question
+     * @param array $questiondata
+     * @param boolean $forceplaintextanswers (not used)
+     * @return null (not true but not sure what a plain return is considered)
+     */
     protected function initialise_question_answers(question_definition $question, $questiondata, $forceplaintextanswers = true) {
         if (empty($questiondata->options->answers)) {
             return;
@@ -293,6 +306,15 @@ class qtype_wordselect extends question_type {
         }
     }
 
+    /**
+     * Import from xml data, probably the most useful of formats
+     * @param array $data
+     * @param qtype_wordselect $question (or null)
+     * @param qformat_xml $format
+     * @param string $extra (optional, default=null)
+     * @return object New question object
+     * 
+     */
     public function import_from_xml($data, $question, qformat_xml $format, $extra = null) {
         if (!isset($data['@']['type']) || $data['@']['type'] != 'wordselect') {
             return false;
@@ -303,6 +325,14 @@ class qtype_wordselect extends question_type {
         return $question;
     }
 
+     /**
+     * Exports question to XML format
+     *
+     * @param object $question
+     * @param qformat_xml $format
+     * @param string $extra (optional, default=null)
+     * @return string XML representation of question
+     */
     public function export_to_xml($question, qformat_xml $format, $extra = null) {
         global $CFG;
         $pluginmanager = core_plugin_manager::instance();
@@ -317,29 +347,36 @@ class qtype_wordselect extends question_type {
         $output .= $format->write_combined_feedback($question->options, $question->id, $question->contextid);
         return $output;
     }
-
+    /**
+     * Required because of ancestor class
+     * 
+     * @param arra $questiondata
+     * @return int
+     */
     public function get_random_guess_score($questiondata) {
         // TODO.
         return 0;
     }
-
+    /**
+     * Required because of ancestor class
+     * @param array $questiondata
+     * @return array
+     */
     public function get_possible_responses($questiondata) {
         // TODO.
         return array();
     }
 
     /**
-     * @param type $question The current question
-     * @param type $form The question editing form data
-     * @return type object
-     * Sets the default mark as 1* the number of words
-     * Does not allow setting any other value per word at the moment
+     * Save the question (TODO investigate what this does)
+     * @param array $question The current question
+     * @param array $form The question editing form data
+     * @return object qtype_wordselect
      */
     public function save_question($question, $form) {
         $ws=new qtype_wordselect_question();
         $ws->init($form->questiontext['text'], $form->delimitchars);
         $correctplaces = $ws->get_correct_places($form->questiontext['text'], $form->delimitchars);
-
         $form->defaultmark = count($correctplaces);
         return parent::save_question($question, $form);
     }

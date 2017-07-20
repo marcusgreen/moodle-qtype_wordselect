@@ -17,9 +17,8 @@
 /**
  * wordselect question type version information.
  *
- * @package    qtype
- * @subpackage wordselect
- * @copyright  Marcus Green 2016
+ * @package    qtype_wordselect
+ * @copyright  Marcus Green 2017
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

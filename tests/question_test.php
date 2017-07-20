@@ -17,9 +17,8 @@
 /**
  * Unit tests for the wordselect question definition class.
  *
- * @package    qtype
- * @subpackage wordselect
- * @copyright  2016 Marcus Green
+ * @package    qtype_wordselect
+ * @copyright  2017 Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die();
@@ -153,4 +152,19 @@ class qtype_wordselect_question_test extends advanced_testcase {
         $this->assertEquals($question->get_wrong_responsecount($correctplaces,$response),1);      
     }
 
+    public function test_pad_angle_brackets(){
+           $question = qtype_wordselect_test_helper::make_question('wordselect');
+           /* padding to ensure words within table cells will be separated out as
+            * eligable for clicking on
+            */
+           $this->assertEquals($question->pad_angle_brackets('<td>word</td>'),' <td> word </td> ');
+    }
+    
+    public function test_get_space_after_item(){
+           $question = qtype_wordselect_test_helper::make_question('wordselect');
+           /*With the default test questiontext of The cat [sat] the space after position 0 (the word The) should
+            * be a single space.
+            */
+           $this->assertEquals($question->items[0]->get_space_after($question->eligables)," ");
+    }
 }
