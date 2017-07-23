@@ -17,9 +17,8 @@
 /**
  * Strings for component 'qtype_wordselect', language 'en', branch 'MOODLE_20_STABLE'
  *
- * @package    qtype
- * @subpackage wordselect
- * @copyright  2016 Marcus Green
+ * @package    qtype_wordselect
+ * @copyright  2017 Marcus Green
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

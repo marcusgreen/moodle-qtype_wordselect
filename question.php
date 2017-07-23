@@ -65,9 +65,9 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
          /* remove any hyperlinks from candidates for selection, this means that
          * things like audio files will be rendered for the multimedia filter
          */
-        $this->selectable=preg_replace('/<a.*?<\\/a>/', '',$questiontextnodelim);		
+        $this->selectable = preg_replace('/<a.*?<\\/a>/', '', $questiontextnodelim);
         $this->selectable = strip_tags($this->selectable);
-		
+
         $allwords = preg_split('@[\s+]@u', $questiontextnodelim);
         return $allwords;
     }
@@ -218,7 +218,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 
     public function check_file_access($qa, $options, $component, $filearea, $args, $forcedownload) {
-        
         if ($component == 'question' && $filearea == 'answerfeedback') {
             $currentanswer = $qa->get_last_qt_var('answer');
             $answer = $this->get_matching_answer(array('answer' => $currentanswer));
@@ -226,9 +225,12 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             return $options->feedback && $answer && $answerid == $answer->id;
         } else if ($component == 'question' && $filearea == 'hint') {
             return $this->check_hint_file_access($qa, $options, $args);
-        } else if ($component=='qtype_wordselect' && $filearea=='introduction'){            
-            return true;        
-        }else {
+        } else if ($component == 'qtype_wordselect' && $filearea == 'introduction') {
+            $question = $qa->get_question();
+            if ($question->introduction > "") {
+                return true;
+            }
+        } else {
             return parent::check_file_access($qa, $options, $component, $filearea, $args, $forcedownload);
         }
     }

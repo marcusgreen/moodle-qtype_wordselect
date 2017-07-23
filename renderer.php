@@ -17,8 +17,8 @@
 /**
  * wordselect question renderer class.
  *
- * @package    qtype
- * @subpackage wordselect
+ * @package    qtype_wordselect
+ *
  * @copyright  Marcus Green 2016
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -33,7 +33,14 @@ defined('MOODLE_INTERNAL') || die();
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
-
+    /**
+     * Generate the area that contains the question text, and the controls for students to
+     * input their answers.
+     *      *
+     * @param question_attempt $qa the question attempt to display.
+     * @param question_display_options $options controls what should and should not be displayed.
+     * @return string HTML fragment.
+     */
     public function formulation_and_controls(question_attempt $qa, question_display_options $options) {
         global $PAGE;
         $question = $qa->get_question();
@@ -143,27 +150,48 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         return $output;
     }
 
+    /**
+     * Creates the name of the field/checkbox
+     * that identifies the selectable item
+     *
+     * @param question_attempt $qa
+     * @param string $word
+     * @param int $place
+     * @return string
+     */
     protected function get_input_name(question_attempt $qa, $word, $place) {
         /* prefix is the number of this question attempt */
         $qprefix = $qa->get_qt_field_name('');
         $inputname = $qprefix . 'p' . ($place);
         return $inputname;
     }
+    /**
+     * TODO document the difference to get_input_name
 
+     * @param question_attempt $qa
+     * @param string $word
+     * @param int $place
+     * @return string
+     */
     protected function get_input_id(question_attempt $qa, $word, $place) {
         return $this->get_input_name($qa, $word, $place);
     }
 
     /**
+     * TODO This seems to call a function in the same file with the same
+     * parameters implying it could be eliminated
      * @param question_attempt $qa
-     * @return string feedback for correct/partially correct/incorrect feedback
+     * @return string
      */
     protected function specific_feedback(question_attempt $qa) {
         return $this->combined_feedback($qa);
     }
 
-    /* correct,partially correct and incorrect */
-
+    /**
+     * Get feedback for correct/partially correct/incorrect
+     * @param question_attempt $qa
+     * @return string
+     */
     protected function combined_feedback(question_attempt $qa) {
         $question = $qa->get_question();
         $state = $qa->get_state();

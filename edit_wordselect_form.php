@@ -17,9 +17,8 @@
 /**
  * Defines the editing form for the wordselect question type.
  *
- * @package    qtype
- * @subpackage wordselect
- * @copyright  2016 Marcus Green
+ * @package    qtype_wordselect
+ * @copyright  2017 Marcus Green
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -27,12 +26,16 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * wordselect question editing form definition.
  *
- * @copyright  2016 Marcus Green
+ * @copyright  2017 Marcus Green
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class qtype_wordselect_edit_form extends question_edit_form {
-
+    /**
+     * Add question-type specific form fields.
+     *
+     * @param MoodleQuickForm $mform the form being built.
+     */
     protected function definition_inner($mform) {
         $mform->removeelement('questiontext');
 
@@ -72,6 +75,10 @@ class qtype_wordselect_edit_form extends question_edit_form {
         $this->add_interactive_settings(true, true);
     }
 
+    /**
+     * Add in data from custom fields
+     * @param array $question
+     */
     public function set_data($question) {
         /* accessing the form in this way is probably not correct style */
         $introduction = $this->get_introduction($question);
@@ -81,6 +88,12 @@ class qtype_wordselect_edit_form extends question_edit_form {
         question_edit_form::set_data($question);
     }
 
+    /**
+     * Get the introducory text (where words are never selectable)
+     *
+     * @param stdClass|array $question
+     * @return strings
+     */
     public function get_introduction($question) {
         $introduction = "";
         if (property_exists($question, 'options')) {
@@ -89,10 +102,21 @@ class qtype_wordselect_edit_form extends question_edit_form {
             return "";
         }
     }
+
+    /**
+     * Check the question text is valid, specifically that
+     * it contains at lease one selectable item.
+     *
+     * @param array $fromform
+     * @param array $data
+     * @return boolean
+     */
     public function validation($fromform, $data) {
         $errors = array();
         /* don't save the form if there are no fields defined */
-        $correctplaces = qtype_wordselect_question::get_correct_places($fromform['questiontext']['text'],
+        $ws = new qtype_wordselect_question();
+        $ws->init($fromform['questiontext']['text'], $fromform['delimitchars']);
+        $correctplaces = $ws->get_correct_places($fromform['questiontext']['text'],
                 $fromform['delimitchars']);
         if (count($correctplaces) == 0) {
             $errors['questiontext'] = get_string('nowordsdefined', 'qtype_wordselect');
@@ -105,6 +129,12 @@ class qtype_wordselect_edit_form extends question_edit_form {
         return $errors;
     }
 
+     /**
+      * Perform an preprocessing needed on the data passed to {@link set_data()}
+      * before it is used to initialise the form.
+      * @param object $question the data being passed to the form.
+      * @return object $question the modified data.
+      */
     protected function data_preprocessing($question) {
         $question = parent::data_preprocessing($question);
         $question = $this->data_preprocessing_hints($question);
@@ -114,13 +144,13 @@ class qtype_wordselect_edit_form extends question_edit_form {
         $draftid = file_get_submitted_draft_itemid('introduction');
         $question->introduction = array();
         $question->introduction['text'] = file_prepare_draft_area(
-            $draftid,           // Draftid
-            $this->context->id, // context
-            'qtype_wordselect',         // component
-            'introduction',     // filarea
-            !empty($question->id) ? (int) $question->id : null, // itemid
-            $this->fileoptions, // options
-            $question->options->introduction // text.
+                $draftid, // Draftid
+                $this->context->id, // context
+                'qtype_wordselect', // component
+                'introduction', // filarea
+                !empty($question->id) ? (int) $question->id : null, // itemid
+                $this->fileoptions, // options
+                $question->options->introduction // text.
         );
 
         /* format of introduction will always be the same as questiontext */
@@ -130,6 +160,10 @@ class qtype_wordselect_edit_form extends question_edit_form {
         return $question;
     }
 
+    /**
+     * Name of this question type
+     * @return string
+     */
     public function qtype() {
         return 'wordselect';
     }

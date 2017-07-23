@@ -17,9 +17,8 @@
 /**
  * Question type class for the wordselect question type.
  *
- * @package    qtype
- * @subpackage wordselect
- * @copyright  2016 Marcus Green
+ * @package    qtype_wordselect
+ * @copyright  2017 Marcus Green
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -32,7 +31,7 @@ require_once($CFG->dirroot . '/question/type/wordselect/question.php');
 /**
  * The wordselect question type.
  *
- * @copyright  2016 Marcus Green
+ * @copyright  2017 Marcus Green
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
