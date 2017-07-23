@@ -89,13 +89,12 @@ class qtype_wordselect_edit_form extends question_edit_form {
     }
 
     /**
-     * Get the introducory text (where words are never selectable)
+     * Get the introductory text (where words are never selectable)
      *
      * @param stdClass|array $question
      * @return strings
      */
     public function get_introduction($question) {
-        $introduction = "";
         if (property_exists($question, 'options')) {
             return $question->options->introduction;
         } else {

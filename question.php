@@ -249,7 +249,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * @return array (number, integer) the fraction, and the state.
      */
     public function grade_response(array $response) {
-        $totalscore = 0;
         $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
         $this->wrongresponsecount = $this->get_wrong_responsecount($correctplaces, $response);
         foreach ($correctplaces as $place) {

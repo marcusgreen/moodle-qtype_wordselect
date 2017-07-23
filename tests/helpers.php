@@ -35,7 +35,6 @@ class qtype_wordselect_test_helper extends question_test_helper {
         $question = new qtype_wordselect_question();
         $question->questiontext = $questiontext;
         test_question_maker::initialise_a_question($question);
-        $correctplaces = qtype_wordselect_question::get_correct_places($questiontext, $options['delimitchars']);
         return $question;
     }
 

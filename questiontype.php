@@ -49,7 +49,7 @@ class qtype_wordselect extends question_type {
      * It also includes the jquery files required for this plugin
      */
     public function find_standard_scripts() {
-        global $CFG, $PAGE;
+        global $PAGE;
         parent::find_standard_scripts();
         $PAGE->requires->jquery();
     }
