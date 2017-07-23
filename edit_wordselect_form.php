@@ -26,7 +26,7 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * wordselect question editing form definition.
  *
- * @copyright  2017 Marcus Green
+ * @copyright  2016 Marcus Green
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -74,7 +74,6 @@ class qtype_wordselect_edit_form extends question_edit_form {
         // Adds hinting features.
         $this->add_interactive_settings(true, true);
     }
-
     /**
      * Add in data from custom fields
      * @param array $question
@@ -89,19 +88,19 @@ class qtype_wordselect_edit_form extends question_edit_form {
     }
 
     /**
-     * Get the introductory text (where words are never selectable)
+     * Get the introducory text (where words are never selectable)
      *
      * @param stdClass|array $question
      * @return strings
      */
     public function get_introduction($question) {
+        $introduction = "";
         if (property_exists($question, 'options')) {
             return $question->options->introduction;
         } else {
             return "";
         }
     }
-
     /**
      * Check the question text is valid, specifically that
      * it contains at lease one selectable item.
@@ -113,9 +112,7 @@ class qtype_wordselect_edit_form extends question_edit_form {
     public function validation($fromform, $data) {
         $errors = array();
         /* don't save the form if there are no fields defined */
-        $ws = new qtype_wordselect_question();
-        $ws->init($fromform['questiontext']['text'], $fromform['delimitchars']);
-        $correctplaces = $ws->get_correct_places($fromform['questiontext']['text'],
+        $correctplaces = qtype_wordselect_question::get_correct_places($fromform['questiontext']['text'],
                 $fromform['delimitchars']);
         if (count($correctplaces) == 0) {
             $errors['questiontext'] = get_string('nowordsdefined', 'qtype_wordselect');
@@ -127,13 +124,12 @@ class qtype_wordselect_edit_form extends question_edit_form {
         }
         return $errors;
     }
-
-     /**
-      * Perform an preprocessing needed on the data passed to {@link set_data()}
-      * before it is used to initialise the form.
-      * @param object $question the data being passed to the form.
-      * @return object $question the modified data.
-      */
+    /**
+     * Perform any preprocessing needed on the data passed to {@link set_data()}
+     * before it is used to initialise the form.
+     * @param object $question the data being passed to the form.
+     * @return object $question the modified data.
+     */
     protected function data_preprocessing($question) {
         $question = parent::data_preprocessing($question);
         $question = $this->data_preprocessing_hints($question);
@@ -143,13 +139,13 @@ class qtype_wordselect_edit_form extends question_edit_form {
         $draftid = file_get_submitted_draft_itemid('introduction');
         $question->introduction = array();
         $question->introduction['text'] = file_prepare_draft_area(
-                $draftid, // Draftid
-                $this->context->id, // context
-                'qtype_wordselect', // component
-                'introduction', // filarea
-                !empty($question->id) ? (int) $question->id : null, // itemid
-                $this->fileoptions, // options
-                $question->options->introduction // text.
+            $draftid,           // Draftid
+            $this->context->id, // context
+            'qtype_wordselect',         // component
+            'introduction',     // filarea
+            !empty($question->id) ? (int) $question->id : null, // itemid
+            $this->fileoptions, // options
+            $question->options->introduction // text.
         );
 
         /* format of introduction will always be the same as questiontext */
@@ -158,7 +154,6 @@ class qtype_wordselect_edit_form extends question_edit_form {
 
         return $question;
     }
-
     /**
      * Name of this question type
      * @return string
