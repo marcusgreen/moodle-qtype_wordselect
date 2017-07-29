@@ -17,7 +17,7 @@
 /**
  * Unit tests for the wordselect question definition class.
  *
- * @package    qtype
+ * @package    qtype_wordselect
  * @subpackage wordselect
  * @copyright  2016 Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
