@@ -1,4 +1,4 @@
-###Wordselect Moodle Question type
+### Wordselect Moodle Question type
 
 A very easy to use "select the words" Moodle question type. The question creator enters text
 and puts square braces around the correct ones. So if the objective was to select the verb, the phrase
@@ -11,7 +11,7 @@ https://docs.moodle.org/31/en/Wordselect_question_type
 the latest source can be found here
 https://github.com/marcusgreen/moodle-qtype_wordselect
 
-####Installing
+#### Installing
 Place the files in a directory 
 
 moodle\question\type\wordselect
