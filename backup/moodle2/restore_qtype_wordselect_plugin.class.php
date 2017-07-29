@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Used when restoring a backup of a course that contains wordselect questions 
+ * Used when restoring a backup of a course that contains wordselect questions
  *
  * @package    qtype_wordselect
  * @subpackage restore-moodle2
@@ -26,7 +26,7 @@ defined('MOODLE_INTERNAL') || die();
 
 /**
  * Restore plugin class for qtype_wordselect
- * 
+ *
  * Needed to restore one wordselect qtype plugin. Also used if you click
  * the duplicate quiz button in a course.
  *

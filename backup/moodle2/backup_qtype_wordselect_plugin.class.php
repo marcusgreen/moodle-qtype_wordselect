@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Used when backing up a backup of a course that contains wordselect questions 
+ * Used when backing up a backup of a course that contains wordselect questions
  *
  * @package    qtype_wordselect
  * @subpackage backup-moodle2
@@ -32,7 +32,7 @@ defined('MOODLE_INTERNAL') || die();
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class backup_qtype_wordselect_plugin extends backup_qtype_plugin {
-  
+
     /**
      * Returns the qtype information to attach to question element
      */
