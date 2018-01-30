@@ -171,15 +171,25 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * If any words have been selected
      */
     public function is_complete_response(array $response) {
-        if (count($response) > 0) {
-            return true;
-        } else {
-            return false;
+        foreach ($response as $item) {
+            if ($item == "on") {
+                return true;
+            }
         }
+
+        return false;
     }
 
+    /**
+     * @param array $response
+     * @return string
+     * Get string validation to display for user.
+     */
     public function get_validation_error(array $response) {
-        // TODO.
+        if (! $this->is_complete_response($response)) {
+            return get_string('pleaseselectananswer', 'qtype_wordselect');
+        }
+
         return '';
     }
 
