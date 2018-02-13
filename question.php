@@ -70,7 +70,13 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $allwords = preg_split('@[\s+]@u', $questiontextnodelim);
         return $allwords;
     }
-
+    
+    /**
+     * Part of an experiment, can probably be deleted
+     * 
+     * @param string $questiontext
+     * @return string
+     */
     public function get_unselectable_words($questiontext) {
         $questiontext = $this->get_questiontext_exploded($questiontext);
         $allwords = preg_split('/[\s\n]/', $questiontext);
@@ -81,7 +87,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             $len = strlen($word);
             $end = substr($word, $len - 1, $len);
             if ($start == "*") {
-                print $start;
                 $started = true;
             }
             if ($end == "*") {
@@ -94,9 +99,14 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         }
         return $unselectable;
     }
-
+    /**
+     * Put a space before and after tags so they get split as words
+     * This allows the use of tables amongst other html things
+     * 
+     * @param string $questiontext
+     * @return string
+     */
     public static function get_questiontext_exploded($questiontext) {
-        // Put a space before and after tags so they get split as words.
         $text = str_replace('>', '> ', $questiontext);
         $text = str_replace('<', ' <', $text);
         return $text;
@@ -154,7 +164,14 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         }
         return $summary;
     }
-
+    
+    /**
+     * At runtime, decide if a word has been clicked on to select
+     * 
+     * @param number $place
+     * @param array $response
+     * @return boolean
+     */
     public function is_word_selected($place, $response) {
         $responseplace = 'p' . $place;
         if (isset($response[$responseplace]) && (($response[$responseplace] == "on" ) || ($response[$responseplace] == "true" ) )) {
@@ -178,19 +195,30 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         }
     }
 
+    /**
+     * TODO
+     * 
+     * @param array $response
+     * @return string
+     */
     public function get_validation_error(array $response) {
         // TODO.
         return '';
     }
-
+    
+    /**
+     * if you are moving from viewing one question to another this will
+     * discard the processing if the answer has not changed. If you don't
+     * use this method it will constantantly generate new question steps and
+     * the question will be repeatedly set to incomplete. This is a comparison of
+     * the equality of two arrays. Without this deferred feedback behaviour probably
+     * wont work.
+     * 
+     * @param array $prevresponse
+     * @param array $newresponse
+     * @return boolean
+     */
     public function is_same_response(array $prevresponse, array $newresponse) {
-        /* if you are moving from viewing one question to another this will
-         * discard the processing if the answer has not changed. If you don't
-         * use this method it will constantantly generate new question steps and
-         * the question will be repeatedly set to incomplete. This is a comparison of
-         * the equality of two arrays. Without this deferred feedback behaviour probably
-         * wont work.
-         */
         if ($prevresponse === $newresponse) {
             return true;
         } else {
@@ -215,7 +243,16 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         }
         return $correctresponse;
     }
-
+/**
+ * Not entirely sure what this does and if the param types are correct TODO
+ * @param question_attempt $qa
+ * @param array $options
+ * @param string $component
+ * @param string $filearea
+ * @param array $args
+ * @param boolean $forcedownload
+ * @return boolean
+ */
     public function check_file_access($qa, $options, $component, $filearea, $args, $forcedownload) {
         if ($component == 'question' && $filearea == 'answerfeedback') {
             $currentanswer = $qa->get_last_qt_var('answer');
@@ -233,7 +270,13 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             return parent::check_file_access($qa, $options, $component, $filearea, $args, $forcedownload);
         }
     }
-
+    /**
+     * Is this place correct and so get a mark if selected
+     * 
+     * @param number $correctplaces
+     * @param number $place
+     * @return boolean
+     */
     public function is_correct_place($correctplaces, $place) {
         if (in_array($place, $correctplaces)) {
             return true;
