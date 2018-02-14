@@ -18,7 +18,7 @@
  * wordselect question definition class.
  *
  * @package    qtype_wordselect
- * @copyright  Marcus Green 2016)
+ * @copyright  Marcus Green 2018)
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -32,18 +32,29 @@ defined('MOODLE_INTERNAL') || die();
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class qtype_wordselect_question extends question_graded_automatically_with_countback {
-
+    
+    /**
+     *
+     * @var number how many items clicked on are not correct answers
+     */
     public $wrongresponsecount;
+    /**
+     *
+     * @var number how many items clicked on are  correct answers
+     */
     public $rightresponsecount;
 
-    /* the characters indicating a field to fill i.e. [cat] creates
-     * a field where the correct answer is cat
+    /**
+     * the characters indicating a field to fill i.e. [cat] creates
+     * field where the correct answer is cat
+     * @var string 
      */
     public $delimitchars = "[]";
 
     /**
-     * @param int $key stem number
-     * @return string the question-type variable name.
+     * the place number with p appended, i.e. p0 p1 etc
+     * @param number $place
+     * @return string the question-type variable name
      */
     public function field($place) {
         return 'p' . $place;
@@ -113,14 +124,15 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 
     /**
-     * @param string $questiontext
-     * @param string $delimitchars
-     * @return array index places in array of correct words
      * Split the question text into words delimited by spaces
      * then return an array of all the words that are correct
      * i.e. surrounded by the delimit chars. Note that
      * word in this context means any string that can be separated
      * by a space marker so that will include html etc
+     * 
+     * @param string $questiontext
+     * @param string $delimitchars
+     * @return array
      */
     public static function get_correct_places($questiontext, $delimitchars) {
         $correctplaces = array();
@@ -152,9 +164,9 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 
     /**
+     * summary of response shown in the responses report
      * @param array $response
      * @return string
-     * summary of response shown in the responses report
      */
     public function summarise_response(array $response) {
         $summary = '';
@@ -183,9 +195,10 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
 
     /**
      *
+     * Have any words been selected?
+     * 
      * @param array $response
      * @return boolean
-     * If any words have been selected
      */
     public function is_complete_response(array $response) {
         if (count($response) > 0) {
@@ -226,14 +239,15 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         }
     }
 
+ 
     /**
-     * @return question_answer an answer that
-     * contains the a response that would get full marks.
-     * used in preview mode. If this doesn't return a
-     * correct value the button labeled "Fill in correct response"
-     * in the preview form will not work. This value gets written
-     * into the rightanswer field of the question_attempts table
-     * when a quiz containing this question starts.
+     * returns the response that would get full marks. 
+     * Used in preview mode. If this doesn't return a correct value the button
+     * labeled "Fill in the correct response in the preview form will not work
+     * This value gets written into the rightanswer field of the question attempts
+     * table when a quiz containing this question starts
+     * 
+     * @return string 
      */
     public function get_correct_response() {
         $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
@@ -285,7 +299,10 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         }
     }
 
+
     /**
+     * The grade for a response
+     * 
      * @param array $response responses, as returned by
      * {@link question_attempt_step::get_qt_data()}.
      * @return array (number, integer) the fraction, and the state.
@@ -307,7 +324,13 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return $grade;
     }
 
-    /* not called in interactive mode */
+    /**
+     * Not called in interactive mode
+     * 
+     * @param array $responses
+     * @param int $totaltries doesn't seem to be used
+     * @return number
+     */
 
     public function compute_final_grade($responses, $totaltries) {
         $totalscore = 0;
@@ -337,8 +360,8 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
 
     /**
      * Used when calculating the final grade
-     * @param type $correctplaces
-     * @param type $response
+     * @param array $correctplaces
+     * @param array $responses
      * @return int
      */
     public function get_wrong_responsecount($correctplaces, $responses) {
