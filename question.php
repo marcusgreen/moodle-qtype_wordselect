@@ -32,7 +32,7 @@ defined('MOODLE_INTERNAL') || die();
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class qtype_wordselect_question extends question_graded_automatically_with_countback {
-    
+
     /**
      *
      * @var number how many items clicked on are not correct answers
@@ -47,7 +47,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     /**
      * the characters indicating a field to fill i.e. [cat] creates
      * field where the correct answer is cat
-     * @var string 
+     * @var string
      */
     public $delimitchars = "[]";
 
@@ -81,10 +81,10 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $allwords = preg_split('@[\s+]@u', $questiontextnodelim);
         return $allwords;
     }
-    
+
     /**
      * Part of an experiment, can probably be deleted
-     * 
+     *
      * @param string $questiontext
      * @return string
      */
@@ -113,7 +113,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     /**
      * Put a space before and after tags so they get split as words
      * This allows the use of tables amongst other html things
-     * 
+     *
      * @param string $questiontext
      * @return string
      */
@@ -129,7 +129,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * i.e. surrounded by the delimit chars. Note that
      * word in this context means any string that can be separated
      * by a space marker so that will include html etc
-     * 
+     *
      * @param string $questiontext
      * @param string $delimitchars
      * @return array
@@ -176,10 +176,10 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         }
         return $summary;
     }
-    
+
     /**
      * At runtime, decide if a word has been clicked on to select
-     * 
+     *
      * @param number $place
      * @param array $response
      * @return boolean
@@ -196,7 +196,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     /**
      *
      * Have any words been selected?
-     * 
+     *
      * @param array $response
      * @return boolean
      */
@@ -210,7 +210,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
 
     /**
      * TODO
-     * 
+     *
      * @param array $response
      * @return string
      */
@@ -218,7 +218,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         // TODO.
         return '';
     }
-    
+
     /**
      * if you are moving from viewing one question to another this will
      * discard the processing if the answer has not changed. If you don't
@@ -226,7 +226,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * the question will be repeatedly set to incomplete. This is a comparison of
      * the equality of two arrays. Without this deferred feedback behaviour probably
      * wont work.
-     * 
+     *
      * @param array $prevresponse
      * @param array $newresponse
      * @return boolean
@@ -239,15 +239,15 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         }
     }
 
- 
+
     /**
-     * returns the response that would get full marks. 
+     * returns the response that would get full marks.
      * Used in preview mode. If this doesn't return a correct value the button
      * labeled "Fill in the correct response in the preview form will not work
      * This value gets written into the rightanswer field of the question attempts
      * table when a quiz containing this question starts
-     * 
-     * @return string 
+     *
+     * @return string
      */
     public function get_correct_response() {
         $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
@@ -257,16 +257,16 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         }
         return $correctresponse;
     }
-/**
- * Not entirely sure what this does and if the param types are correct TODO
- * @param question_attempt $qa
- * @param array $options
- * @param string $component
- * @param string $filearea
- * @param array $args
- * @param boolean $forcedownload
- * @return boolean
- */
+    /**
+     * Not entirely sure what this does and if the param types are correct TODO
+     * @param question_attempt $qa
+     * @param array $options
+     * @param string $component
+     * @param string $filearea
+     * @param array $args
+     * @param boolean $forcedownload
+     * @return boolean
+     */
     public function check_file_access($qa, $options, $component, $filearea, $args, $forcedownload) {
         if ($component == 'question' && $filearea == 'answerfeedback') {
             $currentanswer = $qa->get_last_qt_var('answer');
@@ -284,9 +284,10 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             return parent::check_file_access($qa, $options, $component, $filearea, $args, $forcedownload);
         }
     }
+
     /**
      * Is this place correct and so get a mark if selected
-     * 
+     *
      * @param number $correctplaces
      * @param number $place
      * @return boolean
@@ -302,7 +303,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
 
     /**
      * The grade for a response
-     * 
+     *
      * @param array $response responses, as returned by
      * {@link question_attempt_step::get_qt_data()}.
      * @return array (number, integer) the fraction, and the state.
@@ -325,13 +326,13 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 
     /**
+     *
      * Not called in interactive mode
-     * 
+     *
      * @param array $responses
      * @param int $totaltries doesn't seem to be used
-     * @return number
+     * @return int
      */
-
     public function compute_final_grade($responses, $totaltries) {
         $totalscore = 0;
         $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
