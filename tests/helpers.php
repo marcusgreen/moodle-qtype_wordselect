@@ -23,13 +23,29 @@
  */
 defined('MOODLE_INTERNAL') || die();
 
+/**
+ * For testing the wordselect question type
+ * @package    qtype_wordselect
+ * @copyright  2018 Marcus Green
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 class qtype_wordselect_test_helper extends question_test_helper {
 
+    /**
+     * must be implemented or class made abstract
+     * @return array
+     */
     public function get_test_questions() {
-        /* must be implemented or class made abstract */
         return array('catmat');
     }
 
+    /**
+     * Create an instance of the question for testing
+     * @param object $type
+     * @param string $questiontext
+     * @param array $options
+     * @return \qtype_wordselect_question
+     */
     public static function make_question($type, $questiontext='The cat [sat]', $options = array('delimitchars' => '[])')) {
         question_bank::load_question_definition_classes($type);
         $question = new qtype_wordselect_question();
