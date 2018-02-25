@@ -146,6 +146,11 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         /* this ensures that any files inserted through the editor menu will display */
         $output = $question->format_text($output, $question->questiontextformat, $qa, 'question', 'questiontext', $question->id);
         $output .= html_writer::empty_tag('/div');
+        if ($qa->get_state() == question_state::$invalid) {
+            $output .= html_writer::nonempty_tag('div',
+                $question->get_validation_error($response),
+                array('class' => 'validationerror'));
+        }
         return $output;
     }
 

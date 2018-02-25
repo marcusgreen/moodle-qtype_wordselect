@@ -38,6 +38,7 @@ $string['questiontext'] = 'question text';
 $string['questiontext_help'] = 'Put square braces around the correct words ';
 $string['introduction'] = 'Introduction';
 $string['introduction_help'] = 'Introduction to the question, this text will not be selectable';
+$string['pleaseselectananswer'] = 'Please select an answer.';
 
 
 

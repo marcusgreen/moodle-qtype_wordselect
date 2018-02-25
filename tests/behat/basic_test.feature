@@ -45,6 +45,10 @@ Feature: Test all the basic functionality of this question type
       | Right answer         | Shown |
     And I press "Start again with these options"
 
+    #User does not select any word and press button Check
+    And I press "Check"
+    And I should see "Please select an answer."
+
     #Select all (both) correct options
     And I click on "sat" "text" 
     And I click on "jumped" "text"

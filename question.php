@@ -201,21 +201,27 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * @return boolean
      */
     public function is_complete_response(array $response) {
-        if (count($response) > 0) {
-            return true;
-        } else {
-            return false;
+        foreach ($response as $item) {
+            if ($item == "on") {
+                return true;
+            }
         }
+
+        return false;
     }
 
     /**
-     * TODO
+     *
+     * Get string validation to display for user.
      *
      * @param array $response
      * @return string
      */
     public function get_validation_error(array $response) {
-        // TODO.
+        if (! $this->is_complete_response($response)) {
+            return get_string('pleaseselectananswer', 'qtype_wordselect');
+        }
+
         return '';
     }
 
