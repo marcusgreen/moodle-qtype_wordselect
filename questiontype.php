@@ -370,16 +370,16 @@ class qtype_wordselect extends question_type {
     }
 
     /**
-     * sets the default mark as 1* the number of words
-     * Does not allow setting any other value per word at the moment
-     * @param object $question The current question
-     * @param object $form The question editing form data
-     * @return  object
+     * Save the question (TODO investigate what this does)
+     * @param array $question The current question
+     * @param array $form The question editing form data
+     * @return object qtype_wordselect
      */
     public function save_question($question, $form) {
-        $correctplaces = qtype_wordselect_question::get_correct_places($form->questiontext['text'], $form->delimitchars);
+        $ws = new qtype_wordselect_question();
+        $ws->init($form->questiontext['text'], $form->delimitchars);
+        $correctplaces = $ws->get_correct_places($form->questiontext['text'], $form->delimitchars);
         $form->defaultmark = count($correctplaces);
         return parent::save_question($question, $form);
     }
-
 }

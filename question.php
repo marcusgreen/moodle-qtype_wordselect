@@ -45,6 +45,26 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     public $rightresponsecount;
 
     /**
+     * Do all selectable items need to be marked with delimiters
+     * @var boolean
+     */
+    public $multiword = false;
+
+    /**
+     * is this item selectable. Only makes
+     * sense if multiword is true
+     * @var boolean
+     */
+    public $is_selectable;
+
+    /**
+     * TODO
+     * I am not sure this is necessary
+     * @var string
+     */
+    public $questiontextsplit;
+
+    /**
      * the characters indicating a field to fill i.e. [cat] creates
      * field where the correct answer is cat
      * @var string
@@ -59,27 +79,117 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     public function field($place) {
         return 'p' . $place;
     }
+    /**
+     * Initialise the question. This ought really to be done via the constructor
+     *
+     * @param string $questiontext
+     * @param string $delimitchars short array that gest split in to the 2 dlimiters
+     */
+    public function init($questiontext, $delimitchars) {
+        $this->questiontext = $questiontext;
+        $this->delmitchars = $delimitchars;
+        $l = substr($this->delimitchars, 0, 1);
+        $r = substr($this->delimitchars, 1, 1);
+        if (strpos($questiontext, $l . $l) !== false) {
+            $this->multiword = true;
+        }
+        $this->eligables = strip_tags($this->questiontext);
+    }
+
+    /**
+     * TODO fix this comment as the purpose/return values have probably changed.
+     * The text with delimiters removed so the user cannot see
+     * which words are the ones that should be selected. So The cow [jumped]
+     * becomes The cow jumped
+     *
+     * @param boolean  $stripdelim (possibly redundant)
+     * @return array
+     */
+    public function get_words($stripdelim = true) {
+        $questiontextnodelim = $this->questiontext;
+        $l = substr($this->delimitchars, 0, 1);
+        $r = substr($this->delimitchars, 1, 1);
+        $allwords = array();
+        /* strinp html tags otherwise there is all manner of clickable debris */
+        $this->selectable = explode(' ', strip_tags($questiontextnodelim));
+        if (strpos($questiontextnodelim, $l . $l) !== false) {
+            $this->multiword = true;
+            $fieldregex = ' #\[+.*?\]+\s*|[^ ]+\s*#';
+            $questiontextnodelim = $this->pad_angle_brackets($questiontextnodelim);
+            $matches = preg_replace("#&nbsp;#", " ", $questiontextnodelim);
+            preg_match_all($fieldregex, $matches, $matches);
+            $this->items = array();
+            foreach ($matches[0] as $key => $match) {
+                $item = new wordselect_item($key, $match, $this->delimitchars, true);
+                $item->set_is_selectable();
+                $this->items[] = $item;
+            }
+
+            if ($stripdelim == true) {
+                $allwords = $this->stripdelim($matches[0]);
+            } else {
+                $allwords = $matches[0];
+            }
+        } else {
+            $text = $this->pad_angle_brackets($this->questiontext);
+            $this->eligables = strip_tags($text);
+            $regex = "/(\S+\s+)/";
+            $matches = preg_split($regex, $text, null, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
+            $this->items = array();
+            foreach ($matches as $key => $text) {
+                $item = new wordselect_item($key, $text, $this->delimitchars, $this->multiword);
+                $item->set_is_selectable($this->eligables);
+                $this->items[] = $item;
+            }
+            $allwords = $matches[0];
+        }
+        return $this->items;
+    }
 
     /**
      * The text with delimiters removed so the user cannot see
      * which words are the ones that should be selected. So The cow [jumped]
      * becomes The cow jumped
+     *
+     * @param string $text
+     * @return string
      */
-    public function get_words() {
-        $questiontextnodelim = $this->questiontext;
+    public function stripdelim($text) {
         $l = substr($this->delimitchars, 0, 1);
         $r = substr($this->delimitchars, 1, 1);
-        $text = $this->get_questiontext_exploded($this->questiontext);
-        $questiontextnodelim = preg_replace('/\\' . $l . '/', '', $text);
-        $questiontextnodelim = preg_replace('/\\' . $r . '/', '', $questiontextnodelim);
-         /* remove any hyperlinks from candidates for selection, this means that
-         * things like audio files will be rendered for the multimedia filter
-         */
-        $this->selectable = preg_replace('/<a.*?<\\/a>/', '', $questiontextnodelim);
-        $this->selectable = strip_tags($this->selectable);
+        $matches = preg_replace('/\\' . $l . '/', '', $text);
+        $matches = preg_replace('/\\' . $r . '/', '', $matches);
+        return $matches;
+    }
 
-        $allwords = preg_split('@[\s+]@u', $questiontextnodelim);
-        return $allwords;
+    /**
+     * Confirm if the the provided haystack has a first character
+     * matching the given needle. Handy for checking if the first
+     * character is a delimiter.
+     *
+     * @param string $needle
+     * @param string $haystack
+     * @return string
+     */
+    public function startsWith($needle, $haystack) {
+        return preg_match('/^' . preg_quote($needle, '/') . '/', $haystack);
+    }
+
+    /**
+     * Add one space to the pointy end of angle brackets.
+     * This means that text within table fields can be set
+     * as selectable. This ensures the td contents is split
+     * from the td. Only makes sense in multi word mode (selectables
+     * must be marked.
+     *
+     * @param string $questiontext
+     * @return string
+     */
+    public static function pad_angle_brackets($questiontext) {
+        // Put a space before and after tags so they get split as words.
+        $text = str_replace('>', '> ', $questiontext);
+        $text = str_replace('<', ' <', $text);
+        return $text;
     }
 
     /**
@@ -124,24 +234,28 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 
     /**
+     *
      * Split the question text into words delimited by spaces
      * then return an array of all the words that are correct
      * i.e. surrounded by the delimit chars. Note that
      * word in this context means any string that can be separated
      * by a space marker so that will include html etc
-     *
-     * @param string $questiontext
-     * @param string $delimitchars
-     * @return array
+     * @param string $questiontext raw text of question with delim
+     * @param string $delimitchars delimiting characters e.g. [ and ]
+     * @return array index places in array of correct words
      */
-    public static function get_correct_places($questiontext, $delimitchars) {
+    public function get_correct_places($questiontext, $delimitchars) {
         $correctplaces = array();
-        $text = self::get_questiontext_exploded($questiontext);
-        $allwords = preg_split('/[\s\n]/', $text);
+        $items = $this->get_words(false);
         $l = substr($delimitchars, 0, 1);
         $r = substr($delimitchars, 1, 1);
-        foreach ($allwords as $key => $word) {
+        if ($this->multiword == true) {
+            $regex = '/\\' . $l . '\\' . $l . '.*\\' . $r . '\\' . $r . '/';
+        } else {
             $regex = '/\\' . $l . '.*\\' . $r . '/';
+        }
+        foreach ($items as $key => $item) {
+            $word = $item->get_text();
             if (preg_match($regex, $word)) {
                 $correctplaces[] = $key;
             }
@@ -164,15 +278,17 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 
     /**
+     *
      * summary of response shown in the responses report
+     *
      * @param array $response
-     * @return string
+     * @return string allwords
      */
     public function summarise_response(array $response) {
         $summary = '';
         $allwords = $this->get_words();
         foreach ($response as $index => $value) {
-            $summary .= " " . $allwords[substr($index, 1)] . " ";
+            $summary .= " " . $allwords[substr($index, 1)]->get_without_delim() . " ";
         }
         return $summary;
     }
@@ -247,13 +363,14 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
 
 
     /**
-     * returns the response that would get full marks.
-     * Used in preview mode. If this doesn't return a correct value the button
-     * labeled "Fill in the correct response in the preview form will not work
-     * This value gets written into the rightanswer field of the question attempts
-     * table when a quiz containing this question starts
+     * contains the a response that would get full marks.
+     * used in preview mode. If this doesn't return a
+     * correct value the button labeled "Fill in correct response"
+     * in the preview form will not work. This value gets written
+     * into the rightanswer field of the question_attempts table
+     * when a quiz containing this question starts.
      *
-     * @return string
+     * @return question_answer
      */
     public function get_correct_response() {
         $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
@@ -263,15 +380,19 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         }
         return $correctresponse;
     }
+
     /**
-     * Not entirely sure what this does and if the param types are correct TODO
-     * @param question_attempt $qa
-     * @param array $options
-     * @param string $component
-     * @param string $filearea
-     * @param array $args
-     * @param boolean $forcedownload
-     * @return boolean
+     * Checks whether the users is allow to be served a particular file.
+     * TODO Work out why this is this necessary in the sense of what does it
+     * do that the parent version does not do
+     *
+     * @param question_attempt $qa the question attempt being displayed.
+     * @param question_display_options $options the options that control display of the question.
+     * @param string $component the name of the component we are serving files for.
+     * @param string $filearea the name of the file area.
+     * @param array $args the remaining bits of the file path.
+     * @param bool $forcedownload whether the user must be forced to download the file.
+     * @return bool true if the user can access this file.
      */
     public function check_file_access($qa, $options, $component, $filearea, $args, $forcedownload) {
         if ($component == 'question' && $filearea == 'answerfeedback') {
@@ -308,13 +429,14 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
 
 
     /**
-     * The grade for a response
+     * Complete grade for this attempt at the question
      *
      * @param array $response responses, as returned by
      * {@link question_attempt_step::get_qt_data()}.
      * @return array (number, integer) the fraction, and the state.
      */
     public function grade_response(array $response) {
+        $totalscore = 0;
         $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
         $this->wrongresponsecount = $this->get_wrong_responsecount($correctplaces, $response);
         foreach ($correctplaces as $place) {
@@ -384,4 +506,157 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return $wrongresponsecount;
     }
 
+}
+/**
+ * items that will be processed by the question type. Typically this is a word
+ * or a group of words
+ */
+class wordselect_item {
+
+    /**
+     * characters that delimit a word or chunk of words
+     * @var string
+     */
+    private $delimitchars;
+    /**
+     * left delimiter
+     * @var string
+     */
+    private $l;
+
+    /**
+     * right delimiter
+     * @var string
+     */
+    private $r;
+
+    /**
+     * question instance id
+     * @var int
+     */
+    private $id;
+
+    /**
+     * item text including any delimiter
+     * @var string
+     */
+    private $text;
+
+    /**
+     * do selectables have to be marked
+     * @var boolean
+     */
+    private $multiword;
+
+    /**
+     * is this item selectable. Only makes
+     * sense if multiword is true
+     * @var boolean
+     */
+    public $is_selectable;
+
+    /**
+     * Initialise this instance of question chunk
+     * @param int $id
+     * @param string $text
+     * @param string $delimitchars
+     * @param boolean multiword
+     */
+    public function __construct($id, $text, $delimitchars, $multiword = false) {
+        $this->l = substr($delimitchars, 0, 1);
+        $this->r = substr($delimitchars, 1, 1);
+        $this->id = $id;
+        $this->text = $text;
+        $this->delimitchars = $delimitchars;
+        $this->multiword = $multiword;
+    }
+    /**
+     * Get white space after the "word" or group of words delimited
+     * by double delimiting characters
+     *
+     * @param string $eligables
+     * @return string
+     */
+    public function get_space_after($eligables) {
+        if ($this->text == "") {
+            return "";
+        }
+        if (strpos($eligables, $this->text) == false) {
+            /* if this is nevery eligable for selection (typically
+             * a piece of html e.g. <p>, then tag the original space back on to
+             * the end of it
+             */
+            preg_match('/\s+/', $this->text, $matches);
+            if (isset($matches[0])) {
+                return $matches[0];
+            } else {
+                return "";
+            }
+        } else {
+            preg_match('/\s+/', $this->text, $matches);
+            if (isset($matches[0])) {
+                $len = strlen($matches[0]);
+                if ($len > 1) {
+                    print "returning  " . $len . " spaces";
+                    return " " . str_repeat('&nbsp;', $len);
+                } else {
+                    return " ";
+                }
+            } else {
+                return "";
+            }
+        }
+    }
+
+    /**
+     * Work out which strings could be selectable typically anything that
+     * is not an HTML tag. $eligables seems to be an awkward name, it could
+     * have been called something like non-html but that is also awkward
+     * and might be a limitation in the future if some other reason for text
+     * being non eligable turns up.
+     * @param string $eligables
+     */
+    public function set_is_selectable($eligables = "") {
+        if ($this->multiword == true) {
+            $regex = '/\\' . $this->l . '([^\\' . $this->l . '\\' . $this->r . ']*)\\' . $this->r . '/';
+            if (preg_match($regex, $this->text) > 0) {
+                $this->is_selectable = true;
+            }
+        } else {
+            if (($eligables > "") && ($this->get_without_delim() > "")) {
+                if (strpos($eligables, $this->get_without_delim()) !== false) {
+                    if ($this->multiword == false) {
+                        $this->is_selectable = true;
+                    } else {
+                        $regex = '/\\' . $this->l . '([^\\' . $this->l . '\\' . $this->r . ']*)\\' . $this->r . '/';
+                        if (preg_match($regex, $this->text) > 0) {
+                            $this->is_selectable = true;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /**
+     * Get chunk of questiontext for this item that will include
+     * any delimiter.
+     *
+     * @return string
+     */
+    public function get_text() {
+        return $this->text;
+    }
+
+    /**
+     * Get the word (or set of words) without the delimiters
+     * So [cat] will be returned as cat
+     * @return string
+     */
+    public function get_without_delim() {
+        $matches = preg_replace('/\\' . $this->l . '/', '', $this->text);
+        $matches = preg_replace('/\\' . $this->r . '/', '', $matches);
+        /* trim trailing html space characters */
+        $matches = preg_replace("#(^(&nbsp;|\s)+|(&nbsp;|\s)+$)#", "", $matches);
+        return $matches;
+    }
 }

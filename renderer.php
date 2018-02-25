@@ -48,19 +48,24 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         $response = $qa->get_last_qt_data();
         $correctplaces = $question->get_correct_places($question->questiontext, $question->delimitchars);
         $output = html_writer::empty_tag('div', array('class' => 'introduction'));
-
         /* this will ensure filters are applied to the introduction, done particularly for the multilang filter */
         $output .= $question->format_text($question->introduction, $question->questiontextformat, $qa, 'qtype_wordselect',
                 'introduction', $question->id);
         $output .= html_writer::empty_tag('/div');
-
         $output .= html_writer::empty_tag('div', array('class' => 'qtext'));
-        foreach ($question->get_words() as $place => $word) {
+
+        /*initialised */
+        $question->init($question->questiontext, $question->delimitchars);
+        $question->get_words();
+
+        foreach ($question->items as $place => $item) {
+            $word = $item->get_without_delim();
             $correctnoselect = false;
             $wordattributes = array("role" => "checkbox");
             $afterwordfeedback = '';
             $wordattributes['name'] = $this->get_input_name($qa, $word, $place);
             $wordattributes['id'] = $this->get_input_id($qa, $word, $place);
+            $correctresponse = true;
             $iscorrectplace = $question->is_correct_place($correctplaces, $place);
             $checkbox = "";
             /* if the current word/place exists in the response */
@@ -115,7 +120,11 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                     $wordattributes['class'] = 'selected selectable';
                     $wordattributes['aria-checked'] = 'true';
                 } else {
-                    $wordattributes['class'] = 'selectable';
+                    $class = 'selectable';
+                    if ($question->multiword == true) {
+                        $class .= ' highlight';
+                    }
+                    $wordattributes['class'] = $class;
                     $wordattributes['aria-checked'] = 'false';
                 }
                 $properties = array(
@@ -129,18 +138,19 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 }
                 $checkbox = html_writer::empty_tag('input', $properties);
             }
-            /* the @ supresses error messages if selectable is empty */
-            if (@strpos($question->selectable, $word) !== false) {
+
+            if ($item->is_selectable == true) {
                 if ($correctnoselect == true) {
                     $word = "[" . $word . "]";
                 }
                 $output .= $checkbox;
                 $output .= html_writer::tag('span', $word, $wordattributes);
                 $output .= $afterwordfeedback;
-                $output .= ' ';
+                $output .= $question->items[$place]->get_space_after($question->eligables);
             } else {
-                /* for non selectable items such as the tags for tables etc */
-                $output .= ' ' . $word;
+                // For non selectable items such as the tags for tables etc.
+                $output .= $word;
+                $output .= $question->items[$place]->get_space_after($question->eligables);
             }
         }
         /* this ensures that any files inserted through the editor menu will display */
