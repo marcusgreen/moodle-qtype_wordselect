@@ -64,12 +64,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      */
     public $questiontextsplit;
 
-    /**
-     * the characters indicating a field to fill i.e. [cat] creates
-     * field where the correct answer is cat
-     * @var string
-     */
-    public $delimitchars = "[]";
 
     /**
      * the place number with p appended, i.e. p0 p1 etc
@@ -87,7 +81,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      */
     public function init($questiontext, $delimitchars) {
         $this->questiontext = $questiontext;
-        $this->delmitchars = $delimitchars;
+        $this->delimitchars = $delimitchars;
         $l = substr($this->delimitchars, 0, 1);
         $r = substr($this->delimitchars, 1, 1);
         if (strpos($questiontext, $l . $l) !== false) {
@@ -110,11 +104,11 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $l = substr($this->delimitchars, 0, 1);
         $r = substr($this->delimitchars, 1, 1);
         $allwords = array();
-        /* strinp html tags otherwise there is all manner of clickable debris */
+        /* strip html tags otherwise there is all manner of clickable debris */
         $this->selectable = explode(' ', strip_tags($questiontextnodelim));
         if (strpos($questiontextnodelim, $l . $l) !== false) {
             $this->multiword = true;
-            $fieldregex = ' #\[+.*?\]+\s*|[^ ]+\s*#';
+            $fieldregex = ' #\\'.$l.'+.*?\\'.$r.'+\s*|[^ ]+\s*#';    
             $questiontextnodelim = $this->pad_angle_brackets($questiontextnodelim);
             $matches = preg_replace("#&nbsp;#", " ", $questiontextnodelim);
             preg_match_all($fieldregex, $matches, $matches);
@@ -247,6 +241,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     public function get_correct_places($questiontext, $delimitchars) {
         $correctplaces = array();
         $items = $this->get_words(false);
+  
         $l = substr($delimitchars, 0, 1);
         $r = substr($delimitchars, 1, 1);
         if ($this->multiword == true) {
@@ -618,6 +613,7 @@ class wordselect_item {
      */
     public function set_is_selectable($eligables = "") {
         if ($this->multiword == true) {
+        
             $regex = '/\\' . $this->l . '([^\\' . $this->l . '\\' . $this->r . ']*)\\' . $this->r . '/';
             if (preg_match($regex, $this->text) > 0) {
                 $this->is_selectable = true;
