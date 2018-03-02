@@ -106,8 +106,14 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 if ($iscorrectplace && ($isselected == true)) {
                     $wordattributes['class'] = 'readonly correctresponse';
                 }
-                if ((!($iscorrectplace)) && ($isselected == true)) {
-                    $wordattributes['class'] = 'readonly incorrect ';
+                
+                if (!($iscorrectplace)) {
+                    if ($isselected == true) {
+                        $wordattributes['class'] = 'readonly incorrect ';
+                    } else
+                    if (($question->multiword == true)) {
+                        $wordattributes['class'] = 'readonly highlight ';
+                    }
                 }
             } else {
                 $qasdata = $qa->get_last_qt_var($question->field($place));
