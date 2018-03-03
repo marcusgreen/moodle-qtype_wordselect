@@ -55,7 +55,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * sense if multiword is true
      * @var boolean
      */
-    public $is_selectable;
+    public $isselectable;
 
     /**
      * TODO
@@ -108,7 +108,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $this->selectable = explode(' ', strip_tags($questiontextnodelim));
         if (strpos($questiontextnodelim, $l . $l) !== false) {
             $this->multiword = true;
-            $fieldregex = ' #\\'.$l.'+.*?\\'.$r.'+\s*|[^ ]+\s*#';    
+            $fieldregex = ' #\\'.$l.'+.*?\\'.$r.'+\s*|[^ ]+\s*#';
             $questiontextnodelim = $this->pad_angle_brackets($questiontextnodelim);
             $matches = preg_replace("#&nbsp;#", " ", $questiontextnodelim);
             preg_match_all($fieldregex, $matches, $matches);
@@ -165,7 +165,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * @param string $haystack
      * @return string
      */
-    public function startsWith($needle, $haystack) {
+    public function startswith($needle, $haystack) {
         return preg_match('/^' . preg_quote($needle, '/') . '/', $haystack);
     }
 
@@ -241,7 +241,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     public function get_correct_places($questiontext, $delimitchars) {
         $correctplaces = array();
         $items = $this->get_words(false);
-  
+
         $l = substr($delimitchars, 0, 1);
         $r = substr($delimitchars, 1, 1);
         if ($this->multiword == true) {
@@ -548,7 +548,7 @@ class wordselect_item {
      * sense if multiword is true
      * @var boolean
      */
-    public $is_selectable;
+    public $isselectable;
 
     /**
      * Initialise this instance of question chunk
@@ -613,20 +613,19 @@ class wordselect_item {
      */
     public function set_is_selectable($eligables = "") {
         if ($this->multiword == true) {
-        
             $regex = '/\\' . $this->l . '([^\\' . $this->l . '\\' . $this->r . ']*)\\' . $this->r . '/';
             if (preg_match($regex, $this->text) > 0) {
-                $this->is_selectable = true;
+                $this->isselectable = true;
             }
         } else {
             if (($eligables > "") && ($this->get_without_delim() > "")) {
                 if (strpos($eligables, $this->get_without_delim()) !== false) {
                     if ($this->multiword == false) {
-                        $this->is_selectable = true;
+                        $this->isselectable = true;
                     } else {
                         $regex = '/\\' . $this->l . '([^\\' . $this->l . '\\' . $this->r . ']*)\\' . $this->r . '/';
                         if (preg_match($regex, $this->text) > 0) {
-                            $this->is_selectable = true;
+                            $this->isselectable = true;
                         }
                     }
                 }

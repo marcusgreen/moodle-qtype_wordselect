@@ -106,12 +106,11 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 if ($iscorrectplace && ($isselected == true)) {
                     $wordattributes['class'] = 'readonly correctresponse';
                 }
-                
+
                 if (!($iscorrectplace)) {
                     if ($isselected == true) {
                         $wordattributes['class'] = 'readonly incorrect ';
-                    } else
-                    if (($question->multiword == true)) {
+                    } else if (($question->multiword == true)) {
                         $wordattributes['class'] = 'readonly highlight ';
                     }
                 }
@@ -145,7 +144,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 $checkbox = html_writer::empty_tag('input', $properties);
             }
 
-            if ($item->is_selectable == true) {
+            if ($item->isselectable == true) {
                 if ($correctnoselect == true) {
                     $word = "[" . $word . "]";
                 }
