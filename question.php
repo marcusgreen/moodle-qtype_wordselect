@@ -592,7 +592,6 @@ class wordselect_item {
             if (isset($matches[0])) {
                 $len = strlen($matches[0]);
                 if ($len > 1) {
-                    print "returning  " . $len . " spaces";
                     return " " . str_repeat('&nbsp;', $len);
                 } else {
                     return " ";
