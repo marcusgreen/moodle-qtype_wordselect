@@ -111,7 +111,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                     if ($isselected == true) {
                         $wordattributes['class'] = 'readonly incorrect ';
                     } else if (($question->multiword == true)) {
-                        $wordattributes['class'] = 'readonly highlight ';
+                        $wordattributes['class'] = 'readonly multiword ';
                     }
                 }
             } else {
@@ -127,7 +127,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 } else {
                     $class = 'selectable';
                     if ($question->multiword == true) {
-                        $class .= ' highlight';
+                        $class .= ' multiword';
                     }
                     $wordattributes['class'] = $class;
                     $wordattributes['aria-checked'] = 'false';
