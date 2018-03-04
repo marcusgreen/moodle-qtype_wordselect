@@ -9,11 +9,13 @@
     background-position: 0 0;
     background-origin: padding-box;
     background-size: auto auto;
-    border:solid thin transparent;
     border-radius:0.25em;
     cursor:pointer;
     display:inline;
     white-space:nowrap;
+}
+.que.wordselect .highlight{
+    border: thin solid black;
 }
 
 .que.wordselect .selected{
