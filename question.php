@@ -64,7 +64,29 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      */
     public $questiontextsplit;
 
+    /**
+     * Content question after strip_tags.
+     * @var string
+     */
+    public $eligables;
 
+    /**
+     * All work of content question.
+     * @var array
+     */
+    public $items = array();
+
+    /**
+     * Delimitchar of question, default [].
+     * @var string
+     */
+    public $delimitchars = "[]";
+
+    /**
+     * Full content of question.
+     * @var string
+     */
+    public $questiontext;
     /**
      * the place number with p appended, i.e. p0 p1 etc
      * @param number $place
@@ -83,7 +105,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $this->questiontext = $questiontext;
         $this->delimitchars = $delimitchars;
         $l = substr($this->delimitchars, 0, 1);
-        $r = substr($this->delimitchars, 1, 1);
         if (strpos($questiontext, $l . $l) !== false) {
             $this->multiword = true;
         }
@@ -103,39 +124,31 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $questiontextnodelim = $this->questiontext;
         $l = substr($this->delimitchars, 0, 1);
         $r = substr($this->delimitchars, 1, 1);
-        $allwords = array();
+        $this->items = array();
         /* strip html tags otherwise there is all manner of clickable debris */
-        $this->selectable = explode(' ', strip_tags($questiontextnodelim));
         if (strpos($questiontextnodelim, $l . $l) !== false) {
-            $this->multiword = true;
             $fieldregex = ' #\\'.$l.'+.*?\\'.$r.'+\s*|[^ ]+\s*#';
-            $questiontextnodelim = $this->pad_angle_brackets($questiontextnodelim);
+            $questiontextnodelim = self::pad_angle_brackets($questiontextnodelim);
             $matches = preg_replace("#&nbsp;#", " ", $questiontextnodelim);
             preg_match_all($fieldregex, $matches, $matches);
-            $this->items = array();
             foreach ($matches[0] as $key => $match) {
-                $item = new wordselect_item($key, $match, $this->delimitchars, true);
-                $item->set_is_selectable();
+                $regex = '/\\' . $l . '\\' . $l . '.*\\' . $r . '\\' . $r . '/';
+                $ismutiword = preg_match($regex, $match);
+                $item = new wordselect_item($key, $match, $this->delimitchars, $ismutiword);
+                $item->set_is_selectable($questiontextnodelim);
                 $this->items[] = $item;
             }
 
-            if ($stripdelim == true) {
-                $allwords = $this->stripdelim($matches[0]);
-            } else {
-                $allwords = $matches[0];
-            }
         } else {
-            $text = $this->pad_angle_brackets($this->questiontext);
+            $text = self::pad_angle_brackets($this->questiontext);
             $this->eligables = strip_tags($text);
             $regex = "/(\S+\s+)/";
             $matches = preg_split($regex, $text, null, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
-            $this->items = array();
             foreach ($matches as $key => $text) {
-                $item = new wordselect_item($key, $text, $this->delimitchars, $this->multiword);
+                $item = new wordselect_item($key, $text, $this->delimitchars, false);
                 $item->set_is_selectable($this->eligables);
                 $this->items[] = $item;
             }
-            $allwords = $matches[0];
         }
         return $this->items;
     }
@@ -181,9 +194,21 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      */
     public static function pad_angle_brackets($questiontext) {
         // Put a space before and after tags so they get split as words.
-        $text = str_replace('>', '> ', $questiontext);
-        $text = str_replace('<', ' <', $text);
-        return $text;
+        $tags = ['sub', 'sup', 'i', 'u', 'b'];
+        $questiontext = preg_replace_callback('/<([a-zA-Z]*)[ ]*([a-zA-Z\# =\'\"]*)\>/', function($a) use ($tags) {
+            if (!in_array($a[1], $tags)) {
+                return ' '.$a[0].' ';
+            }
+            return $a[0];
+        }, $questiontext);
+
+        $questiontext = preg_replace_callback('/\<\/([a-zA-Z]*)\>/', function($a) use ($tags) {
+            if (!in_array($a[1], $tags)) {
+                return ' '.$a[0].' ';
+            }
+            return $a[0];
+        }, $questiontext);
+        return $questiontext;
     }
 
     /**
@@ -193,7 +218,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * @return string
      */
     public function get_unselectable_words($questiontext) {
-        $questiontext = $this->get_questiontext_exploded($questiontext);
+        $questiontext = self::pad_angle_brackets($questiontext);
         $allwords = preg_split('/[\s\n]/', $questiontext);
         $unselectable = array();
         $started = false;
@@ -617,8 +642,9 @@ class wordselect_item {
                 $this->isselectable = true;
             }
         } else {
-            if (($eligables > "") && ($this->get_without_delim() > "")) {
-                if (strpos($eligables, $this->get_without_delim()) !== false) {
+            $text = strip_tags($this->get_without_delim());
+            if (($eligables != "") && ($text != "")) {
+                if (strpos(strip_tags($eligables),  $text ) !== false) {
                     if ($this->multiword == false) {
                         $this->isselectable = true;
                     } else {
