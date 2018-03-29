@@ -5,6 +5,9 @@ e.g. [mat]. Text can thus include multiple words. Formatting indicates which tex
 
 Updated phpdocs comment, behat and phpunit tests
 
+Huge credit to https://github.com/lethevinh for ideas, code and behat tests for ensuring
+formatting tags are retained and other stuff.
+
 ### Version 1.1 of the Moodle WordSelect question type by Marcus Green. July 2017
 Fixed a bug that prevented audio files working correctly in the question text. Thanks to Matthias Giger for 
 reporting this. Fixed an issue that prevented any files being inserted into the introduction area. Improved
