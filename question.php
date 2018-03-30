@@ -554,7 +554,6 @@ class wordselect_item {
      * @return string
      */
     public function get_space_after($eligables) {
-        // return;
         if (strpos($eligables, $this->text) == false) {
             /* if this is never eligable for selection (typically
              * a piece of html e.g. <p>, then tag the original space back on to
@@ -563,15 +562,12 @@ class wordselect_item {
             preg_match('/\s+|&nbsp;/', $this->text, $matches);
             if (isset($matches[0])) {
                 return "&nbsp;";
-                // return $matches[0];
             } else {
                 return "";
             }
         } else {
             preg_match('/\s+|&nbsp;/', $this->text, $matches);
             if (isset($matches[0])) {
-                // $len = strlen($matches[0]);
-                //if ($len > 1) {
                 return '&nbsp;';
             } else {
                 return "";
