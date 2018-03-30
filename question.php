@@ -623,9 +623,6 @@ class wordselect_item {
     public function get_without_delim() {
         $matches = preg_replace('/\\' . $this->l . '/', '', $this->text);
         $matches = preg_replace('/\\' . $this->r . '/', '', $matches);
-        /* trim trailing html space characters */
-        //$matches = preg_replace("#(^(&nbsp;|\s)+|(&nbsp;|\s)+$)#", "", $matches);
-
         return $matches;
     }
 
