@@ -56,9 +56,9 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
 
         /*initialised */
         $question->init($question->questiontext, $question->delimitchars);
-        $items= $question->get_words();
+        $items = $question->get_words();
 
-        foreach ($items as  $place => $item) {
+        foreach ($items as $place => $item) {
             $word = $item->get_without_delim();
             $correctnoselect = false;
             $wordattributes = array("role" => "checkbox");
@@ -151,11 +151,9 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 $output .= $checkbox;
                 $output .= html_writer::tag('span', $word, $wordattributes);
                 $output .= $afterwordfeedback;
-               // $output .= $question->items[$place]->get_space_after($question->eligables);
             } else {
                 // For non selectable items such as the tags for tables etc.
                 $output .= $word;
-               // $output .= $question->items[$place]->get_space_after($question->eligables);
             }
         }
         /* this ensures that any files inserted through the editor menu will display */
