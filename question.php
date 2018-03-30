@@ -87,8 +87,12 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         if (strpos($questiontext, $l . $l) !== false) {
             $this->multiword = true;
         }
-        $this->eligables = strip_tags($this->questiontext);
+        $this->eligables = self::strip_some_tags($this->questiontext);
     }
+
+    public  static function strip_some_tags($string){
+        return  strip_tags($string,'<sub>,<sup>,<i>,<u>,<b>');
+   }
 
     /**
      * TODO fix this comment as the purpose/return values have probably changed.
@@ -103,32 +107,23 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $questiontextnodelim = $this->questiontext;
         $l = substr($this->delimitchars, 0, 1);
         $r = substr($this->delimitchars, 1, 1);
+        $fieldregex='/(\\s+)|(\\'.$l.'[^]]*\\'.$r.'{1,2})|(&nbsp;)|(\s)/';
         $allwords = array();
-        /* strip html tags otherwise there is all manner of clickable debris */
-        $this->selectable = explode(' ', strip_tags($questiontextnodelim));
         if (strpos($questiontextnodelim, $l . $l) !== false) {
-            $this->multiword = true;
-            $fieldregex = ' #\\'.$l.'+.*?\\'.$r.'+\s*|[^ ]+\s*#';
-            $questiontextnodelim = $this->pad_angle_brackets($questiontextnodelim);
-            $matches = preg_replace("#&nbsp;#", " ", $questiontextnodelim);
-            preg_match_all($fieldregex, $matches, $matches);
-            $this->items = array();
-            foreach ($matches[0] as $key => $match) {
+        $this->multiword = true;
+            $matches= preg_split($fieldregex,$questiontextnodelim,null,PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
+            $this->items = [];
+            foreach ($matches as $key => $match) {
                 $item = new wordselect_item($key, $match, $this->delimitchars, true);
                 $item->set_is_selectable();
                 $this->items[] = $item;
             }
-
-            if ($stripdelim == true) {
-                $allwords = $this->stripdelim($matches[0]);
-            } else {
-                $allwords = $matches[0];
-            }
+            $allwords = $matches[0];
         } else {
-            $text = $this->pad_angle_brackets($this->questiontext);
-            $this->eligables = strip_tags($text);
-            $regex = "/(\S+\s+)/";
-            $matches = preg_split($regex, $text, null, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
+            $text = $this->pad_angle_brackets($questiontextnodelim);
+            $this->eligables = self::strip_some_tags($text);
+        
+            $matches = preg_split($fieldregex, $text, null, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
             $this->items = array();
             foreach ($matches as $key => $text) {
                 $item = new wordselect_item($key, $text, $this->delimitchars, $this->multiword);
@@ -136,6 +131,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
                 $this->items[] = $item;
             }
             $allwords = $matches[0];
+
         }
         return $this->items;
     }
@@ -169,7 +165,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return preg_match('/^' . preg_quote($needle, '/') . '/', $haystack);
     }
 
-    /**
+ /**
      * Add one space to the pointy end of angle brackets.
      * This means that text within table fields can be set
      * as selectable. This ensures the td contents is split
@@ -181,39 +177,23 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      */
     public static function pad_angle_brackets($questiontext) {
         // Put a space before and after tags so they get split as words.
-        $text = str_replace('>', '> ', $questiontext);
-        $text = str_replace('<', ' <', $text);
-        return $text;
+        $tags = ['sub', 'sup', 'i', 'u', 'b'];
+        $questiontext = preg_replace_callback('/<([a-zA-Z]*)[ ]*([a-zA-Z\# =\'\"]*)\>/', function($a) use ($tags) {
+            if (!in_array($a[1], $tags)) {
+                return ' '.$a[0].' ';
+            }
+            return $a[0];
+        }, $questiontext);
+
+        $questiontext = preg_replace_callback('/\<\/([a-zA-Z]*)\>/', function($a) use ($tags) {
+            if (!in_array($a[1], $tags)) {
+                return ' '.$a[0].' ';
+            }
+            return $a[0];
+        }, $questiontext);
+        return trim($questiontext);
     }
 
-    /**
-     * Part of an experiment, can probably be deleted
-     *
-     * @param string $questiontext
-     * @return string
-     */
-    public function get_unselectable_words($questiontext) {
-        $questiontext = $this->get_questiontext_exploded($questiontext);
-        $allwords = preg_split('/[\s\n]/', $questiontext);
-        $unselectable = array();
-        $started = false;
-        foreach ($allwords as $key => $word) {
-            $start = substr($word, 0, 1);
-            $len = strlen($word);
-            $end = substr($word, $len - 1, $len);
-            if ($start == "*") {
-                $started = true;
-            }
-            if ($end == "*") {
-                $started = false;
-                $unselectable[$key] = $word;
-            }
-            if ($started == true) {
-                $unselectable[$key] = $word;
-            }
-        }
-        return $unselectable;
-    }
     /**
      * Put a space before and after tags so they get split as words
      * This allows the use of tables amongst other html things
@@ -573,32 +553,29 @@ class wordselect_item {
      * @return string
      */
     public function get_space_after($eligables) {
-        if ($this->text == "") {
-            return "";
-        }
+      // return;
         if (strpos($eligables, $this->text) == false) {
-            /* if this is nevery eligable for selection (typically
+            /* if this is never eligable for selection (typically
              * a piece of html e.g. <p>, then tag the original space back on to
              * the end of it
              */
-            preg_match('/\s+/', $this->text, $matches);
+            preg_match('/\s+|&nbsp;/', $this->text, $matches);
             if (isset($matches[0])) {
-                return $matches[0];
+                return "&nbsp;";
+               // return $matches[0];
             } else {
                 return "";
             }
         } else {
-            preg_match('/\s+/', $this->text, $matches);
+            preg_match('/\s+|&nbsp;/', $this->text, $matches);
             if (isset($matches[0])) {
-                $len = strlen($matches[0]);
-                if ($len > 1) {
-                    return " " . str_repeat('&nbsp;', $len);
+               // $len = strlen($matches[0]);
+                //if ($len > 1) {
+                   return  '&nbsp;';
                 } else {
-                    return " ";
+                    return "";
                 }
-            } else {
-                return "";
-            }
+          
         }
     }
 
@@ -607,18 +584,18 @@ class wordselect_item {
      * is not an HTML tag. $eligables seems to be an awkward name, it could
      * have been called something like non-html but that is also awkward
      * and might be a limitation in the future if some other reason for text
-     * being non eligable turns up.
-     * @param string $eligables
-     */
-    public function set_is_selectable($eligables = "") {
+     * being non eligable turns up.*/
+  public function set_is_selectable($eligables = "") {
+        $this->isselectable = false;
         if ($this->multiword == true) {
             $regex = '/\\' . $this->l . '([^\\' . $this->l . '\\' . $this->r . ']*)\\' . $this->r . '/';
             if (preg_match($regex, $this->text) > 0) {
                 $this->isselectable = true;
             }
         } else {
-            if (($eligables > "") && ($this->get_without_delim() > "")) {
-                if (strpos($eligables, $this->get_without_delim()) !== false) {
+            $candidate = qtype_wordselect_question::strip_some_tags(trim($this->text));
+            if (($eligables > "") && ($candidate > "")) {
+                if (strpos($eligables, $candidate) !== false) {
                     if ($this->multiword == false) {
                         $this->isselectable = true;
                     } else {
@@ -630,7 +607,8 @@ class wordselect_item {
                 }
             }
         }
-    }
+}
+
     /**
      * Get chunk of questiontext for this item that will include
      * any delimiter.
@@ -650,7 +628,8 @@ class wordselect_item {
         $matches = preg_replace('/\\' . $this->l . '/', '', $this->text);
         $matches = preg_replace('/\\' . $this->r . '/', '', $matches);
         /* trim trailing html space characters */
-        $matches = preg_replace("#(^(&nbsp;|\s)+|(&nbsp;|\s)+$)#", "", $matches);
+        //$matches = preg_replace("#(^(&nbsp;|\s)+|(&nbsp;|\s)+$)#", "", $matches);
+
         return $matches;
     }
 }
