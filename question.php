@@ -18,7 +18,7 @@
  * wordselect question definition class.
  *
  * @package    qtype_wordselect
- * @copyright  Marcus Green 2018)
+ * @copyright  Marcus Green 2018
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -27,7 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * Represents a wordselect question.
  *
- * @copyright  2016 Marcus Green
+ * @copyright  2018 Marcus Green
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -38,6 +38,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * @var number how many items clicked on are not correct answers
      */
     public $wrongresponsecount;
+
     /**
      *
      * @var number how many items clicked on are  correct answers
@@ -64,7 +65,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      */
     public $questiontextsplit;
 
-
     /**
      * the place number with p appended, i.e. p0 p1 etc
      * @param number $place
@@ -73,6 +73,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     public function field($place) {
         return 'p' . $place;
     }
+
     /**
      * Initialise the question. This ought really to be done via the constructor
      *
@@ -90,9 +91,9 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $this->eligables = self::strip_some_tags($this->questiontext);
     }
 
-    public  static function strip_some_tags($string){
-        return  strip_tags($string,'<sub>,<sup>,<i>,<u>,<b>');
-   }
+    public static function strip_some_tags($string) {
+        return strip_tags($string, '<sub>,<sup>,<i>,<u>,<b>');
+    }
 
     /**
      * TODO fix this comment as the purpose/return values have probably changed.
@@ -107,11 +108,11 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $questiontextnodelim = $this->questiontext;
         $l = substr($this->delimitchars, 0, 1);
         $r = substr($this->delimitchars, 1, 1);
-        $fieldregex='/(\\s+)|(\\'.$l.'[^]]*\\'.$r.'{1,2})|(&nbsp;)|(\s)/';
+        $fieldregex = '/(\\s+)|(\\' . $l . '[^]]*\\' . $r . '{1,2})|(&nbsp;)|(\s)/';
         $allwords = array();
         if (strpos($questiontextnodelim, $l . $l) !== false) {
-        $this->multiword = true;
-            $matches= preg_split($fieldregex,$questiontextnodelim,null,PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
+            $this->multiword = true;
+            $matches = preg_split($fieldregex, $questiontextnodelim, null, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
             $this->items = [];
             foreach ($matches as $key => $match) {
                 $item = new wordselect_item($key, $match, $this->delimitchars, true);
@@ -122,7 +123,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         } else {
             $text = $this->pad_angle_brackets($questiontextnodelim);
             $this->eligables = self::strip_some_tags($text);
-        
+
             $matches = preg_split($fieldregex, $text, null, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
             $this->items = array();
             foreach ($matches as $key => $text) {
@@ -131,7 +132,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
                 $this->items[] = $item;
             }
             $allwords = $matches[0];
-
         }
         return $this->items;
     }
@@ -165,7 +165,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return preg_match('/^' . preg_quote($needle, '/') . '/', $haystack);
     }
 
- /**
+    /**
      * Add one space to the pointy end of angle brackets.
      * This means that text within table fields can be set
      * as selectable. This ensures the td contents is split
@@ -180,14 +180,14 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $tags = ['sub', 'sup', 'i', 'u', 'b'];
         $questiontext = preg_replace_callback('/<([a-zA-Z]*)[ ]*([a-zA-Z\# =\'\"]*)\>/', function($a) use ($tags) {
             if (!in_array($a[1], $tags)) {
-                return ' '.$a[0].' ';
+                return ' ' . $a[0] . ' ';
             }
             return $a[0];
         }, $questiontext);
 
         $questiontext = preg_replace_callback('/\<\/([a-zA-Z]*)\>/', function($a) use ($tags) {
             if (!in_array($a[1], $tags)) {
-                return ' '.$a[0].' ';
+                return ' ' . $a[0] . ' ';
             }
             return $a[0];
         }, $questiontext);
@@ -309,7 +309,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * @return string
      */
     public function get_validation_error(array $response) {
-        if (! $this->is_complete_response($response)) {
+        if (!$this->is_complete_response($response)) {
             return get_string('pleaseselectananswer', 'qtype_wordselect');
         }
 
@@ -335,7 +335,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             return false;
         }
     }
-
 
     /**
      * contains the a response that would get full marks.
@@ -401,7 +400,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             return false;
         }
     }
-
 
     /**
      * Complete grade for this attempt at the question
@@ -482,6 +480,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 
 }
+
 /**
  * items that will be processed by the question type. Typically this is a word
  * or a group of words
@@ -493,6 +492,7 @@ class wordselect_item {
      * @var string
      */
     private $delimitchars;
+
     /**
      * left delimiter
      * @var string
@@ -545,6 +545,7 @@ class wordselect_item {
         $this->delimitchars = $delimitchars;
         $this->multiword = $multiword;
     }
+
     /**
      * Get white space after the "word" or group of words delimited
      * by double delimiting characters
@@ -553,7 +554,7 @@ class wordselect_item {
      * @return string
      */
     public function get_space_after($eligables) {
-      // return;
+        // return;
         if (strpos($eligables, $this->text) == false) {
             /* if this is never eligable for selection (typically
              * a piece of html e.g. <p>, then tag the original space back on to
@@ -562,20 +563,19 @@ class wordselect_item {
             preg_match('/\s+|&nbsp;/', $this->text, $matches);
             if (isset($matches[0])) {
                 return "&nbsp;";
-               // return $matches[0];
+                // return $matches[0];
             } else {
                 return "";
             }
         } else {
             preg_match('/\s+|&nbsp;/', $this->text, $matches);
             if (isset($matches[0])) {
-               // $len = strlen($matches[0]);
+                // $len = strlen($matches[0]);
                 //if ($len > 1) {
-                   return  '&nbsp;';
-                } else {
-                    return "";
-                }
-          
+                return '&nbsp;';
+            } else {
+                return "";
+            }
         }
     }
 
@@ -584,8 +584,8 @@ class wordselect_item {
      * is not an HTML tag. $eligables seems to be an awkward name, it could
      * have been called something like non-html but that is also awkward
      * and might be a limitation in the future if some other reason for text
-     * being non eligable turns up.*/
-  public function set_is_selectable($eligables = "") {
+     * being non eligable turns up. */
+    public function set_is_selectable($eligables = "") {
         $this->isselectable = false;
         if ($this->multiword == true) {
             $regex = '/\\' . $this->l . '([^\\' . $this->l . '\\' . $this->r . ']*)\\' . $this->r . '/';
@@ -607,7 +607,7 @@ class wordselect_item {
                 }
             }
         }
-}
+    }
 
     /**
      * Get chunk of questiontext for this item that will include
@@ -632,4 +632,5 @@ class wordselect_item {
 
         return $matches;
     }
+
 }
