@@ -8,7 +8,7 @@
     </category>
   </question>
 
-<!-- question: 27  -->
+<!-- question: 15  -->
   <question type="wordselect">
     <name>
       <text>AlternativeDelimiters</text>
@@ -32,7 +32,7 @@
       </feedback>
     </answer>
     <delimitchars>{}</delimitchars>
-    <!-- Wordselect release:1.01 version:2016062501 Moodle version:2017042800 release:3.3beta+ (Build: 20170428) -->
+    <!-- Wordselect release:2.0 version:2018040100 Moodle version:2017111300.1 release:3.4+ (Build: 20180104) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -44,7 +44,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 28  -->
+<!-- question: 16  -->
   <question type="wordselect">
     <name>
       <text>AudioFile</text>
@@ -69,7 +69,7 @@
       </feedback>
     </answer>
     <delimitchars>[]</delimitchars>
-    <!-- Wordselect release:1.01 version:2016062501 Moodle version:2017042800 release:3.3beta+ (Build: 20170428) -->
+    <!-- Wordselect release:2.0 version:2018040100 Moodle version:2017111300.1 release:3.4+ (Build: 20180104) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -81,7 +81,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 29  -->
+<!-- question: 17  -->
   <question type="wordselect">
     <name>
       <text>CatMat</text>
@@ -106,7 +106,7 @@
       </feedback>
     </answer>
     <delimitchars>[]</delimitchars>
-    <!-- Wordselect release:1.01 version:2016062501 Moodle version:2017042800 release:3.3beta+ (Build: 20170428) -->
+    <!-- Wordselect release:2.0 version:2018040100 Moodle version:2017111300.1 release:3.4+ (Build: 20180104) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -118,7 +118,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 30  -->
+<!-- question: 18  -->
   <question type="wordselect">
     <name>
       <text>FindTheAnimals</text>
@@ -338,7 +338,7 @@
       </feedback>
     </answer>
     <delimitchars>[]</delimitchars>
-    <!-- Wordselect release:1.01 version:2016062501 Moodle version:2017042800 release:3.3beta+ (Build: 20170428) -->
+    <!-- Wordselect release:2.0 version:2018040100 Moodle version:2017111300.1 release:3.4+ (Build: 20180104) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -350,7 +350,78 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 31  -->
+<!-- question: 21  -->
+  <question type="wordselect">
+    <name>
+      <text>Multi word selection</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>All formatting except the &lt;sub&gt;,&lt;sup&gt;,&lt;i&gt;,&lt;u&gt;,&lt;b&gt; is stripped from question text.</p><p>These display as follows <sub>sub</sub> <sup>sup</sup> <i>i</i> <u>u</u> <b>b</b></p><p>To make [[more than]] [[one]] word selectable add double delimiters for correct text and single for incorrect text. Once one item has double delimiters any text without delimiters will not be selectable.</p><p>[This is selectable incorrect text]</p><p>The multiword mode allows the creation of multiple choice questions as follows.</p><p>How many beans make five?</p><p>[a] one<br>[[b]] five<br>[c] two<br>[d] none</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>3.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <introduction></introduction>
+    <delimitchars>[]</delimitchars>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>[more than</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>[one</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>This is selectable incorrect text</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>a</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>[b</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>c</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>d</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <!-- Wordselect release:2.0 version:2018040100 Moodle version:2017111300.1 release:3.4+ (Build: 20180104) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+  </question>
+
+<!-- question: 19  -->
   <question type="wordselect">
     <name>
       <text>Reading Comprehension</text>
@@ -406,7 +477,7 @@
       </feedback>
     </answer>
     <delimitchars>[]</delimitchars>
-    <!-- Wordselect release:1.01 version:2016062501 Moodle version:2017042800 release:3.3beta+ (Build: 20170428) -->
+    <!-- Wordselect release:2.0 version:2018040100 Moodle version:2017111300.1 release:3.4+ (Build: 20180104) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -418,7 +489,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 32  -->
+<!-- question: 20  -->
   <question type="wordselect">
     <name>
       <text>WordsInTables</text>
@@ -466,7 +537,7 @@
       </feedback>
     </answer>
     <delimitchars>[]</delimitchars>
-    <!-- Wordselect release:1.01 version:2016062501 Moodle version:2017042800 release:3.3beta+ (Build: 20170428) -->
+    <!-- Wordselect release:2.0 version:2018040100 Moodle version:2017111300.1 release:3.4+ (Build: 20180104) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
