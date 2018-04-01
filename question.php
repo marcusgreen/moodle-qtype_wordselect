@@ -91,8 +91,15 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $this->eligables = self::strip_some_tags($this->questiontext);
     }
 
-    public static function strip_some_tags($string) {
-        return strip_tags($string, '<sub>,<sup>,<i>,<u>,<b>');
+    /**
+     * strip all but the given html tags. Used to ensure that things 
+     * like table element tags are not displayed as clickable.
+     * 
+     * @param string $questiontext
+     * @return string
+     */
+    public static function strip_some_tags($questiontext) {
+        return strip_tags($questiontext, '<h1>,<h2>,<h3>,<sub>,<sup>,<i>,<u>,<b>');
     }
 
     /**
@@ -482,8 +489,11 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
 }
 
 /**
- * items that will be processed by the question type. Typically this is a word
- * or a group of words
+ * Items to be processed by the question type.
+ * 
+ * Typically this is a word or a group of words
+ * @copyright Marcus Green 2018
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class wordselect_item {
 
@@ -532,10 +542,11 @@ class wordselect_item {
 
     /**
      * Initialise this instance of question chunk
-     * @param int $id
+     * 
+     * @param number $id
      * @param string $text
      * @param string $delimitchars
-     * @param boolean multiword
+     * @param boolean $multiword
      */
     public function __construct($id, $text, $delimitchars, $multiword = false) {
         $this->l = substr($delimitchars, 0, 1);
@@ -580,7 +591,10 @@ class wordselect_item {
      * is not an HTML tag. $eligables seems to be an awkward name, it could
      * have been called something like non-html but that is also awkward
      * and might be a limitation in the future if some other reason for text
-     * being non eligable turns up. */
+     * being non eligable turns up. 
+     * 
+     * @param string $eligables
+     **/
     public function set_is_selectable($eligables = "") {
         $this->isselectable = false;
         if ($this->multiword == true) {
