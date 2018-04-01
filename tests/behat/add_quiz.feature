@@ -42,9 +42,9 @@ Feature: Add a quiz
       | General feedback                   | General feedback cat mat|
 
  #And I add a "Word Select" question to the "Wordselect single page quiz" quiz with:
- #     | Question name                      | Second question                         |
-  #    | Question text                      | The [cow] jumped over the [moon]        |
-   #   | General feedback                   | General feedback cow moon|
+ #    | Question name                      | Second question                         |
+ #    | Question text                      | The [cow] jumped over the [moon]        | 
+ #    | General feedback                   | General feedback cow moon|
 
     And I log out
 #Attempt the questions
@@ -52,11 +52,13 @@ Feature: Add a quiz
     And I am on "Course 1" course homepage
     And I follow "Wordselect single page quiz"
     And I press "Attempt quiz now"
+    Then I should see "Question 1"
 
-    And I click on "cat" "text" 
-    And I press "Check"      
-    And I should see "Your answer is correct."
-    And I should see "Mark 1.00 out of 1.00"
+    And I click on "//span[text()='cat']" "xpath_element"
+
+    #And I press "Check"     
+    And I press "Finish attempt"
+    And I press "Submit all and finish"
 
  # @javascript
   Scenario: Add and configure small quiz and perform an attempt as a student with Javascript enabled
