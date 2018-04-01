@@ -35,7 +35,7 @@ Feature: Test all the basic functionality of this question type
     And I switch to "questionpreview" window
 
     #################################################
-    #Interactive with multiple triddes
+    #Interactive with multiple tries
     #################################################
     And I set the following fields to these values:
       | How questions behave | Interactive with multiple tries |
