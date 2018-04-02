@@ -92,9 +92,9 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 
     /**
-     * strip all but the given html tags. Used to ensure that things 
+     * strip all but the given html tags. Used to ensure that things
      * like table element tags are not displayed as clickable.
-     * 
+     *
      * @param string $questiontext
      * @return string
      */
@@ -490,7 +490,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
 
 /**
  * Items to be processed by the question type.
- * 
+ *
  * Typically this is a word or a group of words
  * @copyright Marcus Green 2018
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -542,7 +542,7 @@ class wordselect_item {
 
     /**
      * Initialise this instance of question chunk
-     * 
+     *
      * @param number $id
      * @param string $text
      * @param string $delimitchars
@@ -591,8 +591,8 @@ class wordselect_item {
      * is not an HTML tag. $eligables seems to be an awkward name, it could
      * have been called something like non-html but that is also awkward
      * and might be a limitation in the future if some other reason for text
-     * being non eligable turns up. 
-     * 
+     * being non eligable turns up.
+     *
      * @param string $eligables
      **/
     public function set_is_selectable($eligables = "") {
