@@ -155,7 +155,25 @@ class qtype_wordselect_question_test extends advanced_testcase {
         $this->assertFalse($items[3]->isselectable);
         $this->assertEquals($items[5]->get_text(), '[<b>sat</b>]');
         $this->assertTrue($items[5]->isselectable);
+        
+        $questiontext = '<p>#The# ##cat## </p>';
+        $question = qtype_wordselect_test_helper::make_question('wordselect', $questiontext,['delimitchars'=>'##']);
+        $items = $question->get_words(true);
+        var_dump($items);
+        $this->assertTrue($items[1]->isselectable);
+        $this->assertFalse($items[2]->isselectable);
+        $this->assertTrue($items[3]->isselectable);
+        
+        $questiontext = '<p>@The@ @@cat@@</p>';
+        $question = qtype_wordselect_test_helper::make_question('wordselect', $questiontext,['delimitchars'=>'@@']);
+        $items = $question->get_words(true);
+        var_dump($items);
+        $this->assertTrue($items[1]->isselectable);
+        $this->assertFalse($items[2]->isselectable);
+        $this->assertTrue($items[3]->isselectable);
+
     }
+    
 
     public function test_get_wrong_responsecount() {
         $questiontext = 'The cat [sat] and the cow [jumped]';
