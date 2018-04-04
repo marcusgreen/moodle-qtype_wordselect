@@ -115,7 +115,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $questiontextnodelim = $this->questiontext;
         $l = substr($this->delimitchars, 0, 1);
         $r = substr($this->delimitchars, 1, 1);
-        $fieldregex = '/(\\s+)|(\\' . $l . '[^]]*\\' . $r . '{1,2})|(&nbsp;)|(\s)/';
+        $fieldregex = '/(\\s+)|(\\' . $l . '{1,2}[^\\'.$r.']*\\' . $r . '{1,2})|(&nbsp;)|(\s)/';
         $allwords = array();
         if (strpos($questiontextnodelim, $l . $l) !== false) {
             $this->multiword = true;
