@@ -1,4 +1,4 @@
-@mod @mod_quiz @javascript
+@mod @mod_quiz @javascript @qtype @qtype_wordselect @core @_switch_window
 
 Feature: Add a wordselect quiz
   In order to evaluate students
