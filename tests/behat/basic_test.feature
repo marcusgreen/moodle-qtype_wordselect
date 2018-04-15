@@ -1,5 +1,5 @@
 @core @qtype @qtype_wordselect @_switch_window
-Feature: Test all the basic functionality of this question type
+Feature: Test the basic functionality of wordselect type
 In order to evaluate students responses, As a teacher I need to
 create and preview wordselect (Select correct words) questions.
 
