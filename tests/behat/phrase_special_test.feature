@@ -1,7 +1,7 @@
 #This test and special character code in qtype was created by https://github.com/lethevinh
 @core @qtype @qtype_wordselect @_switch_window
 
-Feature: Test all the basic functionality of this question type
+Feature: Test that formatting within delimiters is retained
   In order to evaluate students responses, As a teacher I need to
   create and preview wordselect (Select correct words) questions.
 
@@ -48,7 +48,7 @@ Feature: Test all the basic functionality of this question type
     And I press "Start again with these options"
 
     #Select all (both) correct options
-    And I click on "sat" "text" 
+    And I click on "sat" "text"
     And I click on "jumped" "text"
     And I click on "meo" "text"
     And I click on "103" "text"
