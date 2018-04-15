@@ -1,13 +1,13 @@
 @mod @mod_quiz @javascript
 
-Feature: Add a quiz
+Feature: Add a wordselect quiz
   In order to evaluate students
   As a teacher
   I need to create a quiz with wordselect questions
 
   Background:
 
-   Given the following "users" exist:
+    Given the following "users" exist:
       | username | firstname | lastname | email                |
       | teacher1 | Terry1    | Teacher1 | teacher1@example.com |
       | student1 | Sam1      | Student1 | student1@example.com |
@@ -28,7 +28,7 @@ Feature: Add a quiz
     And I expand all fieldsets
     And I set the field "How questions behave" to "Interactive with multiple tries"
     And I set the field with xpath "//input[@id='id_generalfeedbackduring']" to "1"
-  And I press "Save and return to course"
+    And I press "Save and return to course"
 
 #############################################################################
 #All questions on a single page. This will check that javascript only works
@@ -36,7 +36,7 @@ Feature: Add a quiz
 #with an early bug
 ##############################################################################
 
-   And I add a "Word Select" question to the "Wordselect single page quiz" quiz with:
+    And I add a "Word Select" question to the "Wordselect single page quiz" quiz with:
       | Question name                      | First question                         |
       | Question text                      | The [cat] sat on the mat               |
       | General feedback                   | General feedback cat mat|
