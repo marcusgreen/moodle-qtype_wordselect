@@ -29,7 +29,7 @@ Feature: Add a quiz
     And I set the field "How questions behave" to "Interactive with multiple tries"
     And I set the field with xpath "//input[@id='id_generalfeedbackduring']" to "1"
   And I press "Save and return to course"
-   
+
 #############################################################################
 #All questions on a single page. This will check that javascript only works
 #on the current question and is not applied to every question as happened
@@ -43,7 +43,7 @@ Feature: Add a quiz
 
  #And I add a "Word Select" question to the "Wordselect single page quiz" quiz with:
  #    | Question name                      | Second question                         |
- #    | Question text                      | The [cow] jumped over the [moon]        | 
+ #    | Question text                      | The [cow] jumped over the [moon]        |
  #    | General feedback                   | General feedback cow moon|
 
     And I log out
@@ -56,7 +56,7 @@ Feature: Add a quiz
 
     And I click on "//span[text()='cat']" "xpath_element"
 
-    #And I press "Check"     
+    #And I press "Check"
     And I press "Finish attempt"
     And I press "Submit all and finish"
 
