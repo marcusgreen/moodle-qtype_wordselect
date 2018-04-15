@@ -159,7 +159,6 @@ class qtype_wordselect_question_test extends advanced_testcase {
         $questiontext = '<p>#The# ##cat## </p>';
         $question = qtype_wordselect_test_helper::make_question('wordselect', $questiontext, ['delimitchars' => '##']);
         $items = $question->get_words(true);
-        var_dump($items);
         $this->assertTrue($items[1]->isselectable);
         $this->assertFalse($items[2]->isselectable);
         $this->assertTrue($items[3]->isselectable);
@@ -167,7 +166,6 @@ class qtype_wordselect_question_test extends advanced_testcase {
         $questiontext = '<p>@The@ @@cat@@</p>';
         $question = qtype_wordselect_test_helper::make_question('wordselect', $questiontext, ['delimitchars' => '@@']);
         $items = $question->get_words(true);
-        var_dump($items);
         $this->assertTrue($items[1]->isselectable);
         $this->assertFalse($items[2]->isselectable);
         $this->assertTrue($items[3]->isselectable);
