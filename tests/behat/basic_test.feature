@@ -50,19 +50,19 @@ Feature: Test all the basic functionality of this question type
     And I should see "Please select an answer."
 
     #Select all (both) correct options
-    And I click on "sat" "text" 
+    And I click on "sat" "text"
     And I click on "jumped" "text"
-    And I press "Check"      
+    And I press "Check"
     And I should see "Your answer is correct."
     And I should see "Mark 2.00 out of 2.00"
-    
+
     #Select one incorrect option on the first attempt
     #and all/both correct options on the second attempt
     ################################################
     #first attempt
     And I press "Start again with these options"
-    And I click on "sat" "text" 
-    And I press "Check"      
+    And I click on "sat" "text"
+    And I press "Check"
     And I should see "Your answer is partially correct."
 
     ################################################
@@ -70,10 +70,10 @@ Feature: Test all the basic functionality of this question type
     And I press "Try again"
     #sat should remain selected so no need to select again
     And I click on "jumped" "text"
-    And I press "Check"      
+    And I press "Check"
     And I should see "Your answer is correct."
     And I should see "Mark 1.67 out of 2.00"
-    
+
 
     ##################################################
     # Immediate Feedback behaviour
@@ -83,22 +83,22 @@ Feature: Test all the basic functionality of this question type
       | Marks                | Show mark and max               |
       | Specific feedback    | Shown |
       | Right answer         | Shown |
-    
-    And I press "Start again with these options" 
-    And I click on "sat" "text" 
+
+    And I press "Start again with these options"
+    And I click on "sat" "text"
     And I click on "jumped" "text"
-    And I press "Check"      
+    And I press "Check"
     And I should see "Your answer is correct."
     And I should see "Mark 2.00 out of 2.00"
     And I wait "2" seconds
-    
-    And I press "Start again with these options" 
-    And I click on "sat" "text" 
-    And I press "Check"      
+
+    And I press "Start again with these options"
+    And I click on "sat" "text"
+    And I press "Check"
     And I should see "Your answer is partially correct."
     And I should see "Mark 1.00 out of 2.00"
     And I wait "2" seconds
-    
+
 
     ##################################################
     # Deferred Feedback behaviour
@@ -108,39 +108,39 @@ Feature: Test all the basic functionality of this question type
       | Marks                | Show mark and max               |
       | Specific feedback    | Shown |
       | Right answer         | Shown |
-    
-    And I press "Start again with these options" 
-    And I click on "sat" "text" 
+
+    And I press "Start again with these options"
+    And I click on "sat" "text"
     And I click on "jumped" "text"
-    And I press "Submit and finish"      
+    And I press "Submit and finish"
     And I should see "Your answer is correct."
     And I should see "Mark 2.00 out of 2.00"
     And I wait "5" seconds
 
-    And I press "Start again with these options" 
-    And I click on "sat" "text" 
-    And I press "Submit and finish"      
+    And I press "Start again with these options"
+    And I click on "sat" "text"
+    And I press "Submit and finish"
     And I should see "Your answer is partially correct."
     And I should see "Mark 1.00 out of 2.00"
     And I wait "5" seconds
 
-    And I press "Start again with these options" 
-    And I click on "sat" "text" 
+    And I press "Start again with these options"
+    And I click on "sat" "text"
     And I click on "cow" "text"
     And I click on "jumped" "text"
 
-    And I press "Submit"      
+    And I press "Submit"
     And I should see "Your answer is partially correct."
     And I should see "Mark 1.00 out of 2.00"
     And I wait "5" seconds
 
     #This doesn't work for some reason and needs fixing
-    #And I press "Start again with these options" 
-    #And I click on "cat" "text" 
+    #And I press "Start again with these options"
+    #And I click on "cat" "text"
     #And I click on "mat" "text"
     #And I click on "cow" "text"
-  
-    #And I press "Submit and finish"      
+
+    #And I press "Submit and finish"
     #And I should see "Your answer is incorrect."
     #And I should see "Mark 0.00 out of 2.00"
     #And I wait "5" seconds
