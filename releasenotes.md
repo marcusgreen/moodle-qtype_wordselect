@@ -10,7 +10,7 @@ New [w] icon with a hint of red. Added an svg vector version so no pixelation on
 Credit to Troy Patterson for ideas and inspiration on the icon
 
 Huge credit to https://github.com/lethevinh for ideas, code and behat tests for ensuring
-formatting tags such as &gt;b&lt; etc are retained and other stuff.
+formatting tags such as &lt;b&gt; etc are retained and other stuff.
 
 ### Version 1.1 of the Moodle WordSelect question type by Marcus Green. July 2017
 Fixed a bug that prevented audio files working correctly in the question text. Thanks to Matthias Giger for 
