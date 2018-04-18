@@ -12,6 +12,9 @@ Credit to Troy Patterson for ideas and inspiration on the icon
 Huge credit to https://github.com/lethevinh for ideas, code and behat tests for ensuring
 formatting tags such as &lt;b&gt; etc are retained and other stuff.
 
+With thanks to German Valero for substantial additions to the documentation at
+https://docs.moodle.org/en/Wordselect_question_type
+
 ### Version 1.1 of the Moodle WordSelect question type by Marcus Green. July 2017
 Fixed a bug that prevented audio files working correctly in the question text. Thanks to Matthias Giger for 
 reporting this. Fixed an issue that prevented any files being inserted into the introduction area. Improved
