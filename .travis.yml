@@ -30,7 +30,6 @@ install:
   - nvm use 8.9
   - cd ../..
   - export PATH="$(cd ci/bin; pwd):$(cd ci/vendor/bin; pwd):$PATH"
-  - moodle-plugin-ci install
 
 script:
   - moodle-plugin-ci phplint
