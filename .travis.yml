@@ -24,13 +24,17 @@ env:
   - MOODLE_BRANCH=MOODLE_34_STABLE DB=pgsql IGNORE_PATHS=mobile_src
   - MOODLE_BRANCH=master DB=pgsql IGNORE_PATHS=mobile_src
 
-install:
+before_install:
   - phpenv config-rm xdebug.ini
   - nvm install 8.9
   - nvm use 8.9
   - cd ../..
+  - composer create-project -n --no-dev --prefer-dist moodlerooms/moodle-plugin-ci ci ^2
   - export PATH="$(cd ci/bin; pwd):$(cd ci/vendor/bin; pwd):$PATH"
 
+install:
+  - moodle-plugin-ci install
+  
 script:
   - moodle-plugin-ci phplint
   - moodle-plugin-ci codechecker
