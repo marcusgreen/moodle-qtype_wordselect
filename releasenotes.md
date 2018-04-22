@@ -1,4 +1,4 @@
-### Version 2.0 of the Moodle WordSelect question type by Marcus Green. March 2018
+### Version 2.0 of the Moodle WordSelect question type by Marcus Green. April 2018
 Multiword mode. If any text is surrounded by double delimiters e.g. [[cat]] it will be 
 treated as correct, and any selectable non correct text must be given single delimiters
 e.g. [mat]. Text can thus include multiple words. CSS Formatting indicates which text is selectable.
