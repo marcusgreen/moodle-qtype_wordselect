@@ -20,9 +20,9 @@
  * @copyright  2016 Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-/*global $ */
-/*jshint unused:false*/
-var toggleselected = function (selection) {
+/* global $ */
+/* jshint unused:false*/
+var toggleselected = function(selection) {
     var iselected = selection.hasClass("selected");
     var wordname = selection.attr('name');
     var hidden = document.getElementById(wordname);
@@ -33,7 +33,7 @@ var toggleselected = function (selection) {
         selection.removeClass("selected");
         selection.removeAttr("title");
         selection.attr('aria-checked', 'false');
-        /* convert type to text, because
+        /* Convert type to text, because
          * unchecked textboxes would not
          * be included in the response
          */
@@ -51,14 +51,14 @@ var toggleselected = function (selection) {
         hidden.checked = "true";
     }
 };
-$(function () {
+$(function() {
     $(".selectable").on('keydown', function (e) {
-        /* space bar */
+        /* Space bar */
         if (e.keyCode === 32) {
             toggleselected($(this));
         }
-        /*Eat the keycode so it doesnt scroll the screen down */
-        if (e.keyCode === 32){
+        /* Eat the keycode so it doesnt scroll the screen down */
+        if (e.keyCode === 32) {
             return false;
         }
 

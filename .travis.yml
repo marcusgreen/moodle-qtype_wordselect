@@ -44,3 +44,5 @@ script:
   - moodle-plugin-ci grunt
   - moodle-plugin-ci phpunit
   - moodle-plugin-ci behat
+  - moodle-plugin-ci jshint
+
