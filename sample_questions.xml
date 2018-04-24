@@ -8,7 +8,7 @@
     </category>
   </question>
 
-<!-- question: 15  -->
+<!-- question: 35  -->
   <question type="wordselect">
     <name>
       <text>AlternativeDelimiters</text>
@@ -44,7 +44,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 16  -->
+<!-- question: 36  -->
   <question type="wordselect">
     <name>
       <text>AudioFile</text>
@@ -60,7 +60,7 @@
     <defaultgrade>1.0000000</defaultgrade>
     <penalty>0.3333333</penalty>
     <hidden>0</hidden>
-    <introduction><![CDATA[This is to demonstrate the inclusion of audio files in the introduction and questiontext areas. <br>&nbsp;<audio controls="true"><source src="@@PLUGINFILE@@/audiosample.mp3">@@PLUGINFILE@@/audiosample.mp3</audio>&nbsp;]]></introduction>
+    <introduction>Multimedia content will not be imported/exported from the introduction area</introduction>
     <delimitchars>[]</delimitchars>
     <answer fraction="100" format="moodle_auto_format">
       <text>audio</text>
@@ -81,7 +81,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 17  -->
+<!-- question: 37  -->
   <question type="wordselect">
     <name>
       <text>CatMat</text>
@@ -118,7 +118,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 18  -->
+<!-- question: 38  -->
   <question type="wordselect">
     <name>
       <text>FindTheAnimals</text>
@@ -350,7 +350,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 21  -->
+<!-- question: 39  -->
   <question type="wordselect">
     <name>
       <text>Multi word selection</text>
@@ -421,7 +421,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 19  -->
+<!-- question: 40  -->
   <question type="wordselect">
     <name>
       <text>Reading Comprehension</text>
@@ -489,7 +489,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 20  -->
+<!-- question: 41  -->
   <question type="wordselect">
     <name>
       <text>WordsInTables</text>
