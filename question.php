@@ -185,7 +185,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     public static function pad_angle_brackets($questiontext) {
         /* Put a space before and after tags so they get split as words.
         will also accept <span style="color:colorname">word</span> */
-        $tags = ['sub', 'sup', 'i', 'u', 'b', 'strike', 'em', 'strong', 'code','kbd','var'];
+        $tags = ['sub', 'sup', 'i', 'u', 'b', 'strike', 'em', 'strong', 'code', 'kbd', 'var'];
         $questiontext = preg_replace_callback('/<([a-zA-Z]*)[ ]*([a-zA-Z0-9\# =\'\"\:\(\,\;\)]*)\>/', function($a) use ($tags) {
             if (!in_array($a[1], $tags)) {
                 return ' ' . $a[0] . ' ';
