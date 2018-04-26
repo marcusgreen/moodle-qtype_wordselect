@@ -185,16 +185,17 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     public static function pad_angle_brackets($questiontext) {
         /* Put a space before and after tags so they get split as words.
         will also accept <span style="color:colorname">word</span> */
-        $tags = ['sub', 'sup', 'i', 'u', 'b', 'strike', 'em', 'strong', 'code', 'kbd', 'var'];
-        $questiontext = preg_replace_callback('/<([a-zA-Z]*)[ ]*([a-zA-Z0-9\# =\'\"\:\(\,\;\)]*)\>/', function($a) use ($tags) {
-            if (!in_array($a[1], $tags)) {
-                return ' ' . $a[0] . ' ';
+        $tags = ['sub', 'sup', 'i', 'u', 'b', 'strike', 'em', 'strong', 'code', 'kbd', 'var', 'del', 'ins', 'small'];
+        // Put a space before and after open tag html.
+        $questiontext = preg_replace_callback('/(\<([a-zA-Z]*)[^>]*\>)/', function($a) use ($tags) {
+            if (!empty($a[2]) && !in_array($a[2], $tags)) {
+                return ' ' . $a[1] . ' ';
             }
             return $a[0];
         }, $questiontext);
-
+        // Put a space before and after close tag html.
         $questiontext = preg_replace_callback('/\<\/([a-zA-Z]*)\>/', function($a) use ($tags) {
-            if (!in_array($a[1], $tags)) {
+            if (!empty($a[1]) && !in_array($a[1], $tags)) {
                 return ' ' . $a[0] . ' ';
             }
             return $a[0];
