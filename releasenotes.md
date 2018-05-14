@@ -1,4 +1,4 @@
-### Version 2.1 of the Moodle WordSelect question type by Marcus Green. April 2018
+### Version 2.1 of the Moodle WordSelect question type by Marcus Green. May 2018
 Added privacy classes as part of GDPR compliance. Further inclusion of tags such as
 setting color, more credit to lethevinha for that work.
 
