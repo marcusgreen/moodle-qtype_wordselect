@@ -1,3 +1,7 @@
+### Version 2.1 of the Moodle WordSelect question type by Marcus Green. April 2018
+Added privacy classes as part of GDPR compliance. Further inclusion of tags such as
+setting color, more credit to lethevinha for that work.
+
 ### Version 2.0 of the Moodle WordSelect question type by Marcus Green. April 2018
 Multiword mode. If any text is surrounded by double delimiters e.g. [[cat]] it will be 
 treated as correct, and any selectable non correct text must be given single delimiters
