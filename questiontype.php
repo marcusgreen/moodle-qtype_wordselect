@@ -83,13 +83,11 @@ class qtype_wordselect extends question_type {
      * Save the extra data to your database tables from the
      * $formdata object, which has all the post data from editformdata.html
      * Save the units and the answers associated with this question.
-     * @global moodle_database $DB
      * @param object $formdata
      * @return boolean
      */
     public function save_question_options($formdata) {
         global $DB;
-
         $answerwords = $this->get_answerwords($formdata->delimitchars, $formdata->questiontext);
         $context = $formdata->context;
         // Fetch old answer ids so that we can reuse them.
@@ -174,7 +172,6 @@ class qtype_wordselect extends question_type {
     /**
      * Used when creating/editing a question
      *
-     * @global moodle_database $DB
      * @param object $question
      * @param array $answerwords
      */
@@ -209,8 +206,6 @@ class qtype_wordselect extends question_type {
     /**
      * Used in the question editing form
      *
-     * @global $DB;
-     * @global moodle_database $DB
      * @param object $formdata
      * @param object $options
      * @param object $context
@@ -248,8 +243,6 @@ class qtype_wordselect extends question_type {
      *
      * Misleadingly named as it starts with get
      * but doesn't return a value
-     *
-     * @global moodle_database $DB
      * @param object $question
      */
     public function get_question_options($question) {
@@ -260,8 +253,7 @@ class qtype_wordselect extends question_type {
     }
 
     /**
-     * When in a quiz/previewing
-     *
+     * When in a quiz/previewing     *
      *
      * @param question_definition $question
      * @param object $questiondata

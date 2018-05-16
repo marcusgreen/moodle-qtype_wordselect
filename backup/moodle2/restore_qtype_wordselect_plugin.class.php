@@ -56,7 +56,6 @@ class restore_qtype_wordselect_plugin extends restore_qtype_plugin {
 
     /**
      * Process the qtype/wordselect element
-     * @global moodle_database $DB
      * @param array $data
      */
     public function process_wordselect($data) {
@@ -106,7 +105,6 @@ class restore_qtype_wordselect_plugin extends restore_qtype_plugin {
      * the addition of the IGNORE_MULTIPLE parameter to the call to get_field_sql.
      * However the docs seem to frown on the use of this parameter.
      *
-     * @global moodle_database $DB
      * @param array  $data
      * @throws restore_step_exception
      */
