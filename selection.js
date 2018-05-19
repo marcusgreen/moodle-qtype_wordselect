@@ -52,7 +52,7 @@ var toggleselected = function(selection) {
     }
 };
 $(function() {
-    $(".selectable").on('keydown', function (e) {
+    $(".selectable").on('keydown', function () {
         /* Space bar */
         if (e.keyCode === 32) {
             toggleselected($(this));
@@ -63,7 +63,7 @@ $(function() {
         }
 
     });
-    $(".selectable").on('click', function (e) {
+    $(".selectable").on('click', function () {
         toggleselected($(this));
     });
 });

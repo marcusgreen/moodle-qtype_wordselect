@@ -23,6 +23,8 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die();
+require_once('question_edit_form_extended.php');
+
 /**
  * wordselect question editing form definition.
  *
@@ -30,7 +32,7 @@ defined('MOODLE_INTERNAL') || die();
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class qtype_wordselect_edit_form extends question_edit_form {
+class qtype_wordselect_edit_form extends question_edit_form_extended {
     /**
      * Add question-type specific form fields.
      *
