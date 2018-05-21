@@ -40,3 +40,4 @@ $string['introduction'] = 'Introduction';
 $string['introduction_help'] = 'Introduction to the question, this text will not be selectable';
 $string['pleaseselectananswer'] = 'Please select an answer.';
 $string['privacy:null_reason'] = 'The Wordselect question type does not effect or store any data itself.';
+$string['penaltyforeachincorrectword']='Penalty for each incorrectly selected word';

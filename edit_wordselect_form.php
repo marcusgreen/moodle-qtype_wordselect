@@ -62,7 +62,9 @@ class qtype_wordselect_edit_form extends question_edit_form {
 
         $mform->setType('generalfeedback', PARAM_RAW);
         $mform->addHelpButton('generalfeedback', 'generalfeedback', 'question');
-
+        
+        $this->add_penalty($mform);
+        
         // The delimiting characters around fields.
         $delimitchars = array("[]" => "[ ]", "{}" => "{ }", "##" => "##", "@@" => "@ @");
         $mform->addElement('select', 'delimitchars', get_string('delimitchars', 'qtype_wordselect'), $delimitchars);
@@ -74,6 +76,7 @@ class qtype_wordselect_edit_form extends question_edit_form {
         // Adds hinting features.
         $this->add_interactive_settings(true, true);
     }
+      
     /**
      * Add in data from custom fields
      * @param array $question
@@ -155,6 +158,36 @@ class qtype_wordselect_edit_form extends question_edit_form {
         $question->introduction['itemid'] = $draftid;
 
         return $question;
+    }
+    
+    
+    protected function add_penalty($mform){
+     
+              $penalties = array(
+            1.0000000,
+            0.5000000,
+            0.3333333,
+            0.2500000,
+            0.2000000,
+            0.1000000,
+            0.0000000
+        );
+        if (!empty($this->question->penalty) && !in_array($this->question->penalty, $penalties)) {
+            $penalties[] = $this->question->penalty;
+            sort($penalties);
+        }
+        
+        $penaltyoptions = array();
+        foreach ($penalties as $penalty) {
+            $penaltyoptions["{$penalty}"] = (100 * $penalty) . '%';
+        }
+       
+        $mform->addElement('select', 'penalty',
+                get_string('penaltyforeachincorrectword', 'qtype_wordselect'), $penaltyoptions);
+        //$mform->addHelpButton('penalty', 'penaltyforeachincorrecttry', 'question');
+        $mform->setDefault('penalty', 0.3333333);
+        
+       
     }
     /**
      * Name of this question type
