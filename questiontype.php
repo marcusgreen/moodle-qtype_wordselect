@@ -30,7 +30,7 @@ require_once($CFG->dirroot . '/question/type/wordselect/question.php');
 /**
  * The wordselect question type.
  *
- * @copyright  2017 Marcus Green
+ * @copyright  2018 Marcus Green
  *
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -40,7 +40,7 @@ class qtype_wordselect extends question_type {
      * @return array
      */
     public function extra_question_fields() {
-        return array('question_wordselect', 'introduction', 'delimitchars');
+        return array('question_wordselect', 'introduction', 'delimitchars','penalty');
     }
 
     /**

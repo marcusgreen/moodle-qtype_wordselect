@@ -161,34 +161,36 @@ class qtype_wordselect_edit_form extends question_edit_form {
     }
     
     
-    protected function add_penalty($mform){
-     
-              $penalties = array(
-            1.0000000,
-            0.5000000,
-            0.3333333,
-            0.2500000,
-            0.2000000,
-            0.1000000,
-            0.0000000
-        );
+    protected function add_penalty($mform) {
+        $penalties = [
+            1.00000,
+            0.50000,
+            0.33333,
+            0.25000,
+            0.20000,
+            0.10000,
+            0.00000
+        ];
         if (!empty($this->question->penalty) && !in_array($this->question->penalty, $penalties)) {
             $penalties[] = $this->question->penalty;
             sort($penalties);
         }
-        
+
         $penaltyoptions = array();
         foreach ($penalties as $penalty) {
             $penaltyoptions["{$penalty}"] = (100 * $penalty) . '%';
         }
-       
-        $mform->addElement('select', 'penalty',
-                get_string('penaltyforeachincorrectword', 'qtype_wordselect'), $penaltyoptions);
-        //$mform->addHelpButton('penalty', 'penaltyforeachincorrecttry', 'question');
-        $mform->setDefault('penalty', 0.3333333);
-        
-       
+        /*$penaltyoptions=[
+            '1'=>'100%',
+            '0.5'=>'50%',
+            '0.33'=>'33.33%',
+            '0.25'=>'25%%',
+            ];*/
+        $mform->addElement('select', 'penalty', get_string('penaltyforeachincorrectword', 'qtype_wordselect'), $penaltyoptions);
+        $mform->addHelpButton('penalty', 'penaltyforeachincorrecttry', 'question');
+        $mform->setDefault('penalty', 1);
     }
+
     /**
      * Name of this question type
      * @return string
