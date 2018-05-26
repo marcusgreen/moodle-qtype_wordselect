@@ -63,6 +63,10 @@ $(function() {
         }
 
     });
+        $(".selectable").on('mouseover', function (e) {
+            toggleselected($(this));
+ 
+    });
     $(".selectable").on('click', function (e) {
         toggleselected($(this));
     });

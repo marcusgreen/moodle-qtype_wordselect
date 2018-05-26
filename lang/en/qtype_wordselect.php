@@ -43,3 +43,6 @@ $string['privacy:null_reason'] = 'The Wordselect question type does not effect o
 $string['wordpenalty'] = 'Incorrect selection penalty';
 $string['wordpenalty_help'] = 'Decrement mark by this percentage for each incorrectly selected word';
 $string['penalty'] = 'Penalty';
+$string['wordpenalty_setting'] = 'Penalty for each incorrect text item selected';
+
+

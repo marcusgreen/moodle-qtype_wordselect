@@ -44,6 +44,6 @@ if ($ADMIN->fulltree) {
 
     $settings->add(new admin_setting_configselect('qtype_wordselect/wordpenalty',
             new lang_string('penalty', 'qtype_wordselect'),
-            new lang_string('penaltyforeachincorrectword', 'qtype_wordselect'),
+            new lang_string('wordpenalty_setting', 'qtype_wordselect'),
             1, $penaltyoptions));
 }
