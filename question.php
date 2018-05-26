@@ -37,7 +37,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      *
      * @var number how many items clicked on are not correct answers
      */
-    public $wrongresponsecount;
+    public $wrongresponsecoun= '0.0';
 
     /**
      *
@@ -428,9 +428,9 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
                 }
             }
         }
-        $wrongfraction = @($this->wrongresponsecount / count($correctplaces));
+        $wrongfraction = @(($this->wrongresponsecount  * $this->wordpenalty) / count($correctplaces));
         $fraction = @($this->rightresponsecount / count($correctplaces));
-        $fraction = max(0, $fraction - $wrongfraction);
+        $fraction = max(0, $fraction - $wrongfraction);    
         $grade = array($fraction, question_state::graded_state_for_fraction($fraction));
         return $grade;
     }

@@ -40,7 +40,7 @@ class qtype_wordselect extends question_type {
      * @return array
      */
     public function extra_question_fields() {
-        return array('question_wordselect', 'introduction', 'delimitchars','penalty');
+        return array('question_wordselect', 'introduction', 'delimitchars','wordpenalty');
     }
 
     /**
@@ -218,7 +218,7 @@ class qtype_wordselect extends question_type {
             $options->questionid = $formdata->id;
             $options->introduction = '';
             $options->delimitchars = '';
-            $options->penalty = '';
+            $options->wordpenalty = '';
             $options->correctfeedback = '';
             $options->partiallycorrectfeedback = '';
             $options->incorrectfeedback = '';
@@ -232,9 +232,11 @@ class qtype_wordselect extends question_type {
         } else {
             /* when being imported e.g. from an xml import */
             $options->introduction = $formdata->introduction;
-            $options->penaldty = $formdata->penalty;
+            $options->wordpenalty = $formdata->wordpenalty;
         }
         $options->delimitchars = $formdata->delimitchars;
+        $options->wordpenalty = $formdata->wordpenalty;
+
         $options->correctfeedback = "";
         $options = $this->save_combined_feedback_helper($options, $formdata, $context, true);
         $DB->update_record('question_wordselect', $options);
@@ -335,8 +337,8 @@ class qtype_wordselect extends question_type {
         $output = parent::export_to_xml($question, $format);
         $output .= '    <delimitchars>' . $question->options->delimitchars .
                 "</delimitchars>\n";
-         $output .= '    <penalty>' . $question->options->penalty .
-                "</penalty>\n";
+         $output .= '    <wordpenalty>' . $question->options->wordpenalty .
+                "</wordpenalty>\n";
         $output .= '    <!-- Wordselect release:'
                 . $wordselectinfo->release . ' version:' . $wordselectinfo->versiondisk . ' Moodle version:'
                 . $CFG->version . ' release:' . $CFG->release

@@ -172,14 +172,14 @@ class qtype_wordselect_edit_form extends question_edit_form {
             0.1000000,
             0.0000000
         );
-        if (!empty($this->question->penalty) && !in_array($this->question->penalty, $penalties)) {
-            $penalties[] = $this->question->penalty;
+        if (!empty($this->question->wordpenalty) && !in_array($this->question->wordpenalty, $penalties)) {
+            $penalties[] = $this->question->wordpenalty;
             sort($penalties);
         }
 
         $penaltyoptions = array();
-        foreach ($penalties as $penalty) {
-            $penaltyoptions["{$penalty}"] = (100 * $penalty) . '%';
+        foreach ($penalties as $wordpenalty) {
+            $penaltyoptions["{$wordpenalty}"] = (100 * $wordpenalty) . '%';
         }
         
         $mform->addElement('select', 'wordpenalty', get_string('wordpenalty', 'qtype_wordselect'), $penaltyoptions);
