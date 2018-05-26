@@ -40,7 +40,7 @@ class qtype_wordselect extends question_type {
      * @return array
      */
     public function extra_question_fields() {
-        return array('question_wordselect', 'introduction', 'delimitchars','wordpenalty');
+        return array('question_wordselect', 'introduction', 'delimitchars', 'wordpenalty');
     }
 
     /**
