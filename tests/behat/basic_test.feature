@@ -149,8 +149,8 @@ create and preview wordselect (Select correct words) questions.
 
  ##@javascript
  ## Scenario: Create question and test wordpenalty.
-     Given I log in as "teacher1"
- And I am on "Course 1" course homepage
+    Given I log in as "teacher1"
+    And I am on "Course 1" course homepage
     And I navigate to "Question bank" node in "Course administration"
 
       # Create a new question.
