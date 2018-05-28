@@ -162,7 +162,7 @@ create and preview wordselect (Select correct words) questions.
           | Incorrect selection penalty     | 0.5                    |
           | General feedback | This is general feedback               |
         Then I should see "Word-Select-002"
-
+        
   # Preview it.
     When I click on "Preview" "link" in the "Word-Select-002" "table_row"
     And I switch to "questionpreview" window
@@ -186,10 +186,9 @@ create and preview wordselect (Select correct words) questions.
     And I press "Check"
 
     And I should see "Your answer is partially correct."
-    #2 Marks for correct response and 50% deduction 
+    #2 Marks for correct response and 50% off one mark 
     #for an incorrect selection 
-    And I wait "200" seconds
+    And I should see "Mark 1.50 out of 2.00"
 
-    And I should see "Mark 1.5 out of 2.00"  
 
 
