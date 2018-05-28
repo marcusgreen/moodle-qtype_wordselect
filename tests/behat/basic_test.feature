@@ -20,16 +20,16 @@ create and preview wordselect (Select correct words) questions.
     And I am on "Course 1" course homepage
     And I navigate to "Question bank" node in "Course administration"
 
-      # Create a new question.
-        And I add a "Word Select" question filling the form with:
-          | Question name    | Word-Select-001                        |
-          | Introduction     | Select the verbs in the following text |
-          | Question text    | The cat [sat] and the cow [jumped]     |
-          | Incorrect selection penalty     | 100%                    |
-          | General feedback | This is general feedback               |
-          | Hint 1           | First hint                             |
-          | Hint 2           | Second hint                            |
-        Then I should see "Word-Select-001"
+    # Create a new question.
+    And I add a "Word Select" question filling the form with:
+      | Question name    | Word-Select-001                        |
+      | Introduction     | Select the verbs in the following text |
+      | Question text    | The cat [sat] and the cow [jumped]     |
+      | Incorrect selection penalty     | 100%                    |
+      | General feedback | This is general feedback               |
+      | Hint 1           | First hint                             |
+      | Hint 2           | Second hint                            |
+    Then I should see "Word-Select-001"
 
   # Preview it.
     When I click on "Preview" "link" in the "Word-Select-001" "table_row"
@@ -162,7 +162,7 @@ create and preview wordselect (Select correct words) questions.
           | Incorrect selection penalty     | 0.5                    |
           | General feedback | This is general feedback               |
         Then I should see "Word-Select-002"
-        
+
   # Preview it.
     When I click on "Preview" "link" in the "Word-Select-002" "table_row"
     And I switch to "questionpreview" window
@@ -189,6 +189,3 @@ create and preview wordselect (Select correct words) questions.
     #2 Marks for correct response and 50% off one mark 
     #for an incorrect selection 
     And I should see "Mark 1.50 out of 2.00"
-
-
-
