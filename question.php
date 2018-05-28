@@ -60,10 +60,13 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
 
     /**
      * fraction to deduct for each incorrectly selected text item
+     * Wrong response is multiplied by this, i.e. 2 wrong responses
+     * and wordpenalty of .5 means 1 penalty, default is 1, i.e. no
+     * change
      *
      */
 
-    public $wordpenalty = 0.0;
+    public $wordpenalty = 1.0;
 
     /**
      * TODO
