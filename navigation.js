@@ -11,7 +11,11 @@ $navbuttons =
 $($navbuttons).insertAfter('.collapsible-actions');
 
 $('#id_generalfeedback').closest('.form-group').hide();
+$('#id_delimitchars').closest('.form-group').hide();
+
 $('.ftoggler').hide();
+$('#id_delmitchars').hide();
+
 $('#id_combinedfeedbackhdr').hide();
 
 $('#id_multitriesheader').hide();
