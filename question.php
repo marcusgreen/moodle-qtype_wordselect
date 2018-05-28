@@ -37,7 +37,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      *
      * @var number how many items clicked on are not correct answers
      */
-    public $wrongresponsecoun = '0.0';
+    public $wrongresponsecount = '0.0';
 
     /**
      *
@@ -57,6 +57,16 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * @var boolean
      */
     public $isselectable;
+
+    /**
+     * fraction to deduct for each incorrectly selected text item
+     * Wrong response is multiplied by this, i.e. 2 wrong responses
+     * and wordpenalty of .5 means 1 penalty, default is 1, i.e. no
+     * change
+     *
+     */
+
+    public $wordpenalty = 1.0;
 
     /**
      * TODO
@@ -428,7 +438,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
                 }
             }
         }
-        $wrongfraction = @($this->wrongresponsecount/ count($correctplaces));
+        $wrongfraction = @($this->wrongresponsecount / count($correctplaces));
         $fraction = @($this->rightresponsecount / count($correctplaces));
         $fraction = max(0, $fraction - $wrongfraction);
         $grade = array($fraction, question_state::graded_state_for_fraction($fraction));
