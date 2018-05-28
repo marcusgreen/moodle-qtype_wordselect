@@ -16,9 +16,9 @@ create and preview wordselect (Select correct words) questions.
 
   @javascript
   Scenario: Create, edit then preview a wordselect question.
-        Given I log in as "teacher1"
-        And I am on "Course 1" course homepage
-        And I navigate to "Question bank" node in "Course administration"
+    Given I log in as "teacher1"
+    And I am on "Course 1" course homepage
+    And I navigate to "Question bank" node in "Course administration"
 
       # Create a new question.
         And I add a "Word Select" question filling the form with:
@@ -143,9 +143,10 @@ create and preview wordselect (Select correct words) questions.
   #And I should see "Your answer is incorrect."
   #And I should see "Mark 0.00 out of 2.00"
   #And I wait "5" seconds
-    
-   And I switch to the main window
-   And I log out
+
+
+    And I switch to the main window
+    And I log out
 
  ##@javascript
  ## Scenario: Create question and test wordpenalty.
@@ -183,5 +184,12 @@ create and preview wordselect (Select correct words) questions.
     And I click on "cow" "text"
     And I click on "jumped" "text"
     And I press "Check"
-    #And I should see "Your answer is partially correct."
-    #And I should see "Mark 1.50 out of 2.00"
+
+    And I should see "Your answer is partially correct."
+    #2 Marks for correct response and 50% deduction 
+    #for an incorrect selection 
+    And I wait "200" seconds
+
+    And I should see "Mark 1.5 out of 2.00"  
+
+

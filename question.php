@@ -37,7 +37,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      *
      * @var number how many items clicked on are not correct answers
      */
-    public $wrongresponsecoun = '0.0';
+    public $wrongresponsecount = '0.0';
 
     /**
      *
@@ -57,6 +57,13 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * @var boolean
      */
     public $isselectable;
+    
+    /**
+     * fraction to deduct for each incorrectly selected text item
+     * 
+     */
+    
+    public $wordpenalty=0.0;
 
     /**
      * TODO
