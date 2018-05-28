@@ -10,7 +10,7 @@
         <FIELD NAME="questionid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Foreign key references question.id" PREVIOUS="id" NEXT="answerdisplay"/>
         <FIELD NAME="introduction" TYPE="text" NOTNULL="false" SEQUENCE="false" PREVIOUS="disableregex" NEXT="correctfeedbackformat"/>
         <FIELD NAME="delimitchars" TYPE="char" LENGTH="2" NOTNULL="false" DEFAULT="[]" SEQUENCE="false" COMMENT="The characters that define fields, generally defaults to [] i.e. The [cat] sat on the [mat] where the fields are [cat] and [mat]" PREVIOUS="answerdisplay" NEXT="casesensitive"/>
-        <FIELD NAME="wordpenalty" TYPE="number" LENGTH="12" NOTNULL="false" DEFAULT="1.0" SEQUENCE="false" COMMENT="Tpenalty for incorrectly selected words" PREVIOUS="delimitchars" NEXT="correctfeedback"/>    
+        <FIELD NAME="wordpenalty" TYPE="number" LENGTH="12" NOTNULL="true" DEFAULT="1.0000000" SEQUENCE="false" DECIMALS="7" COMMENT="Penalty for incorrectly selected words" />
         <FIELD NAME="correctfeedback" TYPE="text" NOTNULL="false" SEQUENCE="false" PREVIOUS="disableregex" NEXT="correctfeedbackformat"/>
         <FIELD NAME="correctfeedbackformat" TYPE="int" LENGTH="2" NOTNULL="false" DEFAULT="0" SEQUENCE="false" PREVIOUS="correctfeedback" NEXT="partiallycorrectfeedback" />
         <FIELD NAME="partiallycorrectfeedback" TYPE="text" NOTNULL="false" SEQUENCE="false" PREVIOUS="correctfeedbackformat" NEXT="partiallycorrectfeedbackformat"/>
