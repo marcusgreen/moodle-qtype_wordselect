@@ -57,13 +57,13 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * @var boolean
      */
     public $isselectable;
-    
+
     /**
      * fraction to deduct for each incorrectly selected text item
-     * 
+     *
      */
-    
-    public $wordpenalty=0.0;
+
+    public $wordpenalty = 0.0;
 
     /**
      * TODO
@@ -435,7 +435,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
                 }
             }
         }
-        $wrongfraction = @($this->wrongresponsecount/ count($correctplaces));
+        $wrongfraction = @($this->wrongresponsecount / count($correctplaces));
         $fraction = @($this->rightresponsecount / count($correctplaces));
         $fraction = max(0, $fraction - $wrongfraction);
         $grade = array($fraction, question_state::graded_state_for_fraction($fraction));
