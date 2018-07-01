@@ -30,7 +30,7 @@ defined('MOODLE_INTERNAL') || die();
 function xmldb_qtype_wordselect_upgrade($oldversion = 0) {
     global $DB;
     $dbman = $DB->get_manager();
-    if ($oldversion < 2018051409) {
+    if ($oldversion < 2018070100) {
         if (!$dbman->field_exists('question_wordselect', 'wordpenalty')) {
             $field = new xmldb_field('wordpenalty', XMLDB_TYPE_NUMBER,
                     '12, 8', null, XMLDB_NOTNULL, null, '0.33333', 'delimitchars');
@@ -39,5 +39,5 @@ function xmldb_qtype_wordselect_upgrade($oldversion = 0) {
         }
     }
     // Wordselect savepoint reached.
-    upgrade_plugin_savepoint(true, 2018051409, 'qtype', 'wordselect');
+    upgrade_plugin_savepoint(true, 2018070100, 'qtype', 'wordselect');
 }
