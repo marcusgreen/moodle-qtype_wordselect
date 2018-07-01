@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 /**
- * Privacy class for Moodle Gapfill question type.
+ * Privacy class for Moodle wordselect question type.
  *
  * @package    qtype_wordselect
  * @copyright  Marcus Green 2018
