@@ -159,7 +159,7 @@ class qtype_wordselect_edit_form extends question_edit_form {
         return $question;
     }
     /**
-     * Add penalty for incorrectly selected text items. This is a fraction that is 
+     * Add penalty for incorrectly selected text items. This is a fraction that is
      * multiplied by the number of correct responses. So if you select 2 correct
      * and 2 incorrect the and the penalty is .5 the calculation is 2*.5 =1 (of the incorrect)
      * then deduct 1 from the correct count of 2 giving  final result of 1
