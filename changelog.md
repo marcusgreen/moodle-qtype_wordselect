@@ -3,8 +3,9 @@ Significant new feature, wordpenalty. Configure the fractional value to be deduc
 for each incorrectly selected word. Previously this was fixed at 1, i.e. for every
 incorrectly selected word one point was deducted down to zero. This could result
 in rather harsh grading. Now it can be configured as a fraction e.g. .5 of a mark
-deducted for each incorret selection. Implemented as a list of percentages in the editing
-form called incorrect selection penalty.
+deducted for each incorrect selection. Implemented as a list of percentages in the editing
+form called incorrect selection penalty. Thanks to Memona Salahuddin for suggesting this
+feature.
 
 ### Version 2.1 of the Moodle WordSelect question type by Marcus Green. May 2018
 Added privacy classes as part of GDPR compliance. Further inclusion of tags such as
