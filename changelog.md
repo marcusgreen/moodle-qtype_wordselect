@@ -1,4 +1,4 @@
-### Version 2.2 of the Moodle WordSelect question type by Marcus Green. Jul 2018
+### Version 2.2 of the Moodle WordSelect question type by Marcus Green. July 2018
 Significant new feature, wordpenalty. Configure the fractional value to be deducted
 for each incorrectly selected word. Previously this was fixed at 1, i.e. for every
 incorrectly selected word one point was deducted down to zero. This could result
