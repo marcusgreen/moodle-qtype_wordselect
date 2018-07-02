@@ -52,7 +52,7 @@ class backup_qtype_wordselect_plugin extends backup_qtype_plugin {
 
         // Now create the qtype own structures.
         $wordselect = new backup_nested_element('wordselect', array('id'), array(
-            'introduction','delimitchars','wordpenalty',
+            'introduction','delimitchars', 'wordpenalty',
             'correctfedback', 'correctfeddbackformat',
             'partiallycorrectfeedback',
             'partiallycorrectfeedbackformat',

@@ -119,7 +119,7 @@ class restore_qtype_wordselect_plugin extends restore_qtype_plugin {
         $newquestionid = $this->get_new_parentid('question');
         $questioncreated = $this->get_mappingid('question_created', $oldquestionid) ? true : false;
 
-        // This seems entirely redundant and a legacy of code copied from elsewhere
+        // This seems entirely redundant and a legacy of code copied from elsewhere.
         $changes = array(
             '-0.66666' => '-0.6666667',
             '-0.33333' => '-0.3333333',
