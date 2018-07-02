@@ -469,7 +469,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
                 }
             }
             if ($finallyright) {
-                $totalscore += max(0, 1 - ($lastwrongindex + 1) * $this->penalty);
+                $totalscore += max(0, 1 - ($lastwrongindex + 1) * $this->wordpenalty);
             }
         }
         $wrongfraction = @($wrongresponsecount / count($correctplaces));
