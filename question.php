@@ -444,13 +444,15 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return $grade;
     }
 
-    /**
+  
+   /**
      *
      * Not called in interactive mode
      *
      * @param array $responses
-     * @param int $totaltries doesn't seem to be used
-     * @return int
+     * @param int $totaltries The maximum number of tries allowed. 
+     * @return numeric the fraction that should be awarded for this
+     * sequence of response.
      */
     public function compute_final_grade($responses, $totaltries) {
         $totalscore = 0;
