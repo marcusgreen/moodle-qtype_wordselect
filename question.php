@@ -455,29 +455,24 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * sequence of response.
      */
     public function compute_final_grade($responses, $totaltries) {
-        $totalscore = 0;
         $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
-        $wrongresponsecount = $this->get_wrong_responsecount($correctplaces, $responses[0]);
-        foreach ($correctplaces as $place) {
-            $lastwrongindex = -1;
-            $finallyright = false;
-            foreach ($responses as $i => $response) {
-                if (!array_key_exists(('p' . $place), $response)) {
-                    $lastwrongindex = $i;
-                    $finallyright = false;
-                    continue;
-                } else {
-                    $finallyright = true;
-                }
-            }
-            if ($finallyright) {
-                $totalscore += max(0, 1 - ($lastwrongindex + 1) * $this->wordpenalty);
-            }
+        $maxscore=count($correctplaces);
+        $wrongresponsecount =0;
+        foreach ($responses as $i => $response) {
+            $wrongresponsecount += $this->get_wrong_responsecount($correctplaces, $responses[$i]);
         }
-        $wrongfraction = @($wrongresponsecount / count($correctplaces));
-        $totalscore = $totalscore / count($correctplaces);
-        $totalscore = max(0, $totalscore - $wrongfraction);
-        return $totalscore;
+        $multipenalty = max(0, $wrongresponsecount * $this->penalty);
+        $penalty = $wrongresponsecount;
+        /*$penalty = 1.5 * $wrongresponse */
+        if($wrongresponsecount >=$maxscore){
+            return 0;
+        }elseif($wrongresponsecount==0){
+            return 1;
+        }else{
+            $total = max(0,@($maxscore-$penalty));
+            $fraction = $total/$maxscore;
+            return $fraction;
+        }    
     }
 
     /**
@@ -496,7 +491,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
                 $wrongresponsecount++;
             }
         }
-        return ($wrongresponsecount * $this->wordpenalty);
+        return $wrongresponsecount;
     }
 
 }
