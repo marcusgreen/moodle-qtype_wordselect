@@ -437,7 +437,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
                 }
             }
         }
-        $wrongfraction = @($this->wrongresponsecount / count($correctplaces));
+        $wrongfraction = @(($this->wrongresponsecount *$this->wordpenalty) / count($correctplaces));
         $fraction = @($this->rightresponsecount / count($correctplaces));
         $fraction = max(0, $fraction - $wrongfraction);
         $grade = array($fraction, question_state::graded_state_for_fraction($fraction));
@@ -461,12 +461,12 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         foreach ($responses as $i => $response) {
             $wrongresponsecount += $this->get_wrong_responsecount($correctplaces, $responses[$i]);
         }
-        $multipenalty = max(0, $wrongresponsecount * $this->penalty);
-        $penalty = $wrongresponsecount;
-        /*$penalty = 1.5 * $wrongresponse */
-        if($wrongresponsecount >=$maxscore){
+        //$multipenalty = max(0, $wrongresponsecount * $this->penalty);
+        $penalty = ($this->wordpenalty +$this->penalty) * $wrongresponsecount;
+        if($penalty >1){
             return 0;
-        }elseif($wrongresponsecount==0){
+        }
+        elseif($wrongresponsecount==0){
             return 1;
         }else{
             $total = max(0,@($maxscore-$penalty));
