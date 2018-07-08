@@ -186,6 +186,6 @@ create and preview wordselect (Select correct words) questions.
 
     And I should see "Your answer is partially correct."
     #2 Marks for correct response and 50% off one mark
-    #for an incorrect selection. This is 50% off for the 
+    #for an incorrect selection. This is 50% off for the
     #wordpenalty and another 33% off for multiple tries/hints
     And I should see "Mark 1.17 out of 2.00"
