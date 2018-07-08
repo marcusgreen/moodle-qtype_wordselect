@@ -437,42 +437,40 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
                 }
             }
         }
-        $wrongfraction = @(($this->wrongresponsecount *$this->wordpenalty) / count($correctplaces));
+        $wrongfraction = @(($this->wrongresponsecount * $this->wordpenalty) / count($correctplaces));
         $fraction = @($this->rightresponsecount / count($correctplaces));
         $fraction = max(0, $fraction - $wrongfraction);
         $grade = array($fraction, question_state::graded_state_for_fraction($fraction));
         return $grade;
     }
 
-  
-   /**
+
+    /**
      *
      * Not called in interactive mode
      *
      * @param array $responses
-     * @param int $totaltries The maximum number of tries allowed. 
+     * @param int $totaltries The maximum number of tries allowed.
      * @return numeric the fraction that should be awarded for this
      * sequence of response.
      */
     public function compute_final_grade($responses, $totaltries) {
         $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
-        $maxscore=count($correctplaces);
-        $wrongresponsecount =0;
+        $maxscore = count($correctplaces);
+        $wrongresponsecount = 0;
         foreach ($responses as $i => $response) {
             $wrongresponsecount += $this->get_wrong_responsecount($correctplaces, $responses[$i]);
         }
-        //$multipenalty = max(0, $wrongresponsecount * $this->penalty);
-        $penalty = ($this->wordpenalty +$this->penalty) * $wrongresponsecount;
-        if($penalty >1){
+        $penalty = ($this->wordpenalty + $this->penalty) * $wrongresponsecount;
+        if ($penalty > 1) {
             return 0;
-        }
-        elseif($wrongresponsecount==0){
+        } else if ($wrongresponsecount == 0) {
             return 1;
-        }else{
-            $total = max(0,@($maxscore-$penalty));
-            $fraction = $total/$maxscore;
+        } else {
+            $total = max(0, @($maxscore - $penalty));
+            $fraction = $total / $maxscore;
             return $fraction;
-        }    
+        }
     }
 
     /**
