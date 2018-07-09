@@ -73,7 +73,7 @@ create and preview wordselect (Select correct words) questions.
     And I click on "jumped" "text"
     And I press "Check"
     And I should see "Your answer is correct."
-    And I should see "Mark 1.67 out of 2.00"
+    And I should see "Mark 2.00 out of 2.00"
 
   ##################################################
   # Immediate Feedback behaviour
@@ -186,5 +186,6 @@ create and preview wordselect (Select correct words) questions.
 
     And I should see "Your answer is partially correct."
     #2 Marks for correct response and 50% off one mark
-    #for an incorrect selection
-    And I should see "Mark 1.50 out of 2.00"
+    #for an incorrect selection. This is 50% off for the
+    #wordpenalty and another 33% off for multiple tries/hints
+    And I should see "Mark 1.17 out of 2.00"
