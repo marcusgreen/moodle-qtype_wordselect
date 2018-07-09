@@ -6,6 +6,9 @@ in rather harsh grading. Now it can be configured as a fraction e.g. .5 of a mar
 deducted for each incorrect selection. Implemented as a list of percentages in the editing
 form called incorrect selection penalty. Thanks to to the person who suggested this feature.
 
+Previously the penalty for incorrect attempts in interactive mode was ignored. Now the percentage
+is used to deduct marks for eash submission.
+
 ### Version 2.1 of the Moodle WordSelect question type by Marcus Green. May 2018
 Added privacy classes as part of GDPR compliance. Further inclusion of tags such as
 setting color, more credit to lethevinha for that work.
