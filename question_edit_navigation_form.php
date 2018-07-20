@@ -173,7 +173,7 @@ class question_edit_navigation_form extends question_edit_form {
         }
 
         parent::add_hidden_fields();
-        $mform->removeElement('combinedfeedbackhdr');
+       // $mform->removeElement('combinedfeedbackhdr');
 
         $mform->addElement('hidden', 'qtype');
         $mform->setType('qtype', PARAM_ALPHA);

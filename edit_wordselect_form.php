@@ -77,12 +77,12 @@ class qtype_wordselect_edit_form extends question_edit_navigation_form {
 
         // To add combined feedback (correct, partial and incorrect).
         // And hinting features
-        if($this->simplenav==false){
+        //if($this->simplenav==false){
              // To add combined feedback (correct, partial and incorrect).
               $this->add_combined_feedback_fields_simplenav(true);
               // Adds hinting features.
               $this->add_interactive_settings(true, true);
-        }
+        //}
         
            
         // 
