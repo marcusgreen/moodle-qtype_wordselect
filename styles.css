@@ -1,3 +1,23 @@
+/*#fitem_id_questiontext{
+    display:none;
+}
+
+#id_combinedfeedbackhdr{
+    display:none;
+}
+
+#id_multitriesheader{
+    display:none;
+}
+#id_tagsheader{
+    display:none;
+}
+#id_generalheader{
+    diaplay:none;
+}*/
+
+
+
 .que.wordselect input[type=checkbox] {
     display: none;
 }

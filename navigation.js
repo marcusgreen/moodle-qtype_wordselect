@@ -1,21 +1,41 @@
 
 $('.collapsible-actions').hide();
 $navbuttons =
-        '<button id="nav_previous">Previous</button>\
+        '<div id="question_nav">\
+        <button id="nav_previous">Previous</button>\
         <button id="nav_combined">General feedback</button>\
         <button id="nav_combined">Combined feedback</button>\
         <button id="nav_multitries">Multi tries</button>\
         <button id="nav_tags">Tags</button>\
-        <button id="nav_next">Next</button>';
+        <button id="nav_next">Next</button>\
+        </div>';
+
 
 
 $($navbuttons).insertAfter('.collapsible-actions');
+
+$("#nav_combined").click(function(event){
+    alert('nav combined');
+});
+
+    
+$("#question_nav").click(function(event){
+    event.preventDefault();
+});
+     
+$('#fitem_id_questiontext').hide();
+$('#fitem_id_generalfeedback').hide();
+$('#id_delimitchars').hide();
+
+$('#id_submitbutton').hide();
+$('#id_updatebutton').hide();
+
+
 $("#id_questiontext").closest('.form-group').hide();
 $('#id_generalfeedback').closest('.form-group').hide();
-$('#id_delimitchars').closest('.form-group').hide();
 
 $('.ftoggler').hide();
-$('#id_delmitchars').hide();
+
 
 $('#id_combinedfeedbackhdr').hide();
 
