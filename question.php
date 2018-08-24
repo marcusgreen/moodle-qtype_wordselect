@@ -452,15 +452,14 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * @param array $responses
      * @param int $totaltries The maximum number of tries allowed.
      * @return numeric  fraction to be awarded for this sequence of responses
-     * 
+     *
      * $this->wordpenalty is the fraction value stored in the form.
-     * So 1 means that the 100% of the value of each incorrect response 
+     * So 1 means that the 100% of the value of each incorrect response
      * should be deducted from the final grade
-     * 
-     * $this->penalty comes from the parent class and is the fraction of 
-     * responses that were incorrect. 
-     * So if you have three correct responses and one incorrect the penalty 
-     * would be 0.333333
+     *
+     * $this->penalty comes from the parent class and is from the multiple
+     * tries section of the form, requiring hints to be active
+     *
      */
     public function compute_final_grade($responses, $totaltries) {
         $totalscore = 0;
@@ -483,7 +482,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             }
         }
         $wrongfraction = @($wrongresponsecount / count($correctplaces));
-        if($this->wordpenalty < 1){
+        if ($this->wordpenalty < 1) {
             $wrongfraction = $wrongfraction - ($wrongfraction * $this->wordpenalty);
         }
         $totalscore = $totalscore / count($correctplaces);
