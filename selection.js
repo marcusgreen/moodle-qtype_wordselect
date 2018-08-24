@@ -20,8 +20,7 @@
  * @copyright  2016 Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-/*global $ */
-/*jshint unused:false*/
+/* global $ */
 var toggleselected = function(selection) {
     var iselected = selection.hasClass("selected");
     var wordname = selection.attr('name');
@@ -52,7 +51,7 @@ var toggleselected = function(selection) {
     }
 };
 $(function() {
-    $(".selectable").on('keydown', function (e) {
+    $(".selectable").on('keydown', function(e) {
         /* Space bar */
         if (e.keyCode === 32) {
             toggleselected($(this));
@@ -61,9 +60,10 @@ $(function() {
         if (e.keyCode === 32) {
             return false;
         }
+        return true;
 
     });
-    $(".selectable").on('click', function (e) {
+    $(".selectable").on('click', function() {
         toggleselected($(this));
     });
 });
