@@ -1,4 +1,4 @@
-@core @qtype @qtype_wordselect @_switch_window
+@core @qtype @qtype_wordselect @qtype_wordselect_basic @_switch_window
 Feature: Test the basic functionality of wordselect type
 In order to evaluate students responses, As a teacher I need to
 create and preview wordselect (Select correct words) questions.
@@ -73,7 +73,8 @@ create and preview wordselect (Select correct words) questions.
     And I click on "jumped" "text"
     And I press "Check"
     And I should see "Your answer is correct."
-    And I should see "Mark 2.00 out of 2.00"
+    #second attempt 33% penalty for this being a second attempt
+    And I should see "Mark 1.67 out of 2.00"
 
   ##################################################
   # Immediate Feedback behaviour
