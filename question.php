@@ -444,7 +444,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return $grade;
     }
 
-/**
+    /**
      *
      * Called when using interactive with multiple tries question behaviour
      *
@@ -461,7 +461,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      *
      */
     public function compute_final_grade($responses, $totaltries) {
-        $attemptcount=-1;
+        $attemptcount = -1;
         $fraction = 0;
         $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
         foreach ($responses as $response) {
@@ -469,12 +469,12 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             $wrongresponsecount = $this->get_wrong_responsecount($correctplaces, $response);
             $rightresponsecount = count($response) - $wrongresponsecount;
             /* penalty for wrong selections on this/final attempt */
-            $penalty =  $wrongresponsecount * $this->wordpenalty;
+            $penalty = $wrongresponsecount * $this->wordpenalty;
             /* add penalty for each hint shown/try */
             $penalty += $attemptcount * $this->penalty;
             $fraction = @(($rightresponsecount - $penalty) / count($correctplaces));
             /*max ensures fraction is always > 0 */
-            $fraction = max(0,$fraction);
+            $fraction = max(0, $fraction);
         }
         return $fraction;
     }
