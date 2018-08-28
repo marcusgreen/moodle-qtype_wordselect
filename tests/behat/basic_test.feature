@@ -18,7 +18,8 @@ create and preview wordselect (Select correct words) questions.
   Scenario: Create, edit then preview a wordselect question.
     Given I log in as "teacher1"
     And I am on "Course 1" course homepage
-    And I navigate to "Question bank" node in "Course administration"
+    #And I navigate to  "Filters" in current page administration
+    And I navigate to "Questions" in current page administration
 
     # Create a new question.
     And I add a "Word Select" question filling the form with:
@@ -152,7 +153,7 @@ create and preview wordselect (Select correct words) questions.
  ## Scenario: Create question and test wordpenalty.
     Given I log in as "teacher1"
     And I am on "Course 1" course homepage
-    And I navigate to "Question bank" node in "Course administration"
+    And I navigate to "Questions" in current page administration
 
       # Create a new question.
     And I add a "Word Select" question filling the form with:
