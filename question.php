@@ -444,16 +444,15 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return $grade;
     }
 
-
-    /**
+/**
      *
-     * Not called in interactive mode
+     * Called when using interactive with multiple tries question behaviour
      *
      * @param array $responses
-     * @param int $totaltries The maximum number of tries allowed.
+     * @param int $totaltries The maximum number of tries allowed, not used here
      * @return numeric  fraction to be awarded for this sequence of responses
      *
-     * $this->wordpenalty is the fraction value stored in the form.
+     * $this->wordpenalty is the fraction value stored from the editingform.
      * So 1 means that the 100% of the value of each incorrect response
      * should be deducted from the final grade
      *
@@ -462,33 +461,26 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      *
      */
     public function compute_final_grade($responses, $totaltries) {
-        $totalscore = 0;
+        $attemptcount=-1;
+        $fraction = 0;
         $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
-        $wrongresponsecount = $this->get_wrong_responsecount($correctplaces, $responses[0]);
-        foreach ($correctplaces as $place) {
-            $lastwrongindex = -1;
-            $finallyright = false;
-            foreach ($responses as $i => $r) {
-                if (!array_key_exists(('p' . $place), $r)) {
-                    $lastwrongindex = $i;
-                    $finallyright = false;
-                    continue;
-                } else {
-                    $finallyright = true;
-                }
-            }
-            if ($finallyright) {
-                $totalscore += max(0, 1 - ($lastwrongindex + 1) * $this->penalty);
-            }
+        foreach ($responses as $response) {
+            $attemptcount++;
+            $wrongresponsecount = $this->get_wrong_responsecount($correctplaces, $response);
+            $rightresponsecount = count($response) - $wrongresponsecount;
+            /* penalty for wrong selections on this/final attempt */
+            $penalty =  $wrongresponsecount * $this->wordpenalty;
+            /* add penalty for each hint shown/try */
+            $penalty += $attemptcount * $this->penalty;
+            $fraction = @(($rightresponsecount - $penalty) / count($correctplaces));
+            /*max ensures fraction is always > 0 */
+            $fraction = max(0,$fraction);
         }
-        $wrongfraction = @($wrongresponsecount / count($correctplaces));
-        if ($this->wordpenalty < 1) {
-            $wrongfraction = $wrongfraction - ($wrongfraction * $this->wordpenalty);
-        }
-        $totalscore = $totalscore / count($correctplaces);
-        $totalscore = max(0, $totalscore - $wrongfraction);
-        return $totalscore;
+        return $fraction;
     }
+
+
+
 
     /**
      * Used when calculating the final grade
