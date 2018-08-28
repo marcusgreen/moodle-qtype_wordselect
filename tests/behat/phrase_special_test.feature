@@ -1,5 +1,5 @@
 #This test and special character code in qtype was created by https://github.com/lethevinh
-@core @qtype @qtype_wordselect @_switch_window
+@core @qtype @qtype_wordselect @qtype_wordselect_special @_switch_window
 
 Feature: Test that formatting within delimiters is retained
   In order to evaluate students responses, As a teacher I need to
