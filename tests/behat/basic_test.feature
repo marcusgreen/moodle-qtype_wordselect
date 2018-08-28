@@ -18,7 +18,6 @@ create and preview wordselect (Select correct words) questions.
   Scenario: Create, edit then preview a wordselect question.
     Given I log in as "teacher1"
     And I am on "Course 1" course homepage
-    #And I navigate to  "Filters" in current page administration
     And I navigate to "Questions" in current page administration
 
     # Create a new question.
