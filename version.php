@@ -24,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 $plugin->component = 'qtype_wordselect';
-$plugin->version  = 2018070100;
+$plugin->version  = 2018083000;
 $plugin->requires = 2015051109;  // Moodle 2.9.9.
 $plugin->maturity  = MATURITY_STABLE;
-$plugin->release  = '2.2';
+$plugin->release  = '2.3';

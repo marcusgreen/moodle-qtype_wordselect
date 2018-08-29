@@ -1,3 +1,9 @@
+### Version 2.3 of the Moodle WordSelect question type by Marcus Green. August 2018
+Fix to the penalty applied when using the question behaviour Interactive with multiple
+tries. Thanks to Matthias Giger and his students who reported that a single wrong
+selection would reduce the grade to zero.  Code compliance fixes in the form of
+eslinting of javascript.
+
 ### Version 2.2 of the Moodle WordSelect question type by Marcus Green. July 2018
 Significant new feature, wordpenalty. Configure the fractional value to be deducted
 for each incorrectly selected word. Previously this was fixed at 1, i.e. for every
