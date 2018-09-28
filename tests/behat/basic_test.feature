@@ -36,7 +36,7 @@ create and preview wordselect (Select correct words) questions.
     And I switch to "questionpreview" window
 
   #################################################
-  #Adaptive Mode 
+  #Adaptive Mode
   #################################################
     And I set the following fields to these values:
       | How questions behave | Adaptive mode                   |
