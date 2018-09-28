@@ -467,9 +467,9 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         foreach ($responses as $response) {
             $attemptcount++;
             $wrongresponsecount = $this->get_wrong_responsecount($correctplaces, $response);
-            $value_count = array_count_values($response);
-            $selected_count = $value_count['on'];
-            $rightresponsecount = $selected_count - $wrongresponsecount;
+            $valuecount = array_count_values($response);
+            $selectedcount = $valuecount['on'];
+            $rightresponsecount = $selectedcount - $wrongresponsecount;
             /* penalty for wrong selections on this/final attempt */
                 $penalty = $wrongresponsecount * $this->wordpenalty;
             /* add penalty for each hint shown/try */
