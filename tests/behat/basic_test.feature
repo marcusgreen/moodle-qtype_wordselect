@@ -39,7 +39,7 @@ create and preview wordselect (Select correct words) questions.
   #Adaptive Mode 
   #################################################
     And I set the following fields to these values:
-      | How questions behave | Adaptive Mode                   |
+      | How questions behave | Adaptive mode                   |
       | Marked out of        | 2                               |
       | Marks                | Show mark and max               |
       | Specific feedback    | Shown                           |
