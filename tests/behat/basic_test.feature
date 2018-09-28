@@ -1,4 +1,4 @@
-@core @qtype @qtype_wordselect @qtype_wordselect_basic @_switch_window
+@core @qtype @qtype_wordselect @qtype_wordselect_basic @_switch_windown
 Feature: Test the basic functionality of wordselect type
 In order to evaluate students responses, As a teacher I need to
 create and preview wordselect (Select correct words) questions.
@@ -188,4 +188,4 @@ create and preview wordselect (Select correct words) questions.
     And I should see "Your answer is partially correct."
     #2 Marks for correct response and 50% of a mark deducted
     # for the one wrong item selected
-    And I should see "Mark 1.50 out of 2.00"
+    And I should see "Mark 1.00 out of 2.00"

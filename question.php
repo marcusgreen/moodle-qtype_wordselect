@@ -467,9 +467,11 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         foreach ($responses as $response) {
             $attemptcount++;
             $wrongresponsecount = $this->get_wrong_responsecount($correctplaces, $response);
-            $rightresponsecount = count($correctplaces) - $wrongresponsecount;
+            $value_count = array_count_values($response);
+            $selected_count = $value_count['on'];
+            $rightresponsecount = $selected_count - $wrongresponsecount;
             /* penalty for wrong selections on this/final attempt */
-            $penalty = $wrongresponsecount * $this->wordpenalty;
+                $penalty = $wrongresponsecount * $this->wordpenalty;
             /* add penalty for each hint shown/try */
             $penalty += $attemptcount * $this->penalty;
             $fraction = @(($rightresponsecount - $penalty) / count($correctplaces));
@@ -500,7 +502,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         }
         return $wrongresponsecount;
     }
-
 }
 
 /**
