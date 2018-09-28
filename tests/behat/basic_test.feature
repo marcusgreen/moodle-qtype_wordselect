@@ -36,6 +36,28 @@ create and preview wordselect (Select correct words) questions.
     And I switch to "questionpreview" window
 
   #################################################
+  #Adaptive Mode 
+  #################################################
+    And I set the following fields to these values:
+      | How questions behave | Adaptive Mode                   |
+      | Marked out of        | 2                               |
+      | Marks                | Show mark and max               |
+      | Specific feedback    | Shown                           |
+      | Right answer         | Shown                           |
+    And I press "Start again with these options"
+
+  #User does not select any word and press button Check
+    And I press "Check"
+    And I should see "Please select an answer."
+
+  #Select all (both) correct options
+    And I click on "sat" "text"
+    And I click on "jumped" "text"
+    And I press "Check"
+    And I should see "Your answer is correct."
+    And I should see "Mark 2.00 out of 2.00"
+
+  #################################################
   #Interactive with multiple tries
   #################################################
     And I set the following fields to these values:
