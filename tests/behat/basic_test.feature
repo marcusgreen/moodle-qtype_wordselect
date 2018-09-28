@@ -189,5 +189,3 @@ create and preview wordselect (Select correct words) questions.
     #2 Marks for correct response and 50% of a mark deducted
     # for the one wrong item selected
     And I should see "Mark 1.50 out of 2.00"
-
-
