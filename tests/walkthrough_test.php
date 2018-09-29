@@ -56,7 +56,7 @@ class qtype_wordselect_walkthrough_test extends qbehaviour_walkthrough_test_base
                 $this->get_no_hint_visible_expectation());
 
         // Save a  correct response.
-        // Default quesiton text is The cat [sat]
+        // Default quesiton text is The cat [sat].
         $this->process_submission(array('p4' => 'on'));
         $this->check_step_count(2);
 
@@ -86,5 +86,5 @@ class qtype_wordselect_walkthrough_test extends qbehaviour_walkthrough_test_base
         // Finish the attempt.
         $this->quba->finish_all_questions();
                 $this->check_current_state(question_state::$gradedright);
-        }
+    }
 }
