@@ -53,8 +53,8 @@ class qtype_wordselect_test_helper extends question_test_helper {
         $question->delimitchars = $options['delimitchars'];
         test_question_maker::initialise_a_question($question);
         $question->qtype = question_bank::get_qtype('wordselect');
-        $question->introduction='';
-        $question->correctfeedback='';
+        $question->introduction = '';
+        $question->correctfeedback = '';
         return $question;
     }
 
