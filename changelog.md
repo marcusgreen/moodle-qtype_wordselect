@@ -1,6 +1,7 @@
 ### Version 2.31 of the Moodle WordSelect question type by Marcus Green. August 2018
 Fix to grading when using Interactive with multiple tries. Thanks again to Matthias Giger
-for reporting this.
+for reporting this. Fixed wordpenalty in sample questions and added new behat and phpunit
+tests.
 
 ### Version 2.3 of the Moodle WordSelect question type by Marcus Green. August 2018
 Fix to the penalty applied when using the question behaviour Interactive with multiple
