@@ -1,3 +1,7 @@
+### Version 2.31 of the Moodle WordSelect question type by Marcus Green. August 2018
+Fix to grading when using Interactive with multiple tries. Thanks again to Matthias Giger
+for reporting this.
+
 ### Version 2.3 of the Moodle WordSelect question type by Marcus Green. August 2018
 Fix to the penalty applied when using the question behaviour Interactive with multiple
 tries. Thanks to Matthias Giger and his students who reported that a single wrong
