@@ -8,7 +8,7 @@
     </category>
   </question>
 
-<!-- question: 35  -->
+<!-- question: 34  -->
   <question type="wordselect">
     <name>
       <text>AlternativeDelimiters</text>
@@ -25,6 +25,7 @@
     <hidden>0</hidden>
     <introduction><![CDATA[<p>Using alternative delimiters</p>]]></introduction>
     <delimitchars>{}</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
     <answer fraction="100" format="moodle_auto_format">
       <text>sat</text>
       <feedback format="moodle_auto_format">
@@ -32,7 +33,8 @@
       </feedback>
     </answer>
     <delimitchars>{}</delimitchars>
-    <!-- Wordselect release:2.0 version:2018040100 Moodle version:2017111300.1 release:3.4+ (Build: 20180104) -->
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.3 version:2018090600 Moodle version:2017051506 release:3.3.6 (Build: 20180517) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -44,7 +46,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 36  -->
+<!-- question: 35  -->
   <question type="wordselect">
     <name>
       <text>AudioFile</text>
@@ -62,6 +64,7 @@
     <hidden>0</hidden>
     <introduction>Multimedia content will not be imported/exported from the introduction area</introduction>
     <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
     <answer fraction="100" format="moodle_auto_format">
       <text>audio</text>
       <feedback format="moodle_auto_format">
@@ -69,7 +72,8 @@
       </feedback>
     </answer>
     <delimitchars>[]</delimitchars>
-    <!-- Wordselect release:2.0 version:2018040100 Moodle version:2017111300.1 release:3.4+ (Build: 20180104) -->
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.3 version:2018090600 Moodle version:2017051506 release:3.3.6 (Build: 20180517) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -81,7 +85,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 37  -->
+<!-- question: 36  -->
   <question type="wordselect">
     <name>
       <text>CatMat</text>
@@ -99,6 +103,7 @@
     <hidden>0</hidden>
     <introduction><![CDATA[<p>Select the verbs</p>]]></introduction>
     <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
     <answer fraction="100" format="moodle_auto_format">
       <text>sat</text>
       <feedback format="moodle_auto_format">
@@ -106,7 +111,8 @@
       </feedback>
     </answer>
     <delimitchars>[]</delimitchars>
-    <!-- Wordselect release:2.0 version:2018040100 Moodle version:2017111300.1 release:3.4+ (Build: 20180104) -->
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.3 version:2018090600 Moodle version:2017051506 release:3.3.6 (Build: 20180517) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -118,7 +124,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 38  -->
+<!-- question: 37  -->
   <question type="wordselect">
     <name>
       <text>FindTheAnimals</text>
@@ -217,6 +223,7 @@
     <hidden>0</hidden>
     <introduction><![CDATA[<p>Select the letters to make up animal names</p>]]></introduction>
     <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
     <answer fraction="100" format="moodle_auto_format">
       <text>C</text>
       <feedback format="moodle_auto_format">
@@ -338,7 +345,8 @@
       </feedback>
     </answer>
     <delimitchars>[]</delimitchars>
-    <!-- Wordselect release:2.0 version:2018040100 Moodle version:2017111300.1 release:3.4+ (Build: 20180104) -->
+    <wordpenalty>0.0000000</wordpenalty>
+    <!-- Wordselect release:2.3 version:2018090600 Moodle version:2017051506 release:3.3.6 (Build: 20180517) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -350,7 +358,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 39  -->
+<!-- question: 38  -->
   <question type="wordselect">
     <name>
       <text>Multi word selection</text>
@@ -366,6 +374,7 @@
     <hidden>0</hidden>
     <introduction></introduction>
     <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
     <answer fraction="100" format="moodle_auto_format">
       <text>[more than</text>
       <feedback format="moodle_auto_format">
@@ -409,7 +418,8 @@
       </feedback>
     </answer>
     <delimitchars>[]</delimitchars>
-    <!-- Wordselect release:2.0 version:2018040100 Moodle version:2017111300.1 release:3.4+ (Build: 20180104) -->
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.3 version:2018090600 Moodle version:2017051506 release:3.3.6 (Build: 20180517) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -421,7 +431,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 40  -->
+<!-- question: 39  -->
   <question type="wordselect">
     <name>
       <text>Reading Comprehension</text>
@@ -444,8 +454,9 @@
 <li>What was his nationality?</li>
 <li>What is his most famous play?</li>
 </ul>
-<hr style="border: thin solid black;" />]]></introduction>
+<hr style="border: thin solid black;">]]></introduction>
     <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
     <answer fraction="100" format="moodle_auto_format">
       <text>English</text>
       <feedback format="moodle_auto_format">
@@ -477,7 +488,8 @@
       </feedback>
     </answer>
     <delimitchars>[]</delimitchars>
-    <!-- Wordselect release:2.0 version:2018040100 Moodle version:2017111300.1 release:3.4+ (Build: 20180104) -->
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.3 version:2018090600 Moodle version:2017051506 release:3.3.6 (Build: 20180517) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -489,7 +501,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 41  -->
+<!-- question: 40  -->
   <question type="wordselect">
     <name>
       <text>WordsInTables</text>
@@ -524,6 +536,7 @@
     <hidden>0</hidden>
     <introduction><![CDATA[<p>Select words that match the heading</p>]]></introduction>
     <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
     <answer fraction="100" format="moodle_auto_format">
       <text>dog</text>
       <feedback format="moodle_auto_format">
@@ -537,7 +550,8 @@
       </feedback>
     </answer>
     <delimitchars>[]</delimitchars>
-    <!-- Wordselect release:2.0 version:2018040100 Moodle version:2017111300.1 release:3.4+ (Build: 20180104) -->
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.3 version:2018090600 Moodle version:2017051506 release:3.3.6 (Build: 20180517) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
