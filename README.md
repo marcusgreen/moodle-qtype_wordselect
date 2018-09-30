@@ -7,7 +7,7 @@ and on submission the question can indicate which select was correct or incorrec
 this question type here
 https://github.com/marcusgreen/moodle-qtype_wordselect/wiki
 and
-https://docs.moodle.org/31/en/Wordselect_question_type
+https://docs.moodle.org/en/Wordselect_question_type
 the latest source can be found here
 https://github.com/marcusgreen/moodle-qtype_wordselect
 
