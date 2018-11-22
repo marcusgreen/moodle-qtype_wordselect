@@ -269,6 +269,15 @@ class qtype_wordselect extends question_type {
     }
 
     /**
+     * Called from within questiontypebase
+     *
+     * @param  string $hint
+     * @return question_hint_with_parts
+     */
+    protected function make_hint($hint) {
+        return question_hint_with_parts::load_from_record($hint);
+    }
+    /**
      * Initialise question answers
      *
      * @param question_definition $question

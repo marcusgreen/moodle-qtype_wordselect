@@ -29,7 +29,7 @@ $addons = array(
                 'displaydata' => array(
                     'title' => 'Qtype Name',
                     'icon' => '/question/type/wordselect/pix/icon.gif',
-                    'class' => '', //What does this do?
+                    'class' => '', // What does this do?
                 ),
                 'delegate' => 'CoreQuestionDelegate', // Delegate (where to display the link to the add-on).
                 'method' => 'mobile_get_wordselect',

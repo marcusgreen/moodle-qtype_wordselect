@@ -420,6 +420,23 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 
     /**
+     * Given a response, reset the parts that are wrong. Relevent in
+     * interactive with multiple tries
+     * @param array $response a response
+     * @return array a cleaned up response with the wrong bits reset.
+     */
+    public function clear_wrong_from_response(array $response) {
+        foreach ($response as $key => $value) {
+            /* chop off the leading p */
+            $place = substr($key, 1);
+            /* if its not in the correct places and it is turned on */
+            if (!in_array($place, $correctplaces) && ($value == 'on')) {
+                $response[$key] = 'off';
+            }
+        }
+        return $response;
+    }
+    /**
      * Complete grade for this attempt at the question
      *
      * @param array $response responses, as returned by
@@ -479,7 +496,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         return $fraction;
     }
 
-/**
+    /**
      *
      * @param array $response Passed in from the runtime submission
      * @return array
@@ -490,7 +507,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     public function get_num_parts_right(array $response) {
         $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
         $this->wrongresponsecount = $this->get_wrong_responsecount($correctplaces, $response);
-        $rightresponsecount=0;
+        $rightresponsecount = 0;
         foreach ($correctplaces as $place) {
             if (isset($response['p' . $place])) {
                 if (( $response['p' . $place] === 'on') || ( $response['p' . $place] === 'true')) {

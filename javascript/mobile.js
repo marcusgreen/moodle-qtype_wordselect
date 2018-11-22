@@ -15,7 +15,7 @@
 
 /**
  * support for the mdl35+ mobile app
- * This file is the equivalent of 
+ * This file is the equivalent of
  * qtype/wordselect/classes/wordselect.ts in the core app
  * e.g.
  * https://github.com/moodlehq/moodlemobile2/blob/v3.5.0/src/addon/qtype/ddwtos/classes/ddwtos.ts
@@ -42,7 +42,6 @@ var result = {
          // Treat the correct/incorrect icons.
         this.CoreQuestionHelperProvider.treatCorrectnessIcons(div);
 
- 
         if (div.querySelector('.readonly') !== null) {
             this.question.readonly = true;
         }

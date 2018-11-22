@@ -228,7 +228,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         return $feedback;
     }
 
-        /**
+    /**
      * overriding base class method purely to return a string
      * yougotnrightcount instead of default yougotnright
      *
