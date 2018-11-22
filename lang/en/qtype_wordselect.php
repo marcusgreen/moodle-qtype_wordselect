@@ -44,5 +44,4 @@ $string['wordpenalty'] = 'Incorrect selection penalty';
 $string['wordpenalty_help'] = 'Decrement mark by this percentage for each incorrectly selected word';
 $string['penalty'] = 'Penalty';
 $string['wordpenalty_setting'] = 'Penalty for each incorrect text item selected';
-
-
+$string['yougotnrightcount'] = 'You have selected {$a->num} correct items out of {$a->outof}.';
