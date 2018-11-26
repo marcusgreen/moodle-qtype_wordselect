@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 0  -->
+  <question type="category">
+    <category>
+        <text>$course$/top</text>
+
+    </category>
+  </question>
+
+<!-- question: 0  -->
+  <question type="category">
+    <category>
+        <text>$course$/top/QPD</text>
+
+    </category>
+  </question>
+
+<!-- question: 0  -->
+  <question type="category">
+    <category>
+        <text>$course$/top/QPD/Gapfill English Language Questions</text>
+
+    </category>
+  </question>
+
+<!-- question: 0  -->
+  <question type="category">
+    <category>
+        <text>$course$/top/QPD/Gapfill English Language Questions/General Comprehension</text>
+
+    </category>
+  </question>
+
+<!-- question: 0  -->
+  <question type="category">
+    <category>
+        <text>$course$/top/QPD/Gapfill English Language Questions/General Comprehension/comprehension</text>
+
+    </category>
+  </question>
+
+<!-- question: 560  -->
+  <question type="wordselect">
+    <name>
+      <text>Birmingham</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>[London] is the capital city of the UK, more people live there than any other city. Birmingham is the largest city outside London&nbsp;</p><p>with a population of around 3.8 million people. It is approximately 110 miles from London and is a major international commerce centre. Birmingham is a major transport hub on the motorway, rail and [canal] networks.</p><p>The city is served by the M5, M6, M40, and M42 motorways, and probably the best known motorway junction in the UK: [Spaghetti] [Junction]. Birmingham Airport is located 6 miles (9.7 km) [east] of the city centre in the neighbouring borough of Solihull.</p><p>The National Express Group headquarters are located in [Digbeth], in offices above Birmingham Coach Station, which forms the national hub of the company's coach network. Birmingham is home to five universities: Aston University, University of Birmingham, Birmingham City University, University College Birmingham and Newman University.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>6.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <introduction><![CDATA[<p></p><ul><li>Identify the water based transport mentioned in the text.<br></li><li>Where is the main coach station in Birmingham (one word)<br></li><li>In what direction from the city centre is the airport (one word)<br></li><li>What is the famous motorway interchange mentioned in the text (two words)<br></li><li>Which city in the UK has the biggest population?<br><hr></li></ul>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>London</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>canal</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>Spaghetti</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>Junction</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>east</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>Digbeth</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <!-- Wordselect release:2.31 version:2018093000 Moodle version:2018051702.06 release:3.5.2+ (Build: 20181011) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>General Comprehension</text>
+</tag>
+      <tag><text>wordselect</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 564  -->
+  <question type="wordselect">
+    <name>
+      <text>Cambridge University</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[The University of Cambridge is in Cambridge, [England]. It is the second-oldest university in all English-speaking countries (after [Oxford]). It is one of the world's leading places of learning.<br><br>The University started as a group of scholars in 1209, when scholars left Oxford after a fight with local people. The universities of Oxford and Cambridge are often called [Oxbridge]. This is not a different university. It is a way of saying Oxford and Cambridge together. Cambridge University and Oxford University are both very important to the history of England.]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>3.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <introduction><![CDATA[<ul><li>What country is Cambridge University in?</li><li>In English speaking countries, which is the oldest university?</li><li>What word is used to say Oxford and Cambridge together</li></ul>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>England</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>Oxford</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>Oxbridge</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <!-- Wordselect release:2.31 version:2018093000 Moodle version:2018051702.06 release:3.5.2+ (Build: 20181011) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>comprehension</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 566  -->
+  <question type="wordselect">
+    <name>
+      <text>Charles Dickens</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[Charles Dickens was born in [Portsmouth] and lived there until he was twelve yers old. Then his family moved to Camden, London. He became a famous [writer] and with many successful novels such as Oliver Twist.He got a job as an office boy for lawyer. After finding that job dull, he taught himself&nbsp;[shorthand]&nbsp;and became a&nbsp;journalist&nbsp;.  He died of a [stroke] on June 9, 1870.]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <introduction><![CDATA[<p>Select one word to answer each question</p><ul><li>In what town did he spend his childhood?</li><li>What did he do for a living that made him famous?&nbsp;</li><li>What skill did he learn in order to change jobs?</li><li>What killed him?<br></li></ul>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>Portsmouth</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>writer</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>shorthand</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>stroke</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <!-- Wordselect release:2.31 version:2018093000 Moodle version:2018051702.06 release:3.5.2+ (Build: 20181011) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>comprehension</text>
+</tag>
+      <tag><text>wordselect</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 567  -->
+  <question type="wordselect">
+    <name>
+      <text>Competitions</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A competition or contest is an event where people get together to see who is the best at something. Someone who takes part in a competition ("enters for a competition") is called a competitor. The competitors compete against one another. The person who wins may get a [prize].<br><br>Competitions can be for all sorts of things: sport, writing, music, dancing, science, chess etc.There will probably be a [referee]. They will make sure that the game is played fairly and that the competitors obey the rules. <br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>2.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <introduction><![CDATA[<ul><li>What is given to the person who is best in a competition?</li><li>What is the name of the person who ensures a competition is fair.</li></ul><hr>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>prize</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>referee</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <!-- Wordselect release:2.31 version:2018093000 Moodle version:2018051702.06 release:3.5.2+ (Build: 20181011) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>comprehension</text>
+</tag>
+      <tag><text>wordselect</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 568  -->
+  <question type="wordselect">
+    <name>
+      <text>Cricket</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Cricket is a &nbsp;sport which is played between two teams of [eleven] players each who score runs (points) by running between two sets of three small, wooden posts called wickets. Each of the wickets is at one end of a rectangle of flattened grass called the [pitch].&nbsp;<br></p><p>The game started in England in the 16th century. The earliest definite reference to the sport is in a court case of [1598]. The court in Guildford heard a coroner, John Derrick, that when he was a scholar at the "Free School at Guildford", fifty years earlier, "he and diverse of his fellows did run and play [on the common land] at cricket and other players". Later, the game spread to countries of the British Empire in the 19th and 20th centuries.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <introduction><![CDATA[<p><ul><li>How many people are in a cricket team?<br></li><li>What is the name for the area where cricket is played?<br></li><li>In what year was the first reference to cricket?<br></li></ul></p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>eleven</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>pitch</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>1598</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>on the common land</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <!-- Wordselect release:2.31 version:2018093000 Moodle version:2018051702.06 release:3.5.2+ (Build: 20181011) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>comprehension</text>
+</tag>
+      <tag><text>wordselect</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 569  -->
+  <question type="wordselect">
+    <name>
+      <text>Curry</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>One of the most popular types of restaurant in the UK is the "Curry house". These are typically run by people from the Indian sub-continent. The food is more spicy than traditional British food, and include things such as [chilli], [cumin] and [turmeric].</p>One of the most popular dishes is [Chicken] Tikka Masala, which is believed to have been invented in the UK. Some people say that the most typical British night out involves a curry and a [lager]. Some cities have become famous for this type of food, particularly where there are large populations from Asia. Examples are [Bradford] and [Leciester].]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>7.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <introduction><![CDATA[<p>Select four ingredients mentioned in the text.<br>What type of drink is mentioned in the text?<br>Which places are mentioned that are famous for curry in the UK?</p><p><br></p><p><br></p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>chilli</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>cumin</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>turmeric</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>Chicken</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>lager</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>Bradford</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>Leciester</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <!-- Wordselect release:2.31 version:2018093000 Moodle version:2018051702.06 release:3.5.2+ (Build: 20181011) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>comprehension</text>
+</tag>
+      <tag><text>wordselect</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 572  -->
+  <question type="wordselect">
+    <name>
+      <text>Doctors</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A medical doctor (also called a [physician]) is a person who practices medicine to treat illness and injuries. Medical doctors go to medical school to be trained. They usually hold a college degree in medicine. Medical doctors used to make house calls to treat patients at home. Now they usually see patients in their offices or in hospitals. Medical doctors may also work for schools, companies, sports teams, or the military. Medical doctors are often assisted by [nurses].<br><br>Medical doctors treat patients by diagnosing them or figuring out what is wrong. They begin by asking questions about the patient's symptoms. Symptoms might include fever or pain. They may ask other questions about things like past illnesses or family members who have been sick. They will then examine the patient. That can include looking at different parts of the body and listening to the heart and lungs with a [stethoscope]. <br><br>Some medical doctors do only certain kinds of medicine. These doctors are called [specialists]. They may treat injuries to only specific parts of the body. They may treat only patients who have certain diseases. Other medical doctors are "general practitioners" or "family practitioners". This means that they do a little bit of everything. <br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <introduction><![CDATA[<ul><li>What is the alternative name for a medical doctor?</li><li>What person helps out doctors?</li><li>What type of doctor focusses on particular types of medicine?</li><li>What device is used to examine the parts of the body used for breathing?</li></ul><hr>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>physician</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>nurses</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>stethoscope</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>specialists</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <!-- Wordselect release:2.31 version:2018093000 Moodle version:2018051702.06 release:3.5.2+ (Build: 20181011) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>comprehension</text>
+</tag>
+      <tag><text>wordselect</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 577  -->
+  <question type="wordselect">
+    <name>
+      <text>English Education</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>In [England] pupils study for the [GCSE] exams normally between the ages of 14 and 16. Every student must study English and Maths. To pass the exams a student must get a grade C. After that they can study either A levels or a Vocational subject, sometimes called a BTEC qualification. This is called [Further] [Education].&nbsp; These qualifications are considered more practical with less emphasis on writing about the subject. For example people study BTEC's in childcare and motor vehicle repair. After that a student can go on to University. There is a central organisation for applying to university called UCAS.&nbsp; In [Scotland] the education system is slightly different but the stages are similar.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>5.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <introduction><![CDATA[<ul><li>What is the name of the exams studied before A levels</li><li>What is the name of education after the age of 16? (two words)</li><li>What are the two countries named in the text?</li></ul>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>England</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>GCSE</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>Further</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>Education</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>Scotland</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <!-- Wordselect release:2.31 version:2018093000 Moodle version:2018051702.06 release:3.5.2+ (Build: 20181011) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>comprehension</text>
+</tag>
+      <tag><text>wordselect</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 579  -->
+  <question type="wordselect">
+    <name>
+      <text>FamilyRelationships</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>[Brian] had a sister called [Jane]. Every [summer] he would take his wife Louise and son Peter to visit her. <br>She had a wonderful house with a big garden for him to play in. George and Louise were delighted when Peter married [Anne] when he was 23. <br></p><p>Anne worked as a nurse and Peter worked as a teacher. They bought a house and were very happy. Two years later they had a baby, a boy they called Luke. A year later they had a girl who they named Louise.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <introduction><![CDATA[<ul><li>What is the name of&nbsp; is Lukes Grandfather?</li><li>What is Peters wife's name?</li><li>What is the name of Luke's sister?</li><li>When did they visit Jane?</li><li>What is the name of Peters aunt?</li></ul>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>Brian</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>Jane</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>summer</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>Anne</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <!-- Wordselect release:2.31 version:2018093000 Moodle version:2018051702.06 release:3.5.2+ (Build: 20181011) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>comprehension</text>
+</tag>
+      <tag><text>wordselect</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 586  -->
+  <question type="wordselect">
+    <name>
+      <text>FishAndChips</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Fish and Chips is a popular take-away meal in the UK. Haddock is sometimes used but, [cod] is by far the most popular. Other fish with white meat can be used as well, for example whiting or plaice. The phrase 'fish &amp; chips' implies that it will be [fried] in [batter]. <br></p><p>Of course, in a fish restaurant, grilling or boiling would be alternatives. Typically Fish and Chips is eaten with salt and vinegar. Fish and Chip shops also offer other savoury items such as sausages, pies and fish cakes. Some Fish and chip shops offer eat-in options where you can sit at a table to eat your meal.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>3.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <introduction><![CDATA[<ul><li>Which is the most commonly used fish?</li><li>What is the fish covered in before cooking?</li><li>How is the fish cooked?</li></ul>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>cod</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>fried</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>batter</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <!-- Wordselect release:2.31 version:2018093000 Moodle version:2018051702.06 release:3.5.2+ (Build: 20181011) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>comprehension</text>
+</tag>
+      <tag><text>wordselect</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 587  -->
+  <question type="wordselect">
+    <name>
+      <text>FullEnglish</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>The "Full English Breakfast", is a dish consisting of [fried] food. Typically it includes egg, bacon, mushrooms and sometimes tomatoes and toast. The exact ingrediants vary and there are Scottish, Irish and Welsh variations. Because it is a high calorie meal people typically eat something lighter most days, leaving the Full English for the [weekend]. A typical weekday breakfast is [cereal] or [toast]. <br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <introduction><![CDATA[<ul><li>How is the "Full English Breakfast" cooked?</li><li>When is it eaten?</li><li>What to people tend to eat from Monday to Friday?</li></ul>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>fried</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>weekend</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>cereal</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>toast</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <!-- Wordselect release:2.31 version:2018093000 Moodle version:2018051702.06 release:3.5.2+ (Build: 20181011) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>comprehension</text>
+</tag>
+      <tag><text>wordselect</text>
+</tag>
+    </tags>
+  </question>
+
+</quiz>
