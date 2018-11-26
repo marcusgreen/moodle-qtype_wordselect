@@ -1,3 +1,10 @@
+### Version 2.32 of the Moodle WordSelect question type by Marcus Green. December 2018
+The clear incorrect responses and show number of correct responses checkboxes in Hints in the
+Multiple tries section of the editing form had no effect. This bug only had an effect when
+ using the Interactive with multiple tries question behaviour. The behaviour is now as
+expected with selections being cleared and a count of correct responses being shown. My 
+thanks to Dr Anna Stefanidou for reporting this issue.
+
 ### Version 2.31 of the Moodle WordSelect question type by Marcus Green. August 2018
 Fix to grading when using Interactive with multiple tries. Thanks again to Matthias Giger
 for reporting this. Fixed wordpenalty in sample questions and added new behat and phpunit
