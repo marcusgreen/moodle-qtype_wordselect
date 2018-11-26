@@ -426,6 +426,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * @return array a cleaned up response with the wrong bits reset.
      */
     public function clear_wrong_from_response(array $response) {
+        $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
         foreach ($response as $key => $value) {
             /* chop off the leading p */
             $place = substr($key, 1);
