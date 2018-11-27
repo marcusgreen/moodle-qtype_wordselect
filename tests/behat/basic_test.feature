@@ -59,7 +59,6 @@ create and preview wordselect (Select correct words) questions.
     And I wait "15" seconds
     And I should see "You have selected 2 correct items out of 2"
 
-
   #################################################
   #Interactive with multiple tries
   #################################################
