@@ -30,10 +30,14 @@ var result = {
             console.warn('Aborting because of no question received.');
             return that.CoreQuestionHelperProvider.showComponentError(that.onAbort);
         }
+        if (!this.question) {
+            console.warn('Aborting because of no question received.');
+            return that.CoreQuestionHelperProvider.showComponentError(that.onAbort);
+        }
         const div = document.createElement('div');
         div.innerHTML = this.question.html;
          // Get question questiontext.
-        const questiontext = div.querySelector('.qtext');
+        const questiontext = div.querySelector('.qtext')
 
         // Replace Moodle's correct/incorrect and feedback classes with our own.
         this.CoreQuestionHelperProvider.replaceCorrectnessClasses(div);
@@ -54,6 +58,8 @@ var result = {
             this.logger.warn('Aborting because of an error parsing question.', this.question.name);
             return this.CoreQuestionHelperProvider.showComponentError(this.onAbort);
         }
+        this.question.text = this.CoreDomUtilsProvider.getContentsOfElement(div, '.qtext');
+
 
         // Wait for the DOM to be rendered.
         setTimeout(() => {
