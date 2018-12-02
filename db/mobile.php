@@ -37,11 +37,11 @@ $addons = array(
                     'mobile_get_wordselect' => array(),
                 ), // Function needs caching for offline.
                'styles' => array(
-                    'url' => '/question/type/wordselect/styles_app.css',
-                    'version' => '1.00'
+                    'url' => '/question/type/wordselect/mobile/styles_app.css',
+                    'version' => '1.01'
                 ),
                 'lang' => array(
-                    array('Question name', 'pluginname')
+                    array('Wordselect question', 'pluginname')
                 )
             )
         ),
