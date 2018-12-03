@@ -1,6 +1,6 @@
 ### Wordselect Moodle Question type
 
-#ABOUT [![Build Status](https://travis-ci.org/marcusgreen/moodle-qtype_wordselect.svg?branch=master)](https://travis-ci.org/marcusgreen/moodle-qtype_wordselect)
+# ABOUT [![Build Status](https://travis-ci.org/marcusgreen/moodle-qtype_wordselect.svg?branch=master)](https://travis-ci.org/marcusgreen/moodle-qtype_wordselect)
 A very easy to use "select the words" Moodle question type. The question creator enters text
 and puts square braces around the correct ones. So if the objective was to select the verb, the phrase
 "The cat [sat] on the mat" would have square braces around sat. The user/student can select any word
