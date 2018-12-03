@@ -56,6 +56,8 @@ create and preview wordselect (Select correct words) questions.
     And I press "Check"
     And I should see "Your answer is correct."
     And I should see "Mark 2.00 out of 2.00"
+    And I wait "15" seconds
+    And I should see "You have selected 2 correct items out of 2"
 
   #################################################
   #Interactive with multiple tries
