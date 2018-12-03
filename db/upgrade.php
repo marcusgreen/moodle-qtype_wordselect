@@ -30,7 +30,7 @@ defined('MOODLE_INTERNAL') || die();
 function xmldb_qtype_wordselect_upgrade($oldversion = 0) {
     global $DB;
     $dbman = $DB->get_manager();
-    if ($oldversion < 2018093000) {
+    if ($oldversion < 2018120300) {
         if (!$dbman->field_exists('question_wordselect', 'wordpenalty')) {
             $field = new xmldb_field('wordpenalty', XMLDB_TYPE_NUMBER, '12, 8',
                     null, XMLDB_NOTNULL, null, '1', 'delimitchars');
