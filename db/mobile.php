@@ -38,7 +38,7 @@ $addons = array(
                 ), // Function needs caching for offline.
                'styles' => array(
                     'url' => '/question/type/wordselect/mobile/styles_app.css',
-                    'version' => '1.01'
+                    'version' => '1.03'
                 ),
                 'lang' => array(
                     array('Wordselect question', 'pluginname')

@@ -1,0 +1,59 @@
+.qtype-wordselect .selected {
+    cursor: pointer;
+    vertical-align: middle;
+    background: #cee0f4;
+    border-radius: 0.25em;
+    background-color: #cbcfd4;
+    background-image: none;
+    background-attachment: scroll;
+    background-position: 0 0;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+    border: solid thin black;
+    margin: 0;
+    display: inline;
+    white-space: nowrap;
+    -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+    outline-width: thin;
+}
+.qtype-wordselect .correctresponse {
+    background: #9dd8bb;
+    border-radius: 0.25em;
+    background-image: none;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: 0 0;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+    border: solid thin black;
+    color: #255c41;
+    display: inline;
+    white-space: nowrap;
+    -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.qtype-wordselect .incorrect {
+    background-attachment: scroll;
+    background-color: #f7d0d0;
+    background-image: none;
+    background-repeat: repeat;
+    background-position: 0 0;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+    border-radius: 0.25em;
+    border: solid thin black;
+    color: #b71c1c;
+    display: inline;
+    text-decoration: line-through;
+    white-space: nowrap;
+    -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}

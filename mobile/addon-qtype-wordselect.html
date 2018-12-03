@@ -1,11 +1,7 @@
 <section class="list qtype-wordselect-container qtype-wordselect" ion-list *ngIf="question.text || question.text === ''">
-    <ion-item text-wrap>
+    <ion-item text-wrap class="addon-qtype-wordselect-container qtext">
         <p><core-format-text [component]="component" [componentId]="componentId" [text]="question.introduction"></core-format-text></p>
-
-        <p><core-format-text [component]="component" [componentId]="componentId" [text]="question.text"></core-format-text></p>
+        <p><core-format-text  [component]="component" [componentId]="componentId" 
+            [text]="question.text" (afterRender)="questionRendered()"></core-format-text></p>     
     </ion-item>
-    <ion-input padding-left type="text" placeholder="{{ 'core.question.answer' | translate }}" 
-    [attr.name]="question.input.name" [value]="question.input.value" autocorrect="off" 
-    [disabled]="question.input.readOnly" [ngClass]="[question.input.correctClass]">
-    </ion-input>
 </section>

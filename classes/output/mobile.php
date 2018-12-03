@@ -18,7 +18,7 @@
  * Mobile output class for qtype_wordselect
  *
  * @package    qtype_wordselect
- * @copyright  2018 YOUR NAME
+ * @copyright  2018 Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -44,7 +44,7 @@ class mobile {
         global $CFG;
         $templatepath = $CFG->wwwroot . '/question/type/wordselect/mobile/addon-qtype-wordselect.html';
         $template = file_get_contents($templatepath);
-        $jsfilepath = $CFG->wwwroot . '/question/type/wordselect/javascript/mobile.js';
+        $jsfilepath = $CFG->wwwroot . '/question/type/wordselect/mobile/mobile.js';
         $jscontent = file_get_contents($jsfilepath);
         global $CFG;
         return [
