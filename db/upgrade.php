@@ -38,7 +38,7 @@ function xmldb_qtype_wordselect_upgrade($oldversion = 0) {
             $dbman->add_field($table, $field);
         }
         // Wordselect savepoint reached.
-        upgrade_plugin_savepoint(true, 2018093000, 'qtype', 'wordselect');
+        upgrade_plugin_savepoint(true, 2018120300, 'qtype', 'wordselect');
     }
     return true;
 }
