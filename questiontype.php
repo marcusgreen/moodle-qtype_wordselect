@@ -81,7 +81,7 @@ class qtype_wordselect extends question_type {
 
     /**
      * Save the extra data to your database tables from the
-     * $formdata object, which has all the post data from editformdata.html
+     * $formdata/$data object, which has all the post data from editformdata.html
      * Save the units and the answers associated with this question.
      * @param object $formdata
      * @return boolean
