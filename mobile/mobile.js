@@ -36,16 +36,14 @@ var result = {
                 /* selection will be null after marking/readonly */
                 return;
             }
-            /* not sure if this is necessary */      
+            /* not sure if this is necessary */
             var hidden = document.getElementById(selection.getAttribute('id'))
             if (selection.classList.contains('selected')) {
                 selection.classList.remove('selected');
                 selection.title = '';
                 selection.setAttribute("aria-checked",false)
-                /**
-                 * change the type to text to avoid the problem that
-                 * unchecked checkboxes are not passed in the request
-                 **/
+                /* Change the type to text to avoid the problem that
+                unchecked checkboxes are not passed in the request */
                 hidden.style.visibility = "hidden";
                 hidden.style.display = "none";
                 hidden.value = "";
@@ -64,10 +62,8 @@ var result = {
         this.questionRendered = function questionRendered() {
             var selchecks = this.componentContainer.querySelectorAll('input.selcheck');
             for (var i = 0; i < selchecks.length; i++) {
-                selchecks[i].type="hidden";
+                selchecks[i].type = "hidden";
                 if(selchecks[i].checked == true){
-                    debugger;
-
                     selchecks[i].value = "on";
                 }
             }
@@ -85,13 +81,9 @@ var result = {
             console.warn('Aborting because of no question received.');
             return that.CoreQuestionHelperProvider.showComponentError(that.onAbort);
         }
-    
+
         const div = document.createElement('div');
         div.innerHTML = this.question.html;
-      debugger; 
-        // Replace Moodle's correct/incorrect and feedback classes with mobile versions.
-        //this.CoreQuestionHelperProvider.replaceCorrectnessClasses(div);
-        //this.CoreQuestionHelperProvider.replaceFeedbackClasses(div);
 
          // Treat the correct/incorrect icons.
         this.CoreQuestionHelperProvider.treatCorrectnessIcons(div);
@@ -106,17 +98,11 @@ var result = {
 
         this.question.text = this.CoreDomUtilsProvider.getContentsOfElement(div, '.qtext');
 
-
         if (typeof this.question.text == 'undefined') {
             this.logger.warn('Aborting because of an error parsing question.', this.question.name);
             return this.CoreQuestionHelperProvider.showComponentError(this.onAbort);
         }
 
-
-        // Wait for the DOM to be rendered.
-        setTimeout(() => {
- 
-        });
         return true;
     }
 };
