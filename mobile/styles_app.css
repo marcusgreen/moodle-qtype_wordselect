@@ -19,7 +19,19 @@
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
     outline-width: thin;
 }
+
+.qtype-wordselect .correct {
+    background-color: #ee2;
+    border-radius: 0.25em;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: auto auto;
+    border: solid thin;
+    white-space: nowrap;
+}
+
 .qtype-wordselect .correctresponse {
+    vertical-align:middle;
     background: #9dd8bb;
     border-radius: 0.25em;
     background-image: none;
@@ -39,6 +51,7 @@
 }
 
 .qtype-wordselect .incorrect {
+    vertical-align: middle;
     background-attachment: scroll;
     background-color: #f7d0d0;
     background-image: none;

@@ -88,10 +88,10 @@ var result = {
     
         const div = document.createElement('div');
         div.innerHTML = this.question.html;
-       
+      debugger; 
         // Replace Moodle's correct/incorrect and feedback classes with mobile versions.
-        this.CoreQuestionHelperProvider.replaceCorrectnessClasses(div);
-        this.CoreQuestionHelperProvider.replaceFeedbackClasses(div);
+        //this.CoreQuestionHelperProvider.replaceCorrectnessClasses(div);
+        //this.CoreQuestionHelperProvider.replaceFeedbackClasses(div);
 
          // Treat the correct/incorrect icons.
         this.CoreQuestionHelperProvider.treatCorrectnessIcons(div);
