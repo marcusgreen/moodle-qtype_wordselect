@@ -281,6 +281,9 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $summary = '';
         $allwords = $this->get_words();
         foreach ($response as $index => $value) {
+            if (!isset($allwords[substr($index, 1)])) {
+                continue;
+            }
             $summary .= " " . $allwords[substr($index, 1)]->get_without_delim() . " ";
         }
         return $summary;
