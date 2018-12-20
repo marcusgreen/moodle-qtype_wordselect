@@ -1,0 +1,8 @@
+<section class="list qtype-wordselect-container qtype-wordselect" ion-list *ngIf="question.text || question.text === ''">
+    <ion-item text-wrap class="addon-qtype-wordselect-container qtext">
+        <p><core-format-text [component]="component" [componentId]="componentId" [text]="question.introduction">
+        </core-format-text></p>
+        <p><core-format-text  [component]="component" [componentId]="componentId" 
+            [text]="question.text" (afterRender)="questionRendered()"></core-format-text></p>     
+    </ion-item>
+</section>
