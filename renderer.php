@@ -136,7 +136,8 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                     'type' => 'checkbox',
                     'name' => $wordattributes['name'],
                     'id' => $wordattributes['name'],
-                    'hidden' => 'true');
+                    'hidden' => 'true',
+                    'class' => 'selcheck');
                 if ($isselected == true) {
                     $properties['checked'] = "true";
                     $wordattributes['aria-checked'] = 'true';
@@ -227,6 +228,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         }
         return $feedback;
     }
+
     /**
      * overriding base class method purely to return a string
      * yougotnrightcount instead of default yougotnright
