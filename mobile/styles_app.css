@@ -1,3 +1,6 @@
+.qtype-wordselect .selectable {
+    cursor: pointer;
+}
 .qtype-wordselect .selected {
     cursor: pointer;
     vertical-align: middle;
