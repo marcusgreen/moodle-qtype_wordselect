@@ -40,9 +40,10 @@ $addons = array(
                     'url' => '/question/type/wordselect/mobile/styles_app.css',
                     'version' => '1.07'
                 ),
-                'lang' => array(
-                    array('Wordselect question', 'pluginname')
-                )
+                'lang' => [
+                    array('pluginname', 'qtype_wordselect'),
+                    array('taptoselect', 'qtype_wordselect')
+                ]
             )
         ),
     )
