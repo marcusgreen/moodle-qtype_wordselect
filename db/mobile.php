@@ -36,16 +36,16 @@ $addons = [
                 'offlinefunctions' => [
                     'mobile_get_wordselect' => array(),
                 ], // Function needs caching for offline.
-               'styles' => [
+                'styles' => [
                     'url' => '/question/type/wordselect/mobile/styles_app.css',
                     'version' => '1.09'
-               ]
+                ]
             ]
-        ],    
+        ],
         'lang' => [
                     array('pluginname', 'wordselect'),
                     array('taptoselect', 'qtype_wordselect')
-        ],            
+        ],
     ]
 ];
 
