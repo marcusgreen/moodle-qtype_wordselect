@@ -43,7 +43,7 @@ $addons = [
             ]
         ],
         'lang' => [
-                    array('pluginname', 'wordselect'),
+                    array('pluginname', 'qtype_wordselect'),
                     array('taptoselect', 'qtype_wordselect')
         ],
     ]
