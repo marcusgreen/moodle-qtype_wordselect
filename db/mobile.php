@@ -22,29 +22,30 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die();
-$addons = array(
-    "qtype_wordselect" => array(
-        "handlers" => array( // Different places where the add-on will display content.
-            'wordselect' => array( // Handler unique name (can be anything).
-                'displaydata' => array(
+$addons = [
+    "qtype_wordselect" => [
+        "handlers" => [ // Different places where the add-on will display content.
+            'wordselect' => [ // Handler unique name (can be anything).
+                'displaydata' => [
                     'title' => 'Qtype Name',
                     'icon' => '/question/type/wordselect/pix/icon.gif',
                     'class' => '', // What does this do?
-                ),
+                ],
                 'delegate' => 'CoreQuestionDelegate', // Delegate (where to display the link to the add-on).
                 'method' => 'mobile_get_wordselect',
-                'offlinefunctions' => array(
+                'offlinefunctions' => [
                     'mobile_get_wordselect' => array(),
-                ), // Function needs caching for offline.
-               'styles' => array(
+                ], // Function needs caching for offline.
+               'styles' => [
                     'url' => '/question/type/wordselect/mobile/styles_app.css',
                     'version' => '1.09'
-                ),
-                'lang' => [
-                    array('pluginname', 'qtype_wordselect'),
+               ]
+            ]
+        ],    
+        'lang' => [
+                    array('pluginname', 'wordselect'),
                     array('taptoselect', 'qtype_wordselect')
-                ]
-            )
-        ),
-    )
-);
+        ],            
+    ]
+];
+
