@@ -1,3 +1,9 @@
+### Version 2.4 of the Moodle WordSelect question type by Marcus Green. December 2018
+Support for the Moodle Mobile App. Added a collection of sample english language questions 
+in examples\en\english_language.xml that can be imported.
+
+Addition of defensive code for issue https://github.com/marcusgreen/moodle-qtype_wordselect/issues/15
+
 ### Version 2.32 of the Moodle WordSelect question type by Marcus Green. December 2018
 The clear incorrect responses and show number of correct responses checkboxes in Hints in the
 Multiple tries section of the editing form had no effect. This bug only had an effect when
