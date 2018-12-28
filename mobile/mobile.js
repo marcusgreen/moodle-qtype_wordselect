@@ -31,16 +31,16 @@ var result = {
             var parts = selector.split(":");
             selector = parts[0] + "\\:" + parts[1];
             var selection = document.querySelector(selector + ".selectable");
-            if (selection == null){
+            if (selection === null) {
                 /* selection will be null after marking/readonly */
                 return;
             }
             /* not sure if this is necessary */
-            var hidden = document.getElementById(selection.getAttribute('id'))
+            var hidden = document.getElementById(selection.getAttribute('id'));
             if (selection.classList.contains('selected')) {
                 selection.classList.remove('selected');
                 selection.title = '';
-                selection.setAttribute("aria-checked",false)
+                selection.setAttribute("aria-checked", false);
                 /* Change the type to text to avoid the problem that
                 unchecked checkboxes are not passed in the request */
                 hidden.style.visibility = "hidden";
@@ -51,7 +51,7 @@ var result = {
             } else {
                 selection.classList.add('selected');
                 selection.title = 'selected';
-                selection.setAttribute("aria-checked",true)
+                selection.setAttribute("aria-checked", true);
                 hidden.value = "on";
                 selection.value = "on";
                 hidden.checked = "true";
@@ -62,7 +62,7 @@ var result = {
             var selchecks = this.componentContainer.querySelectorAll('input.selcheck');
             for (var i = 0; i < selchecks.length; i++) {
                 selchecks[i].type = "hidden";
-                if(selchecks[i].checked == true){
+                if (selchecks[i].checked == true) {
                     selchecks[i].value = "on";
                 }
             }
@@ -74,14 +74,14 @@ var result = {
                     });
                 }
             }
-        }
+        };
 
         if (!this.question) {
             console.warn('Aborting because of no question received.');
             return that.CoreQuestionHelperProvider.showComponentError(that.onAbort);
         }
 
-        const div = document.createElement('div');
+        var div = document.createElement('div');
         div.innerHTML = this.question.html;
 
          // Treat the correct/incorrect icons.
