@@ -32,10 +32,10 @@ var result = {
             selector = parts[0] + "\\:" + parts[1];
             var selection = document.querySelector(selector + ".selectable");
             if (selection === null) {
-                /* selection will be null after marking/readonly */
+                /* Selection will be null after marking/readonly */
                 return;
             }
-            /* not sure if this is necessary */
+            /* Not sure if this is necessary */
             var hidden = document.getElementById(selection.getAttribute('id'));
             if (selection.classList.contains('selected')) {
                 selection.classList.remove('selected');
