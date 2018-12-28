@@ -38,7 +38,7 @@ $addons = [
                 ], // Function needs caching for offline.
                 'styles' => [
                     'url' => '/question/type/wordselect/mobile/styles_app.css',
-                    'version' => '1.09'
+                    'version' => '1.10'
                 ]
             ]
         ],
