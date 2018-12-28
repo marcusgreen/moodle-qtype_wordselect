@@ -2,6 +2,11 @@
 Significant new feature: support for the Moodle Mobile App. Added a collection of sample english language questions 
 in examples\en\english_language.xml that can be imported.
 
+Briefly tested with the Embed question filter
+https://moodle.org/plugins/filter_embedquestion
+and StudentQuiz
+https://moodle.org/plugins/mod_studentquiz
+
 Addition of defensive code for issue https://github.com/marcusgreen/moodle-qtype_wordselect/issues/15
 
 ### Version 2.32 of the Moodle WordSelect question type by Marcus Green. December 2018
