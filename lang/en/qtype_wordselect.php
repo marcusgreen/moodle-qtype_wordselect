@@ -46,3 +46,6 @@ $string['penalty'] = 'Penalty';
 $string['wordpenalty_setting'] = 'Penalty for each incorrect text item selected';
 $string['yougotnrightcount'] = 'You have selected {$a->num} correct items out of {$a->outof}.';
 $string['taptoselect'] = 'Tap to select';
+$string['itemsettingsbutton'] = 'Item settings';
+$string['itemsettings_button_help'] = 'Add feedback to words';
+

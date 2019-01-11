@@ -37,6 +37,9 @@ class qtype_wordselect_edit_form extends question_edit_form {
      * @param MoodleQuickForm $mform the form being built.
      */
     protected function definition_inner($mform) {
+        global $PAGE;
+        $PAGE->requires->js_call_amd('qtype_wordselect/wordfeedback', 'init');
+
         $mform->removeelement('questiontext');
 
         $mform->removeelement('generalfeedback');
@@ -56,7 +59,9 @@ class qtype_wordselect_edit_form extends question_edit_form {
         $mform->setType('questiontext', PARAM_RAW);
 
         $mform->addHelpButton('questiontext', 'questiontext', 'qtype_wordselect');
-
+        $mform->addElement('button', 'itemsettings_button', get_string('itemsettingsbutton', 'qtype_wordselect'));
+        //  $mform->addHelpButton('itemsettings_button', 'itemsettingsbutton', 'qtype_wordselect');
+          
         $mform->addElement('editor', 'generalfeedback', get_string('generalfeedback', 'question')
                 , array('rows' => 10), $this->editoroptions);
 

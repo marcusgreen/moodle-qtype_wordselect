@@ -46,3 +46,19 @@ function qtype_wordselect_pluginfile($course, $cm, $context, $filearea, $args, $
     require_once($CFG->libdir . '/questionlib.php');
     question_pluginfile($course, $context, 'qtype_wordselect', $filearea, $args, $forcedownload, $options);
 }
+
+function qtype_wordselect_output_fragment_wordfeedback($args) {
+    global $CFG;
+    $context = $args['context'];
+    if ($context->contextlevel != CONTEXT_MODULE) {
+        return null;
+    }
+    $formdata = array();
+    if (!empty($args['jsonformdata'])) {
+        $serialiseddata = json_decode($args['jsonformdata']);
+        parse_str($serialiseddata, $formdata);
+    }
+    return $assign->view('gradingpanel', $viewargs);
+}
+
+
