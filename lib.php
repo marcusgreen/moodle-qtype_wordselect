@@ -49,6 +49,9 @@ function qtype_wordselect_pluginfile($course, $cm, $context, $filearea, $args, $
 
 function qtype_wordselect_output_fragment_wordfeedback($args) {
     global $CFG;
+    var_dump($args);
+    exit();
+    echo('wordfeedback xxxx');
     $context = $args['context'];
     if ($context->contextlevel != CONTEXT_MODULE) {
         return null;
@@ -58,7 +61,9 @@ function qtype_wordselect_output_fragment_wordfeedback($args) {
         $serialiseddata = json_decode($args['jsonformdata']);
         parse_str($serialiseddata, $formdata);
     }
-    return $assign->view('gradingpanel', $viewargs);
+    return 'string from a renderer';
+   // return $assign->view('gradingpanel', $viewargs);
 }
+
 
 
