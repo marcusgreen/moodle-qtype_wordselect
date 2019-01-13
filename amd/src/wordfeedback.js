@@ -22,7 +22,7 @@ define(
                             
                     );
                 };
-                data=0;
+                var data=0;
                 loadFormFragment(data);
         }
     };

@@ -26,6 +26,7 @@
 
 
 defined('MOODLE_INTERNAL') || die();
+use qtype_wordselect\forms\word_feedback_form;
 
 
 /**
@@ -49,9 +50,12 @@ function qtype_wordselect_pluginfile($course, $cm, $context, $filearea, $args, $
 
 function qtype_wordselect_output_fragment_wordfeedback($args) {
     global $CFG;
-    var_dump($args);
+   /* $form = new assignform($actionurl, (object) ['stage' => $stage - 1],
+    'post', '', null, true, $ajaxdata);*/
+    $form = new word_feedback_form();
+    return $form->render();
+
     exit();
-    echo('wordfeedback xxxx');
     $context = $args['context'];
     if ($context->contextlevel != CONTEXT_MODULE) {
         return null;
