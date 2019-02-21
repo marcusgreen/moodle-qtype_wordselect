@@ -7,6 +7,7 @@
     line-height: 1.4em;
 }
 .qtype-wordselect .selected {
+    line-height: 1.2;
     cursor: pointer;
     vertical-align: middle;
     background: #cee0f4;
