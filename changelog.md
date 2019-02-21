@@ -1,7 +1,7 @@
 ### Version 2.41 of the Moodle WordSelect question type by Marcus Green. Feb 2019
 Added more sample english language questions.
 Fixed line-height to ensure correct display in ios/mobile app
-fixed eslint checker that const is a reserved word.
+Fixed error eslint checker that const is a reserved word (in mobile.js)
 
 ### Version 2.4 of the Moodle WordSelect question type by Marcus Green. December 2018
 Significant new feature: support for the Moodle Mobile App. Added a collection of 
