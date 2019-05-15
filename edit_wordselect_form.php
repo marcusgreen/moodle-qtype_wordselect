@@ -40,7 +40,11 @@ class qtype_wordselect_edit_form extends question_edit_form {
     protected function definition_inner($mform) {
 
         global $PAGE;
-        $PAGE->requires->js_call_amd('qtype_wordselect/questionedit', 'init');
+        
+
+        $contextid = $PAGE->context->id;
+        
+        $PAGE->requires->js_call_amd('qtype_wordselect/questionedit', 'init',['contextid'=>$contextid]);
     
 
         $mform->removeelement('questiontext');

@@ -25,11 +25,10 @@
 define([
   "jquery", "core/ajax", "core/fragment" ], function ($, ajax, Fragment) {
   return {
-    init: function () {
+    init: function (contextid) {
         debugger;
 
       var loadFormFragment = function () {
-        var contextid = 0;
         var params = {};
         Fragment.loadFragment("qtype_wordselect", "feedbackedit", contextid, params).done(function (html, js) {
           alert("load fragment");

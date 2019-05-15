@@ -46,14 +46,37 @@ function qtype_wordselect_pluginfile($course, $cm, $context, $filearea, $args, $
     require_once($CFG->libdir . '/questionlib.php');
     question_pluginfile($course, $context, 'qtype_wordselect', $filearea, $args, $forcedownload, $options);
 }
+
+class feedback_form extends moodleform {
+    //Add elements to form
+    public function definition() {
+        global $CFG;
+ 
+        $mform = $this->_form; // Don't forget the underscore! 
+ 
+        $mform->addElement('text', 'email', get_string('email')); // Add elements to your form
+        $mform->setType('email', PARAM_NOTAGS);                   //Set type of element
+        $mform->setDefault('email', 'Please enter email');        //Default value
+    }
+    //Custom validation should be added here
+    function validation($data, $files) {
+        return array();
+    }
+}
+
+
 function qtype_wordselect_output_fragment_feedbackedit($args) {
-    global $CFG;
-    echo ('lib fragment');
+    global $PAGE;
     $context = $args['context'];
-    if ($context->contextlevel != CONTEXT_MODULE) {
+    if ($context->contextlevel != CONTEXT_COURSE) {
         return null;
     }
-    return 'a string';
+
+    $output = $PAGE->get_renderer('core', '', RENDERER_TARGET_GENERAL);
+    $mform= new feedback_form();
+    
+    return $mform->render();
+
 
  /*
     if ($context->contextlevel != CONTEXT_MODULE) {
