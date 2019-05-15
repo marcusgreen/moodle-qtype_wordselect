@@ -46,10 +46,15 @@ function qtype_wordselect_pluginfile($course, $cm, $context, $filearea, $args, $
     require_once($CFG->libdir . '/questionlib.php');
     question_pluginfile($course, $context, 'qtype_wordselect', $filearea, $args, $forcedownload, $options);
 }
-function qtype_wordselect_output_fragment_questionedit($args) {
+function qtype_wordselect_output_fragment_feedbackedit($args) {
     global $CFG;
-
+    echo ('lib fragment');
     $context = $args['context'];
+    if ($context->contextlevel != CONTEXT_MODULE) {
+        return null;
+    }
+    return 'a string';
+
  /*
     if ($context->contextlevel != CONTEXT_MODULE) {
         return null;

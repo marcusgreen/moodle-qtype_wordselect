@@ -36,7 +36,13 @@ class qtype_wordselect_edit_form extends question_edit_form {
      *
      * @param MoodleQuickForm $mform the form being built.
      */
+ 
     protected function definition_inner($mform) {
+
+        global $PAGE;
+        $PAGE->requires->js_call_amd('qtype_wordselect/questionedit', 'init');
+    
+
         $mform->removeelement('questiontext');
 
         $mform->removeelement('generalfeedback');
