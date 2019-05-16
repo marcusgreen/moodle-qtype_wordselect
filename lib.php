@@ -27,6 +27,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+require_once $CFG->libdir.'/formslib.php';
 
 /**
  * Checks file access for wordselect questions.
@@ -47,7 +48,7 @@ function qtype_wordselect_pluginfile($course, $cm, $context, $filearea, $args, $
     question_pluginfile($course, $context, 'qtype_wordselect', $filearea, $args, $forcedownload, $options);
 }
 
-class feedback_form extends moodleform {
+class feedback_form extends \moodleform {
     //Add elements to form
     public function definition() {
         global $CFG;
