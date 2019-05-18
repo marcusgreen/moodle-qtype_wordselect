@@ -22,8 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-define([
-  "jquery", "core/ajax", "core/fragment" ], function ($, ajax, Fragment) {
+define(["jquery", "core/ajax", "core/fragment",'core/modal_factory' ], function ($, ajax, Fragment,ModalFactory) {
   return {
     init: function (contextid) {
         debugger;

@@ -69,14 +69,15 @@ class feedback_form extends \moodleform {
 function qtype_wordselect_output_fragment_feedbackedit($args) {
     global $PAGE;
     $context = $args['context'];
-    if ($context->contextlevel != CONTEXT_COURSE) {
-        return null;
-    }
+    // if ($context->contextlevel != CONTEXT_COURSE) {
+    //     return null;
+    // }
 
     $output = $PAGE->get_renderer('core', '', RENDERER_TARGET_GENERAL);
     $mform= new feedback_form();
     
-    return $mform->render();
+   // return $mform->render();
+   $mform->display();
 
 
  /*
