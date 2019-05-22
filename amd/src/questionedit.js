@@ -23,15 +23,16 @@
  */
 
 define([
-  "jquery", "core/ajax", "core/fragment" ], function ($, ajax, Fragment) {
+  "jquery", "core/ajax", "core/fragment","core/templates" ], function ($, ajax, Fragment,templates) {
   return {
     init: function (contextid) {
-        debugger;
 
       var loadFormFragment = function () {
         var params = {};
         Fragment.loadFragment("qtype_wordselect", "feedbackedit", contextid, params).done(function (html, js) {
-          alert("load fragment");
+          debugger;
+          var node = $("#fitem_id_questiontext");
+          templates.replaceNodeContents(node, html, js);
           console.log("loadfragment");
         });
       };
