@@ -54,10 +54,12 @@ class feedback_form extends \moodleform {
         global $CFG;
  
         $mform = $this->_form; // Don't forget the underscore! 
- 
+        $mform->addElement('header', 'firstheader', '');
+
         $mform->addElement('text', 'email', get_string('email')); // Add elements to your form
         $mform->setType('email', PARAM_NOTAGS);                   //Set type of element
         $mform->setDefault('email', 'Please enter email');        //Default value
+        $this->add_action_buttons();
     }
     //Custom validation should be added here
     function validation($data, $files) {
@@ -76,30 +78,6 @@ function qtype_wordselect_output_fragment_feedbackedit($args) {
     $output = $PAGE->get_renderer('core', '', RENDERER_TARGET_GENERAL);
     $mform= new feedback_form();
     
-   // return $mform->render();
-   $mform->display();
+    return $mform->render();
 
-
- /*
-    if ($context->contextlevel != CONTEXT_MODULE) {
-        return null;
-    }
-    require_once($CFG->dirroot . '/mod/assign/locallib.php');
-    $assign = new assign($context, null, null);
- 
-    $userid = clean_param($args['userid'], PARAM_INT);
-    $attemptnumber = clean_param($args['attemptnumber'], PARAM_INT);
-    $formdata = array();
-    if (!empty($args['jsonformdata'])) {
-        $serialiseddata = json_decode($args['jsonformdata']);
-        parse_str($serialiseddata, $formdata);
-    }
-    $viewargs = array(
-        'userid' => $userid,
-        'attemptnumber' => $attemptnumber,
-        'formdata' => $formdata
-    );
- 
-    return $assign->view('gradingpanel', $viewargs);
-    */
 }
