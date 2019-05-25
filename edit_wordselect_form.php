@@ -66,6 +66,7 @@ class qtype_wordselect_edit_form extends question_edit_form {
         $mform->setType('questiontext', PARAM_RAW);
 
         $mform->addHelpButton('questiontext', 'questiontext', 'qtype_wordselect');
+        $mform->addElement('button', 'itemsettings_button', get_string('itemsettingsbutton', 'qtype_gapfill'));
 
         $mform->addElement('editor', 'generalfeedback', get_string('generalfeedback', 'question')
                 , array('rows' => 10), $this->editoroptions);

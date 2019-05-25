@@ -22,22 +22,27 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-define([
-  "jquery", "core/ajax", "core/fragment","core/templates" ], function ($, ajax, Fragment,templates) {
+define(["jquery", "core/ajax", "core/fragment","core/templates","qtype_wordselect/dialog_info" ], 
+      function ($, ajax, Fragment,templates, DialogInfo) {
+ // define(["jquery", "core/ajax", "core/fragment","core/templates"], 
+ // function ($, ajax, Fragment,templates) {
   return {
     init: function (contextid) {
-
+      var  modalCreateFeedback = new DialogInfo('', '', null, false, false);
       var loadFormFragment = function () {
         var params = {};
         Fragment.loadFragment("qtype_wordselect", "feedbackedit", contextid, params).done(function (html, js) {
-          debugger;
-          var node = $("#fitem_id_questiontext");
-          templates.replaceNodeContents(node, html, js);
-          console.log("loadfragment");
+         modalCreateFeedback.show('Create feedback',
+          '<div id="createFeedback">' + html + '</div>',
+          '<div id="creatFeedbackDialogFooter"></div>', true);
         });
       };
-      loadFormFragment();
 
+      $("#id_itemsettings_button").on("click", function() {
+        loadFormFragment();
+      });
+
+  
     }
   };
 });
