@@ -76,8 +76,7 @@ function qtype_wordselect_output_fragment_feedbackedit($args) {
     $output = $PAGE->get_renderer('core', '', RENDERER_TARGET_GENERAL);
     $mform= new feedback_form();
     
-   // return $mform->render();
-   $mform->display();
+    return $mform->render();
 
 
  /*
