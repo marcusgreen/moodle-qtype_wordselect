@@ -32,12 +32,21 @@ define(["jquery", "core/ajax", "core/fragment","core/templates","qtype_wordselec
       var loadFormFragment = function () {
         var params = {};
         Fragment.loadFragment("qtype_wordselect", "feedbackedit", contextid, params).done(function (html, js) {
-         modalCreateFeedback.show('Create feedback',
+          debugger;
+          modalCreateFeedback.show('Create feedback',
           '<div id="createFeedback">' + html + '</div>',
           '<div id="creatFeedbackDialogFooter"></div>', true);
+          runJS(js);
+
         });
       };
 
+      var runJS = function(source) {
+        if (source.trim() !== '') {
+            var newscript = $('<script>').attr('type', 'text/javascript').html(source);
+            $('head').append(newscript);
+        }
+    };
       $("#id_itemsettings_button").on("click", function() {
         loadFormFragment();
       });
