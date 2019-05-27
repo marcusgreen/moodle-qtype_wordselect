@@ -53,9 +53,21 @@ class feedback_form extends \moodleform {
     public function definition() {
  
         $mform = $this->_form; 
+        $mform->addElement('html','<div id="item_feedback">');
+
         $mform->addElement('editor', 'correct', 'Correct', ['rows' => 4,'cols'=>50],'Correct', $this->editoroptions);
         $mform->addElement('editor', 'incorrect', 'Incorrect', ['rows' => 4,'cols'=>50], $this->editoroptions);
+
+        $repeatarray = [];
+        $repeatarray[] = $mform->createElement('text','response','Response',['size'=>50]);
+        $repeatarray[] = $mform->createElement('editor','feedback','Feedback',['rows'=>2,'cols'=>50]);
+        $repeateloptions = [];
+        $START_REPETITIONS = 1;
+        $this->repeat_elements($repeatarray, $START_REPETITIONS,
+            $repeateloptions, 'extended_feedback_repeats', 'extended_feedback', 1, null, true);
         $this->add_action_buttons();
+        $mform->addElement('html','</div>');
+
     }
     //Custom validation should be added here
     function validation($data, $files) {
@@ -74,6 +86,9 @@ function qtype_wordselect_output_fragment_feedbackedit($args) {
     $output = $PAGE->get_renderer('core', '', RENDERER_TARGET_GENERAL);
     $mform= new feedback_form();
     
+    if($mform->get_data()){
+        return;
+    }
     return $mform->render();
 
 }

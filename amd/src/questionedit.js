@@ -47,6 +47,16 @@ define(["jquery", "core/ajax", "core/fragment","core/templates","qtype_wordselec
             $('head').append(newscript);
         }
     };
+    $('body').on('click', '#item_feedback #id_cancel', function(e) {
+      e.preventDefault();
+      modalCreateFeedback.hide();
+  });
+  $('body').on('click', '#item_feedback #id_extended_feedback', function(e) {
+    e.preventDefault();
+    var repeat = 1;
+    loadFormFragment(repeat);
+});
+  
       $("#id_itemsettings_button").on("click", function() {
         loadFormFragment();
       });
