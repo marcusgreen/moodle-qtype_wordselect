@@ -28,13 +28,17 @@ define(["jquery", "core/ajax", "core/fragment","core/templates","qtype_wordselec
  // function ($, ajax, Fragment,templates) {
   return {
     init: function (contextid) {
+      /* make repeat elements work with fragments
+      https://tracker.moodle.org/browse/MDL-63685
+      */
       var  modalCreateFeedback = new DialogInfo('', '', null, false, false);
-      var loadFormFragment = function () {
-        var params = {};
+      var loadFormFragment = function (repeat) {
+        var params = {'repeat':repeat};
         Fragment.loadFragment("qtype_wordselect", "feedbackedit", contextid, params).done(function (html, js) {
           debugger;
           modalCreateFeedback.show('Create feedback',
-          '<div id="createFeedback">' + html + '</div>',
+          '<div id="createFeedback">'
+           + html + '</div>',
           '<div id="creatFeedbackDialogFooter"></div>', true);
           runJS(js);
 
@@ -53,12 +57,11 @@ define(["jquery", "core/ajax", "core/fragment","core/templates","qtype_wordselec
   });
   $('body').on('click', '#item_feedback #id_extended_feedback', function(e) {
     e.preventDefault();
-    var repeat = 1;
-    loadFormFragment(repeat);
+    loadFormFragment(true);
 });
   
       $("#id_itemsettings_button").on("click", function() {
-        loadFormFragment();
+        loadFormFragment(false);
       });
 
   
