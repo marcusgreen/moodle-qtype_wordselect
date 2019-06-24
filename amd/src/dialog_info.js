@@ -2,7 +2,7 @@ define(
     [
         'jquery',
         'core/modal_factory',
-
+        'core/fragment'
     ],
     /**
      * A general purpose info dialog - makes it easy to show and hide a reusable dialog.
@@ -10,10 +10,50 @@ define(
      * @param ModalFactory
      * @returns {dialogInfo}
      */
-    function($, ModalFactory) {
+    function($, ModalFactory, Fragment) {
         var dialogNumber = 0;
 
-        return function DialogInfo(title, bodyHTML, footerHTML, large, autoShow) {
+        return function DialogInfo(title, bodyHTML, footerHTML, large, autoShow, contextid) {
+            this.contextId = contextid;
+            DialogInfo.prototype.setupFormModal = function(modal) {
+                this.modal.getRoot().on('click', 'form input[type=submit]', this.submitButton.bind(this));
+                this.modal.getRoot().on('submit', 'form', this.submitFormAjax.bind(this));
+
+            }
+
+            DialogInfo.prototype.submitButton = function(e) {
+                var form = this.modal.getRoot().find('form'),
+                    target = $(e.target);
+                e.preventDefault();
+                if (target.attr('data-no-submit') === '1') {
+                    // No-submit button pressed.
+                    var formData = form.serialize();
+                    formData = formData + '&' + encodeURIComponent(target.attr('name')) + '=' + encodeURIComponent(target.attr('value'));
+                    this.modal.setBody(this.getBody(formData)); // loads fragment only, without form submission.
+                } else {
+                    this.submitFormAjax(e); // does the full submission
+                }
+            }
+            DialogInfo.prototype.getBody = function(formdata) {
+
+                var params = null;
+                if (typeof formdata !== "undefined") {
+                    params = { jsonformdata: JSON.stringify(formdata) };
+                }
+                // Get the content of the modal.
+                debugger;
+                return Fragment.loadFragment("qtype_wordselect", "feedbackedit", this.contextId, params);
+            };
+
+            DialogInfo.prototype.submitFormAjax = function(e) {
+                // We don't want to do a real form submission.
+                e.preventDefault();
+                debugger;
+
+                // Convert all the form elements values to a serialised string.
+                var formData = this.modal.getRoot().find('form').serialize();
+
+            }
             var self = this;
 
             this.modal = null;
@@ -75,7 +115,9 @@ define(
                         modal.show();
                     }
                     self.dialogIds.push(self.dialogNum); // Dialog is now initialised so register id.
-                });
+                }).done(function(modal) {
+                    this.setupFormModal(modal);
+                }.bind(this));
             }
         };
     }

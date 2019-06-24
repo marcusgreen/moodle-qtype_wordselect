@@ -22,49 +22,49 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-define(["jquery", "core/ajax", "core/fragment","core/templates","qtype_wordselect/dialog_info" ], 
-      function ($, ajax, Fragment,templates, DialogInfo) {
- // define(["jquery", "core/ajax", "core/fragment","core/templates"], 
- // function ($, ajax, Fragment,templates) {
-  return {
-    init: function (contextid) {
-      /* make repeat elements work with fragments
-      https://tracker.moodle.org/browse/MDL-63685
-      */
-      var  modalCreateFeedback = new DialogInfo('', '', null, false, false);
-      var loadFormFragment = function (repeat) {
-        var params = {'repeat':repeat};
-        Fragment.loadFragment("qtype_wordselect", "feedbackedit", contextid, params).done(function (html, js) {
-          debugger;
-          modalCreateFeedback.show('Create feedback',
-          '<div id="createFeedback">'
-           + html + '</div>',
-          '<div id="creatFeedbackDialogFooter"></div>', true);
-          runJS(js);
+define(["jquery", "core/ajax", "core/fragment", "core/templates", "qtype_wordselect/dialog_info"],
+    function($, ajax, Fragment, templates, DialogInfo) {
+        // define(["jquery", "core/ajax", "core/fragment","core/templates"], 
+        // function ($, ajax, Fragment,templates) {
+        return {
+            init: function(contextid) {
+                /* make repeat elements work with fragments
+                https://tracker.moodle.org/browse/MDL-63685
+                */
+                var modalCreateFeedback = new DialogInfo('', '', null, false, false, contextid);
+                var loadFormFragment = function(repeat) {
+                    var params = { 'repeat': repeat };
+                    Fragment.loadFragment("qtype_wordselect", "feedbackedit", contextid, params).then(function(html, js) {
+                        debugger;
+                        modalCreateFeedback.show('Create feedback',
+                            '<div id="createFeedback">' +
+                            html + '</div>',
+                            '<div id="creatFeedbackDialogFooter"></div>', true);
+                        runJS(js);
 
-        });
-      };
+                    });
+                };
 
-      var runJS = function(source) {
-        if (source.trim() !== '') {
-            var newscript = $('<script>').attr('type', 'text/javascript').html(source);
-            $('head').append(newscript);
-        }
-    };
-    $('body').on('click', '#item_feedback #id_cancel', function(e) {
-      e.preventDefault();
-      modalCreateFeedback.hide();
-  });
-  $('body').on('click', '#item_feedback #id_extended_feedback', function(e) {
-    e.preventDefault();
-    loadFormFragment(true);
-});
-  
-      $("#id_itemsettings_button").on("click", function() {
-        loadFormFragment(false);
-      });
+                var runJS = function(source) {
+                    if (source.trim() !== '') {
+                        var newscript = $('<script>').attr('type', 'text/javascript').html(source);
+                        $('head').append(newscript);
+                    }
+                };
+                $('body').on('click', '#item_feedback #id_cancel', function(e) {
+                    e.preventDefault();
+                    modalCreateFeedback.hide();
+                });
+                $('body').on('click', '#item_feedback #id_extended_feedback', function(e) {
+                    e.preventDefault();
+                    loadFormFragment(true);
+                });
 
-  
-    }
-  };
-});
+                $("#id_itemsettings_button").on("click", function() {
+                    loadFormFragment(false);
+                });
+
+
+            }
+        };
+    });
