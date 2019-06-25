@@ -24,14 +24,15 @@ define(
             DialogInfo.prototype.submitButton = function(e) {
                 var form = this.modal.getRoot().find('form'),
                     target = $(e.target);
-                e.preventDefault();
+                debugger;
                 if (target.attr('data-no-submit') === '1') {
                     // No-submit button pressed.
                     var formData = form.serialize();
                     formData = formData + '&' + encodeURIComponent(target.attr('name')) + '=' + encodeURIComponent(target.attr('value'));
                     this.modal.setBody(this.getBody(formData)); // loads fragment only, without form submission.
-                } else {
-                    this.submitFormAjax(e); // does the full submission
+                    // } else {
+                    //     this.submitFormAjax(e); // does the full submission
+                    // }
                 }
             }
             DialogInfo.prototype.getBody = function(formdata) {
@@ -49,7 +50,6 @@ define(
                 // We don't want to do a real form submission.
                 e.preventDefault();
                 debugger;
-
                 // Convert all the form elements values to a serialised string.
                 var formData = this.modal.getRoot().find('form').serialize();
 

@@ -53,6 +53,13 @@ class feedback_form extends \moodleform {
     public function definition() {
  
         $mform = $this->_form; 
+        $formdata = $this->_customdata;
+        if (sizeof($formdata) > 0) {
+            $this->_ajaxformdata['extended_feedback_repeats'] = $formdata['extended_feedback_repeats'];
+            $this->_ajaxformdata['extended_feedback'] = $formdata['extended_feedback'];
+        }
+
+
         $mform->addElement('html','<div id="item_feedback">');
 
         $mform->addElement('editor', 'correct', 'Correct', ['rows' => 4,'cols'=>50],'Correct', $this->editoroptions);
@@ -78,13 +85,15 @@ class feedback_form extends \moodleform {
 
 function qtype_wordselect_output_fragment_feedbackedit($args) {
     global $PAGE;
-    $context = $args['context'];
-    // if ($context->contextlevel != CONTEXT_COURSE) {
-    //     return null;
-    // }
 
+    $formdata = [];
+    if (!empty($args['jsonformdata'])) {
+        $serialiseddata = json_decode($args['jsonformdata']);
+        parse_str($serialiseddata, $formdata);
+    }
+//extended_feedback_repeats
     $output = $PAGE->get_renderer('core', '', RENDERER_TARGET_GENERAL);
-    $mform= new feedback_form();
+    $mform= new feedback_form(null,$formdata);
     
     if($mform->get_data()){
         return;
