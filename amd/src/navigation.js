@@ -82,6 +82,22 @@ define(['jquery'], function($) {
                     t.navigateToWord(currentWordPos.row, currentWordPos.col, e.keyCode);
                 }
             });
+
+            $(t.CSS.SELECTABLE_WORD).on('keyup', function(e) {
+                // Handle keyboard focus.
+                if ($(this).hasClass('selected') && (
+                    e.keyCode === 9 || (e.shiftKey && (e.which === 9)) ||
+                    e.keyCode === 37 || e.keyCode === 38 || e.keyCode === 39 || e.keyCode === 40)) {
+                    e.preventDefault();
+                    $(this).addClass('keyboard_focus');
+                }
+            });
+
+            $(t.CSS.SELECTABLE_WORD).focusout(function() {
+                if ($(this).hasClass('selected') && $(this).hasClass('keyboard_focus')) {
+                    $(this).removeClass('keyboard_focus');
+                }
+            });
         },
 
         /**
