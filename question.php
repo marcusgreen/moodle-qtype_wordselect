@@ -378,8 +378,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
 
     /**
      * Checks whether the users is allow to be served a particular file.
-     * TODO Work out why this is this necessary in the sense of what does it
-     * do that the parent version does not do
      *
      * @param question_attempt $qa the question attempt being displayed.
      * @param question_display_options $options the options that control display of the question.
