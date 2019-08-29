@@ -18,13 +18,13 @@
  * wordselect question type version information.
  *
  * @package    qtype_wordselect
- * @copyright  Marcus Green 2018
+ * @copyright  Marcus Green 2019
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 $plugin->component = 'qtype_wordselect';
-$plugin->version  = 2018122800;
+$plugin->version  = 2019090100;
 $plugin->requires = 2015051109;  // Moodle 2.9.9.
 $plugin->maturity  = MATURITY_STABLE;
-$plugin->release  = '2.4';
+$plugin->release  = '2.42';

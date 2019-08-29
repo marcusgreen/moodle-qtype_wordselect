@@ -1,3 +1,8 @@
+### Version 2.42 of the Moodle WordSelect question type by Marcus Green. Sep 2019
+Improved keyboard navigation, the arrow keys now move forward/backward/up/down. Many thanks to 
+Huong Nguyen for the coding, including behat tests and to the UK Open University for funding the
+development.
+
 ### Version 2.41 of the Moodle WordSelect question type by Marcus Green. Feb 2019
 Added more sample english language questions.
 Fixed line-height to ensure correct display in ios/mobile app
