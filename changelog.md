@@ -3,6 +3,8 @@ Improved keyboard navigation, the arrow keys now move forward/backward/up/down. 
 Huong Nguyen for the coding, including behat tests and to the UK Open University for funding the
 development.
 
+Thanks to Tim Hunt and Sam Marshall for reporting the issue on templatepath in mobile.php
+
 ### Version 2.41 of the Moodle WordSelect question type by Marcus Green. Feb 2019
 Added more sample english language questions.
 Fixed line-height to ensure correct display in ios/mobile app
