@@ -44,8 +44,9 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
     public function formulation_and_controls(question_attempt $qa, question_display_options $options) {
         global $PAGE;
         $question = $qa->get_question();
-        $PAGE->requires->js('/question/type/wordselect/selection.js');
         $this->page->requires->js_call_amd('qtype_wordselect/navigation', 'init');
+        $this->page->requires->js_call_amd('qtype_wordselect/selection', 'init');
+
         $response = $qa->get_last_qt_data();
         $correctplaces = $question->get_correct_places($question->questiontext, $question->delimitchars);
         $output = html_writer::empty_tag('div', array('class' => 'introduction'));
