@@ -1,11 +1,11 @@
 ### Version 2.42 of the Moodle WordSelect question type by Marcus Green. Sep 2019
-Changed selection javascript to use amd technology
 Improved keyboard navigation, the arrow keys now move forward/backward/up/down. Many thanks to 
 Huong Nguyen for the coding, including behat tests and to the UK Open University (OU) for funding the
 development.
 
+Changed selection javascript to use amd technology, thanks to Mahmoud Kassaei of the OU for the suggestion to do that.
+
 Thanks to Tim Hunt and Sam Marshall of the OU for reporting the issue on templatepath in mobile.php
-Thanks to Mahmoud Kassaei of the OU for the suggestion of amd for selection.
 
 ### Version 2.41 of the Moodle WordSelect question type by Marcus Green. Feb 2019
 Added more sample english language questions.
