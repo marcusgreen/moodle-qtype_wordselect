@@ -29,7 +29,7 @@ global $CFG;
 require_once($CFG->dirroot . '/question/type/questionbase.php');
 require_once($CFG->dirroot . '/question/engine/tests/helpers.php');
 
-require_once($CFG->dirroot . '/question/type/wordselect/tests/helpers.php');
+require_once($CFG->dirroot . '/question/type/wordselect/tests/helper.php');
 
 require_once($CFG->dirroot . '/question/type/wordselect/question.php');
 require_once($CFG->dirroot . '/question/type/wordselect/renderer.php');

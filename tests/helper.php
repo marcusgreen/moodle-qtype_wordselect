@@ -58,4 +58,24 @@ class qtype_wordselect_test_helper extends question_test_helper {
         return $question;
     }
 
+    /**
+     * @return stdClass data to create a wordselect question.
+     */
+    public function get_wordselect_question_form_data_catmat() {
+        $fromform = new stdClass();
+
+        $fromform->name = 'Cat cliche';
+        $fromform->introduction = ['text' => 'Highlight the nouns in this sentence:', 'format' => FORMAT_HTML];
+        $fromform->questiontext = ['text' => 'The [cat] sat on the [mat].', 'format' => FORMAT_HTML];
+        $fromform->generalfeedback = ['text' => "You should have selected 'cat' and 'mat'.", 'format' => FORMAT_HTML];
+        $fromform->defaultmark = 1;
+        $fromform->penalty = 0.3333333;
+
+        $fromform->wordpenalty = 1;
+        $fromform->delimitchars = '[]';
+
+        test_question_maker::set_standard_combined_feedback_form_data($fromform);
+
+        return $fromform;
+    }
 }
