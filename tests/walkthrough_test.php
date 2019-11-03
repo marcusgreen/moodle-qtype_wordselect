@@ -25,7 +25,7 @@ defined('MOODLE_INTERNAL') || die();
 
 global $CFG;
 
-require_once($CFG->dirroot . '/question/type/wordselect/tests/helpers.php');
+require_once($CFG->dirroot . '/question/type/wordselect/tests/helper.php');
 
 /**
  * Unit tests for the wordselect question type.

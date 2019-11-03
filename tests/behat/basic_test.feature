@@ -32,7 +32,7 @@ create and preview wordselect (Select correct words) questions.
     Then I should see "Word-Select-001"
 
   # Preview it.
-    When I click on "Preview" "link" in the "Word-Select-001" "table_row"
+    When I choose "Preview" action for "Word-Select-001" in the question bank
     And I switch to "questionpreview" window
 
   #################################################
@@ -188,7 +188,7 @@ create and preview wordselect (Select correct words) questions.
     Then I should see "Word-Select-002"
 
   # Preview it.
-    When I click on "Preview" "link" in the "Word-Select-002" "table_row"
+    When I choose "Preview" action for "Word-Select-002" in the question bank
     And I switch to "questionpreview" window
 
   ##########################################################

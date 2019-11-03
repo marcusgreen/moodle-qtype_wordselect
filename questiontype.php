@@ -227,7 +227,7 @@ class qtype_wordselect extends question_type {
         $options->wordpenalty = $formdata->wordpenalty;
 
         $options->correctfeedback = "";
-        $options = $this->save_combined_feedback_helper($options, $formdata, $context, true);
+        $options = $this->save_combined_feedback_helper($options, $formdata, $context, false);
         $DB->update_record('question_wordselect', $options);
     }
 
@@ -316,7 +316,7 @@ class qtype_wordselect extends question_type {
             return false;
         }
         $question = parent::import_from_xml($data, $question, $format, null);
-        $format->import_combined_feedback($question, $data, true);
+        $format->import_combined_feedback($question, $data, false);
         $format->import_hints($question, $data, true, false, $format->get_format($question->questiontextformat));
         return $question;
     }

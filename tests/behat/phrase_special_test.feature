@@ -33,7 +33,7 @@ Feature: Test that formatting within delimiters is retained
     Then I should see "Word-Select-001"
 
     # Preview it.
-    When I click on "Preview" "link" in the "Word-Select-001" "table_row"
+    When I choose "Preview" action for "Word-Select-001" in the question bank
     And I switch to "questionpreview" window
 
     #################################################

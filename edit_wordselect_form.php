@@ -70,7 +70,7 @@ class qtype_wordselect_edit_form extends question_edit_form {
         $mform->addHelpButton('delimitchars', 'delimitchars', 'qtype_wordselect');
 
         // To add combined feedback (correct, partial and incorrect).
-         $this->add_combined_feedback_fields(true);
+         $this->add_combined_feedback_fields(false);
 
         // Adds hinting features.
         $this->add_interactive_settings(true, true);
@@ -136,6 +136,7 @@ class qtype_wordselect_edit_form extends question_edit_form {
      */
     protected function data_preprocessing($question) {
         $question = parent::data_preprocessing($question);
+        $question = $this->data_preprocessing_combined_feedback($question, false);
         $question = $this->data_preprocessing_hints($question, true, true);
         if (empty($question->options)) {
             return $question;
