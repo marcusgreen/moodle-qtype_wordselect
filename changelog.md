@@ -1,5 +1,5 @@
-### Version 2.42 of the Moodle WordSelect question type by Marcus Green. Oct 2019
-Improved keyboard navigation, the arrow keys now move forward/backward/up/down. Many thanks to 
+### Version 2.42 of the Moodle WordSelect question type by Marcus Green. Nov 2019
+Improved keyboard navigation, the arrow keys now move forward/backward/up/down. Many thanks to
 Huong Nguyen for the coding, including behat tests and to the UK Open University (OU) for funding the
 development.
 
@@ -7,13 +7,16 @@ Changed selection javascript to use amd technology, thanks to Mahmoud Kassaei of
 
 Thanks to Tim Hunt and Sam Marshall of the OU for reporting the issue on templatepath in mobile.php
 
+Thanks to Tim hunt for the fix for 'show num parts correct' and the behat updates.
+
+
 ### Version 2.41 of the Moodle WordSelect question type by Marcus Green. Feb 2019
 Added more sample english language questions.
 Fixed line-height to ensure correct display in ios/mobile app
 Fixed error eslint checker that const is a reserved word (in mobile.js)
 
 ### Version 2.4 of the Moodle WordSelect question type by Marcus Green. December 2018
-Significant new feature: support for the Moodle Mobile App. Added a collection of 
+Significant new feature: support for the Moodle Mobile App. Added a collection of
 sample english language questions in
 examples\en\english_language.xml that can be imported.
 
@@ -28,7 +31,7 @@ Addition of defensive code for issue https://github.com/marcusgreen/moodle-qtype
 The clear incorrect responses and show number of correct responses checkboxes in Hints in the
 Multiple tries section of the editing form had no effect. This bug only had an effect when
  using the Interactive with multiple tries question behaviour. The behaviour is now as
-expected with selections being cleared and a count of correct responses being shown. My 
+expected with selections being cleared and a count of correct responses being shown. My
 thanks to Dr Anna Stefanidou for reporting this issue.
 
 ### Version 2.31 of the Moodle WordSelect question type by Marcus Green. August 2018
@@ -59,14 +62,14 @@ Added privacy classes as part of GDPR compliance. Further inclusion of tags such
 setting color, more credit to lethevinha for that work.
 
 ### Version 2.0 of the Moodle WordSelect question type by Marcus Green. April 2018
-Multiword mode. If any text is surrounded by double delimiters e.g. [[cat]] it will be 
+Multiword mode. If any text is surrounded by double delimiters e.g. [[cat]] it will be
 treated as correct, and any selectable non correct text must be given single delimiters
 e.g. [mat]. Text can thus include multiple words. CSS Formatting indicates which text is selectable.
 
 Updated phpdocs comments, Added significant new behat and phpunit tests. Did some testing
 to check MathJax expressions will render as correct gaps in normal and multiword mode
 
-New [w] icon with a hint of red. Added an svg vector version so no pixelation on zoom. 
+New [w] icon with a hint of red. Added an svg vector version so no pixelation on zoom.
 Credit to Troy Patterson for ideas and inspiration on the icon
 
 Huge credit to https://github.com/lethevinh for ideas, code and behat tests for ensuring
@@ -76,12 +79,12 @@ With thanks to German Valero for substantial additions to the documentation at
 https://docs.moodle.org/en/Wordselect_question_type
 
 ### Version 1.1 of the Moodle WordSelect question type by Marcus Green. July 2017
-Fixed a bug that prevented audio files working correctly in the question text. Thanks to Matthias Giger for 
+Fixed a bug that prevented audio files working correctly in the question text. Thanks to Matthias Giger for
 reporting this. Fixed an issue that prevented any files being inserted into the introduction area. Improved
 phpdoc of the source code.
 
 ### Version 1.0 of the Moodle WordSelect question type by Marcus Green. Sept 2016
-Thanks for advice and support to Tim Hunt,Nadav Kavalerchik,Matthias Giger,German Valero and others in 
+Thanks for advice and support to Tim Hunt,Nadav Kavalerchik,Matthias Giger,German Valero and others in
 the Moodle forums.
 
 It is not possible to insert images into the welcome text area using the editor menu, but you can
