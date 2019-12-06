@@ -43,21 +43,28 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
      */
     public function formulation_and_controls(question_attempt $qa, question_display_options $options) {
         global $PAGE;
+
+        $output = '';
+
         $question = $qa->get_question();
         $this->page->requires->js_call_amd('qtype_wordselect/navigation', 'init');
         $this->page->requires->js_call_amd('qtype_wordselect/selection', 'init');
 
         $response = $qa->get_last_qt_data();
         $correctplaces = $question->get_correct_places($question->questiontext, $question->delimitchars);
-        $output = html_writer::empty_tag('div', array('class' => 'introduction'));
+        $output .= html_writer::start_div('introduction');
         /* this will ensure filters are applied to the introduction, done particularly for the multilang filter */
         $output .= $question->format_text($question->introduction, $question->questiontextformat, $qa, 'qtype_wordselect',
                 'introduction', $question->id);
-        $output .= html_writer::empty_tag('/div');
-        $output .= html_writer::empty_tag('div', array('class' => 'qtext'));
+        $output .= html_writer::end_div();
+        $output .= html_writer::start_div('qtext');
+
+        /* this ensures that any files inserted through the editor menu will display */
+        $formatedquestiontext = $question->format_text(
+                $question->questiontext, $question->questiontextformat, $qa, 'question', 'questiontext', $question->id);
 
         /*initialised */
-        $question->init($question->questiontext, $question->delimitchars);
+        $question->init($formatedquestiontext, $question->delimitchars);
         $items = $question->get_words();
 
         foreach ($items as $place => $item) {
@@ -159,13 +166,9 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 $output .= $word;
             }
         }
-        /* this ensures that any files inserted through the editor menu will display */
-        $output = $question->format_text($output, $question->questiontextformat, $qa, 'question', 'questiontext', $question->id);
-        $output .= html_writer::empty_tag('/div');
+        $output .= html_writer::end_div();
         if ($qa->get_state() == question_state::$invalid) {
-            $output .= html_writer::nonempty_tag('div',
-                $question->get_validation_error($response),
-                array('class' => 'validationerror'));
+            $output .= html_writer::div($question->get_validation_error($response), 'validationerror');
         }
         return $output;
     }
