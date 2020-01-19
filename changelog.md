@@ -1,3 +1,14 @@
+### Version 2.43 of the Moodle WordSelect question type by Marcus Green. Jan 2020
+Fix for when forceclean is on from Hubong Nguen for the UK OU.
+https://github.com/marcusgreen/moodle-qtype_wordselect/pull/23
+There is a plan for forceclean to default to on.
+https://tracker.moodle.org/browse/MDL-62352
+Forceclean entirely broke Wordselect rendering (and other plugins).
+
+Mahmoud Kassaei from the UK OU reported that trailing puncuation was hard to see on selected text
+https://github.com/marcusgreen/moodle-qtype_wordselect/pull/24
+The CSS has been adjusted to make it clearer.
+
 ### Version 2.42 of the Moodle WordSelect question type by Marcus Green. Nov 2019
 Improved keyboard navigation, the arrow keys now move forward/backward/up/down. Many thanks to
 Huong Nguyen for the coding, including behat tests and to the UK Open University (OU) for funding the
