@@ -46,6 +46,11 @@ define(['jquery'], function($) {
         init: function() {
             var questionContent = $(t.CSS.QUESTION_CONTENT);
             var words = questionContent.find(t.CSS.SELECTABLE_WORD);
+            if (words.length === 0) {
+                // Question must be in read-only mode.
+                return;
+            }
+
             var lineCounter = 0;
             var previousY = parseInt($(words[0]).position().top, 10);
             var columnCounter = 0;
