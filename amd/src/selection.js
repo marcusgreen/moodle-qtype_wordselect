@@ -22,7 +22,7 @@
  */
 
 /* global $ */
-define (function () {
+define(function () {
   function WordSelectQuestion (questionId) {
     $ ('#' + questionId + ' .selectable').on ('keydown', function (e) {
       /* Space bar */

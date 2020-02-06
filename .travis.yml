@@ -38,7 +38,7 @@ matrix:
 
     - php: 7.0
       env:
-        - MOODLE_BRANCH=MOODLE_35_STABLE
+        - MOODLE_BRANCH=MOODLE_38_STABLE
         - DB=mysqli
 
 before_install:
