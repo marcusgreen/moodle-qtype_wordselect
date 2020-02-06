@@ -53,9 +53,9 @@ define (function () {
       selection.removeAttr ('title');
       selection.attr ('aria-checked', 'false');
       /* Convert type to text, because
-                     * unchecked textboxes would not
-                     * be included in the response
-                     */
+      * unchecked textboxes would not
+      * be included in the response
+      */
       hidden.type = 'text';
       hidden.style.visibility = 'hidden';
       hidden.style.display = 'none';

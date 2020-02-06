@@ -172,7 +172,6 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         }
        $PAGE->requires->js_call_amd('qtype_wordselect/selection', 'init',
        [$qa->get_outer_question_div_unique_id()]);
-          //$PAGE->requires->js_call_amd('qtype_wordselect/selection', 'init');
 
 
         return $output;
