@@ -70,8 +70,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             $wordattributes = array("role" => "checkbox");
             $afterwordfeedback = '';
             $wordattributes['name'] = $this->get_input_name($qa, $word, $place);
-            $wordattributes['id'] = $this->get_input_id($qa, $word, $place);
-            $correctresponse = true;
+            $wordattributes['id'] = $this->get_input_id($qa, $place);
             $iscorrectplace = $question->is_correct_place($correctplaces, $place);
             $checkbox = "";
             /* if the current word/place exists in the response */
@@ -182,7 +181,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
      * @param int $place
      * @return string
      */
-    protected function get_input_name(question_attempt $qa, $word, $place) {
+    protected function get_input_name(question_attempt $qa, $place) {
         /* prefix is the number of this question attempt */
         $qprefix = $qa->get_qt_field_name('');
         $inputname = $qprefix . 'p' . ($place);
@@ -196,8 +195,8 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
      * @param int $place
      * @return string
      */
-    protected function get_input_id(question_attempt $qa, $word, $place) {
-        return $this->get_input_name($qa, $word, $place);
+    protected function get_input_id(question_attempt $qa, $place) {
+        return $this->get_input_name($qa, $place);
     }
 
     /**
