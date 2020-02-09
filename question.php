@@ -93,7 +93,8 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $this->questiontext = $questiontext;
         $this->delimitchars = $delimitchars;
         $l = substr($this->delimitchars, 0, 1);
-        $r = substr($this->delimitchars, 1, 1);
+        // If there are two opening left delimiters, e.g. [[cat]] multiword is true
+        // Will assume that closing delimters are also doubled.
         if (strpos($questiontext, $l . $l) !== false) {
             $this->multiword = true;
         }
