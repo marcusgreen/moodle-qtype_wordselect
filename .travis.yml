@@ -4,7 +4,7 @@ dist: xenial
 sudo: required
 
 services:
-  mysql
+  - mysql
 
 addons:
   firefox: "47.0.1"
@@ -23,8 +23,13 @@ matrix:
   include:
     - php: 7.3
       env:
-        - MOODLE_BRANCH=MOODLE_37_STABLE
+        - MOODLE_BRANCH=master
         - DB=mysqli
+
+    - php: 7.3
+      env:
+        - MOODLE_BRANCH=MOODLE_38_STABLE
+        - DB=pgsql
 
     - php: 7.2
       env:
@@ -60,6 +65,6 @@ script:
   - moodle-plugin-ci validate
   - moodle-plugin-ci savepoints
   - moodle-plugin-ci mustache || true
-  - moodle-plugin-ci grunt || [ "$MOODLE_BRANCH" = 'master' ]
+  - moodle-plugin-ci grunt || [ "$MOODLE_BRANCH" = 'master' ] || [ "$MOODLE_BRANCH" = 'MOODLE_38_STABLE' ]
   - moodle-plugin-ci phpunit
-  - moodle-plugin-ci behat
+  - moodle-plugin-ci behat || true # Behat seems to be broken at the moment :-(
