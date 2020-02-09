@@ -69,8 +69,9 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             $correctnoselect = false;
             $wordattributes = array("role" => "checkbox");
             $afterwordfeedback = '';
-            $wordattributes['name'] = $this->get_input_name($qa, $word, $place);
-            $wordattributes['id'] = $this->get_input_id($qa, $place);
+            $wordattributes['name'] = $this->get_input_name($qa, $place);
+            $wordattributes['id'] = $this->get_input_id($qa, $word, $place);
+            $correctresponse = true;
             $iscorrectplace = $question->is_correct_place($correctplaces, $place);
             $checkbox = "";
             /* if the current word/place exists in the response */
@@ -195,7 +196,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
      * @param int $place
      * @return string
      */
-    protected function get_input_id(question_attempt $qa, $place) {
+    protected function get_input_id(question_attempt $qa, $word, $place) {
         return $this->get_input_name($qa, $place);
     }
 
