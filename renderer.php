@@ -71,7 +71,6 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             $afterwordfeedback = '';
             $wordattributes['name'] = $this->get_input_name($qa, $place);
             $wordattributes['id'] = $this->get_input_id($qa, $word, $place);
-            $correctresponse = true;
             $iscorrectplace = $question->is_correct_place($correctplaces, $place);
             $checkbox = "";
             /* if the current word/place exists in the response */
