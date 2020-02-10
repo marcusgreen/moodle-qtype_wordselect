@@ -9,6 +9,16 @@ Mahmoud Kassaei from the UK OU reported that trailing puncuation was hard to see
 https://github.com/marcusgreen/moodle-qtype_wordselect/pull/24
 The CSS has been adjusted to make it clearer.
 
+Behat (automated) tests broke on read-only and Tim Hunt of the UK OU
+contributed code as a fix.
+https://github.com/marcusgreen/moodle-qtype_wordselect/pull/25
+
+valeriia-s reported that word selection would not work if a page contained
+multiple instances of the question type. Tim Hunt advised me
+on ways to address it and in selection.js
+https://github.com/marcusgreen/moodle-qtype_wordselect/issues/26
+
+
 ### Version 2.42 of the Moodle WordSelect question type by Marcus Green. Nov 2019
 Improved keyboard navigation, the arrow keys now move forward/backward/up/down. Many thanks to
 Huong Nguyen for the coding, including behat tests and to the UK Open University (OU) for funding the
