@@ -62,6 +62,20 @@ class qtype_wordselect_question_test extends advanced_testcase {
         $items = $question->get_words();
     }
 
+    public function test_strip_some_tags(){
+        $question = qtype_wordselect_test_helper::make_question('wordselect');
+        $teststring = '<h1>,<h2>,<h3>,<sub>,<sup>,<i>,<u>,<b>';
+        $result = $question->strip_some_tags($teststring);
+        $this->assertEquals($teststring,$result);
+        $teststring = '<p>hello</p>';
+        $result = $question->strip_some_tags($teststring);
+        $this->assertEquals('hello',$result);
+    }
+    public function test_stripdelim(){
+        $question = qtype_wordselect_test_helper::make_question('wordselect');
+        $stripped = $question->stripdelim('[word]');
+        $this->assertEquals('word',$stripped);
+    }
     public function test_get_expected_data() {
         $question = qtype_wordselect_test_helper::make_question('wordselect');
         $expecteddata = [
