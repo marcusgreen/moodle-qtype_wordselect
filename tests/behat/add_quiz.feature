@@ -1,4 +1,4 @@
-@mod @mod_quiz @javascript @qtype @qtype_wordselect @core @_switch_window
+@mod @mod_quiz @javascript @qtype @qtype_wordselect @qtype_wordselect_quiz @core @_switch_window
 
 Feature: Add a wordselect quiz
   In order to evaluate students
@@ -41,10 +41,10 @@ Feature: Add a wordselect quiz
       | Question text                      | The [cat] sat on the mat               |
       | General feedback                   | General feedback cat mat|
 
- #And I add a "Word Select" question to the "Wordselect single page quiz" quiz with:
- #    | Question name                      | Second question                         |
- #    | Question text                      | The [cow] jumped over the [moon]        |
- #    | General feedback                   | General feedback cow moon|
+    And I add a "Word Select" question to the "Wordselect single page quiz" quiz with:
+      | Question name                      | Second question                         |
+      | Question text                      | The [cow] jumped over the [moon]        |
+      | General feedback                   | General feedback cow moon|
 
     And I log out
 #Attempt the questions
@@ -55,6 +55,8 @@ Feature: Add a wordselect quiz
     Then I should see "Question 1"
 
     And I click on "//span[text()='cat']" "xpath_element"
+
+    And I click on "//span[text()='cow']" "xpath_element"
 
     #And I press "Check"
     And I press "Finish attempt"
