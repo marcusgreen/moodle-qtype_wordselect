@@ -32,7 +32,10 @@ create and preview wordselect (Select correct words) questions.
     Then I should see "Word-Select-001"
 
   # Preview it.
-    When I choose "Preview" action for "Word-Select-001" in the question bank
+
+    #When I choose "Preview" action for "Word-Select-001" in the question bank
+    And I follow "Preview"
+
     And I switch to "questionpreview" window
 
   #################################################
@@ -56,7 +59,7 @@ create and preview wordselect (Select correct words) questions.
     And I press "Check"
     And I should see "Your answer is correct."
     And I should see "Mark 2.00 out of 2.00"
-    And I wait "15" seconds
+    #And I wait "15" seconds
     And I should see "You have selected 2 correct items out of 2"
 
   #################################################
@@ -167,28 +170,32 @@ create and preview wordselect (Select correct words) questions.
   #And I press "Submit and finish"
   #And I should see "Your answer is incorrect."
   #And I should see "Mark 0.00 out of 2.00"
-  #And I wait "5" seconds
+  #And I wait "2" seconds
 
     And I switch to the main window
     And I log out
 
- ##@javascript
- ## Scenario: Create question and test wordpenalty.
+ @javascript
+ #Feature: Change penalty %age for incorrect selections
+ @qtype_wordselect_penalty
+ Scenario: Create question and test wordpenalty.
     Given I log in as "teacher1"
     And I am on "Course 1" course homepage
     And I navigate to "Questions" in current page administration
 
       # Create a new question.
     And I add a "Word Select" question filling the form with:
-          | Question name    | Word-Select-002                        |
+          | Question name    | Word-Select-Penalty                        |
           | Introduction     | Select the verbs in the following text |
           | Question text    | The wordpenalty cat [sat] and the cow [jumped]     |
           | Incorrect selection penalty     | 0.5                    |
           | General feedback | This is general feedback               |
-    Then I should see "Word-Select-002"
+
+    Then I should see "Word-Select-Penalty"
 
   # Preview it.
-    When I choose "Preview" action for "Word-Select-002" in the question bank
+    #When I choose "Preview" action for "Word-Select-Penalty " in the question bank
+    And I follow "Preview"
     And I switch to "questionpreview" window
 
   ##########################################################
@@ -200,7 +207,7 @@ create and preview wordselect (Select correct words) questions.
       | Marks                | Show mark and max               |
       | Specific feedback    | Shown                           |
       | Right answer         | Shown                           |
-    And I press "Start again with these options"
+  And I press "Start again with these options"
 
   #Select all (both) correct options and  an incorrect
   #option (cow)
@@ -210,6 +217,6 @@ create and preview wordselect (Select correct words) questions.
     And I press "Check"
 
     And I should see "Your answer is partially correct."
-    #2 Marks for correct response and 50% of a mark deducted
-    # for the one wrong item selected
+    # It is 1.5 because the penalty for cow is only .5 not the default 1
     And I should see "Mark 1.50 out of 2.00"
+    And I wait "0" seconds
