@@ -1,4 +1,12 @@
 ### Version 2.43 of the Moodle WordSelect question type by Marcus Green. Jan 2020
+This version requires at least Moodle 3.7.0. It will not work correctly
+with earlier versions.
+
+valeriia-s reported that word selection would not work if a page contained
+multiple instances of the question type. Tim Hunt advised me
+on ways to address it and in selection.js. This bought in the need for Moodle 3.7.
+https://github.com/marcusgreen/moodle-qtype_wordselect/issues/26
+
 Fix for when forceclean is on from Hubong Nguen for the UK OU.
 https://github.com/marcusgreen/moodle-qtype_wordselect/pull/23
 There is a plan for forceclean to default to on.
@@ -13,11 +21,7 @@ Behat (automated) tests broke on read-only and Tim Hunt of the UK OU
 contributed code as a fix.
 https://github.com/marcusgreen/moodle-qtype_wordselect/pull/25
 
-valeriia-s reported that word selection would not work if a page contained
-multiple instances of the question type. Tim Hunt advised me
-on ways to address it and in selection.js
-https://github.com/marcusgreen/moodle-qtype_wordselect/issues/26
-
+Added more unit tests.
 
 ### Version 2.42 of the Moodle WordSelect question type by Marcus Green. Nov 2019
 Improved keyboard navigation, the arrow keys now move forward/backward/up/down. Many thanks to
