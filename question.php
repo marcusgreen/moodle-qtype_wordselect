@@ -118,10 +118,9 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * which words are the ones that should be selected. So The cow [jumped]
      * becomes The cow jumped
      *
-     * @param boolean  $stripdelim (possibly redundant)
      * @return array
      */
-    public function get_words($stripdelim = true) {
+    public function get_words() {
         $questiontextnodelim = $this->questiontext;
         $l = substr($this->delimitchars, 0, 1);
         $r = substr($this->delimitchars, 1, 1);
