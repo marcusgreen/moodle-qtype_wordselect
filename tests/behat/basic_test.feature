@@ -191,7 +191,7 @@ Background:
     | Incorrect selection penalty | 0.5                                            |
     | General feedback            | This is general feedback                       |
 
-     Then I should see "Word-Select-Penalty"
+    Then I should see "Word-Select-Penalty"
 
   # Preview it.
   #When I choose "Preview" action for "Word-Select-Penalty " in the question bank
@@ -216,7 +216,7 @@ Background:
     And I click on "jumped" "text"
     And I press "Check"
 
-      And I should see "Your answer is partially correct."
+    And I should see "Your answer is partially correct."
   # It is 1.5 because the penalty for cow is only .5 not the default 1
     And I should see "Mark 1.50 out of 2.00"
     And I wait "0" seconds
