@@ -112,12 +112,12 @@ class qtype_wordselect_question_test extends advanced_testcase {
         $this->assertEquals($fraction, .5);
     }
 
-    public function test_compute_final_grade(){
-      $question = qtype_wordselect_test_helper::make_question('wordselect');
-      $responses[] = ['p4' => 'on'];
-      $totaltries = 1;
-      $fraction = $question->compute_final_grade($responses, $totaltries);
-      $this->assertEquals($fraction, 1, 'All correct responses should return fraction of 1');
+    public function test_compute_final_grade() {
+        $question = qtype_wordselect_test_helper::make_question('wordselect');
+        $responses[] = ['p4' => 'on'];
+        $totaltries = 1;
+        $fraction = $question->compute_final_grade($responses, $totaltries);
+        $this->assertEquals($fraction, 1, 'All correct responses should return fraction of 1');
     }
 
     public function test_is_complete_response() {
