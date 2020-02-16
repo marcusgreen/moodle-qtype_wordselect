@@ -178,8 +178,8 @@ create and preview wordselect (Select correct words) questions.
 @javascript
 #Feature: Change penalty %age for incorrect selections
 @qtype_wordselect_penalty
-Scenario: Create question and test wordpenalty.
-  Given I log in as "teacher1"
+    Scenario: Create question and test wordpenalty.
+    Given I log in as "teacher1"
     And I am on "Course 1" course homepage
     And I navigate to "Questions" in current page administration
 
