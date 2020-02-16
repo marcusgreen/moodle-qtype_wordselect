@@ -22,12 +22,18 @@
  */
 
 /* global $ */
-define(function () {
-  function WordSelectQuestion (questionId) {
-    $ ('#' + questionId + ' .selectable').on ('keydown', function (e) {
+define(function() {
+  /**
+   * Initialise the quesiton instance with a unique id
+   * Necessary where there is more than one of this
+   * type of question per page.
+   * @param {int} questionId
+   */
+  function WordSelectQuestion(questionId) {
+    $('#' + questionId + ' .selectable').on('keydown', function(e) {
       /* Space bar */
       if (e.keyCode === 32) {
-        toggleSelection ($ (this));
+        toggleSelection($(this));
         return false;
       }
       /* Eat the keycode so it doesnt scroll the screen down */
@@ -36,22 +42,27 @@ define(function () {
       }
       return true;
     });
-    $ ('#' + questionId + ' .selectable').on ('click', function () {
-      toggleSelection ($ (this));
+    $('#' + questionId + ' .selectable').on('click', function() {
+      toggleSelection($(this));
     });
   }
 
-  function toggleSelection (selection) {
-    var iselected = $ (selection).hasClass ('selected');
-    var wordname = selection.attr ('name');
-    var hidden = document.getElementById (wordname);
+  /**
+   * Toggle a word (or collection of word)
+   * As selected/unselected.
+   * @param {string} selection
+   */
+  function toggleSelection(selection) {
+    var iselected = $(selection).hasClass('selected');
+    var wordname = selection.attr('name');
+    var hidden = document.getElementById(wordname);
     if (hidden === null || hidden.disabled === true) {
       return;
     }
     if (iselected === true) {
-      selection.removeClass ('selected');
-      selection.removeAttr ('title');
-      selection.attr ('aria-checked', 'false');
+      selection.removeClass('selected');
+      selection.removeAttr('title');
+      selection.attr('aria-checked', 'false');
       /* Convert type to text, because
       * unchecked textboxes would not
       * be included in the response
@@ -61,9 +72,9 @@ define(function () {
       hidden.style.display = 'none';
       hidden.value = '';
     } else {
-      selection.addClass ('selected');
-      selection.prop ('title', 'selected');
-      selection.attr ('aria-checked', 'true');
+      selection.addClass('selected');
+      selection.prop('title', 'selected');
+      selection.attr('aria-checked', 'true');
       hidden.type = 'checkbox';
       hidden.value = 'on';
       hidden.checked = 'true';
@@ -71,8 +82,8 @@ define(function () {
   }
 
   return {
-    init: function (questionId) {
-      new WordSelectQuestion (questionId);
+    init: function(questionId) {
+      new WordSelectQuestion(questionId);
     },
   };
 });
