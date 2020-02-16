@@ -1,4 +1,4 @@
-### Version 2.43 of the Moodle WordSelect question type by Marcus Green. Jan 2020
+### Version 2.43 of the Moodle WordSelect question type by Marcus Green. Feb 2020
 This version requires at least Moodle 3.7.0. It will not work correctly
 with earlier versions.
 
