@@ -96,7 +96,6 @@ class qtype_wordselect_edit_form extends question_edit_form {
      * @return strings
      */
     public function get_introduction($question) {
-        $introduction = "";
         if (property_exists($question, 'options')) {
             return $question->options->introduction;
         } else {
