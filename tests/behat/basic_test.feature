@@ -21,33 +21,33 @@ create and preview wordselect (Select correct words) questions.
     And I navigate to "Questions" in current page administration
 
   # Create a new question.
-  And I add a "Word Select" question filling the form with:
-    | Question name    | Word-Select-001                        |
-    | Introduction     | Select the verbs in the following text |
-    | Question text    | The cat [sat] and the cow [jumped]     |
-    | Incorrect selection penalty     | 100%                    |
-    | General feedback | This is general feedback               |
-    | Hint 1           | First hint                             |
-    | Hint 2           | Second hint                            |
-  Then I should see "Word-Select-001"
+    And I add a "Word Select" question filling the form with:
+      | Question name    | Word-Select-001                        |
+      | Introduction     | Select the verbs in the following text |
+      | Question text    | The cat [sat] and the cow [jumped]     |
+      | Incorrect selection penalty     | 100%                    |
+      | General feedback | This is general feedback               |
+      | Hint 1           | First hint                             |
+      | Hint 2           | Second hint                            |
+    Then I should see "Word-Select-001"
 
   # Preview it.
 
-  #When I choose "Preview" action for "Word-Select-001" in the question bank
-  And I follow "Preview"
+    #When I choose "Preview" action for "Word-Select-001" in the question bank
+    And I follow "Preview"
 
-  And I switch to "questionpreview" window
+    And I switch to "questionpreview" window
 
-  #################################################
-  #Adaptive Mode
-  #################################################
-  And I set the following fields to these values:
-    | How questions behave | Adaptive mode                   |
-    | Marked out of        | 2                               |
-    | Marks                | Show mark and max               |
-    | Specific feedback    | Shown                           |
-    | Right answer         | Shown                           |
-  And I press "Start again with these options"
+    #################################################
+    #Adaptive Mode
+    #################################################
+    And I set the following fields to these values:
+      | How questions behave | Adaptive mode                   |
+      | Marked out of        | 2                               |
+      | Marks                | Show mark and max               |
+      | Specific feedback    | Shown                           |
+      | Right answer         | Shown                           |
+    And I press "Start again with these options"
 
   #User does not select any word and press button Check
   And I press "Check"
