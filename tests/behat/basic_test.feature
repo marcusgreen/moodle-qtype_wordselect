@@ -15,10 +15,10 @@ create and preview wordselect (Select correct words) questions.
       | teacher1 | C1     | editingteacher |
 
 @javascript
-Scenario: Create, edit then preview a wordselect question.
-  Given I log in as "teacher1"
-  And I am on "Course 1" course homepage
-  And I navigate to "Questions" in current page administration
+  Scenario: Create, edit then preview a wordselect question.
+    Given I log in as "teacher1"
+    And I am on "Course 1" course homepage
+    And I navigate to "Questions" in current page administration
 
   # Create a new question.
   And I add a "Word Select" question filling the form with:
