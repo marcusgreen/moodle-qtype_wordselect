@@ -59,7 +59,8 @@ class qtype_wordselect_test_helper extends question_test_helper {
     }
 
     /**
-     * @return stdClass data to create a wordselect question.
+     * Data to create a wordselect question for unit tests
+     * @return stdClass
      */
     public function get_wordselect_question_form_data_catmat() {
         $fromform = new stdClass();

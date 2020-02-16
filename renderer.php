@@ -177,7 +177,6 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
      * that identifies the selectable item
      *
      * @param question_attempt $qa
-     * @param string $word
      * @param int $place
      * @return string
      */
@@ -189,9 +188,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
     }
     /**
      * TODO document the difference to get_input_name
-
      * @param question_attempt $qa
-     * @param string $word
      * @param int $place
      * @return string
      */

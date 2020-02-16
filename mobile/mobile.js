@@ -26,6 +26,10 @@ var that = this;
 var result = {
 
     componentInit: function() {
+      /**
+       * Select a word on click event
+       * @param {object} event
+       */
         function selectWord(event) {
             var selector = "#" + event.target.id;
             var parts = selector.split(":");
@@ -60,14 +64,15 @@ var result = {
 
         this.questionRendered = function questionRendered() {
             var selchecks = this.componentContainer.querySelectorAll('input.selcheck');
-            for (var i = 0; i < selchecks.length; i++) {
+            var i = 0;
+            for (i = 0; i < selchecks.length; i++) {
                 selchecks[i].type = "hidden";
                 if (selchecks[i].checked == true) {
                     selchecks[i].value = "on";
                 }
             }
             var selectables = this.componentContainer.querySelectorAll('.selectable');
-            for (var i = 0; i < selectables.length; i++) {
+            for (i = 0; i < selectables.length; i++) {
                 if (selectables[i].id) {
                     selectables[i].addEventListener('click', function() {
                         selectWord(event);
@@ -77,7 +82,6 @@ var result = {
         };
 
         if (!this.question) {
-            console.warn('Aborting because of no question received.');
             return that.CoreQuestionHelperProvider.showComponentError(that.onAbort);
         }
 
@@ -106,4 +110,7 @@ var result = {
         return true;
     }
 };
+/* eslint-disable */
 result;
+/* eslint-enable */
+
