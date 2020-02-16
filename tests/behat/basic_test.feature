@@ -3,7 +3,7 @@ Feature: Test the basic functionality of wordselect type
 In order to evaluate students responses, As a teacher I need to
 create and preview wordselect (Select correct words) questions.
 
-Background:
+  Background:
     Given the following "users" exist:
     | username | firstname | lastname | email               |
     | teacher1 | T1        | Teacher1 | teacher1@moodle.com |
