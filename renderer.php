@@ -56,12 +56,9 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         $output .= html_writer::end_div();
         $output .= html_writer::start_div('qtext');
 
-        /* this ensures that any files inserted through the editor menu will display */
-        $formatedquestiontext = $question->format_text(
-                $question->questiontext, $question->questiontextformat, $qa, 'question', 'questiontext', $question->id);
 
         /*initialised */
-        $question->init($formatedquestiontext, $question->delimitchars);
+        $question->init($question->questiontext, $question->delimitchars);
         $items = $question->get_words();
 
         foreach ($items as $place => $item) {
@@ -162,6 +159,10 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 $output .= $word;
             }
         }
+      /* this ensures that any files inserted through the editor menu will display */
+       $output = $question->format_text(
+          $output, $question->questiontextformat, $qa, 'question', 'questiontext', $question->id);
+
         $output .= html_writer::end_div();
         if ($qa->get_state() == question_state::$invalid) {
             $output .= html_writer::div($question->get_validation_error($response), 'validationerror');
