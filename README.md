@@ -12,12 +12,14 @@ and
 
 https://docs.moodle.org/en/Wordselect_question_type
 
-the latest source can be found here
+See change log at https://github.com/marcusgreen/moodle-qtype_wordselect/blob/master/changelog.md To install from the plugins database go to https://moodle.org/plugins/qtype_wordselect
+
+The latest source can be found here
 
 https://github.com/marcusgreen/moodle-qtype_wordselect
 
 #### Installing
-Place the files in a directory 
+Place the files in a directory
 
 moodle\question\type\wordselect
 
