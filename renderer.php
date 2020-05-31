@@ -56,7 +56,6 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         $output .= html_writer::end_div();
         $output .= html_writer::start_div('qtext');
 
-
         /*initialised */
         $question->init($question->questiontext, $question->delimitchars);
         $items = $question->get_words();
@@ -159,8 +158,8 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 $output .= $word;
             }
         }
-      /* this ensures that any files inserted through the editor menu will display */
-       $output = $question->format_text(
+        /* this ensures that any files inserted through the editor menu will display */
+        $output = $question->format_text(
           $output, $question->questiontextformat, $qa, 'question', 'questiontext', $question->id);
 
         $output .= html_writer::end_div();
