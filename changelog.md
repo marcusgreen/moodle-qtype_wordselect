@@ -1,3 +1,10 @@
+### Version 2.44 of the Moodle WordSelect question type by Marcus Green. Jun 2020
+Fixed an issue with embedded audio. If text appears after embedded audio selections
+are ignored when the question is submitted.  This only happens when the multimedia filter
+is turned on. I have moved the format code to later in the renderer and this fixes the issue.
+My thanks to Henny Jellema for reporting this.
+
+
 ### Version 2.43 of the Moodle WordSelect question type by Marcus Green. Feb 2020
 This version requires at least Moodle 3.7.0. It will not work correctly
 with earlier versions.
