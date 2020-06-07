@@ -25,499 +25,6 @@
 <!-- question: 0  -->
   <question type="category">
     <category>
-      <text>$course$/top/Default for qb/Wordselect English Language Questions/Adjectives</text>
-    </category>
-    <info format="moodle_auto_format">
-      <text></text>
-    </info>
-    <idnumber></idnumber>
-  </question>
-
-<!-- question: 1262  -->
-  <question type="wordselect">
-    <name>
-      <text>boring_talented</text>
-    </name>
-    <questiontext format="html">
-      <text><![CDATA[<p>The film was quite [boring], but the main actor is clearly [talented]<br></p>]]></text>
-    </questiontext>
-    <generalfeedback format="html">
-      <text></text>
-    </generalfeedback>
-    <defaultgrade>2.0000000</defaultgrade>
-    <penalty>0.3333333</penalty>
-    <hidden>0</hidden>
-    <idnumber></idnumber>
-    <introduction><![CDATA[<p>Select the adjectives in the following sentence<br></p>]]></introduction>
-    <delimitchars>[]</delimitchars>
-    <wordpenalty>0.0000000</wordpenalty>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>boring</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>talented</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <delimitchars>[]</delimitchars>
-    <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
-    <correctfeedback format="html">
-      <text>Your answer is correct.</text>
-    </correctfeedback>
-    <partiallycorrectfeedback format="html">
-      <text>Your answer is partially correct.</text>
-    </partiallycorrectfeedback>
-    <incorrectfeedback format="html">
-      <text>Your answer is incorrect.</text>
-    </incorrectfeedback>
-    <tags>
-      <tag><text>adjectives</text>
-</tag>
-      <tag><text>wordselect</text>
-</tag>
-      <tag><text>adpq_50</text>
-</tag>
-    </tags>
-  </question>
-
-<!-- question: 1263  -->
-  <question type="wordselect">
-    <name>
-      <text>Eating food</text>
-    </name>
-    <questiontext format="html">
-      <text><![CDATA[<p>The meal was [hot] and we ate it [quickly].</p>]]></text>
-    </questiontext>
-    <generalfeedback format="html">
-      <text></text>
-    </generalfeedback>
-    <defaultgrade>2.0000000</defaultgrade>
-    <penalty>0.3333333</penalty>
-    <hidden>0</hidden>
-    <idnumber></idnumber>
-    <introduction><![CDATA[<p>Select the adjectives from the following text.</p>]]></introduction>
-    <delimitchars>[]</delimitchars>
-    <wordpenalty>1.0000000</wordpenalty>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>hot</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>quickly</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <delimitchars>[]</delimitchars>
-    <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
-    <correctfeedback format="html">
-      <text>Your answer is correct.</text>
-    </correctfeedback>
-    <partiallycorrectfeedback format="html">
-      <text>Your answer is partially correct.</text>
-    </partiallycorrectfeedback>
-    <incorrectfeedback format="html">
-      <text>Your answer is incorrect.</text>
-    </incorrectfeedback>
-    <tags>
-      <tag><text>adjectives</text>
-</tag>
-      <tag><text>wordselect</text>
-</tag>
-      <tag><text>adj</text>
-</tag>
-    </tags>
-  </question>
-
-<!-- question: 1264  -->
-  <question type="wordselect">
-    <name>
-      <text>Excellent</text>
-    </name>
-    <questiontext format="html">
-      <text><![CDATA[<p>Paul is an [excellent] teacher.<br></p>]]></text>
-    </questiontext>
-    <generalfeedback format="html">
-      <text></text>
-    </generalfeedback>
-    <defaultgrade>1.0000000</defaultgrade>
-    <penalty>0.3333333</penalty>
-    <hidden>0</hidden>
-    <idnumber></idnumber>
-    <introduction><![CDATA[<p>Select the adjective in the following sentence<br></p>]]></introduction>
-    <delimitchars>[]</delimitchars>
-    <wordpenalty>0.0000000</wordpenalty>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>excellent</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <delimitchars>[]</delimitchars>
-    <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
-    <correctfeedback format="html">
-      <text>Your answer is correct.</text>
-    </correctfeedback>
-    <partiallycorrectfeedback format="html">
-      <text>Your answer is partially correct.</text>
-    </partiallycorrectfeedback>
-    <incorrectfeedback format="html">
-      <text>Your answer is incorrect.</text>
-    </incorrectfeedback>
-    <tags>
-      <tag><text>adjectives</text>
-</tag>
-      <tag><text>wordselect</text>
-</tag>
-      <tag><text>adpq_60</text>
-</tag>
-    </tags>
-  </question>
-
-<!-- question: 1368  -->
-  <question type="wordselect">
-    <name>
-      <text>FathersFinanceClothes</text>
-    </name>
-    <questiontext format="html">
-      <text><![CDATA[<p>My father worked in finance and always wore a suit and white shirt with [suspenders]. He would polish his shoes on Sunday evening but no matter how dirty they got would not polish them again for a week.</p>]]></text>
-    </questiontext>
-    <generalfeedback format="html">
-      <text></text>
-    </generalfeedback>
-    <defaultgrade>1.0000000</defaultgrade>
-    <penalty>0.3333333</penalty>
-    <hidden>0</hidden>
-    <idnumber></idnumber>
-    <introduction><![CDATA[<p>Select the americanism/s</p>]]></introduction>
-    <delimitchars>[]</delimitchars>
-    <wordpenalty>1.0000000</wordpenalty>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>suspenders</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <delimitchars>[]</delimitchars>
-    <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
-    <correctfeedback format="html">
-      <text>Your answer is correct.</text>
-    </correctfeedback>
-    <partiallycorrectfeedback format="html">
-      <text>Your answer is partially correct.</text>
-    </partiallycorrectfeedback>
-    <incorrectfeedback format="html">
-      <text>Your answer is incorrect.</text>
-    </incorrectfeedback>
-    <tags>
-      <tag><text>wordselect</text>
-</tag>
-      <tag><text>americanisms</text>
-</tag>
-      <tag><text>amer</text>
-</tag>
-    </tags>
-  </question>
-
-<!-- question: 1265  -->
-  <question type="wordselect">
-    <name>
-      <text>Furniture</text>
-    </name>
-    <questiontext format="html">
-      <text><![CDATA[<table style="width: 50%;" border="2" cellpadding="12"><tbody><tr><td>X</td><td>[T]</td><td>[A]</td><td>[B]</td><td>[L]</td><td>[E]</td><td>T</td><td>B</td></tr><tr><td>R</td><td>H</td><td>E</td><td>R</td><td>S</td><td>[B]</td><td>[E]</td><td>[D]</td></tr><tr><td>[S]</td><td>[T]</td><td>[O]</td><td>[O]</td><td>[L]</td><td>C</td><td>T</td><td>N</td></tr><tr><td>E</td><td>W</td><td>A</td><td>R</td><td>D</td><td>K</td><td>E</td><td>Y</td></tr><tr><td>[W]</td><td>[A]</td><td>[R]</td><td>[D]</td><td>[R]</td><td>[O]</td><td>[B]</td><td>[E]</td></tr><tr><td>F</td><td>S</td><td>D</td><td>Z</td><td>H</td><td>A</td><td>M</td><td>R</td></tr><tr><td>A</td><td>N</td><td>T</td><td>[C]</td><td>[H]</td><td>[A]</td><td>[I]</td><td>[R]</td></tr><tr><td>K</td><td>M</td><td>U</td><td>O</td><td>G</td><td>C</td><td>O</td><td>W</td></tr></tbody></table>]]></text>
-    </questiontext>
-    <generalfeedback format="html">
-      <text></text>
-    </generalfeedback>
-    <defaultgrade>26.0000000</defaultgrade>
-    <penalty>0.3333333</penalty>
-    <hidden>0</hidden>
-    <idnumber></idnumber>
-    <introduction></introduction>
-    <delimitchars>[]</delimitchars>
-    <wordpenalty>0.0000000</wordpenalty>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>T</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>A</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>B</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>L</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>E</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>B</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>E</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>D</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>S</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>T</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>O</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>O</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>L</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>W</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>A</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>R</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>D</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>R</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>O</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>B</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>E</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>C</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>H</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>A</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>I</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>R</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <delimitchars>[]</delimitchars>
-    <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
-    <correctfeedback format="html">
-      <text>Your answer is correct.</text>
-    </correctfeedback>
-    <partiallycorrectfeedback format="html">
-      <text>Your answer is partially correct.</text>
-    </partiallycorrectfeedback>
-    <incorrectfeedback format="html">
-      <text>Your answer is incorrect.</text>
-    </incorrectfeedback>
-    <tags>
-      <tag><text>adjectives</text>
-</tag>
-      <tag><text>wordselect</text>
-</tag>
-      <tag><text>adpq_60</text>
-</tag>
-    </tags>
-  </question>
-
-<!-- question: 1266  -->
-  <question type="wordselect">
-    <name>
-      <text>IHadALovelyTime</text>
-    </name>
-    <questiontext format="html">
-      <text><![CDATA[<p>I had a [lovely] time.</p>]]></text>
-    </questiontext>
-    <generalfeedback format="html">
-      <text></text>
-    </generalfeedback>
-    <defaultgrade>1.0000000</defaultgrade>
-    <penalty>0.3333333</penalty>
-    <hidden>0</hidden>
-    <idnumber></idnumber>
-    <introduction><![CDATA[<p>Select the adjective in the following text.</p>]]></introduction>
-    <delimitchars>[]</delimitchars>
-    <wordpenalty>0.0000000</wordpenalty>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>lovely</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <delimitchars>[]</delimitchars>
-    <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
-    <correctfeedback format="html">
-      <text>Your answer is correct.</text>
-    </correctfeedback>
-    <partiallycorrectfeedback format="html">
-      <text>Your answer is partially correct.</text>
-    </partiallycorrectfeedback>
-    <incorrectfeedback format="html">
-      <text>Your answer is incorrect.</text>
-    </incorrectfeedback>
-    <tags>
-      <tag><text>adjectives</text>
-</tag>
-      <tag><text>wordselect</text>
-</tag>
-      <tag><text>adpq_50</text>
-</tag>
-    </tags>
-  </question>
-
-<!-- question: 1370  -->
-  <question type="wordselect">
-    <name>
-      <text>The Shops</text>
-    </name>
-    <questiontext format="html">
-      <text><![CDATA[<p>We stopped at the shops and my brother went into the [drugstore]. Our favourite cafe was shut so we bought some fruit and orange juice.&nbsp;We were there for about half an hour.<br></p>]]></text>
-    </questiontext>
-    <generalfeedback format="html">
-      <text></text>
-    </generalfeedback>
-    <defaultgrade>1.0000000</defaultgrade>
-    <penalty>0.3333333</penalty>
-    <hidden>0</hidden>
-    <idnumber></idnumber>
-    <introduction><![CDATA[<p>Select the americanism/s</p>]]></introduction>
-    <delimitchars>[]</delimitchars>
-    <wordpenalty>1.0000000</wordpenalty>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>drugstore</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <delimitchars>[]</delimitchars>
-    <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
-    <correctfeedback format="html">
-      <text>Your answer is correct.</text>
-    </correctfeedback>
-    <partiallycorrectfeedback format="html">
-      <text>Your answer is partially correct.</text>
-    </partiallycorrectfeedback>
-    <incorrectfeedback format="html">
-      <text>Your answer is incorrect.</text>
-    </incorrectfeedback>
-    <tags>
-      <tag><text>wordselect</text>
-</tag>
-      <tag><text>americanisms</text>
-</tag>
-    </tags>
-  </question>
-
-<!-- question: 0  -->
-  <question type="category">
-    <category>
       <text>$course$/top/Default for qb/Wordselect English Language Questions/Comprehension</text>
     </category>
     <info format="moodle_auto_format">
@@ -526,7 +33,7 @@
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1267  -->
+<!-- question: 8  -->
   <question type="wordselect">
     <name>
       <text>Birmingham</text>
@@ -582,7 +89,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -592,15 +99,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>comprehension</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1268  -->
+<!-- question: 9  -->
   <question type="wordselect">
     <name>
       <text>Cambridge University</text>
@@ -638,7 +151,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -648,15 +161,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>comprehension</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1269  -->
+<!-- question: 10  -->
   <question type="wordselect">
     <name>
       <text>Charles Dickens</text>
@@ -700,7 +219,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -710,15 +229,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>comprehension</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1270  -->
+<!-- question: 11  -->
   <question type="wordselect">
     <name>
       <text>Competitions</text>
@@ -750,7 +275,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -760,15 +285,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>comprehension</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1271  -->
+<!-- question: 12  -->
   <question type="wordselect">
     <name>
       <text>Cricket</text>
@@ -779,7 +310,7 @@
     <generalfeedback format="html">
       <text></text>
     </generalfeedback>
-    <defaultgrade>3.0000000</defaultgrade>
+    <defaultgrade>4.0000000</defaultgrade>
     <penalty>0.3333333</penalty>
     <hidden>0</hidden>
     <idnumber></idnumber>
@@ -812,7 +343,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -822,15 +353,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>comprehension</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1272  -->
+<!-- question: 13  -->
   <question type="wordselect">
     <name>
       <text>Curry</text>
@@ -892,7 +429,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -902,15 +439,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>comprehension</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1273  -->
+<!-- question: 14  -->
   <question type="wordselect">
     <name>
       <text>Doctors</text>
@@ -954,7 +497,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -964,15 +507,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>comprehension</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1274  -->
+<!-- question: 15  -->
   <question type="wordselect">
     <name>
       <text>English Education</text>
@@ -1022,7 +571,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1032,15 +581,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>comprehension</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1275  -->
+<!-- question: 16  -->
   <question type="wordselect">
     <name>
       <text>FamilyRelationships</text>
@@ -1084,7 +639,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1094,15 +649,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>comprehension</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1276  -->
+<!-- question: 17  -->
   <question type="wordselect">
     <name>
       <text>FishAndChips</text>
@@ -1140,7 +701,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1150,15 +711,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>comprehension</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1277  -->
+<!-- question: 18  -->
   <question type="wordselect">
     <name>
       <text>FullEnglish</text>
@@ -1202,7 +769,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1212,15 +779,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>comprehension</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1278  -->
+<!-- question: 19  -->
   <question type="wordselect">
     <name>
       <text>J.K.Rowling</text>
@@ -1258,7 +831,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1268,15 +841,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>comprehension</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1279  -->
+<!-- question: 20  -->
   <question type="wordselect">
     <name>
       <text>Kings of England</text>
@@ -1326,7 +905,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1336,15 +915,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>comprehension</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1280  -->
+<!-- question: 21  -->
   <question type="wordselect">
     <name>
       <text>Liverpool</text>
@@ -1400,7 +985,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1410,15 +995,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>comprehension</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1281  -->
+<!-- question: 22  -->
   <question type="wordselect">
     <name>
       <text>London</text>
@@ -1456,7 +1047,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1466,15 +1057,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>comprehension</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1282  -->
+<!-- question: 23  -->
   <question type="wordselect">
     <name>
       <text>Manchester</text>
@@ -1530,7 +1127,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1540,15 +1137,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One one more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>comprehension</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1283  -->
+<!-- question: 24  -->
   <question type="wordselect">
     <name>
       <text>Moodle</text>
@@ -1592,7 +1195,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1602,15 +1205,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>comprehension</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1284  -->
+<!-- question: 25  -->
   <question type="wordselect">
     <name>
       <text>MyFatherTheProgrammer</text>
@@ -1654,7 +1263,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1664,15 +1273,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>comprehension</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1285  -->
+<!-- question: 26  -->
   <question type="wordselect">
     <name>
       <text>OriginsOfEnglish</text>
@@ -1716,7 +1331,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1726,15 +1341,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>comprehension</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1286  -->
+<!-- question: 27  -->
   <question type="wordselect">
     <name>
       <text>Penicillin</text>
@@ -1778,7 +1399,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1788,15 +1409,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>comprehension</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1287  -->
+<!-- question: 28  -->
   <question type="wordselect">
     <name>
       <text>Queen Victoria</text>
@@ -1852,7 +1479,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1862,13 +1489,19 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One last try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>General Comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1288  -->
+<!-- question: 29  -->
   <question type="wordselect">
     <name>
       <text>Scotland</text>
@@ -1912,7 +1545,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1922,13 +1555,19 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>General Comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1289  -->
+<!-- question: 30  -->
   <question type="wordselect">
     <name>
       <text>Shakespear</text>
@@ -1978,7 +1617,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1988,13 +1627,19 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text>Try again</text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>General Comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1290  -->
+<!-- question: 31  -->
   <question type="wordselect">
     <name>
       <text>Sir Francis Drake</text>
@@ -2038,7 +1683,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2048,13 +1693,19 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>General Comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1291  -->
+<!-- question: 32  -->
   <question type="wordselect">
     <name>
       <text>TheLondonUnderground</text>
@@ -2092,7 +1743,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2102,13 +1753,19 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1292  -->
+<!-- question: 33  -->
   <question type="wordselect">
     <name>
       <text>TheTowerOfLondon</text>
@@ -2146,7 +1803,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2156,13 +1813,19 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1293  -->
+<!-- question: 34  -->
   <question type="wordselect">
     <name>
       <text>ToThePark</text>
@@ -2206,7 +1869,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2216,13 +1879,19 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>General Comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1294  -->
+<!-- question: 35  -->
   <question type="wordselect">
     <name>
       <text>UKEducation</text>
@@ -2260,7 +1929,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2270,13 +1939,19 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>General Comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1295  -->
+<!-- question: 36  -->
   <question type="wordselect">
     <name>
       <text>Wales</text>
@@ -2287,7 +1962,7 @@
     <generalfeedback format="html">
       <text></text>
     </generalfeedback>
-    <defaultgrade>2.0000000</defaultgrade>
+    <defaultgrade>3.0000000</defaultgrade>
     <penalty>0.3333333</penalty>
     <hidden>0</hidden>
     <idnumber></idnumber>
@@ -2314,7 +1989,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2324,13 +1999,19 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>wordsquare</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1296  -->
+<!-- question: 37  -->
   <question type="wordselect">
     <name>
       <text>WhoIsMyBrother</text>
@@ -2356,7 +2037,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2366,13 +2047,19 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>General Comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1297  -->
+<!-- question: 38  -->
   <question type="wordselect">
     <name>
       <text>WilliamOrBill</text>
@@ -2410,7 +2097,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2420,13 +2107,19 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>General Comprehension</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1298  -->
+<!-- question: 39  -->
   <question type="wordselect">
     <name>
       <text>York</text>
@@ -2470,7 +2163,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2480,6 +2173,12 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text>One more try</text>
+    </hint>
     <tags>
       <tag><text>General Comprehension</text>
 </tag>
@@ -2497,7 +2196,7 @@
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1367  -->
+<!-- question: 40  -->
   <question type="wordselect">
     <name>
       <text>Cars</text>
@@ -2535,7 +2234,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2545,6 +2244,12 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Have another try<br></p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>wordselect</text>
 </tag>
@@ -2553,7 +2258,7 @@
     </tags>
   </question>
 
-<!-- question: 1372  -->
+<!-- question: 41  -->
   <question type="wordselect">
     <name>
       <text>Family</text>
@@ -2579,7 +2284,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2589,6 +2294,12 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Have another try<br></p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>wordselect</text>
 </tag>
@@ -2597,7 +2308,59 @@
     </tags>
   </question>
 
-<!-- question: 1299  -->
+<!-- question: 4  -->
+  <question type="wordselect">
+    <name>
+      <text>FathersFinanceClothes</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>My father worked in finance and always wore a suit and white shirt with [suspenders]. He would polish his shoes on Sunday evening but no matter how dirty they got would not polish them again for a week.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p>Select the americanism/s</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>suspenders</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Have another try<br></p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>americanisms</text>
+</tag>
+      <tag><text>amer</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 42  -->
   <question type="wordselect">
     <name>
       <text>FillingTheBucketAndCleaningTheHood</text>
@@ -2629,7 +2392,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2639,6 +2402,12 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Have another try</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>Have another try<br></p>]]></text>
+    </hint>
     <tags>
       <tag><text>wordselect</text>
 </tag>
@@ -2647,7 +2416,7 @@
     </tags>
   </question>
 
-<!-- question: 1300  -->
+<!-- question: 43  -->
   <question type="wordselect">
     <name>
       <text>GoingUpInTheElevator</text>
@@ -2673,7 +2442,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2683,17 +2452,23 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Have another try<br></p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>wordselect</text>
 </tag>
-      <tag><text>adpq_70</text>
-</tag>
       <tag><text>americanisms</text>
+</tag>
+      <tag><text>adpq_70</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1371  -->
+<!-- question: 44  -->
   <question type="wordselect">
     <name>
       <text>School</text>
@@ -2719,7 +2494,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2729,6 +2504,12 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Have another try<br></p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>wordselect</text>
 </tag>
@@ -2737,7 +2518,57 @@
     </tags>
   </question>
 
-<!-- question: 1301  -->
+<!-- question: 7  -->
+  <question type="wordselect">
+    <name>
+      <text>The Shops</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>We stopped at the shops and my brother went into the [drugstore]. Our favourite cafe was shut so we bought some fruit and orange juice.&nbsp;We were there for about half an hour.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p>Select the americanism/s</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>drugstore</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Have another try<br></p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>americanisms</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 45  -->
   <question type="wordselect">
     <name>
       <text>TheBusboyDroppedThePlates</text>
@@ -2763,7 +2594,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2773,17 +2604,23 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Have another try<br></p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>wordselect</text>
 </tag>
-      <tag><text>adpq_70</text>
-</tag>
       <tag><text>americanisms</text>
+</tag>
+      <tag><text>adpq_70</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1302  -->
+<!-- question: 46  -->
   <question type="wordselect">
     <name>
       <text>TheSidewalkInTheFall</text>
@@ -2815,7 +2652,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2825,17 +2662,23 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Have another try<br></p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>wordselect</text>
 </tag>
-      <tag><text>adpq_70</text>
-</tag>
       <tag><text>americanisms</text>
+</tag>
+      <tag><text>adpq_70</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1303  -->
+<!-- question: 47  -->
   <question type="wordselect">
     <name>
       <text>WeHadGottenNowhere</text>
@@ -2867,7 +2710,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2877,12 +2720,18 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Have another try<br></p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>wordselect</text>
 </tag>
-      <tag><text>adpq_70</text>
-</tag>
       <tag><text>americanisms</text>
+</tag>
+      <tag><text>adpq_70</text>
 </tag>
     </tags>
   </question>
@@ -2898,7 +2747,7 @@
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1304  -->
+<!-- question: 48  -->
   <question type="wordselect">
     <name>
       <text>AlterAltar</text>
@@ -2924,7 +2773,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2934,15 +2783,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>find_the_error</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>find_the_error</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1305  -->
+<!-- question: 49  -->
   <question type="wordselect">
     <name>
       <text>BeforeAgo</text>
@@ -2968,7 +2823,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2978,15 +2833,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text>Try again</text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>find_the_error</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>find_the_error</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1306  -->
+<!-- question: 50  -->
   <question type="wordselect">
     <name>
       <text>BornInBornOn</text>
@@ -3012,7 +2873,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3022,15 +2883,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>find_the_error</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>find_the_error</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1307  -->
+<!-- question: 51  -->
   <question type="wordselect">
     <name>
       <text>BuyingAHouse</text>
@@ -3062,7 +2929,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3072,15 +2939,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>find_the_error</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>find_the_error</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1308  -->
+<!-- question: 52  -->
   <question type="wordselect">
     <name>
       <text>DidDone</text>
@@ -3106,7 +2979,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3116,15 +2989,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>find_the_error</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>find_the_error</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1309  -->
+<!-- question: 53  -->
   <question type="wordselect">
     <name>
       <text>DifferenceDifferent</text>
@@ -3150,7 +3029,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3160,15 +3039,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>find_the_error</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>find_the_error</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1310  -->
+<!-- question: 54  -->
   <question type="wordselect">
     <name>
       <text>DoMeAFavor</text>
@@ -3194,7 +3079,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3204,15 +3089,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>find_the_error</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>find_the_error</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1311  -->
+<!-- question: 55  -->
   <question type="wordselect">
     <name>
       <text>Don'tDoesn't</text>
@@ -3238,7 +3129,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3248,15 +3139,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>find_the_error</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>find_the_error</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1312  -->
+<!-- question: 56  -->
   <question type="wordselect">
     <name>
       <text>DoubleNegative</text>
@@ -3282,7 +3179,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3292,15 +3189,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>find_the_error</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>find_the_error</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1313  -->
+<!-- question: 57  -->
   <question type="wordselect">
     <name>
       <text>DuringFor</text>
@@ -3326,7 +3229,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3336,15 +3239,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>find_the_error</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>find_the_error</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1314  -->
+<!-- question: 58  -->
   <question type="wordselect">
     <name>
       <text>GoodWell</text>
@@ -3370,7 +3279,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3380,15 +3289,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text>Try again</text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>find_the_error</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>find_the_error</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1315  -->
+<!-- question: 59  -->
   <question type="wordselect">
     <name>
       <text>HeIsHeAm</text>
@@ -3414,7 +3329,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3424,15 +3339,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>find_the_error</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>find_the_error</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1316  -->
+<!-- question: 60  -->
   <question type="wordselect">
     <name>
       <text>Her_She</text>
@@ -3458,7 +3379,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3468,15 +3389,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text>One more try</text>
+    </hint>
     <tags>
-      <tag><text>find_the_error</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>find_the_error</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1317  -->
+<!-- question: 61  -->
   <question type="wordselect">
     <name>
       <text>IAmUnderstand</text>
@@ -3502,7 +3429,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3512,15 +3439,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>find_the_error</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>find_the_error</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1318  -->
+<!-- question: 62  -->
   <question type="wordselect">
     <name>
       <text>LearnOrTeach</text>
@@ -3552,7 +3485,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3562,15 +3495,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>Have another go</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>find_the_error</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>find_the_error</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1319  -->
+<!-- question: 63  -->
   <question type="wordselect">
     <name>
       <text>LentBorrow</text>
@@ -3596,7 +3535,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3606,15 +3545,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>find_the_error</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>find_the_error</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1320  -->
+<!-- question: 64  -->
   <question type="wordselect">
     <name>
       <text>MenAndHair</text>
@@ -3652,7 +3597,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3662,15 +3607,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>find_the_error</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>find_the_error</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1321  -->
+<!-- question: 65  -->
   <question type="wordselect">
     <name>
       <text>MyFather</text>
@@ -3708,7 +3659,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3718,15 +3669,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>find_the_error</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>find_the_error</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1322  -->
+<!-- question: 66  -->
   <question type="wordselect">
     <name>
       <text>SpeakFrenchGood</text>
@@ -3758,7 +3715,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3768,15 +3725,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>find_the_error</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>find_the_error</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1323  -->
+<!-- question: 67  -->
   <question type="wordselect">
     <name>
       <text>ThatWhoSinceFor</text>
@@ -3808,7 +3771,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3818,15 +3781,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>find_the_error</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>find_the_error</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1324  -->
+<!-- question: 68  -->
   <question type="wordselect">
     <name>
       <text>UninterestedDisinterested</text>
@@ -3852,7 +3821,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3862,15 +3831,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>find_the_error</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>find_the_error</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1325  -->
+<!-- question: 69  -->
   <question type="wordselect">
     <name>
       <text>Whowhich</text>
@@ -3896,7 +3871,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3906,15 +3881,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>find_the_error</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>find_the_error</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1326  -->
+<!-- question: 70  -->
   <question type="wordselect">
     <name>
       <text>WorkOrJob</text>
@@ -3940,7 +3921,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3950,10 +3931,16 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>find_the_error</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>find_the_error</text>
 </tag>
     </tags>
   </question>
@@ -3969,7 +3956,7 @@
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1327  -->
+<!-- question: 71  -->
   <question type="wordselect">
     <name>
       <text>FamiylRelationships</text>
@@ -4013,7 +4000,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4023,15 +4010,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>vocabulary</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>vocabulary</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1328  -->
+<!-- question: 72  -->
   <question type="wordselect">
     <name>
       <text>FindClothing</text>
@@ -4075,7 +4068,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4085,15 +4078,89 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>vocabulary</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>vocabulary</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1329  -->
+<!-- question: 112  -->
+  <question type="wordselect">
+    <name>
+      <text>FindTheAnimals</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>[cat] [horse] shoe [pig] chair [lion]</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p>Find the animals</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>cat</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>horse</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>pig</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>lion</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>vocabulary</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 73  -->
   <question type="wordselect">
     <name>
       <text>FindTheFood</text>
@@ -4311,7 +4378,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4321,15 +4388,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>vocabulary</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>vocabulary</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1330  -->
+<!-- question: 74  -->
   <question type="wordselect">
     <name>
       <text>FindTheFruit</text>
@@ -4559,7 +4632,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4569,15 +4642,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>vocabulary</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>vocabulary</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1331  -->
+<!-- question: 75  -->
   <question type="wordselect">
     <name>
       <text>JobTitles</text>
@@ -4615,7 +4694,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4625,15 +4704,77 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>vocabulary</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>vocabulary</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1332  -->
+<!-- question: 114  -->
+  <question type="wordselect">
+    <name>
+      <text>LivesInWater</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>horse cow [whale ]dog [shark] zebra</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>2.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction>Pick the ones that live in water</introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>whale </text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>shark</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>vocabulary</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 76  -->
   <question type="wordselect">
     <name>
       <text>SelectFood</text>
@@ -4677,7 +4818,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4687,15 +4828,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>vocabulary</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>vocabulary</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1333  -->
+<!-- question: 77  -->
   <question type="wordselect">
     <name>
       <text>SelectTheFruit</text>
@@ -4733,7 +4880,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4743,15 +4890,145 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>vocabulary</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>vocabulary</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1334  -->
+<!-- question: 111  -->
+  <question type="wordselect">
+    <name>
+      <text>Sports</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>[football] [cricket] orange [tennis] pencil [rugby]</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p>Which of the following are sports?</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>football</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>cricket</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>tennis</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>rugby</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>vocabulary</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 113  -->
+  <question type="wordselect">
+    <name>
+      <text>ThingsThatFly</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>cat [bat] dog [eagle] cow horse</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>2.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p>Which of these can fly?</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>bat</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>eagle</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>vocabulary</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 78  -->
   <question type="wordselect">
     <name>
       <text>TypesOfPet</text>
@@ -4795,7 +5072,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4805,15 +5082,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>vocabulary</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>vocabulary</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1335  -->
+<!-- question: 79  -->
   <question type="wordselect">
     <name>
       <text>Ways of transport</text>
@@ -4857,7 +5140,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4867,10 +5150,16 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>vocabulary</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>vocabulary</text>
 </tag>
     </tags>
   </question>
@@ -4886,7 +5175,7 @@
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1336  -->
+<!-- question: 80  -->
   <question type="wordselect">
     <name>
       <text>Gerund2</text>
@@ -4912,7 +5201,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4922,13 +5211,19 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>wordselect</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1337  -->
+<!-- question: 81  -->
   <question type="wordselect">
     <name>
       <text>SelectTheGerund</text>
@@ -4954,7 +5249,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4964,6 +5259,12 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>wordselect</text>
 </tag>
@@ -4972,7 +5273,7 @@
     </tags>
   </question>
 
-<!-- question: 1338  -->
+<!-- question: 82  -->
   <question type="wordselect">
     <name>
       <text>SelectTheGerund2</text>
@@ -4998,7 +5299,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -5008,6 +5309,12 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>wordselect</text>
 </tag>
@@ -5027,7 +5334,7 @@
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1339  -->
+<!-- question: 83  -->
   <question type="wordselect">
     <name>
       <text>Food</text>
@@ -5203,7 +5510,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -5213,6 +5520,12 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>wordselect</text>
 </tag>
@@ -5223,7 +5536,293 @@
     </tags>
   </question>
 
-<!-- question: 1340  -->
+<!-- question: 5  -->
+  <question type="wordselect">
+    <name>
+      <text>Furniture</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Select the letters that make up the names of furniture (from left to right, not up and down </p>
+<table style="width: 50%;" border="2" cellpadding="12">
+    <tbody>
+        <tr>
+            <td>X</td>
+            <td>[T]</td>
+            <td>[A]</td>
+            <td>[B]</td>
+            <td>[L]</td>
+            <td>[E]</td>
+            <td>T</td>
+            <td>B</td>
+        </tr>
+        <tr>
+            <td>R</td>
+            <td>H</td>
+            <td>E</td>
+            <td>R</td>
+            <td>S</td>
+            <td>[B]</td>
+            <td>[E]</td>
+            <td>[D]</td>
+        </tr>
+        <tr>
+            <td>[S]</td>
+            <td>[T]</td>
+            <td>[O]</td>
+            <td>[O]</td>
+            <td>[L]</td>
+            <td>C</td>
+            <td>T</td>
+            <td>N</td>
+        </tr>
+        <tr>
+            <td>E</td>
+            <td>W</td>
+            <td>A</td>
+            <td>R</td>
+            <td>D</td>
+            <td>K</td>
+            <td>E</td>
+            <td>Y</td>
+        </tr>
+        <tr>
+            <td>[W]</td>
+            <td>[A]</td>
+            <td>[R]</td>
+            <td>[D]</td>
+            <td>[R]</td>
+            <td>[O]</td>
+            <td>[B]</td>
+            <td>[E]</td>
+        </tr>
+        <tr>
+            <td>F</td>
+            <td>S</td>
+            <td>D</td>
+            <td>Z</td>
+            <td>H</td>
+            <td>A</td>
+            <td>M</td>
+            <td>R</td>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td>N</td>
+            <td>T</td>
+            <td>[C]</td>
+            <td>[H]</td>
+            <td>[A]</td>
+            <td>[I]</td>
+            <td>[R]</td>
+        </tr>
+        <tr>
+            <td>K</td>
+            <td>M</td>
+            <td>U</td>
+            <td>O</td>
+            <td>G</td>
+            <td>C</td>
+            <td>O</td>
+            <td>W</td>
+        </tr>
+    </tbody>
+</table>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>26.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>T</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>A</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>B</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>L</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>E</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>B</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>E</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>D</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>S</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>T</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>O</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>O</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>L</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>W</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>A</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>R</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>D</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>R</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>O</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>B</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>E</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>C</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>H</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>A</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>I</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>R</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Have another try<br></p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
+    <tags>
+      <tag><text>adjectives</text>
+</tag>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>adpq_60</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 84  -->
   <question type="wordselect">
     <name>
       <text>Transport</text>
@@ -5411,7 +6010,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -5421,6 +6020,12 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>wordselect</text>
 </tag>
@@ -5429,7 +6034,7 @@
     </tags>
   </question>
 
-<!-- question: 1341  -->
+<!-- question: 85  -->
   <question type="wordselect">
     <name>
       <text>UK TownS</text>
@@ -5623,7 +6228,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -5633,6 +6238,12 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>wordselect</text>
 </tag>
@@ -5654,7 +6265,7 @@
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1342  -->
+<!-- question: 86  -->
   <question type="wordselect">
     <name>
       <text>FindTheQuestion</text>
@@ -5734,7 +6345,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -5744,15 +6355,21 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>forming_questions</text>
-</tag>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>forming_questions</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1363  -->
+<!-- question: 87  -->
   <question type="wordselect">
     <name>
       <text>PhoneLocation</text>
@@ -5790,7 +6407,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -5800,6 +6417,12 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>wordselect</text>
 </tag>
@@ -5808,7 +6431,7 @@
     </tags>
   </question>
 
-<!-- question: 1343  -->
+<!-- question: 88  -->
   <question type="wordselect">
     <name>
       <text>The stuck train</text>
@@ -5852,7 +6475,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -5862,6 +6485,12 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>wordselect</text>
 </tag>
@@ -5892,7 +6521,7 @@
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1344  -->
+<!-- question: 89  -->
   <question type="wordselect">
     <name>
       <text>Gardening verbs</text>
@@ -5924,7 +6553,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -5934,19 +6563,25 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Have another try<br></p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
+      <tag><text>wordselect</text>
+</tag>
       <tag><text>adpq_40</text>
 </tag>
       <tag><text>parts_of_speech</text>
 </tag>
       <tag><text>verbs</text>
 </tag>
-      <tag><text>wordselect</text>
-</tag>
     </tags>
   </question>
 
-<!-- question: 1345  -->
+<!-- question: 90  -->
   <question type="wordselect">
     <name>
       <text>ISatAtHomeWatchingTV</text>
@@ -5978,7 +6613,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -5988,17 +6623,23 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Have another try<br></p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
+      <tag><text>wordselect</text>
+</tag>
       <tag><text>adpq_50</text>
 </tag>
       <tag><text>parts_of_speech</text>
 </tag>
-      <tag><text>wordselect</text>
-</tag>
     </tags>
   </question>
 
-<!-- question: 1346  -->
+<!-- question: 91  -->
   <question type="wordselect">
     <name>
       <text>Morning verbs</text>
@@ -6030,7 +6671,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6040,17 +6681,23 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Have another try<br></p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
+      <tag><text>wordselect</text>
+</tag>
       <tag><text>adpq_40</text>
 </tag>
       <tag><text>parts_of_speech</text>
 </tag>
-      <tag><text>wordselect</text>
-</tag>
     </tags>
   </question>
 
-<!-- question: 1347  -->
+<!-- question: 92  -->
   <question type="wordselect">
     <name>
       <text>Morning verbs</text>
@@ -6082,7 +6729,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6092,19 +6739,25 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
+      <tag><text>wordselect</text>
+</tag>
       <tag><text>adpq_40</text>
 </tag>
       <tag><text>parts_of_speech</text>
 </tag>
       <tag><text>verbs</text>
 </tag>
-      <tag><text>wordselect</text>
-</tag>
     </tags>
   </question>
 
-<!-- question: 1348  -->
+<!-- question: 93  -->
   <question type="wordselect">
     <name>
       <text>SelectTheVerbs</text>
@@ -6142,7 +6795,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6152,19 +6805,25 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Have another try<br></p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>verbs</text>
-</tag>
-      <tag><text>parts_of_speech</text>
-</tag>
       <tag><text>wordselect</text>
 </tag>
       <tag><text>adpq_50</text>
 </tag>
+      <tag><text>parts_of_speech</text>
+</tag>
+      <tag><text>verbs</text>
+</tag>
     </tags>
   </question>
 
-<!-- question: 1349  -->
+<!-- question: 94  -->
   <question type="wordselect">
     <name>
       <text>SelectTheVerbs2</text>
@@ -6202,7 +6861,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6212,19 +6871,25 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Have another try<br></p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
+      <tag><text>wordselect</text>
+</tag>
       <tag><text>adpq_40</text>
 </tag>
       <tag><text>parts_of_speech</text>
 </tag>
       <tag><text>verbs</text>
 </tag>
-      <tag><text>wordselect</text>
-</tag>
     </tags>
   </question>
 
-<!-- question: 1350  -->
+<!-- question: 95  -->
   <question type="wordselect">
     <name>
       <text>SelectVerbsIWroteAnEmail</text>
@@ -6256,7 +6921,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6266,14 +6931,20 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Have another try<br></p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>verbs</text>
-</tag>
-      <tag><text>parts_of_speech</text>
-</tag>
       <tag><text>wordselect</text>
 </tag>
       <tag><text>adpq_50</text>
+</tag>
+      <tag><text>parts_of_speech</text>
+</tag>
+      <tag><text>verbs</text>
 </tag>
     </tags>
   </question>
@@ -6289,7 +6960,7 @@
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1351  -->
+<!-- question: 96  -->
   <question type="wordselect">
     <name>
       <text>Bedroom nouns</text>
@@ -6321,7 +6992,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6331,19 +7002,25 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>adpq_30</text>
+      <tag><text>wordselect</text>
 </tag>
       <tag><text>parts_of_speech</text>
 </tag>
-      <tag><text>wordselect</text>
+      <tag><text>adpq_30</text>
 </tag>
       <tag><text>nouns</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1352  -->
+<!-- question: 97  -->
   <question type="wordselect">
     <name>
       <text>EnglishTestsAreNounEasy</text>
@@ -6369,7 +7046,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6379,6 +7056,12 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>adpq_40</text>
 </tag>
@@ -6389,7 +7072,7 @@
     </tags>
   </question>
 
-<!-- question: 1353  -->
+<!-- question: 98  -->
   <question type="wordselect">
     <name>
       <text>NewKittenNoun</text>
@@ -6415,7 +7098,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6425,12 +7108,18 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
+      <tag><text>wordselect</text>
+</tag>
       <tag><text>adpq_40</text>
 </tag>
       <tag><text>parts_of_speech</text>
-</tag>
-      <tag><text>wordselect</text>
 </tag>
       <tag><text>_</text>
 </tag>
@@ -6439,53 +7128,7 @@
     </tags>
   </question>
 
-<!-- question: 1354  -->
-  <question type="wordselect">
-    <name>
-      <text>NewKittenNoun</text>
-    </name>
-    <questiontext format="html">
-      <text><![CDATA[<p>The new [kitten] was sleepy.</p>]]></text>
-    </questiontext>
-    <generalfeedback format="html">
-      <text></text>
-    </generalfeedback>
-    <defaultgrade>1.0000000</defaultgrade>
-    <penalty>0.3333333</penalty>
-    <hidden>0</hidden>
-    <idnumber></idnumber>
-    <introduction><![CDATA[<p>Select the noun</p>]]></introduction>
-    <delimitchars>[]</delimitchars>
-    <wordpenalty>1.0000000</wordpenalty>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>kitten</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <delimitchars>[]</delimitchars>
-    <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
-    <correctfeedback format="html">
-      <text>Your answer is correct.</text>
-    </correctfeedback>
-    <partiallycorrectfeedback format="html">
-      <text>Your answer is partially correct.</text>
-    </partiallycorrectfeedback>
-    <incorrectfeedback format="html">
-      <text>Your answer is incorrect.</text>
-    </incorrectfeedback>
-    <tags>
-      <tag><text>adpq_40</text>
-</tag>
-      <tag><text>parts_of_speech</text>
-</tag>
-      <tag><text>nouns</text>
-</tag>
-    </tags>
-  </question>
-
-<!-- question: 1355  -->
+<!-- question: 100  -->
   <question type="wordselect">
     <name>
       <text>SelectTheNounChair</text>
@@ -6511,7 +7154,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6521,19 +7164,25 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>parts_of_speech</text>
-</tag>
       <tag><text>wordselect</text>
 </tag>
       <tag><text>adpq_50</text>
+</tag>
+      <tag><text>parts_of_speech</text>
 </tag>
       <tag><text>nouns</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1356  -->
+<!-- question: 101  -->
   <question type="wordselect">
     <name>
       <text>SelectTheNounStephen</text>
@@ -6559,7 +7208,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6569,17 +7218,23 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>parts_of_speech</text>
-</tag>
       <tag><text>wordselect</text>
 </tag>
       <tag><text>adpq_40</text>
 </tag>
+      <tag><text>parts_of_speech</text>
+</tag>
     </tags>
   </question>
 
-<!-- question: 1357  -->
+<!-- question: 102  -->
   <question type="wordselect">
     <name>
       <text>SmallBedNoun</text>
@@ -6605,7 +7260,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6615,12 +7270,18 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
+      <tag><text>wordselect</text>
+</tag>
       <tag><text>adpq_40</text>
 </tag>
       <tag><text>parts_of_speech</text>
-</tag>
-      <tag><text>wordselect</text>
 </tag>
       <tag><text>nouns</text>
 </tag>
@@ -6638,7 +7299,175 @@
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1366  -->
+<!-- question: 1  -->
+  <question type="wordselect">
+    <name>
+      <text>boring_talented</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>The film was quite [boring], but the main actor is clearly [talented]<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>2.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p>Select the adjectives in the following sentence<br></p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>boring</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>talented</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Have another try</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
+    <tags>
+      <tag><text>adjectives</text>
+</tag>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>adpq_50</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 2  -->
+  <question type="wordselect">
+    <name>
+      <text>Eating food</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>The meal was [hot] and we ate it [quickly].</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>2.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p>Select the adjectives from the following text.</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>hot</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>quickly</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Have another try<br></p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
+    <tags>
+      <tag><text>adjectives</text>
+</tag>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>adj</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 3  -->
+  <question type="wordselect">
+    <name>
+      <text>Excellent</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Paul is an [excellent] teacher.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p>Select the adjective in the following sentence<br></p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>excellent</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Have another try<br></p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
+    <tags>
+      <tag><text>adjectives</text>
+</tag>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>adpq_60</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 103  -->
   <question type="wordselect">
     <name>
       <text>Flowers</text>
@@ -6664,7 +7493,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6674,6 +7503,12 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more&nbsp; try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>adjectives</text>
 </tag>
@@ -6682,7 +7517,59 @@
     </tags>
   </question>
 
-<!-- question: 1365  -->
+<!-- question: 6  -->
+  <question type="wordselect">
+    <name>
+      <text>IHadALovelyTime</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>I had a [lovely] time.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p>Select the adjective in the following text.</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>lovely</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Have another try<br></p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
+    <tags>
+      <tag><text>adjectives</text>
+</tag>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>adpq_50</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 104  -->
   <question type="wordselect">
     <name>
       <text>Movie</text>
@@ -6708,7 +7595,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6718,6 +7605,12 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>adjectives</text>
 </tag>
@@ -6726,7 +7619,7 @@
     </tags>
   </question>
 
-<!-- question: 1358  -->
+<!-- question: 105  -->
   <question type="wordselect">
     <name>
       <text>SatOn</text>
@@ -6752,7 +7645,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6762,19 +7655,25 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>adpq_30</text>
+      <tag><text>wordselect</text>
 </tag>
       <tag><text>parts_of_speech</text>
 </tag>
       <tag><text>verbs</text>
 </tag>
-      <tag><text>wordselect</text>
+      <tag><text>adpq_30</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1359  -->
+<!-- question: 106  -->
   <question type="wordselect">
     <name>
       <text>SelectTheAdjectiveDirty</text>
@@ -6800,7 +7699,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6810,17 +7709,23 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
+      <tag><text>wordselect</text>
+</tag>
       <tag><text>adpq_40</text>
 </tag>
       <tag><text>parts_of_speech</text>
 </tag>
-      <tag><text>wordselect</text>
-</tag>
     </tags>
   </question>
 
-<!-- question: 1360  -->
+<!-- question: 107  -->
   <question type="wordselect">
     <name>
       <text>SelectTheAdjectiveTasty</text>
@@ -6846,7 +7751,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6856,17 +7761,23 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
+      <tag><text>wordselect</text>
+</tag>
       <tag><text>adpq_40</text>
 </tag>
       <tag><text>parts_of_speech</text>
 </tag>
-      <tag><text>wordselect</text>
-</tag>
     </tags>
   </question>
 
-<!-- question: 1364  -->
+<!-- question: 108  -->
   <question type="wordselect">
     <name>
       <text>Weather</text>
@@ -6892,7 +7803,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6902,6 +7813,12 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
       <tag><text>adjectives</text>
 </tag>
@@ -6923,7 +7840,7 @@
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1361  -->
+<!-- question: 109  -->
   <question type="wordselect">
     <name>
       <text>AdjectiveNounVerb</text>
@@ -6961,7 +7878,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6971,21 +7888,27 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>comparisons</text>
-</tag>
-      <tag><text>adpq_80</text>
+      <tag><text>wordselect</text>
 </tag>
       <tag><text>parts_of_speech</text>
 </tag>
-      <tag><text>wordselect</text>
+      <tag><text>comparisons</text>
+</tag>
+      <tag><text>adpq_80</text>
 </tag>
       <tag><text>table</text>
 </tag>
     </tags>
   </question>
 
-<!-- question: 1362  -->
+<!-- question: 110  -->
   <question type="wordselect">
     <name>
       <text>AdjVerbNoun</text>
@@ -7017,7 +7940,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.42 version:2019112200 Moodle version:2019111800.05 release:3.8+ (Build: 20191212) -->
+    <!-- Wordselect release:2.43 version:2020021500 Moodle version:2019111803.1 release:3.8.3+ (Build: 20200607) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -7027,12 +7950,18 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
     <tags>
-      <tag><text>parts_of_speech</text>
+      <tag><text>wordselect</text>
 </tag>
       <tag><text>adpq_70</text>
 </tag>
-      <tag><text>wordselect</text>
+      <tag><text>parts_of_speech</text>
 </tag>
       <tag><text>table</text>
 </tag>
