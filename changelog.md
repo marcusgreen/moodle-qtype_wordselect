@@ -4,6 +4,8 @@ are ignored when the question is submitted.  This only happens when the multimed
 is turned on. I have moved the format code to later in the renderer and this fixes the issue.
 My thanks to Henny Jellema for reporting this.
 
+Thanks to Tim hunt for an update to styles.css to make CSS rules safer. This can help when
+using a custom theme.
 
 ### Version 2.43 of the Moodle WordSelect question type by Marcus Green. Feb 2020
 This version requires at least Moodle 3.7.0. It will not work correctly
