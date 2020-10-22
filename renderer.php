@@ -104,17 +104,14 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             }
             if ($options->readonly) {
                 $wordattributes['tabindex'] = '';
-                if ($iscorrectplace && ($isselected == true)) {
-                    $wordattributes['class'] = 'readonly correctresponse';
+                $class = ['readonly'];
+                if ($question->multiword) {
+                    $class[] = 'multiword';
                 }
-
-                if (!($iscorrectplace)) {
-                    if ($isselected == true) {
-                        $wordattributes['class'] = 'readonly incorrect ';
-                    } else if (($question->multiword == true)) {
-                        $wordattributes['class'] = 'readonly multiword ';
-                    }
+                if ($isselected) {
+                    $class[] = $iscorrectplace ? 'correctresponse' : 'incorrect';
                 }
+                $wordattributes['class'] = implode(' ', $class);
             } else {
                 $qasdata = $qa->get_last_qt_var($question->field($place));
                 /* when scrolling back and forth between questions
