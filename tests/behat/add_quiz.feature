@@ -23,11 +23,13 @@ Feature: Add a wordselect quiz
     And I add a "Quiz" to section "1" and I fill the form with:
       | Name        | Wordselect single page quiz         |
       | Description | Test Wordselect with more than one question per page |
+
     And I follow "Wordselect single page quiz"
     And I navigate to "Edit settings" in current page administration
     And I expand all fieldsets
     And I set the field "How questions behave" to "Interactive with multiple tries"
     And I set the field with xpath "//input[@id='id_generalfeedbackduring']" to "1"
+
     And I press "Save and return to course"
 
 #############################################################################
@@ -38,7 +40,7 @@ Feature: Add a wordselect quiz
 
     And I add a "Word Select" question to the "Wordselect single page quiz" quiz with:
       | Question name                      | First question                         |
-      | Question text                      | The [cat] sat on the mat               |
+      | Question text                      | The [bigcat] sat on the mat               |
       | General feedback                   | General feedback cat mat|
 
     And I add a "Word Select" question to the "Wordselect single page quiz" quiz with:
@@ -54,9 +56,8 @@ Feature: Add a wordselect quiz
     And I press "Attempt quiz now"
     Then I should see "Question 1"
 
-    And I click on "//span[text()='cat']" "xpath_element"
-
-    And I click on "//span[text()='cow']" "xpath_element"
+    And I click on "bigcat" "text"
+    And I click on "cow" "text"
 
     #And I press "Check"
     And I press "Finish attempt"
