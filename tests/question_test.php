@@ -148,7 +148,7 @@ class qtype_wordselect_question_test extends advanced_testcase {
         /* note the gap added between <p> and The */
         $this->assertEquals($paddedquestiontext, "<p> The cat [<b>sat</b>]", 'padding of html tags failed');
         /* tags retained are  sub sup i  u b */
-        $this->assertContains("[<b>sat</b>]", $paddedquestiontext, 'formatting tags not retained ');
+        $this->assertStringContainsString("[<b>sat</b>]", $paddedquestiontext, 'formatting tags not retained ');
     }
 
     public function test_set_is_selectable() {

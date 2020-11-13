@@ -33,9 +33,7 @@ create and preview wordselect (Select correct words) questions.
 
   # Preview it.
 
-  #When I choose "Preview" action for "Word-Select-001" in the question bank
-    And I follow "Preview"
-
+    When I choose "Preview" action for "Word-Select-001" in the question bank
     And I switch to "questionpreview" window
 
   #################################################
@@ -194,9 +192,8 @@ create and preview wordselect (Select correct words) questions.
     Then I should see "Word-Select-Penalty"
 
   # Preview it.
-  #When I choose "Preview" action for "Word-Select-Penalty " in the question bank
-    And I follow "Preview"
-    And I switch to "questionpreview" window
+  When I choose "Preview" action for "Word-Select-Penalty " in the question bank
+  And I switch to "questionpreview" window
 
   ##########################################################
   #Test Incorrect selection penalty reduced from the default 100%

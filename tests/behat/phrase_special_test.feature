@@ -26,7 +26,7 @@ Feature: Test that formatting within delimiters is retained
     And I add a "Word Select" question filling the form with:
       | Question name             | Word-Select-001                   |
       | Introduction              | Select the verbs in the following text  |
-      | Question text             | The cat [[<b>sat</b>]] and the cow [[jumped]] [[<u>meo</u>]]  [[10<sup>3</sup>]]  [[log<sub>3</sub>]] |
+      | Question text             | The cat [[<b>sat</b>]] and the cow [[jumped]] [[<u>lightly</u>]]  [[10<sup>3</sup>]]  [[log<sub>3</sub>]] |
       | General feedback          | This is general feedback       |
       | Hint 1                    | First hint                    |
       | Hint 2                    | Second hint                   |
@@ -50,7 +50,7 @@ Feature: Test that formatting within delimiters is retained
     #Select all (both) correct options
     And I click on "sat" "text"
     And I click on "jumped" "text"
-    And I click on "meo" "text"
+    And I click on "lightly" "text"
     And I click on "103" "text"
     And I click on "log3" "text"
     And I press "Check"
