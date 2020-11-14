@@ -54,7 +54,7 @@ Feature: Add a wordselect quiz
     And I am on "Course 1" course homepage
     And I follow "Wordselect single page quiz"
     And I press "Attempt quiz now"
-  Then I should see "Question 1"
+    Then I should see "Question 1"
 
     And I click on "bigcat" "text"
     And I click on "cow" "text"
@@ -65,6 +65,6 @@ Feature: Add a wordselect quiz
 
   # @javascript
   Scenario: Add and configure small quiz and perform an attempt as a student with Javascript enabled
-  Then I click on "Submit all and finish" "button" in the "Confirmation" "dialogue"
+    Then I click on "Submit all and finish" "button" in the "Confirmation" "dialogue"
     And I follow "Finish review"
     And I log out
