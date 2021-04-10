@@ -22,6 +22,122 @@
     <idnumber></idnumber>
   </question>
 
+<!-- question: 2286  -->
+  <question type="wordselect">
+    <name>
+      <text>Dance</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>People love to dance. Over time different dances have been invented and become popular. For example the [waltz] became fashionable in Vienna around the 1780s.</p>
+<p>The [foxtrot] is a smooth, progressive dance characterized by long, continuous flowing movements across the dance floor. It is danced to big band (usually vocal) music</p>
+<p>[Ballet] originated during the Italian Renaissance in the fifteenth century and later developed into a concert dance form in France and Russia. </p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>3.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the types of dance mentioned in the text</p>
+<p dir="ltr" style="text-align: left;"><br></p>
+<hr>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>waltz</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>foxtrot</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>Ballet</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903 release:3.10.3 (Build: 20210325) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+  </question>
+
+<!-- question: 2285  -->
+  <question type="wordselect">
+    <name>
+      <text>FiveLittleMonkeys</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[Five little [monkeys] jumping on the [bed],
+<br>One fell down and bumped his [head]<br>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>3.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<ul>
+        <li>What body part is mentioned?</li>
+        <li>What animal is mentioned?</li>
+        <li>Select the thing that is used for sleeping on</li>
+    </ul>
+<hr>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>monkeys</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>bed</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>head</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903 release:3.10.3 (Build: 20210325) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>comprehension</text>
+</tag>
+    </tags>
+  </question>
+
 <!-- question: 0  -->
   <question type="category">
     <category>
@@ -226,6 +342,8 @@
     </incorrectfeedback>
     <tags>
       <tag><text>wordselect</text>
+</tag>
+      <tag><text>comprehension</text>
 </tag>
     </tags>
   </question>
@@ -840,6 +958,65 @@
     <hint format="html">
       <text><![CDATA[<p>One more try</p>]]></text>
     </hint>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>comprehension</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 2284  -->
+  <question type="wordselect">
+    <name>
+      <text>HumptyDumpty</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[Humpty Dumpty sat on a wall.
+<br>Humpty Dumpty had a great fall.
+<br>All the king’s [horses] and all the [king’s] men
+<br>Couldn’t put Humpty together again.]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>2.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">
+    </p><ul>
+        <li>What animals are mentioned?</li>
+        <li>Select the word relating to a member of royalty</li>
+    </ul>
+<p></p>
+<hr>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>horses</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>king’s</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903 release:3.10.3 (Build: 20210325) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
     <tags>
       <tag><text>wordselect</text>
 </tag>
@@ -1694,6 +1871,68 @@
     </tags>
   </question>
 
+<!-- question: 2283  -->
+  <question type="wordselect">
+    <name>
+      <text>ShallIcompareTheeToASummersDay</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[Thou art more lovely and more temperate.
+<br>Rough [winds] do shake the darling buds of [May],
+<br>And summer’s lease hath all too short a date.
+<br>Sometime too hot the [eye] of heaven shines,
+<br>And often is his gold complexion dimmed;
+<br>And every fair from fair sometime declines,<br>By chance, or nature’s changing course, untrimmed;
+<br><br>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>3.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">This is by William Shakespeare.&nbsp;</p><p dir="ltr" style="text-align: left;">What month that is mentioned.?</p><p dir="ltr" style="text-align: left;">What weather related event is mentioned?</p><p dir="ltr" style="text-align: left;">What body part is mentioned?</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>winds</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>May</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>eye</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903 release:3.10.3 (Build: 20210325) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>comprehension</text>
+</tag>
+    </tags>
+  </question>
+
 <!-- question: 2143  -->
   <question type="wordselect">
     <name>
@@ -1886,7 +2125,7 @@
       <text>TheUK</text>
     </name>
     <questiontext format="html">
-      <text><![CDATA[<p dir="ltr" style="text-align: left;"><span style="font-size: 0.9375rem; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;;">The United Kingdom consists of [England], Scotland,Wales and Northern Ireland (Which shares a border with the Republic of Ireland).&nbsp; England has the largest population by far, and is the home of the UK government in [London]. The&nbsp;</span></p><p dir="ltr" style="text-align: left;"><span style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 0.9375rem;">Both English and Welsh are official languages, though in most areas the majority of people speak English as their first language. In welsh the country is called</span><span style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 0.9375rem;">&nbsp;Cymru. T</span></p>]]></text>
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"><span style="font-size: 0.9375rem; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;;">The United Kingdom consists of [England], Scotland,Wales and Northern Ireland (Which shares a border with the Republic of Ireland).&nbsp; England has the largest population by far, and is the home of the UK government in [London]. The&nbsp;</span></p><p dir="ltr" style="text-align: left;"><span style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 0.9375rem;">Both English and Welsh are official languages, though in most areas the majority of people speak English as their first language. In welsh the country is called</span><span style="font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 0.9375rem;">&nbsp;Cymru.&nbsp;</span></p>]]></text>
     </questiontext>
     <generalfeedback format="html">
       <text></text>
@@ -1922,6 +2161,12 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>comprehension</text>
+</tag>
+    </tags>
   </question>
 
 <!-- question: 2146  -->
@@ -2332,6 +2577,12 @@
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>comprehension</text>
+</tag>
+    </tags>
   </question>
 
 <!-- question: 0  -->
@@ -2660,6 +2911,74 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     <incorrectfeedback format="html">
       <text>Your answer is incorrect.</text>
     </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>americanisms</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 2278  -->
+  <question type="wordselect">
+    <name>
+      <text>MultiWord</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">[[You do the math]]</p><p dir="ltr" style="text-align: left;">[Fancy a cuppa?]</p><p dir="ltr" style="text-align: left;">[I'm knackered!]</p><p dir="ltr" style="text-align: left;">[[I could care less]]</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>2.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Which of the following are americanisms?</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>[You do the math</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>Fancy a cuppa?</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>I'm knackered!</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>[I could care less</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903 release:3.10.3 (Build: 20210325) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>americanisms</text>
+</tag>
+    </tags>
   </question>
 
 <!-- question: 2157  -->
@@ -6050,6 +6369,184 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     <idnumber></idnumber>
   </question>
 
+<!-- question: 2277  -->
+  <question type="wordselect">
+    <name>
+      <text>Animals</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<table border="2" cellpadding="12">    <tbody>        <tr>            <td>R</td>            <td>[H]</td>            <td>Z</td>            <td>B</td>            <td>A</td>            <td>[C]</td>            <td>[O]</td>            <td>[W]</td>        </tr>        <tr>            <td>L</td>            <td>[O]</td>            <td>[W]</td>            <td>[L]</td>            <td>S</td>            <td>[A]</td>            <td>O</td>            <td>G</td>        </tr>        <tr>            <td>E</td>            <td>[R]</td>            <td>E</td>            <td>C</td>            <td>R</td>            <td>[T]</td>            <td>U</td>            <td>N</td>        </tr>        <tr>            <td>E</td>            <td>[S]</td>            <td>O</td>            <td>M</td>            <td>A</td>            <td>T</td>            <td>T</td>            <td>Y</td>        </tr>        <tr>            <td>R</td>            <td>[E]</td>            <td>O</td>            <td>E</td>            <td>[P]</td>            <td>[I]</td>            <td>[G]</td>            <td>N</td>        </tr>        <tr>            <td>F</td>            <td>K</td>            <td>G</td>            <td>G</td>            <td>W</td>            <td>M</td>            <td>U</td>            <td>U</td>        </tr>        <tr>            <td>[W]</td>            <td>[O]</td>            <td>[L]</td>            <td>[F]</td>            <td>U</td>            <td>N</td>            <td>D</td>            <td>T</td>  </tr>        <tr>            <td>K</td>            <td>M</td>            <td>F</td>            <td>I</td>            <td>F</td>            <td>[D]</td>            <td>[O]</td>            <td>[G]</td>        </tr>    </tbody></table>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>22.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the animals, up and down. 7 Words.</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>H</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>C</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>O</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>W</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>O</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>W</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>L</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>A</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>R</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>T</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>S</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>E</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>P</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>I</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>G</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>W</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>O</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>L</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>F</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>D</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>O</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>G</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903 release:3.10.3 (Build: 20210325) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>wordsquare</text>
+</tag>
+      <tag><text>adpq_50</text>
+</tag>
+    </tags>
+  </question>
+
 <!-- question: 2248  -->
   <question type="wordselect">
     <name>
@@ -8017,7 +8514,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     <penalty>0.3333333</penalty>
     <hidden>0</hidden>
     <idnumber></idnumber>
-    <introduction></introduction>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the verbs</p>]]></introduction>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
     <answer fraction="100" format="moodle_auto_format">
@@ -8480,6 +8977,100 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
+<!-- question: 2282  -->
+  <question type="wordselect">
+    <name>
+      <text>TwoVerbs</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">I [spent] the afternoon [weeding] the garden.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>2.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the verb or verbs.</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>spent</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>weeding</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903 release:3.10.3 (Build: 20210325) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>verbs</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 2281  -->
+  <question type="wordselect">
+    <name>
+      <text>TwoVerbs2</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">I will [send] an email with all the details.&nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the verb or verbs</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>send</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903 release:3.10.3 (Build: 20210325) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>verbs</text>
+</tag>
+    </tags>
+  </question>
+
 <!-- question: 2235  -->
   <question type="wordselect">
     <name>
@@ -8705,6 +9296,182 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
       <tag><text>_</text>
 </tag>
       <tag><text>parts_of</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 2269  -->
+  <question type="wordselect">
+    <name>
+      <text>Nouns101</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">Could I borrow your [phone]?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the nouns.</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>phone</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903 release:3.10.3 (Build: 20210325) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>nouns</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 2270  -->
+  <question type="wordselect">
+    <name>
+      <text>Nouns102</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">I found it under the [bed].</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the nouns</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>bed</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903 release:3.10.3 (Build: 20210325) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>nouns</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 2271  -->
+  <question type="wordselect">
+    <name>
+      <text>Nouns103</text>
+    </name>
+    <questiontext format="html">
+      <text>Would you pass the [sauce].</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the nouns</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>sauce</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903 release:3.10.3 (Build: 20210325) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>nouns</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 2272  -->
+  <question type="wordselect">
+    <name>
+      <text>Nouns103</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">Can you tell me, who was the [man] in the hall?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the nouns</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>man</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903 release:3.10.3 (Build: 20210325) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>nouns</text>
 </tag>
     </tags>
   </question>
@@ -9048,6 +9815,56 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
+<!-- question: 2275  -->
+  <question type="wordselect">
+    <name>
+      <text>FatherWasTall</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">My father [tall] and told [funny] stories.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>2.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction>Select the adjectives</introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>tall</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>funny</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903 release:3.10.3 (Build: 20210325) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>adjectives</text>
+</tag>
+    </tags>
+  </question>
+
 <!-- question: 2224  -->
   <question type="wordselect">
     <name>
@@ -9354,6 +10171,144 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
       <tag><text>adpq_40</text>
 </tag>
       <tag><text>parts_of_speech</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 2276  -->
+  <question type="wordselect">
+    <name>
+      <text>SlowTraffic</text>
+    </name>
+    <questiontext format="html">
+      <text>The traffic was very [slow].</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Pick the adjectives</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>slow</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903 release:3.10.3 (Build: 20210325) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>adjectives</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 2273  -->
+  <question type="wordselect">
+    <name>
+      <text>Sweet</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">The sauce was rather [sweet] for me.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the adjective</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>sweet</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903 release:3.10.3 (Build: 20210325) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>adjectives</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 2274  -->
+  <question type="wordselect">
+    <name>
+      <text>Tallest</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">It is the [tallest] building in London. The view was [fantastic].</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>2.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the adjectives</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>tallest</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>fantastic</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903 release:3.10.3 (Build: 20210325) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>adjectives</text>
 </tag>
     </tags>
   </question>
