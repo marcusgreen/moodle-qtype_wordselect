@@ -27,7 +27,7 @@ defined('MOODLE_INTERNAL') || die;
 require_once($CFG->libdir . '/formslib.php');
 
 if ($ADMIN->fulltree) {
-     $penalties = array(
+    $penalties = [
             1.0000000,
             0.5000000,
             0.3333333,
@@ -35,9 +35,9 @@ if ($ADMIN->fulltree) {
             0.2000000,
             0.1000000,
             0.0000000
-        );
+    ];
 
-    $penaltyoptions = array();
+    $penaltyoptions = [];
     foreach ($penalties as $penalty) {
         $penaltyoptions["{$penalty}"] = (100 * $penalty) . '%';
     }
