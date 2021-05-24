@@ -144,11 +144,11 @@ class qtype_wordselect_edit_form extends question_edit_form {
         $question->introduction = array();
         $question->introduction['text'] = file_prepare_draft_area(
             $draftid,           // Draftid.
-            $this->context->id, // context.
+            $this->context->id, // Context.
             'qtype_wordselect',         // Component.
             'introduction',     // Filarea.
             !empty($question->id) ? (int) $question->id : null, // Itemid.
-            $this->fileoptions, // options
+            $this->fileoptions, // Options.
             $question->options->introduction // Text.
         );
 
