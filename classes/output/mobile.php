@@ -18,7 +18,7 @@
  * Mobile output class for qtype_wordselect
  *
  * @package    qtype_wordselect
- * @copyright  2019 Marcus Green
+ * @copyright  2021 Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -30,7 +30,7 @@ defined('MOODLE_INTERNAL') || die();
  * Mobile output class for wordselect question type
  *
  * @package    qtype_wordselect
- * @copyright  2019 Marcus Green
+ * @copyright  2021 Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class mobile {
@@ -40,9 +40,11 @@ class mobile {
      *
      * @return void
      */
-    public static function mobile_get_wordselect() {
+    public static function mobile_get_wordselect($args) {
         global $CFG;
-        $templatepath = $CFG->dirroot . '/question/type/wordselect/mobile/addon-qtype-wordselect.html';
+        $args = (object) $args;
+        $folder = $args->appversioncode >= 3950 ? 'latest' : 'ionic3';
+        $templatepath = $CFG->dirroot."/question/type/wordselect/mobile/$folder/addon-qtype-wordselect.html";
         $template = file_get_contents($templatepath);
         $jsfilepath = $CFG->dirroot . '/question/type/wordselect/mobile/mobile.js';
         $jscontent = file_get_contents($jsfilepath);

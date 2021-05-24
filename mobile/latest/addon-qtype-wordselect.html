@@ -1,0 +1,25 @@
+<section class="list qtype-wordselect-container qtype-wordselect" ion-list *ngIf="question.text || question.text === ''">
+    <ion-item text-wrap class="addon-qtype-wordselect-container qtext ion-wrap">
+        <ion-label>
+            <ion-card class="core-info-card" *ngIf="!question.readOnly">
+                <ion-item>
+                    <ion-icon name="fas-info-circle" slot="start" aria-hidden="true"></ion-icon>
+                    <ion-label>
+                        {{ 'plugin.qtype_wordselect.taptoselect' | translate }}
+                    </ion-label>
+                </ion-item>
+            </ion-card>
+            <p>
+                <core-format-text [component]="component" [componentId]="componentId" [text]="question.introduction">
+                </core-format-text>
+            </p>
+            <p>
+                <core-format-text  [component]="component" [componentId]="componentId"
+                 [text]="question.text" (afterRender)="questionRendered()">
+                </core-format-text>
+            </p>
+        </ion-label>
+    </ion-item>
+</section>
+
+
