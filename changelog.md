@@ -1,3 +1,7 @@
+### Version 2.45 of the Moodle WordSelect question type by Marcus Green. Jun 2021
+Added handling of both ionic3 and ionic5 for the mobile app. Added more sample english questions
+see examples\en
+
 ### Version 2.44 of the Moodle WordSelect question type by Marcus Green. Jun 2020
 Fixed an issue with embedded audio. If text appears after embedded audio selections
 are ignored when the question is submitted.  This only happens when the multimedia filter
