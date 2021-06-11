@@ -107,7 +107,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 if ($question->multiword) {
                     $class[] = 'multiword';
                 }
-                if ($isselected) {
+                if ($isselected && $options->correctness) {
                     $class[] = $iscorrectplace ? 'correctresponse' : 'incorrect';
                 }
                 $wordattributes['class'] = implode(' ', $class);

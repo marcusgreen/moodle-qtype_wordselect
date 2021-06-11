@@ -160,7 +160,7 @@ class restore_qtype_wordselect_plugin extends restore_qtype_plugin {
                 $params = array('question' => $newquestionid);
                 $answers = $DB->get_records('question_answers', $params, '', 'id, answer');
                 foreach ($answers as $answer) {
-                    // Clean in the same way than {@link xml_writer::xml_safe_utf8()}.
+                    // Clean in the same way as xml_writer::xml_safe_utf8() .
                     $clean = preg_replace('/[\x-\x8\xb-\xc\xe-\x1f\x7f]/is', '', $answer->answer); // Clean CTRL chars.
                     $clean = preg_replace("/\r\n|\r/", "\n", $clean); // Normalize line ending.
                     if ($clean === $data->answertext) {

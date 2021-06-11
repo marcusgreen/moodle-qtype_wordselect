@@ -128,7 +128,7 @@ class qtype_wordselect_edit_form extends question_edit_form {
         return $errors;
     }
     /**
-     * Perform any preprocessing needed on the data passed to {@link set_data()}
+     * Perform any preprocessing needed on the data passed to set_data()
      * before it is used to initialise the form.
      * @param object $question the data being passed to the form.
      * @return object $question the modified data.
