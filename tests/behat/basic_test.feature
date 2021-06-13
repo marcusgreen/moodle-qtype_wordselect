@@ -80,6 +80,9 @@ create and preview wordselect (Select correct words) questions.
               And I press "Check"
               And I should see "Your answer is correct."
               And I should see "Mark 2.00 out of 2.00"
+              And I pause
+             Then the "class" attribute of "//span[text()='sat']" "xpath_element" should contain "correctresponse"
+
 
   #Select one incorrect option on the first attempt
   #and all/both correct options on the second attempt
@@ -121,6 +124,7 @@ create and preview wordselect (Select correct words) questions.
               And I press "Check"
               And I should see "Your answer is partially correct."
               And I should see "Mark 1.00 out of 2.00"
+              And I pause
 
   ##################################################
   # Deferred Feedback behaviour

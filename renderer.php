@@ -72,29 +72,19 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             $isselected = $question->is_word_selected($place, $response);
             if ($isselected) {
                 $wordattributes['class'] = 'selected';
-            }
-            if ($isselected && $options->correctness == 1) {
-                if ($iscorrectplace) {
-                    $afterwordfeedback = $this->feedback_image(1);
-                    $wordattributes['title'] = get_string('correctresponse', 'qtype_wordselect');
-                    $wordattributes['class'] = 'correctresponse';
-                } else {
-                    $afterwordfeedback = $this->feedback_image(0);
-                    $wordattributes['title'] = ' ' . get_string('incorrectresponse', 'qtype_wordselect');
-                }
-            } else if ($iscorrectplace) {
                 if ($options->correctness == 1) {
-                    if ($options->rightanswer == 1) {
-                        /* $options->rightanswer is the setting for the quiz
-                         * to show the non selected correct answers
-                         * once the attempt is complete.
-                         * if the word is a correct answer but not selected
-                         * and the marking is complete (correctness==1)
-                         */
-                        $wordattributes['title'] = get_string('correctanswer', 'qtype_wordselect');
-                        $wordattributes['class'] = 'correct';
-                        $correctnoselect = true;
-                    }
+                    list($wordattributes, $afterwordfeedback) = $this->get_wordattributes($iscorrectplace, $wordattributes, $options);
+                }
+            } else {
+                if ($iscorrectplace && $options->rightanswer) {
+                    /* $options->rightanswer is the setting for the quiz
+                    * to show the non selected correct answers
+                    * once the attempt is complete.
+                    * if the word is a correct answer but not selected
+                    * and the marking is complete (correctness==1)
+                    */
+                    $wordattributes['class'] = 'correct';
+                    $wordattributes['title'] = get_string('correctanswer', 'qtype_wordselect');
                 }
             }
             /* skip empty places when tabbing */
@@ -107,10 +97,6 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 if ($question->multiword) {
                     $class[] = 'multiword';
                 }
-                if ($isselected && $options->correctness) {
-                    $class[] = $iscorrectplace ? 'correctresponse' : 'incorrect';
-                }
-                $wordattributes['class'] = implode(' ', $class);
             } else {
                 $qasdata = $qa->get_last_qt_var($question->field($place));
                 /* when scrolling back and forth between questions
@@ -129,16 +115,8 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                     $wordattributes['class'] = $class;
                     $wordattributes['aria-checked'] = 'false';
                 }
-                $properties = array(
-                    'type' => 'checkbox',
-                    'name' => $wordattributes['name'],
-                    'id' => $wordattributes['name'],
-                    'hidden' => 'true',
-                    'class' => 'selcheck');
-                if ($isselected == true) {
-                    $properties['checked'] = "true";
-                    $wordattributes['aria-checked'] = 'true';
-                }
+                list($wordattributes, $properties)  = $this->get_checkbox_properties($wordattributes, $isselected);
+
                 $checkbox = html_writer::empty_tag('input', $properties);
             }
 
@@ -166,6 +144,37 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         [$qa->get_outer_question_div_unique_id()]);
 
         return $output;
+    }
+    public function get_checkbox_properties($wordattributes, $isselected) {
+        $properties = [
+            'type' => 'checkbox',
+            'name' => $wordattributes['name'],
+            'id' => $wordattributes['name'],
+            'hidden' => 'true',
+            'class' => 'selcheck'
+        ];
+        if ($isselected == true) {
+            $properties['checked'] = "true";
+            $wordattributes['aria-checked'] = 'true';
+        }
+        return [$wordattributes, $properties];
+    }
+
+
+    public function get_wordattributes($iscorrectplace ,$wordattributes, $options) {
+        if ($iscorrectplace) {
+            $wordattributes['title'] = get_string('correctresponse', 'qtype_wordselect');
+            $wordattributes['class'] = 'correctresponse';
+            $correctnoselect = true;
+            $afterwordfeedback = $this->feedback_image(1);
+        } else {
+            $wordattributes['title'] = ' ' . get_string('incorrectresponse', 'qtype_wordselect');
+            $wordattributes['title'] = get_string('incorrectresponse', 'qtype_wordselect');
+            $wordattributes['class'] = 'incorrect';
+            $afterwordfeedback = $this->feedback_image(0);
+        }
+        return [$wordattributes, $afterwordfeedback];
+
     }
 
     /**
