@@ -1,4 +1,4 @@
-### Version 2.45 of the Moodle WordSelect question type by Marcus Green. Jun 2021
+### Version 2.45 of the Moodle WordSelect question type by Marcus Green. May 2021
 Added handling of both ionic3 and ionic5 for the mobile app. Added more sample english questions
 see examples\en
 

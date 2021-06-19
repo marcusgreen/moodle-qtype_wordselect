@@ -37,8 +37,8 @@ class mobile {
 
     /**
      * Returns the wordselect quetion type for the quiz the mobile app.
-     *
-     * @return void
+     * @param stdClass $args
+     * @return array
      */
     public static function mobile_get_wordselect($args) {
         global $CFG;

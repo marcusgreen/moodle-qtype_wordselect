@@ -442,7 +442,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * Complete grade for this attempt at the question
      *
      * @param array $response responses, as returned by
-     * {@link question_attempt_step::get_qt_data()}.
      * @return array (number, integer) the fraction, and the state.
      */
     public function grade_response(array $response) {
