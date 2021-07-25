@@ -1,3 +1,6 @@
+### Version 2.46 of the Moodle WordSelect question type by Marcus Green. Jul 2021
+Fix for Mobile App/ionic5, long text questions were cutting off instead of wrapping. More english language example questions.
+
 ### Version 2.45 of the Moodle WordSelect question type by Marcus Green. May 2021
 Added handling of both ionic3 and ionic5 for the mobile app. Added more sample english questions
 see examples\en
