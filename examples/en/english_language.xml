@@ -22,7 +22,7 @@
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1010  -->
+<!-- question: 1609  -->
   <question type="wordselect">
     <name>
       <text>Dance</text>
@@ -64,7 +64,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -76,7 +76,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 1011  -->
+<!-- question: 1610  -->
   <question type="wordselect">
     <name>
       <text>FiveLittleMonkeys</text>
@@ -120,7 +120,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -149,7 +149,7 @@
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1012  -->
+<!-- question: 1611  -->
   <question type="wordselect">
     <name>
       <text>Birmingham</text>
@@ -205,7 +205,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -229,7 +229,7 @@
     </tags>
   </question>
 
-<!-- question: 1013  -->
+<!-- question: 1612  -->
   <question type="wordselect">
     <name>
       <text>Cambridge University</text>
@@ -267,7 +267,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -291,7 +291,7 @@
     </tags>
   </question>
 
-<!-- question: 1014  -->
+<!-- question: 1613  -->
   <question type="wordselect">
     <name>
       <text>CarEngines</text>
@@ -330,7 +330,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -348,7 +348,7 @@
     </tags>
   </question>
 
-<!-- question: 1015  -->
+<!-- question: 1614  -->
   <question type="wordselect">
     <name>
       <text>Charles Dickens</text>
@@ -392,7 +392,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -416,7 +416,7 @@
     </tags>
   </question>
 
-<!-- question: 1016  -->
+<!-- question: 1615  -->
   <question type="wordselect">
     <name>
       <text>Competitions</text>
@@ -448,7 +448,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -472,7 +472,7 @@
     </tags>
   </question>
 
-<!-- question: 1017  -->
+<!-- question: 1616  -->
   <question type="wordselect">
     <name>
       <text>Cricket</text>
@@ -516,7 +516,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -540,7 +540,7 @@
     </tags>
   </question>
 
-<!-- question: 1018  -->
+<!-- question: 1617  -->
   <question type="wordselect">
     <name>
       <text>Curry</text>
@@ -602,7 +602,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -626,7 +626,7 @@
     </tags>
   </question>
 
-<!-- question: 1019  -->
+<!-- question: 1618  -->
   <question type="wordselect">
     <name>
       <text>Doctors</text>
@@ -670,7 +670,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -694,7 +694,7 @@
     </tags>
   </question>
 
-<!-- question: 1020  -->
+<!-- question: 1619  -->
   <question type="wordselect">
     <name>
       <text>English Education</text>
@@ -744,7 +744,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -768,7 +768,7 @@
     </tags>
   </question>
 
-<!-- question: 1021  -->
+<!-- question: 1620  -->
   <question type="wordselect">
     <name>
       <text>FamilyRelationships</text>
@@ -812,7 +812,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -836,7 +836,7 @@
     </tags>
   </question>
 
-<!-- question: 1022  -->
+<!-- question: 1621  -->
   <question type="wordselect">
     <name>
       <text>FishAndChips</text>
@@ -874,7 +874,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -898,7 +898,7 @@
     </tags>
   </question>
 
-<!-- question: 1023  -->
+<!-- question: 1622  -->
   <question type="wordselect">
     <name>
       <text>FullEnglish</text>
@@ -942,7 +942,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -966,7 +966,7 @@
     </tags>
   </question>
 
-<!-- question: 1024  -->
+<!-- question: 1623  -->
   <question type="wordselect">
     <name>
       <text>HumptyDumpty</text>
@@ -1007,7 +1007,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1025,7 +1025,7 @@
     </tags>
   </question>
 
-<!-- question: 1025  -->
+<!-- question: 1624  -->
   <question type="wordselect">
     <name>
       <text>J.K.Rowling</text>
@@ -1063,7 +1063,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1087,7 +1087,7 @@
     </tags>
   </question>
 
-<!-- question: 1026  -->
+<!-- question: 1625  -->
   <question type="wordselect">
     <name>
       <text>Kings of England</text>
@@ -1137,7 +1137,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1161,7 +1161,7 @@
     </tags>
   </question>
 
-<!-- question: 1027  -->
+<!-- question: 1626  -->
   <question type="wordselect">
     <name>
       <text>Liverpool</text>
@@ -1217,7 +1217,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1241,7 +1241,7 @@
     </tags>
   </question>
 
-<!-- question: 1028  -->
+<!-- question: 1627  -->
   <question type="wordselect">
     <name>
       <text>London</text>
@@ -1279,7 +1279,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1303,7 +1303,7 @@
     </tags>
   </question>
 
-<!-- question: 1029  -->
+<!-- question: 1628  -->
   <question type="wordselect">
     <name>
       <text>Manchester</text>
@@ -1359,7 +1359,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1383,7 +1383,7 @@
     </tags>
   </question>
 
-<!-- question: 1030  -->
+<!-- question: 1629  -->
   <question type="wordselect">
     <name>
       <text>Moodle</text>
@@ -1427,7 +1427,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1451,7 +1451,7 @@
     </tags>
   </question>
 
-<!-- question: 1031  -->
+<!-- question: 1630  -->
   <question type="wordselect">
     <name>
       <text>MyFatherTheProgrammer</text>
@@ -1495,7 +1495,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1519,7 +1519,7 @@
     </tags>
   </question>
 
-<!-- question: 1032  -->
+<!-- question: 1631  -->
   <question type="wordselect">
     <name>
       <text>OriginsOfEnglish</text>
@@ -1563,7 +1563,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1587,7 +1587,7 @@
     </tags>
   </question>
 
-<!-- question: 1033  -->
+<!-- question: 1632  -->
   <question type="wordselect">
     <name>
       <text>Penicillin</text>
@@ -1631,7 +1631,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1655,7 +1655,7 @@
     </tags>
   </question>
 
-<!-- question: 1034  -->
+<!-- question: 1633  -->
   <question type="wordselect">
     <name>
       <text>Queen Victoria</text>
@@ -1711,7 +1711,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1733,7 +1733,7 @@
     </tags>
   </question>
 
-<!-- question: 1035  -->
+<!-- question: 1634  -->
   <question type="wordselect">
     <name>
       <text>Scotland</text>
@@ -1777,7 +1777,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1799,7 +1799,7 @@
     </tags>
   </question>
 
-<!-- question: 1036  -->
+<!-- question: 1635  -->
   <question type="wordselect">
     <name>
       <text>Shakespear</text>
@@ -1849,7 +1849,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1871,7 +1871,7 @@
     </tags>
   </question>
 
-<!-- question: 1037  -->
+<!-- question: 1636  -->
   <question type="wordselect">
     <name>
       <text>ShallIcompareTheeToASummersDay</text>
@@ -1915,7 +1915,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1933,7 +1933,7 @@
     </tags>
   </question>
 
-<!-- question: 1038  -->
+<!-- question: 1637  -->
   <question type="wordselect">
     <name>
       <text>Sir Francis Drake</text>
@@ -1977,7 +1977,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -1999,7 +1999,7 @@
     </tags>
   </question>
 
-<!-- question: 1039  -->
+<!-- question: 1638  -->
   <question type="wordselect">
     <name>
       <text>TheLondonUnderground</text>
@@ -2037,7 +2037,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2059,7 +2059,7 @@
     </tags>
   </question>
 
-<!-- question: 1040  -->
+<!-- question: 1639  -->
   <question type="wordselect">
     <name>
       <text>TheTowerOfLondon</text>
@@ -2097,7 +2097,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2119,7 +2119,7 @@
     </tags>
   </question>
 
-<!-- question: 1041  -->
+<!-- question: 1640  -->
   <question type="wordselect">
     <name>
       <text>TheUK</text>
@@ -2151,7 +2151,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2169,7 +2169,7 @@
     </tags>
   </question>
 
-<!-- question: 1042  -->
+<!-- question: 1641  -->
   <question type="wordselect">
     <name>
       <text>ToThePark</text>
@@ -2213,7 +2213,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2235,7 +2235,7 @@
     </tags>
   </question>
 
-<!-- question: 1043  -->
+<!-- question: 1642  -->
   <question type="wordselect">
     <name>
       <text>UKEducation</text>
@@ -2273,7 +2273,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2295,7 +2295,7 @@
     </tags>
   </question>
 
-<!-- question: 1044  -->
+<!-- question: 1643  -->
   <question type="wordselect">
     <name>
       <text>Wales</text>
@@ -2333,7 +2333,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2355,7 +2355,7 @@
     </tags>
   </question>
 
-<!-- question: 1045  -->
+<!-- question: 1644  -->
   <question type="wordselect">
     <name>
       <text>WhoIsMyBrother</text>
@@ -2381,7 +2381,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2403,7 +2403,7 @@
     </tags>
   </question>
 
-<!-- question: 1046  -->
+<!-- question: 1645  -->
   <question type="wordselect">
     <name>
       <text>WilliamOrBill</text>
@@ -2441,7 +2441,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2463,7 +2463,7 @@
     </tags>
   </question>
 
-<!-- question: 1047  -->
+<!-- question: 1646  -->
   <question type="wordselect">
     <name>
       <text>York</text>
@@ -2507,7 +2507,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2529,7 +2529,7 @@
     </tags>
   </question>
 
-<!-- question: 1048  -->
+<!-- question: 1647  -->
   <question type="wordselect">
     <name>
       <text>York</text>
@@ -2567,7 +2567,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2596,7 +2596,7 @@
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1049  -->
+<!-- question: 1648  -->
   <question type="wordselect">
     <name>
       <text>Cars</text>
@@ -2634,7 +2634,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2658,7 +2658,7 @@
     </tags>
   </question>
 
-<!-- question: 1050  -->
+<!-- question: 1649  -->
   <question type="wordselect">
     <name>
       <text>Family</text>
@@ -2684,7 +2684,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2708,7 +2708,7 @@
     </tags>
   </question>
 
-<!-- question: 1051  -->
+<!-- question: 1650  -->
   <question type="wordselect">
     <name>
       <text>FathersFinanceClothes</text>
@@ -2734,7 +2734,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2760,7 +2760,7 @@
     </tags>
   </question>
 
-<!-- question: 1052  -->
+<!-- question: 1651  -->
   <question type="wordselect">
     <name>
       <text>FillingTheBucketAndCleaningTheHood</text>
@@ -2792,7 +2792,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2816,7 +2816,7 @@
     </tags>
   </question>
 
-<!-- question: 1053  -->
+<!-- question: 1652  -->
   <question type="wordselect">
     <name>
       <text>GoingUpInTheElevator</text>
@@ -2842,7 +2842,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2868,7 +2868,7 @@
     </tags>
   </question>
 
-<!-- question: 1054  -->
+<!-- question: 1653  -->
   <question type="wordselect">
     <name>
       <text>HairBangs</text>
@@ -2901,7 +2901,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2919,7 +2919,57 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1055  -->
+<!-- question: 2557  -->
+  <question type="wordselect">
+    <name>
+      <text>Maths</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>I enjoyed my time at school, but I particularly liked the science subjects. I wanted to specialise in Physics but I was not good enough at [math]. My father paid for extra tuition and I ended up studying engineering.&nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p>Select the americanism/s</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>math</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text><![CDATA[In british english the term maths (notte the trailing letter s) is almost always used.&nbsp;<br>https://grammarist.com/spelling/math-maths/<br>]]></text>
+    </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Have another try<br></p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>americanisms</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 1654  -->
   <question type="wordselect">
     <name>
       <text>MultiWord</text>
@@ -2963,7 +3013,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -2981,7 +3031,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1056  -->
+<!-- question: 1655  -->
   <question type="wordselect">
     <name>
       <text>School</text>
@@ -3007,7 +3057,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3031,7 +3081,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1057  -->
+<!-- question: 1656  -->
   <question type="wordselect">
     <name>
       <text>The Shops</text>
@@ -3057,7 +3107,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3081,7 +3131,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1058  -->
+<!-- question: 1657  -->
   <question type="wordselect">
     <name>
       <text>TheBusboyDroppedThePlates</text>
@@ -3107,7 +3157,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3133,7 +3183,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1059  -->
+<!-- question: 1658  -->
   <question type="wordselect">
     <name>
       <text>TheSidewalkInTheFall</text>
@@ -3165,7 +3215,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3191,7 +3241,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1060  -->
+<!-- question: 1659  -->
   <question type="wordselect">
     <name>
       <text>WeHadGottenNowhere</text>
@@ -3223,7 +3273,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3260,7 +3310,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1061  -->
+<!-- question: 1660  -->
   <question type="wordselect">
     <name>
       <text>Accepting</text>
@@ -3286,7 +3336,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3304,7 +3354,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1062  -->
+<!-- question: 1661  -->
   <question type="wordselect">
     <name>
       <text>AlterAltar</text>
@@ -3330,7 +3380,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3354,7 +3404,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1063  -->
+<!-- question: 1662  -->
   <question type="wordselect">
     <name>
       <text>BeforeAgo</text>
@@ -3380,7 +3430,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3404,7 +3454,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1064  -->
+<!-- question: 1663  -->
   <question type="wordselect">
     <name>
       <text>BornInBornOn</text>
@@ -3430,7 +3480,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3454,7 +3504,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1065  -->
+<!-- question: 1664  -->
   <question type="wordselect">
     <name>
       <text>BuyingAHouse</text>
@@ -3486,7 +3536,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3510,7 +3560,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1066  -->
+<!-- question: 1665  -->
   <question type="wordselect">
     <name>
       <text>DidDone</text>
@@ -3536,7 +3586,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3560,7 +3610,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1067  -->
+<!-- question: 1666  -->
   <question type="wordselect">
     <name>
       <text>DifferenceDifferent</text>
@@ -3586,7 +3636,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3610,7 +3660,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1204  -->
+<!-- question: 1667  -->
   <question type="wordselect">
     <name>
       <text>DoDoesDone</text>
@@ -3636,7 +3686,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3654,7 +3704,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1068  -->
+<!-- question: 1668  -->
   <question type="wordselect">
     <name>
       <text>DoMeAFavor</text>
@@ -3680,7 +3730,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3704,7 +3754,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1203  -->
+<!-- question: 1669  -->
   <question type="wordselect">
     <name>
       <text>DoMeAFavor (copy)</text>
@@ -3730,7 +3780,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3754,7 +3804,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1069  -->
+<!-- question: 1670  -->
   <question type="wordselect">
     <name>
       <text>Don'tDoesn't</text>
@@ -3780,7 +3830,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3804,7 +3854,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1070  -->
+<!-- question: 1671  -->
   <question type="wordselect">
     <name>
       <text>DoubleNegative</text>
@@ -3830,7 +3880,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3854,7 +3904,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1071  -->
+<!-- question: 1672  -->
   <question type="wordselect">
     <name>
       <text>DuringFor</text>
@@ -3880,7 +3930,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3904,7 +3954,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1072  -->
+<!-- question: 1673  -->
   <question type="wordselect">
     <name>
       <text>GoodWell</text>
@@ -3930,7 +3980,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -3954,7 +4004,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1073  -->
+<!-- question: 1674  -->
   <question type="wordselect">
     <name>
       <text>HeIsHeAm</text>
@@ -3980,7 +4030,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4004,7 +4054,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1074  -->
+<!-- question: 1675  -->
   <question type="wordselect">
     <name>
       <text>Her_She</text>
@@ -4030,7 +4080,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4054,7 +4104,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1075  -->
+<!-- question: 1676  -->
   <question type="wordselect">
     <name>
       <text>IAmUnderstand</text>
@@ -4080,7 +4130,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4104,7 +4154,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1076  -->
+<!-- question: 1677  -->
   <question type="wordselect">
     <name>
       <text>LearnOrTeach</text>
@@ -4136,7 +4186,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4160,7 +4210,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1077  -->
+<!-- question: 1678  -->
   <question type="wordselect">
     <name>
       <text>LentBorrow</text>
@@ -4186,7 +4236,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4210,7 +4260,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1078  -->
+<!-- question: 1679  -->
   <question type="wordselect">
     <name>
       <text>MenAndHair</text>
@@ -4248,7 +4298,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4272,7 +4322,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1079  -->
+<!-- question: 1680  -->
   <question type="wordselect">
     <name>
       <text>MyFather</text>
@@ -4310,7 +4360,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4334,7 +4384,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1080  -->
+<!-- question: 1681  -->
   <question type="wordselect">
     <name>
       <text>SpeakFrenchGood</text>
@@ -4366,7 +4416,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4390,7 +4440,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1081  -->
+<!-- question: 1682  -->
   <question type="wordselect">
     <name>
       <text>ThatWhoSinceFor</text>
@@ -4422,7 +4472,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4446,7 +4496,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1082  -->
+<!-- question: 1683  -->
   <question type="wordselect">
     <name>
       <text>UninterestedDisinterested</text>
@@ -4472,7 +4522,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4496,7 +4546,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1083  -->
+<!-- question: 1684  -->
   <question type="wordselect">
     <name>
       <text>Whowhich</text>
@@ -4522,7 +4572,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4546,7 +4596,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1084  -->
+<!-- question: 1685  -->
   <question type="wordselect">
     <name>
       <text>WorkOrJob</text>
@@ -4572,7 +4622,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4607,7 +4657,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1085  -->
+<!-- question: 1686  -->
   <question type="wordselect">
     <name>
       <text>AnimalsInBritain</text>
@@ -4645,7 +4695,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4663,7 +4713,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1205  -->
+<!-- question: 1687  -->
   <question type="wordselect">
     <name>
       <text>AnimalsInBritain2</text>
@@ -4701,7 +4751,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4719,7 +4769,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1189  -->
+<!-- question: 1688  -->
   <question type="wordselect">
     <name>
       <text>Body Parts</text>
@@ -4751,7 +4801,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4769,7 +4819,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1190  -->
+<!-- question: 1689  -->
   <question type="wordselect">
     <name>
       <text>Body Parts2</text>
@@ -4807,7 +4857,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4825,7 +4875,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1086  -->
+<!-- question: 1690  -->
   <question type="wordselect">
     <name>
       <text>BritishCities</text>
@@ -4881,7 +4931,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4899,7 +4949,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1087  -->
+<!-- question: 1691  -->
   <question type="wordselect">
     <name>
       <text>Computers</text>
@@ -4937,7 +4987,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -4955,7 +5005,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1088  -->
+<!-- question: 1692  -->
   <question type="wordselect">
     <name>
       <text>EnglishWords</text>
@@ -4993,7 +5043,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -5011,7 +5061,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1089  -->
+<!-- question: 1693  -->
   <question type="wordselect">
     <name>
       <text>FamiylRelationships</text>
@@ -5055,7 +5105,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -5079,7 +5129,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1090  -->
+<!-- question: 1694  -->
   <question type="wordselect">
     <name>
       <text>FindClothing</text>
@@ -5123,7 +5173,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -5147,7 +5197,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1091  -->
+<!-- question: 1695  -->
   <question type="wordselect">
     <name>
       <text>FindTheAnimals</text>
@@ -5191,7 +5241,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -5215,7 +5265,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1092  -->
+<!-- question: 1696  -->
   <question type="wordselect">
     <name>
       <text>FindTheFood</text>
@@ -5433,7 +5483,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -5457,7 +5507,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1206  -->
+<!-- question: 1697  -->
   <question type="wordselect">
     <name>
       <text>FlyingAnimals</text>
@@ -5495,7 +5545,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -5507,7 +5557,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </incorrectfeedback>
   </question>
 
-<!-- question: 1093  -->
+<!-- question: 1698  -->
   <question type="wordselect">
     <name>
       <text>ForWriting</text>
@@ -5539,7 +5589,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -5557,7 +5607,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1094  -->
+<!-- question: 1699  -->
   <question type="wordselect">
     <name>
       <text>JobTitles</text>
@@ -5595,7 +5645,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -5619,7 +5669,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1095  -->
+<!-- question: 1700  -->
   <question type="wordselect">
     <name>
       <text>KitchenThings</text>
@@ -5663,7 +5713,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -5681,7 +5731,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1096  -->
+<!-- question: 1701  -->
   <question type="wordselect">
     <name>
       <text>LivesInWater</text>
@@ -5713,7 +5763,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -5737,7 +5787,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1097  -->
+<!-- question: 1702  -->
   <question type="wordselect">
     <name>
       <text>PartsOfACar</text>
@@ -5775,7 +5825,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -5793,7 +5843,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1098  -->
+<!-- question: 1703  -->
   <question type="wordselect">
     <name>
       <text>RoomType</text>
@@ -5837,7 +5887,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -5855,7 +5905,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1099  -->
+<!-- question: 1704  -->
   <question type="wordselect">
     <name>
       <text>SelectFood</text>
@@ -5899,7 +5949,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -5923,7 +5973,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1100  -->
+<!-- question: 1705  -->
   <question type="wordselect">
     <name>
       <text>SelectTheFruit</text>
@@ -5961,7 +6011,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -5985,7 +6035,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1101  -->
+<!-- question: 1706  -->
   <question type="wordselect">
     <name>
       <text>SelectTheFruit2</text>
@@ -6029,7 +6079,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6047,7 +6097,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1102  -->
+<!-- question: 1707  -->
   <question type="wordselect">
     <name>
       <text>ShopType</text>
@@ -6091,7 +6141,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6109,7 +6159,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1103  -->
+<!-- question: 1708  -->
   <question type="wordselect">
     <name>
       <text>Sports</text>
@@ -6153,7 +6203,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6177,7 +6227,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1104  -->
+<!-- question: 1709  -->
   <question type="wordselect">
     <name>
       <text>ThingsThatFly</text>
@@ -6209,7 +6259,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6233,7 +6283,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1105  -->
+<!-- question: 1710  -->
   <question type="wordselect">
     <name>
       <text>TypesOfFlower</text>
@@ -6277,7 +6327,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6295,7 +6345,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1106  -->
+<!-- question: 1711  -->
   <question type="wordselect">
     <name>
       <text>TypesOfPet</text>
@@ -6339,7 +6389,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6363,7 +6413,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1107  -->
+<!-- question: 1712  -->
   <question type="wordselect">
     <name>
       <text>Ways of transport</text>
@@ -6407,7 +6457,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6431,7 +6481,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1108  -->
+<!-- question: 1713  -->
   <question type="wordselect">
     <name>
       <text>WhatCanFly</text>
@@ -6487,7 +6537,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6516,7 +6566,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1109  -->
+<!-- question: 1714  -->
   <question type="wordselect">
     <name>
       <text>Gerund2</text>
@@ -6542,7 +6592,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6564,7 +6614,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1110  -->
+<!-- question: 1715  -->
   <question type="wordselect">
     <name>
       <text>SelectTheGerund</text>
@@ -6590,7 +6640,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6614,7 +6664,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1111  -->
+<!-- question: 1716  -->
   <question type="wordselect">
     <name>
       <text>SelectTheGerund2</text>
@@ -6640,7 +6690,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6675,7 +6725,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1112  -->
+<!-- question: 1717  -->
   <question type="wordselect">
     <name>
       <text>Animals</text>
@@ -6827,7 +6877,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -6853,7 +6903,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1113  -->
+<!-- question: 1718  -->
   <question type="wordselect">
     <name>
       <text>Body Parts</text>
@@ -6993,7 +7043,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -7019,7 +7069,179 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1202  -->
+<!-- question: 1799  -->
+  <question type="wordselect">
+    <name>
+      <text>Colours</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<table border="2" cellpadding="12">    <tbody>        <tr>            <td>E</td>            <td>D</td>            <td>[B]</td>            <td>[R]</td>            <td>[O]</td>            <td>[W]</td>            <td>[N]</td>            <td>D</td>        </tr>            <tr>            <td>A</td>            <td>[R]</td>            <td>R</td>            <td>O</td>            <td>E</td>            <td>R</td>            <td>A</td>            <td>D</td>        </tr>        <tr>            <td>L</td>            <td>[E]</td>            <td>B</td>            <td>R</td>            <td>O</td>            <td>G</td>            <td>K</td>            <td>L</td>        </tr>        <tr>            <td>O</td>            <td>[D]</td>            <td>R</td>            <td>C</td>            <td>V</td>            <td>C</td>            <td>T</td>            <td>U</td>        </tr>        <tr>            <td>[B]</td>            <td>P</td>            <td>I</td>            <td>M</td>            <td>I</td>            <td>T]</td>            <td>O</td>            <td>T</td>        </tr>        <tr>            <td>[L]</td>            <td>T</td>            <td>S</td>            <td>[P]</td>            <td>[I]</td>            <td>[N]</td>            <td>[K]</td>            <td>O</td>        </tr>        <tr>            <td>[U]</td>            <td>E</td>            <td>T</td>            <td>G</td>            <td>W</td>            <td>M</td>            <td>U</td>            <td>N</td>        </tr>        <tr>            <td>[E]</td>            <td>R</td>            <td>O</td>            <td>L</td>            <td>U</td>            <td>N</td>            <td>D</td>            <td>T</td>        </tr>        <tr>            <td>K</td>            <td>G</td>            <td>[B]</td>            <td>[R]</td>            <td>[O]</td>            <td>[W]</td>            <td>[N]</td>            <td>W</td>        </tr>    </tbody></table>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>21.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Find the colours</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>B</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>R</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>O</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>W</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>N</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>R</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>E</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>D</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>B</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>L</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>P</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>I</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>N</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>K</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>U</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>E</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>B</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>R</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>O</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>W</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>N</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>wordsquare</text>
+</tag>
+      <tag><text>wor</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 1719  -->
   <question type="wordselect">
     <name>
       <text>Drink</text>
@@ -7171,7 +7393,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -7197,7 +7419,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1114  -->
+<!-- question: 1720  -->
   <question type="wordselect">
     <name>
       <text>FindTheFruit</text>
@@ -7427,7 +7649,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -7451,7 +7673,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1115  -->
+<!-- question: 1721  -->
   <question type="wordselect">
     <name>
       <text>Food</text>
@@ -7627,7 +7849,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -7653,7 +7875,197 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1116  -->
+<!-- question: 2552  -->
+  <question type="wordselect">
+    <name>
+      <text>Food2</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<table border="2" cellpadding="12">    <tbody>        <tr>            <td>[S]</td>            <td>T</td>            <td>C</td>            <td>[M]</td>            <td>[E]</td>            <td>[A]</td>            <td>[T]</td>            <td>D</td>        </tr>        <tr>            <td>[A]</td>            <td>B</td>            <td>O</td>            <td>R</td>            <td>S</td>            <td>G</td>            <td>K</td>            <td>G</td>        </tr>        <tr>            <td>[L]</td>            <td>U</td>            <td>E</td>            <td>C</td>            <td>R</td>            <td>[C]</td>            <td>T</td>            <td>N</td>        </tr>        <tr>            <td>[A]</td>            <td>T</td>            <td>E</td>            <td>F</td>            <td>K</td>            <td>[H]</td>            <td>O</td>            <td>Y</td>        </tr>        <tr>            <td>[D]</td>            <td>T</td>            <td>[C]</td>            <td>[A]</td>            <td>[K]</td>            <td>[E]</td>            <td>M</td>            <td>N</td>        </tr>        <tr>            <td>F</td>            <td>E</td>            <td>C</td>            <td>H</td>            <td>E</td>            <td>[S]</td>            <td>U</td>            <td>X</td>        </tr>        <tr>            <td>E</td>            <td>I</td>            <td>E</td>            <td>L</td>            <td>U</td>            <td>[E]</td>            <td>[G]</td>            <td>[G]</td>  </tr>        <tr>            <td>[H]</td>            <td>[O]</td>            <td>[N]</td>            <td>[E]</td>            <td>[Y]</td>            <td>F</td>            <td>Q</td>            <td>A</td>        </tr>    </tbody></table>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>24.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Find the&nbsp; food items (Accross and Down)</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>S</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>M</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>E</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>A</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>T</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>A</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>L</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>C</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>A</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>H</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>D</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>C</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>A</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>K</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>E</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>S</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>E</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>G</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>G</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>H</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>O</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>N</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>E</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>Y</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Try again</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>wordsquare</text>
+</tag>
+      <tag><text>adpq_50</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 1722  -->
   <question type="wordselect">
     <name>
       <text>Furniture</text>
@@ -7913,7 +8325,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -7939,7 +8351,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1117  -->
+<!-- question: 1723  -->
   <question type="wordselect">
     <name>
       <text>MusicalInstruments</text>
@@ -8192,7 +8604,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -8210,7 +8622,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1118  -->
+<!-- question: 1724  -->
   <question type="wordselect">
     <name>
       <text>Transport</text>
@@ -8398,7 +8810,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -8422,7 +8834,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1119  -->
+<!-- question: 1725  -->
   <question type="wordselect">
     <name>
       <text>UK TownS</text>
@@ -8616,7 +9028,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -8653,7 +9065,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1120  -->
+<!-- question: 1726  -->
   <question type="wordselect">
     <name>
       <text>FindTheQuestion</text>
@@ -8733,7 +9145,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -8757,7 +9169,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1121  -->
+<!-- question: 1727  -->
   <question type="wordselect">
     <name>
       <text>FindTheQuestion2</text>
@@ -8807,7 +9219,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -8831,7 +9243,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1122  -->
+<!-- question: 1728  -->
   <question type="wordselect">
     <name>
       <text>PhoneLocation</text>
@@ -8869,7 +9281,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -8893,7 +9305,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1123  -->
+<!-- question: 1729  -->
   <question type="wordselect">
     <name>
       <text>The stuck train</text>
@@ -8937,7 +9349,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -8983,7 +9395,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1124  -->
+<!-- question: 1730  -->
   <question type="wordselect">
     <name>
       <text>Gardening verbs</text>
@@ -9015,7 +9427,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -9043,7 +9455,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1125  -->
+<!-- question: 1731  -->
   <question type="wordselect">
     <name>
       <text>ISatAtHomeWatchingTV</text>
@@ -9075,7 +9487,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -9101,7 +9513,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1126  -->
+<!-- question: 1732  -->
   <question type="wordselect">
     <name>
       <text>ISatDown</text>
@@ -9133,7 +9545,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -9151,7 +9563,63 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1191  -->
+<!-- question: 2555  -->
+  <question type="wordselect">
+    <name>
+      <text>ISatDown (copy)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">I [watched] television for most of the evening and then I [went] to bed. I [slept] for eight hours.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>3.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the verb or verbs.</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>watched</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>went</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>slept</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>verbs</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 1733  -->
   <question type="wordselect">
     <name>
       <text>IWrote</text>
@@ -9183,7 +9651,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -9201,7 +9669,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1127  -->
+<!-- question: 1734  -->
   <question type="wordselect">
     <name>
       <text>Morning verbs</text>
@@ -9233,7 +9701,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -9259,7 +9727,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1128  -->
+<!-- question: 1735  -->
   <question type="wordselect">
     <name>
       <text>Morning verbs</text>
@@ -9291,7 +9759,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -9319,7 +9787,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1129  -->
+<!-- question: 1736  -->
   <question type="wordselect">
     <name>
       <text>SelectTheVerbs</text>
@@ -9357,7 +9825,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -9385,7 +9853,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1130  -->
+<!-- question: 1737  -->
   <question type="wordselect">
     <name>
       <text>SelectTheVerbs2</text>
@@ -9423,7 +9891,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -9451,7 +9919,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1131  -->
+<!-- question: 1738  -->
   <question type="wordselect">
     <name>
       <text>SelectVerbsIWroteAnEmail</text>
@@ -9483,7 +9951,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -9511,7 +9979,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1132  -->
+<!-- question: 1739  -->
   <question type="wordselect">
     <name>
       <text>TwoVerbs</text>
@@ -9543,7 +10011,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -9561,7 +10029,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1133  -->
+<!-- question: 1740  -->
   <question type="wordselect">
     <name>
       <text>TwoVerbs2</text>
@@ -9587,7 +10055,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -9605,7 +10073,125 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1192  -->
+<!-- question: 2553  -->
+  <question type="wordselect">
+    <name>
+      <text>TwoVerbs2</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">I [slept] until 11.30 and then I [made] breakfast. In the afternoon I [worked] on my essay.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>3.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the verb or verbs.</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>slept</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>made</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>worked</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>verbs</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 2554  -->
+  <question type="wordselect">
+    <name>
+      <text>TwoVerbs3</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">I [went] into town in the morning to [go] shopping.&nbsp; I [had] lunch in a cafe and afterwards I [phoned] my brother.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the verb or verbs.</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>went</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>go</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>had</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>phoned</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>verbs</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 1741  -->
   <question type="wordselect">
     <name>
       <text>VerbList</text>
@@ -9637,7 +10223,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -9655,7 +10241,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1193  -->
+<!-- question: 1742  -->
   <question type="wordselect">
     <name>
       <text>VerbList2</text>
@@ -9693,7 +10279,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -9711,39 +10297,33 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1134  -->
+<!-- question: 1743  -->
   <question type="wordselect">
     <name>
-      <text>WorkWorkWork</text>
+      <text>Watered</text>
     </name>
     <questiontext format="html">
-      <text><![CDATA[<p dir="ltr" style="text-align: left;">I spent all day [working] in the garden. In the evening I [watched] TV.</p>]]></text>
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">The weather was very hot and and so I [watered] the garden every evening.</p>]]></text>
     </questiontext>
     <generalfeedback format="html">
       <text></text>
     </generalfeedback>
-    <defaultgrade>2.0000000</defaultgrade>
+    <defaultgrade>1.0000000</defaultgrade>
     <penalty>0.3333333</penalty>
     <hidden>0</hidden>
     <idnumber></idnumber>
-    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the verbs</p>]]></introduction>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the verb or verbs</p>]]></introduction>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
     <answer fraction="100" format="moodle_auto_format">
-      <text>working</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>watched</text>
+      <text>watered</text>
       <feedback format="moodle_auto_format">
         <text></text>
       </feedback>
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -9772,7 +10352,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1135  -->
+<!-- question: 1744  -->
   <question type="wordselect">
     <name>
       <text>Bedroom nouns</text>
@@ -9804,7 +10384,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -9832,7 +10412,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1136  -->
+<!-- question: 1745  -->
   <question type="wordselect">
     <name>
       <text>EnglishTestsAreNounEasy</text>
@@ -9858,7 +10438,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -9884,7 +10464,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1137  -->
+<!-- question: 1746  -->
   <question type="wordselect">
     <name>
       <text>NewKittenNoun</text>
@@ -9910,7 +10490,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -9940,7 +10520,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1138  -->
+<!-- question: 1747  -->
   <question type="wordselect">
     <name>
       <text>Nouns101</text>
@@ -9966,7 +10546,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -9984,7 +10564,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1139  -->
+<!-- question: 1748  -->
   <question type="wordselect">
     <name>
       <text>Nouns102</text>
@@ -10010,7 +10590,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -10028,7 +10608,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1140  -->
+<!-- question: 1749  -->
   <question type="wordselect">
     <name>
       <text>Nouns103</text>
@@ -10054,7 +10634,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -10072,7 +10652,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1141  -->
+<!-- question: 1750  -->
   <question type="wordselect">
     <name>
       <text>Nouns103</text>
@@ -10098,7 +10678,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -10116,7 +10696,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1142  -->
+<!-- question: 1751  -->
   <question type="wordselect">
     <name>
       <text>SelectTheNounChair</text>
@@ -10142,7 +10722,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -10170,7 +10750,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1143  -->
+<!-- question: 1752  -->
   <question type="wordselect">
     <name>
       <text>SelectTheNounStephen</text>
@@ -10196,7 +10776,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -10222,7 +10802,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1144  -->
+<!-- question: 1753  -->
   <question type="wordselect">
     <name>
       <text>SmallBedNoun</text>
@@ -10248,7 +10828,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -10287,7 +10867,111 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1207  -->
+<!-- question: 2551  -->
+  <question type="wordselect">
+    <name>
+      <text>BadWeather</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>We enjoyed the walk despite the [bad] weather.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p>Select the adjectives in the following sentence<br></p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>bad</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Have another try</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>adpq_50</text>
+</tag>
+      <tag><text>adjectives</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 2549  -->
+  <question type="wordselect">
+    <name>
+      <text>BetterThan</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>We went to the cinema last night and the movie was [better] than I expected.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p>Select the adjectives in the following sentence<br></p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>better</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Have another try</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>adpq_50</text>
+</tag>
+      <tag><text>adjectives</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 1754  -->
   <question type="wordselect">
     <name>
       <text>Beutiful</text>
@@ -10325,7 +11009,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -10351,7 +11035,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1145  -->
+<!-- question: 1755  -->
   <question type="wordselect">
     <name>
       <text>boring_talented</text>
@@ -10383,7 +11067,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -10409,7 +11093,71 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1146  -->
+<!-- question: 2550  -->
+  <question type="wordselect">
+    <name>
+      <text>CalmSea</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>The weather was [hot] in the morning, but by the afternoon it had [cooled] down, and I sat on the beach staring out at the [calm] sea.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>3.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p>Select the adjectives in the following sentence<br></p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>hot</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>cooled</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>calm</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <hint format="html">
+      <text><![CDATA[<p>Have another try</p>]]></text>
+    </hint>
+    <hint format="html">
+      <text><![CDATA[<p>One more try</p>]]></text>
+    </hint>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>adpq_50</text>
+</tag>
+      <tag><text>adjectives</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 1756  -->
   <question type="wordselect">
     <name>
       <text>Eating food</text>
@@ -10441,7 +11189,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -10467,7 +11215,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1147  -->
+<!-- question: 1757  -->
   <question type="wordselect">
     <name>
       <text>Excellent</text>
@@ -10493,7 +11241,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -10519,7 +11267,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1148  -->
+<!-- question: 1758  -->
   <question type="wordselect">
     <name>
       <text>FatherWasTall</text>
@@ -10551,7 +11299,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -10569,7 +11317,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1149  -->
+<!-- question: 1759  -->
   <question type="wordselect">
     <name>
       <text>Flowers</text>
@@ -10595,7 +11343,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -10619,7 +11367,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1150  -->
+<!-- question: 1760  -->
   <question type="wordselect">
     <name>
       <text>IHadALovelyTime</text>
@@ -10645,7 +11393,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -10671,7 +11419,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1151  -->
+<!-- question: 1761  -->
   <question type="wordselect">
     <name>
       <text>Movie</text>
@@ -10697,7 +11445,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -10721,7 +11469,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1152  -->
+<!-- question: 1762  -->
   <question type="wordselect">
     <name>
       <text>SatOn</text>
@@ -10747,7 +11495,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -10775,7 +11523,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1153  -->
+<!-- question: 1763  -->
   <question type="wordselect">
     <name>
       <text>SelectTheAdjectiveDirty</text>
@@ -10801,7 +11549,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -10827,7 +11575,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1154  -->
+<!-- question: 1764  -->
   <question type="wordselect">
     <name>
       <text>SelectTheAdjectiveTasty</text>
@@ -10853,7 +11601,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -10879,7 +11627,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1155  -->
+<!-- question: 1765  -->
   <question type="wordselect">
     <name>
       <text>SlowTraffic</text>
@@ -10905,7 +11653,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -10923,7 +11671,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1156  -->
+<!-- question: 1766  -->
   <question type="wordselect">
     <name>
       <text>Sweet</text>
@@ -10949,7 +11697,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -10967,7 +11715,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1157  -->
+<!-- question: 1767  -->
   <question type="wordselect">
     <name>
       <text>Tallest</text>
@@ -10999,7 +11747,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -11017,7 +11765,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1158  -->
+<!-- question: 1768  -->
   <question type="wordselect">
     <name>
       <text>Weather</text>
@@ -11043,7 +11791,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -11080,7 +11828,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1159  -->
+<!-- question: 1769  -->
   <question type="wordselect">
     <name>
       <text>AdjectiveNounVerb</text>
@@ -11118,7 +11866,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -11148,7 +11896,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1160  -->
+<!-- question: 1770  -->
   <question type="wordselect">
     <name>
       <text>AdjVerbNoun</text>
@@ -11180,7 +11928,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -11219,7 +11967,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1161  -->
+<!-- question: 1771  -->
   <question type="description">
     <name>
       <text>AbstractNouns Notes and links</text>
@@ -11236,7 +11984,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1162  -->
+<!-- question: 1772  -->
   <question type="wordselect">
     <name>
       <text>PickTheAbstract1</text>
@@ -11262,7 +12010,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -11278,7 +12026,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1163  -->
+<!-- question: 1773  -->
   <question type="wordselect">
     <name>
       <text>PickTheAbstract2</text>
@@ -11304,7 +12052,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -11320,7 +12068,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1164  -->
+<!-- question: 1774  -->
   <question type="wordselect">
     <name>
       <text>PickTheAbstract3</text>
@@ -11346,7 +12094,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -11362,7 +12110,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1165  -->
+<!-- question: 1775  -->
   <question type="wordselect">
     <name>
       <text>PickTheAbstract4</text>
@@ -11388,7 +12136,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -11415,7 +12163,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1166  -->
+<!-- question: 1776  -->
   <question type="wordselect">
     <name>
       <text>WhenIGotHome</text>
@@ -11441,7 +12189,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -11459,7 +12207,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1167  -->
+<!-- question: 1777  -->
   <question type="wordselect">
     <name>
       <text>WorkingHard</text>
@@ -11485,7 +12233,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -11508,13 +12256,13 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     <category>
       <text>$course$/top/Default for qb/Wordselect English Language Questions/Britishisms</text>
     </category>
-    <info format="html">
+    <info format="moodle_auto_format">
       <text></text>
     </info>
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1208  -->
+<!-- question: 1778  -->
   <question type="description">
     <name>
       <text>What is a Britishism?</text>
@@ -11531,7 +12279,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     <idnumber></idnumber>
   </question>
 
-<!-- question: 1198  -->
+<!-- question: 1779  -->
   <question type="wordselect">
     <name>
       <text>CarStorage</text>
@@ -11557,7 +12305,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -11575,7 +12323,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1209  -->
+<!-- question: 1780  -->
   <question type="wordselect">
     <name>
       <text>FoodNames</text>
@@ -11601,7 +12349,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -11619,7 +12367,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1210  -->
+<!-- question: 1781  -->
   <question type="wordselect">
     <name>
       <text>FoodNames2</text>
@@ -11645,7 +12393,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -11664,7 +12412,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1201  -->
+<!-- question: 1782  -->
   <question type="wordselect">
     <name>
       <text>KeepingWarm</text>
@@ -11690,7 +12438,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -11708,7 +12456,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1197  -->
+<!-- question: 1783  -->
   <question type="wordselect">
     <name>
       <text>Maintenance</text>
@@ -11734,7 +12482,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -11752,7 +12500,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1196  -->
+<!-- question: 1784  -->
   <question type="wordselect">
     <name>
       <text>MyBackground</text>
@@ -11784,7 +12532,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -11802,7 +12550,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1194  -->
+<!-- question: 1785  -->
   <question type="wordselect">
     <name>
       <text>Squid</text>
@@ -11834,7 +12582,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -11852,7 +12600,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1200  -->
+<!-- question: 1786  -->
   <question type="wordselect">
     <name>
       <text>TestingStudents</text>
@@ -11878,7 +12626,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -11896,7 +12644,51 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1195  -->
+<!-- question: 2556  -->
+  <question type="wordselect">
+    <name>
+      <text>Trousers</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">I wanted to look smart for the wedding. I had bought a new suit, smart black shoes and a silk tie. I tried the clothes out on the weekend and realised that the [trousers] were slightly big. I had them adjusted a the shop on the high street and they were ready by the Thursday.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the word or words that are frequently used in British English but rarely in American English.</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>trousers</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text><![CDATA[In UK English the word <em>trousers</em> is used for what in the US is called <em>pants</em>. In UK english the word <em>pants</em> usually refers to underpants.]]></text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>Britishisms</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 1787  -->
   <question type="wordselect">
     <name>
       <text>University Life</text>
@@ -11928,7 +12720,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -11946,7 +12738,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </tags>
   </question>
 
-<!-- question: 1199  -->
+<!-- question: 1788  -->
   <question type="wordselect">
     <name>
       <text>WatchingExams</text>
@@ -11972,7 +12764,7 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.44 version:2020061300 Moodle version:2020110903.03 release:3.10.3+ (Build: 20210416) -->
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -11986,6 +12778,457 @@ she took her hairdressers business cad from her [pocketbook]. I think she might 
       <tag><text>wordselect</text>
 </tag>
       <tag><text>Britishisms</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 0  -->
+  <question type="category">
+    <category>
+      <text>$course$/top/Default for qb/Wordselect English Language Questions/Spelling</text>
+    </category>
+    <info format="html">
+      <text></text>
+    </info>
+    <idnumber></idnumber>
+  </question>
+
+<!-- question: 1789  -->
+  <question type="wordselect">
+    <name>
+      <text>Spel1</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">I have been studying English for three years. My goal is to [acheive] complete fluency. It may take many more years of study.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the word or words that are not spelt correctly.</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>acheive</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>spelling</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 1798  -->
+  <question type="wordselect">
+    <name>
+      <text>Spel10</text>
+    </name>
+    <questiontext format="html">
+      <text>I had to take an exam to get on the course. I failed first time, but after some revision I was [succesful] and got a grade A.</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the incorrect spelling.</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>succesful</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>spelling</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 1790  -->
+  <question type="wordselect">
+    <name>
+      <text>Spel2</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">Someone drove into the back of my car while I was at the traffic lights. The other driver would not take responsibility and we got into an [arguement]. Eventually the police arrived and calmed things down.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the incorrect spelling.</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>arguement</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>spelling</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 1791  -->
+  <question type="wordselect">
+    <name>
+      <text>Spel3</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">We wanted to have a party in the summer, but we had problems with the arrangements. My brother was working in Paris and my father&nbsp; was in Ireland. We had a group phone call and compared our [calenders]. Eventually we found a weekend in June where we were all available. It should be huge fun.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the incorrect spelling.</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>calenders</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>spelling</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 1792  -->
+  <question type="wordselect">
+    <name>
+      <text>Spel4</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">I sent an email explaining the problem we had with the car. I said if it could not be fixed we would [definately] come anyway, and go by train. However the garage had fixed it by the afterrn and the journey was fine.</p><p dir="ltr" style="text-align: left;"><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the incorrect spelling.</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>definately</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>spelling</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 1793  -->
+  <question type="wordselect">
+    <name>
+      <text>Spel5</text>
+    </name>
+    <questiontext format="html">
+      <text>My new teacher looked [familar] to me. I spoke to him after the lesson and it turned out he had been at school with my brother.</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the incorrect spelling.</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>familar</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>spelling</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 1795  -->
+  <question type="wordselect">
+    <name>
+      <text>Spel6</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[&nbsp;The [goverment] had changed the rules on work visas, so I had to leave the country at the end of the course.]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the incorrect spelling.</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>goverment</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>spelling</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 1796  -->
+  <question type="wordselect">
+    <name>
+      <text>Spel7</text>
+    </name>
+    <questiontext format="html">
+      <text>When the fire alarm sounded we [immediatly] left the building. We stood in the car park for half an hour before we could go back into the building.</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the incorrect spelling.</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>immediatly</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>spelling</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 1797  -->
+  <question type="wordselect">
+    <name>
+      <text>Spel8</text>
+    </name>
+    <questiontext format="html">
+      <text>My father had a wonderful [knowlege] of Europen history. He had been a lecturer in both France and Germany, and written several books.</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the incorrect spelling.</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>knowlege</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>spelling</text>
+</tag>
+    </tags>
+  </question>
+
+<!-- question: 1794  -->
+  <question type="wordselect">
+    <name>
+      <text>Spel9</text>
+    </name>
+    <questiontext format="html">
+      <text>The truck moved [foward] slowly until it was next to the loading bay. The driver got out and started to unload the sacks.</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the incorrect spelling.</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>foward</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.45 version:2021061200 Moodle version:2021051700.01 release:3.11+ (Build: 20210520) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+    <tags>
+      <tag><text>wordselect</text>
+</tag>
+      <tag><text>spelling</text>
 </tag>
     </tags>
   </question>
