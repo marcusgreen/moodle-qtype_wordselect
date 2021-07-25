@@ -1,5 +1,5 @@
+# Wordselect Moodle Question type [![Moodle Plugin CI](https://github.com/marcusgreen/moodle-qtype_wordselect/actions/workflows/moodle-ci.yml/badge.svg)](https://github.com/marcusgreen/moodle-qtype_wordselect/actions/workflows/moodle-ci.yml) [![GitHub Release](https://img.shields.io/github/release/marcusgreen/moodle-qtype_wordselect.svg)](https://github.com/marcusgreen//moodle-qtype_wordselect/releases)
 
-# Wordselect Moodle Question type [![Build Status](https://travis-ci.org/marcusgreen/moodle-qtype_wordselect.svg?branch=master)](https://travis-ci.org/marcusgreen/moodle-qtype_wordselect)  [![GitHub Release](https://img.shields.io/github/release/marcusgreen/moodle-qtype_wordselect.svg)](https://github.com/marcusgreen//moodle-qtype_wordselect/releases)
 A very easy to use "select the words" Moodle question type. The question creator enters text
 and puts square braces around the correct ones. So if the objective was to select the verb, the phrase
 "The cat [sat] on the mat" would have square braces around sat. The user/student can select any word
