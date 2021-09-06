@@ -1,5 +1,5 @@
 @core @qtype @qtype_wordselect @qtype_wordselect_review_options @_switch_windown @wsel_d_feedback
-Feature: Test the basic functionality of wordselect type
+Feature: Test wordselect showiing of correctness with direct feedback
     In order to inform students whether each response was correct and which word
     was the right answer, apply classes.  Classes with colours are applied with supporting titles.
     The titles are not tested.
@@ -19,7 +19,7 @@ Feature: Test the basic functionality of wordselect type
         | teacher1 | C1     | editingteacher |
 
   @javascript
-  Scenario: Show which responses were correct and which words were correct.
+  Scenario: Show correctness when using deferred feedback.
     Given I log in as "teacher1"
     And I am on "Course 1" course homepage
     And I navigate to "Questions" in current page administration
