@@ -171,7 +171,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
     /**
      * Get the attributes to assign to a selectable word
      *
-     * @param boolean $iscorrectplace
+     * @param bool $iscorrectplace
      * @param array $wordattributes
      * @return array
      */
