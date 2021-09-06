@@ -73,7 +73,8 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             if ($isselected) {
                 $wordattributes['class'] = 'selected';
                 if ($options->correctness == 1) {
-                    list($wordattributes, $afterwordfeedback) = $this->get_wordattributes($iscorrectplace, $wordattributes, $options);
+                    list($wordattributes, $afterwordfeedback) = $this->get_wordattributes(
+                        $iscorrectplace, $wordattributes, $options);
                 }
             } else {
                 if ($iscorrectplace && $options->rightanswer) {
