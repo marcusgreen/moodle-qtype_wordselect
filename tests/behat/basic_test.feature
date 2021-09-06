@@ -122,7 +122,6 @@ create and preview wordselect (Select correct words) questions.
     And I press "Check"
     And I should see "Your answer is partially correct."
     And I should see "Mark 1.00 out of 2.00"
-    And I pause
 
   ##################################################
   # Deferred Feedback behaviour
