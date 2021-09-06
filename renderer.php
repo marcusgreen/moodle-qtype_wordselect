@@ -27,7 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * Generates the output for wordselect questions.
  *
- * @copyright  2016 Marcus Green
+ * @copyright  2021 Marcus Green
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -145,7 +145,14 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
 
         return $output;
     }
-    public function get_checkbox_properties($wordattributes, $isselected) {
+    /**
+     * Get the checkbox properties associated with a selectable word
+     *
+     * @param array $wordattributes
+     * @param bool $isselected // is it currently selected
+     * @return array
+     */
+    public function get_checkbox_properties(array $wordattributes, bool $isselected) {
         $properties = [
             'type' => 'checkbox',
             'name' => $wordattributes['name'],
@@ -160,12 +167,17 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         return [$wordattributes, $properties];
     }
 
-
-    public function get_wordattributes($iscorrectplace ,$wordattributes, $options) {
+    /**
+     * Get the attributes to assign to a selectable word
+     *
+     * @param boolean $iscorrectplace
+     * @param array $wordattributes
+     * @return array
+     */
+    public function get_wordattributes(bool $iscorrectplace , array $wordattributes) {
         if ($iscorrectplace) {
             $wordattributes['title'] = get_string('correctresponse', 'qtype_wordselect');
             $wordattributes['class'] = 'correctresponse';
-            $correctnoselect = true;
             $afterwordfeedback = $this->feedback_image(1);
         } else {
             $wordattributes['title'] = ' ' . get_string('incorrectresponse', 'qtype_wordselect');
@@ -174,7 +186,6 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             $afterwordfeedback = $this->feedback_image(0);
         }
         return [$wordattributes, $afterwordfeedback];
-
     }
 
     /**
