@@ -98,5 +98,3 @@ Feature: Test the basic functionality of wordselect type
     Then the "class" attribute of "//span[text()='jumped']" "xpath_element" should not contain "correctresponse"
     Then the "class" attribute of "//span[text()='sat']" "xpath_element" should contain "selected"
     Then the "class" attribute of "//span[text()='jumped']" "xpath_element" should contain "selected"
-
-
