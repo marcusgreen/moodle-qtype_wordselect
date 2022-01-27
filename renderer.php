@@ -47,9 +47,12 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         $question = $qa->get_question();
         $this->page->requires->js_call_amd('qtype_wordselect/navigation', 'init');
         $response = $qa->get_last_qt_data();
+        // Ensure Filter are applied.
+        $question->questiontext = $question->format_text($question->questiontext, $question->questiontextformat, $qa, 'qtype_wordselect',
+        'questiontext', $question->id);
         $correctplaces = $question->get_correct_places($question->questiontext, $question->delimitchars);
         $output .= html_writer::start_div('introduction');
-        /* this will ensure filters are applied to the introduction, done particularly for the multilang filter */
+        // Ensure filters are applied to the introduction, done particularly for the multilang filter.
         $output .= $question->format_text($question->introduction, $question->questiontextformat, $qa, 'qtype_wordselect',
                 'introduction', $question->id);
         $output .= html_writer::end_div();
