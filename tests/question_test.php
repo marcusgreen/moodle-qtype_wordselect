@@ -22,9 +22,12 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 namespace qtype_wordselect;
- defined('MOODLE_INTERNAL') || die();
+defined('MOODLE_INTERNAL') || die();
 
 global $CFG;
+
+use \qtype_wordselect_test_helper as helper;
+
 
 require_once($CFG->dirroot . '/question/type/questionbase.php');
 require_once($CFG->dirroot . '/question/engine/tests/helpers.php');
@@ -40,35 +43,35 @@ require_once($CFG->dirroot . '/question/type/wordselect/renderer.php');
  * @copyright  2016 Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class question_test extends advanced_testcase {
+class question_test extends \advanced_testcase {
 
     public function test_get_words() {
         // ... this markTestSkipped().
         $questiontext = 'cat [sat] cow [jumped]';
-        $question = qtype_wordselect_test_helper::make_question('wordselect', $questiontext);
+        $question = helper::make_question('wordselect', $questiontext);
         $items = $question->get_words();
         $this->assertEquals($items[0]->get_text(), 'cat');
         $this->assertEquals($items[1]->get_text(), ' ');
         $this->assertEquals($items[2]->get_text(), '[sat]');
 
         $questiontext = 'cat [[sat]] cow [jumped]';
-        $question = qtype_wordselect_test_helper::make_question('wordselect', $questiontext);
+        $question = helper::make_question('wordselect', $questiontext);
         $items = $question->get_words();
         $this->assertEquals($items[0]->get_text(), 'cat');
         $this->assertEquals($items[1]->get_text(), ' ');
         /* with html spaces (&nbsp;) */
         $questiontext = 'cat&nbsp;&nbsp;[[sat]]';
-        $question = qtype_wordselect_test_helper::make_question('wordselect', $questiontext);
+        $question = helper::make_question('wordselect', $questiontext);
         $items = $question->get_words();
     }
 
     public function test_stripdelim() {
-        $question = qtype_wordselect_test_helper::make_question('wordselect');
+        $question = helper::make_question('wordselect');
         $stripped = $question->stripdelim('[word]');
         $this->assertEquals('word', $stripped);
     }
     public function test_get_expected_data() {
-        $question = qtype_wordselect_test_helper::make_question('wordselect');
+        $question = helper::make_question('wordselect');
         $expecteddata = [
             'p0' => 'raw_trimmed',
             'p1' => 'raw_trimmed',
@@ -80,7 +83,7 @@ class question_test extends advanced_testcase {
     }
 
     public function test_summarise_response() {
-        $question = qtype_wordselect_test_helper::make_question('wordselect');
+        $question = helper::make_question('wordselect');
         $response = array('p2' => 'on');
         /* The cat [sat]
         p0 is The p1 is space p2 is cat
@@ -89,7 +92,7 @@ class question_test extends advanced_testcase {
     }
 
     public function test_grade_response() {
-        $question = qtype_wordselect_test_helper::make_question('wordselect');
+        $question = helper::make_question('wordselect');
         $response = array('p4' => 'on');
         list($fraction, $state) = $question->grade_response($response);
         $this->assertEquals(1, $fraction);
@@ -98,14 +101,14 @@ class question_test extends advanced_testcase {
          * is deducted from the marks for correct selections down to zero.
          */
         $questiontext = 'The cat [sat] and the cow [jumped]';
-        $question = qtype_wordselect_test_helper::make_question('wordselect', $questiontext);
+        $question = helper::make_question('wordselect', $questiontext);
         $response = array('p4' => 'on', 'p6' => 'off');
         list($fraction, $state) = $question->grade_response($response);
         $this->assertEquals($fraction, .5);
     }
 
     public function test_compute_final_grade() {
-        $question = qtype_wordselect_test_helper::make_question('wordselect');
+        $question = helper::make_question('wordselect');
         $responses[] = ['p4' => 'on'];
         $totaltries = 1;
         $fraction = $question->compute_final_grade($responses, $totaltries);
@@ -114,7 +117,7 @@ class question_test extends advanced_testcase {
 
     public function test_is_complete_response() {
         $questiontext = 'The cat [sat] and the cow [jumped]';
-        $question = qtype_wordselect_test_helper::make_question('wordselect', $questiontext);
+        $question = helper::make_question('wordselect', $questiontext);
         /*
          * A response is considered complete if there is at least one item selected. In this
          * case it is a "correct" item, i.e. one with delimitcharacters but it doesn't have to be
@@ -128,14 +131,14 @@ class question_test extends advanced_testcase {
 
     public function test_is_correct_place() {
         $questiontext = 'The cat [sat] and the cow [jumped]';
-        $question = qtype_wordselect_test_helper::make_question('wordselect', $questiontext);
+        $question = helper::make_question('wordselect', $questiontext);
         $correctplaces = $question->get_correct_places($question->questiontext, "[]");
         $this->assertTrue($question->is_correct_place($correctplaces, 4));
     }
 
     public function test_is_word_selected() {
         $questiontext = 'The cat [sat] and the cow [jumped]';
-        $question = qtype_wordselect_test_helper::make_question('wordselect', $questiontext);
+        $question = helper::make_question('wordselect', $questiontext);
         $response = array('p1' => 'on');
         $this->assertTrue($question->is_word_selected(1, $response));
         $response = array('1' => 'on');
@@ -144,7 +147,7 @@ class question_test extends advanced_testcase {
 
     public function test_pad_angle_brackets() {
         $questiontext = '<p>The cat [<b>sat</b>]';
-        $question = qtype_wordselect_test_helper::make_question('wordselect', $questiontext);
+        $question = helper::make_question('wordselect', $questiontext);
         $paddedquestiontext = $question::pad_angle_brackets($questiontext);
         /* note the gap added between <p> and The */
         $this->assertEquals($paddedquestiontext, "<p> The cat [<b>sat</b>]", 'padding of html tags failed');
@@ -154,13 +157,13 @@ class question_test extends advanced_testcase {
 
     public function test_set_is_selectable() {
         $questiontext = '<p>[<b>The</b>] [cat] sat [<b>sat</b>]';
-        $question = qtype_wordselect_test_helper::make_question('wordselect', $questiontext);
+        $question = helper::make_question('wordselect', $questiontext);
         $items = $question->get_words(true);
         // ...p tag is not selectable.
         $this->assertTrue(true, $items[0]->isselectable);
         /* test multi word mode */
         $questiontext = '<p>[[<b>The</b>]] cat [<b>sat</b>]';
-        $question = qtype_wordselect_test_helper::make_question('wordselect', $questiontext);
+        $question = helper::make_question('wordselect', $questiontext);
         $items = $question->get_words(true);
         $this->assertEquals('[[<b>The</b>]]', $items[1]->get_text());
         $this->assertTrue($items[1]->isselectable);
@@ -170,14 +173,14 @@ class question_test extends advanced_testcase {
         $this->assertTrue($items[5]->isselectable);
 
         $questiontext = '<p>#The# ##cat## </p>';
-        $question = qtype_wordselect_test_helper::make_question('wordselect', $questiontext, ['delimitchars' => '##']);
+        $question = helper::make_question('wordselect', $questiontext, ['delimitchars' => '##']);
         $items = $question->get_words(true);
         $this->assertTrue($items[1]->isselectable);
         $this->assertFalse($items[2]->isselectable);
         $this->assertTrue($items[3]->isselectable);
 
         $questiontext = '<p>@The@ @@cat@@</p>';
-        $question = qtype_wordselect_test_helper::make_question('wordselect', $questiontext, ['delimitchars' => '@@']);
+        $question = helper::make_question('wordselect', $questiontext, ['delimitchars' => '@@']);
         $items = $question->get_words(true);
         $this->assertTrue($items[1]->isselectable);
         $this->assertFalse($items[2]->isselectable);
@@ -186,7 +189,7 @@ class question_test extends advanced_testcase {
 
     public function test_get_wrong_responsecount() {
         $questiontext = 'The cat [sat] and the cow [jumped]';
-        $question = qtype_wordselect_test_helper::make_question('wordselect', $questiontext);
+        $question = helper::make_question('wordselect', $questiontext);
         $correctplaces = ['p1' => 'on', 'p2' => 'on'];
         $responses = ['p2' => 'on'];
         $wrongresponcecount = $question->get_wrong_responsecount($correctplaces, $responses);
@@ -194,7 +197,7 @@ class question_test extends advanced_testcase {
     }
 
     public function test_get_correct_places() {
-        $question = qtype_wordselect_test_helper::make_question('wordselect');
+        $question = helper::make_question('wordselect');
         /* counting from 0 the correct place is 2 (i.e. the word sat) */
         $correctplaces = ['0' => 4];
         $this->assertEquals($question->get_correct_places($question->questiontext, '[]'), $correctplaces);
