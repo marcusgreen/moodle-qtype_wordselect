@@ -21,7 +21,8 @@
  * @copyright  2016 Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-defined('MOODLE_INTERNAL') || die();
+namespace qtype_wordselect;
+ defined('MOODLE_INTERNAL') || die();
 
 global $CFG;
 
@@ -39,7 +40,9 @@ require_once($CFG->dirroot . '/question/type/wordselect/renderer.php');
  * @copyright  2016 Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class qtype_wordselect_question_test extends advanced_testcase {
+
+
+class question_test extends advanced_testcase {
 
     public function test_get_words() {
         // ... this markTestSkipped().

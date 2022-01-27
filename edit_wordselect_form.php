@@ -22,7 +22,6 @@
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-defined('MOODLE_INTERNAL') || die();
 /**
  * wordselect question editing form definition.
  *
@@ -30,6 +29,7 @@ defined('MOODLE_INTERNAL') || die();
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 class qtype_wordselect_edit_form extends question_edit_form {
     /**
      * Add question-type specific form fields.

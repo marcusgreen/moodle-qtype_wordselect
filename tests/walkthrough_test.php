@@ -21,6 +21,8 @@
  * @copyright  2012 Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+namespace qtype_wordselect;
+
 defined('MOODLE_INTERNAL') || die();
 
 global $CFG;
@@ -33,7 +35,7 @@ require_once($CFG->dirroot . '/question/type/wordselect/tests/helper.php');
  * @copyright  2018 Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class qtype_wordselect_walkthrough_test extends qbehaviour_walkthrough_test_base {
+class walkthrough_test extends qbehaviour_walkthrough_test_base {
 
     public function test_interactive_with_correct() {
         // Create a wordselect question.

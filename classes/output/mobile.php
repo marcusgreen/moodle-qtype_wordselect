@@ -24,8 +24,6 @@
 
 namespace qtype_wordselect\output;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Mobile output class for wordselect question type
  *

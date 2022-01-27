@@ -25,9 +25,6 @@
  */
 
 
-defined('MOODLE_INTERNAL') || die();
-
-
 /**
  * Checks file access for wordselect questions.
  * @package  qtype_wordselect
