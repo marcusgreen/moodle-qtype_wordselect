@@ -1,3 +1,9 @@
+### Version 2.47 of the Moodle WordSelect question type by Marcus Green. Sep 2021
+Fix for issue 37
+https://github.com/marcusgreen/moodle-qtype_wordselect/issues/37
+The right answers were being displayed whatever boxes were checked in the review options section
+of the quiz editing form. Thanks to Ulrike Albers for reporting this and for more detail
+from Joseph Rézeau. https://moodle.org/mod/forum/discuss.php?d=416718#p1679175
 ### Version 2.46 of the Moodle WordSelect question type by Marcus Green. Jul 2021
 Fix for Mobile App/ionic5, long text questions were cutting off instead of wrapping. More english language example questions.
 
