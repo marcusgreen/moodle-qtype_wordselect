@@ -16,7 +16,6 @@
 /**
  * This class provides functionality for the keyboard navigation.
  *
- * @package    qtype_wordselect
  * @copyright  2019 Marcus Green
  * @author     Huong Nguyen <huongnv13@gmail.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later

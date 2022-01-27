@@ -16,7 +16,6 @@
 /**
  * JavaScript code for the wordselect question type.
  *
- * @package    qtype_wordselect
  * @copyright  2016 Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
