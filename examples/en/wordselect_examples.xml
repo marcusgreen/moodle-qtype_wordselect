@@ -3,12 +3,15 @@
 <!-- question: 0  -->
   <question type="category">
     <category>
-        <text>$course$/Wordselect Sample Questions</text>
-
+      <text>$course$/top/Wordselect Sample Questions</text>
     </category>
+    <info format="html">
+      <text></text>
+    </info>
+    <idnumber>wordselect</idnumber>
   </question>
 
-<!-- question: 34  -->
+<!-- question: 27  -->
   <question type="wordselect">
     <name>
       <text>AlternativeDelimiters</text>
@@ -23,6 +26,7 @@
     <defaultgrade>1.0000000</defaultgrade>
     <penalty>0.3333333</penalty>
     <hidden>0</hidden>
+    <idnumber>ws1</idnumber>
     <introduction><![CDATA[<p>Using alternative delimiters</p>]]></introduction>
     <delimitchars>{}</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
@@ -34,7 +38,7 @@
     </answer>
     <delimitchars>{}</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.3 version:2018090600 Moodle version:2017051506 release:3.3.6 (Build: 20180517) -->
+    <!-- Wordselect release:2.47 version:2021090700 Moodle version:2021051705.02 release:3.11.5+ (Build: 20220121) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -46,7 +50,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 35  -->
+<!-- question: 28  -->
   <question type="wordselect">
     <name>
       <text>AudioFile</text>
@@ -62,6 +66,7 @@
     <defaultgrade>1.0000000</defaultgrade>
     <penalty>0.3333333</penalty>
     <hidden>0</hidden>
+    <idnumber>ws2</idnumber>
     <introduction>Multimedia content will not be imported/exported from the introduction area</introduction>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
@@ -73,7 +78,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.3 version:2018090600 Moodle version:2017051506 release:3.3.6 (Build: 20180517) -->
+    <!-- Wordselect release:2.47 version:2021090700 Moodle version:2021051705.02 release:3.11.5+ (Build: 20220121) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -85,7 +90,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 36  -->
+<!-- question: 29  -->
   <question type="wordselect">
     <name>
       <text>CatMat</text>
@@ -101,6 +106,7 @@
     <defaultgrade>1.0000000</defaultgrade>
     <penalty>0.3333333</penalty>
     <hidden>0</hidden>
+    <idnumber>ws3</idnumber>
     <introduction><![CDATA[<p>Select the verbs</p>]]></introduction>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
@@ -112,7 +118,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.3 version:2018090600 Moodle version:2017051506 release:3.3.6 (Build: 20180517) -->
+    <!-- Wordselect release:2.47 version:2021090700 Moodle version:2021051705.02 release:3.11.5+ (Build: 20220121) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -124,7 +130,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 37  -->
+<!-- question: 30  -->
   <question type="wordselect">
     <name>
       <text>FindTheAnimals</text>
@@ -221,6 +227,7 @@
     <defaultgrade>20.0000000</defaultgrade>
     <penalty>0.3333333</penalty>
     <hidden>0</hidden>
+    <idnumber>ws4</idnumber>
     <introduction><![CDATA[<p>Select the letters to make up animal names</p>]]></introduction>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
@@ -346,7 +353,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.3 version:2018090600 Moodle version:2017051506 release:3.3.6 (Build: 20180517) -->
+    <!-- Wordselect release:2.47 version:2021090700 Moodle version:2021051705.02 release:3.11.5+ (Build: 20220121) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -358,7 +365,61 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 38  -->
+<!-- question: 35  -->
+  <question type="wordselect">
+    <name>
+      <text>mlang2 demonstration</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;"></p>
+<p dir="ltr">Read about the Mlang2 filter here</p>
+<p dir="ltr">https://moodle.org/plugins/filter_multilang2</p>
+<p dir="ltr">
+The word [zero] is a correct selection here.</p>
+<p>
+You should the number one after this text depending on the language in your profile.</p><p></p><ul><li>French&nbsp;</li><li><span style="font-size: 0.9375rem; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;;">German&nbsp;</span></li><li><span style="font-size: 0.9375rem; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;;">Spanish&nbsp;</span></li><li><span style="font-size: 0.9375rem; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;;">English&nbsp;</span></li></ul><p></p><p></p>{mlang fr}un{mlang}
+{mlang de}zwei{mlang}
+{mlang es}uno{mlang}
+{mlang other}one{mlang}
+<br><p><span>Don't make a word in the multi language tags a correct answer.</span><br></p><span style="font-size: 0.9375rem; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;;">The word [two] is a correct selection here.</span><br>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>2.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber>ws5</idnumber>
+    <introduction></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>zero</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>two</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.47 version:2021090700 Moodle version:2021051705.02 release:3.11.5+ (Build: 20220121) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+  </question>
+
+<!-- question: 31  -->
   <question type="wordselect">
     <name>
       <text>Multi word selection</text>
@@ -372,6 +433,7 @@
     <defaultgrade>3.0000000</defaultgrade>
     <penalty>0.3333333</penalty>
     <hidden>0</hidden>
+    <idnumber>ws6</idnumber>
     <introduction></introduction>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
@@ -419,7 +481,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.3 version:2018090600 Moodle version:2017051506 release:3.3.6 (Build: 20180517) -->
+    <!-- Wordselect release:2.47 version:2021090700 Moodle version:2021051705.02 release:3.11.5+ (Build: 20220121) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -431,7 +493,104 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 39  -->
+<!-- question: 34  -->
+  <question type="wordselect">
+    <name>
+      <text>MultiLanguage Filter Demonstration</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p dir="ltr" style="text-align: left;">Read about the multi language filter here</p>
+<p dir="ltr" style="text-align: left;">https://docs.moodle.org/en/Multi-language_content_filter</p>
+<p dir="ltr" style="text-align: left;">The word [zero] is a correct selection here.</p>
+You should the number one in either French, German,Spanish or English after this text depending on what language you have selected in your profile. The tags are in the html so in normal editing you will jus see the words for all languages. Don't make a word in the multi language tags a correct answer.<br><span lang="fr" class="multilang"><br>un</span>
+<span lang="de" class="multilang">zwei</span>
+<span lang="es" class="multilang">uno</span>
+<span lang="en" class="multilang">one<br><br>The word [two] is a correct selection here.<br></span>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>2.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber>ws7</idnumber>
+    <introduction>The core multi language filter needs to be enabled to see this as intended</introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>zero</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>two</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <!-- Wordselect release:2.47 version:2021090700 Moodle version:2021051705.02 release:3.11.5+ (Build: 20220121) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+  </question>
+
+<!-- question: 36  -->
+  <question type="wordselect">
+    <name>
+      <text>MultiLanguage Filter Demonstration (copy)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[[firstcorrect]
+<span lang="fr" class="multilang">un</span>
+<span lang="de" class="multilang">eins</span>
+[secondcorrect]]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>2.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber>ws8</idnumber>
+    <introduction></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>firstcorrect</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>secondcorrect</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>0.0000000</wordpenalty>
+    <!-- Wordselect release:2.47 version:2021090700 Moodle version:2021051705.02 release:3.11.5+ (Build: 20220121) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+  </question>
+
+<!-- question: 32  -->
   <question type="wordselect">
     <name>
       <text>Reading Comprehension</text>
@@ -446,6 +605,7 @@
     <defaultgrade>5.0000000</defaultgrade>
     <penalty>0.3333333</penalty>
     <hidden>0</hidden>
+    <idnumber>ws9</idnumber>
     <introduction><![CDATA[<p>Select the words that answer the following questions.</p>
 <ul>
 <li>What was the year of Shakespears birth?</li>
@@ -489,7 +649,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.3 version:2018090600 Moodle version:2017051506 release:3.3.6 (Build: 20180517) -->
+    <!-- Wordselect release:2.47 version:2021090700 Moodle version:2021051705.02 release:3.11.5+ (Build: 20220121) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -501,7 +661,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 40  -->
+<!-- question: 33  -->
   <question type="wordselect">
     <name>
       <text>WordsInTables</text>
@@ -534,6 +694,7 @@
     <defaultgrade>2.0000000</defaultgrade>
     <penalty>0.3333333</penalty>
     <hidden>0</hidden>
+    <idnumber>ws10</idnumber>
     <introduction><![CDATA[<p>Select words that match the heading</p>]]></introduction>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
@@ -551,7 +712,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.3 version:2018090600 Moodle version:2017051506 release:3.3.6 (Build: 20180517) -->
+    <!-- Wordselect release:2.47 version:2021090700 Moodle version:2021051705.02 release:3.11.5+ (Build: 20220121) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
