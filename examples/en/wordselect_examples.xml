@@ -5,13 +5,13 @@
     <category>
       <text>$course$/top/Wordselect Sample Questions</text>
     </category>
-    <info format="html">
+    <info format="moodle_auto_format">
       <text></text>
     </info>
     <idnumber>wordselect</idnumber>
   </question>
 
-<!-- question: 27  -->
+<!-- question: 900  -->
   <question type="wordselect">
     <name>
       <text>AlternativeDelimiters</text>
@@ -50,7 +50,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 28  -->
+<!-- question: 901  -->
   <question type="wordselect">
     <name>
       <text>AudioFile</text>
@@ -90,7 +90,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 29  -->
+<!-- question: 902  -->
   <question type="wordselect">
     <name>
       <text>CatMat</text>
@@ -130,7 +130,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 30  -->
+<!-- question: 903  -->
   <question type="wordselect">
     <name>
       <text>FindTheAnimals</text>
@@ -365,7 +365,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 35  -->
+<!-- question: 904  -->
   <question type="wordselect">
     <name>
       <text>mlang2 demonstration</text>
@@ -419,7 +419,7 @@ You should the number one after this text depending on the language in your prof
     </incorrectfeedback>
   </question>
 
-<!-- question: 31  -->
+<!-- question: 905  -->
   <question type="wordselect">
     <name>
       <text>Multi word selection</text>
@@ -493,7 +493,7 @@ You should the number one after this text depending on the language in your prof
     </incorrectfeedback>
   </question>
 
-<!-- question: 34  -->
+<!-- question: 906  -->
   <question type="wordselect">
     <name>
       <text>MultiLanguage Filter Demonstration</text>
@@ -543,54 +543,7 @@ You should the number one in either French, German,Spanish or English after this
     </incorrectfeedback>
   </question>
 
-<!-- question: 36  -->
-  <question type="wordselect">
-    <name>
-      <text>MultiLanguage Filter Demonstration (copy)</text>
-    </name>
-    <questiontext format="html">
-      <text><![CDATA[[firstcorrect]
-<span lang="fr" class="multilang">un</span>
-<span lang="de" class="multilang">eins</span>
-[secondcorrect]]]></text>
-    </questiontext>
-    <generalfeedback format="html">
-      <text></text>
-    </generalfeedback>
-    <defaultgrade>2.0000000</defaultgrade>
-    <penalty>0.3333333</penalty>
-    <hidden>0</hidden>
-    <idnumber>ws8</idnumber>
-    <introduction></introduction>
-    <delimitchars>[]</delimitchars>
-    <wordpenalty>0.0000000</wordpenalty>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>firstcorrect</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <answer fraction="100" format="moodle_auto_format">
-      <text>secondcorrect</text>
-      <feedback format="moodle_auto_format">
-        <text></text>
-      </feedback>
-    </answer>
-    <delimitchars>[]</delimitchars>
-    <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.47 version:2021090700 Moodle version:2021051705.02 release:3.11.5+ (Build: 20220121) -->
-    <correctfeedback format="html">
-      <text>Your answer is correct.</text>
-    </correctfeedback>
-    <partiallycorrectfeedback format="html">
-      <text>Your answer is partially correct.</text>
-    </partiallycorrectfeedback>
-    <incorrectfeedback format="html">
-      <text>Your answer is incorrect.</text>
-    </incorrectfeedback>
-  </question>
-
-<!-- question: 32  -->
+<!-- question: 908  -->
   <question type="wordselect">
     <name>
       <text>Reading Comprehension</text>
@@ -605,7 +558,7 @@ You should the number one in either French, German,Spanish or English after this
     <defaultgrade>5.0000000</defaultgrade>
     <penalty>0.3333333</penalty>
     <hidden>0</hidden>
-    <idnumber>ws9</idnumber>
+    <idnumber>ws8</idnumber>
     <introduction><![CDATA[<p>Select the words that answer the following questions.</p>
 <ul>
 <li>What was the year of Shakespears birth?</li>
@@ -661,7 +614,7 @@ You should the number one in either French, German,Spanish or English after this
     </incorrectfeedback>
   </question>
 
-<!-- question: 33  -->
+<!-- question: 909  -->
   <question type="wordselect">
     <name>
       <text>WordsInTables</text>
@@ -694,7 +647,7 @@ You should the number one in either French, German,Spanish or English after this
     <defaultgrade>2.0000000</defaultgrade>
     <penalty>0.3333333</penalty>
     <hidden>0</hidden>
-    <idnumber>ws10</idnumber>
+    <idnumber>ws9</idnumber>
     <introduction><![CDATA[<p>Select words that match the heading</p>]]></introduction>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
