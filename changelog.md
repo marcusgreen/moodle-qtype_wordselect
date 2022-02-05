@@ -1,3 +1,8 @@
+### Version 2.48 of the Moodle WordSelect question type by Marcus Green. Feb 2022
+Fix for issue 42
+https://github.com/marcusgreen/moodle-qtype_wordselect/issues/42
+MLang2 filter (and possibly other filters) were not being processed. Added a fix and
+sample questions to help with testing.
 ### Version 2.47 of the Moodle WordSelect question type by Marcus Green. Sep 2021
 Fix for issue 37
 https://github.com/marcusgreen/moodle-qtype_wordselect/issues/37

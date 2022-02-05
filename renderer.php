@@ -22,7 +22,6 @@
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 /**
  * Generates the output for wordselect questions.
  *
@@ -39,7 +38,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
      * @param question_display_options $options controls what should and should not be displayed.
      * @return string HTML fragment.
      */
-    public function formulation_and_controls(question_attempt $qa, question_display_options $options) {
+    public function formulation_and_controls(\question_attempt $qa, question_display_options $options) {
 
         $output = '';
 

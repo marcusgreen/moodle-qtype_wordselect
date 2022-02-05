@@ -41,7 +41,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
 
     /**
      *
-     * @var number how many items clicked on are  correct answers
+     * @var int how many items clicked on are  correct answers
      */
     public $rightresponsecount;
 
@@ -63,7 +63,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * Wrong response is multiplied by this, i.e. 2 wrong responses
      * and wordpenalty of .5 means 1 penalty, default is 1, i.e. no
      * change 1*1=1
-     * @var number
+     * @var float
      */
     public $wordpenalty = 1.0;
 
@@ -125,7 +125,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $l = substr($this->delimitchars, 0, 1);
         $r = substr($this->delimitchars, 1, 1);
         $fieldregex = '/(\\s+)|(\\' . $l . '{1,2}[^\\'.$r.']*\\' . $r . '{1,2})|(&nbsp;)|(\s)/';
-        $allwords = array();
         if (strpos($questiontextnodelim, $l . $l) !== false) {
             $this->multiword = true;
             $matches = preg_split($fieldregex, $questiontextnodelim, null, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
@@ -135,7 +134,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
                 $item->set_is_selectable();
                 $this->items[] = $item;
             }
-            $allwords = $matches[0];
         } else {
             $text = $this->pad_angle_brackets($questiontextnodelim);
             $this->eligables = self::strip_some_tags($text);
@@ -147,7 +145,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
                 $item->set_is_selectable($this->eligables);
                 $this->items[] = $item;
             }
-            $allwords = $matches[0];
         }
         return $this->items;
     }
@@ -408,7 +405,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     /**
      * Is this place correct and so get a mark if selected
      *
-     * @param number $correctplaces
+     * @param array $correctplaces
      * @param number $place
      * @return boolean
      */
@@ -445,6 +442,11 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * @return array (number, integer) the fraction, and the state.
      */
     public function grade_response(array $response) {
+
+        // Ensures the right word places when language filters are enabled.
+        $formatoptions = (object) ['noclean' => true, 'para' => false];
+        $this->questiontext = format_text($this->questiontext, FORMAT_HTML, $formatoptions);
+
         $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
         $this->wrongresponsecount = $this->get_wrong_responsecount($correctplaces, $response);
         foreach ($correctplaces as $place) {
