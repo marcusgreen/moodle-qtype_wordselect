@@ -2,7 +2,10 @@
 Fix for issue 42
 https://github.com/marcusgreen/moodle-qtype_wordselect/issues/42
 MLang2 filter (and possibly other filters) were not being processed. Added a fix and
-sample questions to help with testing.
+sample questions to help with testing. Thanks to https://github.com/ukampanart for reporting this
+And thanks to to Iñigo Zendegi Urzelai for feedback on the fix and for working on maintaing the excellent MLang2 filter
+Bumped Moodle requirement to 3.8
+
 ### Version 2.47 of the Moodle WordSelect question type by Marcus Green. Sep 2021
 Fix for issue 37
 https://github.com/marcusgreen/moodle-qtype_wordselect/issues/37
