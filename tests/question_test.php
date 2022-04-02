@@ -42,7 +42,7 @@ require_once($CFG->dirroot . '/question/type/wordselect/renderer.php');
  *
  * @copyright  2016 Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- *  @coversDefaultClass \question\type\wordselect\question
+ * @coversDefaultClass \question\type\wordselect\question
  */
 class question_test extends \advanced_testcase {
     /**
