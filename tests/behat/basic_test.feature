@@ -13,13 +13,17 @@ create and preview wordselect (Select correct words) questions.
     And the following "course enrolments" exist:
         | user     | course | role           |
         | teacher1 | C1     | editingteacher |
+    # And the following "question categories" exist:
+    #     | contextlevel | reference | name           |
+    #     | Course       | C1        | Test questions |
+    # And the following "questions" exist:
+    #     | questioncategory | qtype      | name            | Introduction                           | questiontext                       | Incorrect selection penalty | General feedback         | Hint1      | Hint2       |
+    #     | Test questions   | wordselect | Word-Select-001 | Select the verbs in the following text | The cat [sat] and the cow [jumped] | 100%                        | General feedback cat mat | First hint | Second hint |
 
   @javascript
   Scenario: Create, edit then preview a wordselect question.
-    Given I log in as "teacher1"
-    And I am on "Course 1" course homepage
-    And I navigate to "Questions" in current page administration
 
+    When I am on the "Course 1" "core_question > course question bank" page logged in as teacher1
   # Create a new question.
     And I add a "Word Select" question filling the form with:
         | Question name               | Word-Select-001                        |
@@ -30,11 +34,8 @@ create and preview wordselect (Select correct words) questions.
         | Hint 1                      | First hint                             |
         | Hint 2                      | Second hint                            |
     Then I should see "Word-Select-001"
-
-  # Preview it.
-
+    # Preview it.
     When I choose "Preview" action for "Word-Select-001" in the question bank
-    And I switch to "questionpreview" window
 
   #################################################
   #Adaptive Mode
@@ -55,10 +56,8 @@ create and preview wordselect (Select correct words) questions.
     And I click on "sat" "text"
     And I click on "jumped" "text"
     And I press "Check"
-    And I should see "Your answer is correct."
     And I should see "Mark 2.00 out of 2.00"
     And I should see "You have selected 2 correct items out of 2"
-
   #################################################
   #Interactive with multiple tries
   #################################################
@@ -85,10 +84,12 @@ create and preview wordselect (Select correct words) questions.
   #and all/both correct options on the second attempt
   ################################################
   #first attempt
-    And I press "Start again with these options"
+    And I press "Start again"
     And I click on "sat" "text"
     And I press "Check"
     And I should see "Your answer is partially correct."
+    # And I pause
+
 
   ################################################
   #second attempt
@@ -116,7 +117,7 @@ create and preview wordselect (Select correct words) questions.
     And I should see "Your answer is correct."
     And I should see "Mark 2.00 out of 2.00"
 
-    And I press "Start again with these options"
+    And I press "Start again"
     And I click on "sat" "text"
     And I press "Check"
     And I should see "Your answer is partially correct."
@@ -138,13 +139,13 @@ create and preview wordselect (Select correct words) questions.
     And I should see "Your answer is correct."
     And I should see "Mark 2.00 out of 2.00"
 
-    And I press "Start again with these options"
+    And I press "Start again"
     And I click on "sat" "text"
     And I press "Submit and finish"
     And I should see "Your answer is partially correct."
     And I should see "Mark 1.00 out of 2.00"
 
-    And I press "Start again with these options"
+    And I press "Start again"
     And I click on "sat" "text"
     And I click on "cow" "text"
     And I click on "jumped" "text"
@@ -153,7 +154,7 @@ create and preview wordselect (Select correct words) questions.
     And I should see "Your answer is partially correct."
     And I should see "Mark 1.00 out of 2.00"
 
-    And I press "Start again with these options"
+    And I press "Start again"
     And I click on "The" "text"
     And I click on "cow" "text"
     And I press "Submit and finish"
@@ -164,12 +165,9 @@ create and preview wordselect (Select correct words) questions.
 
   @javascript
   #Feature: Change penalty %age for incorrect selections
-  @qtype_wordselect_penalty
+  # @qtype_wordselect_penalty
   Scenario: Create question and test wordpenalty.
-    Given I log in as "teacher1"
-    And I am on "Course 1" course homepage
-    And I navigate to "Questions" in current page administration
-
+    When I am on the "Course 1" "core_question > course question bank" page logged in as teacher1
     # Create a new question.
     And I add a "Word Select" question filling the form with:
         | Question name               | Word-Select-Penalty                            |
@@ -177,12 +175,9 @@ create and preview wordselect (Select correct words) questions.
         | Question text               | The wordpenalty cat [sat] and the cow [jumped] |
         | Incorrect selection penalty | 0.5                                            |
         | General feedback            | This is general feedback                       |
-
     Then I should see "Word-Select-Penalty"
-
     # Preview it.
     When I choose "Preview" action for "Word-Select-Penalty " in the question bank
-    And I switch to "questionpreview" window
 
   ##########################################################
   #Test Incorrect selection penalty reduced from the default 100%
