@@ -42,9 +42,14 @@ require_once($CFG->dirroot . '/question/type/wordselect/renderer.php');
  *
  * @copyright  2016 Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ *  @coversDefaultClass \question\type\wordselect\question
  */
 class question_test extends \advanced_testcase {
-
+    /**
+     * Test the behaviour of get_words() method.
+     *
+     * @covers ::get_words
+     */
     public function test_get_words() {
         // ... this markTestSkipped().
         $questiontext = 'cat [sat] cow [jumped]';
@@ -64,7 +69,11 @@ class question_test extends \advanced_testcase {
         $question = helper::make_question('wordselect', $questiontext);
         $items = $question->get_words();
     }
-
+    /**
+     * Test the behaviour of test_stripdelim() method.
+     *
+     * @covers ::test_stripdelim
+     */
     public function test_stripdelim() {
         $question = helper::make_question('wordselect');
         $stripped = $question->stripdelim('[word]');
