@@ -90,7 +90,6 @@ create and preview wordselect (Select correct words) questions.
     And I should see "Your answer is partially correct."
     # And I pause
 
-
   ################################################
   #second attempt
     And I press "Try again"
