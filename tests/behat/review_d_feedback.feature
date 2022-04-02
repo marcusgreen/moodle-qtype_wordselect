@@ -4,9 +4,6 @@ Feature: Test wordselect showiing of correctness with direct feedback
     was the right answer, apply classes.  Classes with colours are applied with supporting titles.
     The titles are not tested.
 
-    This tests how the qtype works with the Review options
-    in Quiz editing page, but does it through question preview.
-
   Background:
     Given the following "users" exist:
         | username | firstname | lastname | email               |
@@ -20,9 +17,7 @@ Feature: Test wordselect showiing of correctness with direct feedback
 
   @javascript
   Scenario: Show correctness when using deferred feedback.
-    Given I log in as "teacher1"
-    And I am on "Course 1" course homepage
-    And I navigate to "Questions" in current page administration
+    When I am on the "Course 1" "core_question > course question bank" page logged in as teacher1
 
   # Create a new question.
     And I add a "Word Select" question filling the form with:
@@ -31,12 +26,11 @@ Feature: Test wordselect showiing of correctness with direct feedback
         | Question text               | The cat [sat] and the cow [jumped]     |
         | Incorrect selection penalty | 100%                                   |
         | General feedback            | This is general feedback               |
+        | Hint 1                      | First hint                             |
+        | Hint 2                      | Second hint                            |
     Then I should see "Word-Select-001"
-
-  # Preview it.
-
+  # Preview it
     When I choose "Preview" action for "Word-Select-001" in the question bank
-    And I switch to "questionpreview" window
 
   #################################################
   #Interactive with multiple tries (no hints set up)
