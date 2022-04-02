@@ -34,6 +34,7 @@ require_once($CFG->dirroot . '/question/type/wordselect/tests/helper.php');
  *
  * @copyright  2018 Marcus Green
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @coversDefaultClass \question\type\wordselect\renderer
  */
 class walkthrough_test extends \qbehaviour_walkthrough_test_base {
 
