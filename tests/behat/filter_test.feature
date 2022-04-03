@@ -15,9 +15,7 @@ Feature: Test the mlang and mlang2 filters work with qtype_wordselect
 
   @javascript
   Scenario: Create a question and check mlang2 works as expected
-    Given I log in as "teacher1"
-    And I am on "Course 1" course homepage
-    And I navigate to "Questions" in current page administration
+    When I am on the "Course 1" "core_question > course question bank" page logged in as teacher1
 
   # Create a new question with mlang2 tags
   # Then check that the french words are not displayed
