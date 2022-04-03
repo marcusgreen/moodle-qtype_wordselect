@@ -22,8 +22,8 @@ create and preview wordselect (Select correct words) questions.
 
   @javascript
   Scenario: Create, edit then preview a wordselect question.
-
     When I am on the "Course 1" "core_question > course question bank" page logged in as teacher1
+
   # Create a new question.
     And I add a "Word Select" question filling the form with:
         | Question name               | Word-Select-001                        |
@@ -36,6 +36,7 @@ create and preview wordselect (Select correct words) questions.
     Then I should see "Word-Select-001"
     # Preview it.
     When I choose "Preview" action for "Word-Select-001" in the question bank
+    And I pause
     And I should see "Not yet answered"
   #################################################
   #Adaptive Mode
