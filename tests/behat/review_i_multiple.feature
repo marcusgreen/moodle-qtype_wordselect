@@ -35,7 +35,6 @@ Feature: Test wordselect showiing of correctness with iwm question behaviour
   # Preview it.
 
     When I choose "Preview" action for "Word-Select-001" in the question bank
-    And I switch to "questionpreview" window
 
   #################################################
   #Interactive with multiple tries (no hints set up)
