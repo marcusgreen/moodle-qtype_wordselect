@@ -13,7 +13,6 @@
     border-radius: 0.25em;
     cursor: pointer;
     display: inline;
-    white-space: nowrap;
 }
 
 .que.wordselect .qtext .multiword {
@@ -34,7 +33,6 @@
     border: solid thin black;
     margin: 0 2px 0 2px;
     display: inline;
-    white-space: nowrap;
     -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
     -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
@@ -61,7 +59,6 @@
     color: #b71c1c;
     display: inline;
     text-decoration: line-through;
-    white-space: nowrap;
     -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
     -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
@@ -75,7 +72,6 @@
     background-origin: padding-box;
     background-size: auto auto;
     border: solid thin;
-    white-space: nowrap;
 }
 
 .que.wordselect .qtext .correctresponse {
@@ -91,7 +87,6 @@
     border: solid thin black;
     color: #255c41;
     display: inline;
-    white-space: nowrap;
     -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
     -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
