@@ -1,5 +1,5 @@
 @core @qtype @qtype_wordselect @qtype_wordselect_review_options @_switch_window
-Feature: Test wordselect showiing of correctness with iwm question behaviour
+Feature: Test wordselect showing of correctness with iwm question behaviour
     In order to inform students whether each response was correct and which word
     was the right answer, apply classes.  Classes with colours are applied with supporting titles.
 
@@ -19,9 +19,7 @@ Feature: Test wordselect showiing of correctness with iwm question behaviour
 
   @javascript
   Scenario: Show correctness when using interactive with multiple tries
-    Given I log in as "teacher1"
-    And I am on "Course 1" course homepage
-    And I navigate to "Questions" in current page administration
+    When I am on the "Course 1" "core_question > course question bank" page logged in as teacher1
 
   # Create a new question.
     And I add a "Word Select" question filling the form with:
@@ -55,7 +53,7 @@ Feature: Test wordselect showiing of correctness with iwm question behaviour
     Then the "class" attribute of "//span[text()='sat']" "xpath_element" should contain "correctresponse"
     Then the "class" attribute of "//span[text()='jumped']" "xpath_element" should contain "correctresponse"
 
-    And I press "Start again with these options"
+    And I press "Start again"
     #Select two incorrect options and show which ones should have been selected
     And I click on "The" "text"
     And I click on "cow" "text"
@@ -85,7 +83,7 @@ Feature: Test wordselect showiing of correctness with iwm question behaviour
     # Check all text as specific words don't have a class attribute to test
     Then the "class" attribute of "//div[contains(@class, 'qtext')]" "xpath_element" should not contain "correct"
 
-    And I press "Start again with these options"
+    And I press "Start"
     #Select all (both) correct options
     And I click on "sat" "text"
     And I click on "jumped" "text"
