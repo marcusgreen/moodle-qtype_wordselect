@@ -11,7 +11,7 @@
     <idnumber>wordselect</idnumber>
   </question>
 
-<!-- question: 900  -->
+<!-- question: 31  -->
   <question type="wordselect">
     <name>
       <text>AlternativeDelimiters</text>
@@ -38,7 +38,7 @@
     </answer>
     <delimitchars>{}</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.47 version:2021090700 Moodle version:2021051705.02 release:3.11.5+ (Build: 20220121) -->
+    <!-- Wordselect release:2.48 version:2022020500 Moodle version:2022040100 release:4.0beta+ (Build: 20220401) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -50,7 +50,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 901  -->
+<!-- question: 32  -->
   <question type="wordselect">
     <name>
       <text>AudioFile</text>
@@ -78,7 +78,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.47 version:2021090700 Moodle version:2021051705.02 release:3.11.5+ (Build: 20220121) -->
+    <!-- Wordselect release:2.48 version:2022020500 Moodle version:2022040100 release:4.0beta+ (Build: 20220401) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -90,7 +90,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 902  -->
+<!-- question: 33  -->
   <question type="wordselect">
     <name>
       <text>CatMat</text>
@@ -118,7 +118,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.47 version:2021090700 Moodle version:2021051705.02 release:3.11.5+ (Build: 20220121) -->
+    <!-- Wordselect release:2.48 version:2022020500 Moodle version:2022040100 release:4.0beta+ (Build: 20220401) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -130,7 +130,7 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 903  -->
+<!-- question: 34  -->
   <question type="wordselect">
     <name>
       <text>FindTheAnimals</text>
@@ -353,7 +353,7 @@
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.47 version:2021090700 Moodle version:2021051705.02 release:3.11.5+ (Build: 20220121) -->
+    <!-- Wordselect release:2.48 version:2022020500 Moodle version:2022040100 release:4.0beta+ (Build: 20220401) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -365,7 +365,75 @@
     </incorrectfeedback>
   </question>
 
-<!-- question: 904  -->
+<!-- question: 48  -->
+  <question type="wordselect">
+    <name>
+      <text>Long multiword sequences</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[This question is to illustrate how long multiword sequences are displayed, and specifically how they wrap.<br><br>[[York is a cathedral city with Roman origins at the confluence of the rivers Ouse and Foss in North Yorkshire England.]][ Moodle is a free and open-source learning management system (LMS) written in PHP and distributed under the GNU General Public License]&nbsp; [The domesticated cat is a popular pet]. [Another popular pet is the dog, latin name&nbsp;Canis lupus familiaris, which is derived from an ancient extinct wolf].<br>[[London is the capital and largest city of England and the United Kingdom. It stands on the River Thames in south-east England at the head of a 50-mile (80 km) estuary down to the North Sea, and has been a major settlement for two millennia]].[Cricket is a bat-and-ball game played between two teams of eleven players each on a field at the centre of which is a 22-yard (20-metre) pitch with a wicket at each end, each comprising two bails balanced on three stumps.]<br><br><br><br>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>2.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber>ws10</idnumber>
+    <introduction><![CDATA[<p dir="ltr" style="text-align: left;">Select the text that mentions an area where people live.</p>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>[York is a cathedral city with Roman origins at the confluence of the rivers Ouse and Foss in North Yorkshire England.</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text> Moodle is a free and open-source learning management system (LMS) written in PHP and distributed under the GNU General Public License</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>The domesticated cat is a popular pet</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text><![CDATA[Another popular pet is the dog, latin name&nbsp;Canis lupus familiaris, which is derived from an ancient extinct wolf]]></text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>[London is the capital and largest city of England and the United Kingdom. It stands on the River Thames in south-east England at the head of a 50-mile (80 km) estuary down to the North Sea, and has been a major settlement for two millennia</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>Cricket is a bat-and-ball game played between two teams of eleven players each on a field at the centre of which is a 22-yard (20-metre) pitch with a wicket at each end, each comprising two bails balanced on three stumps.</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.48 version:2022020500 Moodle version:2022040100 release:4.0beta+ (Build: 20220401) -->
+    <correctfeedback format="html">
+      <text>Your answer is correct.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Your answer is partially correct.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Your answer is incorrect.</text>
+    </incorrectfeedback>
+  </question>
+
+<!-- question: 35  -->
   <question type="wordselect">
     <name>
       <text>mlang2 demonstration</text>
@@ -407,7 +475,7 @@ You should the number one after this text depending on the language in your prof
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.47 version:2021090700 Moodle version:2021051705.02 release:3.11.5+ (Build: 20220121) -->
+    <!-- Wordselect release:2.48 version:2022020500 Moodle version:2022040100 release:4.0beta+ (Build: 20220401) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -419,7 +487,7 @@ You should the number one after this text depending on the language in your prof
     </incorrectfeedback>
   </question>
 
-<!-- question: 905  -->
+<!-- question: 36  -->
   <question type="wordselect">
     <name>
       <text>Multi word selection</text>
@@ -481,7 +549,7 @@ You should the number one after this text depending on the language in your prof
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.47 version:2021090700 Moodle version:2021051705.02 release:3.11.5+ (Build: 20220121) -->
+    <!-- Wordselect release:2.48 version:2022020500 Moodle version:2022040100 release:4.0beta+ (Build: 20220401) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -493,7 +561,7 @@ You should the number one after this text depending on the language in your prof
     </incorrectfeedback>
   </question>
 
-<!-- question: 906  -->
+<!-- question: 37  -->
   <question type="wordselect">
     <name>
       <text>MultiLanguage Filter Demonstration</text>
@@ -531,7 +599,7 @@ You should the number one in either French, German,Spanish or English after this
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>0.0000000</wordpenalty>
-    <!-- Wordselect release:2.47 version:2021090700 Moodle version:2021051705.02 release:3.11.5+ (Build: 20220121) -->
+    <!-- Wordselect release:2.48 version:2022020500 Moodle version:2022040100 release:4.0beta+ (Build: 20220401) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -543,7 +611,7 @@ You should the number one in either French, German,Spanish or English after this
     </incorrectfeedback>
   </question>
 
-<!-- question: 908  -->
+<!-- question: 38  -->
   <question type="wordselect">
     <name>
       <text>Reading Comprehension</text>
@@ -602,7 +670,7 @@ You should the number one in either French, German,Spanish or English after this
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.47 version:2021090700 Moodle version:2021051705.02 release:3.11.5+ (Build: 20220121) -->
+    <!-- Wordselect release:2.48 version:2022020500 Moodle version:2022040100 release:4.0beta+ (Build: 20220401) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
@@ -614,7 +682,7 @@ You should the number one in either French, German,Spanish or English after this
     </incorrectfeedback>
   </question>
 
-<!-- question: 909  -->
+<!-- question: 39  -->
   <question type="wordselect">
     <name>
       <text>WordsInTables</text>
@@ -665,7 +733,7 @@ You should the number one in either French, German,Spanish or English after this
     </answer>
     <delimitchars>[]</delimitchars>
     <wordpenalty>1.0000000</wordpenalty>
-    <!-- Wordselect release:2.47 version:2021090700 Moodle version:2021051705.02 release:3.11.5+ (Build: 20220121) -->
+    <!-- Wordselect release:2.48 version:2022020500 Moodle version:2022040100 release:4.0beta+ (Build: 20220401) -->
     <correctfeedback format="html">
       <text>Your answer is correct.</text>
     </correctfeedback>
