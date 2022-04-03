@@ -82,7 +82,7 @@ Feature: Test wordselect showiing of correctness with direct feedback
     # Check all text as specific words don't have a class attribute to test
     Then the "class" attribute of "//div[contains(@class, 'qtext')]" "xpath_element" should not contain "correct"
 
-    And I press "Start again with these options"
+    And I press "Start again"
     #Select all (both) correct options
     And I click on "sat" "text"
     And I click on "jumped" "text"
