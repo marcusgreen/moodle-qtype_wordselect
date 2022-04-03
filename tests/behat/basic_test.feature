@@ -36,7 +36,6 @@ create and preview wordselect (Select correct words) questions.
     Then I should see "Word-Select-001"
     # Preview it.
     When I choose "Preview" action for "Word-Select-001" in the question bank
-    And I pause
     And I should see "Not yet answered"
   #################################################
   #Adaptive Mode
