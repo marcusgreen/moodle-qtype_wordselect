@@ -88,7 +88,6 @@ create and preview wordselect (Select correct words) questions.
     And I click on "sat" "text"
     And I press "Check"
     And I should see "Your answer is partially correct."
-    # And I pause
 
   ################################################
   #second attempt

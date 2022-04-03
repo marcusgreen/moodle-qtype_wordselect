@@ -52,7 +52,7 @@ Feature: Test wordselect showiing of correctness with direct feedback
     Then the "class" attribute of "//span[text()='sat']" "xpath_element" should contain "correctresponse"
     Then the "class" attribute of "//span[text()='jumped']" "xpath_element" should contain "correctresponse"
 
-    And I press "Start again with these options"
+    And I press "Start again"
     #Select two incorrect options and show which ones should have been selected
     And I click on "The" "text"
     And I click on "cow" "text"
