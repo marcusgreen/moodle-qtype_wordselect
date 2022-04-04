@@ -77,7 +77,7 @@ create and preview wordselect (Select correct words) questions.
     And I click on "sat" "text"
     And I click on "jumped" "text"
     And I press "Check"
-    And I should see "Your answer is correct."
+    And I should see "Your answer is correct"
     And I should see "Mark 2.00 out of 2.00"
 
   #Select one incorrect option on the first attempt
