@@ -13,27 +13,27 @@ create and preview wordselect (Select correct words) questions.
     And the following "course enrolments" exist:
         | user     | course | role           |
         | teacher1 | C1     | editingteacher |
-    # And the following "question categories" exist:
-    #     | contextlevel | reference | name           |
-    #     | Course       | C1        | Test questions |
-    # And the following "questions" exist:
-    #     | questioncategory | qtype      | name            | Introduction                           | questiontext                       | Incorrect selection penalty | General feedback         | Hint1      | Hint2       |
-    #     | Test questions   | wordselect | Word-Select-001 | Select the verbs in the following text | The cat [sat] and the cow [jumped] | 100%                        | General feedback cat mat | First hint | Second hint |
+    And the following "question categories" exist:
+        | contextlevel | reference | name           |
+        | Course       | C1        | Test questions |
+    And the following "questions" exist:
+        | questioncategory | qtype      | name            | Introduction                           | questiontext                       | Incorrect selection penalty | General feedback         | Hint1      | Hint2       |
+        | Test questions   | wordselect | Word-Select-001 | Select the verbs in the following text | The cat [sat] and the cow [jumped] | 100%                        | General feedback cat mat | First hint | Second hint |
 
   @javascript
   Scenario: Create, edit then preview a wordselect question.
     When I am on the "Course 1" "core_question > course question bank" page logged in as teacher1
 
   # Create a new question.
-    And I add a "Word Select" question filling the form with:
-        | Question name               | Word-Select-001                        |
-        | Introduction                | Select the verbs in the following text |
-        | Question text               | The cat [sat] and the cow [jumped]     |
-        | Incorrect selection penalty | 100%                                   |
-        | General feedback            | This is general feedback               |
-        | Hint 1                      | First hint                             |
-        | Hint 2                      | Second hint                            |
-    Then I should see "Word-Select-001"
+    # And I add a "Word Select" question filling the form with:
+    #     | Question name               | Word-Select-001                        |
+    #     | Introduction                | Select the verbs in the following text |
+    #     | Question text               | The cat [sat] and the cow [jumped]     |
+    #     | Incorrect selection penalty | 100%                                   |
+    #     | General feedback            | This is general feedback               |
+    #     | Hint 1                      | First hint                             |
+    #     | Hint 2                      | Second hint                            |
+    # Then I should see "Word-Select-001"
     # Preview it.
     When I am on the "Multi-choice-001" "core_question > preview" page
     And I should see "Not yet answered"
