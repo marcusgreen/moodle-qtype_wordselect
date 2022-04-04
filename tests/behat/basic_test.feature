@@ -17,8 +17,8 @@ create and preview wordselect (Select correct words) questions.
         | contextlevel | reference | name           |
         | Course       | C1        | Test questions |
     And the following "questions" exist:
-        | questioncategory | qtype      | name            | Introduction                           | questiontext                       | Incorrect selection penalty | General feedback         | Hint1      | Hint2       |
-        | Test questions   | wordselect | Word-Select-001 | Select the verbs in the following text | The cat [sat] and the cow [jumped] | 100%                        | General feedback cat mat | First hint | Second hint |
+        | questioncategory | qtype      | name            | Introduction                           | questiontext                       | Incorrect selection penalty | General feedback         | id_correctfeedback     | Hint1      | Hint2       |
+        | Test questions   | wordselect | Word-Select-001 | Select the verbs in the following text | The cat [sat] and the cow [jumped] | 100%                        | General feedback cat mat | Your answer is correct | First hint | Second hint |
 
   @javascript
   Scenario: Create, edit then preview a wordselect question.
@@ -77,6 +77,7 @@ create and preview wordselect (Select correct words) questions.
     And I click on "sat" "text"
     And I click on "jumped" "text"
     And I press "Check"
+    And I should see "Your answer is correct."
     And I should see "Mark 2.00 out of 2.00"
 
   #Select one incorrect option on the first attempt
