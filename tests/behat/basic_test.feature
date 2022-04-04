@@ -35,7 +35,7 @@ create and preview wordselect (Select correct words) questions.
         | Hint 2                      | Second hint                            |
     Then I should see "Word-Select-001"
     # Preview it.
-    When I choose "Preview" action for "Word-Select-001" in the question bank
+    When I am on the "Multi-choice-001" "core_question > preview" page
     And I should see "Not yet answered"
   #################################################
   #Adaptive Mode
