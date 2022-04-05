@@ -91,7 +91,6 @@ create and preview wordselect (Select correct words) questions.
 
   ################################################
   #second attempt
-    And I pause
     And I press "Try again"
   #sat should remain selected so no need to select again
     And I click on "jumped" "text"
