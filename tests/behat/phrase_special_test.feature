@@ -31,7 +31,7 @@ Feature: Test that formatting within delimiters is retained
     Then I should see "Word-Select-001"
 
     # Preview it.
-    When I choose "Preview" action for "Word-Select-001" in the question bank
+    When I am on the "Word-Select-001" "core_question > preview" page
 
     #################################################
     #Interactive with multiple triddes
