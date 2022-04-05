@@ -26,13 +26,13 @@ create and preview wordselect (Select correct words) questions.
 
   # Create a new question.
     And I add a "Word Select" question filling the form with:
-        | Question name | Word-Select-001                        |
-        | Introduction  | Select the verbs in the following text |
-        | Question text | The cat [sat] and the cow [jumped]     |
-        # | Incorrect selection penalty | 100%                                   |
-        # | General feedback            | This is general feedback               |
-        # | Hint 1                      | First hint                             |
-        # | Hint 2                      | Second hint                            |
+        | Question name               | Word-Select-001                        |
+        | Introduction                | Select the verbs in the following text |
+        | Question text               | The cat [sat] and the cow [jumped]     |
+        | Incorrect selection penalty | 100%                                   |
+        | General feedback            | This is general feedback               |
+        | Hint 1                      | First hint                             |
+        | Hint 2                      | Second hint                            |
     Then I should see "Word-Select-001"
     # Preview it.
     When I am on the "Word-Select-001" "core_question > preview" page
@@ -91,6 +91,7 @@ create and preview wordselect (Select correct words) questions.
 
   ################################################
   #second attempt
+    And I pause
     And I press "Try again"
   #sat should remain selected so no need to select again
     And I click on "jumped" "text"
