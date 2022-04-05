@@ -32,7 +32,7 @@ Feature: Test wordselect showing of correctness with iwm question behaviour
 
   # Preview it.
 
-    When I choose "Preview" action for "Word-Select-001" in the question bank
+    When I am on the "Word-Select-001" "core_question > preview" page
 
   #################################################
   #Interactive with multiple tries (no hints set up)
