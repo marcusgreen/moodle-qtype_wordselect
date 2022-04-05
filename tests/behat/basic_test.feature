@@ -175,7 +175,7 @@ create and preview wordselect (Select correct words) questions.
         | General feedback            | This is general feedback                       |
     Then I should see "Word-Select-Penalty"
     # Preview it.
-    When I am on the "Word-Select-001" "core_question > preview" page
+    When I am on the "Word-Select-Penalty" "core_question > preview" page
 
   ##########################################################
   #Test Incorrect selection penalty reduced from the default 100%
