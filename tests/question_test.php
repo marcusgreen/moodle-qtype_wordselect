@@ -101,7 +101,8 @@ class question_test extends \advanced_testcase {
      * The data that is shown in the summarise responses report
      *
      * @covers ::test_summarise_response
-     */function test_summarise_response() {
+     */
+    public function test_summarise_response() {
         $question = helper::make_question('wordselect');
         $response = array('p2' => 'on');
         /* The cat [sat]
@@ -109,7 +110,9 @@ class question_test extends \advanced_testcase {
          * */
         $this->assertEquals(' cat ', $question->summarise_response($response));
     }
-
+    /**
+     * @covers ::grade_response
+     */
     public function test_grade_response() {
         $question = helper::make_question('wordselect');
         $response = array('p4' => 'on');
@@ -125,7 +128,9 @@ class question_test extends \advanced_testcase {
         list($fraction, $state) = $question->grade_response($response);
         $this->assertEquals($fraction, .5);
     }
-
+    /**
+     * @covers ::compute_final_grade
+     */
     public function test_compute_final_grade() {
         $question = helper::make_question('wordselect');
         $responses[] = ['p4' => 'on'];
@@ -133,7 +138,9 @@ class question_test extends \advanced_testcase {
         $fraction = $question->compute_final_grade($responses, $totaltries);
         $this->assertEquals($fraction, 1, 'All correct responses should return fraction of 1');
     }
-
+    /**
+     * @covers ::is_complete_response
+     */
     public function test_is_complete_response() {
         $questiontext = 'The cat [sat] and the cow [jumped]';
         $question = helper::make_question('wordselect', $questiontext);
@@ -147,14 +154,18 @@ class question_test extends \advanced_testcase {
         $response = array();
         $this->assertFalse($question->is_complete_response($response));
     }
-
+    /**
+     * @covers ::is_correct_place
+     */
     public function test_is_correct_place() {
         $questiontext = 'The cat [sat] and the cow [jumped]';
         $question = helper::make_question('wordselect', $questiontext);
         $correctplaces = $question->get_correct_places($question->questiontext, "[]");
         $this->assertTrue($question->is_correct_place($correctplaces, 4));
     }
-
+    /**
+     * @covers ::is_word_selected
+     */
     public function test_is_word_selected() {
         $questiontext = 'The cat [sat] and the cow [jumped]';
         $question = helper::make_question('wordselect', $questiontext);
@@ -163,7 +174,9 @@ class question_test extends \advanced_testcase {
         $response = array('1' => 'on');
         $this->assertFalse($question->is_word_selected(1, $response));
     }
-
+    /**
+     * @covers ::pad_angle_brackets
+     */
     public function test_pad_angle_brackets() {
         $questiontext = '<p>The cat [<b>sat</b>]';
         $question = helper::make_question('wordselect', $questiontext);
@@ -174,6 +187,9 @@ class question_test extends \advanced_testcase {
         $this->assertStringContainsString("[<b>sat</b>]", $paddedquestiontext, 'formatting tags not retained ');
     }
 
+    /**
+     * @covers ::set_is_selectable
+     */
     public function test_set_is_selectable() {
         $questiontext = '<p>[<b>The</b>] [cat] sat [<b>sat</b>]';
         $question = helper::make_question('wordselect', $questiontext);
@@ -206,6 +222,9 @@ class question_test extends \advanced_testcase {
         $this->assertTrue($items[3]->isselectable);
     }
 
+    /**
+     * @covers ::get_wrong_responsecount
+     */
     public function test_get_wrong_responsecount() {
         $questiontext = 'The cat [sat] and the cow [jumped]';
         $question = helper::make_question('wordselect', $questiontext);
@@ -215,6 +234,9 @@ class question_test extends \advanced_testcase {
         $this->assertEquals(1, $wrongresponcecount);
     }
 
+    /**
+     * @covers ::get_correct_places
+     */
     public function test_get_correct_places() {
         $question = helper::make_question('wordselect');
         /* counting from 0 the correct place is 2 (i.e. the word sat) */

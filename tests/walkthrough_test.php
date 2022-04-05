@@ -44,7 +44,7 @@ class walkthrough_test extends \qbehaviour_walkthrough_test_base {
       *
       * @covers ::formulation_and_controls
       */
-      public function test_interactive_with_correct() {
+    public function test_interactive_with_correct() {
         // Create a wordselect question.
         $question = helper::make_question('wordselect');
         $maxmark = 1;
@@ -57,12 +57,12 @@ class walkthrough_test extends \qbehaviour_walkthrough_test_base {
         $this->check_step_count(1);
 
         $this->check_current_output(
-                $this->get_contains_marked_out_of_summary(),
-                $this->get_does_not_contain_try_again_button_expectation(),
-                $this->get_does_not_contain_feedback_expectation(),
-                $this->get_does_not_contain_validation_error_expectation(),
-                $this->get_does_not_contain_try_again_button_expectation(),
-                $this->get_no_hint_visible_expectation());
+              $this->get_contains_marked_out_of_summary(),
+              $this->get_does_not_contain_try_again_button_expectation(),
+              $this->get_does_not_contain_feedback_expectation(),
+              $this->get_does_not_contain_validation_error_expectation(),
+              $this->get_does_not_contain_try_again_button_expectation(),
+              $this->get_no_hint_visible_expectation());
 
         // Save a  correct response.
         // Default quesiton text is The cat [sat].
@@ -72,12 +72,12 @@ class walkthrough_test extends \qbehaviour_walkthrough_test_base {
         $this->check_current_state(\question_state::$todo);
 
         $this->check_current_output(
-                $this->get_contains_marked_out_of_summary(),
-                $this->get_does_not_contain_try_again_button_expectation(),
-                $this->get_does_not_contain_feedback_expectation(),
-                $this->get_does_not_contain_validation_error_expectation(),
-                $this->get_does_not_contain_try_again_button_expectation(),
-                $this->get_no_hint_visible_expectation());
+              $this->get_contains_marked_out_of_summary(),
+              $this->get_does_not_contain_try_again_button_expectation(),
+              $this->get_does_not_contain_feedback_expectation(),
+              $this->get_does_not_contain_validation_error_expectation(),
+              $this->get_does_not_contain_try_again_button_expectation(),
+              $this->get_no_hint_visible_expectation());
 
         // Submit saved response.
         $this->process_submission(array('-submit' => 1, 'p4' => 'on'));
@@ -86,14 +86,14 @@ class walkthrough_test extends \qbehaviour_walkthrough_test_base {
         $this->check_current_state(\question_state::$gradedright);
 
         $this->check_current_output(
-                $this->get_does_not_contain_try_again_button_expectation(),
-                $this->get_does_not_contain_validation_error_expectation(),
-                $this->get_does_not_contain_try_again_button_expectation(),
-                $this->get_no_hint_visible_expectation());
+              $this->get_does_not_contain_try_again_button_expectation(),
+              $this->get_does_not_contain_validation_error_expectation(),
+              $this->get_does_not_contain_try_again_button_expectation(),
+              $this->get_no_hint_visible_expectation());
 
         $this->check_current_mark(1);
         // Finish the attempt.
         $this->quba->finish_all_questions();
-                $this->check_current_state(\question_state::$gradedright);
+              $this->check_current_state(\question_state::$gradedright);
     }
 }
