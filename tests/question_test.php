@@ -140,13 +140,12 @@ class question_test extends \advanced_testcase {
         $fraction = $question->compute_final_grade($responses, $totaltries);
         $this->assertEquals($fraction, 1, 'All correct responses should return fraction of 1');
     }
-
-  s  /**
-    * A response is considered complete if there is at least one item selected. In this
-    * case it is a "correct" item, i.e. one with delimitcharacters but it doesn't have to be
-    *
-    * @covers ::is_complete_response
-    */
+    /**
+     * A response is considered complete if there is at least one item selected. In this
+     * case it is a "correct" item, i.e. one with delimitcharacters but it doesn't have to be
+     *
+     * @covers ::is_complete_response
+     */
     public function test_is_complete_response() {
         $questiontext = 'The cat [sat] and the cow [jumped]';
         $question = helper::make_question('wordselect', $questiontext);
