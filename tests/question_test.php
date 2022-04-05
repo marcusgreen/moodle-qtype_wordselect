@@ -79,6 +79,12 @@ class question_test extends \advanced_testcase {
         $stripped = $question->stripdelim('[word]');
         $this->assertEquals('word', $stripped);
     }
+    /**
+     * Test get_expected_data() method.
+     * The type of data that will be received so it can be cleaned
+     *
+     * @covers ::test_get_expected_data
+     */
     public function test_get_expected_data() {
         $question = helper::make_question('wordselect');
         $expecteddata = [
@@ -90,8 +96,12 @@ class question_test extends \advanced_testcase {
         ];
         $this->assertEquals($question->get_expected_data(), $expecteddata);
     }
-
-    public function test_summarise_response() {
+    /**
+     * Test summarise_response method.
+     * The data that is shown in the summarise responses report
+     *
+     * @covers ::test_summarise_response
+     */function test_summarise_response() {
         $question = helper::make_question('wordselect');
         $response = array('p2' => 'on');
         /* The cat [sat]

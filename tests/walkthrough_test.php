@@ -38,7 +38,13 @@ require_once($CFG->dirroot . '/question/type/wordselect/tests/helper.php');
  */
 class walkthrough_test extends \qbehaviour_walkthrough_test_base {
 
-    public function test_interactive_with_correct() {
+     /**
+      * Test the behaviour of the renderer when ussing interactive with correct behaviour.
+      * TODO add methods for testing other behaviours
+      *
+      * @covers ::formulation_and_controls
+      */
+      public function test_interactive_with_correct() {
         // Create a wordselect question.
         $question = helper::make_question('wordselect');
         $maxmark = 1;
