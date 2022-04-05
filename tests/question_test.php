@@ -111,6 +111,10 @@ class question_test extends \advanced_testcase {
         $this->assertEquals(' cat ', $question->summarise_response($response));
     }
     /**
+     * This question type uses subtractive marking to mitigate any benefit from a
+     * strategy of click on everything to get full marks. The mark for any incorrect selections
+     * is deducted from the marks for correct selections down to zero.
+     *
      * @covers ::grade_response
      */
     public function test_grade_response() {
@@ -118,10 +122,6 @@ class question_test extends \advanced_testcase {
         $response = array('p4' => 'on');
         list($fraction, $state) = $question->grade_response($response);
         $this->assertEquals(1, $fraction);
-        /* This question type uses subtractive marking to mitigate any benefit from a
-         * strategy of click on everything to get full marks. The mark for any incorrect selections
-         * is deducted from the marks for correct selections down to zero.
-         */
         $questiontext = 'The cat [sat] and the cow [jumped]';
         $question = helper::make_question('wordselect', $questiontext);
         $response = array('p4' => 'on', 'p6' => 'off');
@@ -129,6 +129,8 @@ class question_test extends \advanced_testcase {
         $this->assertEquals($fraction, .5);
     }
     /**
+     * Called when using interactive with multiple tries question behaviour
+     *
      * @covers ::compute_final_grade
      */
     public function test_compute_final_grade() {
@@ -138,16 +140,17 @@ class question_test extends \advanced_testcase {
         $fraction = $question->compute_final_grade($responses, $totaltries);
         $this->assertEquals($fraction, 1, 'All correct responses should return fraction of 1');
     }
-    /**
-     * @covers ::is_complete_response
-     */
+
+  s  /**
+    * A response is considered complete if there is at least one item selected. In this
+    * case it is a "correct" item, i.e. one with delimitcharacters but it doesn't have to be
+    *
+    * @covers ::is_complete_response
+    */
     public function test_is_complete_response() {
         $questiontext = 'The cat [sat] and the cow [jumped]';
         $question = helper::make_question('wordselect', $questiontext);
-        /*
-         * A response is considered complete if there is at least one item selected. In this
-         * case it is a "correct" item, i.e. one with delimitcharacters but it doesn't have to be
-         */
+
         $response = ['p2' => 'on'];
         $this->assertTrue($question->is_complete_response($response));
         /* this time nothing is selected */
@@ -155,6 +158,7 @@ class question_test extends \advanced_testcase {
         $this->assertFalse($question->is_complete_response($response));
     }
     /**
+     * Is this place one that will be correct if seleced
      * @covers ::is_correct_place
      */
     public function test_is_correct_place() {
@@ -164,6 +168,7 @@ class question_test extends \advanced_testcase {
         $this->assertTrue($question->is_correct_place($correctplaces, 4));
     }
     /**
+     * Has this word (or set of words) been selected
      * @covers ::is_word_selected
      */
     public function test_is_word_selected() {
@@ -175,6 +180,10 @@ class question_test extends \advanced_testcase {
         $this->assertFalse($question->is_word_selected(1, $response));
     }
     /**
+     * Add one space to the pointy end of angle brackets.
+     * This means that text within table fields can be set
+     * as selectable
+     *
      * @covers ::pad_angle_brackets
      */
     public function test_pad_angle_brackets() {
@@ -188,6 +197,8 @@ class question_test extends \advanced_testcase {
     }
 
     /**
+     * Work out which text is selectable
+     *
      * @covers ::set_is_selectable
      */
     public function test_set_is_selectable() {
@@ -223,6 +234,8 @@ class question_test extends \advanced_testcase {
     }
 
     /**
+     * How many selected items were not correct items
+     *
      * @covers ::get_wrong_responsecount
      */
     public function test_get_wrong_responsecount() {
@@ -235,6 +248,7 @@ class question_test extends \advanced_testcase {
     }
 
     /**
+     * Get array of all the words/groups of word that are correct (get a mark)
      * @covers ::get_correct_places
      */
     public function test_get_correct_places() {
