@@ -1,7 +1,8 @@
 @core @qtype @qtype_wordselect @qtype_wordselect_mlang @_switch_window
 Feature: Test the mlang and mlang2 filters work with qtype_wordselect
   Background:
-    Given the following "users" exist:
+    Given the filter_multilang2 plugin is installed
+    And the following "users" exist:
         | username | firstname | lastname | email               |
         | teacher1 | T1        | Teacher1 | teacher1@moodle.com |
     And the following "courses" exist:
