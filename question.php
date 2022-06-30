@@ -74,6 +74,11 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      */
     public $questiontextsplit;
 
+
+    public $questiontext;
+
+    public $placeid;
+
     /**
      * the place number with p appended, i.e. p0 p1 etc
      * @param number $place
@@ -82,6 +87,8 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     public function field($place) {
         return 'p' . $place;
     }
+
+
 
     /**
      * Initialise the question. This ought really to be done via the constructor
@@ -120,8 +127,13 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      *
      * @return array
      */
-    public function get_words() {
-        $questiontextnodelim = $this->questiontext;
+    public function get_words($text = "") {
+        $selectableid = 0;
+        if($text > "") {
+            $questiontextnodelim = $text;
+        } else {
+            $questiontextnodelim = $this->questiontext;
+        }
         $l = substr($this->delimitchars, 0, 1);
         $r = substr($this->delimitchars, 1, 1);
         $fieldregex = '/(\\s+)|(\\' . $l . '{1,2}[^\\'.$r.']*\\' . $r . '{1,2})|(&nbsp;)|(\s)/';
@@ -132,6 +144,10 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             foreach ($matches as $key => $match) {
                 $item = new wordselect_item($key, $match, $this->delimitchars, true);
                 $item->set_is_selectable();
+                if($item->isselectable){
+                    $item->placeid = $selectableid;
+                    $selectableid++;
+                }
                 $this->items[] = $item;
             }
         } else {
@@ -143,6 +159,10 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             foreach ($matches as $key => $text) {
                 $item = new wordselect_item($key, $text, $this->delimitchars, $this->multiword);
                 $item->set_is_selectable($this->eligables);
+                if($item->isselectable){
+                    $item->placeid = $selectableid;
+                    $selectableid++;
+                }
                 $this->items[] = $item;
             }
         }
@@ -233,9 +253,20 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * @param string $delimitchars delimiting characters e.g. [ and ]
      * @return array index places in array of correct words
      */
-    public function get_correct_places($questiontext, $delimitchars) {
-        $correctplaces = array();
-        $items = $this->get_words(false);
+    public function get_correct_places($questiontext, $delimitchars) { 
+        $courseid = optional_param('courseid','',PARAM_INT);
+
+        $filtermanager = \filter_manager::instance();
+        if(!$this->contextid) {
+            $courseid = optional_param('courseid','',PARAM_INT);
+            $context = context_course::instance($courseid);
+        } else {
+            $context = \context::instance_by_id($this->contextid);
+        }
+        $qtext = $filtermanager->filter_text($this->questiontext, $context);
+        $items = $this->get_words($qtext);
+
+        $correctplaces = [];
 
         $l = substr($delimitchars, 0, 1);
         $r = substr($delimitchars, 1, 1);
@@ -244,11 +275,15 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         } else {
             $regex = '/\\' . $l . '.*\\' . $r . '/';
         }
+        $selectablecount =0;
         foreach ($items as $key => $item) {
-            $word = $item->get_text();
-            if (preg_match($regex, $word)) {
-                $correctplaces[] = $key;
-            }
+            if($item->isselectable) {
+                $word = $item->get_text();
+                if (preg_match($regex, $word)) {
+                    $correctplaces[] = $selectablecount;
+                }
+                $selectablecount++;
+          }
         }
         return $correctplaces;
     }
@@ -354,6 +389,11 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         }
     }
 
+    public function apply_attempt_state(question_attempt_step $step) {
+
+        $i = 1;
+    }
+
     /**
      * contains the a response that would get full marks.
      * used in preview mode. If this doesn't return a
@@ -365,11 +405,32 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * @return question_answer
      */
     public function get_correct_response() {
-        $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
-        $correctresponse = array();
+        $correctplaces  = $this->get_correct_places($this->questiontext,$this->delimitchars);
+        // $filtermanager = \filter_manager::instance();
+        // $context = \context::instance_by_id($this->contextid);
+        // $qtext = $filtermanager->filter_text($this->questiontext, $context);
+        // $words = $this->get_words($qtext);
+        // $chars['l'] = substr($this->delimitchars, 0, 1);
+        // $chars['r'] = substr($this->delimitchars, 1, 1);
+        // $selectableid = 0;
+        // $selectables = [];
+        // foreach($words as $key=>$word){
+        //     if($word->isselectable) {
+        //         $selectables[] = $word->get_text();
+        //         $regex = '/\\' . $chars['l'] . '([^\\' . $chars['l'] . '\\' . $chars['r'] . ']*)\\' . $chars['r'] . '/';
+        //         if (preg_match($regex, $word->get_text()) > 0) {
+        //           $correctresponse['p'.$selectableid] = 'on';
+        //         }
+        //         $selectableid ++;
+
+        //     }
+        // }
+        // // // $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
+        $correctresponse = [];
         foreach ($correctplaces as $place) {
             $correctresponse['p' . $place] = 'on';
-        }
+         }
+
         return $correctresponse;
     }
 
@@ -410,7 +471,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * @return boolean
      */
     public function is_correct_place($correctplaces, $place) {
-        if (in_array($place, $correctplaces)) {
+        if (in_array($place, $correctplaces, true)) {
             return true;
         } else {
             return false;
@@ -607,10 +668,12 @@ class wordselect_item {
         $this->l = substr($delimitchars, 0, 1);
         $this->r = substr($delimitchars, 1, 1);
         $this->id = $id;
+        $this->placeid = '';
         $this->text = $text;
         $this->delimitchars = $delimitchars;
         $this->multiword = $multiword;
     }
+
 
     /**
      * Get white space after the "word" or group of words delimited

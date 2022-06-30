@@ -30,6 +30,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
+    
     /**
      * Generate the area that contains the question text, and the controls for students to
      * input their answers.
@@ -45,12 +46,13 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         $question = $qa->get_question();
         $this->page->requires->js_call_amd('qtype_wordselect/navigation', 'init');
         $response = $qa->get_last_qt_data();
-        // Ensure Filter are applied.
-        $question->questiontext = $question->format_text($question->questiontext,
-            $question->questiontextformat, $qa, 'qtype_wordselect',
-        'questiontext', $question->id);
+
         $correctplaces = $question->get_correct_places($question->questiontext,
             $question->delimitchars);
+        $preformatwords = $question->get_words(true);
+        $question->questiontext = $question->format_questiontext($qa);
+
+
         $output .= html_writer::start_div('introduction');
         // Ensure filters are applied to the introduction, done particularly for the multilang filter.
         $output .= $question->format_text($question->introduction, $question->questiontextformat, $qa, 'qtype_wordselect',
@@ -60,19 +62,20 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
 
         /*initialised */
         $question->init($question->questiontext, $question->delimitchars);
-        $items = $question->get_words();
+        $items = $question->get_words($question->questiontext);
 
         foreach ($items as $place => $item) {
             $word = $item->get_without_delim();
             $correctnoselect = false;
             $wordattributes = array("role" => "checkbox");
             $afterwordfeedback = '';
-            $wordattributes['name'] = $this->get_input_name($qa, $place);
-            $wordattributes['id'] = $this->get_input_id($qa, $place);
-            $iscorrectplace = $question->is_correct_place($correctplaces, $place);
+            
+            $wordattributes['name'] = $this->get_input_name($qa, $item->placeid);
+            $wordattributes['id'] = $this->get_input_id($qa, $item->placeid);
+            $iscorrectplace = $question->is_correct_place($correctplaces, $item->placeid);
             $checkbox = "";
             /* if the current word/place exists in the response */
-            $isselected = $question->is_word_selected($place, $response);
+            $isselected = $question->is_word_selected($item->placeid, $response);
             if ($isselected) {
                 $wordattributes['class'] = 'selected';
                 if ($options->correctness == 1) {
@@ -102,7 +105,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                     $class[] = 'multiword';
                 }
             } else {
-                $qasdata = $qa->get_last_qt_var($question->field($place));
+                $qasdata = $qa->get_last_qt_var($question->field($item->placeid));
                 /* when scrolling back and forth between questions
                  * previously selected value into each place. This
                  * is retrieved from the question_attempt_step_data
@@ -136,17 +139,14 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 $output .= $word;
             }
         }
-        /* this ensures that any files inserted through the editor menu will display */
-        $output = $question->format_text(
-          $output, $question->questiontextformat, $qa, 'question', 'questiontext', $question->id);
-
+    
         $output .= html_writer::end_div();
         if ($qa->get_state() == question_state::$invalid) {
             $output .= html_writer::div($question->get_validation_error($response), 'validationerror');
         }
         $this->page->requires->js_call_amd('qtype_wordselect/selection', 'init',
         [$qa->get_outer_question_div_unique_id()]);
-
+    
         return $output;
     }
     /**
