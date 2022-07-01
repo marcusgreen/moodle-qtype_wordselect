@@ -74,9 +74,16 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      */
     public $questiontextsplit;
 
-
+    /**
+     *  The part that states the question
+     *  @var string
+     */
     public $questiontext;
 
+    /**
+     *  index of the selectable item
+     *  @var int
+     */
     public $placeid;
 
     /**
@@ -87,8 +94,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     public function field($place) {
         return 'p' . $place;
     }
-
-
 
     /**
      * Initialise the question. This ought really to be done via the constructor
@@ -387,11 +392,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         } else {
             return false;
         }
-    }
-
-    public function apply_attempt_state(question_attempt_step $step) {
-
-        $i = 1;
     }
 
     /**
