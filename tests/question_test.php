@@ -209,7 +209,7 @@ class question_test extends \advanced_testcase {
         /* test multi word mode */
         $questiontext = '<p>[[<b>The</b>]] cat [<b>sat</b>]';
         $question = helper::make_question('wordselect', $questiontext);
-        $items = $question->get_words(true);
+        $items = $question->get_words();
         $this->assertEquals('[[<b>The</b>]]', $items[1]->get_text());
         $this->assertTrue($items[1]->isselectable);
         $this->assertEquals($items[3]->get_text(), 'cat');
@@ -219,14 +219,14 @@ class question_test extends \advanced_testcase {
 
         $questiontext = '<p>#The# ##cat## </p>';
         $question = helper::make_question('wordselect', $questiontext, ['delimitchars' => '##']);
-        $items = $question->get_words(true);
+        $items = $question->get_words();
         $this->assertTrue($items[1]->isselectable);
         $this->assertFalse($items[2]->isselectable);
         $this->assertTrue($items[3]->isselectable);
 
         $questiontext = '<p>@The@ @@cat@@</p>';
         $question = helper::make_question('wordselect', $questiontext, ['delimitchars' => '@@']);
-        $items = $question->get_words(true);
+        $items = $question->get_words();
         $this->assertTrue($items[1]->isselectable);
         $this->assertFalse($items[2]->isselectable);
         $this->assertTrue($items[3]->isselectable);

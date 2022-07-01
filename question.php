@@ -135,7 +135,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * @return array
      */
     public function get_words($text = "") {
-        $selectableid = 0;
+        $placecount = 0;
         if ($text > "") {
             $questiontextnodelim = $text;
         } else {
@@ -152,9 +152,9 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
                 $item = new wordselect_item($key, $match, $this->delimitchars, true);
                 $item->set_is_selectable();
                 if ($item->isselectable) {
-                    $item->placeid = $selectableid;
-                    $selectableid++;
+                    $item->placeid = $placecount;
                 }
+                $placecount++;
                 $this->items[] = $item;
             }
         } else {
@@ -167,9 +167,9 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
                 $item = new wordselect_item($key, $text, $this->delimitchars, $this->multiword);
                 $item->set_is_selectable($this->eligables);
                 if ($item->isselectable) {
-                    $item->placeid = $selectableid;
-                    $selectableid++;
+                    $item->placeid = $placecount;
                 }
+                $placecount++;
                 $this->items[] = $item;
             }
         }
@@ -282,15 +282,16 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         } else {
             $regex = '/\\' . $l . '.*\\' . $r . '/';
         }
-        $selectablecount = 0;
+        $placecount = 0;
         foreach ($items as $key => $item) {
             if ($item->isselectable) {
                 $word = $item->get_text();
                 if (preg_match($regex, $word)) {
-                    $correctplaces[] = $selectablecount;
+                    $correctplaces[] = $placecount;
                 }
-                $selectablecount++;
             }
+            $placecount++;
+
         }
         return $correctplaces;
     }
