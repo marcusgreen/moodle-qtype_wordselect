@@ -30,7 +30,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
-    
+
     /**
      * Generate the area that contains the question text, and the controls for students to
      * input their answers.
@@ -52,7 +52,6 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         $preformatwords = $question->get_words(true);
         $question->questiontext = $question->format_questiontext($qa);
 
-
         $output .= html_writer::start_div('introduction');
         // Ensure filters are applied to the introduction, done particularly for the multilang filter.
         $output .= $question->format_text($question->introduction, $question->questiontextformat, $qa, 'qtype_wordselect',
@@ -69,7 +68,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             $correctnoselect = false;
             $wordattributes = array("role" => "checkbox");
             $afterwordfeedback = '';
-            
+
             $wordattributes['name'] = $this->get_input_name($qa, $item->placeid);
             $wordattributes['id'] = $this->get_input_id($qa, $item->placeid);
             $iscorrectplace = $question->is_correct_place($correctplaces, $item->placeid);
@@ -139,14 +138,14 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 $output .= $word;
             }
         }
-    
+
         $output .= html_writer::end_div();
         if ($qa->get_state() == question_state::$invalid) {
             $output .= html_writer::div($question->get_validation_error($response), 'validationerror');
         }
         $this->page->requires->js_call_amd('qtype_wordselect/selection', 'init',
         [$qa->get_outer_question_div_unique_id()]);
-    
+
         return $output;
     }
     /**
