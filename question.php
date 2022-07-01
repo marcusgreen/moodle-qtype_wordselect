@@ -129,7 +129,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * The text with delimiters removed so the user cannot see
      * which words are the ones that should be selected. So The cow [jumped]
      * becomes The cow jumped
-     * 
+     *
      * @param string $text
      *
      * @return array
