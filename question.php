@@ -76,13 +76,13 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
 
     /**
      *  The part that states the question
-     *  @var string
+     * @var string
      */
     public $questiontext;
 
     /**
      *  index of the selectable item
-     *  @var int
+     * @var int
      */
     public $placeid;
 
