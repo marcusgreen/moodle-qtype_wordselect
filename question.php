@@ -266,6 +266,10 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $filtermanager = \filter_manager::instance();
         if (!$this->contextid) {
             $courseid = optional_param('courseid', '', PARAM_INT);
+            $behatrunning = defined('BEHAT_SITE_RUNNING') && BEHAT_SITE_RUNNING;
+            if($behatrunning) {
+                $courseid = 1;
+            }
             $context = context_course::instance($courseid);
         } else {
             $context = \context::instance_by_id($this->contextid);
