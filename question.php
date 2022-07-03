@@ -153,8 +153,9 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
                 $item->set_is_selectable();
                 if ($item->isselectable) {
                     $item->placeid = $placecount;
+                    $placecount++;
+
                 }
-                $placecount++;
                 $this->items[] = $item;
             }
         } else {
@@ -168,8 +169,9 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
                 $item->set_is_selectable($this->eligables);
                 if ($item->isselectable) {
                     $item->placeid = $placecount;
+                    $placecount++;
+
                 }
-                $placecount++;
                 $this->items[] = $item;
             }
         }
@@ -293,8 +295,9 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
                 if (preg_match($regex, $word)) {
                     $correctplaces[] = $placecount;
                 }
+                $placecount++;
+
             }
-            $placecount++;
 
         }
         return $correctplaces;
