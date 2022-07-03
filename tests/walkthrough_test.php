@@ -80,7 +80,7 @@ class walkthrough_test extends \qbehaviour_walkthrough_test_base {
               $this->get_no_hint_visible_expectation());
 
         // Submit saved response.
-        $this->process_submission(array('-submit' => 1, 'p4' => 'on'));
+        $this->process_submission(array('-submit' => 1, 'p2' => 'on'));
         $this->check_step_count(3);
         // Verify.
         $this->check_current_state(\question_state::$gradedright);

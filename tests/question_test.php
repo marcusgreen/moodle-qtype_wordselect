@@ -119,12 +119,12 @@ class question_test extends \advanced_testcase {
      */
     public function test_grade_response() {
         $question = helper::make_question('wordselect');
-        $response = array('p4' => 'on');
+        $response = array('p2' => 'on');
         list($fraction, $state) = $question->grade_response($response);
         $this->assertEquals(1, $fraction);
         $questiontext = 'The cat [sat] and the cow [jumped]';
         $question = helper::make_question('wordselect', $questiontext);
-        $response = array('p4' => 'on', 'p6' => 'off');
+        $response = array('p2' => 'on', 'p4' => 'off');
         list($fraction, $state) = $question->grade_response($response);
         $this->assertEquals($fraction, .5);
     }
@@ -135,7 +135,7 @@ class question_test extends \advanced_testcase {
      */
     public function test_compute_final_grade() {
         $question = helper::make_question('wordselect');
-        $responses[] = ['p4' => 'on'];
+        $responses[] = ['p2' => 'on'];
         $totaltries = 1;
         $fraction = $question->compute_final_grade($responses, $totaltries);
         $this->assertEquals($fraction, 1, 'All correct responses should return fraction of 1');
@@ -164,7 +164,7 @@ class question_test extends \advanced_testcase {
         $questiontext = 'The cat [sat] and the cow [jumped]';
         $question = helper::make_question('wordselect', $questiontext);
         $correctplaces = $question->get_correct_places($question->questiontext, "[]");
-        $this->assertTrue($question->is_correct_place($correctplaces, 4));
+        $this->assertTrue($question->is_correct_place($correctplaces, 2));
     }
     /**
      * Has this word (or set of words) been selected
@@ -253,7 +253,7 @@ class question_test extends \advanced_testcase {
     public function test_get_correct_places() {
         $question = helper::make_question('wordselect');
         /* counting from 0 the correct place is 2 (i.e. the word sat) */
-        $correctplaces = ['0' => 4];
+        $correctplaces = ['0' => 2];
         $this->assertEquals($question->get_correct_places($question->questiontext, '[]'), $correctplaces);
     }
 
