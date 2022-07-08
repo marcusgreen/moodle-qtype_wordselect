@@ -49,7 +49,6 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
 
         $correctplaces = $question->get_correct_places($question->questiontext,
             $question->delimitchars);
-        $preformatwords = $question->get_words(true);
         $question->questiontext = $question->format_questiontext($qa);
 
         $output .= html_writer::start_div('introduction');
