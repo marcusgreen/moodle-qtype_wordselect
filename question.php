@@ -290,7 +290,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             $regex = '/\\' . $l . '.*\\' . $r . '/';
         }
         $placecount = 0;
-        foreach (array_values($items) as  $item) {
+        foreach (array_values($items) as $item) {
             if ($item->isselectable) {
                 $word = $item->get_text();
                 if (preg_match($regex, $word)) {
