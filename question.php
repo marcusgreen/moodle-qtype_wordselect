@@ -277,7 +277,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         } else {
             $context = \context::instance_by_id($this->contextid);
         }
-        $qtext = $filtermanager->filter_text($this->questiontext, $context);
+        $qtext = $filtermanager->filter_text($questiontext, $context);
         $items = $this->get_words($qtext);
 
         $correctplaces = [];
