@@ -1,4 +1,4 @@
-@mod @mod_quiz @qtype @qtype_wordselectl @qtype_wordselect_import @javascript
+@mod @mod_quiz @qtype @qtype_wordselect @qtype_wordselect_import @javascript
 
 Feature: Test importing Wordselect questions
   Background:
