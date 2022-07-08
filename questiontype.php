@@ -357,13 +357,12 @@ class qtype_wordselect extends question_type {
     }
 
     /**
-     * TODO Not sure what this does
+     * Required by parent class. Returns an empty array
      * @param objet $questiondata
      * @return array
      */
     public function get_possible_responses($questiondata) {
-        // TODO.
-        return array();
+        return parent::get_possible_responses($questiondata);
     }
 
     /**
