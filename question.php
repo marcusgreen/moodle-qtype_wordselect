@@ -263,7 +263,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * @return array index places in array of correct words
      */
     public function get_correct_places($questiontext, $delimitchars) {
-        global $CFG;
         $courseid = optional_param('courseid', '', PARAM_INT);
 
         $filtermanager = \filter_manager::instance();
@@ -272,7 +271,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             // Use front page course (typically 1) if all else fails.
             // Addresses BEHAT and possible other situations.
             if (! $courseid) {
-                $courseid = $CFG->siteid;
+                $courseid = SITEID;
             }
             $context = context_course::instance($courseid);
         } else {
