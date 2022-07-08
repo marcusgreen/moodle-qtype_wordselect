@@ -328,7 +328,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     public function summarise_response(array $response) {
         $summary = '';
         $allwords = $this->get_words();
-        foreach ($response as $index => $value) {
+        foreach (array_keys($response) as $index) {
             if (!isset($allwords[substr($index, 1)])) {
                 continue;
             }
