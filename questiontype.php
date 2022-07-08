@@ -362,7 +362,7 @@ class qtype_wordselect extends question_type {
      * @return array
      */
     public function get_possible_responses($questiondata) {
-        return parent::get_possible_responses($questiondata);
+        return [];
     }
 
     /**
