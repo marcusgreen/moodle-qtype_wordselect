@@ -62,7 +62,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         $question->init($question->questiontext, $question->delimitchars);
         $items = $question->get_words($question->questiontext);
 
-        foreach ($items as $item) {
+        foreach ($items as $place => $item) {
             $word = $item->get_without_delim();
             $correctnoselect = false;
             $wordattributes = array("role" => "checkbox");
@@ -144,7 +144,8 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         }
         $this->page->requires->js_call_amd('qtype_wordselect/selection', 'init',
         [$qa->get_outer_question_div_unique_id()]);
-
+        $output = $question->format_text($output, $question->questiontextformat, $qa, 'qtype_wordselect',
+        'questiontext', $question->id);
         return $output;
     }
     /**
