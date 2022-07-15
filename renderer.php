@@ -62,7 +62,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         $question->init($question->questiontext, $question->delimitchars);
         $items = $question->get_words($question->questiontext);
 
-        foreach ($items as $place => $item) {
+        foreach ($items as $item) {
             $word = $item->get_without_delim();
             $correctnoselect = false;
             $wordattributes = array("role" => "checkbox");
