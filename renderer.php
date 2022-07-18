@@ -58,7 +58,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         $question->init($question->questiontext, $question->delimitchars);
         $items = $question->get_words($question->questiontext);
 
-        $output .= $this->question_body($question, $options, $items, $qa);
+        $output .= $this->get_body($question, $options, $items, $qa);
 
         $output .= html_writer::end_div();
         if ($qa->get_state() == question_state::$invalid) {
@@ -79,7 +79,8 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
      * @param question_attempt $qa
      * @return string
      */
-    public function question_body(qtype_wordselect_question $question, question_display_options $options, array $items, question_attempt $qa ) : string {
+    public function get_body(qtype_wordselect_question $question, question_display_options $options, array $items,
+                             question_attempt $qa ) : string {
         $output = "";
         $response = $qa->get_last_qt_data();
         foreach (array_values($items) as $item) {
