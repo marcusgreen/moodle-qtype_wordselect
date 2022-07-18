@@ -607,9 +607,21 @@ class wordselect_item {
         $this->multiword = $multiword;
         $this->set_correctness();
     }
+
+    /**
+     * Set the place id of the item
+     *
+     * @return void
+     */
     public function get_id() {
         return $this->id;
     }
+
+    /**
+     * Set if the item is a correct response
+     *
+     * @return void
+     */
     public function set_correctness () {
         $regex = "";
         if ($this->multiword == true) {
