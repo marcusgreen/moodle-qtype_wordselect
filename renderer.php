@@ -70,7 +70,16 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         'questiontext', $question->id);
         return $output;
     }
-    public function question_body(object $question, object $options, array $items, \question_attempt $qa ) : string {
+    /**
+     * Get the output of the question bod, i.e. where the user clicks on words
+     *
+     * @param qtype_wordselect_question $question
+     * @param question_display_options $options
+     * @param array $items
+     * @param question_attempt $qa
+     * @return string
+     */
+    public function question_body(qtype_wordselect_question $question, question_display_options $options, array $items, question_attempt $qa ) : string {
         $output = "";
         $response = $qa->get_last_qt_data();
         foreach (array_values($items) as $item) {
