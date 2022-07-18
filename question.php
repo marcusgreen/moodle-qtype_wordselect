@@ -610,7 +610,7 @@ class wordselect_item {
     public function get_id() {
         return $this->id;
     }
-    public function set_correctness()  {
+    public function set_correctness () {
         $regex = "";
         if ($this->multiword == true) {
             $regex = '/\\' . $this->l . '\\' . $this->l . '.*\\' . $this->r . '\\' . $this->r . '/';
@@ -618,7 +618,6 @@ class wordselect_item {
             $regex = '/\\' . $this->l . '.*\\' . $this->r . '/';
         }
         $this->correctness = preg_match($regex, $this->text);
-  
     }
     /**
      * Get white space after the "word" or group of words delimited
