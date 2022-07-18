@@ -110,19 +110,10 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         if (strpos($questiontext, $l . $l) !== false) {
             $this->multiword = true;
         }
-        $this->eligables = self::strip_some_tags($this->questiontext);
+       // $this->eligables = $this->strip_some_tags($this->questiontext);
     }
 
-    /**
-     * strip all but the given html tags. Used to ensure that things
-     * like table element tags are not displayed as clickable.
-     *
-     * @param string $questiontext
-     * @return string
-     */
-    public static function strip_some_tags($questiontext) {
-        return strip_tags($questiontext, '<h1>,<h2>,<h3>,<sub>,<sup>,<i>,<u>,<b>');
-    }
+
 
     /**
      * TODO fix this comment as the purpose/return values have probably changed.
@@ -150,29 +141,28 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             $this->items = [];
             foreach ($matches as $key => $match) {
                 $item = new wordselect_item($key, $match, $this->delimitchars, true);
-                $item->set_is_selectable();
+
+                //$item->set_is_selectable();
                 if ($item->isselectable) {
                     $item->placeid = $placecount;
-                    $placecount++;
-
                 }
-                $this->items[] = $item;
+                $placecount++;
+                $this->items[$item->get_id] = $item;
             }
         } else {
             $text = $this->pad_angle_brackets($questiontextnodelim);
-            $this->eligables = self::strip_some_tags($text);
+            // $this->eligables = $this->strip_some_tags($text);
 
             $matches = preg_split($fieldregex, $text, null, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
             $this->items = array();
             foreach ($matches as $key => $text) {
                 $item = new wordselect_item($key, $text, $this->delimitchars, $this->multiword);
-                $item->set_is_selectable($this->eligables);
+                //$item->set_is_selectable($this->eligables);
                 if ($item->isselectable) {
                     $item->placeid = $placecount;
-                    $placecount++;
-
                 }
-                $this->items[] = $item;
+                $placecount++;
+                $this->items[$item->get_id()] = $item;
             }
         }
         return $this->items;
@@ -296,13 +286,14 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
                 if (preg_match($regex, $word)) {
                     $correctplaces[] = $placecount;
                 }
-                $placecount++;
-
             }
+            $placecount++;
+
 
         }
         return $correctplaces;
     }
+
 
     /**
      * Return an array of the question type variables that could be submitted
@@ -311,9 +302,9 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * @return array variable name => PARAM_... constant.
      */
     public function get_expected_data() {
-        $wordcount = count($this->get_words());
-        for ($key = 0; $key < $wordcount; $key++) {
-            $data['p' . $key] = PARAM_RAW_TRIMMED;
+        $words = $this->get_words();
+        foreach ($words as $word) {
+              $data['p' . $word->get_id()] = PARAM_RAW_TRIMMED;
         }
         return $data;
     }
@@ -454,20 +445,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         }
     }
 
-    /**
-     * Is this place correct and so get a mark if selected
-     *
-     * @param array $correctplaces
-     * @param number $place
-     * @return boolean
-     */
-    public function is_correct_place($correctplaces, $place) {
-        if (in_array($place, $correctplaces, true)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 
     /**
      * Given a response, reset the parts that are wrong. Relevent in
@@ -642,6 +619,8 @@ class wordselect_item {
      */
     public $isselectable;
 
+    public $iscorrect;
+
     /**
      * Initialise this instance of question chunk
      *
@@ -658,9 +637,29 @@ class wordselect_item {
         $this->text = $text;
         $this->delimitchars = $delimitchars;
         $this->multiword = $multiword;
+        $this->set_correctness();
+        $this->set_is_selectable();
     }
-
-
+    /**
+     * strip all but the given html tags. Used to ensure that things
+     * like table element tags are not displayed as clickable.
+     *
+     * @param string $questiontext
+     * @return string
+     */
+    public static function strip_some_tags($text) {
+        return strip_tags($text, '<h1>,<h2>,<h3>,<sub>,<sup>,<i>,<u>,<b>');
+    }
+    public function set_correctness()  {
+        $regex = "";
+        if ($this->multiword == true) {
+            $regex = '/\\' . $this->l . '\\' . $this->l . '.*\\' . $this->r . '\\' . $this->r . '/';
+        } else {
+            $regex = '/\\' . $this->l . '.*\\' . $this->r . '/';
+        }
+        $this->correctness = preg_match($regex, $this->text);
+  
+    }
     /**
      * Get white space after the "word" or group of words delimited
      * by double delimiting characters
@@ -699,7 +698,7 @@ class wordselect_item {
      *
      * @param string $eligables
      **/
-    public function set_is_selectable($eligables = "") {
+    private function set_is_selectable() {
         $this->isselectable = false;
         if ($this->multiword == true) {
             $regex = '/\\' . $this->l . '([^\\' . $this->l . '\\' . $this->r . ']*)\\' . $this->r . '/';
@@ -707,22 +706,23 @@ class wordselect_item {
                 $this->isselectable = true;
             }
         } else {
-            $candidate = qtype_wordselect_question::strip_some_tags(trim($this->text));
-            if (($eligables > "") && ($candidate > "")) {
-                if (strpos($eligables, $candidate) !== false) {
-                    if ($this->multiword == false) {
+            $candidate = $this->strip_some_tags(trim($this->text));
+            if ($candidate > "") {
+                if ($this->multiword == false) {
+                    $this->isselectable = true;
+                } else {
+                    $regex = '/\\' . $this->l . '([^\\' . $this->l . '\\' . $this->r . ']*)\\' . $this->r . '/';
+                    if (preg_match($regex, $this->text) > 0) {
                         $this->isselectable = true;
-                    } else {
-                        $regex = '/\\' . $this->l . '([^\\' . $this->l . '\\' . $this->r . ']*)\\' . $this->r . '/';
-                        if (preg_match($regex, $this->text) > 0) {
-                            $this->isselectable = true;
-                        }
                     }
                 }
             }
         }
     }
 
+    public function get_id(){
+        return $this->id;
+    }
     /**
      * Get chunk of questiontext for this item that will include
      * any delimiter.

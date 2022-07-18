@@ -45,10 +45,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
 
         $question = $qa->get_question();
         $this->page->requires->js_call_amd('qtype_wordselect/navigation', 'init');
-        $response = $qa->get_last_qt_data();
 
-        $correctplaces = $question->get_correct_places($question->questiontext,
-            $question->delimitchars);
         $question->questiontext = $question->format_questiontext($qa);
 
         $output .= html_writer::start_div('introduction');
@@ -62,7 +59,45 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         $question->init($question->questiontext, $question->delimitchars);
         $items = $question->get_words($question->questiontext);
 
-        foreach ($items as $place => $item) {
+        $output .= $this->question_body($question, $options, $items, $qa);
+
+        $output .= html_writer::end_div();
+        if ($qa->get_state() == question_state::$invalid) {
+            $output .= html_writer::div($question->get_validation_error($response), 'validationerror');
+        }
+        $this->page->requires->js_call_amd('qtype_wordselect/selection', 'init',
+        [$qa->get_outer_question_div_unique_id()]);
+        $output = $question->format_text($output, $question->questiontextformat, $qa, 'qtype_wordselect',
+        'questiontext', $question->id);
+        return $output;
+    }
+    /**
+     * Get the checkbox properties associated with a selectable word
+     *
+     * @param array $wordattributes
+     * @param bool $isselected // is it currently selected
+     * @return array
+     */
+    public function get_checkbox_properties(array $wordattributes, bool $isselected) {
+        $properties = [
+            'type' => 'checkbox',
+            'name' => $wordattributes['name'],
+            'id' => $wordattributes['name'],
+            'hidden' => 'true',
+        ];
+        if ($isselected == true) {
+            $properties['checked'] = "true";
+            $wordattributes['aria-checked'] = 'true';
+        }
+        return [$wordattributes, $properties];
+    }
+
+    public function question_body(object $question, object $options, array $items, $qa ) : string {
+        $output = "";
+        $max = (int)ini_get('max_input_vars');
+        $response = $qa->get_last_qt_data();
+        $checkboxcount = 0;
+        foreach (array_values($items) as $item) {
             $word = $item->get_without_delim();
             $correctnoselect = false;
             $wordattributes = array("role" => "checkbox");
@@ -70,7 +105,6 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
 
             $wordattributes['name'] = $this->get_input_name($qa, $item->placeid);
             $wordattributes['id'] = $this->get_input_id($qa, $item->placeid);
-            $iscorrectplace = $question->is_correct_place($correctplaces, $item->placeid);
             $checkbox = "";
             /* if the current word/place exists in the response */
             $isselected = $question->is_word_selected($item->placeid, $response);
@@ -78,10 +112,10 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 $wordattributes['class'] = 'selected';
                 if ($options->correctness == 1) {
                     list($wordattributes, $afterwordfeedback) = $this->get_wordattributes(
-                        $iscorrectplace, $wordattributes, $options);
+                        $item->correctness, $wordattributes, $options);
                 }
             } else {
-                if ($iscorrectplace && $options->rightanswer) {
+                if ($item->correctness && $options->rightanswer) {
                     /* $options->rightanswer is the setting for the quiz
                     * to show the non selected correct answers
                     * once the attempt is complete.
@@ -120,9 +154,11 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                     $wordattributes['class'] = $class;
                     $wordattributes['aria-checked'] = 'false';
                 }
-                list($wordattributes, $properties)  = $this->get_checkbox_properties($wordattributes, $isselected);
+                 list($wordattributes, $properties)  = $this->get_checkbox_properties($wordattributes, $isselected);
 
-                $checkbox = html_writer::empty_tag('input', $properties);
+                 $checkbox = html_writer::empty_tag('input', $properties);
+  //               $checkboxcount++;
+//$checkbox.=" ".$checkboxcount;
             }
 
             if ($item->isselectable == true) {
@@ -137,39 +173,8 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                 $output .= $word;
             }
         }
-
-        $output .= html_writer::end_div();
-        if ($qa->get_state() == question_state::$invalid) {
-            $output .= html_writer::div($question->get_validation_error($response), 'validationerror');
-        }
-        $this->page->requires->js_call_amd('qtype_wordselect/selection', 'init',
-        [$qa->get_outer_question_div_unique_id()]);
-        $output = $question->format_text($output, $question->questiontextformat, $qa, 'qtype_wordselect',
-        'questiontext', $question->id);
         return $output;
     }
-    /**
-     * Get the checkbox properties associated with a selectable word
-     *
-     * @param array $wordattributes
-     * @param bool $isselected // is it currently selected
-     * @return array
-     */
-    public function get_checkbox_properties(array $wordattributes, bool $isselected) {
-        $properties = [
-            'type' => 'checkbox',
-            'name' => $wordattributes['name'],
-            'id' => $wordattributes['name'],
-            'hidden' => 'true',
-            'class' => 'selcheck'
-        ];
-        if ($isselected == true) {
-            $properties['checked'] = "true";
-            $wordattributes['aria-checked'] = 'true';
-        }
-        return [$wordattributes, $properties];
-    }
-
     /**
      * Get the attributes to assign to a selectable word
      *
