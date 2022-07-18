@@ -610,8 +610,21 @@ class wordselect_item {
         $this->text = $text;
         $this->delimitchars = $delimitchars;
         $this->multiword = $multiword;
+        $this->set_correctness();
     }
-
+    public function get_id() {
+        return $this->id;
+    }
+    public function set_correctness()  {
+        $regex = "";
+        if ($this->multiword == true) {
+            $regex = '/\\' . $this->l . '\\' . $this->l . '.*\\' . $this->r . '\\' . $this->r . '/';
+        } else {
+            $regex = '/\\' . $this->l . '.*\\' . $this->r . '/';
+        }
+        $this->correctness = preg_match($regex, $this->text);
+  
+    }
     /**
      * Get white space after the "word" or group of words delimited
      * by double delimiting characters
