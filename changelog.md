@@ -1,3 +1,6 @@
+### Version 2.49 of the Moodle WordSelect question type by Marcus Green. Jul 2022
+More English language examples. Refactoring of render code. New behat test for question import
+
 ### Version 2.48 of the Moodle WordSelect question type by Marcus Green. Apr 2022
 Fix for issue 42
 https://github.com/marcusgreen/moodle-qtype_wordselect/issues/42
