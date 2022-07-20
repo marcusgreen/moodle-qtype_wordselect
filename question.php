@@ -442,11 +442,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * @return array (number, integer) the fraction, and the state.
      */
     public function grade_response(array $response) {
-
-        // Ensures the right word places when language filters are enabled.
-        // $formatoptions = (object) ['noclean' => true, 'para' => false];
-        // $this->questiontext = format_text($this->questiontext, FORMAT_HTML, $formatoptions);
-
         $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
         $this->wrongresponsecount = $this->get_wrong_responsecount($correctplaces, $response);
         foreach ($correctplaces as $place) {
@@ -610,8 +605,32 @@ class wordselect_item {
         $this->text = $text;
         $this->delimitchars = $delimitchars;
         $this->multiword = $multiword;
+        $this->set_correctness();
     }
 
+    /**
+     * Set the place id of the item
+     *
+     * @return void
+     */
+    public function get_id() {
+        return $this->id;
+    }
+
+    /**
+     * Set if the item is a correct response
+     *
+     * @return void
+     */
+    public function set_correctness () {
+        $regex = "";
+        if ($this->multiword == true) {
+            $regex = '/\\' . $this->l . '\\' . $this->l . '.*\\' . $this->r . '\\' . $this->r . '/';
+        } else {
+            $regex = '/\\' . $this->l . '.*\\' . $this->r . '/';
+        }
+        $this->correctness = preg_match($regex, $this->text);
+    }
     /**
      * Get white space after the "word" or group of words delimited
      * by double delimiting characters
