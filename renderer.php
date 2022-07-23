@@ -76,7 +76,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
     }
 
      /**
-      * Get the output of the question bod, i.e. where the user clicks on words
+      * Get the output of the question body, i.e. where the user clicks on words
       *
       * @param qtype_wordselect_question $question
       * @param question_display_options $options
