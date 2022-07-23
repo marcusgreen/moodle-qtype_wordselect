@@ -41,14 +41,13 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
     public function formulation_and_controls(\question_attempt $qa, question_display_options $options) {
 
         $output = '';
-
+        /** @var \qtype_wordselect_question $question */
         $question = $qa->get_question();
-        $this->page->requires->js_call_amd('qtype_wordselect/navigation', 'init');
+
         // Ensure Filter are applied.
         $question->questiontext = $question->format_text($question->questiontext,
             $question->questiontextformat, $qa, 'qtype_wordselect',
         'questiontext', $question->id);
-
         $output .= html_writer::start_div('introduction');
         // Ensure filters are applied to the introduction, done particularly for the multilang filter.
         $output .= $question->format_text($question->introduction, $question->questiontextformat, $qa, 'qtype_wordselect',
@@ -67,7 +66,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
 
         $output .= html_writer::end_div();
         if ($qa->get_state() == question_state::$invalid) {
-            $output .= html_writer::div($question->get_validation_error($response), 'validationerror');
+            $output .= html_writer::div($question->get_validation_error($qa->get_last_qt_data()), 'validationerror');
         }
         $this->page->requires->js_call_amd('qtype_wordselect/selection', 'init',
         [$qa->get_outer_question_div_unique_id()]);
