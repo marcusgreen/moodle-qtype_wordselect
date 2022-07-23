@@ -44,8 +44,10 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
 
         $question = $qa->get_question();
         $this->page->requires->js_call_amd('qtype_wordselect/navigation', 'init');
-
-        $question->questiontext = $question->format_questiontext($qa);
+        // Ensure Filter are applied.
+        $question->questiontext = $question->format_text($question->questiontext,
+            $question->questiontextformat, $qa, 'qtype_wordselect',
+        'questiontext', $question->id);
 
         $output .= html_writer::start_div('introduction');
         // Ensure filters are applied to the introduction, done particularly for the multilang filter.
@@ -56,52 +58,58 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
 
         /*initialised */
         $question->init($question->questiontext, $question->delimitchars);
-        $items = $question->get_words($question->questiontext);
-
+        $items = $question->get_words();
         $output .= $this->get_body($question, $options, $items, $qa);
+
+        /* this ensures that any files inserted through the editor menu will display */
+        $output = $question->format_text(
+          $output, $question->questiontextformat, $qa, 'question', 'questiontext', $question->id);
 
         $output .= html_writer::end_div();
         if ($qa->get_state() == question_state::$invalid) {
-            $output .= html_writer::div($question->get_validation_error($qa->get_last_qt_data()), 'validationerror');
+            $output .= html_writer::div($question->get_validation_error($response), 'validationerror');
         }
         $this->page->requires->js_call_amd('qtype_wordselect/selection', 'init',
         [$qa->get_outer_question_div_unique_id()]);
-        $output = $question->format_text($output, $question->questiontextformat, $qa, 'qtype_wordselect',
-        'questiontext', $question->id);
+
         return $output;
     }
-    /**
-     * Get the output of the question bod, i.e. where the user clicks on words
-     *
-     * @param qtype_wordselect_question $question
-     * @param question_display_options $options
-     * @param array $items
-     * @param question_attempt $qa
-     * @return string
-     */
+
+     /**
+      * Get the output of the question bod, i.e. where the user clicks on words
+      *
+      * @param qtype_wordselect_question $question
+      * @param question_display_options $options
+      * @param array $items
+      * @param question_attempt $qa
+      * @return string
+      */
     public function get_body(qtype_wordselect_question $question, question_display_options $options, array $items,
-                             question_attempt $qa ) : string {
+                            question_attempt $qa ) : string {
         $output = "";
         $response = $qa->get_last_qt_data();
-        foreach (array_values($items) as $item) {
+
+        $correctplaces = $question->get_correct_places($question->questiontext,
+        $question->delimitchars);
+        foreach ($items as $place => $item) {
             $word = $item->get_without_delim();
             $correctnoselect = false;
             $wordattributes = array("role" => "checkbox");
             $afterwordfeedback = '';
-
-            $wordattributes['name'] = $this->get_input_name($qa, $item->get_id());
-            $wordattributes['id'] = $this->get_input_id($qa, $item->get_id());
+            $wordattributes['name'] = $this->get_input_name($qa, $place);
+            $wordattributes['id'] = $this->get_input_id($qa, $place);
+            $iscorrectplace = $question->is_correct_place($correctplaces, $place);
             $checkbox = "";
             /* if the current word/place exists in the response */
-            $isselected = $question->is_word_selected($item->get_id(), $response);
+            $isselected = $question->is_word_selected($place, $response);
             if ($isselected) {
                 $wordattributes['class'] = 'selected';
                 if ($options->correctness == 1) {
                     list($wordattributes, $afterwordfeedback) = $this->get_wordattributes(
-                        $item->correctness, $wordattributes, $options);
+                        $iscorrectplace, $wordattributes, $options);
                 }
             } else {
-                if ($item->correctness && $options->rightanswer) {
+                if ($iscorrectplace && $options->rightanswer) {
                     /* $options->rightanswer is the setting for the quiz
                     * to show the non selected correct answers
                     * once the attempt is complete.
@@ -123,8 +131,8 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                     $class[] = 'multiword';
                 }
             } else {
-                $qasdata = $qa->get_last_qt_var($question->field($item->get_id()));
-                    /* when scrolling back and forth between questions
+                $qasdata = $qa->get_last_qt_var($question->field($place));
+                /* when scrolling back and forth between questions
                     * previously selected value into each place. This
                     * is retrieved from the question_attempt_step_data
                     * table
@@ -140,9 +148,9 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                     $wordattributes['class'] = $class;
                     $wordattributes['aria-checked'] = 'false';
                 }
-                    list($wordattributes, $properties)  = $this->get_checkbox_properties($wordattributes, $isselected);
+                list($wordattributes, $properties)  = $this->get_checkbox_properties($wordattributes, $isselected);
 
-                    $checkbox = html_writer::empty_tag('input', $properties);
+                $checkbox = html_writer::empty_tag('input', $properties);
             }
 
             if ($item->isselectable == true) {
@@ -159,6 +167,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         }
         return $output;
     }
+
     /**
      * Get the checkbox properties associated with a selectable word
      *
