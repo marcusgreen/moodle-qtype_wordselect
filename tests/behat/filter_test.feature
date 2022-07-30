@@ -36,7 +36,6 @@ Feature: Test the mlang and mlang2 filters work with qtype_wordselect
     And I click on "correct" "text"
     And I click on "selection" "text"
     And I press "Submit"
-    # The following test fails because wordselect does not calculate the offset correctly with filters
     And I should see "Mark 2.00 out of 2.00"
     And I should see "Your answer is correct"
 
