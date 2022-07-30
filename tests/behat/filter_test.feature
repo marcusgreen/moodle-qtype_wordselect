@@ -32,6 +32,17 @@ Feature: Test the mlang and mlang2 filters work with qtype_wordselect
     And I should not see "deaux"
     And I should not see "un"
 
+  #################################################
+  #Interactive with multiple tries
+  #################################################
+    And I set the following fields to these values:
+        | How questions behave | Interactive with multiple tries |
+        | Marked out of        | 2                               |
+        | Marks                | Show mark and max               |
+        | Specific feedback    | Shown                           |
+        | Right answer         | Shown                           |
+    And I press "Start again with these options"
+
     And I click on "correct" "text"
     And I click on "word" "text"
     And I press "Check"
