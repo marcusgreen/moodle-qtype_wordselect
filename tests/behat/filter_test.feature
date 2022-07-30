@@ -32,6 +32,13 @@ Feature: Test the mlang and mlang2 filters work with qtype_wordselect
     And I should not see "deaux"
     And I should not see "un"
 
+    And I click on "correct" "text"
+    And I click on "word" "text"
+    And I press "Check"
+
+    And I should see "Mark 2.00 out of 2.00"
+    And I should see "You have selected 2 correct items out of 2"
+
   # This is supposed to test the core mlang filter, however I cannot get that filter to work
   # at all under any circumstance
   # @javascript
