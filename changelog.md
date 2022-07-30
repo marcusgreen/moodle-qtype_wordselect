@@ -1,7 +1,6 @@
 ### Version 2.49 of the Moodle WordSelect question type by Marcus Green. Jul 2022
-More English language examples. Refactoring of render code. New behat test for question import.
-A fix to the error line 448 of /question/type/wordselect/question.php: call to format_text()
-reported here https://github.com/marcusgreen/moodle-qtype_wordselect/issues/47 (but not a fix to the whole issue)
+More English language examples. Refactoring of render code. New behat test for question import. make
+filter test check grade.
 
 ### Version 2.48 of the Moodle WordSelect question type by Marcus Green. Apr 2022
 Fix for issue 42
