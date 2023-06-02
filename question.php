@@ -127,7 +127,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $fieldregex = '/(\\s+)|(\\' . $l . '{1,2}[^\\'.$r.']*\\' . $r . '{1,2})|(&nbsp;)|(\s)/';
         if (strpos($questiontextnodelim, $l . $l) !== false) {
             $this->multiword = true;
-            $matches = preg_split($fieldregex, $questiontextnodelim, null, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
+            $matches = preg_split($fieldregex, $questiontextnodelim, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
             $this->items = [];
             foreach ($matches as $key => $match) {
                 $item = new wordselect_item($key, $match, $this->delimitchars, true);
@@ -138,7 +138,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             $text = $this->pad_angle_brackets($questiontextnodelim);
             $this->eligables = self::strip_some_tags($text);
 
-            $matches = preg_split($fieldregex, $text, null, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
+            $matches = preg_split($fieldregex, $text, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
             $this->items = array();
             foreach ($matches as $key => $text) {
                 $item = new wordselect_item($key, $text, $this->delimitchars, $this->multiword);
