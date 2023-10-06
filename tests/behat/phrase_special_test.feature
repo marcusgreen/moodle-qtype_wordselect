@@ -42,7 +42,8 @@ Feature: Test that formatting within delimiters is retained
         | Marks                | Show mark and max               |
         | Specific feedback    | Shown                           |
         | Right answer         | Shown                           |
-    And I press "Start again with these options"
+    And I press "Update display options"
+    And I press "Start again"
 
     #Select all (both) correct options
     And I click on "sat" "text"

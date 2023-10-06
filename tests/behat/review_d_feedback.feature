@@ -43,7 +43,8 @@ Feature: Test wordselect showiing of correctness with direct feedback
         | Right answer         | Shown             |
         | Whether correct      | Shown             |
 
-    And I press "Start again with these options"
+    And I press "Save preview options and start again"
+
     #Select all (both) correct options
     And I click on "sat" "text"
     And I click on "jumped" "text"
@@ -71,7 +72,7 @@ Feature: Test wordselect showiing of correctness with direct feedback
         | Right answer         | Not shown                       |
         | Whether correct      | Not shown                       |
 
-    And I press "Start again with these options"
+    And I press "Save preview options and start again"
 
     #Select two incorrect options and show which ones should have been selected
     And I click on "The" "text"

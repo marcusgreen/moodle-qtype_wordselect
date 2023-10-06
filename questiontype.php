@@ -279,9 +279,10 @@ class qtype_wordselect extends question_type {
         if (empty($questiondata->options->answers)) {
             return false;
         }
+        return true;
+
         $placecounter = 0;
         foreach ($questiondata->options->answers as $a) {
-            $question->places[$placecounter++] = "";
             if (strstr($a->fraction, '1') == false) {
                 /* if this is a wronganswer/distractor strip any
                  * backslahses, this allows escaped backslashes to

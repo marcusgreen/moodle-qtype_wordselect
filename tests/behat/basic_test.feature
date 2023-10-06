@@ -46,8 +46,8 @@ create and preview wordselect (Select correct words) questions.
         | Marks                | Show mark and max |
         | Specific feedback    | Shown             |
         | Right answer         | Shown             |
-    And I press "Start again with these options"
-
+    And I press "Update display options"
+    And I press "Start again"
   #User does not select any word and press button Check
     And I press "Check"
     And I should see "Please select an answer."
@@ -67,8 +67,7 @@ create and preview wordselect (Select correct words) questions.
         | Marks                | Show mark and max               |
         | Specific feedback    | Shown                           |
         | Right answer         | Shown                           |
-    And I press "Start again with these options"
-
+    And I press "Save preview options and start again"
   #User does not select any word and press button Check
     And I press "Check"
     And I should see "Please select an answer."
@@ -108,7 +107,7 @@ create and preview wordselect (Select correct words) questions.
         | Specific feedback    | Shown              |
         | Right answer         | Shown              |
 
-    And I press "Start again with these options"
+    And I press "Save preview options and start again"
     And I click on "sat" "text"
     And I click on "jumped" "text"
     And I press "Check"
@@ -117,6 +116,7 @@ create and preview wordselect (Select correct words) questions.
 
     And I press "Start again"
     And I click on "sat" "text"
+
     And I press "Check"
     And I should see "Your answer is partially correct."
     And I should see "Mark 1.00 out of 2.00"
@@ -130,7 +130,8 @@ create and preview wordselect (Select correct words) questions.
         | Specific feedback    | Shown             |
         | Right answer         | Shown             |
 
-    And I press "Start again with these options"
+    And I press "Save preview options and start again"
+
     And I click on "sat" "text"
     And I click on "jumped" "text"
     And I press "Submit and finish"
@@ -186,8 +187,7 @@ create and preview wordselect (Select correct words) questions.
         | Marks                | Show mark and max               |
         | Specific feedback    | Shown                           |
         | Right answer         | Shown                           |
-    And I press "Start again with these options"
-
+    And I press "Save preview options and start again"
   #Select all (both) correct options and  an incorrect
   #option (cow)
     And I click on "sat" "text"
