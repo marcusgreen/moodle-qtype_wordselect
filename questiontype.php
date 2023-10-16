@@ -253,7 +253,6 @@ class qtype_wordselect extends question_type {
      */
     protected function initialise_question_instance(question_definition $question, $questiondata) {
         parent::initialise_question_instance($question, $questiondata);
-        $this->initialise_question_answers($question, $questiondata);
         parent::initialise_combined_feedback($question, $questiondata);
     }
 
@@ -265,42 +264,6 @@ class qtype_wordselect extends question_type {
      */
     protected function make_hint($hint) {
         return question_hint_with_parts::load_from_record($hint);
-    }
-
-    /**
-     * Initialise question answers
-     *
-     * @param question_definition $question
-     * @param object $questiondata
-     * @param boolean $forceplaintextanswers
-     * @return boolean
-     */
-    protected function initialise_question_answers(question_definition $question, $questiondata, $forceplaintextanswers = true) {
-        if (empty($questiondata->options->answers)) {
-            return false;
-        }
-        return true;
-
-        $placecounter = 0;
-        foreach ($questiondata->options->answers as $a) {
-            if (strstr($a->fraction, '1') == false) {
-                /* if this is a wronganswer/distractor strip any
-                 * backslahses, this allows escaped backslashes to
-                 * be used i.e. \, and not displayed in the draggable
-                 * area
-                 */
-                $a->answer = stripslashes($a->answer);
-            }
-            /* answer in this context means correct answers, i.e. where
-             * fraction contains a 1 */
-            if (strpos($a->fraction, '1') !== false) {
-                $question->answers[$a->id] = new question_answer($a->id, $a->answer, $a->fraction,
-                        $a->feedback, $a->feedbackformat);
-                if (!$forceplaintextanswers) {
-                    $question->answers[$a->id]->answerformat = $a->answerformat;
-                }
-            }
-        }
     }
 
     /**
