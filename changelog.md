@@ -1,3 +1,8 @@
+# Version 2.50 of the Moodle WordSelect question type by Marcus Green. Oct 2023
+Removed all references to the function initialise_question_instance, it was throwing an error in
+PHP 8.1 that that highlighted it was not doing anything. Fixed behat tests to work with changes to
+interface in  Moodle 4.3.
+
 ### Version 2.49 of the Moodle WordSelect question type by Marcus Green. Jul 2022
 More English language examples. Refactoring of render code. New behat test for question import. make
 filter test check grade.
