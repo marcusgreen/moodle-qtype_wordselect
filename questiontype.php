@@ -254,6 +254,7 @@ class qtype_wordselect extends question_type {
     protected function initialise_question_instance(question_definition $question, $questiondata) {
         parent::initialise_question_instance($question, $questiondata);
         parent::initialise_combined_feedback($question, $questiondata);
+        $question->init($questiondata->questiontext, $questiondata->options->delimitchars);
     }
 
     /**
