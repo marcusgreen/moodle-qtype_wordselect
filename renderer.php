@@ -55,8 +55,6 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         $output .= html_writer::end_div();
         $output .= html_writer::start_div('qtext');
 
-        /*initialised */
-        $question->init($question->questiontext, $question->delimitchars);
         $items = $question->get_words();
         $output .= $this->get_body($question, $options, $items, $qa);
 

@@ -33,14 +33,18 @@ defined('MOODLE_INTERNAL') || die();
  */
 class qtype_wordselect_question extends question_graded_automatically_with_countback {
 
+    /** @var string Introductory instructions shown before the question text. */
+    public $introduction;
+
+    /** @var string The pair of characters which demarcate clickable items. E.g. '[]'. */
+    public $delimitchars;
+
     /**
-     *
      * @var number how many items clicked on are not correct answers
      */
     public $wrongresponsecount = '0.0';
 
     /**
-     *
      * @var int how many items clicked on are  correct answers
      */
     public $rightresponsecount;
@@ -52,13 +56,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     public $multiword = false;
 
     /**
-     * is this item selectable. Only makes
-     * sense if multiword is true
-     * @var boolean
-     */
-    public $isselectable;
-
-    /**
      * fraction to deduct for each incorrectly selected text item
      * Wrong response is multiplied by this, i.e. 2 wrong responses
      * and wordpenalty of .5 means 1 penalty, default is 1, i.e. no
@@ -67,13 +64,24 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      */
     public $wordpenalty = 1.0;
 
-    /**
-     * TODO
-     * I am not sure this is necessary
-     * @var string
-     */
-    public $questiontextsplit;
+    /** @var string Feedback for any correct response. */
+    public $correctfeedback;
+    /** @var int format of $correctfeedback. */
+    public $correctfeedbackformat;
+    /** @var string Feedback for any partially correct response. */
+    public $partiallycorrectfeedback;
+    /** @var int format of $partiallycorrectfeedback. */
+    public $partiallycorrectfeedbackformat;
+    /** @var string Feedback for any incorrect response. */
+    public $incorrectfeedback;
+    /** @var int format of $incorrectfeedback. */
+    public $incorrectfeedbackformat;
 
+    /** @var string question text with most HTML removed, used to work out what text should be selectable. */
+    protected $eligables;
+
+    /** @var wordselect_item[] the selectable items in the question text. */
+    protected $items;
     /**
      * the place number with p appended, i.e. p0 p1 etc
      * @param number $place
@@ -139,7 +147,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             $this->eligables = self::strip_some_tags($text);
 
             $matches = preg_split($fieldregex, $text, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
-            $this->items = array();
+            $this->items = [];
             foreach ($matches as $key => $text) {
                 $item = new wordselect_item($key, $text, $this->delimitchars, $this->multiword);
                 $item->set_is_selectable($this->eligables);
@@ -551,12 +559,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
 class wordselect_item {
 
     /**
-     * characters that delimit a word or chunk of words
-     * @var string
-     */
-    private $delimitchars;
-
-    /**
      * left delimiter
      * @var string
      */
@@ -606,9 +608,7 @@ class wordselect_item {
         $this->r = substr($delimitchars, 1, 1);
         $this->id = $id;
         $this->text = $text;
-        $this->delimitchars = $delimitchars;
         $this->multiword = $multiword;
-        $this->set_correctness();
     }
 
     /**
@@ -620,20 +620,6 @@ class wordselect_item {
         return $this->id;
     }
 
-    /**
-     * Set if the item is a correct response
-     *
-     * @return void
-     */
-    public function set_correctness () {
-        $regex = "";
-        if ($this->multiword == true) {
-            $regex = '/\\' . $this->l . '\\' . $this->l . '.*\\' . $this->r . '\\' . $this->r . '/';
-        } else {
-            $regex = '/\\' . $this->l . '.*\\' . $this->r . '/';
-        }
-        $this->correctness = preg_match($regex, $this->text);
-    }
     /**
      * Get white space after the "word" or group of words delimited
      * by double delimiting characters

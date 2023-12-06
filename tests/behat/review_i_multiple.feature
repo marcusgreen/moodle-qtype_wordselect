@@ -45,7 +45,7 @@ Feature: Test wordselect showing of correctness with iwm question behaviour
         | Right answer         | Shown                           |
         | Whether correct      | Shown                           |
 
-    And I press "Save preview options and start again"
+    And I press "saverestart"
     #Select all (both) correct options
     And I click on "sat" "text"
     And I click on "jumped" "text"
@@ -72,7 +72,7 @@ Feature: Test wordselect showing of correctness with iwm question behaviour
         | Right answer         | Not shown                       |
         | Whether correct      | Not shown                       |
 
-    And I press "Save preview options and start again"
+    And I press "saverestart"
 
     #Select two incorrect options and show which ones should have been selected
     And I click on "The" "text"
