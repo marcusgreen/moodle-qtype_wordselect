@@ -1,4 +1,4 @@
-@core @qtype @qtype_wordselect @qtype_wordselect_review_options @_switch_windown @wsel_d_feedback
+@qtype @qtype_wordselect @qtype_wordselect_review_options @_switch_windown @wsel_d_feedback
 Feature: Test wordselect showiing of correctness with direct feedback
     In order to inform students whether each response was correct and which word
     was the right answer, apply classes.  Classes with colours are applied with supporting titles.

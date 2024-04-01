@@ -1,4 +1,4 @@
-@core @qtype @qtype_wordselect @qtype_wordselect_review_options @_switch_window
+@qtype @qtype_wordselect @qtype_wordselect_review_options @_switch_window
 Feature: Test wordselect showing of correctness with iwm question behaviour
     In order to inform students whether each response was correct and which word
     was the right answer, apply classes.  Classes with colours are applied with supporting titles.

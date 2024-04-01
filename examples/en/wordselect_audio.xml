@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 2176  -->
+  <question type="wordselect">
+    <name>
+      <text>Blocked</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>The main street was [blocked] for the whole of the [weekend]. There was [some] maintenance work which required digging a hole next to the [post] office.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>4</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <introduction><![CDATA[<a href="@@PLUGINFILE@@/blocked1.mp3">blocked1.mp3</a><br><a href="@@PLUGINFILE@@/blocked2.mp3">blocked2.mp3</a><br><a href="@@PLUGINFILE@@/blocked3.mp3?time=1711958692364">blocked3.mp3</a><br><a href="@@PLUGINFILE@@/blocked4.mp3?time=1711958705728">blocked4.mp3</a><br>]]></introduction>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>blocked</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>weekend</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>some</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>post</text>
+      <feedback format="moodle_auto_format">
+        <text></text>
+      </feedback>
+    </answer>
+    <delimitchars>[]</delimitchars>
+    <wordpenalty>1.0000000</wordpenalty>
+    <!-- Wordselect release:2.50 version:2023102200 Moodle version:2023042400 release:4.2 (Build: 20230424) -->
+    <correctfeedback format="html">
+      <text><![CDATA[<p>Your answer is correct.</p>]]></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text><![CDATA[<p>Your answer is partially correct.</p>]]></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text><![CDATA[<p>Your answer is incorrect.</p>]]></text>
+    </incorrectfeedback>
+  </question>
+
+</quiz>
