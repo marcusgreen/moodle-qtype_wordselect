@@ -20,7 +20,6 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-/* global $ */
 define(function() {
   /**
    * Initialise the quesiton instance with a unique id
@@ -29,20 +28,22 @@ define(function() {
    * @param {int} questionId
    */
   function WordSelectQuestion(questionId) {
-    $('#' + questionId + ' .selectable').on('keydown', function(e) {
-      /* Space bar */
-      if (e.keyCode === 32) {
-        toggleSelection($(this));
-        return false;
-      }
-      /* Eat the keycode so it doesnt scroll the screen down */
-      if (e.keyCode === 32) {
-        return false;
-      }
-      return true;
-    });
-    $('#' + questionId + ' .selectable').on('click', function() {
-      toggleSelection($(this));
+    const questionElement = document.getElementById(questionId);
+    const selectables = questionElement.querySelectorAll(".selectable");
+
+    selectables.forEach((selectable) => {
+      selectable.addEventListener("keydown", (e) => {
+        if (e.key === " ") {
+          toggleSelection(selectable);
+          e.preventDefault();
+          return false;
+        }
+        return true;
+      });
+
+      selectable.addEventListener("click", () => {
+        toggleSelection(selectable);
+      });
     });
   }
 
@@ -52,16 +53,16 @@ define(function() {
    * @param {string} selection
    */
   function toggleSelection(selection) {
-    var iselected = $(selection).hasClass('selected');
-    var wordname = selection.attr('name');
-    var hidden = document.getElementById(wordname);
+
+    var isSelected = selection.classList.contains('selected');
+    var hidden = document.getElementById(selection.id);
     if (hidden === null || hidden.disabled === true) {
       return;
     }
-    if (iselected === true) {
-      selection.removeClass('selected');
-      selection.removeAttr('title');
-      selection.attr('aria-checked', 'false');
+    if (isSelected  === true) {
+      selection.classList.remove('selected');
+      selection.removeAttribute('title');
+      selection.setAttribute('aria-checked', 'false');
       /* Convert type to text, because
       * unchecked textboxes would not
       * be included in the response
@@ -71,9 +72,9 @@ define(function() {
       hidden.style.display = 'none';
       hidden.value = '';
     } else {
-      selection.addClass('selected');
-      selection.prop('title', 'selected');
-      selection.attr('aria-checked', 'true');
+      selection.className += ' selected';
+      selection.title = 'selected';
+      selection.setAttribute('aria-checked', 'true');
       hidden.type = 'checkbox';
       hidden.value = 'on';
       hidden.checked = 'true';
