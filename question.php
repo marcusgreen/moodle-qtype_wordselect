@@ -462,9 +462,14 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
                 }
             }
         }
-        $wrongfraction = @(($this->wrongresponsecount * $this->wordpenalty) / count($correctplaces));
-        $fraction = @($this->rightresponsecount / count($correctplaces));
-        $fraction = max(0, $fraction - $wrongfraction);
+
+        if (count($correctplaces) > 0 ) {
+            $wrongfraction = $this->wrongresponsecount * $this->wordpenalty / count($correctplaces);
+            $fraction = $this->rightresponsecount / count($correctplaces);
+            $fraction = max(0, $fraction - $wrongfraction);
+        } else {
+            $fraction = ($this->wrongresponsecount > 0) ? 0 : 1;
+        }
         $grade = array($fraction, question_state::graded_state_for_fraction($fraction));
         return $grade;
     }
@@ -499,7 +504,12 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             $penalty = $wrongresponsecount * $this->wordpenalty;
             /* add penalty for each hint shown/try */
             $penalty += $attemptcount * $this->penalty;
-            $fraction = @(($rightresponsecount - $penalty) / count($correctplaces));
+
+            if (count($correctplaces) > 0 ) {
+                $fraction = ($rightresponsecount - $penalty) / count($correctplaces);
+            } else {
+                $fraction = ($this->wrongresponsecount > 0) ? 0 : 1;
+            }
             /*max ensures fraction is always > 0 */
             $fraction = max(0, $fraction);
         }
