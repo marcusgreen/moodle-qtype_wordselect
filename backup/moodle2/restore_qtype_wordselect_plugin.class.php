@@ -182,4 +182,15 @@ class restore_qtype_wordselect_plugin extends restore_qtype_plugin {
         $this->set_mapping('question_answer', $oldid, $newitemid);
     }
 
+    /**
+     * Return a list of paths to fields to be removed from questiondata before creating an identity hash.
+     * We have to remove the id property from all answers.
+     *
+     * @return array
+     */
+    protected function define_excluded_identity_hash_fields(): array {
+        return [
+            '/options/answers/id',
+        ];
+    }
 }
