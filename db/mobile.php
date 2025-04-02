@@ -34,18 +34,18 @@ $addons = [
                 'delegate' => 'CoreQuestionDelegate', // Delegate (where to display the link to the add-on).
                 'method' => 'mobile_get_wordselect',
                 'offlinefunctions' => [
-                    'mobile_get_wordselect' => array(),
+                    'mobile_get_wordselect' => [],
                 ], // Function needs caching for offline.
                 'styles' => [
                     'url' => '/question/type/wordselect/mobile/styles_app.css',
-                    'version' => '1.10'
-                ]
-            ]
+                    'version' => '1.10',
+                ],
+            ],
         ],
         'lang' => [
-                    array('pluginname', 'qtype_wordselect'),
-                    array('taptoselect', 'qtype_wordselect')
+                    ['pluginname', 'qtype_wordselect'],
+                    ['taptoselect', 'qtype_wordselect'],
         ],
-    ]
+    ],
 ];
 

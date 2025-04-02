@@ -51,7 +51,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
 
     /**
      * Do all selectable items need to be marked with delimiters
-     * @var boolean
+     * @var bool
      */
     public $multiword = false;
 
@@ -242,7 +242,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * @return array index places in array of correct words
      */
     public function get_correct_places($questiontext, $delimitchars) {
-        $correctplaces = array();
+        $correctplaces = [];
         $items = $this->get_words(false);
 
         $l = substr($delimitchars, 0, 1);
@@ -374,7 +374,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      */
     public function get_correct_response() {
         $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
-        $correctresponse = array();
+        $correctresponse = [];
         foreach ($correctplaces as $place) {
             $correctresponse['p' . $place] = 'on';
         }
@@ -395,7 +395,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     public function check_file_access($qa, $options, $component, $filearea, $args, $forcedownload) {
         if ($component == 'question' && $filearea == 'answerfeedback') {
             $currentanswer = $qa->get_last_qt_var('answer');
-            $answer = $this->get_matching_answer(array('answer' => $currentanswer));
+            $answer = $this->get_matching_answer(['answer' => $currentanswer]);
             $answerid = reset($args); // Itemid is answer id.
             return $options->feedback && $answer && $answerid == $answer->id;
         } else if ($component == 'question' && $filearea == 'hint') {
@@ -465,7 +465,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $wrongfraction = @(($this->wrongresponsecount * $this->wordpenalty) / count($correctplaces));
         $fraction = @($this->rightresponsecount / count($correctplaces));
         $fraction = max(0, $fraction - $wrongfraction);
-        $grade = array($fraction, question_state::graded_state_for_fraction($fraction));
+        $grade = [$fraction, question_state::graded_state_for_fraction($fraction)];
         return $grade;
     }
 
@@ -584,14 +584,14 @@ class wordselect_item {
 
     /**
      * do selectables have to be marked
-     * @var boolean
+     * @var bool
      */
     private $multiword;
 
     /**
      * is this item selectable. Only makes
      * sense if multiword is true
-     * @var boolean
+     * @var bool
      */
     public $isselectable;
 

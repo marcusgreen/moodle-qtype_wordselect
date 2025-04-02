@@ -39,7 +39,7 @@ class restore_qtype_wordselect_plugin extends restore_qtype_plugin {
      */
     protected function define_question_plugin_structure() {
 
-        $paths = array();
+        $paths = [];
 
         // This qtype uses question_answers, add them.
         $this->add_question_question_answers($paths);
@@ -83,9 +83,9 @@ class restore_qtype_wordselect_plugin extends restore_qtype_plugin {
      */
     public static function define_decode_contents() {
 
-        $contents = array();
+        $contents = [];
 
-        $fields = array('correctfeedback', 'partiallycorrectfeedback', 'incorrectfeedback');
+        $fields = ['correctfeedback', 'partiallycorrectfeedback', 'incorrectfeedback'];
         $contents[] = new restore_decode_content('question_wordselect', $fields, 'question_wordselect');
         return $contents;
     }
@@ -119,7 +119,7 @@ class restore_qtype_wordselect_plugin extends restore_qtype_plugin {
         $questioncreated = $this->get_mappingid('question_created', $oldquestionid) ? true : false;
 
         // This seems entirely redundant and a legacy of code copied from elsewhere.
-        $changes = array(
+        $changes = [
             '-0.66666' => '-0.6666667',
             '-0.33333' => '-0.3333333',
             '-0.16666' => '-0.1666667',
@@ -130,7 +130,7 @@ class restore_qtype_wordselect_plugin extends restore_qtype_plugin {
             '0.33333' => '0.3333333',
             '0.333333' => '0.3333333',
             '0.66666' => '0.6666667',
-        );
+        ];
         if (array_key_exists($data->fraction, $changes)) {
             $data->fraction = $changes[$data->fraction];
         }
@@ -150,13 +150,13 @@ class restore_qtype_wordselect_plugin extends restore_qtype_plugin {
                       FROM {question_answers}
                      WHERE question = ?
                        AND ' . $DB->sql_compare_text('answer', 255) . ' = ' . $DB->sql_compare_text('?', 255);
-            $params = array($newquestionid, $data->answertext);
+            $params = [$newquestionid, $data->answertext];
             $newitemid = $DB->get_field_sql($sql, $params, IGNORE_MULTIPLE);
 
             // Not able to find the answer, let's try cleaning the answertext
             // of all the question answers in DB as slower fallback. MDL-30018.
             if (!$newitemid) {
-                $params = array('question' => $newquestionid);
+                $params = ['question' => $newquestionid];
                 $answers = $DB->get_records('question_answers', $params, '', 'id, answer');
                 foreach ($answers as $answer) {
                     // Clean in the same way as xml_writer::xml_safe_utf8() .

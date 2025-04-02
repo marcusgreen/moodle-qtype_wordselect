@@ -13,6 +13,7 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
 /**
  * wordselect question renderer class.
  *
@@ -82,7 +83,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
       * @return string
       */
     public function get_body(qtype_wordselect_question $question, question_display_options $options, array $items,
-                            question_attempt $qa ) : string {
+                            question_attempt $qa ): string {
         $output = "";
         $response = $qa->get_last_qt_data();
 
@@ -91,7 +92,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         foreach ($items as $place => $item) {
             $word = $item->get_without_delim();
             $correctnoselect = false;
-            $wordattributes = array("role" => "checkbox");
+            $wordattributes = ["role" => "checkbox"];
             $afterwordfeedback = '';
             $wordattributes['name'] = $this->get_input_name($qa, $place);
             $wordattributes['id'] = $this->get_input_id($qa, $place);
@@ -178,7 +179,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             'name' => $wordattributes['name'],
             'id' => $wordattributes['name'],
             'hidden' => 'true',
-            'class' => 'selcheck'
+            'class' => 'selcheck',
         ];
         if ($isselected == true) {
             $properties['checked'] = "true";

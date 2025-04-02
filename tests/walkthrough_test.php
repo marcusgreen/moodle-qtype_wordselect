@@ -23,7 +23,7 @@
  */
 namespace qtype_wordselect;
 defined('MOODLE_INTERNAL') || die();
-use \qtype_wordselect_test_helper as helper;
+use qtype_wordselect_test_helper as helper;
 
 global $CFG;
 
@@ -36,7 +36,7 @@ require_once($CFG->dirroot . '/question/type/wordselect/tests/helper.php');
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @coversDefaultClass \question\type\wordselect\renderer
  */
-class walkthrough_test extends \qbehaviour_walkthrough_test_base {
+final class walkthrough_test extends \qbehaviour_walkthrough_test_base {
 
      /**
       * Test the behaviour of the renderer when ussing interactive with correct behaviour.
@@ -44,7 +44,7 @@ class walkthrough_test extends \qbehaviour_walkthrough_test_base {
       *
       * @covers ::formulation_and_controls
       */
-    public function test_interactive_with_correct() {
+    public function test_interactive_with_correct(): void {
         // Create a wordselect question.
         $question = helper::make_question('wordselect');
         $maxmark = 1;
@@ -66,7 +66,7 @@ class walkthrough_test extends \qbehaviour_walkthrough_test_base {
 
         // Save a  correct response.
         // Default quesiton text is The cat [sat].
-        $this->process_submission(array('p4' => 'on'));
+        $this->process_submission(['p4' => 'on']);
         $this->check_step_count(2);
 
         $this->check_current_state(\question_state::$todo);
@@ -80,7 +80,7 @@ class walkthrough_test extends \qbehaviour_walkthrough_test_base {
               $this->get_no_hint_visible_expectation());
 
         // Submit saved response.
-        $this->process_submission(array('-submit' => 1, 'p4' => 'on'));
+        $this->process_submission(['-submit' => 1, 'p4' => 'on']);
         $this->check_step_count(3);
         // Verify.
         $this->check_current_state(\question_state::$gradedright);

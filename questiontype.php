@@ -40,7 +40,7 @@ class qtype_wordselect extends question_type {
      * @return array
      */
     public function extra_question_fields() {
-        return array('question_wordselect', 'introduction', 'delimitchars', 'wordpenalty');
+        return ['question_wordselect', 'introduction', 'delimitchars', 'wordpenalty'];
     }
 
     /**
@@ -81,7 +81,7 @@ class qtype_wordselect extends question_type {
         $context = $formdata->context;
         // Fetch old answer ids so that we can reuse them.
         $this->update_question_answers($formdata, $answerwords);
-        $options = $DB->get_record('question_wordselect', array('questionid' => $formdata->id));
+        $options = $DB->get_record('question_wordselect', ['questionid' => $formdata->id]);
         $this->update_question_wordselect($formdata, $options, $context);
         $this->save_hints($formdata, true);
         return true;
@@ -101,7 +101,7 @@ class qtype_wordselect extends question_type {
     public static function get_answerwords($delimitchars, $questiontext) {
         $delim = self::get_delimit_array($delimitchars);
         $fieldregex = '/.*?\\' . $delim["l"] . '(.*?)\\' . $delim["r"] . '/';
-        $matches = array();
+        $matches = [];
         preg_match_all($fieldregex, $questiontext, $matches);
         return $matches[1];
     }
@@ -114,7 +114,7 @@ class qtype_wordselect extends question_type {
      * @return string
      */
     public static function get_delimit_array($delimitchars) {
-        $delimitarray = array();
+        $delimitarray = [];
         $delimitarray["l"] = substr($delimitchars, 0, 1);
         $delimitarray["r"] = substr($delimitchars, 1, 1);
         return $delimitarray;
@@ -136,7 +136,7 @@ class qtype_wordselect extends question_type {
          * comes from the import and from $question->wronganswers field which
          * comes from the question_editing form.
          */
-        $answerfields = array();
+        $answerfields = [];
         /* this next block runs when importing from xml */
         if (property_exists($question, 'answer')) {
             foreach ($question->answer as $key => $value) {
@@ -166,7 +166,7 @@ class qtype_wordselect extends question_type {
      */
     public function update_question_answers($question, array $answerwords) {
         global $DB;
-        $oldanswers = $DB->get_records('question_answers', array('question' => $question->id), 'id ASC');
+        $oldanswers = $DB->get_records('question_answers', ['question' => $question->id], 'id ASC');
         // Insert all the new answers.
         foreach ($answerwords as $word) {
             // Save the true answer - update an existing answer if possible.
@@ -188,7 +188,7 @@ class qtype_wordselect extends question_type {
         }
         // Delete old answer records.
         foreach ($oldanswers as $oa) {
-            $DB->delete_records('question_answers', array('id' => $oa->id));
+            $DB->delete_records('question_answers', ['id' => $oa->id]);
         }
     }
 
@@ -201,7 +201,7 @@ class qtype_wordselect extends question_type {
      */
     public function update_question_wordselect($formdata, $options, $context) {
         global $DB;
-        $options = $DB->get_record('question_wordselect', array('questionid' => $formdata->id));
+        $options = $DB->get_record('question_wordselect', ['questionid' => $formdata->id]);
         if (!$options) {
             $options = new stdClass();
             $options->questionid = $formdata->id;
@@ -241,7 +241,7 @@ class qtype_wordselect extends question_type {
     public function get_question_options($question) {
         global $DB;
         $question->options = $DB->get_record('question_wordselect',
-               array('questionid' => $question->id), '*', MUST_EXIST);
+               ['questionid' => $question->id], '*', MUST_EXIST);
         parent::get_question_options($question);
     }
 
@@ -328,7 +328,7 @@ class qtype_wordselect extends question_type {
      */
     public function get_possible_responses($questiondata) {
         // TODO.
-        return array();
+        return [];
     }
 
     /**

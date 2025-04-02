@@ -37,7 +37,7 @@ class qtype_wordselect_test_helper extends question_test_helper {
      * @return array
      */
     public function get_test_questions() {
-        return array('catmat');
+        return ['catmat'];
     }
 
     /**
@@ -47,7 +47,7 @@ class qtype_wordselect_test_helper extends question_test_helper {
      * @param array $options
      * @return \qtype_wordselect_question
      */
-    public static function make_question($type, $questiontext='The cat [sat]', $options = array('delimitchars' => '[])')) {
+    public static function make_question($type, $questiontext='The cat [sat]', $options = ['delimitchars' => '[])']) {
         question_bank::load_question_definition_classes($type);
         $question = new qtype_wordselect_question();
         $question->questiontext = $questiontext;

@@ -49,18 +49,18 @@ class backup_qtype_wordselect_plugin extends backup_qtype_plugin {
          $this->add_question_question_answers($pluginwrapper);
 
         // Now create the qtype own structures.
-        $wordselect = new backup_nested_element('wordselect', array('id'), array(
+        $wordselect = new backup_nested_element('wordselect', ['id'], [
             'introduction', 'delimitchars', 'wordpenalty',
             'correctfeedback', 'correctfeedbackformat',
             'partiallycorrectfeedback',
             'partiallycorrectfeedbackformat',
-            'incorrectfeedback', 'incorrectfeedbackformat'));
+            'incorrectfeedback', 'incorrectfeedbackformat']);
         // Now the own qtype tree.
         $pluginwrapper->add_child($wordselect);
 
         // Set source to populate the data.
         $wordselect->set_source_table('question_wordselect',
-                array('questionid' => backup::VAR_PARENTID));
+                ['questionid' => backup::VAR_PARENTID]);
         // Don't need to annotate ids nor files.
         return $plugin;
     }
@@ -72,10 +72,10 @@ class backup_qtype_wordselect_plugin extends backup_qtype_plugin {
      * files to be processed both in backup and restore.
      */
     public static function get_qtype_fileareas() {
-        return array(
+        return [
             'introduction' => 'question_created',
             'correctfeedback' => 'question_created',
             'partiallycorrectfeedback' => 'question_created',
-            'incorrectfeedback' => 'question_created');
+            'incorrectfeedback' => 'question_created'];
     }
 }
