@@ -44,27 +44,27 @@ class qtype_wordselect_edit_form extends question_edit_form {
         $mform->removeelement('defaultmark');
 
         $mform->addElement('editor', 'introduction',
-                get_string('introduction', 'qtype_wordselect'), array('size' => 70, 'rows' => 2),
+                get_string('introduction', 'qtype_wordselect'), ['size' => 70, 'rows' => 2],
                 $this->editoroptions);
         $mform->setType('introduction', PARAM_RAW);
 
         $mform->addHelpButton('introduction', 'introduction', 'qtype_wordselect');
 
         $mform->addElement('editor', 'questiontext', get_string('questiontext', 'question'),
-                array('rows' => 15), $this->editoroptions);
+                ['rows' => 15], $this->editoroptions);
         $mform->setType('questiontext', PARAM_RAW);
 
         $mform->addHelpButton('questiontext', 'questiontext', 'qtype_wordselect');
 
         $mform->addElement('editor', 'generalfeedback', get_string('generalfeedback', 'question')
-                , array('rows' => 10), $this->editoroptions);
+                , ['rows' => 10], $this->editoroptions);
 
         $mform->setType('generalfeedback', PARAM_RAW);
         $mform->addHelpButton('generalfeedback', 'generalfeedback', 'question');
         $this->add_penalty($mform);
 
         // The delimiting characters around fields.
-        $delimitchars = array("[]" => "[ ]", "{}" => "{ }", "##" => "##", "@@" => "@ @");
+        $delimitchars = ["[]" => "[ ]", "{}" => "{ }", "##" => "##", "@@" => "@ @"];
         $mform->addElement('select', 'delimitchars', get_string('delimitchars', 'qtype_wordselect'), $delimitchars);
         $mform->addHelpButton('delimitchars', 'delimitchars', 'qtype_wordselect');
 
@@ -84,7 +84,7 @@ class qtype_wordselect_edit_form extends question_edit_form {
         $introduction = $this->get_introduction($question);
 
         /* ...this ensures introduction is available for image file processing */
-        $this->_form->getElement('introduction')->setValue(array('text' => $introduction));
+        $this->_form->getElement('introduction')->setValue(['text' => $introduction]);
         question_edit_form::set_data($question);
     }
 
@@ -110,7 +110,7 @@ class qtype_wordselect_edit_form extends question_edit_form {
      * @return boolean
      */
     public function validation($fromform, $data) {
-        $errors = array();
+        $errors = [];
         /* don't save the form if there are no fields defined */
         $ws = new qtype_wordselect_question();
         $ws->init($fromform['questiontext']['text'], $fromform['delimitchars']);
@@ -140,7 +140,7 @@ class qtype_wordselect_edit_form extends question_edit_form {
             return $question;
         }
         $draftid = file_get_submitted_draft_itemid('introduction');
-        $question->introduction = array();
+        $question->introduction = [];
         $question->introduction['text'] = file_prepare_draft_area(
             $draftid,           // Draftid.
             $this->context->id, // Context.
@@ -166,21 +166,21 @@ class qtype_wordselect_edit_form extends question_edit_form {
      */
     protected function add_penalty($mform) {
         $config = get_config('qtype_wordselect');
-        $penalties = array(
+        $penalties = [
             1.0000000,
             0.5000000,
             0.3333333,
             0.2500000,
             0.2000000,
             0.1000000,
-            0.0000000
-        );
+            0.0000000,
+        ];
         if (!empty($this->question->wordpenalty) && !in_array($this->question->wordpenalty, $penalties)) {
             $penalties[] = $this->question->wordpenalty;
             sort($penalties);
         }
 
-        $penaltyoptions = array();
+        $penaltyoptions = [];
         foreach ($penalties as $wordpenalty) {
             $penaltyoptions["{$wordpenalty}"] = (100 * $wordpenalty) . '%';
         }

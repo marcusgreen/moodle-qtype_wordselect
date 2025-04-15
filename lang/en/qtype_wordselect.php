@@ -22,27 +22,27 @@
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+$string['correctanswer'] = 'correct answer';
+$string['correctresponse'] = 'correct response ';
+$string['delimitchars'] = 'Delimit characters';
+$string['delimitchars_help'] = 'Change the characters that delimit a field from the default [ ], useful for programming language questions.';
+$string['incorrectresponse'] = 'incorrect response ';
+$string['introduction'] = 'Introduction';
+$string['introduction_help'] = 'Introduction to the question, this text will not be selectable';
+$string['nowordsdefined'] = 'No words to select have been defined ';
+$string['penalty'] = 'Penalty';
+$string['pleaseselectananswer'] = 'Please select an answer.';
 $string['pluginname'] = 'Word Select';
 $string['pluginname_help'] = 'Put delimiters around words considered correct, e.g. The cat [sat] on the mat. At runtime the user can select any of the words apart from the introduction text.';
 $string['pluginname_link'] = 'Wordselect_question_type';
 $string['pluginnameadding'] = 'Adding a wordselect question';
 $string['pluginnameediting'] = 'Editing a wordselect question';
 $string['pluginnamesummary'] = 'All words can be selected by clicking on them. Correct words are defined by surrounding with delimiters e.g. The cat [sat] on the mat.';
-$string['delimitchars'] = 'Delimit characters';
-$string['delimitchars_help'] = 'Change the characters that delimit a field from the default [ ], useful for programming language questions.';
-$string['nowordsdefined'] = 'No words to select have been defined ';
-$string['correctresponse'] = 'correct response ';
-$string['incorrectresponse'] = 'incorrect response ';
-$string['correctanswer'] = 'correct answer';
+$string['privacy:null_reason'] = 'The Wordselect question type does not effect or store any data itself.';
 $string['questiontext'] = 'question text';
 $string['questiontext_help'] = 'Put square braces around the correct words ';
-$string['introduction'] = 'Introduction';
-$string['introduction_help'] = 'Introduction to the question, this text will not be selectable';
-$string['pleaseselectananswer'] = 'Please select an answer.';
-$string['privacy:null_reason'] = 'The Wordselect question type does not effect or store any data itself.';
+$string['taptoselect'] = 'Tap to select';
 $string['wordpenalty'] = 'Incorrect selection penalty';
 $string['wordpenalty_help'] = 'Decrement mark by this percentage for each incorrectly selected word';
-$string['penalty'] = 'Penalty';
 $string['wordpenalty_setting'] = 'Penalty for each incorrect text item selected';
 $string['yougotnrightcount'] = 'You have selected {$a->num} correct items out of {$a->outof}.';
-$string['taptoselect'] = 'Tap to select';

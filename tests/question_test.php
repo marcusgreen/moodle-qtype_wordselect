@@ -13,6 +13,7 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
 /**
  * Unit tests for the wordselect question definition class.
  *
@@ -26,7 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 
 global $CFG;
 
-use \qtype_wordselect_test_helper as helper;
+use qtype_wordselect_test_helper as helper;
 
 
 require_once($CFG->dirroot . '/question/type/questionbase.php');
@@ -44,13 +45,13 @@ require_once($CFG->dirroot . '/question/type/wordselect/renderer.php');
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @coversDefaultClass \question\type\wordselect\question
  */
-class question_test extends \advanced_testcase {
+final class question_test extends \advanced_testcase {
     /**
      * Test the behaviour of get_words() method.
      *
      * @covers ::get_words
      */
-    public function test_get_words() {
+    public function test_get_words(): void {
         // ... this markTestSkipped().
         $questiontext = 'cat [sat] cow [jumped]';
         $question = helper::make_question('wordselect', $questiontext);
@@ -74,7 +75,7 @@ class question_test extends \advanced_testcase {
      *
      * @covers ::test_stripdelim
      */
-    public function test_stripdelim() {
+    public function test_stripdelim(): void {
         $question = helper::make_question('wordselect');
         $stripped = $question->stripdelim('[word]');
         $this->assertEquals('word', $stripped);
@@ -85,14 +86,14 @@ class question_test extends \advanced_testcase {
      *
      * @covers ::test_get_expected_data
      */
-    public function test_get_expected_data() {
+    public function test_get_expected_data(): void {
         $question = helper::make_question('wordselect');
         $expecteddata = [
             'p0' => 'raw_trimmed',
             'p1' => 'raw_trimmed',
             'p2' => 'raw_trimmed',
             'p3' => 'raw_trimmed',
-            'p4' => 'raw_trimmed'
+            'p4' => 'raw_trimmed',
         ];
         $this->assertEquals($question->get_expected_data(), $expecteddata);
     }
@@ -102,9 +103,9 @@ class question_test extends \advanced_testcase {
      *
      * @covers ::test_summarise_response
      */
-    public function test_summarise_response() {
+    public function test_summarise_response(): void {
         $question = helper::make_question('wordselect');
-        $response = array('p2' => 'on');
+        $response = ['p2' => 'on'];
         /* The cat [sat]
         p0 is The p1 is space p2 is cat
          * */
@@ -117,14 +118,14 @@ class question_test extends \advanced_testcase {
      *
      * @covers ::grade_response
      */
-    public function test_grade_response() {
+    public function test_grade_response(): void {
         $question = helper::make_question('wordselect');
-        $response = array('p4' => 'on');
+        $response = ['p4' => 'on'];
         list($fraction, $state) = $question->grade_response($response);
         $this->assertEquals(1, $fraction);
         $questiontext = 'The cat [sat] and the cow [jumped]';
         $question = helper::make_question('wordselect', $questiontext);
-        $response = array('p4' => 'on', 'p6' => 'off');
+        $response = ['p4' => 'on', 'p6' => 'off'];
         list($fraction, $state) = $question->grade_response($response);
         $this->assertEquals($fraction, .5);
     }
@@ -133,7 +134,7 @@ class question_test extends \advanced_testcase {
      *
      * @covers ::compute_final_grade
      */
-    public function test_compute_final_grade() {
+    public function test_compute_final_grade(): void {
         $question = helper::make_question('wordselect');
         $responses[] = ['p4' => 'on'];
         $totaltries = 1;
@@ -146,21 +147,21 @@ class question_test extends \advanced_testcase {
      *
      * @covers ::is_complete_response
      */
-    public function test_is_complete_response() {
+    public function test_is_complete_response(): void {
         $questiontext = 'The cat [sat] and the cow [jumped]';
         $question = helper::make_question('wordselect', $questiontext);
 
         $response = ['p2' => 'on'];
         $this->assertTrue($question->is_complete_response($response));
         /* this time nothing is selected */
-        $response = array();
+        $response = [];
         $this->assertFalse($question->is_complete_response($response));
     }
     /**
      * Is this place one that will be correct if seleced
      * @covers ::is_correct_place
      */
-    public function test_is_correct_place() {
+    public function test_is_correct_place(): void {
         $questiontext = 'The cat [sat] and the cow [jumped]';
         $question = helper::make_question('wordselect', $questiontext);
         $correctplaces = $question->get_correct_places($question->questiontext, "[]");
@@ -170,12 +171,12 @@ class question_test extends \advanced_testcase {
      * Has this word (or set of words) been selected
      * @covers ::is_word_selected
      */
-    public function test_is_word_selected() {
+    public function test_is_word_selected(): void {
         $questiontext = 'The cat [sat] and the cow [jumped]';
         $question = helper::make_question('wordselect', $questiontext);
-        $response = array('p1' => 'on');
+        $response = ['p1' => 'on'];
         $this->assertTrue($question->is_word_selected(1, $response));
-        $response = array('1' => 'on');
+        $response = ['1' => 'on'];
         $this->assertFalse($question->is_word_selected(1, $response));
     }
     /**
@@ -185,7 +186,7 @@ class question_test extends \advanced_testcase {
      *
      * @covers ::pad_angle_brackets
      */
-    public function test_pad_angle_brackets() {
+    public function test_pad_angle_brackets(): void {
         $questiontext = '<p>The cat [<b>sat</b>]';
         $question = helper::make_question('wordselect', $questiontext);
         $paddedquestiontext = $question::pad_angle_brackets($questiontext);
@@ -200,7 +201,7 @@ class question_test extends \advanced_testcase {
      *
      * @covers ::set_is_selectable
      */
-    public function test_set_is_selectable() {
+    public function test_set_is_selectable(): void {
         $questiontext = '<p>[<b>The</b>] [cat] sat [<b>sat</b>]';
         $question = helper::make_question('wordselect', $questiontext);
         $items = $question->get_words(true);
@@ -237,7 +238,7 @@ class question_test extends \advanced_testcase {
      *
      * @covers ::get_wrong_responsecount
      */
-    public function test_get_wrong_responsecount() {
+    public function test_get_wrong_responsecount(): void {
         $questiontext = 'The cat [sat] and the cow [jumped]';
         $question = helper::make_question('wordselect', $questiontext);
         $correctplaces = ['p1' => 'on', 'p2' => 'on'];
@@ -250,7 +251,7 @@ class question_test extends \advanced_testcase {
      * Get array of all the words/groups of word that are correct (get a mark)
      * @covers ::get_correct_places
      */
-    public function test_get_correct_places() {
+    public function test_get_correct_places(): void {
         $question = helper::make_question('wordselect');
         /* counting from 0 the correct place is 2 (i.e. the word sat) */
         $correctplaces = ['0' => 4];

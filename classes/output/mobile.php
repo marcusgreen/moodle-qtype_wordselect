@@ -50,10 +50,10 @@ class mobile {
             'templates' => [
                 [
                     'id' => 'main',
-                    'html' => $template
-                ]
+                    'html' => $template,
+                ],
             ],
-            'javascript' => $jscontent
+            'javascript' => $jscontent,
         ];
     }
 }
