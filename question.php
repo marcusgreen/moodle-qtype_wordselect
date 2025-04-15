@@ -470,7 +470,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         } else {
             $fraction = ($this->wrongresponsecount > 0) ? 0 : 1;
         }
-        $grade = array($fraction, question_state::graded_state_for_fraction($fraction));
+        $grade = [$fraction, question_state::graded_state_for_fraction($fraction)];
 
         return $grade;
     }

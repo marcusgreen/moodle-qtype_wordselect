@@ -25,8 +25,8 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'qtype_wordselect';
-$plugin->version  = 2024100800;
+$plugin->version  = 2025041500;
 $plugin->requires = 2022040100;  // Moodle 4.0.
-$plugin->supported = [404, 405];
+$plugin->supported = [404, 500];
 $plugin->maturity  = MATURITY_STABLE;
-$plugin->release  = '2.53';
+$plugin->release  = '2.54';
