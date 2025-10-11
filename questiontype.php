@@ -53,8 +53,13 @@ class qtype_wordselect extends question_type {
     public function move_files($questionid, $oldcontextid, $newcontextid) {
         parent::move_files($questionid, $oldcontextid, $newcontextid);
         $fs = get_file_storage();
-        $fs->move_area_files_to_new_context($oldcontextid,
-                $newcontextid, 'qtype_wordselect', 'introduction', $questionid);
+        $fs->move_area_files_to_new_context(
+            $oldcontextid,
+            $newcontextid,
+            'qtype_wordselect',
+            'introduction',
+            $questionid
+        );
         $this->move_files_in_hints($questionid, $oldcontextid, $newcontextid);
     }
 
@@ -216,8 +221,13 @@ class qtype_wordselect extends question_type {
         }
          /* when coming in from form */
         if (is_array($formdata->introduction)) {
-              $options->introduction = $this->import_or_save_files($formdata->introduction,
-                $context, 'qtype_wordselect', 'introduction', $formdata->id);
+              $options->introduction = $this->import_or_save_files(
+                  $formdata->introduction,
+                  $context,
+                  'qtype_wordselect',
+                  'introduction',
+                  $formdata->id
+              );
         } else {
             /* when being imported e.g. from an xml import */
             $options->introduction = $formdata->introduction;
@@ -240,8 +250,12 @@ class qtype_wordselect extends question_type {
      */
     public function get_question_options($question) {
         global $DB;
-        $question->options = $DB->get_record('question_wordselect',
-               ['questionid' => $question->id], '*', MUST_EXIST);
+        $question->options = $DB->get_record(
+            'question_wordselect',
+            ['questionid' => $question->id],
+            '*',
+            MUST_EXIST
+        );
         parent::get_question_options($question);
     }
 

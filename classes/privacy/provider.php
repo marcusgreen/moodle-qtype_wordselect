@@ -33,6 +33,7 @@ class provider implements
     // This plugin does not store any personal user data.
     \core_privacy\local\metadata\null_provider {
     use \core_privacy\local\legacy_polyfill;
+
     /**
      * Get the language string identifier with the component's language
      * file to explain why this plugin stores no data.

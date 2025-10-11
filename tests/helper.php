@@ -31,7 +31,6 @@ require_once($CFG->dirroot . '/question/engine/tests/helpers.php');
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class qtype_wordselect_test_helper extends question_test_helper {
-
     /**
      * must be implemented or class made abstract
      * @return array
@@ -47,7 +46,7 @@ class qtype_wordselect_test_helper extends question_test_helper {
      * @param array $options
      * @return \qtype_wordselect_question
      */
-    public static function make_question($type, $questiontext='The cat [sat]', $options = ['delimitchars' => '[])']) {
+    public static function make_question($type, $questiontext = 'The cat [sat]', $options = ['delimitchars' => '[])']) {
         question_bank::load_question_definition_classes($type);
         $question = new qtype_wordselect_question();
         $question->questiontext = $questiontext;

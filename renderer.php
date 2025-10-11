@@ -46,13 +46,24 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
         $question = $qa->get_question();
 
         // Ensure Filter are applied.
-        $question->questiontext = $question->format_text($question->questiontext,
-            $question->questiontextformat, $qa, 'qtype_wordselect',
-        'questiontext', $question->id);
+        $question->questiontext = $question->format_text(
+            $question->questiontext,
+            $question->questiontextformat,
+            $qa,
+            'qtype_wordselect',
+            'questiontext',
+            $question->id
+        );
         $output .= html_writer::start_div('introduction');
         // Ensure filters are applied to the introduction, done particularly for the multilang filter.
-        $output .= $question->format_text($question->introduction, $question->questiontextformat, $qa, 'qtype_wordselect',
-                'introduction', $question->id);
+        $output .= $question->format_text(
+            $question->introduction,
+            $question->questiontextformat,
+            $qa,
+            'qtype_wordselect',
+            'introduction',
+            $question->id
+        );
         $output .= html_writer::end_div();
         $output .= html_writer::start_div('qtext');
 
@@ -61,14 +72,23 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
 
         /* this ensures that any files inserted through the editor menu will display */
         $output = $question->format_text(
-          $output, $question->questiontextformat, $qa, 'question', 'questiontext', $question->id);
+            $output,
+            $question->questiontextformat,
+            $qa,
+            'question',
+            'questiontext',
+            $question->id
+        );
 
         $output .= html_writer::end_div();
         if ($qa->get_state() == question_state::$invalid) {
             $output .= html_writer::div($question->get_validation_error($qa->get_last_qt_data()), 'validationerror');
         }
-        $this->page->requires->js_call_amd('qtype_wordselect/selection', 'init',
-        [$qa->get_outer_question_div_unique_id()]);
+        $this->page->requires->js_call_amd(
+            'qtype_wordselect/selection',
+            'init',
+            [$qa->get_outer_question_div_unique_id()]
+        );
 
         return $output;
     }
@@ -82,13 +102,19 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
       * @param question_attempt $qa
       * @return string
       */
-    public function get_body(qtype_wordselect_question $question, question_display_options $options, array $items,
-                            question_attempt $qa ): string {
+    public function get_body(
+        qtype_wordselect_question $question,
+        question_display_options $options,
+        array $items,
+        question_attempt $qa
+    ): string {
         $output = "";
         $response = $qa->get_last_qt_data();
 
-        $correctplaces = $question->get_correct_places($question->questiontext,
-        $question->delimitchars);
+        $correctplaces = $question->get_correct_places(
+            $question->questiontext,
+            $question->delimitchars
+        );
         foreach ($items as $place => $item) {
             $word = $item->get_without_delim();
             $correctnoselect = false;
@@ -103,8 +129,11 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             if ($isselected) {
                 $wordattributes['class'] = 'selected';
                 if ($options->correctness == 1) {
-                    list($wordattributes, $afterwordfeedback) = $this->get_wordattributes(
-                        $iscorrectplace, $wordattributes, $options);
+                    [$wordattributes, $afterwordfeedback] = $this->get_wordattributes(
+                        $iscorrectplace,
+                        $wordattributes,
+                        $options
+                    );
                 }
             } else {
                 if ($iscorrectplace && $options->rightanswer) {
@@ -146,7 +175,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
                     $wordattributes['class'] = $class;
                     $wordattributes['aria-checked'] = 'false';
                 }
-                list($wordattributes, $properties)  = $this->get_checkbox_properties($wordattributes, $isselected);
+                [$wordattributes, $properties]  = $this->get_checkbox_properties($wordattributes, $isselected);
 
                 $checkbox = html_writer::empty_tag('input', $properties);
             }
@@ -195,7 +224,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
      * @param array $wordattributes
      * @return array
      */
-    public function get_wordattributes(bool $iscorrectplace , array $wordattributes) {
+    public function get_wordattributes(bool $iscorrectplace, array $wordattributes) {
         if ($iscorrectplace) {
             $wordattributes['title'] = get_string('correctresponse', 'qtype_wordselect');
             $wordattributes['class'] = 'correctresponse';
@@ -256,7 +285,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             if (!$qa->get_question()->is_gradable_response($response)) {
                 return '';
             }
-            list($notused, $state) = $qa->get_question()->grade_response($response);
+            [$notused, $state] = $qa->get_question()->grade_response($response);
         }
         $feedback = '';
         $field = $state->get_feedback_class() . 'feedback';
@@ -276,13 +305,13 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
      */
     protected function num_parts_correct(question_attempt $qa) {
         $a = new stdClass();
-        list($a->num, $a->outof) = $qa->get_question()->get_num_parts_right(
-                $qa->get_last_qt_data());
+        [$a->num, $a->outof] = $qa->get_question()->get_num_parts_right(
+            $qa->get_last_qt_data()
+        );
         if (is_null($a->outof)) {
             return '';
         } else {
             return get_string('yougotnrightcount', 'qtype_wordselect', $a);
         }
     }
-
 }

@@ -30,7 +30,6 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class backup_qtype_wordselect_plugin extends backup_qtype_plugin {
-
     /**
      * Returns the qtype information to attach to question element
      */
@@ -59,8 +58,10 @@ class backup_qtype_wordselect_plugin extends backup_qtype_plugin {
         $pluginwrapper->add_child($wordselect);
 
         // Set source to populate the data.
-        $wordselect->set_source_table('question_wordselect',
-                ['questionid' => backup::VAR_PARENTID]);
+        $wordselect->set_source_table(
+            'question_wordselect',
+            ['questionid' => backup::VAR_PARENTID]
+        );
         // Don't need to annotate ids nor files.
         return $plugin;
     }
