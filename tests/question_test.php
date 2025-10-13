@@ -121,12 +121,12 @@ final class question_test extends \advanced_testcase {
     public function test_grade_response(): void {
         $question = helper::make_question('wordselect');
         $response = ['p4' => 'on'];
-        list($fraction, $state) = $question->grade_response($response);
+        [$fraction, $state] = $question->grade_response($response);
         $this->assertEquals(1, $fraction);
         $questiontext = 'The cat [sat] and the cow [jumped]';
         $question = helper::make_question('wordselect', $questiontext);
         $response = ['p4' => 'on', 'p6' => 'off'];
-        list($fraction, $state) = $question->grade_response($response);
+        [$fraction, $state] = $question->grade_response($response);
         $this->assertEquals($fraction, .5);
     }
     /**
@@ -257,5 +257,4 @@ final class question_test extends \advanced_testcase {
         $correctplaces = ['0' => 4];
         $this->assertEquals($question->get_correct_places($question->questiontext, '[]'), $correctplaces);
     }
-
 }

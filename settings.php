@@ -42,8 +42,11 @@ if ($ADMIN->fulltree) {
         $penaltyoptions["{$penalty}"] = (100 * $penalty) . '%';
     }
 
-    $settings->add(new admin_setting_configselect('qtype_wordselect/wordpenalty',
-            new lang_string('penalty', 'qtype_wordselect'),
-            new lang_string('wordpenalty_setting', 'qtype_wordselect'),
-            1, $penaltyoptions));
+    $settings->add(new admin_setting_configselect(
+        'qtype_wordselect/wordpenalty',
+        new lang_string('penalty', 'qtype_wordselect'),
+        new lang_string('wordpenalty_setting', 'qtype_wordselect'),
+        1,
+        $penaltyoptions
+    ));
 }

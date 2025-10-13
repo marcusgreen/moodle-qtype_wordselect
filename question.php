@@ -32,7 +32,6 @@ defined('MOODLE_INTERNAL') || die();
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class qtype_wordselect_question extends question_graded_automatically_with_countback {
-
     /** @var string Introductory instructions shown before the question text. */
     public $introduction;
 
@@ -132,7 +131,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         $questiontextnodelim = $this->questiontext;
         $l = substr($this->delimitchars, 0, 1);
         $r = substr($this->delimitchars, 1, 1);
-        $fieldregex = '/(\\s+)|(\\' . $l . '{1,2}[^\\'.$r.']*\\' . $r . '{1,2})|(&nbsp;)|(\s)/';
+        $fieldregex = '/(\\s+)|(\\' . $l . '{1,2}[^\\' . $r . ']*\\' . $r . '{1,2})|(&nbsp;)|(\s)/';
         if (strpos($questiontextnodelim, $l . $l) !== false) {
             $this->multiword = true;
             $matches = preg_split($fieldregex, $questiontextnodelim, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
@@ -201,14 +200,14 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         will also accept <span style="color:colorname">word</span> */
         $tags = ['sub', 'sup', 'i', 'u', 'b', 'strike', 'em', 'strong', 'code', 'kbd', 'var', 'del', 'ins', 'small'];
         // Put a space before and after open tag html.
-        $questiontext = preg_replace_callback('/(\<([a-zA-Z]*)[^>]*\>)/', function($a) use ($tags) {
+        $questiontext = preg_replace_callback('/(\<([a-zA-Z]*)[^>]*\>)/', function ($a) use ($tags) {
             if (!empty($a[2]) && !in_array($a[2], $tags)) {
                 return ' ' . $a[1] . ' ';
             }
             return $a[0];
         }, $questiontext);
         // Put a space before and after close tag html.
-        $questiontext = preg_replace_callback('/\<\/([a-zA-Z]*)\>/', function($a) use ($tags) {
+        $questiontext = preg_replace_callback('/\<\/([a-zA-Z]*)\>/', function ($a) use ($tags) {
             if (!empty($a[1]) && !in_array($a[1], $tags)) {
                 return ' ' . $a[0] . ' ';
             }
@@ -463,7 +462,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             }
         }
 
-        if (count($correctplaces) > 0 ) {
+        if (count($correctplaces) > 0) {
             $wrongfraction = $this->wrongresponsecount * $this->wordpenalty / count($correctplaces);
             $fraction = $this->rightresponsecount / count($correctplaces);
             $fraction = max(0, $fraction - $wrongfraction);
@@ -506,7 +505,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             /* add penalty for each hint shown/try */
             $penalty += $attemptcount * $this->penalty;
 
-            if (count($correctplaces) > 0 ) {
+            if (count($correctplaces) > 0) {
                 $fraction = ($rightresponsecount - $penalty) / count($correctplaces);
             } else {
                 $fraction = ($this->wrongresponsecount > 0) ? 0 : 1;
@@ -568,7 +567,6 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class wordselect_item {
-
     /**
      * left delimiter
      * @var string
@@ -713,5 +711,4 @@ class wordselect_item {
         $matches = preg_replace('/\\' . $this->r . '/', '', $matches);
         return $matches;
     }
-
 }

@@ -43,21 +43,35 @@ class qtype_wordselect_edit_form extends question_edit_form {
         // Default mark will be set to 1 * number of fields.
         $mform->removeelement('defaultmark');
 
-        $mform->addElement('editor', 'introduction',
-                get_string('introduction', 'qtype_wordselect'), ['size' => 70, 'rows' => 2],
-                $this->editoroptions);
+        $mform->addElement(
+            'editor',
+            'introduction',
+            get_string('introduction', 'qtype_wordselect'),
+            ['size' => 70, 'rows' => 2],
+            $this->editoroptions
+        );
         $mform->setType('introduction', PARAM_RAW);
 
         $mform->addHelpButton('introduction', 'introduction', 'qtype_wordselect');
 
-        $mform->addElement('editor', 'questiontext', get_string('questiontext', 'question'),
-                ['rows' => 15], $this->editoroptions);
+        $mform->addElement(
+            'editor',
+            'questiontext',
+            get_string('questiontext', 'question'),
+            ['rows' => 15],
+            $this->editoroptions
+        );
         $mform->setType('questiontext', PARAM_RAW);
 
         $mform->addHelpButton('questiontext', 'questiontext', 'qtype_wordselect');
 
-        $mform->addElement('editor', 'generalfeedback', get_string('generalfeedback', 'question')
-                , ['rows' => 10], $this->editoroptions);
+        $mform->addElement(
+            'editor',
+            'generalfeedback',
+            get_string('generalfeedback', 'question'),
+            ['rows' => 10],
+            $this->editoroptions
+        );
 
         $mform->setType('generalfeedback', PARAM_RAW);
         $mform->addHelpButton('generalfeedback', 'generalfeedback', 'question');
@@ -114,8 +128,10 @@ class qtype_wordselect_edit_form extends question_edit_form {
         /* don't save the form if there are no fields defined */
         $ws = new qtype_wordselect_question();
         $ws->init($fromform['questiontext']['text'], $fromform['delimitchars']);
-        $correctplaces = $ws->get_correct_places($fromform['questiontext']['text'],
-                $fromform['delimitchars']);
+        $correctplaces = $ws->get_correct_places(
+            $fromform['questiontext']['text'],
+            $fromform['delimitchars']
+        );
         if (count($correctplaces) == 0) {
             $errors['questiontext'] = get_string('nowordsdefined', 'qtype_wordselect');
         }
@@ -142,10 +158,10 @@ class qtype_wordselect_edit_form extends question_edit_form {
         $draftid = file_get_submitted_draft_itemid('introduction');
         $question->introduction = [];
         $question->introduction['text'] = file_prepare_draft_area(
-            $draftid,           // Draftid.
+            $draftid, // Draftid.
             $this->context->id, // Context.
-            'qtype_wordselect',         // Component.
-            'introduction',     // Filarea.
+            'qtype_wordselect', // Component.
+            'introduction', // Filarea.
             !empty($question->id) ? (int) $question->id : null, // Itemid.
             $this->fileoptions, // Options.
             $question->options->introduction // Text.
@@ -197,5 +213,4 @@ class qtype_wordselect_edit_form extends question_edit_form {
     public function qtype() {
         return 'wordselect';
     }
-
 }
