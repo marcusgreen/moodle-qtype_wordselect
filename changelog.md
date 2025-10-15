@@ -1,4 +1,8 @@
 
+# Version 2.55 of the Moodle Wordselect question type by Marcus Green Oct 25
+Confirmed compatibility with Moodle 5.1
+Moved items class to a separate file for coding standards compliance
+
 # Version 2.54 of the Moodle Wordselect question type by Marcus Green April 25
 Confirmed compatibility with Moodle 5.0
 Thanks to  Philipp Imhof with help getting the ci testing to work. Thanks to Ralf Erlebach for a fix to a division by zero error.

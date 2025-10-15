@@ -59,7 +59,7 @@ define(function() {
     if (hidden === null || hidden.disabled === true) {
       return;
     }
-    if (isSelected  === true) {
+    if (isSelected === true) {
       selection.classList.remove('selected');
       selection.removeAttribute('title');
       selection.setAttribute('aria-checked', 'false');
