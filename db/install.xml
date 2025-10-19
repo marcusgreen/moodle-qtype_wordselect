@@ -6,21 +6,21 @@
   <TABLES>
     <TABLE NAME="question_wordselect" COMMENT="Options for wordselect questions">
       <FIELDS>
-        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" NEXT="question"/>
-        <FIELD NAME="questionid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Foreign key references question.id" PREVIOUS="id" NEXT="answerdisplay"/>
-        <FIELD NAME="introduction" TYPE="text" NOTNULL="false" SEQUENCE="false" PREVIOUS="disableregex" NEXT="correctfeedbackformat"/>
-        <FIELD NAME="delimitchars" TYPE="char" LENGTH="2" NOTNULL="false" DEFAULT="[]" SEQUENCE="false" COMMENT="The characters that define fields, generally defaults to [] i.e. The [cat] sat on the [mat] where the fields are [cat] and [mat]" PREVIOUS="answerdisplay" NEXT="casesensitive"/>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="questionid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Foreign key references question.id"/>
+        <FIELD NAME="introduction" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="delimitchars" TYPE="char" LENGTH="2" NOTNULL="false" DEFAULT="[]" SEQUENCE="false" COMMENT="The characters that define fields, generally defaults to [] i.e. The [cat] sat on the [mat] where the fields are [cat] and [mat]"/>
         <FIELD NAME="wordpenalty" TYPE="number" LENGTH="12" NOTNULL="true" DEFAULT="1.0000000" SEQUENCE="false" DECIMALS="7" COMMENT="Penalty for incorrectly selected words" />
-        <FIELD NAME="correctfeedback" TYPE="text" NOTNULL="false" SEQUENCE="false" PREVIOUS="disableregex" NEXT="correctfeedbackformat"/>
-        <FIELD NAME="correctfeedbackformat" TYPE="int" LENGTH="2" NOTNULL="false" DEFAULT="0" SEQUENCE="false" PREVIOUS="correctfeedback" NEXT="partiallycorrectfeedback" />
-        <FIELD NAME="partiallycorrectfeedback" TYPE="text" NOTNULL="false" SEQUENCE="false" PREVIOUS="correctfeedbackformat" NEXT="partiallycorrectfeedbackformat"/>
-        <FIELD NAME="partiallycorrectfeedbackformat" TYPE="int" LENGTH="2" NOTNULL="false" DEFAULT="0" SEQUENCE="false" PREVIOUS="partiallycorrectfeedback" NEXT="incorrectfeedback"/>
-        <FIELD NAME="incorrectfeedback" TYPE="text" NOTNULL="false" SEQUENCE="false" PREVIOUS="partiallycorrectfeedbackformat" NEXT="incorrectfeedbackformat"/>
-        <FIELD NAME="incorrectfeedbackformat" TYPE="int" LENGTH="2" NOTNULL="false" DEFAULT="0" SEQUENCE="false" PREVIOUS="incorrectfeedback"/>
+        <FIELD NAME="correctfeedback" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="correctfeedbackformat" TYPE="int" LENGTH="2" NOTNULL="false" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="partiallycorrectfeedback" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="partiallycorrectfeedbackformat" TYPE="int" LENGTH="2" NOTNULL="false" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="incorrectfeedback" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="incorrectfeedbackformat" TYPE="int" LENGTH="2" NOTNULL="false" DEFAULT="0" SEQUENCE="false"/>
       </FIELDS>
       <KEYS>
-        <KEY NAME="primary" TYPE="primary" FIELDS="id" NEXT="question"/>
-        <KEY NAME="question" TYPE="foreign" FIELDS="questionid" REFTABLE="question" REFFIELDS="id" PREVIOUS="primary" />
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="question" TYPE="foreign" FIELDS="questionid" REFTABLE="question" REFFIELDS="id"/>
       </KEYS>
     </TABLE>    
   </TABLES>
