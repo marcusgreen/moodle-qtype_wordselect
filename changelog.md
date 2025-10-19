@@ -1,7 +1,12 @@
 
 # Version 2.55 of the Moodle Wordselect question type by Marcus Green Oct 25
 Confirmed compatibility with Moodle 5.1
-Moved items class to a separate file for coding standards compliance
+Moved items class to a separate file for coding standards compliance.
+
+Thanks to Carson Tam for creating an issue and a fix for
+Failing plugin_checks_test::test_db_install_file test
+https://github.com/marcusgreen/moodle-qtype_wordselect/issues/68
+
 
 # Version 2.54 of the Moodle Wordselect question type by Marcus Green April 25
 Confirmed compatibility with Moodle 5.0
