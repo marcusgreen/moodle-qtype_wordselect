@@ -60,6 +60,7 @@ class qtype_wordselect extends question_type {
             'introduction',
             $questionid
         );
+        $this->move_files_in_combined_feedback($questionid, $oldcontextid, $newcontextid);
         $this->move_files_in_hints($questionid, $oldcontextid, $newcontextid);
     }
 
@@ -70,6 +71,7 @@ class qtype_wordselect extends question_type {
      */
     protected function delete_files($questionid, $contextid) {
         parent::delete_files($questionid, $contextid);
+        $this->delete_files_in_combined_feedback($questionid, $contextid);
         $this->delete_files_in_hints($questionid, $contextid);
     }
 
