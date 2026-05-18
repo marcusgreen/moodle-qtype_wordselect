@@ -364,6 +364,64 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
     }
 
     /**
+     * Get the selected words used to decide if regrading between versions is safe.
+     *
+     * The order of the selected words in the question text is ignored, but duplicate
+     * selections are preserved so count changes are still detected.
+     *
+     * @return string[]
+     */
+    protected function get_selected_words_for_regrade_validation(): array {
+        $selectedwords = [];
+        $items = $this->get_words();
+
+        foreach ($this->get_correct_places($this->questiontext, $this->delimitchars) as $place) {
+            if (!array_key_exists($place, $items)) {
+                continue;
+            }
+
+            $selectedwords[] = $this->normalise_selected_word_for_regrade_validation(
+                $items[$place]->get_without_delim()
+            );
+        }
+
+        sort($selectedwords, SORT_STRING);
+
+        return $selectedwords;
+    }
+
+    /**
+     * Convert a selected word or phrase to a comparable plain-text representation.
+     *
+     * @param string $selectedword
+     * @return string
+     */
+    protected function normalise_selected_word_for_regrade_validation(string $selectedword): string {
+        $selectedword = $this->html_to_text($selectedword, FORMAT_HTML);
+        $selectedword = preg_replace('/\s+/u', ' ', $selectedword);
+
+        return trim($selectedword);
+    }
+
+    #[\Override]
+    public function validate_can_regrade_with_other_version(question_definition $otherversion): ?string {
+        $basemessage = parent::validate_can_regrade_with_other_version($otherversion);
+        if ($basemessage) {
+            return $basemessage;
+        }
+
+        $selectedwords = $this->get_selected_words_for_regrade_validation();
+        assert($otherversion instanceof qtype_wordselect_question);
+        $otherselectedwords = $otherversion->get_selected_words_for_regrade_validation();
+
+        if ($selectedwords !== $otherselectedwords) {
+            return get_string('regradeissueselectedwordschanged', 'qtype_wordselect');
+        }
+
+        return null;
+    }
+
+    /**
      * contains the a response that would get full marks.
      * used in preview mode. If this doesn't return a
      * correct value the button labeled "Fill in correct response"

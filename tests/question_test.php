@@ -257,4 +257,44 @@ final class question_test extends \advanced_testcase {
         $correctplaces = ['0' => 4];
         $this->assertEquals($question->get_correct_places($question->questiontext, '[]'), $correctplaces);
     }
+
+    /**
+     * Test validate_can_regrade_with_other_version() with multiple scenarios.
+     *
+     * @dataProvider validate_can_regrade_provider
+     * @param string $oldquestiontext
+     * @param string $newquestiontext
+     * @param string|null $expectedstringkey null if regrade should be allowed, or language key for expected failure reason
+     * @covers ::validate_can_regrade_with_other_version
+     */
+    public function test_validate_can_regrade_with_other_version(
+        string $oldquestiontext,
+        string $newquestiontext,
+        ?string $expectedstringkey
+    ): void {
+        $old = helper::make_question('wordselect', $oldquestiontext);
+        $new = helper::make_question('wordselect', $newquestiontext);
+
+        $result = $new->validate_can_regrade_with_other_version($old);
+        if ($expectedstringkey === null) {
+            $this->assertNull($result);
+        } else {
+            $this->assertEquals(get_string($expectedstringkey, 'qtype_wordselect'), $result);
+        }
+    }
+
+    /**
+     * Data provider for test_validate_can_regrade_with_other_version.
+     *
+     * @return array
+     */
+    public static function validate_can_regrade_provider(): array {
+        return [
+            'allow_surrounding_text' => ['[[Pip]] jump on the bed', 'On the bed, [[Pip]] jumps', null],
+            'block_word_added' => ['The [cat] sat on the mat', 'The [cat] [sat] on the mat', 'regradeissueselectedwordschanged'],
+            'block_word_changed' => ['[[Apple]] is a fruit', 'Apple is a [[fruit]]', 'regradeissueselectedwordschanged'],
+            'block_count_changed' => ['The [cat] [sat] on the mat', 'The [cat] sat on the mat', 'regradeissueselectedwordschanged'],
+            'allow_reordered' => ['The [cat] chased the [dog]', 'The [dog] was chased by the [cat]', null],
+        ];
+    }
 }

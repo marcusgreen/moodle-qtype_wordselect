@@ -41,6 +41,7 @@ $string['pluginnamesummary'] = 'All words can be selected by clicking on them. C
 $string['privacy:null_reason'] = 'The Wordselect question type does not effect or store any data itself.';
 $string['questiontext'] = 'question text';
 $string['questiontext_help'] = 'Put square braces around the correct words ';
+$string['regradeissueselectedwordschanged'] = 'The selected words have changed.';
 $string['taptoselect'] = 'Tap to select';
 $string['wordpenalty'] = 'Incorrect selection penalty';
 $string['wordpenalty_help'] = 'Decrement mark by this percentage for each incorrectly selected word';
