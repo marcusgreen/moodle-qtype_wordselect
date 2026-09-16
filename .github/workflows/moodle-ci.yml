@@ -34,6 +34,8 @@ jobs:
           - {moodle-branch: 'MOODLE_502_STABLE', php: '8.3', database: 'pgsql', runchecks: 'all'}
           - {moodle-branch: 'MOODLE_502_STABLE', php: '8.3', database: 'mariadb'}
           - {moodle-branch: 'MOODLE_501_STABLE', php: '8.3', database: 'pgsql'}
+          - {moodle-branch: 'main', php: '8.3', database: 'pgsql', runchecks: 'all', allowed-failure: true}
+    continue-on-error: ${{ matrix.allowed-failure == true }}
     steps:
       - name: Check out repository code
         uses: actions/checkout@v5
