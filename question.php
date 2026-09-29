@@ -319,8 +319,8 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      * @return boolean
      */
     public function is_complete_response(array $response) {
-        foreach ($response as $item) {
-            if ($item == "on") {
+        foreach (array_keys($response) as $key) {
+            if ($this->is_word_selected(substr($key, 1), $response)) {
                 return true;
             }
         }
@@ -496,7 +496,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             /* chop off the leading p */
             $place = substr($key, 1);
             /* if its not in the correct places and it is turned on */
-            if (!in_array($place, $correctplaces) && ($value == 'on')) {
+            if (!in_array($place, $correctplaces) && $this->is_word_selected($place, $response)) {
                 $response[$key] = 'off';
             }
         }
@@ -611,7 +611,7 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
             /* chop off the leading p */
             $place = substr($key, 1);
             /* if its not in the correct places and it is turned on */
-            if (!in_array($place, $correctplaces) && ($value == 'on')) {
+            if (!in_array($place, $correctplaces) && $this->is_word_selected($place, $responses)) {
                 $wrongresponsecount++;
             }
         }

@@ -129,6 +129,34 @@ final class question_test extends \advanced_testcase {
         [$fraction, $state] = $question->grade_response($response);
         $this->assertEquals($fraction, .5);
     }
+
+    #[\PHPUnit\Framework\Attributes\Group('baseline')]
+    /**
+     * Wrong words submitted as 'true' instead of 'on' must still be penalised.
+     *
+     * @covers ::grade_response
+     */
+    public function test_grade_response_penalises_wrong_true_selection(): void {
+        $question = helper::make_question('wordselect', 'The cat [sat] and the cow [jumped]');
+        $response = ['p2' => 'true', 'p4' => 'true', 'p12' => 'true'];
+        [$fraction] = $question->grade_response($response);
+        $this->assertEquals(0.5, $fraction);
+    }
+
+    #[\PHPUnit\Framework\Attributes\Group('baseline')]
+    /**
+     * Regular 'on' selections are graded as before.
+     *
+     * @covers ::grade_response
+     */
+    public function test_grade_response_with_on_selection(): void {
+        $question = helper::make_question('wordselect', 'The cat [sat] and the cow [jumped]');
+        [$fraction] = $question->grade_response(['p4' => 'on', 'p12' => 'on']);
+        $this->assertEquals(1, $fraction);
+        $question = helper::make_question('wordselect', 'The cat [sat] and the cow [jumped]');
+        [$fraction] = $question->grade_response(['p2' => 'on', 'p4' => 'on', 'p12' => 'on']);
+        $this->assertEquals(0.5, $fraction);
+    }
     /**
      * Called when using interactive with multiple tries question behaviour
      *
