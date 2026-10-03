@@ -52,6 +52,26 @@ class restore_qtype_wordselect_plugin extends restore_qtype_plugin {
         return $paths; // And we return the interesting paths.
     }
 
+
+    /**
+     * Define excluded identity hash fields.
+     */    
+    public function define_excluded_identity_hash_fields(): array {
+        return [
+            // These option fields are present in the database, but are only used by calculatedmulti.
+            '/options/questionid',
+            '/options/introduction',
+            '/options/delimitchars',
+            '/options/wordpenalty',
+            '/options/correctfeedback',
+            '/options/correctfeedbackformat',
+            '/options/partiallycorrectfeedback',
+            '/options/partiallycorrectfeedbackformat',
+            '/options/incorrectfeedback',
+            '/options/incorrectfeedbackformat',
+        ];
+    }
+
     /**
      * Process the qtype/wordselect element
      * @param array $data
