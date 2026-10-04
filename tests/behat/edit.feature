@@ -65,8 +65,7 @@ Feature: Test editing a word-select question
     And I am on the "Course 1" "core_question > course question bank" page
     And I apply question bank filter "Category" with value "Test questions"
     And I click on "Word-select" "checkbox"
-    And I click on "With selected" "button"
-    And I click on "move" "button"
+    And I click on the "move" question bulk action
     And I open the autocomplete suggestions list in the ".search-banks" "css_element"
     And I click on "C2 - Question bank 2" item in the autocomplete list
     And I click on "Move questions" "button"
