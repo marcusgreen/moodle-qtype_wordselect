@@ -130,7 +130,6 @@ final class question_test extends \advanced_testcase {
         $this->assertEquals($fraction, .5);
     }
 
-    #[\PHPUnit\Framework\Attributes\Group('baseline')]
     /**
      * Wrong words submitted as 'true' instead of 'on' must still be penalised.
      *
@@ -143,7 +142,6 @@ final class question_test extends \advanced_testcase {
         $this->assertEquals(0.5, $fraction);
     }
 
-    #[\PHPUnit\Framework\Attributes\Group('baseline')]
     /**
      * Regular 'on' selections are graded as before.
      *
@@ -326,7 +324,6 @@ final class question_test extends \advanced_testcase {
         ];
     }
 
-    #[\PHPUnit\Framework\Attributes\Group('baseline')]
     /**
      * Introduction files of another question must not be served.
      *
@@ -348,7 +345,6 @@ final class question_test extends \advanced_testcase {
         ));
     }
 
-    #[\PHPUnit\Framework\Attributes\Group('baseline')]
     /**
      * Introduction files of the attempted question are served.
      *
