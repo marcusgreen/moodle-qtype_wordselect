@@ -460,10 +460,8 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
         } else if ($component == 'question' && $filearea == 'hint') {
             return $this->check_hint_file_access($qa, $options, $args);
         } else if ($component == 'qtype_wordselect' && $filearea == 'introduction') {
-            $question = $qa->get_question();
-            if ($question->introduction > "") {
-                return true;
-            }
+            $itemid = reset($args);
+            return $itemid == $this->id;
         } else {
             return parent::check_file_access($qa, $options, $component, $filearea, $args, $forcedownload);
         }

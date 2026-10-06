@@ -325,4 +325,48 @@ final class question_test extends \advanced_testcase {
             'allow_reordered' => ['The [cat] chased the [dog]', 'The [dog] was chased by the [cat]', null],
         ];
     }
+
+    #[\PHPUnit\Framework\Attributes\Group('baseline')]
+    /**
+     * Introduction files of another question must not be served.
+     *
+     * @covers ::check_file_access
+     */
+    public function test_check_file_access_rejects_foreign_introduction_file(): void {
+        $question = helper::make_question('wordselect');
+        $question->id = 42;
+        $question->introduction = '<p>Intro</p>';
+        $qa = new \question_attempt($question, 0);
+
+        $this->assertFalse($question->check_file_access(
+            $qa,
+            new \question_display_options(),
+            'qtype_wordselect',
+            'introduction',
+            [4711, 'image.png'],
+            false
+        ));
+    }
+
+    #[\PHPUnit\Framework\Attributes\Group('baseline')]
+    /**
+     * Introduction files of the attempted question are served.
+     *
+     * @covers ::check_file_access
+     */
+    public function test_check_file_access_allows_own_introduction_file(): void {
+        $question = helper::make_question('wordselect');
+        $question->id = 42;
+        $question->introduction = '<p>Intro</p>';
+        $qa = new \question_attempt($question, 0);
+
+        $this->assertTrue($question->check_file_access(
+            $qa,
+            new \question_display_options(),
+            'qtype_wordselect',
+            'introduction',
+            [42, 'image.png'],
+            false
+        ));
+    }
 }
