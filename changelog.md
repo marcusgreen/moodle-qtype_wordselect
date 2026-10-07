@@ -1,5 +1,20 @@
 # The Moodle Wordselect question type by Marcus Green
 
+### Version 2.57 Oct 2026
+Confirmed compatibility with Moodle 5.3
+
+Thanks to PM84 (Peter Mayer) for binding introduction file access to the
+attempted question (MBS-11407), and fixing 'true' not counted as a selection
+when counting wrong words (MBS-11374).
+https://github.com/marcusgreen/moodle-qtype_wordselect/pull/76
+https://github.com/marcusgreen/moodle-qtype_wordselect/pull/75
+
+Thanks to vuvanhieu143 (Hieu Vu Van) for fixing combined feedback files lost
+when moving questions between banks in different contexts, and adding
+regrade validation.
+https://github.com/marcusgreen/moodle-qtype_wordselect/pull/72
+https://github.com/marcusgreen/moodle-qtype_wordselect/pull/73
+
 ### Version 2.56 Apr 2026
 
 Confirmed compatibility with Moodle 5.2
