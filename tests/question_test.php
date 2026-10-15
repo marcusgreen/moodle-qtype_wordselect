@@ -155,6 +155,25 @@ final class question_test extends \advanced_testcase {
         [$fraction] = $question->grade_response(['p2' => 'on', 'p4' => 'on', 'p12' => 'on']);
         $this->assertEquals(0.5, $fraction);
     }
+
+    /**
+     * Grading a question with an embedded file must rewrite @@PLUGINFILE@@ before
+     * filtering, and must not overwrite the stored question text.
+     *
+     * @covers ::grade_response
+     */
+    public function test_grade_response_with_embedded_file(): void {
+        global $PAGE;
+        $this->resetAfterTest();
+        $PAGE->set_context(\context_system::instance());
+        $questiontext = 'The <img src="@@PLUGINFILE@@/cat.png" alt="cat"> cat [sat]';
+        $question = helper::make_question('wordselect', $questiontext, ['delimitchars' => '[]']);
+        $correct = $question->get_correct_response();
+        [$fraction] = $question->grade_response($correct);
+        $this->assertDebuggingNotCalled();
+        $this->assertEquals(1, $fraction);
+        $this->assertEquals($questiontext, $question->questiontext);
+    }
     /**
      * Called when using interactive with multiple tries question behaviour
      *
