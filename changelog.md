@@ -1,5 +1,17 @@
 # The Moodle Wordselect question type by Marcus Green
 
+### Version 2.58 Oct 2026
+Fixed images and media in the question text not displaying (404). The
+question text file URLs were rewritten to the qtype_wordselect file area
+instead of the core question area where the files are stored.
+https://github.com/marcusgreen/moodle-qtype_wordselect/issues/47
+
+Fixed the developer debugging message "Before calling format_text(), the
+content must be processed with file_rewrite_pluginfile_urls()" when grading
+a question with embedded files. Grading no longer overwrites the stored
+question text.
+https://github.com/marcusgreen/moodle-qtype_wordselect/issues/48
+
 ### Version 2.57 Oct 2026
 Confirmed compatibility with Moodle 5.3
 
