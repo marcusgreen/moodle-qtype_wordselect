@@ -50,7 +50,7 @@ class qtype_wordselect_renderer extends qtype_with_combined_feedback_renderer {
             $question->questiontext,
             $question->questiontextformat,
             $qa,
-            'qtype_wordselect',
+            'question',
             'questiontext',
             $question->id
         );

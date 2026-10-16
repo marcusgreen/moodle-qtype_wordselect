@@ -508,9 +508,20 @@ class qtype_wordselect_question extends question_graded_automatically_with_count
      */
     public function grade_response(array $response) {
         // Ensures the right word places when language filters are enabled.
+        // Embedded file URLs must be rewritten before filtering. The stored question text is
+        // restored afterwards so later calls (e.g. rendering) do not filter it twice.
         $formatoptions = (object) ['noclean' => true, 'para' => false];
-        $this->questiontext = format_text($this->questiontext, FORMAT_HTML, $formatoptions);
-        $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
+        $questiontext = $this->questiontext;
+        $this->questiontext = format_text(
+            file_rewrite_pluginfile_urls($questiontext, 'pluginfile.php', $this->contextid, 'question', 'questiontext', $this->id),
+            FORMAT_HTML,
+            $formatoptions
+        );
+        try {
+            $correctplaces = $this->get_correct_places($this->questiontext, $this->delimitchars);
+        } finally {
+            $this->questiontext = $questiontext;
+        }
         $this->wrongresponsecount = $this->get_wrong_responsecount($correctplaces, $response);
         foreach ($correctplaces as $place) {
             if (isset($response['p' . $place])) {

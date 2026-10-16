@@ -98,4 +98,30 @@ final class walkthrough_test extends \qbehaviour_walkthrough_test_base {
         $this->quba->finish_all_questions();
               $this->check_current_state(\question_state::$gradedright);
     }
+
+    /**
+     * Files embedded in the question text are stored in the core question/questiontext
+     * file area, so the rendered URLs must point there and not at qtype_wordselect.
+     *
+     * @covers ::formulation_and_controls
+     */
+    public function test_questiontext_file_urls_use_question_component(): void {
+        $question = helper::make_question(
+            'wordselect',
+            'The <img src="@@PLUGINFILE@@/cat.png" alt="cat"> cat [sat]',
+            ['delimitchars' => '[]']
+        );
+        $this->start_attempt_at_question($question, 'interactive', 1);
+
+        $html = $this->quba->render_question($this->slot, $this->displayoptions);
+        $this->assertMatchesRegularExpression('~pluginfile\.php/\d*/question/questiontext/[^"]*/cat\.png~', $html);
+        $this->assertStringNotContainsString('qtype_wordselect/questiontext', $html);
+
+        // The image must not shift the place of the correct word.
+        $correct = $question->get_correct_response();
+        $this->assertCount(1, $correct);
+        $this->process_submission(['-submit' => 1] + $correct);
+        $this->check_current_state(\question_state::$gradedright);
+        $this->check_current_mark(1);
+    }
 }
